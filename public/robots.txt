@@ -1,0 +1,11 @@
+# robots.txt for ignacioamatweb.com
+User-agent: *
+Allow: /
+
+# Disallow potential duplicate content like thank you pages
+Disallow: /thanks
+Disallow: /error
+Disallow: /404
+
+# Sitemap location
+Sitemap: https://ignacioamatweb.com/sitemap-index.xml 

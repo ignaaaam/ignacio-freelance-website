@@ -9,14 +9,26 @@ interface Props {
 	lang?: 'es' | 'en';
 	canonicalUrl?: string;
 	image?: string;
+	author?: string;
+	type?: 'website' | 'article';
+	publishedDate?: string;
+	keywords?: string[];
 }
 
 const { 
-	title, 
-	description = "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global.",
-	lang = 'es',
+	title,
+	lang = 'es', 
+	description = lang === 'es' 
+		? "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global."
+		: "Modern, fast, and optimized web design and development for global impact.",
 	canonicalUrl,
-	image = "https://ignacioamatweb.com/images/og-image.jpg"
+	image = "https://ignacioamatweb.com/images/og-image.jpg",
+	author = "Ignacio Amat",
+	type = "website",
+	publishedDate,
+	keywords = lang === 'es'
+		? ["desarrollo web", "diseño web", "freelance", "página web", "Ignacio Amat", "SEO", "Barcelona", "España", "sitio web profesional", "desarrollo frontend"]
+		: ["web development", "web design", "freelance", "website", "Ignacio Amat", "SEO", "Barcelona", "Spain", "professional website", "frontend development"]
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -24,13 +36,37 @@ const alternateUrls = getAlternateUrls(currentPath);
 const baseUrl = 'https://ignacioamatweb.com';
 const fullUrl = `${baseUrl}${currentPath}`;
 const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
+
+// Build structured data for different page types
+const structuredData: any = {
+	"@context": "https://schema.org",
+	"@type": type === 'website' ? 'WebSite' : 'Article',
+	"url": fullUrl,
+	"name": title,
+	"description": description,
+	"author": {
+		"@type": "Person",
+		"name": author,
+		"url": baseUrl
+	},
+	"inLanguage": lang,
+	"image": image
+};
+
+// Add publishedDate for articles
+if (type === 'article' && publishedDate) {
+	structuredData.datePublished = publishedDate;
+}
+
+// JSON-LD structured data
+const jsonLd = JSON.stringify(structuredData);
 ---
 
 <!DOCTYPE html>
 <html lang={lang} data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -38,31 +74,49 @@ const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
 		<title>{title}</title>
 		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<meta name="author" content={author} />
+		<meta name="keywords" content={keywords.join(', ')} />
 		<link rel="canonical" href={canonical} />
 
 		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content={type} />
 		<meta property="og:url" content={fullUrl} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
+		<meta property="og:image:alt" content={title} />
 		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
 		<meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
+		{publishedDate && <meta property="article:published_time" content={publishedDate} />}
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={fullUrl} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={image} />
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@ignacioamatweb" />
+		<meta name="twitter:creator" content="@ignacioamatweb" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:image:alt" content={title} />
 
 		<!-- Language and SEO meta tags -->
 		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
 		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
 		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
 
+		<!-- Mobile specific -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+
 		<!-- Theme color -->
 		<meta name="theme-color" content="#0F172A" />
+		
+		<!-- Preconnect to required origins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={jsonLd} />
 	</head>
 	<body>
 		<slot />
