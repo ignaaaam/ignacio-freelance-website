@@ -12,9 +12,15 @@ import Contact from '../components/Contact.astro';
 
 const title = "Ignacio Amat - Diseño y Desarrollo Web Profesional";
 const description = "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global. Landing pages, webs corporativas y tiendas online.";
+const canonicalUrl = "/";
 ---
 
-<Layout title={title} description={description}>
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+>
 	<Header />
 	<main>
 		<Hero />

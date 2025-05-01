@@ -1,17 +1,28 @@
 ---
 import '../styles/global.css';
+import { getAlternateUrls } from '../i18n/utils';
 
 interface Props {
 	title: string;
 	description?: string;
 	lang?: 'es' | 'en';
+	canonicalUrl?: string;
+	image?: string;
 }
 
 const { 
 	title, 
 	description = "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global.",
-	lang = 'es'
+	lang = 'es',
+	canonicalUrl,
+	image = "https://ignacioamatweb.com/images/og-image.jpg"
 } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const alternateUrls = getAlternateUrls(currentPath);
+const baseUrl = 'https://ignacioamatweb.com';
+const fullUrl = `${baseUrl}${currentPath}`;
+const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
 ---
 
 <!DOCTYPE html>
@@ -21,11 +32,36 @@ const {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title} />
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonical} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={fullUrl} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+		<meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={fullUrl} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+
+		<!-- Language and SEO meta tags -->
+		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
+		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
+		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
+
+		<!-- Theme color -->
 		<meta name="theme-color" content="#0F172A" />
-		<link rel="alternate" hreflang="es" href="https://ignacioamatweb.com" />
-		<link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en" />
 	</head>
 	<body>
 		<slot />
@@ -46,6 +82,43 @@ const {
 		--color-text-muted: #64748b;
 		--color-border: #e2e8f0;
 		--color-card-bg: rgba(241, 245, 249, 0.5);
+	}
+
+	/* Language switcher styles */
+	.language-switcher {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 1000;
+		background: var(--color-card-bg);
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		backdrop-filter: blur(10px);
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+
+	.language-switcher a {
+		color: var(--color-text);
+		text-decoration: none;
+		font-weight: 500;
+		padding: 0.25rem 0.5rem;
+		border-radius: 0.25rem;
+		transition: all 0.2s ease;
+	}
+
+	.language-switcher a:hover {
+		background: var(--color-secondary);
+	}
+
+	.language-switcher a.active {
+		background: var(--color-accent);
+		color: white;
+	}
+
+	.language-switcher .separator {
+		color: var(--color-text-muted);
 	}
 
 	/* Glow effects */

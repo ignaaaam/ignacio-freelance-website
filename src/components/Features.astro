@@ -1,24 +1,26 @@
 ---
+import Translate from './Translate.astro';
+
 const features = [
   {
     icon: "speed",
-    title: "Rendimiento y Seguridad Optimizados",
-    description: "Desarrollo web de alto rendimiento con tiempos de carga ultrarrápidos y protección avanzada contra amenazas."
+    title: "features.items.0.title",
+    description: "features.items.0.description"
   },
   {
     icon: "design",
-    title: "Diseño Personalizado y Único",
-    description: "Diseños exclusivos y modernos que reflejan la identidad de tu marca y conectan con tu audiencia."
+    title: "features.items.1.title",
+    description: "features.items.1.description"
   },
   {
     icon: "seo",
-    title: "SEO y Visibilidad Online",
-    description: "Optimización profesional para motores de búsqueda que mejora tu ranking en Google y aumenta el tráfico orgánico."
+    title: "features.items.2.title",
+    description: "features.items.2.description"
   },
   {
     icon: "support",
-    title: "Mantenimiento y Soporte Técnico",
-    description: "Actualizaciones regulares, copias de seguridad y soporte técnico continuo para mantener tu web siempre al día."
+    title: "features.items.3.title",
+    description: "features.items.3.description"
   }
 ];
 ---
@@ -26,8 +28,12 @@ const features = [
 <section class="py-20" id="servicios">
   <div class="container">
     <div class="text-center mb-16" data-sr>
-      <h2 class="text-3xl font-bold mb-4">¿Por qué trabajar conmigo?</h2>
-      <p class="text-text-muted max-w-2xl mx-auto">Desarrollo sitios web profesionales que no solo se ven increíbles, sino que también generan resultados medibles para tu negocio.</p>
+      <h2 class="text-3xl font-bold mb-4">
+        <Translate key="features.title" />
+      </h2>
+      <p class="text-text-muted max-w-2xl mx-auto">
+        <Translate key="features.description" />
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -55,8 +61,12 @@ const features = [
               </svg>
             )}
           </div>
-          <h3 class="text-xl font-bold mb-3">{feature.title}</h3>
-          <p class="text-text-muted">{feature.description}</p>
+          <h3 class="text-xl font-bold mb-3">
+            <Translate key={feature.title} />
+          </h3>
+          <p class="text-text-muted">
+            <Translate key={feature.description} />
+          </p>
         </div>
       ))}
     </div>

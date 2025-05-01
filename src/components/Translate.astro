@@ -1,0 +1,9 @@
+---
+import { getTranslation, getLocaleFromPath } from '../i18n/utils';
+
+const { key } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+const text = getTranslation(locale, key);
+---
+
+<span>{text}</span> 

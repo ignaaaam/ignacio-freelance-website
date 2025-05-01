@@ -1,0 +1,109 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "¿Necesitas una página web profesional para tu negocio o proyecto?",
+    "subtitle": "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global.",
+    "cta": "Solicita tu presupuesto gratis",
+    "services": "Ver servicios"
+  },
+  "features": {
+    "title": "¿Por qué trabajar conmigo?",
+    "description": "Desarrollo sitios web profesionales que no solo se ven increíbles, sino que también generan resultados medibles para tu negocio.",
+    "items": [
+      {
+        "title": "Rendimiento y Seguridad Optimizados",
+        "description": "Desarrollo web de alto rendimiento con tiempos de carga ultrarrápidos y protección avanzada contra amenazas."
+      },
+      {
+        "title": "Diseño Personalizado y Único",
+        "description": "Diseños exclusivos y modernos que reflejan la identidad de tu marca y conectan con tu audiencia."
+      },
+      {
+        "title": "SEO y Visibilidad Online",
+        "description": "Optimización profesional para motores de búsqueda que mejora tu ranking en Google y aumenta el tráfico orgánico."
+      },
+      {
+        "title": "Mantenimiento y Soporte Técnico",
+        "description": "Actualizaciones regulares, copias de seguridad y soporte técnico continuo para mantener tu web siempre al día."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Planes y Precios",
+    "description": "Soluciones profesionales adaptadas a diferentes necesidades y presupuestos.",
+    "note": "El precio final puede ajustarse según los requisitos específicos de tu proyecto.",
+    "popular": "Más Popular",
+    "cta": "Solicitar Presupuesto",
+    "tiers": [
+      {
+        "name": "Landing Page",
+        "features": [
+          "1 página completa",
+          "Diseño personalizado",
+          "Formulario de contacto",
+          "Optimizado para móviles",
+          "Dominio y hosting 1 año"
+        ]
+      },
+      {
+        "name": "Web Completa",
+        "features": [
+          "Hasta 5 páginas",
+          "Diseño personalizado",
+          "Blog o noticias",
+          "Panel de administración",
+          "SEO básico incluido",
+          "Dominio y hosting 1 año"
+        ]
+      },
+      {
+        "name": "Tienda Online",
+        "features": [
+          "Tienda completa",
+          "Sistema de pagos",
+          "Gestión de productos",
+          "Panel de administración",
+          "SEO avanzado",
+          "Dominio y hosting 1 año"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "description": "Resolvemos tus dudas sobre el proceso de desarrollo de tu página web.",
+    "items": [
+      {
+        "question": "¿Cuánto tarda en estar lista mi web?",
+        "answer": "El tiempo de desarrollo depende de la complejidad del proyecto. Una landing page sencilla de una página puede estar lista en 2-4 días, mientras que un proyecto más complejo puede tomar 4-6 semanas."
+      },
+      {
+        "question": "¿Qué métodos de pago aceptas?",
+        "answer": "Acepto transferencias bancarias, Bizum y tarjeta de crédito. El pago se divide en dos partes: 50% al inicio del proyecto y 50% antes de la entrega final."
+      },
+      {
+        "question": "¿Qué pasa si no estoy conforme?",
+        "answer": "Tu satisfacción es mi prioridad. Trabajaremos juntos en las revisiones necesarias hasta que estés completamente satisfecho con el resultado."
+      },
+      {
+        "question": "¿Ofreces servicio de mantenimiento?",
+        "answer": "Sí, ofrezco planes de mantenimiento mensuales que incluyen actualizaciones, copias de seguridad, y soporte técnico para mantener tu web segura y actualizada."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contáctame",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Hubo un error al enviar tu mensaje."
+  }
+} 

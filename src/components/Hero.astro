@@ -1,3 +1,7 @@
+---
+import Translate from './Translate.astro';
+---
+
 <section class="py-20 relative overflow-hidden">
   <!-- Glow effects -->
   <div class="glow glow-1"></div>
@@ -6,17 +10,17 @@
   <div class="container relative">
     <div class="max-w-3xl mx-auto text-center">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" data-sr data-sr-delay="0">
-        ¿Necesitas una página web profesional para tu negocio o proyecto?
+        <Translate key="hero.title" />
       </h1>
       <p class="text-text-muted text-lg mb-8" data-sr data-sr-delay="200">
-        Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global.
+        <Translate key="hero.subtitle" />
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-sr data-sr-delay="400">
         <a href="#contacto" class="btn-primary">
-          Solicita tu presupuesto gratis
+          <Translate key="hero.cta" />
         </a>
         <a href="#servicios" class="btn-secondary">
-          Ver servicios
+          <Translate key="hero.services" />
         </a>
       </div>
     </div>

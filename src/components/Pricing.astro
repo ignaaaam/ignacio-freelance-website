@@ -1,39 +1,41 @@
 ---
+import Translate from './Translate.astro';
+
 const pricingTiers = [
   {
-    name: "Landing Page",
+    name: "pricing.tiers.0.name",
     price: "350",
     features: [
-      "1 página completa",
-      "Diseño personalizado",
-      "Formulario de contacto",
-      "Optimizado para móviles",
-      "Dominio y hosting 1 año"
+      "pricing.tiers.0.features.0",
+      "pricing.tiers.0.features.1",
+      "pricing.tiers.0.features.2",
+      "pricing.tiers.0.features.3",
+      "pricing.tiers.0.features.4"
     ]
   },
   {
-    name: "Web Completa",
+    name: "pricing.tiers.1.name",
     price: "600",
     features: [
-      "Hasta 5 páginas",
-      "Diseño personalizado",
-      "Blog o noticias",
-      "Panel de administración",
-      "SEO básico incluido",
-      "Dominio y hosting 1 año"
+      "pricing.tiers.1.features.0",
+      "pricing.tiers.1.features.1",
+      "pricing.tiers.1.features.2",
+      "pricing.tiers.1.features.3",
+      "pricing.tiers.1.features.4",
+      "pricing.tiers.1.features.5"
     ],
     popular: true
   },
   {
-    name: "Tienda Online",
+    name: "pricing.tiers.2.name",
     price: "800",
     features: [
-      "Tienda completa",
-      "Sistema de pagos",
-      "Gestión de productos",
-      "Panel de administración",
-      "SEO avanzado",
-      "Dominio y hosting 1 año"
+      "pricing.tiers.2.features.0",
+      "pricing.tiers.2.features.1",
+      "pricing.tiers.2.features.2",
+      "pricing.tiers.2.features.3",
+      "pricing.tiers.2.features.4",
+      "pricing.tiers.2.features.5"
     ]
   }
 ];
@@ -42,38 +44,44 @@ const pricingTiers = [
 <section class="py-20 bg-secondary" id="precios">
   <div class="container">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">Planes y Precios</h2>
-      <p class="text-text-muted max-w-2xl mx-auto">Soluciones profesionales adaptadas a diferentes necesidades y presupuestos.</p>
-      <p class="text-text-muted mt-2">El precio final puede ajustarse según los requisitos específicos de tu proyecto.</p>
+      <h2 class="text-3xl font-bold mb-4">
+        <Translate key="pricing.title" />
+      </h2>
+      <p class="text-text-muted max-w-2xl mx-auto">
+        <Translate key="pricing.description" />
+      </p>
+      <p class="text-text-muted mt-2">
+        <Translate key="pricing.note" />
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {pricingTiers.map(tier => (
-        <div class={`card pricing-card ${tier.popular ? 'popular' : ''}`}>
-          {tier.popular && (
-            <div class="popular-badge">Más Popular</div>
-          )}
-          <h3 class="text-2xl font-bold mb-2">{tier.name}</h3>
-          <div class="price-container mb-6">
-            <span class="text-sm">Desde</span>
-            <div class="flex items-baseline gap-1">
-              <span class="text-4xl font-bold">{tier.price}</span>
-              <span class="text-xl">€</span>
+      {pricingTiers.map((tier, index) => (
+        <div class="pricing-card-wrapper">
+          <div class={`card p-8 relative ${tier.popular ? 'border-2 border-accent' : ''}`}>
+            {tier.popular && (
+              <div class="popular-badge">
+                <Translate key="pricing.popular" />
+              </div>
+            )}
+            <h3 class="text-2xl font-bold mb-4">
+              <Translate key={tier.name} />
+            </h3>
+            <div class="text-4xl font-bold mb-6">
+              {tier.price}€
             </div>
-          </div>
-          <ul class="space-y-3 mb-8 flex-grow">
-            {tier.features.map(feature => (
-              <li class="flex items-center gap-2">
-                <svg class="h-5 w-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
-          <div class="mt-auto">
-            <a href="#contacto" class={`btn-${tier.popular ? 'primary' : 'secondary'} w-full text-center`}>
-              Solicitar presupuesto
+            <ul class="space-y-4 mb-8">
+              {tier.features.map((feature, i) => (
+                <li class="flex items-center">
+                  <svg class="w-5 h-5 text-accent mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <Translate key={feature} />
+                </li>
+              ))}
+            </ul>
+            <a href="#contacto" class="btn-primary w-full text-center">
+              <Translate key="pricing.cta" />
             </a>
           </div>
         </div>
@@ -83,47 +91,29 @@ const pricingTiers = [
 </section>
 
 <style>
-  .pricing-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .pricing-card-wrapper {
     position: relative;
-    transition: transform 0.3s ease;
-    background-color: var(--color-card-bg);
-  }
-
-  .pricing-card:hover {
-    transform: translateY(-4px);
-  }
-
-  .pricing-card.popular {
-    border-color: var(--color-accent);
-    background-color: var(--color-card-bg);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
   .popular-badge {
     position: absolute;
     top: 0;
-    right: 1.5rem;
-    transform: translateY(-50%);
+    right: 0;
     background-color: var(--color-accent);
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0 0.5rem 0 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;
-  }
-
-  .price-container {
-    color: var(--color-text);
-  }
-
-  .text-accent {
-    color: var(--color-accent);
-  }
-
-  .text-text-muted {
-    color: var(--color-text-muted);
+    transform: translateY(-1px);
+    z-index: 1;
   }
 </style> 

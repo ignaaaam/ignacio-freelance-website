@@ -20,6 +20,7 @@
   --color-card-bg: #FFFFFF;
   --color-button-text: #FFFFFF;
   --color-button-text-secondary: #0F172A;
+  --color-button-bg-secondary: #F1F5F9;
 }
 
 /* Dark theme */
@@ -34,6 +35,7 @@
     --color-card-bg: rgba(30, 41, 59, 0.5);
     --color-button-text: #FFFFFF;
     --color-button-text-secondary: #F8FAFC;
+    --color-button-bg-secondary: #1E293B;
   }
 }
 
@@ -83,7 +85,7 @@ h3 {
 
 .btn-secondary {
   @apply font-heading font-medium px-6 py-3 rounded-lg border transition-all duration-300;
-  background-color: var(--color-card-bg);
+  background-color: var(--color-button-bg-secondary);
   border-color: var(--color-border);
   color: var(--color-button-text-secondary);
 }
