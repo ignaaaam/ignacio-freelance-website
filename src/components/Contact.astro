@@ -128,17 +128,6 @@
 </style>
 
 <script is:inline>
-  // We're using a CDN for toast to avoid import errors
-  const toastScript = document.createElement('script');
-  toastScript.src = 'https://cdn.jsdelivr.net/npm/@pheralb/toast@1.0.0/dist/toast.min.js';
-  toastScript.async = true;
-  document.head.appendChild(toastScript);
-
-  // Wait for toast to load
-  toastScript.onload = function() {
-    console.log('Toast library loaded');
-  };
-
   // Global function to handle form submission
   async function handleSubmit(event) {
     event.preventDefault();
@@ -153,7 +142,7 @@
     }
     
     submitButton.disabled = true;
-    submitButton.innerHTML = 'Enviando...';
+    submitButton.textContent = 'Enviando...';
     
     try {
       const formData = new FormData(form);
@@ -165,9 +154,12 @@
       
       // Validate required fields
       if (!data.name || !data.email || !data.message) {
-        window.toast.error({ text: 'Por favor, rellena todos los campos requeridos.' });
+        // Use the toast library loaded in the layout
+        window.toast?.error({
+          text: 'Por favor, rellena todos los campos requeridos.',
+        });
         submitButton.disabled = false;
-        submitButton.innerHTML = 'Enviar mensaje';
+        submitButton.textContent = 'Enviar mensaje';
         return;
       }
       
@@ -186,17 +178,25 @@
       console.log('Response data:', result);
       
       if (response.ok) {
-        window.toast.success({ text: result.message || 'Mensaje enviado correctamente. Me pondré en contacto contigo pronto.' });
+        // Success toast
+        window.toast?.success({
+          title: 'Éxito',
+          text: result.message || 'Mensaje enviado correctamente. Me pondré en contacto contigo pronto.',
+        });
         form.reset();
       } else {
         throw new Error(result.error || 'Error al enviar el mensaje');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      window.toast.error({ text: error.message || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.' });
+      // Error toast
+      window.toast?.error({
+        title: 'Error',
+        text: error.message || 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.',
+      });
     } finally {
       submitButton.disabled = false;
-      submitButton.innerHTML = 'Enviar mensaje';
+      submitButton.textContent = 'Enviar mensaje';
     }
   }
 </script> 
