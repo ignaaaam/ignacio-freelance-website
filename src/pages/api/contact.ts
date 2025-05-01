@@ -44,7 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
     console.log(`Attempting to send email for ${name} (${email})`);
 
     const { error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', 
+      from: 'ignacioamatweb - Nuevo Cliente <onboarding@resend.dev>',
       to: 'ignasiamat10@gmail.com',
       reply_to: email,
       subject: `Nuevo mensaje de contacto: ${type || 'General'}`,
