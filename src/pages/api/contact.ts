@@ -1,48 +1,95 @@
-import { Resend } from 'resend';
 import type { APIRoute } from 'astro';
+import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+// Get API key from environment variables
+const RESEND_API_KEY = import.meta.env.RESEND_API_KEY ;
+
+// Log API key status (not the actual key) for debugging
+console.log(`Resend API Key status: ${RESEND_API_KEY ? 'Provided' : 'Missing'}`);
+
+// Initialize Resend
+const resend = new Resend(RESEND_API_KEY);
+
+export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
+  const headers = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST',
+    'Access-Control-Allow-Headers': 'Content-Type',
+  };
+
+  // Handle CORS preflight
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { headers });
+  }
+
   try {
     const data = await request.json();
+    console.log('Received data:', data);
     const { name, email, type, message } = data;
 
-    const { data: emailData, error } = await resend.emails.send({
-      from: 'Ignacio Amat <contacto@ignacioarcel.com>',
-      to: ['tu@email.com'], // Replace with your email
-      subject: `Nueva consulta de ${name} - ${type}`,
+    // Validate required fields
+    if (!name || !email || !message) {
+      console.error('Missing required fields:', { name, email, message });
+      return new Response(
+        JSON.stringify({ 
+          error: 'Por favor, rellena todos los campos requeridos' 
+        }), 
+        { status: 400, headers }
+      );
+    }
+
+    console.log(`Attempting to send email for ${name} (${email})`);
+
+    const { error } = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>', 
+      to: 'ignacioamat@ignathedev.com',
+      reply_to: email,
+      subject: `Nuevo mensaje de contacto: ${type || 'General'}`,
       html: `
-        <h2>Nueva consulta desde la web</h2>
+        <h2>Nuevo mensaje de contacto</h2>
         <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Tipo de proyecto:</strong> ${type}</p>
+        <p><strong>Tipo de proyecto:</strong> ${type || 'No especificado'}</p>
         <p><strong>Mensaje:</strong></p>
-        <p>${message}</p>
+        <p>${message.replace(/\n/g, '<br>')}</p>
       `,
     });
 
     if (error) {
-      return new Response(JSON.stringify({ error: error.message }), {
-        status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      console.error('Failed to send email:', error);
+      return new Response(
+        JSON.stringify({ 
+          error: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.' 
+        }), 
+        { status: 400, headers }
+      );
     }
 
-    return new Response(JSON.stringify({ success: true, data: emailData }), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    console.log('Email sent successfully');
+    return new Response(
+      JSON.stringify({ 
+        message: 'Mensaje enviado correctamente' 
+      }), 
+      { status: 200, headers }
+    );
   } catch (error) {
-    return new Response(JSON.stringify({ error: 'Error interno del servidor' }), {
-      status: 500,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    console.error('Exception in contact API:', error);
+    // Log the full error details
+    if (error instanceof Error) {
+      console.error('Error details:', {
+        message: error.message,
+        stack: error.stack,
+        name: error.name
+      });
+    }
+    return new Response(
+      JSON.stringify({ 
+        error: 'Error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.' 
+      }), 
+      { status: 500, headers }
+    );
   }
-} 
+};

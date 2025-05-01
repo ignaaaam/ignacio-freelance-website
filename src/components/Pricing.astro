@@ -58,7 +58,7 @@ const pricingTiers = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {pricingTiers.map((tier, index) => (
         <div class="pricing-card-wrapper">
-          <div class={`card p-8 relative ${tier.popular ? 'border-2 border-accent' : ''}`}>
+          <div class={`card p-8 relative flex flex-col h-full ${tier.popular ? 'border-2 border-accent' : ''}`}>
             {tier.popular && (
               <div class="popular-badge">
                 <Translate key="pricing.popular" />
@@ -70,7 +70,7 @@ const pricingTiers = [
             <div class="text-4xl font-bold mb-6">
               {tier.price}€
             </div>
-            <ul class="space-y-4 mb-8">
+            <ul class="space-y-4 mb-8 flex-grow">
               {tier.features.map((feature, i) => (
                 <li class="flex items-center">
                   <svg class="w-5 h-5 text-accent mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,6 +101,7 @@ const pricingTiers = [
 
   .pricing-card-wrapper {
     position: relative;
+    height: 100%;
   }
 
   .popular-badge {

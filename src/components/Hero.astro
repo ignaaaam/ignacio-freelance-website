@@ -26,11 +26,15 @@ import Translate from './Translate.astro';
     </div>
 
     <div class="mt-16 relative">
-      <div class="aspect-video rounded-lg overflow-hidden bg-secondary" data-sr data-sr-delay="600" data-sr-duration="1200">
+      <div class="aspect-video rounded-lg overflow-hidden bg-secondary relative" data-sr data-sr-delay="600" data-sr-duration="1200">
+        <!-- Glow effect behind the image -->
+        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-transparent blur-2xl opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-tr from-accent/20 via-accent/10 to-transparent blur-2xl opacity-50"></div>
+        
         <img 
           src="/images/hero-website.png" 
           alt="Modern website design example" 
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover relative z-10"
         />
       </div>
     </div>
@@ -62,5 +66,18 @@ import Translate from './Translate.astro';
 
   h1 {
     font-weight: 800;
+  }
+
+  /* Glow effect for the hero image */
+  .aspect-video {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
+  }
+
+  [data-theme="light"] .aspect-video {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+  }
+
+  [data-theme="dark"] .aspect-video {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
   }
 </style> 

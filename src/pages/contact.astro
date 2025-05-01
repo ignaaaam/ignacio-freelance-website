@@ -1,0 +1,14 @@
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.tsx';
+import { useTranslations } from '../i18n/utils';
+
+const t = useTranslations(Astro.url.pathname);
+
+<Layout title={t('contact.title')} description={t('contact.description')}>
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">{t('contact.title')}</h1>
+    <div class="max-w-2xl mx-auto">
+      <ContactForm pathname={Astro.url.pathname} client:load />
+    </div>
+  </main>
+</Layout> 
