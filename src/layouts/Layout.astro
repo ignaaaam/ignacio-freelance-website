@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getAlternateUrls } from '../i18n/utils';
+import PlunkToaster from '../components/Toaster.tsx';
 
 interface Props {
 	title: string;
@@ -65,6 +66,7 @@ const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
 	</head>
 	<body>
 		<slot />
+		<PlunkToaster client:load />
 	</body>
 </html>
 
