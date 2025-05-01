@@ -1,11 +1,63 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Projects from '../components/Projects.astro';
+import Process from '../components/Process.astro';
+import Pricing from '../components/Pricing.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Ignacio Amat - Diseño y Desarrollo Web Profesional";
+const description = "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global. Landing pages, webs corporativas y tiendas online.";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title} description={description}>
+	<Header />
+	<main>
+		<Hero />
+		<Features />
+		<Projects />
+		<Process />
+		<Pricing />
+		<Testimonials />
+		<FAQ />
+		<Contact />
+	</main>
+	<footer class="py-8 border-t border-border">
+		<div class="container">
+			<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+				<div class="text-sm text-text-muted">
+					© {new Date().getFullYear()} Ignacio Arcel. Todos los derechos reservados.
+				</div>
+				<nav class="flex gap-6">
+					<a href="/privacidad" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Política de privacidad
+					</a>
+					<a href="/cookies" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Política de cookies
+					</a>
+					<a href="/legal" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Aviso legal
+					</a>
+				</nav>
+			</div>
+		</div>
+	</footer>
 </Layout>
+
+<style>
+	.border-border {
+		border-color: var(--color-border);
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>

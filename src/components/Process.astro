@@ -1,0 +1,147 @@
+---
+const steps = [
+  {
+    number: "1",
+    title: "Planeación",
+    description: "Conversamos sobre tu proyecto, objetivos y necesidades para definir el alcance y la mejor solución."
+  },
+  {
+    number: "2",
+    title: "Diseño y propuesta",
+    description: "Creo el diseño personalizado que mejor represente tu marca y cumpla con tus objetivos."
+  },
+  {
+    number: "3",
+    title: "Desarrollo y web",
+    description: "Implemento el diseño aprobado, programando cada funcionalidad y optimizando el rendimiento."
+  },
+  {
+    number: "4",
+    title: "Entrega y soporte",
+    description: "Te entrego tu web lista para usar, con guías y soporte para que puedas administrarla fácilmente."
+  }
+];
+---
+
+<section class="py-20" id="proceso">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">¿Cómo trabajamos juntos?</h2>
+      <p class="text-text-muted max-w-2xl mx-auto">Un proceso claro y sencillo para que consigas tu web sin complicaciones.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      {steps.map((step, index) => (
+        <div class="process-step">
+          <div class="card process-card">
+            <div class="step-number">
+              <span>{step.number}</span>
+              {index < steps.length - 1 && (
+                <div class="step-connector">
+                  <svg class="connector-line" viewBox="0 0 100 12" preserveAspectRatio="none">
+                    <path d="M0 6 L90 6" />
+                    <path class="arrow" d="M90 1 L98 6 L90 11" />
+                  </svg>
+                </div>
+              )}
+            </div>
+            <h3 class="text-xl font-bold mb-4">{step.title}</h3>
+            <p class="text-text-muted">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-step {
+    position: relative;
+  }
+
+  .process-card {
+    padding-top: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .step-number {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.25rem;
+    z-index: 10;
+  }
+
+  .step-connector {
+    position: absolute;
+    left: calc(100% - 1rem);
+    top: 50%;
+    width: calc(100% - 1rem);
+    height: 12px;
+    transform: translateY(-50%);
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .step-connector {
+      display: block;
+    }
+  }
+
+  .connector-line {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2;
+  }
+
+  .connector-line .arrow {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+
+  /* Add animation on hover */
+  .process-card {
+    transition: transform 0.3s ease;
+  }
+
+  .process-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .step-number::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    opacity: 0.2;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  .process-card:hover .step-number::after {
+    opacity: 0.3;
+  }
+</style> 

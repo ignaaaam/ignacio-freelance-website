@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Fonts */
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Light theme colors */
+  --color-primary: #FFFFFF;
+  --color-secondary: #F8FAFC;
+  --color-accent: #3B82F6;
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-card-bg: #FFFFFF;
+  --color-button-text: #FFFFFF;
+  --color-button-text-secondary: #0F172A;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #0F172A;
+    --color-secondary: #1E293B;
+    --color-accent: #3B82F6;
+    --color-text: #F8FAFC;
+    --color-text-muted: #94A3B8;
+    --color-border: #334155;
+    --color-card-bg: rgba(30, 41, 59, 0.5);
+    --color-button-text: #FFFFFF;
+    --color-button-text-secondary: #F8FAFC;
+  }
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-weight: 700;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply font-heading font-medium bg-accent px-6 py-3 rounded-lg transition-all duration-300;
+  color: var(--color-button-text);
+}
+
+.btn-primary:hover {
+  @apply opacity-90 -translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply font-heading font-medium px-6 py-3 rounded-lg border transition-all duration-300;
+  background-color: var(--color-card-bg);
+  border-color: var(--color-border);
+  color: var(--color-button-text-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+}
+
+/* Navigation styles */
+nav a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Form styles */
+label, input, textarea, select {
+  font-family: var(--font-body);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Card styles */
+.card {
+  @apply bg-card-bg border border-border rounded-2xl p-8 shadow-sm;
+}

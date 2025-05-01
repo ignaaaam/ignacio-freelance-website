@@ -1,0 +1,68 @@
+---
+const testimonials = [
+  {
+    text: "Trabajar con Ignacio fue una experiencia excelente. Su profesionalismo y atención al detalle hicieron que el proceso fuera fluido y el resultado final superó todas nuestras expectativas.",
+    author: "María Sánchez",
+    role: "Diseñadora de interiores"
+  },
+  {
+    text: "Ignacio transformó completamente mi presencia online. Su enfoque técnico y creativo resultó en una web moderna, rápida y que refleja perfectamente mi marca profesional.",
+    author: "Carlos Martínez",
+    role: "Consultor de marketing"
+  }
+];
+---
+
+<section class="py-20" id="testimonios">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold mb-4">Lo que dicen mis clientes</h2>
+      <p class="text-text-muted">Opiniones de personas que ya han confiado en mis servicios</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {testimonials.map(testimonial => (
+        <div class="card testimonial-card">
+          <svg class="quote-icon" width="45" height="36" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.4 36L0 24.6V0H19.8V24.6H6.4L19.8 36H13.4ZM38.6 36L25.2 24.6V0H45V24.6H31.6L45 36H38.6Z" fill="currentColor"/>
+          </svg>
+          
+          <blockquote class="mt-6 mb-8">
+            <p class="text-lg">{testimonial.text}</p>
+          </blockquote>
+          
+          <footer class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
+              <span class="text-xl font-bold">{testimonial.author[0]}</span>
+            </div>
+            <div>
+              <cite class="not-italic font-semibold">{testimonial.author}</cite>
+              <p class="text-text-muted text-sm">{testimonial.role}</p>
+            </div>
+          </footer>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-card {
+    position: relative;
+  }
+
+  .quote-icon {
+    color: var(--color-accent);
+    opacity: 0.2;
+  }
+
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+
+  blockquote p {
+    position: relative;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+</style> 
