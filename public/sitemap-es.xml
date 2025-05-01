@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ignacioamatweb.com/</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/" />
+  </url>
+  <url>
+    <loc>https://ignacioamatweb.com/servicios</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/servicios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/servicios" />
+  </url>
+  <url>
+    <loc>https://ignacioamatweb.com/portafolio</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/portfolio" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/portafolio" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/portafolio" />
+  </url>
+  <url>
+    <loc>https://ignacioamatweb.com/sobre-mi</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/sobre-mi" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/sobre-mi" />
+  </url>
+  <url>
+    <loc>https://ignacioamatweb.com/contacto</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/contacto" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/contacto" />
+  </url>
+</urlset> 
