@@ -3,9 +3,9 @@ import Translate from './Translate.astro';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 const navItems = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Precios', href: '#precios' },
-  { label: 'FAQ', href: '#faq' },
+  { key: 'nav.services', href: '#servicios' },
+  { key: 'nav.pricing', href: '#precios' },
+  { key: 'nav.faq', href: '#faq' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -20,7 +20,7 @@ const isEnglish = currentPath.startsWith('/en');
       <nav class="flex items-center gap-8">
         {navItems.map(item => (
           <a href={item.href} class="text-sm hover:text-accent transition-colors">
-            {item.label}
+            <Translate key={item.key} />
           </a>
         ))}
         
@@ -64,7 +64,7 @@ const isEnglish = currentPath.startsWith('/en');
       <nav class="flex flex-col gap-4">
         {navItems.map(item => (
           <a href={item.href} class="text-sm hover:text-accent transition-colors">
-            {item.label}
+            <Translate key={item.key} />
           </a>
         ))}
         <a href="#contacto" class="btn-primary inline-flex justify-center mt-2">

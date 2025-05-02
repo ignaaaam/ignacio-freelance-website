@@ -4,7 +4,9 @@
     "about": "Sobre Mí",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "pricing": "Precios",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "¿Necesitas una página web profesional para tu negocio o proyecto?",
@@ -31,6 +33,84 @@
       {
         "title": "Mantenimiento y Soporte Técnico",
         "description": "Actualizaciones regulares, copias de seguridad y soporte técnico continuo para mantener tu web siempre al día."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Tipos de proyectos",
+    "description": "Cada proyecto es único, pero aquí tienes algunos de los tipos de webs que puedo desarrollar para ti.",
+    "cta": "Contáctame",
+    "types": {
+      "personal": {
+        "title": "Página personal",
+        "description": "Perfecta para profesionales, portafolios, blogs, oradores y creadores de contenido.",
+        "features": [
+          "Diseño personalizado",
+          "Página de inicio + 3 páginas",
+          "Perfiles de redes sociales",
+          "Formulario de contacto",
+          "Blog o galería (opcional)"
+        ]
+      },
+      "business": {
+        "title": "Negocio local",
+        "description": "Ideal para empresas locales, tiendas, restaurantes, servicios y profesionales.",
+        "features": [
+          "Diseño personalizado",
+          "Hasta 5 páginas",
+          "Mapa de ubicación y contacto",
+          "Menú o catálogo de productos",
+          "Integración con redes sociales"
+        ]
+      },
+      "digital": {
+        "title": "Tienda online o servicios digitales",
+        "description": "Para negocios digitales, ecommerce, SaaS, membresías y cursos online.",
+        "features": [
+          "Diseño personalizado",
+          "Sistema de pagos online",
+          "Panel de administración",
+          "Área de miembros",
+          "Integración con APIs"
+        ]
+      }
+    }
+  },
+  "process": {
+    "title": "¿Cómo trabajamos juntos?",
+    "description": "Un proceso claro y sencillo para que consigas tu web sin complicaciones.",
+    "steps": [
+      {
+        "title": "Planeación",
+        "description": "Conversamos sobre tu proyecto, objetivos y necesidades para definir el alcance y la mejor solución."
+      },
+      {
+        "title": "Diseño y propuesta",
+        "description": "Creo el diseño personalizado que mejor represente tu marca y cumpla con tus objetivos."
+      },
+      {
+        "title": "Desarrollo y web",
+        "description": "Implemento el diseño aprobado, programando cada funcionalidad y optimizando el rendimiento."
+      },
+      {
+        "title": "Entrega y soporte",
+        "description": "Te entrego tu web lista para usar, con guías y soporte para que puedas administrarla fácilmente."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Lo que dicen mis clientes",
+    "description": "Opiniones de personas que ya han confiado en mis servicios",
+    "items": [
+      {
+        "text": "Trabajar con Ignacio fue una experiencia excelente. Su profesionalismo y atención al detalle hicieron que el proceso fuera fluido y el resultado final superó todas nuestras expectativas.",
+        "author": "María Sánchez",
+        "role": "Diseñadora de interiores"
+      },
+      {
+        "text": "Ignacio transformó completamente mi presencia online. Su enfoque técnico y creativo resultó en una web moderna, rápida y que refleja perfectamente mi marca profesional.",
+        "author": "Carlos Martínez",
+        "role": "Consultor de marketing"
       }
     ]
   },

@@ -4,7 +4,9 @@
     "about": "About",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Contact"
+    "contact": "Contact",
+    "pricing": "Pricing",
+    "faq": "FAQ"
   },
   "hero": {
     "title": "Do you need a professional website for your business or project?",
@@ -31,6 +33,84 @@
       {
         "title": "Maintenance and Technical Support",
         "description": "Regular updates, backups, and continuous technical support to keep your website always up to date."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Project Types",
+    "description": "Each project is unique, but here are some types of websites I can develop for you.",
+    "cta": "Contact me",
+    "types": {
+      "personal": {
+        "title": "Personal Website",
+        "description": "Perfect for professionals, portfolios, blogs, speakers, and content creators.",
+        "features": [
+          "Custom design",
+          "Home page + 3 pages",
+          "Social media profiles",
+          "Contact form",
+          "Blog or gallery (optional)"
+        ]
+      },
+      "business": {
+        "title": "Local Business",
+        "description": "Ideal for local businesses, shops, restaurants, services, and professionals.",
+        "features": [
+          "Custom design",
+          "Up to 5 pages",
+          "Location map and contact",
+          "Menu or product catalog",
+          "Social media integration"
+        ]
+      },
+      "digital": {
+        "title": "Online Store or Digital Services",
+        "description": "For digital businesses, e-commerce, SaaS, memberships, and online courses.",
+        "features": [
+          "Custom design",
+          "Online payment system",
+          "Admin panel",
+          "Members area",
+          "API integration"
+        ]
+      }
+    }
+  },
+  "process": {
+    "title": "How We Work Together",
+    "description": "A clear and simple process to help you get your website without complications.",
+    "steps": [
+      {
+        "title": "Planning",
+        "description": "We discuss your project, goals, and needs to define the scope and the best solution."
+      },
+      {
+        "title": "Design and Proposal",
+        "description": "I create a custom design that best represents your brand and meets your objectives."
+      },
+      {
+        "title": "Web Development",
+        "description": "I implement the approved design, programming each functionality and optimizing performance."
+      },
+      {
+        "title": "Delivery and Support",
+        "description": "I deliver your website ready to use, with guides and support so you can manage it easily."
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "What My Clients Say",
+    "description": "Opinions from people who have already trusted my services",
+    "items": [
+      {
+        "text": "Working with Ignacio was an excellent experience. His professionalism and attention to detail made the process smooth, and the final result exceeded all our expectations.",
+        "author": "María Sánchez",
+        "role": "Interior Designer"
+      },
+      {
+        "text": "Ignacio completely transformed my online presence. His technical and creative approach resulted in a modern, fast website that perfectly reflects my professional brand.",
+        "author": "Carlos Martínez",
+        "role": "Marketing Consultant"
       }
     ]
   },

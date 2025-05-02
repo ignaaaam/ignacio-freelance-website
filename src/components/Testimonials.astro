@@ -1,4 +1,6 @@
 ---
+import Translate from './Translate.astro';
+
 const testimonials = [
   {
     text: "Trabajar con Ignacio fue una experiencia excelente. Su profesionalismo y atención al detalle hicieron que el proceso fuera fluido y el resultado final superó todas nuestras expectativas.",
@@ -16,28 +18,28 @@ const testimonials = [
 <section class="py-20" id="testimonios">
   <div class="container">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">Lo que dicen mis clientes</h2>
-      <p class="text-text-muted">Opiniones de personas que ya han confiado en mis servicios</p>
+      <h2 class="text-3xl font-bold mb-4"><Translate key="testimonials.title" /></h2>
+      <p class="text-text-muted"><Translate key="testimonials.description" /></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {testimonials.map(testimonial => (
+      {testimonials.map((testimonial, index) => (
         <div class="card testimonial-card">
           <svg class="quote-icon" width="45" height="36" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M13.4 36L0 24.6V0H19.8V24.6H6.4L19.8 36H13.4ZM38.6 36L25.2 24.6V0H45V24.6H31.6L45 36H38.6Z" fill="currentColor"/>
           </svg>
           
-          <blockquote class="mt-6 mb-8">
-            <p class="text-lg">{testimonial.text}</p>
+          <blockquote class="mt-6 mb-8 min-h-[120px]">
+            <p class="text-lg"><Translate key={`testimonials.items.${index}.text`} /></p>
           </blockquote>
           
-          <footer class="flex items-center gap-4">
+          <footer class="flex items-center gap-4 mt-auto">
             <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
               <span class="text-xl font-bold">{testimonial.author[0]}</span>
             </div>
             <div>
-              <cite class="not-italic font-semibold">{testimonial.author}</cite>
-              <p class="text-text-muted text-sm">{testimonial.role}</p>
+              <cite class="not-italic font-semibold"><Translate key={`testimonials.items.${index}.author`} /></cite>
+              <p class="text-text-muted text-sm"><Translate key={`testimonials.items.${index}.role`} /></p>
             </div>
           </footer>
         </div>
@@ -49,6 +51,14 @@ const testimonials = [
 <style>
   .testimonial-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
   .quote-icon {

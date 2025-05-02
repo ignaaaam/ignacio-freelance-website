@@ -1,4 +1,6 @@
 ---
+import Translate from './Translate.astro';
+
 const steps = [
   {
     number: "1",
@@ -26,8 +28,8 @@ const steps = [
 <section class="py-20" id="proceso">
   <div class="container">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">¿Cómo trabajamos juntos?</h2>
-      <p class="text-text-muted max-w-2xl mx-auto">Un proceso claro y sencillo para que consigas tu web sin complicaciones.</p>
+      <h2 class="text-3xl font-bold mb-4"><Translate key="process.title" /></h2>
+      <p class="text-text-muted max-w-2xl mx-auto"><Translate key="process.description" /></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -45,8 +47,10 @@ const steps = [
                 </div>
               )}
             </div>
-            <h3 class="text-xl font-bold mb-4">{step.title}</h3>
-            <p class="text-text-muted">{step.description}</p>
+            <div class="card-content">
+              <h3 class="text-xl font-bold mb-4 min-h-[56px]"><Translate key={`process.steps.${index}.title`} /></h3>
+              <p class="text-text-muted min-h-[100px]"><Translate key={`process.steps.${index}.description`} /></p>
+            </div>
           </div>
         </div>
       ))}
@@ -62,6 +66,13 @@ const steps = [
   .process-card {
     padding-top: 3rem;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card-content {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
   }
@@ -122,12 +133,9 @@ const steps = [
   }
 
   /* Add animation on hover */
-  .process-card {
-    transition: transform 0.3s ease;
-  }
-
   .process-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
   .step-number::after {

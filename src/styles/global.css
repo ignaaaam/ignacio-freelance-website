@@ -39,6 +39,34 @@
   }
 }
 
+/* For explicit dark theme selection with data attribute */
+[data-theme="dark"] {
+  --color-primary: #0F172A;
+  --color-secondary: #1E293B;
+  --color-accent: #3B82F6;
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-border: #334155;
+  --color-card-bg: rgba(30, 41, 59, 0.5);
+  --color-button-text: #FFFFFF;
+  --color-button-text-secondary: #F8FAFC;
+  --color-button-bg-secondary: #1E293B;
+}
+
+/* For explicit light theme selection with data attribute */
+[data-theme="light"] {
+  --color-primary: #FFFFFF;
+  --color-secondary: #F8FAFC;
+  --color-accent: #3B82F6;
+  --color-text: #0F172A;
+  --color-text-muted: #64748B;
+  --color-border: #E2E8F0;
+  --color-card-bg: #FFFFFF;
+  --color-button-text: #FFFFFF;
+  --color-button-text-secondary: #0F172A;
+  --color-button-bg-secondary: #F1F5F9;
+}
+
 /* Base styles */
 html {
   font-family: var(--font-body);
@@ -81,6 +109,7 @@ h3 {
 
 .btn-primary:hover {
   @apply opacity-90 -translate-y-0.5;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
 }
 
 .btn-secondary {
@@ -91,7 +120,11 @@ h3 {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-secondary);
+  @apply -translate-y-0.5;
+  background-color: var(--color-button-bg-secondary);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
 
 /* Navigation styles */

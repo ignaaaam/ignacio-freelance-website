@@ -1,4 +1,6 @@
 ---
+import Translate from './Translate.astro';
+
 const projectTypes = [
   {
     icon: "personal",
@@ -42,8 +44,8 @@ const projectTypes = [
 <section class="py-20 bg-secondary" id="proyectos">
   <div class="container">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">Tipos de proyectos</h2>
-      <p class="text-text-muted max-w-2xl mx-auto">Cada proyecto es único, pero aquí tienes algunos de los tipos de webs que puedo desarrollar para ti.</p>
+      <h2 class="text-3xl font-bold mb-4"><Translate key="projects.title" /></h2>
+      <p class="text-text-muted max-w-2xl mx-auto"><Translate key="projects.description" /></p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -66,20 +68,22 @@ const projectTypes = [
               </svg>
             )}
           </div>
-          <h3 class="text-2xl font-bold mb-4">{project.title}</h3>
-          <p class="text-text-muted mb-8">{project.description}</p>
-          <ul class="space-y-3 mb-8 flex-grow">
-            {project.features.map(feature => (
-              <li class="flex items-center gap-2">
-                <svg class="h-5 w-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>{feature}</span>
-              </li>
-            ))}
-          </ul>
+          <div class="card-content">
+            <h3 class="text-2xl font-bold mb-4 min-h-[60px]"><Translate key={`projects.types.${project.icon}.title`} /></h3>
+            <p class="text-text-muted mb-8 min-h-[80px]"><Translate key={`projects.types.${project.icon}.description`} /></p>
+            <ul class="space-y-3 mb-8 min-h-[200px]">
+              {project.features.map((feature, index) => (
+                <li class="flex items-center gap-2">
+                  <svg class="h-5 w-5 text-accent flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span><Translate key={`projects.types.${project.icon}.features.${index}`} /></span>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div class="mt-auto">
-            <a href="#contacto" class="btn-secondary w-full text-center">Ver ejemplos</a>
+            <a href="#contacto" class="btn-secondary w-full text-center"><Translate key="projects.cta" /></a>
           </div>
         </div>
       ))}
@@ -95,6 +99,12 @@ const projectTypes = [
     background-color: var(--color-card-bg);
   }
 
+  .card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .project-icon {
     color: var(--color-accent);
   }
@@ -105,5 +115,15 @@ const projectTypes = [
 
   .text-text-muted {
     color: var(--color-text-muted);
+  }
+  
+  /* Card hover effect */
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   }
 </style> 
