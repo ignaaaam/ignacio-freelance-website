@@ -2,6 +2,8 @@
 import '../styles/global.css';
 import { getAlternateUrls } from '../i18n/utils';
 import PlunkToaster from '../components/Toaster.tsx';
+import Analytics from '@vercel/analytics/astro'
+
 
 interface Props {
 	title: string;
@@ -121,6 +123,7 @@ const jsonLd = JSON.stringify(structuredData);
 	<body>
 		<slot />
 		<PlunkToaster client:load />
+		<Analytics />
 	</body>
 </html>
 
