@@ -70,6 +70,7 @@ const jsonLd = JSON.stringify(structuredData);
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		
 		<!-- Primary Meta Tags -->
@@ -131,6 +132,11 @@ const jsonLd = JSON.stringify(structuredData);
 	/* Theme transitions */
 	:root {
 		transition: all 0.3s ease;
+	}
+
+	/* Smooth scrolling */
+	html {
+		scroll-behavior: smooth;
 	}
 
 	/* Light theme overrides */
@@ -241,8 +247,36 @@ const jsonLd = JSON.stringify(structuredData);
 		}
 	});
 
-	// Initialize ScrollReveal
+	// Handle smooth scrolling for anchor links
 	document.addEventListener('DOMContentLoaded', () => {
+		// Get all anchor links that point to ID sections
+		const anchorLinks = document.querySelectorAll('a[href^="#"]');
+		
+		anchorLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				const targetId = link.getAttribute('href');
+				
+				// Only handle if the href is a valid ID selector
+				if (targetId && targetId !== '#') {
+					const targetElement = document.querySelector(targetId);
+					
+					if (targetElement) {
+						e.preventDefault();
+						
+						// Scroll to the element
+						targetElement.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+						
+						// Update URL without page jump
+						history.pushState(null, '', targetId);
+					}
+				}
+			});
+		});
+		
+		// Initialize ScrollReveal
 		const script = document.createElement('script');
 		script.src = 'https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js';
 		script.onload = () => {
