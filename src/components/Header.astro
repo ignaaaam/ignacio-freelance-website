@@ -1,5 +1,6 @@
 ---
 import Translate from './Translate.astro';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 
 const navItems = [
   { label: 'Servicios', href: '#servicios' },
@@ -43,18 +44,34 @@ const isEnglish = currentPath.startsWith('/en');
         </div>
       </nav>
 
-      <div class="language-switcher">
-        <a href="/" class={!isEnglish ? 'active' : ''}>ES</a>
-        <span class="separator">|</span>
-        <a href="/en" class={isEnglish ? 'active' : ''}>EN</a>
-      </div>
+      <LanguageSwitcher class="bg-secondary/40 p-2 rounded-lg" />
     </div>
 
-    <button class="md:hidden" aria-label="Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+    <div class="flex items-center gap-4 md:hidden">
+      <LanguageSwitcher class="bg-secondary/40 p-2 rounded-lg" />
+      
+      <button id="mobile-menu-toggle" class="p-2" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden">
+    <div class="container pt-4 pb-6 border-t border-secondary/20 mt-4">
+      <nav class="flex flex-col gap-4">
+        {navItems.map(item => (
+          <a href={item.href} class="text-sm hover:text-accent transition-colors">
+            {item.label}
+          </a>
+        ))}
+        <a href="#contacto" class="btn-primary inline-flex justify-center mt-2">
+          <Translate key="contact.title" />
+        </a>
+      </nav>
+    </div>
   </div>
 </header>
 
@@ -70,46 +87,14 @@ const isEnglish = currentPath.startsWith('/en');
   .bg-primary\/80 {
     background-color: rgba(var(--color-primary), 0.8);
   }
-
-  .language-switcher {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    background: var(--color-button-bg-secondary);
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    backdrop-filter: blur(10px);
-  }
-
-  .language-switcher a {
-    color: var(--color-button-text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    transition: all 0.2s ease;
-  }
-
-  .language-switcher a:hover {
-    background: var(--color-secondary);
-  }
-
-  .language-switcher a.active {
-    background: var(--color-accent);
-    color: var(--color-button-text);
-  }
-
-  .language-switcher .separator {
-    color: var(--color-text-muted);
-  }
 </style>
 
 <script>
   // Mobile menu functionality
-  const menuButton = document.querySelector('button[aria-label="Menu"]');
-  const nav = document.querySelector('nav');
+  const menuButton = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
 
   menuButton?.addEventListener('click', () => {
-    nav?.classList.toggle('hidden');
+    mobileMenu?.classList.toggle('hidden');
   });
 </script> 
