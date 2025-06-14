@@ -1,4 +1,4 @@
-import type { APIRoute } from 'astro';
+import type { APIRoute } from '../../types/api';
 import { Resend } from 'resend';
 
 // Get API key from environment variables

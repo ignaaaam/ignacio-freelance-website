@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import type { APIRoute } from 'astro';
+import type { APIRoute } from '../../types/api';
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
@@ -27,7 +27,7 @@ export const POST: APIRoute = async ({ request }) => {
     const { name, email, website, lang = 'es' } = await request.json();
     const template = emailTemplates[lang as keyof typeof emailTemplates] || emailTemplates.es;
 
-    const result = await resend.emails.send({
+    await resend.emails.send({
       from: 'Lead Magnet <leads@ignacioamatweb.com>',
       to: ['ignasiamat10@gmail.com'], // Replace with your email
       subject: template.subject,

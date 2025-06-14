@@ -1,42 +1,51 @@
 ---
 import { Icon } from "astro-icon/components";
 
-interface Props {
-  lang?: "es" | "en";
+interface LeadMagnetContent {
+  title: string;
+  subtitle: string;
+  description: string;
+  benefits: string[];
+  cta: string;
+  privacy: string;
 }
+
+type Lang = "es" | "en";
 
 const { lang = "es" } = Astro.props;
 
-const content = {
+const contentMap: Record<Lang, LeadMagnetContent> = {
   es: {
     title: "¿Quieres mejorar tu presencia online?",
-    subtitle: "Obtén un análisis gratuito de tu sitio web",
+    subtitle:
+      "Descarga nuestra guía gratuita y aprende cómo crear un sitio web profesional",
     description:
-      "Recibe un informe detallado con recomendaciones para mejorar el rendimiento, SEO y conversión de tu sitio web.",
+      "Aprende los pasos clave para crear un sitio web que convierta visitantes en clientes",
     benefits: [
-      "Análisis de rendimiento y velocidad",
-      "Revisión de SEO y posicionamiento",
-      "Sugerencias de mejora de conversión",
-      "Recomendaciones de diseño y UX",
+      "Aprende los elementos clave de un sitio web efectivo",
+      "Descubre cómo optimizar tu sitio para conversiones",
+      "Obtén consejos prácticos para mejorar tu presencia online",
     ],
-    cta: "Obtener análisis gratuito",
+    cta: "¡Descarga la Guía Gratuita!",
     privacy: "Respetamos tu privacidad. No compartiremos tu información.",
   },
   en: {
     title: "Want to improve your online presence?",
-    subtitle: "Get a free website audit",
+    subtitle:
+      "Download our free guide and learn how to create a professional website",
     description:
-      "Receive a detailed report with recommendations to improve your website's performance, SEO, and conversion rate.",
+      "Learn the key steps to create a website that converts visitors into clients",
     benefits: [
-      "Performance and speed analysis",
-      "SEO and ranking review",
-      "Conversion improvement suggestions",
-      "Design and UX recommendations",
+      "Learn the key elements of an effective website",
+      "Discover how to optimize your site for conversions",
+      "Get practical tips to improve your online presence",
     ],
-    cta: "Get free audit",
+    cta: "Download Free Guide!",
     privacy: "We respect your privacy. We won't share your information.",
   },
-}[lang];
+};
+
+const content = contentMap[lang as Lang];
 ---
 
 <section class="py-16 bg-gradient-to-b from-background to-background/80">
@@ -49,9 +58,12 @@ const content = {
 
         <ul class="space-y-3">
           {
-            content.benefits.map((benefit) => (
-              <li class="flex items-center gap-2">
-                <Icon name="mdi:check-circle" class="text-accent w-5 h-5" />
+            content.benefits.map((benefit: string) => (
+              <li class="flex items-start space-x-3">
+                <Icon
+                  name="mdi:check-circle"
+                  class="w-6 h-6 text-green-500 flex-shrink-0"
+                />
                 <span>{benefit}</span>
               </li>
             ))

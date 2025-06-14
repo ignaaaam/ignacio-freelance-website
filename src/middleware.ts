@@ -1,5 +1,5 @@
 import { defineMiddleware } from 'astro:middleware';
-import { detectPreferredLanguage, shouldRedirect } from './i18n/utils';
+import { shouldRedirect } from './i18n/utils';
 import type { Locale } from './i18n/utils';
 
 // Extend Astro's Locals type to include 'locale'
@@ -7,11 +7,6 @@ declare module "astro" {
   interface Locals {
     locale?: string;
   }
-}
-
-// Add type to locals to include 'locale'
-interface LocalsWithLocale {
-  locale?: string;
 }
 
 export const onRequest = defineMiddleware(async ({ request, locals, url }, next) => {
