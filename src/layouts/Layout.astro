@@ -1,305 +1,423 @@
 ---
-import '../styles/global.css';
-import { getAlternateUrls } from '../i18n/utils';
-import PlunkToaster from '../components/Toaster.tsx';
-import Analytics from '@vercel/analytics/astro'
-
+import "../styles/global.css";
+import { getAlternateUrls } from "../i18n/utils";
+import PlunkToaster from "../components/Toaster.tsx";
+import Analytics from "@vercel/analytics/astro";
+import LiveChat from "../components/LiveChat.astro";
 
 interface Props {
-	title: string;
-	description?: string;
-	lang?: 'es' | 'en';
-	canonicalUrl?: string;
-	image?: string;
-	author?: string;
-	type?: 'website' | 'article';
-	publishedDate?: string;
-	keywords?: string[];
+  title: string;
+  description?: string;
+  lang?: "es" | "en";
+  canonicalUrl?: string;
+  image?: string;
+  author?: string;
+  type?: "website" | "article";
+  publishedDate?: string;
+  keywords?: string[];
 }
 
-const { 
-	title,
-	lang = 'es', 
-	description = lang === 'es' 
-		? "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global."
-		: "Modern, fast, and optimized web design and development for global impact.",
-	canonicalUrl,
-	image = "https://ignacioamatweb.com/images/og-image.jpg",
-	author = "Ignacio Amat",
-	type = "website",
-	publishedDate,
-	keywords = lang === 'es'
-		? ["desarrollo web", "diseño web", "freelance", "página web", "Ignacio Amat", "SEO", "Barcelona", "España", "sitio web profesional", "desarrollo frontend"]
-		: ["web development", "web design", "freelance", "website", "Ignacio Amat", "SEO", "Barcelona", "Spain", "professional website", "frontend development"]
+const {
+  title,
+  lang = "es",
+  description = lang === "es"
+    ? "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global."
+    : "Modern, fast, and optimized web design and development for global impact.",
+  canonicalUrl,
+  image = "https://ignacioamatweb.com/images/og-image.jpg",
+  author = "Ignacio Amat",
+  type = "website",
+  publishedDate,
+  keywords = lang === "es"
+    ? [
+        "desarrollo web",
+        "diseño web",
+        "freelance",
+        "página web",
+        "Ignacio Amat",
+        "SEO",
+        "Barcelona",
+        "España",
+        "sitio web profesional",
+        "desarrollo frontend",
+        "desarrollador web freelance",
+        "creación de páginas web",
+        "diseño web responsive",
+        "optimización SEO",
+        "tiendas online",
+        "ecommerce",
+        "landing pages",
+        "webs corporativas",
+      ]
+    : [
+        "web development",
+        "web design",
+        "freelance",
+        "website",
+        "Ignacio Amat",
+        "SEO",
+        "Barcelona",
+        "Spain",
+        "professional website",
+        "frontend development",
+        "freelance web developer",
+        "website creation",
+        "responsive web design",
+        "SEO optimization",
+        "online stores",
+        "ecommerce",
+        "landing pages",
+        "corporate websites",
+      ],
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const alternateUrls = getAlternateUrls(currentPath);
-const baseUrl = 'https://ignacioamatweb.com';
+const baseUrl = "https://ignacioamatweb.com";
 const fullUrl = `${baseUrl}${currentPath}`;
 const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
 
-// Build structured data for different page types
+// Enhanced structured data with local business information
 const structuredData: any = {
-	"@context": "https://schema.org",
-	"@type": type === 'website' ? 'WebSite' : 'Article',
-	"url": fullUrl,
-	"name": title,
-	"description": description,
-	"author": {
-		"@type": "Person",
-		"name": author,
-		"url": baseUrl
-	},
-	"inLanguage": lang,
-	"image": image
+  "@context": "https://schema.org",
+  "@type": type === "website" ? "WebSite" : "Article",
+  url: fullUrl,
+  name: title,
+  description: description,
+  author: {
+    "@type": "Person",
+    name: author,
+    url: baseUrl,
+    jobTitle: "Freelance Web Developer",
+    worksFor: {
+      "@type": "Organization",
+      name: "Ignacio Amat Web Development",
+      url: baseUrl,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Barcelona",
+        addressRegion: "Catalonia",
+        addressCountry: "ES",
+      },
+      areaServed: {
+        "@type": "GeoCircle",
+        geoMidpoint: {
+          "@type": "GeoCoordinates",
+          latitude: "41.3851",
+          longitude: "2.1734",
+        },
+        geoRadius: "50000",
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/ignacioamat/",
+        "https://github.com/ignacioamat",
+      ],
+    },
+  },
+  inLanguage: lang,
+  image: image,
+  potentialAction: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: ["Spanish", "English"],
+    areaServed: "ES",
+    contactOption: "TollFree",
+    email: "contact@ignacioamatweb.com",
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    areaServed: {
+      "@type": "Country",
+      name: "Spain",
+    },
+  },
 };
 
 // Add publishedDate for articles
-if (type === 'article' && publishedDate) {
-	structuredData.datePublished = publishedDate;
+if (type === "article" && publishedDate) {
+  structuredData.datePublished = publishedDate;
 }
 
 // JSON-LD structured data
 const jsonLd = JSON.stringify(structuredData);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang} data-theme="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- Primary Meta Tags -->
-		<title>{title}</title>
-		<meta name="title" content={title} />
-		<meta name="description" content={description} />
-		<meta name="author" content={author} />
-		<meta name="keywords" content={keywords.join(', ')} />
-		<link rel="canonical" href={canonical} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content={type} />
-		<meta property="og:url" content={fullUrl} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={image} />
-		<meta property="og:image:alt" content={title} />
-		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
-		<meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
-		{publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="language" content={lang} />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
 
-		<!-- Twitter Card data -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@ignacioamatweb" />
-		<meta name="twitter:creator" content="@ignacioamatweb" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={image} />
-		<meta name="twitter:image:alt" content={title} />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"} />
+    <meta
+      property="og:site_name"
+      content="Ignacio Amat - Freelance Web Developer"
+    />
+    {
+      publishedDate && (
+        <meta property="article:published_time" content={publishedDate} />
+      )
+    }
 
-		<!-- Language and SEO meta tags -->
-		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
-		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
-		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ignacioamatweb" />
+    <meta name="twitter:creator" content="@ignacioamatweb" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={title} />
 
-		<!-- Mobile specific -->
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="format-detection" content="telephone=no" />
+    <!-- Language and SEO meta tags -->
+    <link
+      rel="alternate"
+      hreflang="es"
+      href={`${baseUrl}${alternateUrls.es}`}
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={`${baseUrl}${alternateUrls.en}`}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={`${baseUrl}${alternateUrls.es}`}
+    />
 
-		<!-- Theme color -->
-		<meta name="theme-color" content="#0F172A" />
-		
-		<!-- Preconnect to required origins -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
-		<!-- Structured Data -->
-		<script type="application/ld+json" set:html={jsonLd} />
-	</head>
-	<body>
-		<slot />
-		<PlunkToaster client:load />
-		<Analytics />
-	</body>
+    <!-- Mobile specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0F172A" />
+
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={jsonLd} />
+  </head>
+  <body>
+    <slot />
+    <PlunkToaster client:load />
+    <Analytics />
+    <LiveChat lang={lang} />
+  </body>
 </html>
 
 <style>
-	/* Theme transitions */
-	:root {
-		transition: all 0.3s ease;
-	}
+  /* Theme transitions */
+  :root {
+    transition: all 0.3s ease;
+  }
 
-	/* Smooth scrolling */
-	html {
-		scroll-behavior: smooth;
-	}
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 
-	/* Light theme overrides */
-	[data-theme="light"] {
-		--color-primary: #ffffff;
-		--color-secondary: #f1f5f9;
-		--color-text: #0f172a;
-		--color-text-muted: #64748b;
-		--color-border: #e2e8f0;
-		--color-card-bg: rgba(241, 245, 249, 0.5);
-	}
+  /* Light theme overrides */
+  [data-theme="light"] {
+    --color-primary: #ffffff;
+    --color-secondary: #f1f5f9;
+    --color-text: #0f172a;
+    --color-text-muted: #64748b;
+    --color-border: #e2e8f0;
+    --color-card-bg: rgba(241, 245, 249, 0.5);
+  }
 
-	/* Language switcher styles */
-	.language-switcher {
-		position: fixed;
-		top: 1rem;
-		right: 1rem;
-		z-index: 1000;
-		background: var(--color-card-bg);
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		backdrop-filter: blur(10px);
-		display: flex;
-		gap: 0.5rem;
-		align-items: center;
-	}
+  /* Language switcher styles */
+  .language-switcher {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    background: var(--color-card-bg);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
 
-	.language-switcher a {
-		color: var(--color-text);
-		text-decoration: none;
-		font-weight: 500;
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.25rem;
-		transition: all 0.2s ease;
-	}
+  .language-switcher a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+  }
 
-	.language-switcher a:hover {
-		background: var(--color-secondary);
-	}
+  .language-switcher a:hover {
+    background: var(--color-secondary);
+  }
 
-	.language-switcher a.active {
-		background: var(--color-accent);
-		color: white;
-	}
+  .language-switcher a.active {
+    background: var(--color-accent);
+    color: white;
+  }
 
-	.language-switcher .separator {
-		color: var(--color-text-muted);
-	}
+  .language-switcher .separator {
+    color: var(--color-text-muted);
+  }
 
-	/* Glow effects */
-	.glow {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(100px);
-		opacity: 0.15;
-		pointer-events: none;
-	}
+  /* Glow effects */
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
 
-	.glow-1 {
-		top: 0;
-		left: 15%;
-		width: 300px;
-		height: 300px;
-		background: var(--color-accent);
-	}
+  .glow-1 {
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    background: var(--color-accent);
+  }
 
-	.glow-2 {
-		top: 20%;
-		right: 10%;
-		width: 400px;
-		height: 400px;
-		background: #3b82f6;
-	}
+  .glow-2 {
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: #3b82f6;
+  }
 
-	[data-theme="light"] .glow {
-		opacity: 0.1;
-	}
+  [data-theme="light"] .glow {
+    opacity: 0.1;
+  }
 </style>
 
 <script>
-	// Theme toggle functionality
-	const themeToggle = document.getElementById('theme-toggle');
-	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-	
-	function setTheme(isDark: boolean) {
-		document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-		localStorage.setItem('theme', isDark ? 'dark' : 'light');
-	}
+  // Theme toggle functionality
+  const themeToggle = document.getElementById("theme-toggle");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-	// Initialize theme
-	const savedTheme = localStorage.getItem('theme');
-	if (savedTheme) {
-		setTheme(savedTheme === 'dark');
-	} else {
-		setTheme(prefersDark.matches);
-	}
+  function setTheme(isDark: boolean) {
+    document.documentElement.setAttribute(
+      "data-theme",
+      isDark ? "dark" : "light"
+    );
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }
 
-	// Listen for theme toggle clicks
-	themeToggle?.addEventListener('click', () => {
-		const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-		setTheme(!isDark);
-	});
+  // Initialize theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    setTheme(savedTheme === "dark");
+  } else {
+    setTheme(prefersDark.matches);
+  }
 
-	// Listen for system theme changes
-	prefersDark.addEventListener('change', (e) => {
-		if (!localStorage.getItem('theme')) {
-			setTheme(e.matches);
-		}
-	});
+  // Listen for theme toggle clicks
+  themeToggle?.addEventListener("click", () => {
+    const isDark =
+      document.documentElement.getAttribute("data-theme") === "dark";
+    setTheme(!isDark);
+  });
 
-	// Handle smooth scrolling for anchor links
-	document.addEventListener('DOMContentLoaded', () => {
-		// Get all anchor links that point to ID sections
-		const anchorLinks = document.querySelectorAll('a[href^="#"]');
-		
-		anchorLinks.forEach(link => {
-			link.addEventListener('click', (e) => {
-				const targetId = link.getAttribute('href');
-				
-				// Only handle if the href is a valid ID selector
-				if (targetId && targetId !== '#') {
-					const targetElement = document.querySelector(targetId);
-					
-					if (targetElement) {
-						e.preventDefault();
-						
-						// Scroll to the element
-						targetElement.scrollIntoView({
-							behavior: 'smooth',
-							block: 'start'
-						});
-						
-						// Update URL without page jump
-						history.pushState(null, '', targetId);
-					}
-				}
-			});
-		});
-		
-		// Initialize ScrollReveal
-		const script = document.createElement('script');
-		script.src = 'https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js';
-		script.onload = () => {
-			// @ts-ignore
-			const sr = window.ScrollReveal({
-				origin: 'bottom',
-				distance: '60px',
-				duration: 1000,
-				delay: 200,
-				reset: false,
-				easing: 'cubic-bezier(0.5, 0, 0, 1)',
-			});
+  // Listen for system theme changes
+  prefersDark.addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      setTheme(e.matches);
+    }
+  });
 
-			// Reveal elements with data-sr attribute
-			document.querySelectorAll('[data-sr]').forEach((el) => {
-				sr.reveal(el, {
-					delay: el.getAttribute('data-sr-delay') ? parseInt(el.getAttribute('data-sr-delay')!) : 200,
-					origin: el.getAttribute('data-sr-origin') || 'bottom',
-					distance: el.getAttribute('data-sr-distance') || '60px',
-					duration: el.getAttribute('data-sr-duration') ? parseInt(el.getAttribute('data-sr-duration')!) : 1000,
-				});
-			});
-		};
-		document.head.appendChild(script);
-	});
+  // Handle smooth scrolling for anchor links
+  document.addEventListener("DOMContentLoaded", () => {
+    // Get all anchor links that point to ID sections
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+
+    anchorLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        const targetId = link.getAttribute("href");
+
+        // Only handle if the href is a valid ID selector
+        if (targetId && targetId !== "#") {
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            e.preventDefault();
+
+            // Scroll to the element
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+
+            // Update URL without page jump
+            history.pushState(null, "", targetId);
+          }
+        }
+      });
+    });
+
+    // Initialize ScrollReveal
+    const script = document.createElement("script");
+    script.src =
+      "https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js";
+    script.onload = () => {
+      // @ts-ignore
+      const sr = window.ScrollReveal({
+        origin: "bottom",
+        distance: "60px",
+        duration: 1000,
+        delay: 200,
+        reset: false,
+        easing: "cubic-bezier(0.5, 0, 0, 1)",
+      });
+
+      // Reveal elements with data-sr attribute
+      document.querySelectorAll("[data-sr]").forEach((el) => {
+        sr.reveal(el, {
+          delay: el.getAttribute("data-sr-delay")
+            ? parseInt(el.getAttribute("data-sr-delay")!)
+            : 200,
+          origin: el.getAttribute("data-sr-origin") || "bottom",
+          distance: el.getAttribute("data-sr-distance") || "60px",
+          duration: el.getAttribute("data-sr-duration")
+            ? parseInt(el.getAttribute("data-sr-duration")!)
+            : 1000,
+        });
+      });
+    };
+    document.head.appendChild(script);
+  });
 </script>
