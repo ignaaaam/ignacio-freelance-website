@@ -1,4 +1,3 @@
-import type { APIRoute } from 'astro';
 import en from './locales/en.json';
 import es from './locales/es.json';
 
