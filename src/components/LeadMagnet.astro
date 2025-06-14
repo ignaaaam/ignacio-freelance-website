@@ -1,0 +1,159 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang = "es" } = Astro.props;
+
+const content = {
+  es: {
+    title: "¿Quieres mejorar tu presencia online?",
+    subtitle: "Obtén un análisis gratuito de tu sitio web",
+    description:
+      "Recibe un informe detallado con recomendaciones para mejorar el rendimiento, SEO y conversión de tu sitio web.",
+    benefits: [
+      "Análisis de rendimiento y velocidad",
+      "Revisión de SEO y posicionamiento",
+      "Sugerencias de mejora de conversión",
+      "Recomendaciones de diseño y UX",
+    ],
+    cta: "Obtener análisis gratuito",
+    privacy: "Respetamos tu privacidad. No compartiremos tu información.",
+  },
+  en: {
+    title: "Want to improve your online presence?",
+    subtitle: "Get a free website audit",
+    description:
+      "Receive a detailed report with recommendations to improve your website's performance, SEO, and conversion rate.",
+    benefits: [
+      "Performance and speed analysis",
+      "SEO and ranking review",
+      "Conversion improvement suggestions",
+      "Design and UX recommendations",
+    ],
+    cta: "Get free audit",
+    privacy: "We respect your privacy. We won't share your information.",
+  },
+}[lang];
+---
+
+<section class="py-16 bg-gradient-to-b from-background to-background/80">
+  <div class="container">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6">
+        <h2 class="text-3xl md:text-4xl font-bold">{content.title}</h2>
+        <h3 class="text-xl text-accent">{content.subtitle}</h3>
+        <p class="text-text-muted">{content.description}</p>
+
+        <ul class="space-y-3">
+          {
+            content.benefits.map((benefit) => (
+              <li class="flex items-center gap-2">
+                <Icon name="mdi:check-circle" class="text-accent w-5 h-5" />
+                <span>{benefit}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <form class="space-y-4" id="leadMagnetForm">
+          <div class="grid md:grid-cols-2 gap-4">
+            <input
+              type="text"
+              name="name"
+              placeholder={lang === "es" ? "Tu nombre" : "Your name"}
+              class="w-full px-4 py-2 rounded-lg bg-card-bg border border-border focus:border-accent focus:outline-none"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder={lang === "es" ? "Tu email" : "Your email"}
+              class="w-full px-4 py-2 rounded-lg bg-card-bg border border-border focus:border-accent focus:outline-none"
+              required
+            />
+          </div>
+          <input
+            type="url"
+            name="website"
+            placeholder={lang === "es"
+              ? "URL de tu sitio web"
+              : "Your website URL"}
+            class="w-full px-4 py-2 rounded-lg bg-card-bg border border-border focus:border-accent focus:outline-none"
+            required
+          />
+          <button
+            type="submit"
+            class="w-full px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors"
+          >
+            {content.cta}
+          </button>
+          <p class="text-sm text-text-muted text-center">{content.privacy}</p>
+        </form>
+      </div>
+
+      <div class="relative">
+        <div class="aspect-square rounded-2xl overflow-hidden bg-card-bg p-8">
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-2xl"
+          >
+          </div>
+          <div class="relative z-10 h-full flex items-center justify-center">
+            <Icon name="mdi:chart-line" class="w-32 h-32 text-accent" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("leadMagnetForm");
+  const lang = document.documentElement.lang || "es";
+
+  const messages = {
+    es: {
+      success: "¡Gracias! Te enviaremos el análisis pronto.",
+      error: "Hubo un error. Por favor, inténtalo de nuevo.",
+    },
+    en: {
+      success: "Thank you! We'll send you the analysis soon.",
+      error: "There was an error. Please try again.",
+    },
+  } as const;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const target = e.target;
+    if (!(target instanceof HTMLFormElement)) return;
+
+    const formData = new FormData(target);
+    const name = formData.get("name")?.toString() || "";
+    const email = formData.get("email")?.toString() || "";
+    let website = formData.get("website")?.toString() || "";
+
+    // Make https optional: if it doesn't start with http, prepend https://
+    if (!/^https?:\/\//i.test(website)) {
+      website = "https://" + website;
+    }
+
+    try {
+      const res = await fetch("/api/lead-magnet", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, website, lang }),
+      });
+      if (res.ok) {
+        target.reset();
+        alert(messages[lang as keyof typeof messages].success);
+      } else {
+        alert(messages[lang as keyof typeof messages].error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert(messages[lang as keyof typeof messages].error);
+    }
+  });
+</script>
