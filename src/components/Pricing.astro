@@ -1,5 +1,5 @@
 ---
-import Translate from './Translate.astro';
+import Translate from "./Translate.astro";
 
 const pricingTiers = [
   {
@@ -10,8 +10,8 @@ const pricingTiers = [
       "pricing.tiers.0.features.1",
       "pricing.tiers.0.features.2",
       "pricing.tiers.0.features.3",
-      "pricing.tiers.0.features.4"
-    ]
+      "pricing.tiers.0.features.4",
+    ],
   },
   {
     name: "pricing.tiers.1.name",
@@ -22,9 +22,9 @@ const pricingTiers = [
       "pricing.tiers.1.features.2",
       "pricing.tiers.1.features.3",
       "pricing.tiers.1.features.4",
-      "pricing.tiers.1.features.5"
+      "pricing.tiers.1.features.5",
     ],
-    popular: true
+    popular: true,
   },
   {
     name: "pricing.tiers.2.name",
@@ -35,9 +35,9 @@ const pricingTiers = [
       "pricing.tiers.2.features.2",
       "pricing.tiers.2.features.3",
       "pricing.tiers.2.features.4",
-      "pricing.tiers.2.features.5"
-    ]
-  }
+      "pricing.tiers.2.features.5",
+    ],
+  },
 ];
 ---
 
@@ -56,36 +56,48 @@ const pricingTiers = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {pricingTiers.map((tier, index) => (
-        <div class="pricing-card-wrapper">
-          <div class={`card p-8 relative flex flex-col h-full ${tier.popular ? 'border-2 border-accent' : ''}`}>
-            {tier.popular && (
-              <div class="popular-badge">
-                <Translate key="pricing.popular" />
-              </div>
-            )}
-            <h3 class="text-2xl font-bold mb-4">
-              <Translate key={tier.name} />
-            </h3>
-            <div class="text-4xl font-bold mb-6">
-              {tier.price}€
+      {
+        pricingTiers.map((tier) => (
+          <div class="pricing-card-wrapper">
+            <div
+              class={`card p-8 relative flex flex-col h-full ${tier.popular ? "border-2 border-accent" : ""}`}
+            >
+              {tier.popular && (
+                <div class="popular-badge">
+                  <Translate key="pricing.popular" />
+                </div>
+              )}
+              <h3 class="text-2xl font-bold mb-4">
+                <Translate key={tier.name} />
+              </h3>
+              <div class="text-4xl font-bold mb-6">{tier.price}€</div>
+              <ul class="space-y-4 mb-8 flex-grow">
+                {tier.features.map((feature) => (
+                  <li class="flex items-center">
+                    <svg
+                      class="w-5 h-5 text-accent mr-2"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <Translate key={feature} />
+                  </li>
+                ))}
+              </ul>
+              <a href="#contacto" class="btn-primary w-full text-center">
+                <Translate key="pricing.cta" />
+              </a>
             </div>
-            <ul class="space-y-4 mb-8 flex-grow">
-              {tier.features.map((feature, i) => (
-                <li class="flex items-center">
-                  <svg class="w-5 h-5 text-accent mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <Translate key={feature} />
-                </li>
-              ))}
-            </ul>
-            <a href="#contacto" class="btn-primary w-full text-center">
-              <Translate key="pricing.cta" />
-            </a>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
@@ -94,7 +106,7 @@ const pricingTiers = [
   .text-text-muted {
     color: var(--color-text-muted);
   }
-  
+
   .bg-secondary {
     background-color: var(--color-secondary);
   }
@@ -117,4 +129,4 @@ const pricingTiers = [
     transform: translateY(-1px);
     z-index: 1;
   }
-</style> 
+</style>
