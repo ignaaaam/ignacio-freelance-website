@@ -1,40 +1,67 @@
 ---
-import Translate from './Translate.astro';
-import LanguageSwitcher from './LanguageSwitcher.astro';
+import Translate from "./Translate.astro";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
 
 const navItems = [
-  { key: 'nav.services', href: '#servicios' },
-  { key: 'nav.pricing', href: '#precios' },
-  { key: 'nav.faq', href: '#faq' },
+  { key: "nav.services", href: "#servicios" },
+  { key: "nav.pricing", href: "#precios" },
+  { key: "nav.faq", href: "#faq" },
 ];
 
 const currentPath = Astro.url.pathname;
-const isEnglish = currentPath.startsWith('/en');
+const isEnglish = currentPath.startsWith("/en");
 ---
 
 <header class="py-4 sticky top-0 bg-primary/80 backdrop-blur-sm z-50">
   <div class="container flex items-center justify-between">
-    <a href={isEnglish ? '/en' : '/'} class="text-xl font-heading font-semibold">Ignacio Amat</a>
-    
+    <a href={isEnglish ? "/en" : "/"} class="text-xl font-heading font-semibold"
+      >Ignacio Amat</a
+    >
+
     <div class="hidden md:flex items-center gap-8">
       <nav class="flex items-center gap-8">
-        {navItems.map(item => (
-          <a href={item.href} class="text-sm hover:text-accent transition-colors">
-            <Translate key={item.key} />
-          </a>
-        ))}
-        
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-sm hover:text-accent transition-colors"
+            >
+              <Translate key={item.key} />
+            </a>
+          ))
+        }
+
         <div class="flex items-center gap-4">
           <button
             id="theme-toggle"
             class="p-2 rounded-full hover:bg-secondary transition-colors"
             aria-label="Toggle theme"
           >
-            <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            <svg
+              class="w-5 h-5 dark:hidden"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              ></path>
             </svg>
-            <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            <svg
+              class="w-5 h-5 hidden dark:block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path>
             </svg>
           </button>
 
@@ -49,10 +76,20 @@ const isEnglish = currentPath.startsWith('/en');
 
     <div class="flex items-center gap-4 md:hidden">
       <LanguageSwitcher class="bg-secondary/40 p-2 rounded-lg" />
-      
+
       <button id="mobile-menu-toggle" class="p-2" aria-label="Menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
@@ -62,11 +99,16 @@ const isEnglish = currentPath.startsWith('/en');
   <div id="mobile-menu" class="hidden md:hidden">
     <div class="container pt-4 pb-6 border-t border-secondary/20 mt-4">
       <nav class="flex flex-col gap-4">
-        {navItems.map(item => (
-          <a href={item.href} class="text-sm hover:text-accent transition-colors">
-            <Translate key={item.key} />
-          </a>
-        ))}
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-sm hover:text-accent transition-colors"
+            >
+              <Translate key={item.key} />
+            </a>
+          ))
+        }
         <a href="#contacto" class="btn-primary inline-flex justify-center mt-2">
           <Translate key="contact.title" />
         </a>
@@ -79,7 +121,7 @@ const isEnglish = currentPath.startsWith('/en');
   .text-accent {
     color: var(--color-accent);
   }
-  
+
   .font-heading {
     font-family: var(--font-heading);
   }
@@ -87,14 +129,21 @@ const isEnglish = currentPath.startsWith('/en');
   .bg-primary\/80 {
     background-color: rgba(var(--color-primary), 0.8);
   }
+
+  /* Ensure blur effect works on all devices */
+  header {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 </style>
 
 <script>
   // Mobile menu functionality
-  const menuButton = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+  const menuButton = document.getElementById("mobile-menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  menuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+  menuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
   });
-</script> 
+</script>
+
