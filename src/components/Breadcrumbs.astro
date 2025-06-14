@@ -1,0 +1,63 @@
+---
+interface Props {
+  items: {
+    text: string;
+    url: string;
+  }[];
+}
+
+const { items } = Astro.props;
+
+// Generate breadcrumb schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map(
+    (item: { text: string; url: string }, index: number) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.text,
+      item: `https://ignacioamatweb.com${item.url}`,
+    })
+  ),
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <ol class="flex flex-wrap items-center gap-2 text-sm">
+    <li>
+      <a href="/" class="text-text-muted hover:text-accent transition-colors">
+        Home
+      </a>
+    </li>
+    {
+      items.map((item: { text: string; url: string }, index: number) => (
+        <li class="flex items-center gap-2">
+          <span class="text-text-muted">/</span>
+          {index === items.length - 1 ? (
+            <span class="text-accent">{item.text}</span>
+          ) : (
+            <a
+              href={item.url}
+              class="text-text-muted hover:text-accent transition-colors"
+            >
+              {item.text}
+            </a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<!-- Breadcrumb Schema -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(breadcrumbSchema)}
+/>
+
+<style>
+  .breadcrumbs {
+    padding: 1rem 0;
+  }
+</style>

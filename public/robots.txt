@@ -2,13 +2,13 @@
 User-agent: *
 Allow: /
 
-# Disallow potential duplicate content like thank you pages
-Disallow: /thanks
-Disallow: /error
-Disallow: /404
-
-# Sitemaps
+# Sitemap
 Sitemap: https://ignacioamatweb.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
 
 # Crawl-delay
 Crawl-delay: 10 

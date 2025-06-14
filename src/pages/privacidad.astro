@@ -1,0 +1,144 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "Política de Privacidad - Ignacio Amat";
+const description =
+  "Política de privacidad de Ignacio Amat Web Development. Información sobre cómo tratamos tus datos personales.";
+const canonicalUrl = "/privacidad";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  type="article"
+>
+  <main class="py-20">
+    <div class="container max-w-4xl">
+      <h1 class="text-4xl font-bold mb-8">Política de Privacidad</h1>
+
+      <div class="prose prose-invert max-w-none">
+        <p class="lead">
+          Última actualización: {
+            new Date().toLocaleDateString("es-ES", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </p>
+
+        <h2>1. Información General</h2>
+        <p>
+          En cumplimiento con el deber de información recogido en artículo 10 de
+          la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la
+          Información y del Comercio Electrónico, le informamos que el Sitio Web
+          y el portal de Internet www.ignacioamatweb.com (en adelante, el "Sitio
+          Web") es propiedad de Ignacio Amat, con domicilio en Barcelona,
+          España.
+        </p>
+
+        <h2>2. Recopilación de Información</h2>
+        <p>
+          Recopilamos información cuando usted se registra en nuestro sitio,
+          realiza un pedido o introduce información en nuestro sitio. La
+          información recopilada incluye:
+        </p>
+        <ul>
+          <li>Nombre</li>
+          <li>Información de contacto</li>
+          <li>Información del proyecto</li>
+        </ul>
+
+        <h2>3. Uso de la Información</h2>
+        <p>La información que recopilamos se utiliza para:</p>
+        <ul>
+          <li>Personalizar su experiencia</li>
+          <li>Mejorar nuestro sitio web</li>
+          <li>Mejorar el servicio al cliente</li>
+          <li>Procesar transacciones</li>
+          <li>Enviar correos electrónicos periódicos</li>
+        </ul>
+
+        <h2>4. Protección de la Información</h2>
+        <p>
+          Implementamos una variedad de medidas de seguridad para mantener la
+          seguridad de su información personal. Utilizamos un servidor seguro.
+          Toda la información sensible / crédito suministrada se transmite a
+          través de la tecnología Secure Socket Layer (SSL) y luego se encripta
+          en nuestra base de datos para que solo sea accesible por aquellos
+          autorizados con derechos de acceso especiales a nuestros sistemas.
+        </p>
+
+        <h2>5. Cookies</h2>
+        <p>
+          Nuestro sitio utiliza cookies para mejorar su experiencia. Las cookies
+          son pequeños archivos que un sitio o su proveedor de servicios
+          transfiere al disco duro de su computadora a través de su navegador
+          web (si lo permite) que permite que los sitios o sistemas de
+          proveedores de servicios reconozcan su navegador y capturen y
+          recuerden cierta información.
+        </p>
+
+        <h2>6. Divulgación a Terceros</h2>
+        <p>
+          No vendemos, comerciamos o transferimos a terceros su información de
+          identificación personal. Esto no incluye terceros de confianza que nos
+          ayudan a operar nuestro sitio web o conducir nuestro negocio, siempre
+          y cuando esas partes acuerden mantener esta información confidencial.
+        </p>
+
+        <h2>7. Sus Derechos</h2>
+        <p>Usted tiene derecho a:</p>
+        <ul>
+          <li>Acceder a sus datos personales</li>
+          <li>Rectificar sus datos personales</li>
+          <li>Eliminar sus datos personales</li>
+          <li>Oponerse al tratamiento de sus datos</li>
+          <li>Solicitar la limitación del tratamiento</li>
+          <li>Solicitar la portabilidad de los datos</li>
+        </ul>
+
+        <h2>8. Contacto</h2>
+        <p>
+          Si tiene alguna pregunta sobre esta Política de Privacidad, puede
+          contactarnos a través de:
+        </p>
+        <ul>
+          <li>Email: contact@ignacioamatweb.com</li>
+          <li>Teléfono: [Tu número de teléfono]</li>
+          <li>Dirección: Barcelona, España</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    color: var(--color-text);
+  }
+  .prose h2 {
+    color: var(--color-text);
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+  .prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+  }
+  .prose ul {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+  .lead {
+    font-size: 1.2em;
+    color: var(--color-text-muted);
+    margin-bottom: 2em;
+  }
+</style>
+

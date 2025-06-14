@@ -1,0 +1,142 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const title = "Privacy Policy - Ignacio Amat";
+const description =
+  "Privacy policy of Ignacio Amat Web Development. Information about how we handle your personal data.";
+const canonicalUrl = "/en/privacy";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  type="article"
+>
+  <main class="py-20">
+    <div class="container max-w-4xl">
+      <h1 class="text-4xl font-bold mb-8">Privacy Policy</h1>
+
+      <div class="prose prose-invert max-w-none">
+        <p class="lead">
+          Last updated: {
+            new Date().toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })
+          }
+        </p>
+
+        <h2>1. General Information</h2>
+        <p>
+          In compliance with the duty of information contained in article 10 of
+          Law 34/2002, of July 11, on Services of the Information Society and
+          Electronic Commerce, we inform you that the Website and Internet
+          portal www.ignacioamatweb.com (hereinafter, the "Website") is owned by
+          Ignacio Amat, with address in Barcelona, Spain.
+        </p>
+
+        <h2>2. Information Collection</h2>
+        <p>
+          We collect information when you register on our site, place an order,
+          or enter information on our site. The information collected includes:
+        </p>
+        <ul>
+          <li>Name</li>
+          <li>Contact information</li>
+          <li>Project information</li>
+        </ul>
+
+        <h2>3. Use of Information</h2>
+        <p>The information we collect is used for:</p>
+        <ul>
+          <li>Personalizing your experience</li>
+          <li>Improving our website</li>
+          <li>Improving customer service</li>
+          <li>Processing transactions</li>
+          <li>Sending periodic emails</li>
+        </ul>
+
+        <h2>4. Information Protection</h2>
+        <p>
+          We implement a variety of security measures to maintain the safety of
+          your personal information. We use a secure server. All
+          sensitive/credit information supplied is transmitted via Secure Socket
+          Layer (SSL) technology and then encrypted into our database to be only
+          accessed by those authorized with special access rights to our
+          systems.
+        </p>
+
+        <h2>5. Cookies</h2>
+        <p>
+          Our site uses cookies to enhance your experience. Cookies are small
+          files that a site or its service provider transfers to your computer's
+          hard drive through your web browser (if you allow) that enables the
+          site's or service provider's systems to recognize your browser and
+          capture and remember certain information.
+        </p>
+
+        <h2>6. Third-Party Disclosure</h2>
+        <p>
+          We do not sell, trade, or otherwise transfer to outside parties your
+          personally identifiable information. This does not include trusted
+          third parties who assist us in operating our website or conducting our
+          business, so long as those parties agree to keep this information
+          confidential.
+        </p>
+
+        <h2>7. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal data</li>
+          <li>Rectify your personal data</li>
+          <li>Delete your personal data</li>
+          <li>Object to the processing of your data</li>
+          <li>Request restriction of processing</li>
+          <li>Request data portability</li>
+        </ul>
+
+        <h2>8. Contact</h2>
+        <p>
+          If you have any questions about this Privacy Policy, you can contact
+          us through:
+        </p>
+        <ul>
+          <li>Email: contact@ignacioamatweb.com</li>
+          <li>Phone: [Your phone number]</li>
+          <li>Address: Barcelona, Spain</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .prose {
+    color: var(--color-text);
+  }
+  .prose h2 {
+    color: var(--color-text);
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+  .prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+  }
+  .prose ul {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+  .prose li {
+    margin-bottom: 0.5em;
+  }
+  .lead {
+    font-size: 1.2em;
+    color: var(--color-text-muted);
+    margin-bottom: 2em;
+  }
+</style>
+

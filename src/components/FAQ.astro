@@ -1,30 +1,44 @@
 ---
-import Translate from './Translate.astro';
+import Translate from "./Translate.astro";
 
 const faqs = [
   {
     question: "faq.items.0.question",
-    answer: "faq.items.0.answer"
+    answer: "faq.items.0.answer",
   },
   {
     question: "faq.items.1.question",
-    answer: "faq.items.1.answer"
+    answer: "faq.items.1.answer",
   },
   {
     question: "faq.items.2.question",
-    answer: "faq.items.2.answer"
+    answer: "faq.items.2.answer",
   },
   {
     question: "faq.items.3.question",
-    answer: "faq.items.3.answer"
-  }
+    answer: "faq.items.3.answer",
+  },
 ];
+
+// Generate FAQ Schema
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 ---
 
-<section class="py-20 bg-secondary" id="faq">
+<section class="py-20 bg-secondary" id="faq" aria-labelledby="faq-title">
   <div class="container">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">
+      <h2 class="text-3xl font-bold mb-4" id="faq-title">
         <Translate key="faq.title" />
       </h2>
       <p class="text-text-muted max-w-2xl mx-auto">
@@ -33,30 +47,52 @@ const faqs = [
     </div>
 
     <div class="max-w-3xl mx-auto">
-      <div class="space-y-6">
-        {faqs.map(faq => (
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span><Translate key={faq.question} /></span>
-              <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p><Translate key={faq.answer} /></p>
-            </div>
-          </details>
-        ))}
+      <div class="space-y-6" role="list">
+        {
+          faqs.map((faq, index) => (
+            <details class="faq-item" role="listitem">
+              <summary class="faq-question" aria-expanded="false">
+                <span>
+                  <Translate key={faq.question} />
+                </span>
+                <svg
+                  class="arrow-icon"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 9L12 15L18 9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <Translate key={faq.answer} />
+                </p>
+              </div>
+            </details>
+          ))
+        }
       </div>
     </div>
   </div>
 </section>
 
+<!-- FAQ Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
 <style>
   .text-text-muted {
     color: var(--color-text-muted);
   }
-  
+
   .bg-secondary {
     background-color: var(--color-secondary);
   }
@@ -91,22 +127,27 @@ const faqs = [
 
 <script>
   // Add smooth animation to FAQ items
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', (event: Event) => {
+  document.querySelectorAll(".faq-item").forEach((item) => {
+    item.addEventListener("click", (event: Event) => {
       const target = event.target as HTMLElement;
-      if (target && target.tagName.toLowerCase() === 'summary') {
+      if (target && target.tagName.toLowerCase() === "summary") {
         event.preventDefault();
         const details = target.parentElement as HTMLDetailsElement;
-        if (details && details.hasAttribute('open')) {
-          details.classList.add('closing');
+        const summary = target as HTMLElement;
+
+        if (details && details.hasAttribute("open")) {
+          details.classList.add("closing");
+          summary.setAttribute("aria-expanded", "false");
           setTimeout(() => {
-            details.removeAttribute('open');
-            details.classList.remove('closing');
+            details.removeAttribute("open");
+            details.classList.remove("closing");
           }, 300);
         } else if (details) {
-          details.setAttribute('open', '');
+          details.setAttribute("open", "");
+          summary.setAttribute("aria-expanded", "true");
         }
       }
     });
   });
-</script> 
+</script>
+

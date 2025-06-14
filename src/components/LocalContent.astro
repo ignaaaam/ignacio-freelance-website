@@ -1,0 +1,168 @@
+---
+interface Props {
+  city: string;
+  region: string;
+  country: string;
+  services: string[];
+  languages: string[];
+}
+
+const { city, region, country, services, languages } = Astro.props;
+
+// Generate local business schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Ignacio Amat Web Development",
+  image: "https://ignacioamatweb.com/images/og-image.jpg",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: city,
+    addressRegion: region,
+    addressCountry: country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "41.3851",
+    longitude: "2.1734",
+  },
+  url: "https://ignacioamatweb.com",
+  telephone: "+34XXXXXXXXX",
+  priceRange: "€€",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/ignacioamat/",
+    "https://github.com/ignacioamat",
+  ],
+  areaServed: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: "41.3851",
+      longitude: "2.1734",
+    },
+    geoRadius: "50000",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Web Development Services",
+    itemListElement: services.map((service: string, index: number) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: service,
+      },
+    })),
+  },
+  availableLanguage: languages,
+};
+---
+
+<section class="py-20 bg-secondary">
+  <div class="container">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center">
+        Web Development Services in {city}
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-card-bg p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Services in {city}</h3>
+          <ul class="space-y-2">
+            {
+              services.map((service: string) => (
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-5 h-5 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {service}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="bg-card-bg p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-4">Languages</h3>
+          <ul class="space-y-2">
+            {
+              languages.map((language: string) => (
+                <li class="flex items-center gap-2">
+                  <svg
+                    class="w-5 h-5 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  {language}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <p class="text-text-muted mb-4">
+          Serving {city} and surrounding areas with professional web development
+          services
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-hover transition-colors"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Local Business Schema -->
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(localBusinessSchema)}
+/>
+
+<style>
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .bg-card-bg {
+    background-color: var(--color-card-bg);
+  }
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  .text-accent {
+    color: var(--color-accent);
+  }
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  .bg-accent-hover {
+    background-color: var(--color-accent-hover);
+  }
+</style>
