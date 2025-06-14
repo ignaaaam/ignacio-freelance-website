@@ -122,35 +122,39 @@
     "cta": "Solicitar Presupuesto",
     "tiers": [
       {
-        "name": "Landing Page",
+        "name": "Web Básica",
         "features": [
-          "1 página completa",
-          "Diseño personalizado",
-          "Formulario de contacto",
-          "Optimizado para móviles",
-          "Dominio y hosting 1 año"
+          "1-3 páginas con diseño personalizado",
+          "Diseño responsive mobile-first",
+          "Formulario de contacto con integración de email",
+          "Optimización SEO básica",
+          "Integración con redes sociales",
+          "1 mes de soporte gratuito"
         ]
       },
       {
-        "name": "Web Completa",
+        "name": "Web Empresarial",
         "features": [
-          "Hasta 5 páginas",
-          "Diseño personalizado",
-          "Blog o noticias",
+          "5-7 páginas con diseño personalizado",
+          "Características responsive avanzadas",
+          "Sección de blog o noticias",
           "Panel de administración",
-          "SEO básico incluido",
-          "Dominio y hosting 1 año"
+          "Optimización SEO avanzada",
+          "Integración de analíticas",
+          "3 meses de soporte gratuito"
         ]
       },
       {
-        "name": "Tienda Online",
+        "name": "Web Premium",
         "features": [
-          "Tienda completa",
-          "Sistema de pagos",
-          "Gestión de productos",
-          "Panel de administración",
-          "SEO avanzado",
-          "Dominio y hosting 1 año"
+          "Páginas ilimitadas con diseño personalizado",
+          "Características responsive premium",
+          "Funcionalidad de e-commerce",
+          "Panel de administración avanzado",
+          "Optimización SEO completa",
+          "Optimización de rendimiento",
+          "Integraciones con APIs",
+          "6 meses de soporte gratuito"
         ]
       }
     ]

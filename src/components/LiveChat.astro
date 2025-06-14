@@ -3,72 +3,221 @@ interface Props {
   lang?: "es" | "en";
 }
 
+interface QAPair {
+  question: string;
+  answer: string;
+}
+
+interface ChatbaseConfig {
+  pricing: {
+    questions: QAPair[];
+    general: QAPair[];
+  };
+}
+
+// Add type definitions for Chatbase
+interface ChatbaseWindow extends Window {
+  chatbase: any;
+}
+
+declare global {
+  interface Window {
+    chatbase: any;
+  }
+}
+
 const { lang = "es" } = Astro.props;
+
+const chatbaseConfig: ChatbaseConfig = {
+  pricing: {
+    questions: [
+      {
+        question: "What are your pricing plans?",
+        answer:
+          "I offer three main pricing tiers:\n\n1. Basic Website (750€): Perfect for small businesses, includes 1-3 pages, mobile-first design, contact form, basic SEO, and 1 month of support.\n\n2. Business Website (1,500€): Ideal for growing businesses, includes 5-7 pages, advanced features, blog section, admin dashboard, and 3 months of support.\n\n3. Premium Website (2,500€): For businesses needing a full-featured solution, includes unlimited pages, e-commerce, advanced admin features, and 6 months of support.\n\nAll prices are starting points and may be adjusted based on your specific requirements.",
+      },
+      {
+        question: "Why are your prices higher than some other developers?",
+        answer:
+          "My pricing reflects the quality and comprehensive service I provide:\n\n• Professional, custom design tailored to your brand\n• Mobile-first, responsive development\n• Performance optimization for fast loading\n• SEO best practices implementation\n• Ongoing support and maintenance\n• Experience in creating successful websites\n\nI focus on delivering value and results rather than competing on price alone.",
+      },
+      {
+        question: "Do you offer payment plans?",
+        answer:
+          "Yes, I offer a flexible payment structure:\n\n• 50% deposit to start the project\n• 50% upon completion\n\nThis helps manage the investment while ensuring both parties are protected throughout the development process.",
+      },
+      {
+        question: "What's included in the support period?",
+        answer:
+          "The support period includes:\n\n• Technical assistance\n• Bug fixes\n• Minor updates\n• Performance monitoring\n• Security updates\n• Basic content updates\n\nSupport periods vary by plan:\n• Basic: 1 month\n• Business: 3 months\n• Premium: 6 months",
+      },
+      {
+        question: "Can I upgrade my plan later?",
+        answer:
+          "Yes, you can upgrade your plan at any time. The upgrade cost will be calculated based on the difference between your current plan and the new plan, taking into account any work already completed. This allows you to start with what you need and grow as your business expands.",
+      },
+    ],
+    general: [
+      {
+        question: "How long does it take to complete a website?",
+        answer:
+          "Project timelines vary based on complexity:\n\n• Basic Website: 2-3 weeks\n• Business Website: 3-4 weeks\n• Premium Website: 4-6 weeks\n\nThese timelines include design, development, testing, and client feedback phases. I'll provide a specific timeline during our initial consultation.",
+      },
+      {
+        question: "Do you provide hosting and domain?",
+        answer:
+          "Yes, I can help you with both hosting and domain setup. I recommend reliable hosting providers that offer:\n\n• Fast loading times\n• 99.9% uptime\n• SSL certificates\n• Regular backups\n• 24/7 support\n\nI'll guide you through the process and ensure everything is properly configured.",
+      },
+      {
+        question: "What happens after I contact you?",
+        answer:
+          "Here's my process:\n\n1. Initial consultation to understand your needs\n2. Detailed proposal with timeline and pricing\n3. Design approval and development\n4. Testing and revisions\n5. Launch and support\n\nI'll guide you through each step and keep you updated on progress.",
+      },
+      {
+        question: "Do you offer maintenance services?",
+        answer:
+          "Yes, I offer maintenance packages that include:\n\n• Regular updates\n• Security monitoring\n• Performance optimization\n• Content updates\n• Technical support\n\nThese can be customized to your needs and are available after the initial support period ends.",
+      },
+    ],
+  },
+};
 ---
 
-<!-- Tawk.to Script -->
+<div class="chat-button-wrapper">
+  <button
+    id="customChatButton"
+    class="chat-button"
+    aria-label={lang === "es" ? "Abrir chat" : "Open chat"}
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+      ></path>
+    </svg>
+  </button>
+</div>
+
 <script>
-  // @ts-ignore
-  var Tawk_API = Tawk_API || {},
-    Tawk_LoadStart = new Date();
+  // Chatbase initialization
   (function () {
-    var s1 = document.createElement("script"),
-      s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = "https://embed.tawk.to/684cce294aea20190b6349ea/1itm0akhd";
-    s1.setAttribute("crossorigin", "*");
-    if (s0 && s0.parentNode) {
-      s0.parentNode.insertBefore(s1, s0);
+    if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+      window.chatbase = (...args: any[]) => {
+        if (!window.chatbase.q) {
+          window.chatbase.q = [];
+        }
+        window.chatbase.q.push(args);
+      };
+      window.chatbase = new Proxy(window.chatbase, {
+        get(target, prop) {
+          if (prop === "q") {
+            return target.q;
+          }
+          return (...args: any[]) => target(prop, ...args);
+        },
+      });
+    }
+    const onLoad = function () {
+      const script = document.createElement("script");
+      script.src = "https://www.chatbase.co/embed.min.js";
+      script.id = "Jmx_j3vdp36YwiJcfBf_A";
+      (script as any).domain = "www.chatbase.co";
+      document.body.appendChild(script);
+    };
+    if (document.readyState === "complete") {
+      onLoad();
     } else {
-      document.head.appendChild(s1);
+      window.addEventListener("load", onLoad);
     }
   })();
-</script>
 
-<!-- Custom Chat Button -->
-<button
-  id="customChatButton"
-  class="fixed bottom-6 right-6 z-50 bg-accent text-white p-4 rounded-full shadow-lg hover:bg-accent/90 transition-colors"
-  aria-label={lang === "es" ? "Abrir chat" : "Open chat"}
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    class="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
-    ></path>
-  </svg>
-</button>
+  // Initialize chat when button is clicked
+  document.addEventListener("DOMContentLoaded", () => {
+    const customButton = document.getElementById("customChatButton");
 
-<script>
-  // Wait for Tawk_API to be available before using it
-  function onTawkReady(callback: () => void) {
-    if (
-      (window as any).Tawk_API &&
-      typeof (window as any).Tawk_API.maximize === "function"
-    ) {
-      callback();
-    } else {
-      setTimeout(() => onTawkReady(callback), 300);
-    }
-  }
+    customButton?.addEventListener("click", async () => {
+      // Generate a unique user ID (you can replace this with actual user ID if available)
+      const userId = "user_" + Math.random().toString(36).substr(2, 9);
 
-  const customButton = document.getElementById("customChatButton");
-  customButton?.addEventListener("click", () => {
-    onTawkReady(() => {
-      (window as any).Tawk_API.maximize();
+      try {
+        // Get user verification from server
+        const response = await fetch("/api/chatbase-verify", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to verify user");
+        }
+
+        const { userHash } = await response.json();
+
+        // Initialize chat with user verification
+        window.chatbase("init", {
+          userId: userId,
+          userHash: userHash,
+        });
+
+        // Open the chat
+        window.chatbase("open");
+      } catch (error) {
+        console.error("Error initializing chat:", error);
+      }
     });
   });
+</script>
 
-  // Optionally hide the default Tawk.to button when ready
-  onTawkReady(() => {
-    (window as any).Tawk_API.hideWidget();
+<style>
+  .chat-button-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+  }
+
+  .chat-button {
+    background-color: var(--color-accent);
+    color: white;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: transform 0.2s ease-in-out;
+    border: none;
+    cursor: pointer;
+  }
+
+  .chat-button:hover {
+    transform: scale(1.05);
+  }
+
+  .chat-button:active {
+    transform: scale(0.95);
+  }
+</style>
+
+<script>
+  // Initialize Chatbase when the component loads
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof window !== "undefined") {
+      // Chatbase initialization code will go here
+      console.log("Chatbase initialized with Q&A pairs");
+    }
   });
 </script>

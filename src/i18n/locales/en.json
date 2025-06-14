@@ -122,35 +122,39 @@
     "cta": "Get a Quote",
     "tiers": [
       {
-        "name": "Landing Page",
+        "name": "Basic Website",
         "features": [
-          "1 complete page",
-          "Custom design",
-          "Contact form",
-          "Mobile optimized",
-          "Domain and hosting for 1 year"
+          "1-3 pages with custom design",
+          "Mobile-first responsive layout",
+          "Contact form with email integration",
+          "Basic SEO optimization",
+          "Social media integration",
+          "1 month of free support"
         ]
       },
       {
-        "name": "Complete Website",
+        "name": "Business Website",
         "features": [
-          "Up to 5 pages",
-          "Custom design",
+          "5-7 pages with custom design",
+          "Advanced responsive features",
           "Blog or news section",
-          "Admin panel",
-          "Basic SEO included",
-          "Domain and hosting for 1 year"
+          "Admin dashboard",
+          "Advanced SEO optimization",
+          "Analytics integration",
+          "3 months of free support"
         ]
       },
       {
-        "name": "Online Store",
+        "name": "Premium Website",
         "features": [
-          "Complete store",
-          "Payment system",
-          "Product management",
-          "Admin panel",
-          "Advanced SEO",
-          "Domain and hosting for 1 year"
+          "Unlimited pages with custom design",
+          "Premium responsive features",
+          "E-commerce functionality",
+          "Advanced admin dashboard",
+          "Full SEO optimization",
+          "Performance optimization",
+          "API integrations",
+          "6 months of free support"
         ]
       }
     ]
