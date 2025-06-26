@@ -48,6 +48,13 @@ const {
         "ecommerce",
         "landing pages",
         "webs corporativas",
+        "diseño web móvil",
+        "página web responsive",
+        "desarrollo web móvil",
+        "SEO móvil",
+        "optimización móvil",
+        "Core Web Vitals",
+        "rendimiento web",
       ]
     : [
         "web development",
@@ -68,6 +75,13 @@ const {
         "ecommerce",
         "landing pages",
         "corporate websites",
+        "mobile web design",
+        "responsive website",
+        "mobile web development",
+        "mobile SEO",
+        "mobile optimization",
+        "Core Web Vitals",
+        "web performance",
       ],
 } = Astro.props;
 
@@ -133,6 +147,18 @@ const structuredData: any = {
       name: "Spain",
     },
   },
+  // Mobile-specific properties
+  mobileUrl: fullUrl,
+  isAccessibleForFree: true,
+  browserRequirements: "Requires JavaScript. Requires HTML5.",
+  softwareVersion: "1.0",
+  operatingSystem: "All",
+  device: "Mobile, Desktop, Tablet",
+  // Local business enhancement
+  hasMap: "https://maps.google.com/?q=41.3851,2.1734",
+  openingHours: "Mo-Fr 09:00-18:00",
+  telephone: "+34-XXX-XXX-XXX",
+  priceRange: "€€",
 };
 
 // Add publishedDate for articles
@@ -169,6 +195,11 @@ const jsonLd = JSON.stringify(structuredData);
     <meta name="language" content={lang} />
     <meta name="distribution" content="global" />
     <meta name="rating" content="general" />
+    
+    <!-- Mobile-specific robots -->
+    <meta name="googlebot-mobile" content="index, follow" />
+    <meta name="mobile" content="true" />
+    <meta name="format-detection" content="telephone=no, email=no, address=no" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
@@ -182,6 +213,9 @@ const jsonLd = JSON.stringify(structuredData);
       property="og:site_name"
       content="Ignacio Amat - Freelance Web Developer"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
     {
       publishedDate && (
         <meta property="article:published_time" content={publishedDate} />
@@ -240,6 +274,18 @@ const jsonLd = JSON.stringify(structuredData);
     <meta name="application-name" content="Ignacio Amat Web Development" />
     <meta name="msapplication-TileColor" content="#0F172A" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Mobile SEO optimizations -->
+    <meta name="mobile-friendly" content="true" />
+    <meta name="handheld-friendly" content="true" />
+    <meta name="viewport-fit" content="cover" />
+    <meta name="apple-mobile-web-app-title" content="Ignacio Amat Web" />
+    
+    <!-- Touch icons for mobile -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#0F172A" />
@@ -251,6 +297,21 @@ const jsonLd = JSON.stringify(structuredData);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    
+    <!-- Mobile performance optimizations -->
+    <link rel="preload" href="/images/new-website.png" as="image" type="image/png" />
+    <link rel="preload" href="/images/hero-website.png" as="image" type="image/png" />
+    <link rel="modulepreload" href="/src/styles/global.css" />
+    
+    <!-- Critical CSS inline for mobile -->
+    <style>
+      /* Critical mobile styles */
+      body { margin: 0; padding: 0; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+      @media (max-width: 768px) {
+        .container { padding: 0 0.5rem; }
+      }
+    </style>
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={jsonLd} />
