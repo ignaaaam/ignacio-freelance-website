@@ -9,185 +9,190 @@
     "faq": "FAQ"
   },
   "hero": {
-    "title": "Do you need a professional website for your business or project?",
-    "subtitle": "Modern, fast, and optimized web design and development for global impact.",
-    "cta": "Get your free quote",
-    "services": "View services"
+    "title": "Professional Web Developer in Barcelona - Custom Websites That Convert",
+    "subtitle": "Expert web development and design services in Barcelona. Create stunning, fast-loading websites that drive results for your business. Specializing in e-commerce, corporate websites, and landing pages.",
+    "cta": "Get Your Free Quote Today",
+    "services": "View Our Services"
   },
   "features": {
-    "title": "Why Choose Me",
-    "description": "I develop professional websites that not only look amazing but also deliver measurable results for your business.",
+    "title": "Why Choose Our Web Development Services in Barcelona",
+    "description": "As a leading web developer in Barcelona, I create professional websites that not only look stunning but also deliver measurable business results. From local businesses to international brands.",
     "items": [
       {
-        "title": "Optimized Performance and Security",
-        "description": "High-performance web development with ultra-fast loading times and advanced threat protection."
+        "title": "Lightning-Fast Performance & Security",
+        "description": "High-performance web development with ultra-fast loading times, advanced security measures, and 99.9% uptime guarantee. Optimized for Core Web Vitals and Google rankings."
       },
       {
-        "title": "Custom and Unique Design",
-        "description": "Exclusive and modern designs that reflect your brand identity and connect with your audience."
+        "title": "Custom Web Design & Brand Identity",
+        "description": "Unique, modern web designs that perfectly reflect your brand identity and connect with your target audience. Every website is custom-built from scratch in Barcelona."
       },
       {
-        "title": "SEO and Online Visibility",
-        "description": "Professional search engine optimization that improves your Google ranking and increases organic traffic."
+        "title": "SEO-Optimized for Google Rankings",
+        "description": "Professional search engine optimization that improves your Google ranking, increases organic traffic, and helps you dominate local search results in Barcelona and Spain."
       },
       {
-        "title": "Maintenance and Technical Support",
-        "description": "Regular updates, backups, and continuous technical support to keep your website always up to date."
+        "title": "Ongoing Maintenance & Technical Support",
+        "description": "Comprehensive website maintenance including regular updates, security backups, performance monitoring, and 24/7 technical support to keep your website running perfectly."
       }
     ]
   },
   "projects": {
-    "title": "Project Types",
-    "description": "Each project is unique, but here are some types of websites I can develop for you.",
-    "cta": "Contact me",
+    "title": "Web Development Services in Barcelona",
+    "description": "Comprehensive web development solutions tailored to your business needs. From personal portfolios to complex e-commerce platforms, we deliver results.",
+    "cta": "Start Your Project",
     "types": {
       "personal": {
-        "title": "Personal Website",
-        "description": "Perfect for professionals, portfolios, blogs, speakers, and content creators.",
+        "title": "Personal & Portfolio Websites",
+        "description": "Professional websites for freelancers, consultants, artists, and personal brands. Perfect for showcasing your work and attracting new clients in Barcelona and beyond.",
         "features": [
-          "Custom design",
-          "Home page + 3 pages",
-          "Social media profiles",
-          "Contact form",
-          "Blog or gallery (optional)"
+          "Custom responsive design",
+          "Home page + 5 additional pages",
+          "Social media integration",
+          "Contact forms with CRM integration",
+          "Blog or portfolio gallery",
+          "SEO optimization for personal branding"
         ]
       },
       "business": {
-        "title": "Local Business",
-        "description": "Ideal for local businesses, shops, restaurants, services, and professionals.",
+        "title": "Business & Corporate Websites",
+        "description": "Professional websites for local businesses, restaurants, retail stores, and service providers in Barcelona. Designed to attract local customers and drive conversions.",
         "features": [
-          "Custom design",
-          "Up to 5 pages",
-          "Location map and contact",
-          "Menu or product catalog",
-          "Social media integration"
+          "Custom business website design",
+          "Up to 10 pages with advanced features",
+          "Google Maps integration & local SEO",
+          "Product catalog or service showcase",
+          "Customer testimonials & reviews",
+          "Multi-language support (Spanish/English)"
         ]
       },
       "digital": {
-        "title": "Online Store or Digital Services",
-        "description": "For digital businesses, e-commerce, SaaS, memberships, and online courses.",
+        "title": "E-commerce & Digital Platforms",
+        "description": "Advanced web solutions for online stores, SaaS platforms, membership sites, and digital businesses. Built for scalability and maximum conversions.",
         "features": [
-          "Custom design",
-          "Online payment system",
-          "Admin panel",
-          "Members area",
-          "API integration"
+          "Custom e-commerce development",
+          "Secure payment gateway integration",
+          "Advanced admin dashboard",
+          "Member portal & user management",
+          "API integrations & third-party tools",
+          "Performance optimization & analytics"
         ]
       }
     }
   },
   "process": {
-    "title": "How We Work Together",
-    "description": "A clear and simple process to help you get your website without complications.",
+    "title": "Our Web Development Process in Barcelona",
+    "description": "A proven, transparent process that ensures your website project is delivered on time, on budget, and exceeds your expectations.",
     "steps": [
       {
-        "title": "Planning",
-        "description": "We discuss your project, goals, and needs to define the scope and the best solution."
+        "title": "Discovery & Strategy",
+        "description": "We analyze your business goals, target audience, and competitors to create a comprehensive web development strategy tailored to your needs."
       },
       {
-        "title": "Design and Proposal",
-        "description": "I create a custom design that best represents your brand and meets your objectives."
+        "title": "Design & Prototyping",
+        "description": "Our Barcelona-based design team creates custom wireframes and visual designs that align with your brand and optimize for conversions."
       },
       {
-        "title": "Web Development",
-        "description": "I implement the approved design, programming each functionality and optimizing performance."
+        "title": "Development & Testing",
+        "description": "Expert web development using the latest technologies, followed by rigorous testing to ensure your website performs flawlessly across all devices."
       },
       {
-        "title": "Delivery and Support",
-        "description": "I deliver your website ready to use, with guides and support so you can manage it easily."
+        "title": "Launch & Support",
+        "description": "We launch your website with full training, documentation, and ongoing support to ensure your success in the digital marketplace."
       }
     ]
   },
   "testimonials": {
-    "title": "What My Clients Say",
-    "description": "Opinions from people who have already trusted my services",
+    "title": "What Our Barcelona Clients Say",
+    "description": "Real testimonials from satisfied clients who have transformed their online presence with our web development services.",
     "items": [
       {
-        "text": "Working with Ignacio was an excellent experience. His professionalism and attention to detail made the process smooth, and the final result exceeded all our expectations.",
+        "text": "Ignacio delivered an exceptional website that perfectly represents our interior design business. The SEO optimization has significantly increased our local search visibility in Barcelona, and we're seeing more qualified leads than ever before.",
         "author": "María Sánchez",
-        "role": "Interior Designer"
+        "role": "Interior Designer, Barcelona"
       },
       {
-        "text": "Ignacio completely transformed my online presence. His technical and creative approach resulted in a modern, fast website that perfectly reflects my professional brand.",
+        "text": "Working with Ignacio was a game-changer for our marketing consultancy. The custom website he built not only looks professional but also converts visitors into clients. His attention to detail and technical expertise are outstanding.",
         "author": "Carlos Martínez",
-        "role": "Marketing Consultant"
+        "role": "Marketing Consultant, Madrid"
       }
     ]
   },
   "pricing": {
-    "title": "Plans and Pricing",
-    "description": "Professional solutions tailored to different needs and budgets.",
-    "note": "The final price may be adjusted based on your project's specific requirements.",
+    "title": "Transparent Web Development Pricing",
+    "description": "Professional web development solutions at competitive prices. All packages include hosting setup, SEO optimization, and ongoing support.",
+    "note": "Custom pricing available for complex projects. Contact us for a personalized quote based on your specific requirements.",
     "popular": "Most Popular",
-    "cta": "Get a Quote",
+    "cta": "Get Your Custom Quote",
     "tiers": [
       {
-        "name": "Basic Website",
+        "name": "Starter Website Package",
         "features": [
-          "1-3 pages with custom design",
-          "Mobile-first responsive layout",
-          "Contact form with email integration",
-          "Basic SEO optimization",
+          "Custom responsive design (1-5 pages)",
+          "Mobile-first development approach",
+          "Contact forms with email integration",
+          "Basic SEO optimization & Google setup",
           "Social media integration",
-          "1 month of free support"
+          "1 month of technical support",
+          "Website hosting setup included"
         ]
       },
       {
-        "name": "Business Website",
+        "name": "Professional Business Website",
         "features": [
-          "5-7 pages with custom design",
-          "Advanced responsive features",
-          "Blog or news section",
-          "Admin dashboard",
-          "Advanced SEO optimization",
-          "Analytics integration",
-          "3 months of free support"
+          "Custom business website (5-10 pages)",
+          "Advanced responsive features & animations",
+          "Blog or news section with CMS",
+          "Admin dashboard for content management",
+          "Advanced SEO optimization & analytics",
+          "Google Business Profile setup",
+          "3 months of technical support",
+          "Performance optimization included"
         ]
       },
       {
-        "name": "Premium Website",
+        "name": "Premium E-commerce Solution",
         "features": [
-          "Unlimited pages with custom design",
-          "Premium responsive features",
-          "E-commerce functionality",
-          "Advanced admin dashboard",
-          "Full SEO optimization",
-          "Performance optimization",
-          "API integrations",
-          "6 months of free support"
+          "Full e-commerce platform development",
+          "Unlimited pages with custom functionality",
+          "Payment gateway integration (Stripe/PayPal)",
+          "Advanced admin dashboard & inventory management",
+          "Complete SEO optimization & marketing tools",
+          "API integrations & third-party services",
+          "6 months of priority support",
+          "Performance monitoring & security"
         ]
       }
     ]
   },
   "faq": {
-    "title": "Frequently Asked Questions",
-    "description": "We answer your questions about the website development process.",
+    "title": "Frequently Asked Questions About Web Development",
+    "description": "Get answers to common questions about our web development services in Barcelona and the website creation process.",
     "items": [
       {
-        "question": "How long does it take to complete my website?",
-        "answer": "Development time depends on the project's complexity. A simple one-page landing page can be ready in 2-4 days, while a more complex project may take 4-6 weeks."
+        "question": "How long does it take to build a professional website?",
+        "answer": "Website development time varies by complexity. A simple landing page takes 1-2 weeks, while a full e-commerce site may take 4-8 weeks. We provide detailed timelines during our initial consultation and keep you updated throughout the process."
       },
       {
-        "question": "What payment methods do you accept?",
-        "answer": "I accept bank transfers, Bizum, and credit cards. Payment is divided into two parts: 50% at the start of the project and 50% before final delivery."
+        "question": "What payment options do you accept for web development projects?",
+        "answer": "We accept bank transfers, credit cards, and digital payments. Our standard payment structure is 50% upfront to begin development and 50% upon project completion. For larger projects, we offer flexible payment plans."
       },
       {
-        "question": "What if I'm not satisfied?",
-        "answer": "Your satisfaction is my priority. We'll work together on necessary revisions until you're completely satisfied with the result."
+        "question": "Do you provide ongoing website maintenance and support?",
+        "answer": "Yes, we offer comprehensive website maintenance packages that include regular updates, security monitoring, performance optimization, content updates, and technical support. This ensures your website remains secure, fast, and up-to-date."
       },
       {
-        "question": "Do you offer maintenance service?",
-        "answer": "Yes, I offer monthly maintenance plans that include updates, backups, and technical support to keep your website secure and up to date."
+        "question": "Can you help with SEO and getting my website to rank on Google?",
+        "answer": "Absolutely! All our websites include basic SEO optimization. We also offer advanced SEO services including keyword research, content optimization, local SEO for Barcelona businesses, and ongoing SEO maintenance to improve your Google rankings."
       }
     ]
   },
   "contact": {
-    "title": "Get in Touch",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
+    "title": "Get Your Free Web Development Quote",
+    "name": "Full Name",
+    "email": "Email Address",
+    "message": "Tell us about your project",
     "send": "Send Message",
-    "success": "Message sent successfully!",
-    "error": "There was an error sending your message."
+    "success": "Thank you! We'll get back to you within 24 hours.",
+    "error": "There was an error sending your message. Please try again or contact us directly."
   }
 } 
