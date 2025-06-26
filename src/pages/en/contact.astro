@@ -1,0 +1,92 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactForm from "../../components/Contact.astro";
+
+const title = "Contact - Professional Web Development Services in Barcelona";
+const description = "Get in touch for professional web development services in Barcelona. Free consultation and custom quotes for your website project.";
+const canonicalUrl = "/en/contact";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+>
+  <main class="py-20">
+    <div class="container max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl font-bold mb-4">Get Your Free Web Development Quote</h1>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto">
+          Ready to transform your online presence? Contact us for a free consultation and custom quote for your website project.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Let's Discuss Your Project</h2>
+          <p class="text-text-muted mb-8">
+            Whether you need a simple landing page or a complex e-commerce platform, I'll help you create a website that drives results for your business.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Email</h3>
+                <p class="text-text-muted">contact@ignacioamatweb.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Location</h3>
+                <p class="text-text-muted">Barcelona, Spain</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Response Time</h3>
+                <p class="text-text-muted">Within 24 hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <ContactForm lang="en" />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .text-accent {
+    color: var(--color-accent);
+  }
+  
+  .bg-accent\/10 {
+    background-color: rgb(59 130 246 / 0.1);
+  }
+</style> 

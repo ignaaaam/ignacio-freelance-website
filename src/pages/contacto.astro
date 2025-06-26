@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactForm from "../components/Contact.astro";
+
+const title = "Contacto - Servicios de Desarrollo Web Profesional en Barcelona";
+const description = "Ponte en contacto para servicios profesionales de desarrollo web en Barcelona. Consulta gratuita y presupuestos personalizados para tu proyecto web.";
+const canonicalUrl = "/contacto";
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+>
+  <main class="py-20">
+    <div class="container max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h1 class="text-4xl font-bold mb-4">Obtén tu Presupuesto Gratuito de Desarrollo Web</h1>
+        <p class="text-text-muted text-lg max-w-2xl mx-auto">
+          ¿Listo para transformar tu presencia online? Contáctanos para una consulta gratuita y un presupuesto personalizado para tu proyecto web.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-2xl font-bold mb-6">Hablemos de tu Proyecto</h2>
+          <p class="text-text-muted mb-8">
+            Ya sea que necesites una landing page simple o una plataforma e-commerce compleja, te ayudaré a crear una página web que genere resultados para tu negocio.
+          </p>
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Email</h3>
+                <p class="text-text-muted">contact@ignacioamatweb.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Ubicación</h3>
+                <p class="text-text-muted">Barcelona, España</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold mb-1">Tiempo de Respuesta</h3>
+                <p class="text-text-muted">En menos de 24 horas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <ContactForm lang="es" />
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  
+  .text-accent {
+    color: var(--color-accent);
+  }
+  
+  .bg-accent\/10 {
+    background-color: rgb(59 130 246 / 0.1);
+  }
+</style> 
