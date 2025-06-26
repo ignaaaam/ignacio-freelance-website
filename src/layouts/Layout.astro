@@ -214,17 +214,43 @@ const jsonLd = JSON.stringify(structuredData);
       href={`${baseUrl}${alternateUrls.es}`}
     />
 
+    <!-- Additional SEO Meta Tags -->
+    <meta name="geo.region" content={lang === "es" ? "ES" : "ES"} />
+    <meta name="geo.placename" content="Barcelona" />
+    <meta name="geo.position" content="41.3851;2.1734" />
+    <meta name="ICBM" content="41.3851, 2.1734" />
+    <meta name="DC.title" content={title} />
+    <meta name="DC.description" content={description} />
+    <meta name="DC.language" content={lang} />
+    <meta name="DC.creator" content={author} />
+    <meta name="DC.publisher" content="Ignacio Amat Web Development" />
+    <meta name="DC.coverage" content="Barcelona, Spain" />
+    <meta name="DC.subject" content={keywords.join(", ")} />
+    <meta name="DC.type" content="Text" />
+    <meta name="DC.format" content="text/html" />
+    <meta name="DC.identifier" content={fullUrl} />
+    <meta name="DC.date" content={new Date().toISOString()} />
+    <meta name="DC.rights" content="Copyright © 2024 Ignacio Amat. All rights reserved." />
+
     <!-- Mobile specific -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Ignacio Amat Web Development" />
+    <meta name="msapplication-TileColor" content="#0F172A" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
 
     <!-- Theme color -->
     <meta name="theme-color" content="#0F172A" />
+    <meta name="msapplication-TileColor" content="#0F172A" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Preconnect to required origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={jsonLd} />

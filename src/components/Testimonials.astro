@@ -13,6 +13,38 @@ const testimonials = [
     role: "Consultor de marketing"
   }
 ];
+
+// Generate Review Schema
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Ignacio Amat Web Development",
+  image: "https://ignacioamatweb.com/images/og-image.jpg",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Barcelona",
+    addressRegion: "Catalonia",
+    addressCountry: "ES",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: testimonials.length,
+  },
+  review: testimonials.map((testimonial) => ({
+    "@type": "Review",
+    author: {
+      "@type": "Person",
+      name: testimonial.author,
+    },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: "5",
+    },
+    reviewBody: testimonial.text,
+    datePublished: new Date().toISOString().split('T')[0],
+  })),
+};
 ---
 
 <section class="py-20" id="testimonios">
@@ -47,6 +79,9 @@ const testimonials = [
     </div>
   </div>
 </section>
+
+<!-- Review Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
 
 <style>
   .testimonial-card {
