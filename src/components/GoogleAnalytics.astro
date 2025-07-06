@@ -19,28 +19,61 @@ const GA_MEASUREMENT_ID = 'G-3ZDBF6HWZX';
 
   // Track contact form submissions
   function trackContactForm() {
+    // GA4 direct tracking
     gtag('event', 'form_submit', {
       event_category: 'Contact',
       event_label: 'Contact Form',
       value: 1
     });
+    
+    // GTM dataLayer push
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'form_submit',
+      'form_type': 'contact',
+      'event_category': 'Contact',
+      'event_action': 'submit',
+      'event_label': 'Contact Form'
+    });
   }
 
   // Track CTA clicks
   function trackCTAClick(label) {
+    // GA4 direct tracking
     gtag('event', 'click', {
       event_category: 'CTA',
       event_label: label,
       value: 1
     });
+    
+    // GTM dataLayer push
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'cta_click',
+      'cta_location': label,
+      'event_category': 'CTA',
+      'event_action': 'click',
+      'event_label': label
+    });
   }
 
   // Track lead magnet form submissions
   function trackLeadMagnet() {
+    // GA4 direct tracking
     gtag('event', 'form_submit', {
       event_category: 'Lead Magnet',
       event_label: 'Website Analysis Request',
       value: 1
+    });
+    
+    // GTM dataLayer push
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'lead_magnet_submit',
+      'form_type': 'lead_magnet',
+      'event_category': 'Lead Magnet',
+      'event_action': 'submit',
+      'event_label': 'Website Analysis Request'
     });
   }
 
