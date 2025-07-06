@@ -16,31 +16,31 @@ const { lang = "es" } = Astro.props;
 
 const contentMap: Record<Lang, LeadMagnetContent> = {
   es: {
-    title: "¿Quieres mejorar tu presencia online?",
+    title: "¿Tu página web actual no está generando clientes?",
     subtitle:
-      "Descarga nuestra guía gratuita y aprende cómo crear un sitio web profesional",
+      "Obtén un análisis gratuito de tu sitio web y descubre exactamente qué está fallando",
     description:
-      "Aprende los pasos clave para crear un sitio web que convierta visitantes en clientes",
+      "Te envío un reporte personalizado con mejoras específicas para tu página web actual",
     benefits: [
-      "Aprende los elementos clave de un sitio web efectivo",
-      "Descubre cómo optimizar tu sitio para conversiones",
-      "Obtén consejos prácticos para mejorar tu presencia online",
+      "Análisis detallado de tu sitio web actual",
+      "Identificación de problemas de conversión específicos",
+      "Recomendaciones prioritarias para generar más clientes",
     ],
-    cta: "¡Descarga la Guía Gratuita!",
+    cta: "¡Quiero Mi Análisis Gratuito!",
     privacy: "Respetamos tu privacidad. No compartiremos tu información.",
   },
   en: {
-    title: "Want to improve your online presence?",
+    title: "Is your current website not generating clients?",
     subtitle:
-      "Download our free guide and learn how to create a professional website",
+      "Get a free analysis of your website and discover exactly what's not working",
     description:
-      "Learn the key steps to create a website that converts visitors into clients",
+      "I'll send you a personalized report with specific improvements for your current website",
     benefits: [
-      "Learn the key elements of an effective website",
-      "Discover how to optimize your site for conversions",
-      "Get practical tips to improve your online presence",
+      "Detailed analysis of your current website",
+      "Identification of specific conversion problems",
+      "Priority recommendations to generate more clients",
     ],
-    cta: "Download Free Guide!",
+    cta: "I Want My Free Analysis!",
     privacy: "We respect your privacy. We won't share your information.",
   },
 };
@@ -158,6 +158,11 @@ const content = contentMap[lang as Lang];
         body: JSON.stringify({ name, email, website, lang }),
       });
       if (res.ok) {
+        // Track successful lead magnet submission
+        if (typeof window.trackLeadMagnet === 'function') {
+          window.trackLeadMagnet();
+        }
+        
         target.reset();
         alert(messages[lang as keyof typeof messages].success);
       } else {

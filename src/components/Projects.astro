@@ -137,7 +137,7 @@ const projectTypes = [
               </ul>
             </div>
             <div class="mt-auto">
-              <a href="#contacto" class="btn-secondary w-full text-center">
+              <a href="#contacto" class="btn-secondary w-full text-center" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Projects CTA - Discuss Project'); }">
                 <Translate key="projects.cta" />
               </a>
             </div>

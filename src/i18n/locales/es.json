@@ -9,190 +9,197 @@
     "faq": "FAQ"
   },
   "hero": {
-    "title": "Desarrollador Web Profesional en Barcelona - Páginas Web que Convierten",
-    "subtitle": "Servicios expertos de desarrollo y diseño web en Barcelona. Creamos páginas web impactantes, rápidas y optimizadas que generan resultados para tu negocio. Especialistas en e-commerce, webs corporativas y landing pages.",
-    "cta": "Solicita tu Presupuesto Gratuito",
-    "services": "Ver Nuestros Servicios"
+    "title": "Páginas Web Personalizadas que Convierten Visitantes en Clientes",
+    "subtitle": "Ayudo a empresas a crecer online con páginas web profesionales que se ven increíbles y generan resultados reales. Ya sea que necesites una landing page o una tienda online completa, crearé algo que trabaje tan duro como tú.",
+    "cta": "Comienza Tu Proyecto Hoy",
+    "services": "Descubre Mis Servicios"
   },
   "features": {
-    "title": "¿Por qué Elegir Nuestros Servicios de Desarrollo Web en Barcelona?",
-    "description": "Como desarrollador web líder en Barcelona, creo páginas web profesionales que no solo se ven espectaculares, sino que también generan resultados medibles para tu negocio. Desde empresas locales hasta marcas internacionales.",
+    "title": "Por qué Empresarios Inteligentes Me Eligen Para Su Página Web",
+    "description": "No soy solo otro desarrollador web. Soy un socio de crecimiento digital que entiende que tu página web debe hacer más que verse bonita—debe hacer crecer tu negocio.",
     "items": [
       {
-        "title": "Rendimiento Ultra-Rápido y Seguridad",
-        "description": "Desarrollo web de alto rendimiento con tiempos de carga ultrarrápidos, medidas de seguridad avanzadas y garantía de 99.9% de disponibilidad. Optimizado para Core Web Vitals y posicionamiento en Google."
+        "title": "Páginas Web Que Cargan Súper Rápido",
+        "description": "Tus visitantes no esperarán páginas lentas. Construyo sitios que cargan en menos de 3 segundos, manteniendo a tus clientes felices y tu posicionamiento en Google alto. Sitios rápidos = más clientes."
       },
       {
-        "title": "Diseño Web Personalizado e Identidad de Marca",
-        "description": "Diseños web únicos y modernos que reflejan perfectamente la identidad de tu marca y conectan con tu público objetivo. Cada página web se construye desde cero en Barcelona."
+        "title": "Diseños Que Realmente Convierten",
+        "description": "Cada decisión de diseño que tomo se enfoca en una cosa: convertir visitantes en clientes. Desde la colocación estratégica de botones hasta textos persuasivos, todo trabaja junto para hacer crecer tu negocio."
       },
       {
-        "title": "SEO Optimizado para Posicionamiento en Google",
-        "description": "Optimización profesional para motores de búsqueda que mejora tu posicionamiento en Google, aumenta el tráfico orgánico y te ayuda a dominar los resultados de búsqueda local en Barcelona y España."
+        "title": "SEO Que Te Hace Visible",
+        "description": "¿De qué sirve una página web hermosa si nadie la encuentra? Integro SEO en tu sitio desde el día uno, para que comiences a aparecer cuando tus clientes busquen lo que ofreces."
       },
       {
-        "title": "Mantenimiento Continuo y Soporte Técnico",
-        "description": "Mantenimiento integral de páginas web incluyendo actualizaciones regulares, copias de seguridad, monitorización de rendimiento y soporte técnico 24/7 para mantener tu web funcionando perfectamente."
+        "title": "Soporte Que Realmente Ayuda",
+        "description": "No desaparezco después del lanzamiento. Obtienes documentación clara, entrenamiento y soporte continuo para que manejes tu sitio con confianza. Además, siempre estoy aquí cuando me necesites."
       }
     ]
   },
   "projects": {
-    "title": "Servicios de Desarrollo Web en Barcelona",
-    "description": "Soluciones integrales de desarrollo web adaptadas a las necesidades de tu negocio. Desde portafolios personales hasta plataformas e-commerce complejas, entregamos resultados.",
-    "cta": "Inicia tu Proyecto",
+    "title": "Soluciones Web Que Se Adaptan a Tus Objetivos de Negocio",
+    "description": "Cada negocio es único, así que tu página web también debería serlo. Creo soluciones personalizadas que se adaptan a tus necesidades específicas, objetivos y presupuesto.",
+    "cta": "Hablemos de Tu Proyecto",
     "types": {
       "personal": {
-        "title": "Páginas Web Personales y Portafolios",
-        "description": "Páginas web profesionales para freelancers, consultores, artistas y marcas personales. Perfectas para mostrar tu trabajo y atraer nuevos clientes en Barcelona y más allá.",
+        "title": "Portafolios Profesionales y Sitios de Marca Personal",
+        "description": "Destácate de la competencia con una página web que muestre tu expertise y atraiga a tus clientes ideales. Perfecto para consultores, freelancers y profesionales de servicios.",
         "features": [
-          "Diseño responsive personalizado",
-          "Página de inicio + 5 páginas adicionales",
-          "Integración con redes sociales",
-          "Formularios de contacto con CRM",
-          "Blog o galería de portafolio",
-          "Optimización SEO para marca personal"
+          "Diseño personalizado que refleja tu marca personal",
+          "Portafolio profesional o showcase de servicios",
+          "Formularios de contacto que realmente obtienen respuestas",
+          "Configuración de blog para marketing de contenidos",
+          "Integración de prueba social y testimonios",
+          "Optimizado para móviles en todos los dispositivos"
         ]
       },
       "business": {
-        "title": "Páginas Web Empresariales y Corporativas",
-        "description": "Páginas web profesionales para empresas locales, restaurantes, tiendas y proveedores de servicios en Barcelona. Diseñadas para atraer clientes locales y generar conversiones.",
+        "title": "Páginas Web Empresariales Que Generan Resultados",
+        "description": "Transforma tu presencia online con una página web que trabaja 24/7 para atraer clientes y hacer crecer tu negocio. Construida para el éxito local y online.",
         "features": [
-          "Diseño web empresarial personalizado",
-          "Hasta 10 páginas con funcionalidades avanzadas",
-          "Integración con Google Maps y SEO local",
-          "Catálogo de productos o showcase de servicios",
-          "Testimonios de clientes y reseñas",
-          "Soporte multiidioma (Español/Inglés)"
+          "Diseño estratégico enfocado en conversiones",
+          "Optimización SEO local para mejor visibilidad",
+          "Integración con Google Business",
+          "Sistema de testimonios y reseñas de clientes",
+          "Páginas de servicios que venden por ti",
+          "Configuración de analíticas para rastrear tu éxito"
         ]
       },
       "digital": {
-        "title": "E-commerce y Plataformas Digitales",
-        "description": "Soluciones web avanzadas para tiendas online, plataformas SaaS, sitios de membresía y negocios digitales. Construidas para escalabilidad y conversiones máximas.",
+        "title": "E-commerce y Soluciones Web Avanzadas",
+        "description": "Lleva tu negocio al siguiente nivel con una tienda online poderosa o aplicación web personalizada. Construida para crecimiento, seguridad y experiencia de usuario perfecta.",
         "features": [
-          "Desarrollo e-commerce personalizado",
-          "Integración de pasarela de pagos segura",
-          "Panel de administración avanzado",
-          "Portal de miembros y gestión de usuarios",
-          "Integraciones API y herramientas de terceros",
-          "Optimización de rendimiento y analíticas"
+          "Funcionalidad e-commerce completa",
+          "Procesamiento de pagos seguro",
+          "Sistema de gestión de inventario",
+          "Portales de cuentas de clientes",
+          "Integración de automatización de marketing",
+          "Analíticas avanzadas y reportes"
         ]
       }
     }
   },
   "process": {
-    "title": "Nuestro Proceso de Desarrollo Web en Barcelona",
-    "description": "Un proceso probado y transparente que garantiza que tu proyecto web se entregue a tiempo, dentro del presupuesto y supere tus expectativas.",
+    "title": "Cómo Convierto Tu Visión en Una Página Web Que Funciona",
+    "description": "Sin sorpresas, sin confusión. Aquí te explico exactamente cómo daré vida a tu página web, paso a paso.",
     "steps": [
       {
-        "title": "Descubrimiento y Estrategia",
-        "description": "Analizamos tus objetivos de negocio, público objetivo y competidores para crear una estrategia integral de desarrollo web adaptada a tus necesidades."
+        "title": "Sesión de Descubrimiento y Estrategia",
+        "description": "Profundizaremos en tus objetivos de negocio, audiencia objetivo y panorama competitivo. Crearé una hoja de ruta clara para tu página web que se alinee con tus objetivos de crecimiento."
       },
       {
-        "title": "Diseño y Prototipado",
-        "description": "Nuestro equipo de diseño en Barcelona crea wireframes y diseños visuales personalizados que se alinean con tu marca y optimizan las conversiones."
+        "title": "Diseño Personalizado y Experiencia de Usuario",
+        "description": "Crearé wireframes y diseños visuales que no solo se ven increíbles, sino que están estratégicamente diseñados para guiar a los visitantes hacia la acción. Cada elemento tiene un propósito."
       },
       {
-        "title": "Desarrollo y Testing",
-        "description": "Desarrollo web experto usando las últimas tecnologías, seguido de testing riguroso para asegurar que tu página web funcione perfectamente en todos los dispositivos."
+        "title": "Desarrollo y Pruebas de Calidad",
+        "description": "Usando tecnologías modernas y mejores prácticas, construiré tu página web para que sea rápida, segura y escalable. Las pruebas rigurosas aseguran que todo funcione perfectamente en todos los dispositivos."
       },
       {
-        "title": "Lanzamiento y Soporte",
-        "description": "Lanzamos tu página web con formación completa, documentación y soporte continuo para asegurar tu éxito en el mercado digital."
+        "title": "Lanzamiento y Soporte de Crecimiento",
+        "description": "Tu página web se lanza con entrenamiento completo, documentación clara y soporte continuo. Te ayudo a entender cómo usar y hacer crecer tu nuevo activo digital."
       }
     ]
   },
   "testimonials": {
-    "title": "Lo que Dicen Nuestros Clientes de Barcelona",
-    "description": "Testimonios reales de clientes satisfechos que han transformado su presencia online con nuestros servicios de desarrollo web.",
+    "title": "Lo que Dicen Mis Clientes Sobre Trabajar Conmigo",
+    "description": "No solo confíes en mi palabra. Esto es lo que dicen clientes reales sobre su experiencia y resultados.",
     "items": [
       {
-        "text": "Ignacio entregó una página web excepcional que representa perfectamente nuestro negocio de diseño de interiores. La optimización SEO ha aumentado significativamente nuestra visibilidad en búsquedas locales en Barcelona, y estamos viendo más leads cualificados que nunca.",
-        "author": "María Sánchez",
-        "role": "Diseñadora de Interiores, Barcelona"
+        "text": "Trabajar con Ignacio fue un cambio radical para nuestro negocio de diseño de interiores. Nuestra nueva página web no solo se ve increíble, sino que ha traído un 40% más de leads en solo 3 meses. Su atención al detalle y comprensión de nuestros objetivos de negocio fue excepcional.",
+        "author": "María González",
+        "role": "Propietaria, Espacios Únicos Design"
       },
       {
-        "text": "Trabajar con Ignacio fue un cambio total para nuestra consultoría de marketing. La página web personalizada que construyó no solo se ve profesional, sino que también convierte visitantes en clientes. Su atención al detalle y experiencia técnica son sobresalientes.",
-        "author": "Carlos Martínez",
-        "role": "Consultor de Marketing, Madrid"
+        "text": "Era escéptico sobre invertir en una nueva página web, pero Ignacio demostró que valía cada centavo. El sitio que construyó para mi práctica de consultoría me ha posicionado como experto en mi campo. Solo el trabajo de SEO ha duplicado mi tráfico orgánico.",
+        "author": "Carlos Ruiz",
+        "role": "Consultor de Estrategia Empresarial"
       }
     ]
   },
   "pricing": {
-    "title": "Precios Transparentes de Desarrollo Web",
-    "description": "Soluciones profesionales de desarrollo web a precios competitivos. Todos los paquetes incluyen configuración de hosting, optimización SEO y soporte continuo.",
-    "note": "Precios personalizados disponibles para proyectos complejos. Contáctanos para un presupuesto personalizado basado en tus requisitos específicos.",
+    "title": "Precios Transparentes, Sin Sorpresas Ocultas",
+    "description": "Elige el paquete que se adapte a tus necesidades y presupuesto. Todos los proyectos incluyen configuración de hosting, SEO básico y soporte post-lanzamiento.",
+    "note": "Cada proyecto es único. Contáctame para un presupuesto personalizado basado en tus requisitos específicos y objetivos.",
     "popular": "Más Popular",
     "cta": "Obtén tu Presupuesto Personalizado",
     "tiers": [
       {
-        "name": "Paquete Web Básico",
+        "name": "Paquete Web Esencial",
         "features": [
-          "Diseño responsive personalizado (1-5 páginas)",
+          "Diseño responsive personalizado (hasta 5 páginas)",
           "Desarrollo mobile-first",
           "Formularios de contacto con integración de email",
-          "Optimización SEO básica y configuración de Google",
+          "Optimización SEO básica",
           "Integración con redes sociales",
-          "1 mes de soporte técnico",
-          "Configuración de hosting web incluida"
+          "1 mes de soporte post-lanzamiento",
+          "Asistencia con configuración de hosting"
         ]
       },
       {
-        "name": "Página Web Empresarial Profesional",
+        "name": "Solución Empresarial Profesional",
         "features": [
-          "Página web empresarial personalizada (5-10 páginas)",
-          "Funcionalidades responsive avanzadas y animaciones",
-          "Sección de blog o noticias con CMS",
-          "Panel de administración para gestión de contenido",
-          "Optimización SEO avanzada y analíticas",
-          "Configuración de Google Business Profile",
-          "3 meses de soporte técnico",
-          "Optimización de rendimiento incluida"
+          "Página web empresarial avanzada (hasta 10 páginas)",
+          "Funcionalidades personalizadas y animaciones",
+          "Sistema de gestión de contenido",
+          "Optimización SEO avanzada",
+          "Configuración de Google Analytics",
+          "Optimización de Google Business Profile",
+          "3 meses de soporte continuo",
+          "Optimización de rendimiento"
         ]
       },
       {
-        "name": "Solución E-commerce Premium",
+        "name": "Plataforma E-commerce Premium",
         "features": [
-          "Desarrollo completo de plataforma e-commerce",
-          "Páginas ilimitadas con funcionalidad personalizada",
-          "Integración de pasarela de pagos (Stripe/PayPal)",
-          "Panel de administración avanzado y gestión de inventario",
-          "Optimización SEO completa y herramientas de marketing",
-          "Integraciones API y servicios de terceros",
+          "Desarrollo completo de página web e-commerce",
+          "Páginas y productos ilimitados",
+          "Integración de pasarela de pagos",
+          "Panel de administración avanzado",
+          "Configuración completa de SEO y marketing",
+          "Integraciones de terceros",
           "6 meses de soporte prioritario",
-          "Monitorización de rendimiento y seguridad"
+          "Monitorización de seguridad y rendimiento"
         ]
       }
     ]
   },
   "faq": {
-    "title": "Preguntas Frecuentes sobre Desarrollo Web",
-    "description": "Obtén respuestas a preguntas comunes sobre nuestros servicios de desarrollo web en Barcelona y el proceso de creación de páginas web.",
+    "title": "Tus Preguntas, Respondidas",
+    "description": "Obtén respuestas claras a las preguntas más comunes sobre trabajar conmigo y el proceso de desarrollo web.",
     "items": [
       {
         "question": "¿Cuánto tiempo tarda en construir una página web profesional?",
-        "answer": "El tiempo de desarrollo web varía según la complejidad. Una landing page simple toma 1-2 semanas, mientras que un sitio e-commerce completo puede tomar 4-8 semanas. Proporcionamos cronogramas detallados durante nuestra consulta inicial y te mantenemos informado durante todo el proceso."
+        "answer": "El tiempo depende de la complejidad y alcance. Una página web empresarial simple típicamente toma 2-3 semanas, mientras que un sitio e-commerce completo puede tomar 6-8 semanas. Te daré un cronograma detallado después de nuestra llamada de descubrimiento, y siempre te mantengo informado del progreso."
       },
       {
-        "question": "¿Qué opciones de pago aceptas para proyectos de desarrollo web?",
-        "answer": "Aceptamos transferencias bancarias, tarjetas de crédito y pagos digitales. Nuestra estructura de pago estándar es 50% por adelantado para comenzar el desarrollo y 50% al completar el proyecto. Para proyectos más grandes, ofrecemos planes de pago flexibles."
+        "question": "¿Qué necesitas de mí para empezar?",
+        "answer": "Necesitaré tu contenido (texto, imágenes, activos de marca), acceso a tu dominio y hosting (si los tienes), y tu opinión sobre preferencias de diseño. No te preocupes si no tienes todo listo—te guiaré a través de todo el proceso."
       },
       {
-        "question": "¿Proporcionas mantenimiento continuo y soporte para páginas web?",
-        "answer": "Sí, ofrecemos paquetes integrales de mantenimiento web que incluyen actualizaciones regulares, monitorización de seguridad, optimización de rendimiento, actualizaciones de contenido y soporte técnico. Esto asegura que tu página web permanezca segura, rápida y actualizada."
+        "question": "¿Proporcionas soporte continuo después del lanzamiento?",
+        "answer": "¡Absolutamente! Cada proyecto incluye soporte post-lanzamiento, y ofrezco paquetes de mantenimiento continuo para actualizaciones regulares, monitorización de seguridad y soporte técnico. Tu página web es una inversión, y ayudo a protegerla."
       },
       {
-        "question": "¿Puedes ayudar con SEO y conseguir que mi página web aparezca en Google?",
-        "answer": "¡Absolutamente! Todas nuestras páginas web incluyen optimización SEO básica. También ofrecemos servicios SEO avanzados incluyendo investigación de palabras clave, optimización de contenido, SEO local para negocios de Barcelona, y mantenimiento SEO continuo para mejorar tus posiciones en Google."
+        "question": "¿Mi página web funcionará en dispositivos móviles?",
+        "answer": "Sí, cada página web que construyo es mobile-first y responsive. Con más del 60% del tráfico web viniendo de dispositivos móviles, me aseguro de que tu sitio se vea y funcione perfectamente en smartphones, tabletas y computadoras."
+      },
+      {
+        "question": "¿Puedes ayudar a mejorar mi página web existente en lugar de construir una nueva?",
+        "answer": "¡Definitivamente! Puedo auditar tu sitio actual y recomendar mejoras, ya sea un rediseño completo, optimización de rendimiento, mejoras SEO, o agregar nueva funcionalidad. Encontraremos la solución más costo-efectiva para tus necesidades."
       }
     ]
   },
   "contact": {
-    "title": "Obtén tu Presupuesto Gratuito de Desarrollo Web",
-    "name": "Nombre Completo",
+    "title": "¿Listo para Transformar tu Presencia Online?",
+    "subtitle": "Hablemos sobre tu proyecto y cómo puedo ayudarte a alcanzar tus objetivos de negocio.",
+    "name": "Tu Nombre",
     "email": "Dirección de Email",
-    "message": "Cuéntanos sobre tu proyecto",
-    "send": "Enviar Mensaje",
-    "success": "¡Gracias! Te responderemos en menos de 24 horas.",
-    "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctanos directamente."
+    "phone": "Número de Teléfono (Opcional)",
+    "company": "Nombre de la Empresa (Opcional)",
+    "message": "Cuéntame sobre tu proyecto y objetivos",
+    "send": "Enviar Mi Mensaje",
+    "success": "¡Gracias por contactarme! Te responderé en menos de 24 horas con los siguientes pasos.",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo o escríbeme directamente a contact@ignacioamatweb.com"
   }
 } 

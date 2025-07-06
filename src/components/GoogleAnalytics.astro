@@ -1,0 +1,51 @@
+---
+// Your actual Google Analytics Measurement ID
+const GA_MEASUREMENT_ID = 'G-3ZDBF6HWZX';
+---
+
+<!-- Google tag (gtag.js) -->
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+<script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID, {
+    page_title: document.title,
+    page_location: window.location.href,
+    anonymize_ip: true,
+    allow_google_signals: false,
+    allow_ad_personalization_signals: false
+  });
+
+  // Track contact form submissions
+  function trackContactForm() {
+    gtag('event', 'form_submit', {
+      event_category: 'Contact',
+      event_label: 'Contact Form',
+      value: 1
+    });
+  }
+
+  // Track CTA clicks
+  function trackCTAClick(label) {
+    gtag('event', 'click', {
+      event_category: 'CTA',
+      event_label: label,
+      value: 1
+    });
+  }
+
+  // Track lead magnet form submissions
+  function trackLeadMagnet() {
+    gtag('event', 'form_submit', {
+      event_category: 'Lead Magnet',
+      event_label: 'Website Analysis Request',
+      value: 1
+    });
+  }
+
+  // Make functions available globally
+  window.trackContactForm = trackContactForm;
+  window.trackCTAClick = trackCTAClick;
+  window.trackLeadMagnet = trackLeadMagnet;
+</script>

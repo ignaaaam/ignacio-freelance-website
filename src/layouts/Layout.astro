@@ -4,6 +4,8 @@ import { getAlternateUrls } from "../i18n/utils";
 import PlunkToaster from "../components/Toaster.tsx";
 import Analytics from "@vercel/analytics/astro";
 import LiveChat from "../components/LiveChat.astro";
+import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+import GoogleTagManager from "../components/GoogleTagManager.astro";
 
 interface Props {
   title: string;
@@ -297,6 +299,7 @@ const jsonLd = JSON.stringify(structuredData);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://googletagmanager.com" />
     
     <!-- Mobile performance optimizations -->
     <link rel="preload" href="/images/new-website.png" as="image" type="image/png" />
@@ -313,13 +316,19 @@ const jsonLd = JSON.stringify(structuredData);
       }
     </style>
 
+
+
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={jsonLd} />
+    
+    <!-- Google Tag Manager -->
+    <GoogleTagManager />
   </head>
   <body>
     <slot />
     <PlunkToaster client:load />
     <Analytics />
+    <GoogleAnalytics />
     <LiveChat lang={lang} />
   </body>
 </html>

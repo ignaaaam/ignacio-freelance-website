@@ -65,7 +65,7 @@ const isEnglish = currentPath.startsWith("/en");
             </svg>
           </button>
 
-          <a href="#contacto" class="btn-primary">
+          <a href="#contacto" class="btn-primary" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Header CTA - Contact'); }">
             <Translate key="contact.title" />
           </a>
         </div>
@@ -109,7 +109,7 @@ const isEnglish = currentPath.startsWith("/en");
             </a>
           ))
         }
-        <a href="#contacto" class="btn-primary inline-flex justify-center mt-2">
+        <a href="#contacto" class="btn-primary inline-flex justify-center mt-2" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Mobile Header CTA - Contact'); }">
           <Translate key="contact.title" />
         </a>
       </nav>

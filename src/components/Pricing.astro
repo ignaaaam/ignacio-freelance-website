@@ -95,7 +95,7 @@ const pricingTiers = [
                   </li>
                 ))}
               </ul>
-              <a href="#contacto" class="btn-primary w-full text-center">
+              <a href="#contacto" class="btn-primary w-full text-center" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Pricing CTA - Get Quote'); }">
                 <Translate key="pricing.cta" />
               </a>
             </div>

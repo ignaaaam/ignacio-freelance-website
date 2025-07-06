@@ -1,5 +1,6 @@
 ---
 import { getLocaleFromPath } from "../i18n/utils";
+import Translate from "./Translate.astro";
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 ---
@@ -7,11 +8,11 @@ const locale = getLocaleFromPath(Astro.url.pathname);
 <section class="py-20" id="contacto">
   <div class="container">
     <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4" data-lang-switch>
-        ¿Listo para empezar tu web?
+      <h2 class="text-3xl font-bold mb-4">
+        <Translate key="contact.title" />
       </h2>
-      <p class="text-text-muted" data-lang-switch>
-        Cuéntame sobre tu proyecto y te ayudaré a hacerlo realidad.
+      <p class="text-text-muted">
+        <Translate key="contact.subtitle" />
       </p>
     </div>
 
@@ -82,66 +83,69 @@ const locale = getLocaleFromPath(Astro.url.pathname);
           method="POST"
           onsubmit="handleSubmit(event); return false;"
         >
-          <div>
-            <label for="name" class="block mb-2" data-lang-switch>Nombre</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
-              data-placeholder-es="Tu nombre"
-              data-placeholder-en="Your name"
-            />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="name" class="block mb-2"><Translate key="contact.name" /></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
+                placeholder={locale === 'es' ? 'Tu nombre' : 'Your name'}
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block mb-2"><Translate key="contact.email" /></label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
+                placeholder={locale === 'es' ? 'tu@email.com' : 'your@email.com'}
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="phone" class="block mb-2"><Translate key="contact.phone" /></label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
+                placeholder={locale === 'es' ? '+34 123 456 789' : '+1 234 567 890'}
+              />
+            </div>
+
+            <div>
+              <label for="company" class="block mb-2"><Translate key="contact.company" /></label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
+                placeholder={locale === 'es' ? 'Tu empresa' : 'Your company'}
+              />
+            </div>
           </div>
 
           <div>
-            <label for="email" class="block mb-2">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
-              data-placeholder-es="tu@email.com"
-              data-placeholder-en="your@email.com"
-            />
-          </div>
-
-          <div>
-            <label for="type" class="block mb-2" data-lang-switch
-              >Tipo de proyecto</label
-            >
-            <select
-              id="type"
-              name="type"
-              required
-              class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
-            >
-              <option value="" data-lang-switch>Selecciona una opción</option>
-              <option value="landing">Landing Page</option>
-              <option value="web" data-lang-switch>Web Completa</option>
-              <option value="ecommerce" data-lang-switch>Tienda Online</option>
-              <option value="other" data-lang-switch>Otro</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="message" class="block mb-2" data-lang-switch
-              >Cuéntame sobre tu proyecto</label
-            >
+            <label for="message" class="block mb-2"><Translate key="contact.message" /></label>
             <textarea
               id="message"
               name="message"
               rows="5"
               required
               class="w-full px-4 py-2 bg-secondary border border-border rounded-lg focus:outline-none focus:border-accent"
-              data-placeholder-es="Cuéntame sobre tu proyecto..."
-              data-placeholder-en="Tell me about your project..."></textarea>
+              placeholder={locale === 'es' ? 'Cuéntame sobre tu proyecto y objetivos...' : 'Tell me about your project and goals...'}></textarea>
           </div>
 
-          <button type="submit" class="btn-primary w-full" data-lang-switch>
-            Enviar mensaje
+          <button type="submit" class="btn-primary w-full">
+            <Translate key="contact.send" />
           </button>
         </form>
       </div>
@@ -427,6 +431,11 @@ const locale = getLocaleFromPath(Astro.url.pathname);
       console.log("Response data:", result);
 
       if (response.ok) {
+        // Track successful form submission
+        if (typeof window.trackContactForm === 'function') {
+          window.trackContactForm();
+        }
+        
         showToast(
           "success",
           locale === "es" ? "Éxito" : "Success",

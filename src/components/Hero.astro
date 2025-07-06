@@ -16,10 +16,10 @@ import Translate from './Translate.astro';
         <Translate key="hero.subtitle" />
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-sr data-sr-delay="400">
-        <a href="#contacto" class="btn-primary">
+        <a href="#contacto" class="btn-primary" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Start Project'); }">
           <Translate key="hero.cta" />
         </a>
-        <a href="#servicios" class="btn-secondary">
+        <a href="#servicios" class="btn-secondary" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Explore Services'); }">
           <Translate key="hero.services" />
         </a>
       </div>
