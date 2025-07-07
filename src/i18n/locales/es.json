@@ -40,6 +40,7 @@
     "title": "Soluciones Web Que Se Adaptan a Tus Objetivos de Negocio",
     "description": "Cada negocio es único, así que tu página web también debería serlo. Creo soluciones personalizadas que se adaptan a tus necesidades específicas, objetivos y presupuesto.",
     "cta": "Hablemos de Tu Proyecto",
+    "ctaShort": "Hablemos",
     "types": {
       "personal": {
         "title": "Portafolios Profesionales y Sitios de Marca Personal",
@@ -188,6 +189,7 @@
   },
   "contact": {
     "title": "¿Listo para Transformar tu Presencia Online?",
+    "ctaShort": "Contacto",
     "subtitle": "Hablemos sobre tu proyecto y cómo puedo ayudarte a alcanzar tus objetivos de negocio.",
     "name": "Tu Nombre",
     "email": "Dirección de Email",

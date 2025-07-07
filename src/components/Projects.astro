@@ -136,9 +136,9 @@ const projectTypes = [
                 ))}
               </ul>
             </div>
-            <div class="mt-auto">
-              <a href="#contacto" class="btn-secondary w-full text-center" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Projects CTA - Discuss Project'); }">
-                <Translate key="projects.cta" />
+            <div class="mt-auto flex justify-center">
+              <a href="#contacto" class="btn-secondary text-center" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Projects CTA - Discuss Project'); }">
+                <Translate key="projects.ctaShort" />
               </a>
             </div>
           </div>
@@ -184,5 +184,35 @@ const projectTypes = [
   .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* --- Fix for iPad/tablet viewport: ensure button is not cut off --- */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .project-card {
+      padding-bottom: 2.5rem !important;
+      overflow: visible !important;
+    }
+    .project-card .btn-secondary {
+      min-height: 48px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .project-card .btn-secondary {
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+  }
+  @media (min-width: 1025px) {
+    .project-card .btn-secondary {
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
   }
 </style>

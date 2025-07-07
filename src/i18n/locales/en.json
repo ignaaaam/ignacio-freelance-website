@@ -40,6 +40,7 @@
     "title": "Website Solutions That Fit Your Business Goals",
     "description": "Every business is unique, so your website should be too. I create custom solutions that match your specific needs, goals, and budget.",
     "cta": "Let's Discuss Your Project",
+    "ctaShort": "Let's Talk",
     "types": {
       "personal": {
         "title": "Professional Portfolio & Personal Brand Sites",
@@ -188,6 +189,7 @@
   },
   "contact": {
     "title": "Ready to Transform Your Online Presence?",
+    "ctaShort": "Contact",
     "subtitle": "Let's discuss your project and how I can help you achieve your business goals.",
     "name": "Your Name",
     "email": "Email Address",
