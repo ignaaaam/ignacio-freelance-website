@@ -55,13 +55,13 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Set subject based on locale
     const subject = locale === 'es'
-      ? `Nuevo mensaje de contacto: ${type || 'General'}`
-      : `New contact message: ${type || 'General'}`;
+      ? `Nueva solicitud de trabajo freelance: ${type || 'General'}`
+      : `New freelance work submission: ${type || 'General'}`;
 
     // Set appropriate HTML content based on locale
     const htmlContent = locale === 'es'
       ? `
-        <h2>Nuevo mensaje de contacto</h2>
+        <h2>Nueva solicitud de trabajo freelance</h2>
         <p><strong>Nombre:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Tipo de proyecto:</strong> ${type || 'No especificado'}</p>
@@ -69,7 +69,7 @@ export const POST: APIRoute = async ({ request }) => {
         <p>${message.replace(/\n/g, '<br>')}</p>
       `
       : `
-        <h2>New contact message</h2>
+        <h2>New freelance work submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Project type:</strong> ${type || 'Not specified'}</p>
@@ -78,7 +78,7 @@ export const POST: APIRoute = async ({ request }) => {
       `;
 
     const { error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', 
+      from: 'Freelance Work Submission <onboarding@resend.dev>', 
       to: 'ignasiamat10@gmail.com',
       reply_to: email,
       subject: subject,
