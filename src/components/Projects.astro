@@ -39,6 +39,77 @@ const projectTypes = [
     ],
   },
 ];
+
+// Services Schema
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Web Development Services Barcelona",
+  description: "Professional web development services for businesses in Barcelona",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Ignacio Amat Web Development",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Barcelona",
+      addressRegion: "Catalonia",
+      addressCountry: "ES",
+    },
+  },
+  serviceType: "Web Development",
+  areaServed: {
+    "@type": "City",
+    name: "Barcelona",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Web Development Services",
+    itemListElement: [
+      {
+        "@type": "OfferCatalog",
+        name: "Personal Brand Websites",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Professional Portfolio Website",
+              description: "Custom portfolio websites for professionals and freelancers",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "Business Websites",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Corporate Website Development",
+              description: "Professional business websites for companies in Barcelona",
+            },
+          },
+        ],
+      },
+      {
+        "@type": "OfferCatalog",
+        name: "E-commerce Solutions",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "E-commerce Website Development",
+              description: "Complete online store solutions with payment integration",
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
 ---
 
 <section class="py-20 bg-secondary" id="proyectos">
@@ -147,6 +218,9 @@ const projectTypes = [
     </div>
   </div>
 </section>
+
+<!-- Services Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(servicesSchema)} />
 
 <style>
   .project-card {
