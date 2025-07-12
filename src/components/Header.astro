@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith("/en");
 ---
 
-<header class="py-4 sticky top-0 bg-primary/80 backdrop-blur-sm z-50">
+<header class="py-4 sticky top-0 bg-primary/80 backdrop-blur-sm z-40">
   <div class="container flex items-center justify-between">
     <a href={isEnglish ? "/en" : "/"} class="text-xl font-heading font-semibold"
       >Ignacio Amat</a

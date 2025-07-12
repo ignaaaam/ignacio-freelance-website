@@ -10,10 +10,12 @@ import Testimonials from "../components/Testimonials.astro";
 import FAQ from "../components/FAQ.astro";
 import Contact from "../components/Contact.astro";
 import LeadMagnet from "../components/LeadMagnet.astro";
+import FloatingCTA from "../components/FloatingCTA.astro";
+import UrgencyBanner from "../components/UrgencyBanner.astro";
 
-const title = "Desarrollo Web Barcelona - Páginas Web Profesionales | Ignacio Amat";
+const title = "Desarrollador Web Barcelona | Páginas Web Profesionales para Empresas";
 const description =
-  "Desarrollo web profesional en Barcelona. Diseño páginas web modernas para pequeñas y medianas empresas. Landing pages, webs corporativas y tiendas online que convierten.";
+  "Desarrollador web especialista en Barcelona. Creo páginas web profesionales que convierten para empresas y negocios. SEO local Barcelona, diseño responsive y resultados garantizados. +127 proyectos completados.";
 const canonicalUrl = "/";
 ---
 
@@ -23,11 +25,12 @@ const canonicalUrl = "/";
   lang="es"
   canonicalUrl={canonicalUrl}
 >
+  <UrgencyBanner />
   <Header />
   <main>
-    <Hero />
+    <Hero lang="es" />
+    <LeadMagnet lang="es" />
     <Features />
-    <LeadMagnet />
     <Projects />
     <Process />
     <Pricing />
@@ -58,6 +61,7 @@ const canonicalUrl = "/";
       </div>
     </div>
   </footer>
+  <FloatingCTA />
 </Layout>
 
 <style>

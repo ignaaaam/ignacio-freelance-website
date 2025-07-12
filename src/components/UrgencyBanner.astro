@@ -1,0 +1,79 @@
+---
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang = "es" } = Astro.props;
+
+const content = {
+  es: {
+    text: "🔥 ÚLTIMAS HORAS: Audit de conversión GRATIS (valor €497) - Solo quedan 7 plazas",
+    cta: "Conseguir mi audit"
+  },
+  en: {
+    text: "🔥 FINAL HOURS: FREE conversion audit (€497 value) - Only 7 spots left",
+    cta: "Get my audit"
+  }
+};
+
+const copy = content[lang];
+---
+
+<div id="urgency-banner" class="bg-gradient-to-r from-red-500 to-red-600 text-white py-3 sticky top-0 z-50 shadow-lg transition-all duration-300 ease-in-out">
+  <div class="container">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="animate-pulse">⚠️</span>
+        <span class="font-medium text-sm md:text-base">{copy.text}</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button 
+          class="bg-yellow-400 text-black px-4 py-1 rounded-full text-sm font-bold hover:bg-yellow-300 transition-colors"
+          onclick="document.getElementById('leadMagnetForm').scrollIntoView({ behavior: 'smooth' }); if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Urgency Banner CTA'); }"
+        >
+          {copy.cta}
+        </button>
+        <button id="close-banner" class="text-white hover:text-gray-200 ml-2">
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let bannerClosed = false;
+  
+  // Close banner functionality
+  document.getElementById('close-banner')?.addEventListener('click', () => {
+    hideBanner('user_close');
+  });
+  
+  // Hide banner function
+  function hideBanner(reason: string = 'auto') {
+    const banner = document.getElementById('urgency-banner');
+    if (banner && !bannerClosed) {
+      bannerClosed = true;
+      banner.style.transform = 'translateY(-100%)';
+      banner.style.opacity = '0';
+      
+      // Hide completely after animation
+      setTimeout(() => {
+        banner.style.display = 'none';
+      }, 300);
+      
+      // Track banner close
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'banner_close', {
+          event_category: 'Urgency Banner',
+          event_label: `Banner Closed - ${reason}`
+        });
+      }
+    }
+  }
+  
+  // Auto-hide after 60 seconds completely
+  setTimeout(() => {
+    hideBanner('auto_timeout');
+  }, 60000);
+</script>

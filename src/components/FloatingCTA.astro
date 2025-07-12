@@ -1,0 +1,61 @@
+---
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang = "es" } = Astro.props;
+
+const getContent = (language: string) => {
+  const content = {
+    es: "🎯 Audit GRATIS",
+    en: "🎯 FREE Audit"
+  };
+  
+  return language === "en" ? content.en : content.es;
+};
+
+const displayText = getContent(lang);
+---
+
+<div id="floating-cta" class="fixed bottom-24 right-6 z-40 hidden">
+  <button 
+    class="bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full shadow-lg hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 font-bold text-sm animate-pulse"
+    onclick="document.getElementById('leadMagnetForm').scrollIntoView({ behavior: 'smooth' }); if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Floating CTA - Lead Magnet'); }"
+  >
+    {displayText}
+  </button>
+</div>
+
+<script>
+  // Show floating CTA after user scrolls past hero
+  let floatingCTAShown = false;
+  
+  window.addEventListener('scroll', () => {
+    const heroHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    const floatingCTA = document.getElementById('floating-cta');
+    
+    if (scrollY > heroHeight * 0.8 && !floatingCTAShown) {
+      floatingCTA?.classList.remove('hidden');
+      floatingCTAShown = true;
+    } else if (scrollY <= heroHeight * 0.5 && floatingCTAShown) {
+      floatingCTA?.classList.add('hidden');
+      floatingCTAShown = false;
+    }
+  });
+  
+  // Hide when user reaches contact section
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.getElementById('floating-cta')?.classList.add('hidden');
+      }
+    });
+  });
+  
+  // Observe contact section
+  const contactSection = document.getElementById('contacto');
+  if (contactSection) {
+    observer.observe(contactSection);
+  }
+</script>

@@ -10,10 +10,12 @@ import Testimonials from "../../components/Testimonials.astro";
 import FAQ from "../../components/FAQ.astro";
 import Contact from "../../components/Contact.astro";
 import LeadMagnet from "../../components/LeadMagnet.astro";
+import FloatingCTA from "../../components/FloatingCTA.astro";
+import UrgencyBanner from "../../components/UrgencyBanner.astro";
 
-const title = "Web Development Barcelona - Professional Websites | Ignacio Amat";
+const title = "Web Developer Barcelona | Professional Websites for Companies";
 const description =
-  "Professional web development in Barcelona. I design modern websites for small and medium businesses. Landing pages, corporate websites and online stores that convert.";
+  "Web developer specialist in Barcelona. I create professional websites that convert for companies and businesses. Local SEO Barcelona, responsive design and guaranteed results. +127 projects completed.";
 const canonicalUrl = "/en";
 ---
 
@@ -23,11 +25,12 @@ const canonicalUrl = "/en";
   lang="en"
   canonicalUrl={canonicalUrl}
 >
+  <UrgencyBanner lang="en" />
   <Header />
   <main>
-    <Hero />
-    <Features />
+    <Hero lang="en" />
     <LeadMagnet lang="en" />
+    <Features />
     <Projects />
     <Process />
     <Pricing />
@@ -55,6 +58,7 @@ const canonicalUrl = "/en";
       </div>
     </div>
   </footer>
+  <FloatingCTA lang="en" />
 </Layout>
 
 <style>

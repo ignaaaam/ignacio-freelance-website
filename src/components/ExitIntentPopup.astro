@@ -1,0 +1,207 @@
+---
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang = "es" } = Astro.props;
+
+const content = {
+  es: {
+    title: "⚠️ ¡ESPERA! No dejes que tu competencia te gane",
+    subtitle: "Último momento para conseguir tu audit de conversión GRATIS",
+    urgency: "🚨 Esta ventana se cierra en:",
+    benefit1: "🎯 Descubre exactamente por qué pierdes clientes",
+    benefit2: "💰 Plan para aumentar conversiones en 30 días", 
+    benefit3: "🏆 Estrategias que usan tus competidores exitosos",
+    cta: "SÍ, QUIERO MI AUDIT GRATIS AHORA",
+    close: "No gracias, prefiero seguir perdiendo clientes",
+    guarantee: "🔒 Sin spam. Sin venta. Solo valor puro."
+  },
+  en: {
+    title: "⚠️ WAIT! Don't let your competition win",
+    subtitle: "Last chance to get your FREE conversion audit",
+    urgency: "🚨 This window closes in:",
+    benefit1: "🎯 Discover exactly why you're losing clients",
+    benefit2: "💰 Plan to increase conversions in 30 days",
+    benefit3: "🏆 Strategies your successful competitors use",
+    cta: "YES, I WANT MY FREE AUDIT NOW", 
+    close: "No thanks, I prefer to keep losing clients",
+    guarantee: "🔒 No spam. No sales. Just pure value."
+  }
+};
+
+const copy = content[lang];
+---
+
+<div id="exit-intent-popup" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] hidden items-center justify-center p-4">
+  <div class="bg-white rounded-xl shadow-2xl max-w-md w-full relative animate-bounce-in border-4 border-red-500">
+    <!-- Close button -->
+    <button id="close-popup" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold">&times;</button>
+    
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-red-500 to-red-600 text-white p-6 rounded-t-lg">
+      <h2 class="text-xl font-bold mb-2">{copy.title}</h2>
+      <p class="text-red-100">{copy.subtitle}</p>
+    </div>
+    
+    <!-- Timer -->
+    <div class="bg-yellow-100 px-6 py-3 border-b">
+      <div class="flex items-center justify-center gap-2">
+        <span class="text-sm font-semibold">{copy.urgency}</span>
+        <div id="countdown-timer" class="font-mono text-red-600 font-bold">05:00</div>
+      </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="p-6">
+      <div class="space-y-3 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-sm">{copy.benefit1}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-sm">{copy.benefit2}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-green-500">✓</span>
+          <span class="text-sm">{copy.benefit3}</span>
+        </div>
+      </div>
+      
+      <!-- CTA -->
+      <button id="popup-cta" class="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-4 rounded-lg font-bold text-sm hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg mb-4">
+        {copy.cta}
+      </button>
+      
+      <!-- Close option -->
+      <button id="popup-decline" class="w-full text-gray-500 text-xs underline hover:text-gray-700">
+        {copy.close}
+      </button>
+      
+      <p class="text-center text-xs text-gray-400 mt-4">{copy.guarantee}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let exitIntentTriggered = false;
+  let countdownInterval: number;
+  
+  // Exit intent detection
+  document.addEventListener('mouseleave', (e) => {
+    if (e.clientY <= 0 && !exitIntentTriggered) {
+      exitIntentTriggered = true;
+      showExitPopup();
+    }
+  });
+  
+  // Mobile scroll-up detection
+  let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768 && !exitIntentTriggered) {
+      if (window.scrollY < lastScrollY && window.scrollY < 100) {
+        exitIntentTriggered = true;
+        showExitPopup();
+      }
+    }
+    lastScrollY = window.scrollY;
+  });
+  
+  function showExitPopup() {
+    const popup = document.getElementById('exit-intent-popup');
+    if (popup) {
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      startCountdown();
+      
+      // Track popup show
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'popup_show', {
+          event_category: 'Exit Intent',
+          event_label: 'Popup Displayed'
+        });
+      }
+    }
+  }
+  
+  function hideExitPopup() {
+    const popup = document.getElementById('exit-intent-popup');
+    if (popup) {
+      popup.classList.add('hidden');
+      popup.classList.remove('flex');
+      if (countdownInterval) {
+        clearInterval(countdownInterval);
+      }
+    }
+  }
+  
+  function startCountdown() {
+    let timeLeft = 300; // 5 minutes
+    const timer = document.getElementById('countdown-timer');
+    
+    countdownInterval = setInterval(() => {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      
+      if (timer) {
+        timer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      }
+      
+      timeLeft--;
+      
+      if (timeLeft < 0) {
+        clearInterval(countdownInterval);
+        hideExitPopup();
+      }
+    }, 1000);
+  }
+  
+  // Event listeners
+  document.getElementById('close-popup')?.addEventListener('click', hideExitPopup);
+  document.getElementById('popup-decline')?.addEventListener('click', hideExitPopup);
+  
+  document.getElementById('popup-cta')?.addEventListener('click', () => {
+    // Track popup conversion
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'popup_conversion', {
+        event_category: 'Exit Intent',
+        event_label: 'CTA Clicked'
+      });
+    }
+    
+    // Scroll to lead magnet form
+    hideExitPopup();
+    document.getElementById('leadMagnetForm')?.scrollIntoView({ behavior: 'smooth' });
+  });
+  
+  // Close on outside click
+  document.getElementById('exit-intent-popup')?.addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+      hideExitPopup();
+    }
+  });
+</script>
+
+<style>
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-bounce-in {
+    animation: bounce-in 0.6s ease-out;
+  }
+</style>

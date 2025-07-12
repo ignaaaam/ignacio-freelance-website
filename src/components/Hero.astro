@@ -1,5 +1,11 @@
 ---
 import Translate from './Translate.astro';
+
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang = "es" } = Astro.props;
 ---
 
 <section class="py-20 relative overflow-hidden">
@@ -15,13 +21,34 @@ import Translate from './Translate.astro';
       <p class="text-text-muted text-lg mb-8" data-sr data-sr-delay="200">
         <Translate key="hero.subtitle" />
       </p>
+      <!-- Social proof badges -->
+      <div class="flex flex-wrap justify-center gap-4 mb-8" data-sr data-sr-delay="300">
+        <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+          ⭐ +127 proyectos Barcelona completados
+        </div>
+        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+          🚀 +340% ROI promedio empresas
+        </div>
+        <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+          ⚡ Entrega en 2-3 semanas
+        </div>
+      </div>
+      
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-sr data-sr-delay="400">
-        <a href="#contacto" class="btn-primary" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Start Project'); }">
-          <Translate key="hero.cta" />
+        <a href="#leadMagnetForm" class="btn-primary relative overflow-hidden group" onclick="document.getElementById('leadMagnetForm').scrollIntoView({ behavior: 'smooth' }); if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Lead Magnet'); }">
+          <span class="relative z-10">🎯 Audit GRATIS (€497 valor)</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
         </a>
         <a href="#servicios" class="btn-secondary" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Explore Services'); }">
           <Translate key="hero.services" />
         </a>
+      </div>
+      
+      <!-- Local SEO Text for Barcelona -->
+      <div class="mt-8 text-center max-w-2xl mx-auto">
+        <p class="text-sm text-text-muted leading-relaxed">
+          <Translate key="hero.localSEO" />
+        </p>
       </div>
     </div>
 

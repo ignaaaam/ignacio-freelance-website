@@ -1,6 +1,10 @@
 ---
 import { Icon } from "astro-icon/components";
 
+interface Props {
+  lang?: "es" | "en";
+}
+
 interface LeadMagnetContent {
   title: string;
   subtitle: string;
@@ -8,121 +12,263 @@ interface LeadMagnetContent {
   benefits: string[];
   cta: string;
   privacy: string;
+  socialProof: string;
+  valueProposition: string;
 }
 
 type Lang = "es" | "en";
+
+declare global {
+  interface Window {
+    trackLeadMagnet?: () => void;
+  }
+}
 
 const { lang = "es" } = Astro.props;
 
 const contentMap: Record<Lang, LeadMagnetContent> = {
   es: {
-    title: "¿Tu página web actual no está generando clientes?",
-    subtitle:
-      "Obtén un análisis gratuito de tu sitio web y descubre exactamente qué está fallando",
-    description:
-      "Te envío un reporte personalizado con mejoras específicas para tu página web actual",
+    title: "Análisis Gratuito de Conversión",
+    subtitle: "Descubre cómo superar a tu competencia online",
+    description: "Recibe un análisis detallado de tu sitio web vs tu competencia directa, con recomendaciones específicas para mejorar tus conversiones.",
     benefits: [
-      "Análisis detallado de tu sitio web actual",
-      "Identificación de problemas de conversión específicos",
-      "Recomendaciones prioritarias para generar más clientes",
+      "Audit completo de conversión vs competencia directa",
+      "15+ mejoras específicas para tu industria", 
+      "Plan de acción priorizado para 90 días",
+      "Análisis de palabras clave locales de Barcelona",
+      "Estrategia de copywriting para mejorar leads",
+      "Checklist de SEO local personalizado"
     ],
-    cta: "¡Quiero Mi Análisis Gratuito!",
-    privacy: "Respetamos tu privacidad. No compartiremos tu información.",
+    cta: "Solicitar Análisis Gratuito",
+    privacy: "🔒 Información confidencial. Sin spam.",
+    socialProof: "+127 empresas barcelonesas ya lo tienen",
+    valueProposition: "Valor €497 - Completamente gratis"
   },
   en: {
-    title: "Is your current website not generating clients?",
-    subtitle:
-      "Get a free analysis of your website and discover exactly what's not working",
-    description:
-      "I'll send you a personalized report with specific improvements for your current website",
+    title: "Free Conversion Analysis",
+    subtitle: "Discover how to outrank your competition online",
+    description: "Get a detailed analysis of your website vs your direct competition, with specific recommendations to improve your conversions.",
     benefits: [
-      "Detailed analysis of your current website",
-      "Identification of specific conversion problems",
-      "Priority recommendations to generate more clients",
+      "Complete conversion audit vs direct competition",
+      "15+ industry-specific improvements",
+      "Prioritized 90-day action plan",
+      "Barcelona local keyword analysis",
+      "Copywriting strategy to improve leads",
+      "Personalized local SEO checklist"
     ],
-    cta: "I Want My Free Analysis!",
-    privacy: "We respect your privacy. We won't share your information.",
+    cta: "Request Free Analysis",
+    privacy: "🔒 Confidential information. No spam.",
+    socialProof: "+127 Barcelona businesses already have it",
+    valueProposition: "€497 Value - Completely free"
   },
 };
 
 const content = contentMap[lang as Lang];
 ---
 
-<section class="py-16 bg-gradient-to-b from-background to-background/80">
+<section class="py-20 bg-secondary" id="leadMagnetSection">
   <div class="container">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div class="space-y-6">
-        <h2 class="text-3xl md:text-4xl font-bold">{content.title}</h2>
-        <h3 class="text-xl text-accent">{content.subtitle}</h3>
-        <p class="text-text-muted">{content.description}</p>
-
-        <ul class="space-y-3">
-          {
-            content.benefits.map((benefit: string) => (
-              <li class="flex items-start space-x-3">
-                <Icon
-                  name="mdi:check-circle"
-                  class="w-6 h-6 text-green-500 flex-shrink-0"
-                />
-                <span>{benefit}</span>
-              </li>
-            ))
-          }
-        </ul>
-
-        <form class="space-y-4" id="leadMagnetForm">
-          <div class="grid md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              name="name"
-              placeholder={lang === "es" ? "Tu nombre" : "Your name"}
-              class="w-full px-4 py-2 rounded-lg bg-card-bg border border-border focus:border-accent focus:outline-none"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder={lang === "es" ? "Tu email" : "Your email"}
-              class="w-full px-4 py-2 rounded-lg bg-card-bg border border-border focus:border-accent focus:outline-none"
-              required
-            />
-          </div>
-          <input
-            type="url"
-            name="website"
-            placeholder={lang === "es"
-              ? "URL de tu sitio web"
-              : "Your website URL"}
-            class="w-full px-4 py-2 rounded-lg bg-card-bg border border-border focus:border-accent focus:outline-none"
-            required
-          />
-          <button
-            type="submit"
-            class="w-full px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors"
-          >
-            {content.cta}
-          </button>
-          <p class="text-sm text-text-muted text-center">{content.privacy}</p>
-        </form>
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
+        <Icon name="mdi:chart-line" class="w-4 h-4" />
+        {content.valueProposition}
       </div>
+      <h2 class="text-3xl font-bold mb-4">{content.title}</h2>
+      <p class="text-text-muted max-w-2xl mx-auto text-lg">{content.subtitle}</p>
+    </div>
 
-      <div class="relative">
-        <div class="aspect-square rounded-2xl overflow-hidden bg-card-bg p-8">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-accent/20 to-blue-500/20 rounded-2xl"
-          >
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <p class="text-text-muted leading-relaxed">{content.description}</p>
+
+          <!-- Social proof - subtle -->
+          <div class="flex items-center gap-3 p-4 bg-accent/5 rounded-lg">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-xs font-semibold">M</div>
+              <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-xs font-semibold">C</div>
+              <div class="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-xs font-semibold">A</div>
+            </div>
+            <span class="text-sm text-text-muted">{content.socialProof}</span>
           </div>
-          <div class="relative z-10 h-full flex items-center justify-center">
-            <Icon name="mdi:chart-line" class="w-32 h-32 text-accent" />
-          </div>
+
+          <ul class="space-y-3">
+            {
+              content.benefits.map((benefit: string) => (
+                <li class="flex items-start space-x-3">
+                  <svg
+                    class="w-5 h-5 text-accent mt-0.5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span class="text-text leading-relaxed">{benefit}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="card p-8">
+          <form class="space-y-6" id="leadMagnetForm">
+            <div class="text-center mb-6">
+              <h3 class="text-xl font-semibold mb-2">
+                {lang === "es" ? "Solicitar Análisis" : "Request Analysis"}
+              </h3>
+              <p class="text-text-muted text-sm">
+                {lang === "es" ? "Completamente gratis, sin compromisos" : "Completely free, no commitments"}
+              </p>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "Tu nombre" : "Your name"}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "Email profesional" : "Professional email"}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <div>
+                <label for="website" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "URL de tu sitio web" : "Your website URL"}
+                </label>
+                <input
+                  type="url"
+                  id="website"
+                  name="website"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="btn-primary w-full"
+              >
+                {content.cta}
+              </button>
+
+              <p class="text-xs text-text-muted text-center">{content.privacy}</p>
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<style>
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .text-text {
+    color: var(--color-text);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .bg-accent\/10 {
+    background-color: rgb(59 130 246 / 0.1);
+  }
+
+  .bg-accent\/5 {
+    background-color: rgb(59 130 246 / 0.05);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+  }
+
+  .form-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  /* Dark theme adjustments */
+  @media (prefers-color-scheme: dark) {
+    .bg-accent\/10 {
+      background-color: rgb(59 130 246 / 0.15);
+    }
+
+    .bg-accent\/5 {
+      background-color: rgb(59 130 246 / 0.1);
+    }
+  }
+
+  [data-theme="dark"] .bg-accent\/10 {
+    background-color: rgb(59 130 246 / 0.15);
+  }
+
+  [data-theme="dark"] .bg-accent\/5 {
+    background-color: rgb(59 130 246 / 0.1);
+  }
+
+  [data-theme="light"] .bg-accent\/10 {
+    background-color: rgb(59 130 246 / 0.1);
+  }
+
+  [data-theme="light"] .bg-accent\/5 {
+    background-color: rgb(59 130 246 / 0.05);
+  }
+
+  /* Smooth transitions */
+  .card {
+    transition: transform 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
+</style>
+
 <script>
   const form = document.getElementById("leadMagnetForm");
+  const leadMagnetSection = document.getElementById("leadMagnetSection");
   const lang = document.documentElement.lang || "es";
 
   const messages = {
@@ -136,6 +282,7 @@ const content = contentMap[lang as Lang];
     },
   } as const;
 
+  // Handle form submission
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const target = e.target;
@@ -159,8 +306,8 @@ const content = contentMap[lang as Lang];
       });
       if (res.ok) {
         // Track successful lead magnet submission
-        if (typeof window.trackLeadMagnet === 'function') {
-          window.trackLeadMagnet();
+        if (typeof (window as any).trackLeadMagnet === 'function') {
+          (window as any).trackLeadMagnet();
         }
         
         target.reset();
@@ -173,4 +320,48 @@ const content = contentMap[lang as Lang];
       alert(messages[lang as keyof typeof messages].error);
     }
   });
+
+  // Simplified scroll-based hiding - more stable behavior
+  if (leadMagnetSection) {
+    let isHidden = false;
+    let lastScrollY = 0;
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const rect = leadMagnetSection.getBoundingClientRect();
+      const sectionHeight = leadMagnetSection.offsetHeight;
+      
+      // Only hide if user has scrolled down significantly past the section
+      // More conservative approach to prevent erratic behavior
+      const shouldHide = currentScrollY > lastScrollY && // scrolling down
+                        rect.bottom < -sectionHeight * 0.5 && // section is well above viewport
+                        currentScrollY > window.innerHeight; // scrolled at least one viewport
+      
+      if (shouldHide && !isHidden) {
+        isHidden = true;
+        leadMagnetSection.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+        leadMagnetSection.style.opacity = '0';
+        leadMagnetSection.style.transform = 'translateY(-10px)';
+        leadMagnetSection.style.pointerEvents = 'none';
+      } else if (!shouldHide && isHidden && currentScrollY < lastScrollY) {
+        // Show again only when scrolling up
+        isHidden = false;
+        leadMagnetSection.style.transition = 'opacity 0.3s ease-in, transform 0.3s ease-in';
+        leadMagnetSection.style.opacity = '1';
+        leadMagnetSection.style.transform = 'translateY(0)';
+        leadMagnetSection.style.pointerEvents = 'auto';
+      }
+      
+      lastScrollY = currentScrollY;
+    };
+
+    // Less aggressive throttling for smoother behavior
+    const throttledHandleScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(handleScroll, 50);
+    };
+
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+  }
 </script>

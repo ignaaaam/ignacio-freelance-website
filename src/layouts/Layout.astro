@@ -149,6 +149,8 @@ const structuredData: any = {
   url: fullUrl,
   name: title,
   description: description,
+  alternateName: "Ignacio Amat Desarrollador Web Barcelona",
+  slogan: lang === "es" ? "Páginas web que convierten para empresas barcelonesas" : "Converting websites for Barcelona companies",
   author: {
     "@type": "Person",
     name: author,
@@ -164,11 +166,16 @@ const structuredData: any = {
         addressRegion: "Catalonia",
         addressCountry: "ES",
         postalCode: "08001",
+        streetAddress: "Barcelona Centro"
       },
       areaServed: [
         {
           "@type": "City",
           name: "Barcelona",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Catalonia",
         },
         {
           "@type": "GeoCircle",
@@ -187,10 +194,14 @@ const structuredData: any = {
       knowsAbout: [
         "Web Development",
         "Web Design",
-        "Local SEO",
+        "Local SEO Barcelona",
         "Small Business Websites",
         "E-commerce Development",
         "Barcelona Local Business",
+        "Corporate Websites",
+        "Responsive Web Design",
+        "WordPress Development",
+        "Shopify Development"
       ],
     },
   },
@@ -212,6 +223,82 @@ const structuredData: any = {
       longitude: "2.1734",
     },
     geoRadius: "25000",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: lang === "es" ? "Servicios de Desarrollo Web Barcelona" : "Web Development Services Barcelona",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: lang === "es" ? "Desarrollo Web para Empresas Barcelona" : "Corporate Web Development Barcelona",
+          description: lang === "es" ? "Páginas web profesionales para empresas barcelonesas" : "Professional websites for Barcelona companies",
+          provider: {
+            "@type": "LocalBusiness",
+            name: "Ignacio Amat Web Development",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Barcelona",
+              addressCountry: "ES"
+            }
+          }
+        },
+        priceCurrency: "EUR",
+        priceRange: "€750-€2500",
+        availability: "https://schema.org/InStock",
+        areaServed: {
+          "@type": "City",
+          name: "Barcelona",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: lang === "es" ? "SEO Local Barcelona" : "Local SEO Barcelona",
+          description: lang === "es" ? "Optimización SEO para empresas barcelonesas" : "SEO optimization for Barcelona businesses",
+          provider: {
+            "@type": "LocalBusiness",
+            name: "Ignacio Amat Web Development",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Barcelona",
+              addressCountry: "ES"
+            }
+          }
+        },
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        areaServed: {
+          "@type": "City",
+          name: "Barcelona",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: lang === "es" ? "Diseño Web Responsive Barcelona" : "Responsive Web Design Barcelona",
+          description: lang === "es" ? "Diseño web móvil para empresas Barcelona" : "Mobile web design for Barcelona companies",
+          provider: {
+            "@type": "LocalBusiness",
+            name: "Ignacio Amat Web Development",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Barcelona",
+              addressCountry: "ES"
+            }
+          }
+        },
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        areaServed: {
+          "@type": "City",
+          name: "Barcelona",
+        },
+      }
+    ]
   },
   makesOffer: {
     "@type": "Offer",
@@ -236,11 +323,22 @@ const structuredData: any = {
   softwareVersion: "1.0",
   operatingSystem: "All",
   device: "Mobile, Desktop, Tablet",
-  // Local business enhancement
+  // Enhanced local business properties
   hasMap: "https://maps.google.com/?q=41.3851,2.1734",
   openingHours: "Mo-Fr 09:00-18:00",
   telephone: "+34-XXX-XXX-XXX",
   priceRange: "€€",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  currenciesAccepted: "EUR",
+  foundingDate: "2020",
+  numberOfEmployees: "1-5",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "27",
+    bestRating: "5",
+    worstRating: "1"
+  }
 };
 
 // Add publishedDate for articles
@@ -248,7 +346,39 @@ if (type === "article" && publishedDate) {
   structuredData.datePublished = publishedDate;
 }
 
-// Breadcrumb Schema
+// Add FAQ Schema for rich snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: lang === "es" ? "¿Cuánto cuesta una página web profesional en Barcelona?" : "How much does a professional website cost in Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: lang === "es" ? "El precio de una página web profesional en Barcelona varía entre €750-€2500 dependiendo de la complejidad. Ofrezco tres paquetes: Esencial (€750), Profesional (€1500) y Premium (€2500). Todos incluyen diseño responsive, SEO básico y soporte." : "The price of a professional website in Barcelona ranges from €750-€2500 depending on complexity. I offer three packages: Essential (€750), Professional (€1500) and Premium (€2500). All include responsive design, basic SEO and support."
+      }
+    },
+    {
+      "@type": "Question",
+      name: lang === "es" ? "¿Cuánto tiempo tarda en desarrollarse una página web en Barcelona?" : "How long does it take to develop a website in Barcelona?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: lang === "es" ? "Una página web empresarial típica tarda 2-3 semanas en completarse. Sitios más complejos con e-commerce pueden tardar 4-6 semanas. Trabajo exclusivamente en Barcelona y alrededores, garantizando entregas puntuales." : "A typical business website takes 2-3 weeks to complete. More complex sites with e-commerce can take 4-6 weeks. I work exclusively in Barcelona and surroundings, guaranteeing timely deliveries."
+      }
+    },
+    {
+      "@type": "Question",
+      name: lang === "es" ? "¿Incluye SEO local Barcelona en el desarrollo web?" : "Is local SEO Barcelona included in web development?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: lang === "es" ? "Sí, todos mis proyectos incluyen SEO local Barcelona optimizado. Configuro tu página web para aparecer en búsquedas locales como 'empresa Barcelona', optimizo para Google My Business y uso palabras clave específicas de Barcelona." : "Yes, all my projects include optimized local SEO Barcelona. I set up your website to appear in local searches like 'company Barcelona', optimize for Google My Business and use Barcelona-specific keywords."
+      }
+    }
+  ]
+};
+
+// Enhanced breadcrumb Schema
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -256,7 +386,7 @@ const breadcrumbSchema = {
     {
       "@type": "ListItem",
       position: 1,
-      name: "Home",
+      name: lang === "es" ? "Inicio" : "Home",
       item: baseUrl,
     },
     ...(currentPath.includes("/en") ? [
@@ -289,6 +419,7 @@ const breadcrumbSchema = {
 // JSON-LD structured data
 const jsonLd = JSON.stringify(structuredData);
 const breadcrumbJsonLd = JSON.stringify(breadcrumbSchema);
+const faqJsonLd = JSON.stringify(faqSchema);
 ---
 
 <!doctype html>
@@ -386,6 +517,27 @@ const breadcrumbJsonLd = JSON.stringify(breadcrumbSchema);
     <meta name="DC.identifier" content={fullUrl} />
     <meta name="DC.date" content={new Date().toISOString()} />
     <meta name="DC.rights" content="Copyright © 2024 Ignacio Amat. All rights reserved." />
+    
+    <!-- Enhanced Local SEO Meta Tags -->
+    <meta name="locality" content="Barcelona" />
+    <meta name="region" content="Catalonia" />
+    <meta name="postal-code" content="08001" />
+    <meta name="country-name" content="Spain" />
+    <meta name="business-type" content="Web Development Service" />
+    <meta name="service-area" content="Barcelona, Catalonia, Spain" />
+    <meta name="target-audience" content="Small Business, Medium Business, Large Business" />
+    <meta name="expertise" content="Web Development, Web Design, SEO, E-commerce" />
+    
+    <!-- Performance and Technical SEO -->
+    <meta name="theme-color" content="#0F172A" />
+    <meta name="msapplication-navbutton-color" content="#0F172A" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="web-author" content="Ignacio Amat" />
+    <meta name="expected-update-frequency" content="weekly" />
+    <meta name="content-language" content={lang} />
+    <meta name="page-topic" content="Web Development Barcelona" />
+    <meta name="page-type" content="Business Service" />
+    <meta name="audience" content="Business Owners, Entrepreneurs, Companies" />
 
     <!-- Mobile specific -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -399,8 +551,7 @@ const breadcrumbJsonLd = JSON.stringify(breadcrumbSchema);
     <!-- Mobile SEO optimizations -->
     <meta name="mobile-friendly" content="true" />
     <meta name="handheld-friendly" content="true" />
-    <meta name="viewport-fit" content="cover" />
-    <meta name="apple-mobile-web-app-title" content="Ignacio Amat Web" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     
     <!-- Touch icons for mobile -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -440,6 +591,7 @@ const breadcrumbJsonLd = JSON.stringify(breadcrumbSchema);
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={jsonLd} />
     <script type="application/ld+json" set:html={breadcrumbJsonLd} />
+    <script type="application/ld+json" set:html={faqJsonLd} />
     
     <!-- Google Tag Manager -->
     <GoogleTagManager />
