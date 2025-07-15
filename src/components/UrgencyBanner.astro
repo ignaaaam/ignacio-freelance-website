@@ -19,7 +19,10 @@ const content = {
 const copy = content[lang];
 ---
 
-<div id="urgency-banner" class="bg-gradient-to-r from-red-500 to-red-600 text-white py-3 sticky top-0 z-50 shadow-lg transition-all duration-300 ease-in-out">
+<!-- Banner spacer to maintain layout when banner becomes fixed -->
+<div id="banner-spacer" class="h-0 transition-all duration-500 ease-in-out"></div>
+
+<div id="urgency-banner" class="bg-gradient-to-r from-red-500 to-red-600 text-white py-3 relative z-50 shadow-lg transition-all duration-500 ease-in-out">
   <div class="container">
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-3">
@@ -43,6 +46,7 @@ const copy = content[lang];
 
 <script>
   let bannerClosed = false;
+  let isScrolling = false;
   
   // Close banner functionality
   document.getElementById('close-banner')?.addEventListener('click', () => {
@@ -60,7 +64,12 @@ const copy = content[lang];
       // Hide completely after animation
       setTimeout(() => {
         banner.style.display = 'none';
-      }, 300);
+        // Trigger header to show
+        const header = document.getElementById('main-header');
+        if (header) {
+          header.classList.add('show-header');
+        }
+      }, 500);
       
       // Track banner close
       if (typeof window.gtag === 'function') {
@@ -71,6 +80,55 @@ const copy = content[lang];
       }
     }
   }
+
+  // Scroll animation logic
+  function handleScroll() {
+    if (bannerClosed) return;
+    
+    const banner = document.getElementById('urgency-banner');
+    const header = document.getElementById('main-header');
+    const spacer = document.getElementById('banner-spacer');
+    const scrollY = window.scrollY;
+    
+    if (!isScrolling && scrollY > 10) {
+      // First scroll - make banner fixed and add spacer
+      isScrolling = true;
+      if (banner && spacer) {
+        const bannerHeight = banner.offsetHeight;
+        banner.style.position = 'fixed';
+        banner.style.top = '0';
+        banner.style.left = '0';
+        banner.style.right = '0';
+        banner.style.zIndex = '60';
+        // Add spacer to prevent layout jump
+        spacer.style.height = `${bannerHeight}px`;
+      }
+    }
+    
+    // After scrolling more, start transitioning to header
+    if (scrollY > 100 && !bannerClosed) {
+      // Fade out banner and slide in header
+      if (banner && header) {
+        banner.style.transform = 'translateY(-100%)';
+        banner.style.opacity = '0';
+        
+        setTimeout(() => {
+          if (!bannerClosed) {
+            banner.style.display = 'none';
+            header.classList.add('show-header');
+            bannerClosed = true;
+            // Remove spacer when banner is completely hidden
+            if (spacer) {
+              spacer.style.height = '0';
+            }
+          }
+        }, 500);
+      }
+    }
+  }
+
+  // Add scroll listener
+  window.addEventListener('scroll', handleScroll, { passive: true });
   
   // Auto-hide after 60 seconds completely
   setTimeout(() => {

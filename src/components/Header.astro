@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith("/en");
 ---
 
-<header class="py-4 sticky top-0 bg-primary/80 backdrop-blur-sm z-40">
+<header id="main-header" class="py-4 fixed top-0 left-0 right-0 bg-primary/80 backdrop-blur-sm z-50 transform -translate-y-full transition-transform duration-500 ease-out">
   <div class="container flex items-center justify-between">
     <a href={isEnglish ? "/en" : "/"} class="text-xl font-heading font-semibold"
       >Ignacio Amat</a
@@ -135,6 +135,16 @@ const isEnglish = currentPath.startsWith("/en");
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
+
+  /* Header animation states */
+  #main-header.show-header {
+    transform: translateY(0);
+  }
+
+  /* Smooth scroll behavior when header appears */
+  #main-header {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 </style>
 
 <script>
@@ -145,5 +155,26 @@ const isEnglish = currentPath.startsWith("/en");
   menuButton?.addEventListener("click", () => {
     mobileMenu?.classList.toggle("hidden");
   });
+
+  // Header scroll behavior for cases where banner is closed manually
+  let headerVisible = false;
+  
+  function handleHeaderScroll() {
+    const header = document.getElementById('main-header');
+    const banner = document.getElementById('urgency-banner');
+    
+    // Only show header if banner is hidden and we're scrolling
+    if (header && (!banner || banner.style.display === 'none' || window.getComputedStyle(banner).opacity === '0')) {
+      if (!headerVisible && window.scrollY > 50) {
+        header.classList.add('show-header');
+        headerVisible = true;
+      } else if (headerVisible && window.scrollY <= 10) {
+        header.classList.remove('show-header');
+        headerVisible = false;
+      }
+    }
+  }
+
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
 </script>
 
