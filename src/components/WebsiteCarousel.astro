@@ -84,7 +84,7 @@ const websiteExamples = [
 ];
 ---
 
-<div class="relative w-full h-full overflow-hidden rounded-lg bg-slate-900">
+<div class="carousel-container relative w-full h-full overflow-hidden rounded-lg bg-slate-900">
   <!-- Carousel Container -->
   <div id="website-carousel" class="flex transition-transform duration-300 ease-out h-full">
     {websiteExamples.map((site, index) => (
@@ -97,26 +97,28 @@ const websiteExamples = [
           <!-- Modern Container -->
           <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/10">
             <!-- Top Bar -->
-            <div class="bg-gradient-to-r from-black/40 to-black/30 backdrop-blur-md p-4 flex items-center justify-between border-b border-white/10">
-              <div class="flex items-center space-x-3">
-                <div class="flex space-x-2">
-                  <div class="w-3 h-3 bg-red-400 rounded-full shadow-sm"></div>
-                  <div class="w-3 h-3 bg-yellow-400 rounded-full shadow-sm"></div>
-                  <div class="w-3 h-3 bg-green-400 rounded-full shadow-sm"></div>
+            <div class="bg-gradient-to-r from-black/40 to-black/30 backdrop-blur-md p-3 sm:p-4 flex items-center justify-between border-b border-white/10 carousel-top-bar">
+              <div class="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+                <div class="flex space-x-1.5 sm:space-x-2 flex-shrink-0">
+                  <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-400 rounded-full shadow-sm"></div>
+                  <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-yellow-400 rounded-full shadow-sm"></div>
+                  <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full shadow-sm"></div>
                 </div>
-                <div class="bg-black/50 backdrop-blur-sm rounded-lg px-3 py-1.5 text-xs text-white font-medium border border-white/20 shadow-lg">
-                  {site.title.toLowerCase().replace(/\s+/g, '')}.com
+                <div class="bg-black/50 backdrop-blur-sm rounded-lg px-2 py-1 sm:px-3 sm:py-1.5 text-xs text-white font-medium border border-white/20 shadow-lg truncate min-w-0">
+                  <span class="hidden sm:inline">{site.title.toLowerCase().replace(/\s+/g, '')}.com</span>
+                  <span class="sm:hidden">{site.title.toLowerCase().replace(/\s+/g, '').substring(0, 12)}...</span>
                 </div>
               </div>
-              <!-- Category Badge -->
-              <div class="bg-black/60 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-xs font-bold border border-white/30 shadow-lg">
+              <!-- Category Badge - Responsive -->
+              <div class="bg-black/60 backdrop-blur-md text-white px-2 py-1 sm:px-4 sm:py-1.5 rounded-full text-xs font-bold border border-white/30 shadow-lg ml-2 flex-shrink-0">
                 <span class="text-sm mr-1">{site.icon}</span>
-                {site.category}
+                <span class="hidden md:inline">{site.category}</span>
+                <span class="md:hidden">{site.category.split('/')[0].split(' ')[0]}</span>
               </div>
             </div>
             
             <!-- Website Content Container -->
-            <div class="relative overflow-hidden" style="min-height: 450px;">
+            <div class="relative overflow-hidden carousel-content-container">
               {site.type === 'video' ? (
                 <video 
                   class="carousel-video w-full h-full object-cover object-top"
@@ -125,7 +127,6 @@ const websiteExamples = [
                   loop 
                   playsinline
                   preload="metadata"
-                  style="min-height: 450px;"
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                   data-webm-src={site.asset}
                 >
@@ -142,7 +143,6 @@ const websiteExamples = [
                   src={site.asset} 
                   alt={`${lang === "es" ? "Diseño web ejemplo para" : "Website design example for"} ${site.title}`}
                   class="w-full h-full object-cover object-top"
-                  style="min-height: 450px;"
                   loading="lazy"
                 />
               )}
@@ -156,28 +156,28 @@ const websiteExamples = [
 
   <!-- Navigation Arrows -->
   <button 
-    class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-white/40 transition-all duration-200 group z-10"
+    class="carousel-prev absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/15 hover:bg-white/25 active:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/30 hover:border-white/50 transition-all duration-200 group z-20 touch-manipulation"
     aria-label={lang === "es" ? "Anterior" : "Previous"}
   >
-    <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
     </svg>
   </button>
 
   <button 
-    class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-white/40 transition-all duration-200 group z-10"
+    class="carousel-next absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/15 hover:bg-white/25 active:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/30 hover:border-white/50 transition-all duration-200 group z-20 touch-manipulation"
     aria-label={lang === "es" ? "Siguiente" : "Next"}
   >
-    <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
     </svg>
   </button>
   
   <!-- Navigation Dots -->
-  <div class="absolute bottom-8 right-8 flex space-x-2">
+  <div class="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 flex space-x-2 sm:space-x-2">
     {websiteExamples.map((_, index) => (
       <button 
-        class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all duration-200 carousel-dot hover:scale-125"
+        class="w-3 h-3 sm:w-2 sm:h-2 rounded-full bg-white/40 hover:bg-white/80 active:bg-white transition-all duration-200 carousel-dot hover:scale-125 active:scale-110 touch-manipulation"
         data-slide={index}
         aria-label={`${lang === "es" ? "Ir al slide" : "Go to slide"} ${index + 1}`}
       ></button>
@@ -237,6 +237,9 @@ const websiteExamples = [
         if (e.key === 'ArrowLeft') this.prevSlide();
         if (e.key === 'ArrowRight') this.nextSlide();
       });
+      
+      // Touch/swipe support
+      this.setupTouchSupport();
       
       // Start auto-play
       this.startAutoPlay();
@@ -352,6 +355,76 @@ const websiteExamples = [
         }
       });
     }
+    
+    setupTouchSupport() {
+      if (!this.carousel) return;
+      
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      let startTime = 0;
+      
+      const handleStart = (e: TouchEvent | MouseEvent) => {
+        isDragging = true;
+        startTime = Date.now();
+        this.pauseAutoPlay();
+        
+        if (e instanceof TouchEvent) {
+          startX = e.touches[0].clientX;
+        } else {
+          startX = e.clientX;
+          e.preventDefault();
+        }
+      };
+      
+      const handleMove = (e: TouchEvent | MouseEvent) => {
+        if (!isDragging) return;
+        
+        if (e instanceof TouchEvent) {
+          currentX = e.touches[0].clientX;
+        } else {
+          currentX = e.clientX;
+        }
+        
+        const diffX = currentX - startX;
+        const threshold = 50; // Minimum swipe distance
+        
+        if (Math.abs(diffX) > threshold) {
+          e.preventDefault();
+        }
+      };
+      
+      const handleEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        
+        const diffX = currentX - startX;
+        const diffTime = Date.now() - startTime;
+        const velocity = Math.abs(diffX) / diffTime;
+        
+        // Swipe threshold: 50px or fast velocity
+        if (Math.abs(diffX) > 50 || velocity > 0.3) {
+          if (diffX > 0) {
+            this.prevSlide();
+          } else {
+            this.nextSlide();
+          }
+        }
+        
+        this.startAutoPlay();
+      };
+      
+      // Touch events
+      this.carousel.addEventListener('touchstart', handleStart, { passive: false });
+      this.carousel.addEventListener('touchmove', handleMove, { passive: false });
+      this.carousel.addEventListener('touchend', handleEnd);
+      
+      // Mouse events for desktop
+      this.carousel.addEventListener('mousedown', handleStart);
+      this.carousel.addEventListener('mousemove', handleMove);
+      this.carousel.addEventListener('mouseup', handleEnd);
+      this.carousel.addEventListener('mouseleave', handleEnd);
+    }
   }
   
   // Initialize carousel when DOM is loaded
@@ -415,39 +488,79 @@ const websiteExamples = [
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .carousel-dot {
-      width: 6px;
-      height: 6px;
+  /* Content container responsive heights */
+  .carousel-content-container {
+    min-height: 450px;
+  }
+  
+  /* Tablet optimizations */
+  @media (max-width: 1024px) {
+    .carousel-content-container {
+      min-height: 350px;
     }
     
-    .carousel-prev, .carousel-next {
-      width: 40px;
-      height: 40px;
-    }
-    
-    .carousel-prev {
-      left: 2rem;
-    }
-    
-    .carousel-next {
-      right: 2rem;
-    }
-    
-    .absolute.bottom-8.right-8 {
-      bottom: 1rem;
-      right: 1rem;
+    .relative.w-full.max-w-6xl {
+      max-width: 100%;
+      padding: 0 1rem;
     }
   }
   
-  @media (max-width: 480px) {
-    .carousel-prev {
-      left: 1rem;
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .carousel-content-container {
+      min-height: 280px;
     }
     
-    .carousel-next {
-      right: 1rem;
+    .carousel-top-bar {
+      padding: 0.75rem;
+    }
+    
+    .relative.w-full.max-w-6xl {
+      padding: 0 0.5rem;
+    }
+    
+    /* Make dots more touch-friendly on mobile */
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      margin: 0 4px;
+    }
+    
+    /* Progress bar thicker on mobile */
+    .absolute.bottom-0.left-0 {
+      height: 3px;
+    }
+  }
+  
+  /* Small mobile optimizations */
+  @media (max-width: 480px) {
+    .carousel-content-container {
+      min-height: 220px;
+    }
+    
+    .carousel-top-bar {
+      padding: 0.5rem;
+    }
+    
+    .relative.w-full.max-w-6xl {
+      padding: 0 0.25rem;
+    }
+    
+    /* Even more touch-friendly dots */
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  
+  /* Landscape phone optimizations */
+  @media (max-width: 896px) and (max-height: 414px) and (orientation: landscape) {
+    .carousel-content-container {
+      min-height: 200px;
+    }
+    
+    .carousel-top-bar {
+      padding: 0.5rem;
     }
   }
   
@@ -472,7 +585,44 @@ const websiteExamples = [
   .carousel-prev:focus,
   .carousel-next:focus,
   .carousel-dot:focus {
-    outline: 2px solid rgba(59, 130, 246, 0.5);
+    outline: 2px solid rgba(59, 130, 246, 0.8);
     outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Touch-friendly interactions */
+  .touch-manipulation {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Performance optimizations */
+  .carousel-video,
+  .carousel-content-container img {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Prevent text selection during swipe */
+  .carousel-container {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Smooth scrolling for reduced motion users */
+  @media (prefers-reduced-motion: reduce) {
+    #website-carousel,
+    .carousel-dot,
+    .carousel-prev,
+    .carousel-next {
+      transition: none;
+    }
+    
+    .carousel-video {
+      animation: none;
+    }
   }
 </style>
