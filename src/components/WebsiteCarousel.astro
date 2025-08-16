@@ -354,26 +354,13 @@ const websiteExamples = [
     }
   }
   
-  // Force cache clearing for videos
-  function clearVideoCache() {
-    if ('caches' in window) {
-      caches.keys().then(function(names) {
-        for (let name of names) {
-          caches.delete(name);
-        }
-      });
-    }
-  }
-
   // Initialize carousel when DOM is loaded
   document.addEventListener('DOMContentLoaded', () => {
-    clearVideoCache();
     new WebsiteCarousel();
   });
   
   // Reinitialize on navigation (for SPA behavior)
   document.addEventListener('astro:page-load', () => {
-    clearVideoCache();
     new WebsiteCarousel();
   });
 </script>
