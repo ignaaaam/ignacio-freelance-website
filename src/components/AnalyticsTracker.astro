@@ -1,0 +1,412 @@
+---
+// Analytics and Conversion Tracking Component
+// This component implements comprehensive tracking for marketing performance
+---
+
+<!-- Marketing Analytics Tracking -->
+<script>
+  // Enhanced Google Analytics 4 Configuration
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  // Enhanced e-commerce and conversion tracking
+  gtag('config', 'GA_MEASUREMENT_ID', {
+    // Local business tracking enhancements
+    custom_map: {
+      'custom_parameter_1': 'business_type',
+      'custom_parameter_2': 'lead_source', 
+      'custom_parameter_3': 'barcelona_district'
+    },
+    // Conversion tracking
+    send_page_view: true,
+    enhanced_conversion: true,
+    // Local business specific parameters
+    business_name: 'Ignacio Amat Web Development',
+    business_location: 'Barcelona',
+    business_type: 'Web Development Service'
+  });
+
+  // Lead Generation Tracking
+  function trackLead(leadType, leadValue, leadSource) {
+    gtag('event', 'generate_lead', {
+      event_category: 'Lead Generation',
+      event_label: leadType,
+      value: leadValue,
+      currency: 'EUR',
+      custom_parameter_1: leadType,
+      custom_parameter_2: leadSource,
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+    
+    // Facebook Pixel tracking
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {
+        content_name: leadType,
+        content_category: 'Lead Generation',
+        value: leadValue,
+        currency: 'EUR'
+      });
+    }
+  }
+
+  // Contact Form Submissions
+  function trackContactForm(formType, businessType) {
+    gtag('event', 'form_submit', {
+      event_category: 'Contact Form',
+      event_label: formType,
+      custom_parameter_1: businessType || 'Unknown',
+      custom_parameter_2: 'Website Form',
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+    
+    // Track as conversion
+    trackLead(formType, 50, 'Contact Form'); // Assign €50 value to lead
+  }
+
+  // Lead Magnet Downloads
+  function trackLeadMagnet(magnetType) {
+    gtag('event', 'download', {
+      event_category: 'Lead Magnet',
+      event_label: magnetType,
+      custom_parameter_1: magnetType,
+      custom_parameter_2: 'Lead Magnet',
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+    
+    trackLead('Lead Magnet Download', 25, magnetType);
+  }
+
+  // Phone Call Tracking
+  function trackPhoneCall() {
+    gtag('event', 'phone_call', {
+      event_category: 'Contact',
+      event_label: 'Phone Call Click',
+      custom_parameter_2: 'Phone Click',
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+    
+    trackLead('Phone Call', 75, 'Phone Click');
+  }
+
+  // WhatsApp Contact Tracking
+  function trackWhatsApp() {
+    gtag('event', 'whatsapp_contact', {
+      event_category: 'Contact',
+      event_label: 'WhatsApp Click',
+      custom_parameter_2: 'WhatsApp',
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+    
+    trackLead('WhatsApp Contact', 60, 'WhatsApp');
+  }
+
+  // Email Click Tracking
+  function trackEmailClick() {
+    gtag('event', 'email_click', {
+      event_category: 'Contact',
+      event_label: 'Email Click',
+      custom_parameter_2: 'Email Click',
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+    
+    trackLead('Email Contact', 40, 'Email Click');
+  }
+
+  // Page Engagement Tracking
+  function trackPageEngagement() {
+    // Time on page tracking
+    let startTime = Date.now();
+    
+    window.addEventListener('beforeunload', function() {
+      let timeOnPage = Math.round((Date.now() - startTime) / 1000);
+      
+      if (timeOnPage > 30) { // Only track if more than 30 seconds
+        gtag('event', 'page_engagement', {
+          event_category: 'Engagement',
+          event_label: 'Time on Page',
+          value: timeOnPage,
+          custom_parameter_3: getBarcelonaDistrict()
+        });
+      }
+    });
+    
+    // Scroll depth tracking
+    let maxScroll = 0;
+    window.addEventListener('scroll', function() {
+      let scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+      
+      if (scrollPercent > maxScroll) {
+        maxScroll = scrollPercent;
+        
+        // Track milestone scrolls
+        if ([25, 50, 75, 90].includes(scrollPercent)) {
+          gtag('event', 'scroll', {
+            event_category: 'Engagement',
+            event_label: `Scroll ${scrollPercent}%`,
+            value: scrollPercent,
+            custom_parameter_3: getBarcelonaDistrict()
+          });
+        }
+      }
+    });
+  }
+
+  // Local Business Specific Tracking
+  function getBarcelonaDistrict() {
+    // Try to determine Barcelona district from URL or referrer
+    const path = window.location.pathname;
+    
+    if (path.includes('eixample')) return 'Eixample';
+    if (path.includes('gracia')) return 'Gràcia';
+    if (path.includes('born')) return 'Born';
+    if (path.includes('barceloneta')) return 'Barceloneta';
+    if (path.includes('sarria')) return 'Sarrià-Sant Gervasi';
+    
+    return 'Barcelona General';
+  }
+
+  // Campaign Tracking
+  function trackCampaignSource() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmSource = urlParams.get('utm_source');
+    const utmMedium = urlParams.get('utm_medium');
+    const utmCampaign = urlParams.get('utm_campaign');
+    
+    if (utmSource || utmMedium || utmCampaign) {
+      gtag('event', 'campaign_visit', {
+        event_category: 'Campaign',
+        event_label: `${utmSource}_${utmMedium}_${utmCampaign}`,
+        custom_parameter_2: utmSource || 'Unknown',
+        custom_parameter_3: getBarcelonaDistrict()
+      });
+    }
+  }
+
+  // A/B Testing and Optimization Tracking
+  function trackABTest(testName, variant) {
+    gtag('event', 'ab_test', {
+      event_category: 'A/B Testing',
+      event_label: testName,
+      custom_parameter_1: variant,
+      custom_parameter_2: 'AB Test',
+      custom_parameter_3: getBarcelonaDistrict()
+    });
+  }
+
+  // Local SEO Performance Tracking
+  function trackLocalSEO() {
+    const referrer = document.referrer;
+    
+    if (referrer.includes('google.com') || referrer.includes('google.es')) {
+      gtag('event', 'organic_search_visit', {
+        event_category: 'SEO',
+        event_label: 'Google Organic',
+        custom_parameter_2: 'Organic Search',
+        custom_parameter_3: getBarcelonaDistrict()
+      });
+    }
+    
+    // Track if user came from Google My Business
+    if (referrer.includes('maps.google.com') || referrer.includes('business.google.com')) {
+      gtag('event', 'gmb_visit', {
+        event_category: 'Local SEO',
+        event_label: 'Google My Business',
+        custom_parameter_2: 'GMB',
+        custom_parameter_3: getBarcelonaDistrict()
+      });
+      
+      trackLead('GMB Visit', 35, 'Google My Business');
+    }
+  }
+
+  // Competitor Analysis Tracking
+  function trackCompetitorKeywords() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const gclid = urlParams.get('gclid'); // Google Ads click ID
+    
+    if (gclid) {
+      gtag('event', 'google_ads_visit', {
+        event_category: 'Paid Search',
+        event_label: 'Google Ads',
+        custom_parameter_2: 'Google Ads',
+        custom_parameter_3: getBarcelonaDistrict()
+      });
+    }
+  }
+
+  // Initialize tracking on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    // Basic tracking
+    trackPageEngagement();
+    trackCampaignSource();
+    trackLocalSEO();
+    trackCompetitorKeywords();
+    
+    // Set up form tracking
+    const contactForms = document.querySelectorAll('form[id*="contact"], form[id*="quote"], form[id*="audit"]');
+    contactForms.forEach(form => {
+      form.addEventListener('submit', function(e) {
+        const formType = this.id || 'Unknown Form';
+        const businessType = this.querySelector('[name="businessType"]')?.value || 'Unknown';
+        trackContactForm(formType, businessType);
+      });
+    });
+    
+    // Set up CTA tracking
+    const ctaButtons = document.querySelectorAll('a[href*="contact"], a[href*="audit"], a[href*="calculator"]');
+    ctaButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const href = this.getAttribute('href');
+        
+        if (href.includes('audit')) {
+          trackLeadMagnet('Website Audit');
+        } else if (href.includes('calculator')) {
+          trackLeadMagnet('ROI Calculator');
+        } else if (href.includes('contact')) {
+          gtag('event', 'cta_click', {
+            event_category: 'CTA',
+            event_label: 'Contact CTA',
+            custom_parameter_2: 'CTA Click',
+            custom_parameter_3: getBarcelonaDistrict()
+          });
+        }
+      });
+    });
+    
+    // Set up communication tracking
+    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+      link.addEventListener('click', trackPhoneCall);
+    });
+    
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+      link.addEventListener('click', trackEmailClick);
+    });
+    
+    document.querySelectorAll('a[href*="whatsapp"], a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', trackWhatsApp);
+    });
+  });
+
+  // Export functions for global use
+  window.trackLead = trackLead;
+  window.trackContactForm = trackContactForm;
+  window.trackLeadMagnet = trackLeadMagnet;
+  window.trackABTest = trackABTest;
+</script>
+
+<!-- Facebook Pixel Implementation -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  
+  fbq('init', 'YOUR_FACEBOOK_PIXEL_ID');
+  fbq('track', 'PageView');
+  
+  // Enhanced Facebook tracking for local business
+  fbq('track', 'ViewContent', {
+    content_type: 'website',
+    content_category: 'web_development_barcelona'
+  });
+</script>
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+  _linkedin_partner_id = "YOUR_LINKEDIN_PARTNER_ID";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+
+<!-- Google Ads Conversion Tracking -->
+<script>
+  function trackGoogleAdsConversion(conversionLabel, conversionValue) {
+    gtag('event', 'conversion', {
+      'send_to': `AW-CONVERSION_ID/${conversionLabel}`,
+      'value': conversionValue,
+      'currency': 'EUR'
+    });
+  }
+  
+  // Auto-track form submissions as conversions
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', function() {
+        const formType = this.id || 'form_submission';
+        let conversionValue = 50; // Default lead value
+        
+        if (formType.includes('quote') || formType.includes('presupuesto')) {
+          conversionValue = 100; // Higher value for quote requests
+        } else if (formType.includes('audit')) {
+          conversionValue = 25; // Lower value for audit requests
+        }
+        
+        trackGoogleAdsConversion('FORM_SUBMISSION_LABEL', conversionValue);
+      });
+    });
+  });
+</script>
+
+<!-- Hotjar Tracking Code -->
+<script>
+  (function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:YOUR_HOTJAR_ID,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "YOUR_CLARITY_ID");
+</script>
+
+<!-- Local Business Performance Dashboard Data -->
+<script>
+  // Create a simple dashboard data collection
+  window.barcelonaBusinessTracker = {
+    metrics: {
+      leads_generated: 0,
+      contact_forms: 0,
+      phone_calls: 0,
+      lead_magnets: 0,
+      page_views: 0,
+      session_duration: 0
+    },
+    
+    incrementMetric: function(metric) {
+      this.metrics[metric]++;
+      this.updateDashboard();
+    },
+    
+    updateDashboard: function() {
+      // Send data to backend for dashboard
+      if (typeof fetch !== 'undefined') {
+        fetch('/api/analytics', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            metrics: this.metrics,
+            timestamp: new Date().toISOString(),
+            page: window.location.pathname,
+            district: getBarcelonaDistrict()
+          })
+        }).catch(error => console.log('Analytics sync error:', error));
+      }
+    }
+  };
+</script>
