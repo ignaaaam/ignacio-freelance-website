@@ -1,7 +1,6 @@
 import { defineMiddleware } from 'astro:middleware';
 import { shouldRedirect } from './i18n/utils';
 import type { Locale } from './i18n/utils';
-import type { MiddlewareResponseHandler } from 'astro';
 
 // Extend Astro's Locals type to include 'locale'
 declare module "astro" {

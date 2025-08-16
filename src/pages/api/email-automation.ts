@@ -1,4 +1,7 @@
-import type { APIRoute } from 'astro';
+// Define APIRoute interface for TypeScript
+interface APIRoute {
+  POST: (context: { request: Request }) => Promise<Response>;
+}
 
 // Email automation sequences for lead nurturing
 // This API handles different email sequences based on lead type and source

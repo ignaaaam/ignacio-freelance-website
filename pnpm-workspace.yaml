@@ -1,0 +1,4 @@
+ignoredBuiltDependencies:
+  - esbuild
+  - scrollreveal
+  - sharp
