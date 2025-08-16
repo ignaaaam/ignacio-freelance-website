@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Contact from "../components/Contact.astro";
+
+const locale = "es";
+const title = "Desarrollo Web para PYMES - Páginas Web que Impulsan Negocios Locales";
+const description = "🚀 Desarrollo web especializado en PYMES y negocios locales. Webs que conectan con tu audiencia y generan clientes reales. +50 empresas ya confían en mis soluciones.";
+---
+
+<Layout 
+  title={title}
+  description={description}
+  lang={locale}
+  keywords={[
+    "desarrollo web PYMES",
+    "páginas web negocios locales",
+    "diseño web pequeñas empresas",
+    "desarrollador web Barcelona",
+    "webs para empresas familiares",
+    "páginas web profesionales",
+    "SEO local negocios",
+    "desarrollo web comercios"
+  ]}
+>
+  <!-- Enhanced Hero for Gràcia -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-900/20 to-blue-900/20"></div>
+    
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          Desarrollo Web para PYMES
+        </h1>
+        <h2 class="text-xl md:text-2xl mb-8 text-slate-300">
+          Páginas web profesionales que ayudan a pequeñas y medianas empresas a crecer online
+        </h2>
+        <p class="text-lg mb-8 text-slate-400 max-w-2xl mx-auto">
+          Especialista en desarrollo web para PYMES y negocios locales. Entiendo los desafíos únicos de las empresas familiares y los comercios que buscan crecer sin perder su esencia personal.
+        </p>
+        
+        <!-- PYMES value proposition -->
+        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg mb-8 border border-slate-700">
+          <h3 class="text-xl font-semibold mb-4 text-green-400">¿Por qué las PYMES me eligen para su web?</h3>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Entiendo los negocios familiares</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Precios justos para PYMES</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Trato personal y cercano</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/auditoria-web-gratuita" 
+            class="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+          >
+            Auditoría GRATUITA de Mi Web
+          </a>
+          <a 
+            href="#contacto" 
+            class="border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            Hablemos de Tu Proyecto
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYMES Business Focus Section -->
+  <section class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">
+          Especializado en PYMES y Negocios Familiares
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-green-400">🍽️ Restauración y Hostelería</h3>
+            <p class="text-slate-400 mb-4">
+              Páginas web para restaurantes, cafeterías, bares y hoteles familiares que quieren atraer clientes locales y turistas con su autenticidad.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Menús digitales atractivos</li>
+              <li>✓ Sistema de reservas integrado</li>
+              <li>✓ SEO local para tu zona</li>
+              <li>✓ Galería de ambiente y platos</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">🛒 Comercios y Tiendas</h3>
+            <p class="text-slate-400 mb-4">
+              E-commerce y páginas web para tiendas independientes, comercios familiares y talleres artesanales que buscan crecer online.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Catálogo online profesional</li>
+              <li>✓ Tienda online completa</li>
+              <li>✓ Historia y valores del negocio</li>
+              <li>✓ Conexión con clientes locales</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-purple-400">🔧 Servicios Profesionales</h3>
+            <p class="text-slate-400 mb-4">
+              Webs para profesionales autónomos y pequeñas empresas de servicios: consultorías, talleres, clínicas, asesorías y más.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Información de servicios clara</li>
+              <li>✓ Sistema de citas online</li>
+              <li>✓ SEO para tu especialidad</li>
+              <li>✓ Testimonios de clientes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYMES Understanding Section -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-8">
+          Entiendo las PYMES como empresario que soy
+        </h2>
+        <p class="text-lg text-slate-400 mb-8">
+          Las PYMES no son solo empresas, son el motor económico real. Entiendo los desafíos únicos de los negocios familiares y cómo pueden competir digitalmente sin perder su esencia personal.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-slate-800/50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-green-400">🎯 Realidades de las PYMES</h3>
+            <ul class="text-left text-slate-400 space-y-2">
+              <li>• Presupuestos ajustados pero inteligentes</li>
+              <li>• Trato personal y atención al detalle</li>
+              <li>• Flexibilidad y rapidez de decisión</li>
+              <li>• Conexión real con la comunidad</li>
+              <li>• Tradición familiar y valores auténticos</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">📈 Oportunidades Digitales</h3>
+            <ul class="text-left text-slate-400 space-y-2">
+              <li>• Competir con grandes empresas online</li>
+              <li>• Automatizar procesos repetitivos</li>
+              <li>• Llegar a clientes fuera de tu zona</li>
+              <li>• Demostrar profesionalidad y confianza</li>
+              <li>• Contar tu historia única y diferenciarte</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">
+          PYMES que Transformaron su Negocio Online
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-green-400">Restaurante Familiar</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Antes dependíamos solo del boca a boca. Con la nueva web aparecemos cuando buscan nuestro tipo de cocina y podemos mostrar nuestro ambiente especial. Ahora tenemos reservas de toda la ciudad."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> +60% clientes nuevos en 4 meses
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Reservas online activas
+            </div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-blue-400">Taller Artesanal</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Mi taller era solo local, vendía a vecinos y conocidos. Con la tienda online ahora vendo mis productos artesanales por toda España. El mes pasado vendí más online que en la tienda física."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> 70% ingresos ahora online
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Clientes de toda España
+            </div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-purple-400">Consultoría Familiar</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Llevamos 20 años en el sector pero éramos invisibles online. Con la nueva web conseguimos clientes de otras ciudades y podemos competir con grandes consultoras. La profesionalidad se nota desde el primer clic."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> +40% clientes de fuera de la ciudad
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Proyectos de mayor valor
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-6">
+          ¿Listo para hacer crecer tu PYMES?
+        </h2>
+        <p class="text-lg text-slate-400 mb-8">
+          Hablemos sobre cómo una página web profesional puede ayudar a tu negocio a conectar mejor con tu audiencia y atraer nuevos clientes.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/auditoria-web-gratuita" 
+            class="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+          >
+            📊 Auditoría Gratuita de Mi Web
+          </a>
+          <a 
+            href="/calculadora-roi-web" 
+            class="border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            💰 Calcular ROI Potencial
+          </a>
+        </div>
+
+        <div class="mt-8 text-sm text-slate-500">
+          <p>✓ Consulta inicial gratuita • ✓ Presupuesto sin compromiso • ✓ Reuniones online o presenciales</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Contact />
+</Layout>
+
+<style>
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .glow-1 {
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    background: #10b981;
+  }
+
+  .glow-2 {
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: #3b82f6;
+  }
+</style>
+</Layout>
