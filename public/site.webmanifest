@@ -26,9 +26,9 @@
   "categories": ["business", "productivity", "utilities"],
   "screenshots": [
     {
-      "src": "/images/hero-websites/hero-website.png",
+      "src": "/images/hero-websites/ai-landing-website.webp",
       "sizes": "1280x720",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "wide"
     }
   ]
