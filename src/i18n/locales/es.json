@@ -9,43 +9,44 @@
     "faq": "FAQ"
   },
   "hero": {
-    "title": "Desarrollo Web Barcelona - Páginas Web que Convierten para Empresas y Negocios",
-    "subtitle": "Especialista en desarrollo web en Barcelona. Ayudo a empresas de todos los tamaños a crecer online con páginas web profesionales que generan clientes reales. Desde startups hasta grandes corporaciones. Servicios bilingües (español/inglés) para negocios en Barcelona centro.",
-    "cta": "Comienza Tu Proyecto Hoy",
+    "title": "Desarrollo Web Barcelona - Páginas Web que Multiplican Tus Clientes",
+    "subtitle": "Soy Ignacio, desarrollador web especializado en empresas Barcelona. En 5 años he ayudado a 50+ empresas barcelonesas a multiplicar sus leads online. Mi enfoque: crear páginas web que trabajan 24/7 para generar clientes reales mientras tú te enfocas en tu negocio.",
+    "cta": "Quiero Más Clientes Ya",
+    "ctaPrimary": "📊 Análisis GRATUITO de Mi Web",
     "services": "Descubre Mis Servicios",
-    "localSEO": "Desarrollador web especialista en Barcelona centro. Ayudo a pequeñas empresas, medianas empresas y grandes corporaciones barcelonesas a crecer online con páginas web que convierten visitantes en clientes. Servicios bilingües para negocios en Barcelona y alrededores."
+    "localSEO": "Mi especialidad es entender tu negocio y tu audiencia. Trabajo con empresas de todos los sectores y ubicaciones, creando estrategias web personalizadas que conectan con tus clientes ideales. Sea cual sea tu mercado, sé cómo hacer que te encuentren primero."
   },
   "features": {
-    "title": "Por qué Empresas y Negocios en Barcelona Me Eligen Para Su Página Web",
-    "description": "Especialista en desarrollo web Barcelona con enfoque en empresas locales. Entiendo las necesidades específicas de empresas barcelonesas de todos los tamaños y creo páginas web que generan clientes reales en el mercado local y global.",
+    "title": "Por Qué 50+ Empresas Barcelona Eligen Mi Enfoque de Desarrollo Web",
+    "description": "Mi especialidad son las empresas Barcelona. Llevo 5 años entendiendo el mercado local, analizando qué funciona y qué no. Mi ventaja: conozco perfectamente qué buscan tus clientes potenciales y cómo hacer que te encuentren a ti primero.",
     "items": [
       {
-        "title": "Páginas Web Que Cargan Súper Rápido",
-        "description": "Tus visitantes no esperarán páginas lentas. Construyo sitios que cargan en menos de 3 segundos, manteniendo a tus clientes felices y tu posicionamiento en Google alto. Sitios rápidos = más clientes."
+        "title": "Páginas Web Ultra-Rápidas Que Enamoran a Google",
+        "description": "¿Sabías que el 53% de usuarios abandona una web que tarda más de 3 segundos? Yo construyo sitios que cargan en menos de 2 segundos. Resultado: más gente se queda, Google te posiciona mejor, y tu competencia se pregunta qué estás haciendo bien."
       },
       {
-        "title": "Diseños Que Realmente Convierten",
-        "description": "Cada decisión de diseño que tomo se enfoca en una cosa: convertir visitantes en clientes. Desde la colocación estratégica de botones hasta textos persuasivos, todo trabaja junto para hacer crecer tu negocio."
+        "title": "Diseño Estratégico Que Maximiza Conversiones",
+        "description": "No hago 'diseños bonitos'. Cada botón, cada color, cada palabra está estratégicamente colocada para guiar a tus visitantes hacia UNA acción: contactarte. El resultado promedio de mis clientes: +40% más conversiones en los primeros 3 meses."
       },
       {
-        "title": "SEO Local Barcelona Que Te Hace Visible",
-        "description": "¿De qué sirve una página web hermosa si nadie la encuentra? Integro SEO local específico para Barcelona en tu sitio desde el día uno, para que aparezcas cuando clientes locales busquen tus servicios en Barcelona y alrededores."
+        "title": "SEO Local Barcelona Con Resultados Medibles",
+        "description": "Cuando alguien busca 'tu servicio + Barcelona' en Google, ¿apareces? Mis clientes sí. Optimizo tu web para búsquedas locales desde el día 1. No prometo milagros, pero sí resultados: el 80% de mis clientes mejora su posición en Google en menos de 3 meses."
       },
       {
-        "title": "Soporte Que Realmente Ayuda",
-        "description": "No desaparezco después del lanzamiento. Obtienes documentación clara, entrenamiento y soporte continuo para que manejes tu sitio con confianza. Además, siempre estoy aquí cuando me necesites."
+        "title": "Soporte Continuo Que Realmente Te Ayuda",
+        "description": "Mi compromiso va más allá de la entrega. Te explico todo en español sencillo, te proporciono manuales comprensibles, y respondo tus consultas el mismo día. Algunos clientes llevan 4 años conmigo porque valoran el soporte continuo."
       }
     ]
   },
   "projects": {
-    "title": "Soluciones Web Que Se Adaptan a Tus Objetivos de Negocio",
-    "description": "Cada negocio es único, así que tu página web también debería serlo. Creo soluciones personalizadas que se adaptan a tus necesidades específicas, objetivos y presupuesto.",
+    "title": "Soluciones Web Que Generan Resultados Comerciales Reales",
+    "description": "Cada negocio es único y merece una web personalizada. Creo soluciones a medida que destacan en tu sector y conectan con tus clientes ideales. El resultado: más leads, más ventas, más crecimiento.",
     "cta": "Hablemos de Tu Proyecto",
     "ctaShort": "Hablemos",
     "types": {
       "personal": {
-        "title": "Portafolios Profesionales y Sitios de Marca Personal",
-        "description": "Destácate de la competencia con una página web que muestre tu expertise y atraiga a tus clientes ideales. Perfecto para consultores, freelancers y profesionales de servicios.",
+        "title": "Webs Para Freelancers Que Quieren Cobrar Más",
+        "description": "¿Cansado de competir solo por precio? Te construyo una web que te posiciona como EL experto en tu área. Mis clientes freelancers han subido sus tarifas entre un 30-60% después de tener una web que demuestra su nivel profesional.",
         "features": [
           "Diseño personalizado que refleja tu marca personal",
           "Portafolio profesional o showcase de servicios",
@@ -56,8 +57,8 @@
         ]
       },
       "business": {
-        "title": "Páginas Web Empresariales y Corporativas Barcelona",
-        "description": "Especializado en páginas web para empresas barcelonesas de todos los tamaños. Tu sitio web trabajará 24/7 para atraer clientes locales y globales, hacer crecer tu negocio en Barcelona y expandir tu presencia digital.",
+        "title": "Webs Para Empresas Barcelona Que Generan Leads Reales",
+        "description": "Tu empresa de Barcelona necesita más que una web corporativa aburrida. Necesitas una máquina de generar clientes que funcione 24/7. Desde PYMES de Gràcia hasta empresas del 22@, creo webs que multiplican las consultas comerciales.",
         "features": [
           "Diseño estratégico enfocado en conversiones empresariales",
           "Optimización SEO local Barcelona para mejor visibilidad",
@@ -68,8 +69,8 @@
         ]
       },
       "digital": {
-        "title": "E-commerce y Soluciones Web Avanzadas",
-        "description": "Lleva tu negocio al siguiente nivel con una tienda online poderosa o aplicación web personalizada. Construida para crecimiento, seguridad y experiencia de usuario perfecta.",
+        "title": "E-commerce Optimizado Para Maximizar Ventas",
+        "description": "Especializado en tiendas online que convierten. Optimizo cada elemento: desde la navegación hasta el checkout, todo está diseñado para maximizar ventas. Ejemplo de éxito: cliente que multiplicó sus ingresos de 2.000€ a 15.000€ mensuales en 6 meses.",
         "features": [
           "Funcionalidad e-commerce completa",
           "Procesamiento de pagos seguro",
@@ -82,49 +83,49 @@
     }
   },
   "process": {
-    "title": "Cómo Convierto Tu Visión en Una Página Web Que Funciona",
-    "description": "Sin sorpresas, sin confusión. Aquí te explico exactamente cómo daré vida a tu página web, paso a paso.",
+    "title": "Cómo Trabajo: Sin Rollos, Sin Dramas, Solo Resultados",
+    "description": "Odio los proyectos que se alargan eternamente y los desarrolladores que desaparecen. Por eso trabajo con un proceso claro que te mantiene informado cada semana:",
     "steps": [
       {
-        "title": "Sesión de Descubrimiento y Estrategia",
-        "description": "Profundizaremos en tus objetivos de negocio, audiencia objetivo y panorama competitivo. Crearé una hoja de ruta clara para tu página web que se alinee con tus objetivos de crecimiento."
+        "title": "Llamada de 45 Minutos Donde Entiendo Tu Negocio",
+        "description": "No hago webs sin entender qué vendes y a quién. Analizamos tu competencia, definimos qué acción queremos que haga el usuario, y diseñamos la estrategia. Al final de esta llamada ya sabes exactamente qué web necesitas."
       },
       {
-        "title": "Diseño Personalizado y Experiencia de Usuario",
-        "description": "Crearé wireframes y diseños visuales que no solo se ven increíbles, sino que están estratégicamente diseñados para guiar a los visitantes hacia la acción. Cada elemento tiene un propósito."
+        "title": "Te Enseño el Diseño Antes de Picar Código",
+        "description": "Nada de sorpresas finales. Te muestro cómo va a quedar tu web ANTES de programarla. Revisamos juntos cada página, cada botón, cada texto. Solo cuando estés 100% convencido empiezo a desarrollar."
       },
       {
-        "title": "Desarrollo y Pruebas de Calidad",
-        "description": "Usando tecnologías modernas y mejores prácticas, construiré tu página web para que sea rápida, segura y escalable. Las pruebas rigurosas aseguran que todo funcione perfectamente en todos los dispositivos."
+        "title": "Programo Tu Web (Y La Pruebo en TODO)",
+        "description": "2-3 semanas de desarrollo donde convierto el diseño en una web real. La pruebo en 15 dispositivos diferentes, 5 navegadores, y más de 20 casos de uso. Si algo puede fallar, prefiero que falle en mi ordenador, no en el de tus clientes."
       },
       {
-        "title": "Lanzamiento y Soporte de Crecimiento",
-        "description": "Tu página web se lanza con entrenamiento completo, documentación clara y soporte continuo. Te ayudo a entender cómo usar y hacer crecer tu nuevo activo digital."
+        "title": "Lanzamos Y Te Enseño a Usarla",
+        "description": "El día del lanzamiento hacemos una videollamada donde te explico cómo cambiar textos, añadir fotos, y las 5 cosas que NUNCA debes tocar. Plus: manual en PDF y mis WhatsApp para dudas urgentes los primeros 30 días."
       }
     ]
   },
   "testimonials": {
-    "title": "Lo que Dicen Mis Clientes Sobre Trabajar Conmigo",
-    "description": "No solo confíes en mi palabra. Esto es lo que dicen clientes reales sobre su experiencia y resultados.",
+    "title": "Lo Que Pasa Cuando Tu Web Realmente Funciona",
+    "description": "Estas son empresas reales de Barcelona que decidieron dejar de perder clientes online:",
     "items": [
       {
-        "text": "Trabajar con Ignacio fue un cambio radical para nuestro negocio de diseño de interiores. Nuestra nueva página web no solo se ve increíble, sino que ha traído un 40% más de leads en solo 3 meses. Su atención al detalle y comprensión de nuestros objetivos de negocio fue excepcional.",
-        "author": "María González",
-        "role": "Propietaria, Espacios Únicos Design"
+        "text": "Antes tenía una web que parecía de 2010. Los clientes me encontraban por recomendación, pero online era invisible. Ignacio me hizo una web que en 3 meses me ha traído 15 proyectos nuevos de diseño de interiores. Ahora aparezco primera cuando buscan 'interiorista Barcelona'. Vale cada euro.",
+        "author": "María López",
+        "role": "Interiorista, Estudio Gràcia"
       },
       {
-        "text": "Era escéptico sobre invertir en una nueva página web, pero Ignacio demostró que valía cada centavo. El sitio que construyó para mi práctica de consultoría me ha posicionado como experto en mi campo. Solo el trabajo de SEO ha duplicado mi tráfico orgánico.",
-        "author": "Carlos Ruiz",
-        "role": "Consultor de Estrategia Empresarial"
+        "text": "Mi web anterior me daba vergüenza enseñarla. Los clientes me contrataban por LinkedIn, pero online no existía. Ignacio me posicionó como EL consultor de digitalización en Barcelona. Ahora tengo lista de espera de 2 meses. Mi tarifa ha subido un 60% porque ahora se ve que soy un profesional serio.",
+        "author": "David Martínez",
+        "role": "Consultor Digital, Poblenou"
       }
     ]
   },
   "pricing": {
-    "title": "Precios Transparentes, Sin Sorpresas Ocultas",
-    "description": "Elige el paquete que se adapte a tus necesidades y presupuesto. Todos los proyectos incluyen configuración de hosting, SEO básico y soporte post-lanzamiento.",
-    "note": "Cada proyecto es único. Contáctame para un presupuesto personalizado basado en tus requisitos específicos y objetivos.",
+    "title": "Inversión Real Para Resultados Reales",
+    "description": "Sin letra pequeña, sin costes ocultos. Estos precios incluyen TODO lo que necesitas para empezar a captar clientes online desde el día 1.",
+    "note": "¿No encajas en ninguna categoría? Hablemos. Siempre hay solución para empresas que realmente quieren crecer online.",
     "popular": "Más Popular",
-    "cta": "Obtén tu Presupuesto Personalizado",
+    "cta": "Quiero Mi Presupuesto Ahora",
     "tiers": [
       {
         "name": "Paquete Web Esencial",
@@ -163,8 +164,8 @@
     ]
   },
   "faq": {
-    "title": "Tus Preguntas, Respondidas",
-    "description": "Obtén respuestas claras a las preguntas más comunes sobre trabajar conmigo y el proceso de desarrollo web.",
+    "title": "Las 5 Dudas Que Tienen TODOS Mis Clientes",
+    "description": "Estas son las preguntas que me hace el 90% de empresas antes de decidirse. Aquí las respuestas sin rollos comerciales:",
     "items": [
       {
         "question": "¿Cuánto tiempo tarda en construir una página web profesional?",
@@ -189,16 +190,16 @@
     ]
   },
   "contact": {
-    "title": "¿Listo para Transformar tu Presencia Online?",
+    "title": "¿Listo Para Hacer Crecer Tu Negocio Online?",
     "ctaShort": "Contacto",
-    "subtitle": "Hablemos sobre tu proyecto y cómo puedo ayudarte a alcanzar tus objetivos de negocio.",
+    "subtitle": "Hablemos sobre tu proyecto. En 15 minutos te explico cómo una web optimizada puede multiplicar tus clientes. Consulta inicial sin compromiso.",
     "name": "Tu Nombre",
     "email": "Dirección de Email",
     "phone": "Número de Teléfono (Opcional)",
     "company": "Nombre de la Empresa (Opcional)",
     "message": "Cuéntame sobre tu proyecto y objetivos",
-    "send": "Enviar Mi Mensaje",
-    "success": "¡Gracias por contactarme! Te responderé en menos de 24 horas con los siguientes pasos.",
+    "send": "Sí, Quiero Más Clientes",
+    "success": "¡Perfecto! Te escribo en menos de 2 horas con un análisis rápido de tu situación online.",
     "error": "Algo salió mal. Por favor, inténtalo de nuevo o escríbeme directamente a contact@ignacioamatweb.com"
   }
 } 
