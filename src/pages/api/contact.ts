@@ -95,6 +95,44 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    // Trigger email automation based on form type
+    try {
+      let sequenceType = 'contact_form'; // default
+      
+      if (type?.includes('Auditoría') || type?.includes('audit')) {
+        sequenceType = 'website_audit';
+      } else if (type?.includes('ROI') || type?.includes('calculadora')) {
+        sequenceType = 'roi_calculator';
+      }
+      
+      // Send to email automation system
+      await fetch(`${new URL(request.url).origin}/api/email-automation`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          sequenceType: sequenceType,
+          userData: {
+            name: name,
+            email: email,
+            company: data.company || data.businessName,
+            businessType: data.businessType,
+            message: message,
+            type: type,
+            source: data.source,
+            calculatedROI: data.calculatedROI,
+            monthlyRevenue: data.monthlyRevenue
+          }
+        })
+      }).catch(error => console.error('Email automation error:', error));
+      
+    } catch (automationError) {
+      console.error('Email automation failed:', automationError);
+      // Don't fail the main request if automation fails
+    }
+
     return new Response(
       JSON.stringify({ 
         message: errorMessages.success
