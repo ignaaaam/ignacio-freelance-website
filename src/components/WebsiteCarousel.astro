@@ -23,7 +23,7 @@ const websiteExamples = [
     title: lang === "es" ? "Aplicación Fintech Credify" : "Credify Fintech App",
     category: lang === "es" ? "Fintech / Servicios Financieros" : "Fintech / Financial Services",
     description: lang === "es" ? "Plataforma de crédito con animaciones premium" : "Credit platform with premium animations",
-    asset: "/images/hero-websites/credify-landing-website.mp4",
+    asset: "/images/hero-websites/credify-landing-website.webm",
     type: "video",
     bgGradient: "from-green-600 to-emerald-700",
     icon: "💳"
@@ -33,7 +33,7 @@ const websiteExamples = [
     title: lang === "es" ? "Gestión de Redes Sociales" : "Social Media Management",
     category: lang === "es" ? "Marketing Digital / SaaS" : "Digital Marketing / SaaS",
     description: lang === "es" ? "Herramienta completa para gestionar redes sociales" : "Complete tool for social media management",
-    asset: "/images/hero-websites/social-media-manager-website-video-compressed.mp4",
+    asset: "/images/hero-websites/social-media-manager-website-video-compressed.webm",
     type: "video",
     bgGradient: "from-pink-600 to-rose-700",
     icon: "📱"
@@ -43,7 +43,7 @@ const websiteExamples = [
     title: lang === "es" ? "Agencia de Marketing" : "Marketing Agency",
     category: lang === "es" ? "Agencia / Servicios Creativos" : "Agency / Creative Services",
     description: lang === "es" ? "Landing page de alto impacto para agencia digital" : "High-impact landing page for digital agency",
-    asset: "/images/hero-websites/marketing-agency-video-website-compressed.mp4",
+    asset: "/images/hero-websites/marketing-agency-video-website-compressed.webm",
     type: "video",
     bgGradient: "from-orange-600 to-red-700",
     icon: "🎯"
@@ -53,7 +53,7 @@ const websiteExamples = [
     title: lang === "es" ? "Solución Fintech Innovadora" : "Innovative Fintech Solution",
     category: lang === "es" ? "Fintech / Aplicación Web" : "Fintech / Web Application",
     description: lang === "es" ? "Interfaz elegante para servicios financieros" : "Elegant interface for financial services",
-    asset: "/images/hero-websites/fintech-website-video-compressed.mp4",
+    asset: "/images/hero-websites/fintech-website-video-compressed.webm",
     type: "video",
     bgGradient: "from-indigo-600 to-blue-700",
     icon: "💰"
@@ -120,11 +120,17 @@ const websiteExamples = [
                   muted 
                   loop 
                   playsinline
+                  preload="metadata"
                   style="min-height: 450px;"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                 >
-                  <source src={site.asset} type="video/mp4" />
-                  <div class="w-full h-full bg-slate-200 flex items-center justify-center">
-                    <span class="text-slate-500">Video not supported</span>
+                  <source src={site.asset} type="video/webm" />
+                  <source src={site.asset.replace('.webm', '.mp4')} type="video/mp4" />
+                  <div class="w-full h-full bg-slate-200 flex items-center justify-center" style="display: none;">
+                    <div class="text-center">
+                      <div class="text-4xl mb-4">🎬</div>
+                      <span class="text-slate-500 text-sm">{lang === "es" ? "Video no disponible" : "Video not available"}</span>
+                    </div>
                   </div>
                 </video>
               ) : (
@@ -195,6 +201,15 @@ const websiteExamples = [
 
 <script>
   class WebsiteCarousel {
+    carousel: HTMLElement | null;
+    dots: NodeListOf<Element>;
+    progress: HTMLElement | null;
+    currentSlide: number;
+    totalSlides: number;
+    isPlaying: boolean;
+    intervalId: number | null;
+    slideInterval: number;
+
     constructor() {
       this.carousel = document.getElementById('website-carousel');
       this.dots = document.querySelectorAll('.carousel-dot');
@@ -244,10 +259,12 @@ const websiteExamples = [
       this.updateProgress();
     }
     
-    goToSlide(index) {
+    goToSlide(index: number) {
       this.currentSlide = index;
       const translateX = -index * 100;
-      this.carousel.style.transform = `translateX(${translateX}%)`;
+      if (this.carousel) {
+        this.carousel.style.transform = `translateX(${translateX}%)`;
+      }
       this.updateDots();
       this.resetProgress();
     }
@@ -286,7 +303,9 @@ const websiteExamples = [
         if (now - lastUpdate >= updateInterval) {
           const elapsed = now - startTime;
           const progress = Math.min((elapsed / this.slideInterval) * 100, 100);
-          this.progress.style.width = `${progress}%`;
+          if (this.progress) {
+            this.progress.style.width = `${progress}%`;
+          }
           lastUpdate = now;
         }
         
@@ -299,7 +318,9 @@ const websiteExamples = [
     }
     
     resetProgress() {
-      this.progress.style.width = '0%';
+      if (this.progress) {
+        this.progress.style.width = '0%';
+      }
       this.updateProgress();
     }
     
