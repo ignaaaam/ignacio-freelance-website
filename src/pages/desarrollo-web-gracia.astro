@@ -1,0 +1,282 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Contact from "../components/Contact.astro";
+
+const locale = "es";
+const title = "Desarrollo Web Gràcia Barcelona - Páginas Web para Negocios del Barrio";
+const description = "Especialista en desarrollo web para empresas de Gràcia, Barcelona. Páginas web profesionales que atraen clientes locales. Consultoría gratuita para negocios del barrio.";
+---
+
+<Layout 
+  title={title}
+  description={description}
+  lang={locale}
+  keywords={[
+    "desarrollo web Gràcia Barcelona",
+    "páginas web Gràcia",
+    "diseño web Gràcia",
+    "desarrollador web Gràcia",
+    "empresas Gràcia Barcelona web",
+    "negocios Gràcia páginas web",
+    "web profesional Gràcia",
+    "SEO local Gràcia"
+  ]}
+>
+  <!-- Enhanced Hero for Gràcia -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 bg-gradient-to-br from-green-900/20 to-blue-900/20"></div>
+    
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          Desarrollo Web Gràcia
+        </h1>
+        <h2 class="text-xl md:text-2xl mb-8 text-slate-300">
+          Páginas web profesionales para empresas del barrio Gràcia que conectan con la comunidad local
+        </h2>
+        <p class="text-lg mb-8 text-slate-400 max-w-2xl mx-auto">
+          Especialista local en desarrollo web para negocios de Gràcia. Conozco el espíritu único del barrio y las necesidades específicas de las empresas de esta zona vibrante de Barcelona.
+        </p>
+        
+        <!-- Gràcia-specific value proposition -->
+        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg mb-8 border border-slate-700">
+          <h3 class="text-xl font-semibold mb-4 text-green-400">¿Por qué las empresas de Gràcia me eligen?</h3>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Entiendo el espíritu de Gràcia</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>SEO local especializado</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Reuniones en el barrio</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/auditoria-web-gratuita" 
+            class="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+          >
+            Auditoría Gratuita Gràcia
+          </a>
+          <a 
+            href="#contacto" 
+            class="border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gràcia Business Focus Section -->
+  <section class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">
+          Especializado en empresas del barrio Gràcia
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-green-400">☕ Cafeterías y Restaurantes</h3>
+            <p class="text-slate-400 mb-4">
+              Páginas web para cafeterías, restaurantes y bares de Gràcia que quieren atraer tanto vecinos como turistas con experiencias auténticas.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Menús digitales atractivos</li>
+              <li>✓ Sistema de reservas fácil</li>
+              <li>✓ SEO para "restaurante Gràcia"</li>
+              <li>✓ Galería de ambiente y platos</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">🎨 Tiendas Creativas y Artesanía</h3>
+            <p class="text-slate-400 mb-4">
+              E-commerce y páginas web para tiendas independientes, galerías y talleres de Gràcia que buscan mostrar su creatividad única.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Catálogo online creativo</li>
+              <li>✓ SEO para "tienda Gràcia"</li>
+              <li>✓ Historia del negocio</li>
+              <li>✓ Conexión con la comunidad</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-purple-400">🏠 Servicios Locales</h3>
+            <p class="text-slate-400 mb-4">
+              Webs para servicios del barrio como peluquerías, clínicas, talleres mecánicos y otros negocios que sirven a la comunidad de Gràcia.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Información de servicios clara</li>
+              <li>✓ Horarios y ubicación</li>
+              <li>✓ SEO para "servicio Gràcia"</li>
+              <li>✓ Testimonios de vecinos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Knowledge Section -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-8">
+          Conozco Gràcia como un vecino más
+        </h2>
+        <p class="text-lg text-slate-400 mb-8">
+          Gràcia no es solo un barrio, es una comunidad con identidad propia. Entiendo su espíritu independiente y cómo las empresas locales pueden conectar auténticamente con sus vecinos.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-slate-800/50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-green-400">🎯 Características de Gràcia</h3>
+            <ul class="text-left text-slate-400 space-y-2">
+              <li>• Comunidad fuerte y activa</li>
+              <li>• Espíritu independiente y creativo</li>
+              <li>• Plazas como centros de vida social</li>
+              <li>• Mezcla perfecta de locales y turistas</li>
+              <li>• Tradición de comercio de proximidad</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">📈 Oportunidades Digitales</h3>
+            <ul class="text-left text-slate-400 space-y-2">
+              <li>• Fuerte búsqueda local "Gràcia"</li>
+              <li>• Comunidad activa en redes sociales</li>
+              <li>• Turistas buscan experiencias auténticas</li>
+              <li>• Vecinos valoran negocios locales</li>
+              <li>• Potencial para historias únicas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">
+          Casos de éxito en Gràcia
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-green-400">Café de Especialidad Plaza del Sol</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Nuestra nueva web refleja perfectamente el ambiente acogedor del café. Ahora los turistas nos encuentran fácilmente y los vecinos pueden ver nuestro menú diario."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> +80% visitas de nuevos clientes
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Reservas online activas
+            </div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-blue-400">Taller Artesanal Calle Verdi</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "El e-commerce nos permite vender nuestras creaciones más allá del barrio. La web cuenta nuestra historia y conecta con clientes que valoran lo artesanal."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> 60% ventas online
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Clientes de toda Europa
+            </div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-purple-400">Peluquería Familiar Plaza Galla Placídia</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Con la nueva web, nuestros clientes pueden reservar cita online y ver nuestros trabajos. Hemos rejuvenecido el negocio familiar sin perder nuestra esencia."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> +40% citas online
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Nuevas generaciones de clientes
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-6">
+          ¿Listo para destacar en Gràcia?
+        </h2>
+        <p class="text-lg text-slate-400 mb-8">
+          Hablemos sobre cómo una página web profesional puede ayudar a tu negocio de Gràcia a conectar mejor con la comunidad y atraer nuevos clientes.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/auditoria-web-gratuita" 
+            class="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+          >
+            📊 Auditoría Gratuita de Mi Web
+          </a>
+          <a 
+            href="/calculadora-roi-web" 
+            class="border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            💰 Calcular ROI Potencial
+          </a>
+        </div>
+
+        <div class="mt-8 text-sm text-slate-500">
+          <p>✓ Consulta inicial gratuita • ✓ Presupuesto sin compromiso • ✓ Reuniones en Gràcia</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Contact />
+</Layout>
+
+<style>
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .glow-1 {
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    background: #10b981;
+  }
+
+  .glow-2 {
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: #3b82f6;
+  }
+</style>
+</Layout>

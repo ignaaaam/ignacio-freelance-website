@@ -1,5 +1,6 @@
 ---
 import Translate from './Translate.astro';
+import WebsiteCarousel from './WebsiteCarousel.astro';
 
 interface Props {
   lang?: "es" | "en";
@@ -54,20 +55,14 @@ const { lang = "es" } = Astro.props;
 
     <div class="mt-16 relative">
       <div class="aspect-video rounded-lg overflow-hidden bg-secondary relative" data-sr data-sr-delay="600" data-sr-duration="1200">
-        <!-- Glow effect behind the image -->
+        <!-- Glow effect behind the carousel -->
         <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-transparent blur-2xl opacity-50"></div>
         <div class="absolute inset-0 bg-gradient-to-tr from-accent/20 via-accent/10 to-transparent blur-2xl opacity-50"></div>
         
-        <img 
-          src="/images/new-website.png" 
-          srcset="/images/new-website.png 1x, /images/new-website.png 2x"
-          alt="Professional website design example for Barcelona businesses - modern, responsive web development by Ignacio Amat showcasing corporate website solutions for small and medium enterprises" 
-          class="w-full h-full object-cover relative z-10"
-          loading="lazy"
-          fetchpriority="high"
-          width="1200"
-          height="675"
-        />
+        <!-- Website Examples Carousel -->
+        <div class="w-full h-full relative z-10">
+          <WebsiteCarousel lang={lang} />
+        </div>
       </div>
     </div>
   </div>
