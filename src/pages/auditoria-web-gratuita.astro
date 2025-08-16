@@ -1,0 +1,274 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getTranslation } from "../i18n/utils";
+
+const locale = "es";
+const title = "Auditoría Web Gratuita para Empresas Barcelona - Análisis Profesional";
+const description = "Consigue un análisis completo y gratuito de tu página web. Descubre qué está impidiendo que tu sitio web atraiga más clientes en Barcelona. Reporte detallado en 24 horas.";
+---
+
+<Layout 
+  title={title}
+  description={description}
+  lang={locale}
+  keywords={[
+    "auditoría web gratuita Barcelona",
+    "análisis página web Barcelona", 
+    "evaluación sitio web empresas",
+    "consultoría web gratuita Barcelona",
+    "revisar página web Barcelona",
+    "optimización web Barcelona",
+    "mejoras página web empresas"
+  ]}
+>
+  <main class="min-h-screen bg-slate-900 text-white">
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            Auditoría Web Gratuita
+          </h1>
+          <h2 class="text-xl md:text-2xl mb-8 text-slate-300">
+            ¿Tu página web está perdiendo clientes? Descúbrelo en 5 minutos
+          </h2>
+          <p class="text-lg mb-8 text-slate-400 max-w-2xl mx-auto">
+            Obtén un análisis profesional y gratuito de tu página web. Te diré exactamente qué está impidiendo que tu sitio web atraiga más clientes en Barcelona.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          
+          <!-- Left Column: Benefits -->
+          <div class="space-y-8">
+            <h3 class="text-3xl font-bold mb-6">¿Qué incluye tu auditoría gratuita?</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-white font-bold">1</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-2">Análisis de Velocidad y Rendimiento</h4>
+                  <p class="text-slate-400">Verifico si tu web carga rápido en móviles y ordenadores. Los sitios lentos pierden el 53% de visitantes móviles.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-white font-bold">2</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-2">SEO Local Barcelona</h4>
+                  <p class="text-slate-400">Reviso si tu página aparece cuando clientes barceloneses buscan tus servicios en Google.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-white font-bold">3</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-2">Experiencia de Usuario</h4>
+                  <p class="text-slate-400">Evalúo si tu diseño convierte visitantes en clientes o los hace huir a la competencia.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-white font-bold">4</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-2">Seguridad y Técnico</h4>
+                  <p class="text-slate-400">Verifico problemas de seguridad y errores técnicos que afectan tu posicionamiento.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span class="text-white font-bold">5</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg mb-2">Plan de Acción Prioritario</h4>
+                  <p class="text-slate-400">Te doy una lista clara de mejoras ordenadas por impacto en tu negocio.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trust Signals -->
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="font-semibold mb-4">⭐ Más de 50 empresas Barcelona confían en mi análisis</h4>
+              <div class="grid grid-cols-2 gap-4 text-sm text-slate-400">
+                <div>✓ Restaurantes y cafés</div>
+                <div>✓ Despachos profesionales</div>
+                <div>✓ Tiendas y comercios</div>
+                <div>✓ Servicios de salud</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Form -->
+          <div class="lg:sticky lg:top-8">
+            <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+              <h3 class="text-2xl font-bold mb-6 text-center">Solicita tu auditoría gratuita</h3>
+              <p class="text-slate-400 text-center mb-8">Recibe tu reporte detallado en menos de 24 horas</p>
+              
+              <form id="audit-form" class="space-y-6">
+                <div>
+                  <label for="business-name" class="block text-sm font-medium mb-2">Nombre de tu empresa *</label>
+                  <input 
+                    type="text" 
+                    id="business-name" 
+                    name="businessName"
+                    required
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Restaurante El Buen Gusto"
+                  />
+                </div>
+
+                <div>
+                  <label for="website-url" class="block text-sm font-medium mb-2">URL de tu página web *</label>
+                  <input 
+                    type="url" 
+                    id="website-url" 
+                    name="websiteUrl"
+                    required
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="https://tuempresa.com"
+                  />
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-medium mb-2">Email profesional *</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email"
+                    required
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="tu@empresa.com"
+                  />
+                </div>
+
+                <div>
+                  <label for="business-type" class="block text-sm font-medium mb-2">Tipo de negocio</label>
+                  <select 
+                    id="business-type" 
+                    name="businessType"
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    <option value="">Selecciona tu sector</option>
+                    <option value="restaurante">Restaurante/Café</option>
+                    <option value="retail">Tienda/Comercio</option>
+                    <option value="servicios">Servicios profesionales</option>
+                    <option value="salud">Salud y bienestar</option>
+                    <option value="inmobiliaria">Inmobiliaria</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="main-goal" class="block text-sm font-medium mb-2">¿Cuál es tu objetivo principal?</label>
+                  <textarea 
+                    id="main-goal" 
+                    name="mainGoal"
+                    rows="3"
+                    class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Ej: Conseguir más reservas online, aparecer en Google cuando busquen mi servicio..."
+                  ></textarea>
+                </div>
+
+                <button 
+                  type="submit"
+                  class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
+                >
+                  📊 Solicitar Mi Auditoría Gratuita
+                </button>
+
+                <p class="text-xs text-slate-500 text-center">
+                  Sin spam. Tu información está segura. Reporte en 24h máximo.
+                </p>
+              </form>
+            </div>
+
+            <!-- Guarantee -->
+            <div class="mt-6 bg-green-900/20 border border-green-500/30 p-4 rounded-lg text-center">
+              <h4 class="font-semibold text-green-400 mb-2">✅ Garantía 100%</h4>
+              <p class="text-sm text-slate-400">Si no encuentro al menos 5 mejoras importantes en tu web, te devuelvo el tiempo invertido.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="py-16 bg-slate-800/50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h3 class="text-2xl font-bold mb-8">Empresas Barcelona que ya mejoraron con mi auditoría</h3>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="font-semibold mb-2">Restaurante La Marina</h4>
+              <p class="text-slate-400 text-sm">"Después de la auditoría, duplicamos las reservas online en 2 meses"</p>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="font-semibold mb-2">Clínica Dental Eixample</h4>
+              <p class="text-slate-400 text-sm">"Ahora aparecemos primeros en Google para 'dentista Barcelona'"</p>
+            </div>
+            <div class="bg-slate-800 p-6 rounded-lg">
+              <h4 class="font-semibold mb-2">Boutique Gràcia</h4>
+              <p class="text-slate-400 text-sm">"La velocidad de la web mejoró un 70% y las ventas online subieron"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<script>
+  document.getElementById('audit-form')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    
+    // Add audit-specific data
+    data.type = 'Auditoría Web Gratuita';
+    data.source = 'audit-landing-page';
+    data.locale = 'es';
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (response.ok) {
+        // Show success message
+        const form = e.target as HTMLFormElement;
+        form.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4">✅</div>
+            <h3 class="text-2xl font-bold mb-4 text-green-400">¡Solicitud Recibida!</h3>
+            <p class="text-slate-400 mb-4">Te enviaré tu auditoría completa en menos de 24 horas.</p>
+            <p class="text-sm text-slate-500">Revisa tu email (incluye spam) para actualizaciones.</p>
+          </div>
+        `;
+      } else {
+        throw new Error('Error en el envío');
+      }
+    } catch (error) {
+      alert('Error al enviar la solicitud. Por favor, inténtalo de nuevo.');
+    }
+  });
+</script>
+</Layout>
