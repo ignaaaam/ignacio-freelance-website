@@ -9,7 +9,9 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [tailwind(), react(), icon()],
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    maxDuration: 30
+  }),
   vite: {
     envPrefix: ['CHATBASE_'],
     assetsInclude: ['**/*.webm']
