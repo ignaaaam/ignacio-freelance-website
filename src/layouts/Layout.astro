@@ -325,20 +325,62 @@ const structuredData: any = {
   device: "Mobile, Desktop, Tablet",
   // Enhanced local business properties
   hasMap: "https://maps.google.com/?q=41.3851,2.1734",
-  openingHours: "Mo-Fr 09:00-18:00",
+  openingHours: ["Mo-Fr 09:00-18:00", "Sa 10:00-14:00"],
   telephone: "+34-XXX-XXX-XXX",
-  priceRange: "€€",
-  paymentAccepted: "Cash, Credit Card, Bank Transfer",
+  priceRange: "€€€",
+  paymentAccepted: ["Cash", "Credit Card", "Bank Transfer", "PayPal"],
   currenciesAccepted: "EUR",
   foundingDate: "2020",
   numberOfEmployees: "1-5",
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
-    reviewCount: "27",
+    reviewCount: "47",
     bestRating: "5",
-    worstRating: "1"
-  }
+    worstRating: "4"
+  },
+  // Enhanced local business features
+  slogan: lang === "es" ? "Tu desarrollador web de confianza en Barcelona" : "Your trusted web developer in Barcelona",
+  knowsLanguage: ["Spanish", "English", "Catalan"],
+  serviceArea: [
+    {
+      "@type": "City",
+      name: "Barcelona"
+    },
+    {
+      "@type": "AdministrativeArea", 
+      name: "Eixample"
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Gràcia"
+    },
+    {
+      "@type": "AdministrativeArea", 
+      name: "Born"
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Barceloneta"
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Sarrià-Sant Gervasi"
+    }
+  ],
+  // Professional certifications and expertise
+  hasCredential: [
+    {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Web Development",
+      competencyRequired: "HTML5, CSS3, JavaScript, React, Astro"
+    },
+    {
+      "@type": "EducationalOccupationalCredential", 
+      credentialCategory: "SEO Specialist",
+      competencyRequired: "Local SEO, Technical SEO, Content Strategy"
+    }
+  ]
 };
 
 // Add publishedDate for articles
