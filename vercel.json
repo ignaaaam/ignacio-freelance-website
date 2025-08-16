@@ -34,7 +34,8 @@
   ],
   "build": {
     "env": {
-      "VERCEL_BUILD_COMMAND": "npm run build"
+      "VERCEL_BUILD_COMMAND": "npm run build",
+      "DEPLOYMENT_VERSION": "2024-01-01"
     }
   }
 }
