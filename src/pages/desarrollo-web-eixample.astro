@@ -1,0 +1,285 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+
+const locale = "es";
+const title = "Desarrollo Web Eixample Barcelona - Páginas Web para Empresas del Eixample";
+const description = "Especialista en desarrollo web para empresas del Eixample, Barcelona. Páginas web profesionales que atraen clientes locales. Consultoría gratuita para negocios del distrito Eixample.";
+---
+
+<Layout 
+  title={title}
+  description={description}
+  lang={locale}
+  keywords={[
+    "desarrollo web Eixample Barcelona",
+    "páginas web Eixample",
+    "diseño web Eixample",
+    "desarrollador web Eixample",
+    "empresas Eixample Barcelona web",
+    "negocios Eixample páginas web",
+    "web profesional Eixample",
+    "SEO local Eixample"
+  ]}
+>
+  <!-- Enhanced Hero for Eixample -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20"></div>
+    
+    <!-- Background Elements -->
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          Desarrollo Web Eixample
+        </h1>
+        <h2 class="text-xl md:text-2xl mb-8 text-slate-300">
+          Páginas web profesionales para empresas del distrito Eixample que convierten visitantes en clientes
+        </h2>
+        <p class="text-lg mb-8 text-slate-400 max-w-2xl mx-auto">
+          Especialista local en desarrollo web para negocios del Eixample. Conozco el mercado, la competencia y las necesidades específicas de las empresas de esta zona premium de Barcelona.
+        </p>
+        
+        <!-- Eixample-specific value proposition -->
+        <div class="bg-slate-800/50 backdrop-blur-sm p-6 rounded-lg mb-8 border border-slate-700">
+          <h3 class="text-xl font-semibold mb-4 text-blue-400">¿Por qué las empresas del Eixample me eligen?</h3>
+          <div class="grid md:grid-cols-3 gap-4 text-sm">
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Conozco el mercado Eixample</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>SEO local especializado</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-green-400">✓</span>
+              <span>Reuniones presenciales</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/auditoria-web-gratuita" 
+            class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+          >
+            Auditoría Gratuita Eixample
+          </a>
+          <a 
+            href="#contacto" 
+            class="border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eixample Business Focus Section -->
+  <section class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">
+          Especializado en empresas del Eixample Barcelona
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">🏢 Oficinas y Despachos</h3>
+            <p class="text-slate-400 mb-4">
+              Páginas web profesionales para despachos de abogados, consultoras, gestorías y oficinas del Eixample que necesitan atraer clientes premium.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Diseño corporativo elegante</li>
+              <li>✓ SEO para "despacho abogados Eixample"</li>
+              <li>✓ Formularios de consulta</li>
+              <li>✓ Integración con agenda online</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-green-400">🛍️ Comercios y Boutiques</h3>
+            <p class="text-slate-400 mb-4">
+              E-commerce y páginas web para tiendas del Eixample que quieren vender online y atraer turistas y locales a su ubicación física.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Tienda online completa</li>
+              <li>✓ SEO para "tienda moda Eixample"</li>
+              <li>✓ Integración con redes sociales</li>
+              <li>✓ Localización en Google Maps</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="text-xl font-semibold mb-4 text-purple-400">🍽️ Restaurantes Premium</h3>
+            <p class="text-slate-400 mb-4">
+              Webs para restaurantes del Eixample que buscan atraer tanto turistas como locales con experiencias gastronómicas únicas.
+            </p>
+            <ul class="text-sm text-slate-500 space-y-2">
+              <li>✓ Menús digitales interactivos</li>
+              <li>✓ Sistema de reservas online</li>
+              <li>✓ SEO para "restaurante Eixample"</li>
+              <li>✓ Galería de platos profesional</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Knowledge Section -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-8">
+          Conozco el Eixample como la palma de mi mano
+        </h2>
+        <p class="text-lg text-slate-400 mb-8">
+          No soy solo un desarrollador web más. Llevo años trabajando con empresas del Eixample y entiendo las particularidades de este distrito único de Barcelona.
+        </p>
+        
+        <div class="grid md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-slate-800/50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-blue-400">🎯 Ventajas del Eixample</h3>
+            <ul class="text-left text-slate-400 space-y-2">
+              <li>• Alto poder adquisitivo de residentes</li>
+              <li>• Gran flujo de turistas premium</li>
+              <li>• Concentración de oficinas corporativas</li>
+              <li>• Excelente conectividad y transporte</li>
+              <li>• Presencia de empresas internacionales</li>
+            </ul>
+          </div>
+
+          <div class="bg-slate-800/50 p-6 rounded-lg">
+            <h3 class="text-xl font-semibold mb-4 text-green-400">📈 Oportunidades Digitales</h3>
+            <ul class="text-left text-slate-400 space-y-2">
+              <li>• Competencia online aún limitada</li>
+              <li>• Búsquedas locales en crecimiento</li>
+              <li>• Clientes que valoran la calidad</li>
+              <li>• Mercado B2B muy activo</li>
+              <li>• Potencial para precios premium</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="py-16 bg-slate-800/50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-white">
+          Casos de éxito en el Eixample
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-blue-400">Despacho Jurídico Passeig de Gràcia</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Después de renovar nuestra web, los contactos de nuevos clientes aumentaron un 150%. Ahora aparecemos primeros para 'abogados Eixample'."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> +150% contactos nuevos
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> TOP 3 en Google local
+            </div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-green-400">Boutique de Lujo Rambla Catalunya</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "Nuestro e-commerce nos permite vender a clientes de toda Europa. Las ventas online ya representan el 40% de nuestros ingresos."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> 40% ventas online
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Clientes internacionales
+            </div>
+          </div>
+
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h3 class="font-semibold mb-2 text-purple-400">Restaurante Gourmet Diagonal</h3>
+            <p class="text-slate-400 text-sm mb-4">
+              "El sistema de reservas online nos ayuda a gestionar mejor las mesas. Ahora tenemos lista de espera la mayoría de noches."
+            </p>
+            <div class="text-xs text-slate-500">
+              <span class="text-green-400">✓</span> +200% reservas online
+              <span class="mx-2">•</span>
+              <span class="text-green-400">✓</span> Lista de espera constante
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-6">
+          ¿Listo para destacar en el Eixample?
+        </h2>
+        <p class="text-lg text-slate-400 mb-8">
+          Hablemos sobre cómo una página web profesional puede ayudar a tu negocio del Eixample a atraer más clientes y aumentar las ventas.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="/auditoria-web-gratuita" 
+            class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105"
+          >
+            📊 Auditoría Gratuita de Mi Web
+          </a>
+          <a 
+            href="/calculadora-roi-web" 
+            class="border border-slate-600 hover:border-slate-500 text-slate-300 hover:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+          >
+            💰 Calcular ROI Potencial
+          </a>
+        </div>
+
+        <div class="mt-8 text-sm text-slate-500">
+          <p>✓ Consulta inicial gratuita • ✓ Presupuesto sin compromiso • ✓ Reuniones en el Eixample</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Contact />
+</Layout>
+
+<style>
+  .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .glow-1 {
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 300px;
+    background: #3b82f6;
+  }
+
+  .glow-2 {
+    top: 20%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: #8b5cf6;
+  }
+</style>
+</Layout>
