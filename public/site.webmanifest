@@ -26,10 +26,10 @@
   "categories": ["business", "productivity", "utilities"],
   "screenshots": [
     {
-      "src": "/images/hero-website.png",
+      "src": "/images/hero-websites/hero-website.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     }
   ]
-} 
+}
