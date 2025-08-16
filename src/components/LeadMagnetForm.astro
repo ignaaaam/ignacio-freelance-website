@@ -1,0 +1,272 @@
+---
+import Translate from './Translate.astro';
+
+interface Props {
+  lang?: "es" | "en";
+}
+
+const { lang = "es" } = Astro.props;
+---
+
+<section id="leadMagnetForm" class="py-16 bg-slate-800/50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          {lang === "es" ? "Auditoría Web Gratuita - Valor €497" : "Free Website Audit - €497 Value"}
+        </h2>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+          {lang === "es" 
+            ? "Descubre exactamente qué está impidiendo que tu página web atraiga más clientes en Barcelona" 
+            : "Discover exactly what's preventing your website from attracting more clients in Barcelona"
+          }
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Benefits Column -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold mb-6">
+            {lang === "es" ? "Tu auditoría incluye:" : "Your audit includes:"}
+          </h3>
+          
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold text-sm">1</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-2">
+                  {lang === "es" ? "Análisis de Velocidad y Rendimiento" : "Speed and Performance Analysis"}
+                </h4>
+                <p class="text-slate-400">
+                  {lang === "es" 
+                    ? "Verifico si tu web carga rápido en móviles. Los sitios lentos pierden el 53% de visitantes móviles." 
+                    : "I check if your website loads fast on mobile. Slow sites lose 53% of mobile visitors."
+                  }
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold text-sm">2</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-2">
+                  {lang === "es" ? "SEO Local Barcelona" : "Local SEO Barcelona"}
+                </h4>
+                <p class="text-slate-400">
+                  {lang === "es" 
+                    ? "Reviso si tu página aparece cuando clientes barceloneses buscan tus servicios en Google." 
+                    : "I check if your page appears when Barcelona clients search for your services on Google."
+                  }
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold text-sm">3</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-2">
+                  {lang === "es" ? "Análisis de Conversión" : "Conversion Analysis"}
+                </h4>
+                <p class="text-slate-400">
+                  {lang === "es" 
+                    ? "Evalúo si tu diseño convierte visitantes en clientes o los hace huir a la competencia." 
+                    : "I evaluate if your design converts visitors into clients or sends them to your competition."
+                  }
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold text-sm">4</span>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-2">
+                  {lang === "es" ? "Plan de Acción Prioritario" : "Priority Action Plan"}
+                </h4>
+                <p class="text-slate-400">
+                  {lang === "es" 
+                    ? "Te doy una lista clara de mejoras ordenadas por impacto en tu negocio." 
+                    : "I give you a clear list of improvements ordered by impact on your business."
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust Signals -->
+          <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+            <h4 class="font-semibold mb-4 text-green-400">
+              {lang === "es" ? "⭐ Más de 50 empresas Barcelona confían en mi análisis" : "⭐ More than 50 Barcelona companies trust my analysis"}
+            </h4>
+            <div class="grid grid-cols-2 gap-4 text-sm text-slate-400">
+              <div>{lang === "es" ? "✓ Restaurantes y cafés" : "✓ Restaurants and cafes"}</div>
+              <div>{lang === "es" ? "✓ Despachos profesionales" : "✓ Professional offices"}</div>
+              <div>{lang === "es" ? "✓ Tiendas y comercios" : "✓ Stores and shops"}</div>
+              <div>{lang === "es" ? "✓ Servicios de salud" : "✓ Health services"}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column -->
+        <div class="lg:sticky lg:top-8">
+          <div class="bg-slate-800 p-8 rounded-xl border border-slate-700">
+            <h3 class="text-2xl font-bold mb-6 text-center">
+              {lang === "es" ? "Solicita tu auditoría gratuita" : "Request your free audit"}
+            </h3>
+            <p class="text-slate-400 text-center mb-8">
+              {lang === "es" ? "Recibe tu reporte detallado en menos de 24 horas" : "Receive your detailed report in less than 24 hours"}
+            </p>
+            
+            <form id="audit-form-homepage" class="space-y-6">
+              <input type="hidden" name="source" value="homepage-lead-magnet" />
+              <input type="hidden" name="locale" value={lang} />
+              
+              <div>
+                <label for="business-name-home" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "Nombre de tu empresa *" : "Your company name *"}
+                </label>
+                <input 
+                  type="text" 
+                  id="business-name-home" 
+                  name="businessName"
+                  required
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder={lang === "es" ? "Restaurante El Buen Gusto" : "Your Business Name"}
+                />
+              </div>
+
+              <div>
+                <label for="website-url-home" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "URL de tu página web *" : "Your website URL *"}
+                </label>
+                <input 
+                  type="url" 
+                  id="website-url-home" 
+                  name="websiteUrl"
+                  required
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="https://tuempresa.com"
+                />
+              </div>
+
+              <div>
+                <label for="email-home" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "Email profesional *" : "Professional email *"}
+                </label>
+                <input 
+                  type="email" 
+                  id="email-home" 
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="tu@empresa.com"
+                />
+              </div>
+
+              <div>
+                <label for="business-type-home" class="block text-sm font-medium mb-2">
+                  {lang === "es" ? "Tipo de negocio" : "Business type"}
+                </label>
+                <select 
+                  id="business-type-home" 
+                  name="businessType"
+                  class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                >
+                  <option value="">{lang === "es" ? "Selecciona tu sector" : "Select your sector"}</option>
+                  <option value="restaurante">{lang === "es" ? "Restaurante/Café" : "Restaurant/Cafe"}</option>
+                  <option value="retail">{lang === "es" ? "Tienda/Comercio" : "Store/Retail"}</option>
+                  <option value="servicios">{lang === "es" ? "Servicios profesionales" : "Professional services"}</option>
+                  <option value="salud">{lang === "es" ? "Salud y bienestar" : "Health and wellness"}</option>
+                  <option value="inmobiliaria">{lang === "es" ? "Inmobiliaria" : "Real estate"}</option>
+                  <option value="otro">{lang === "es" ? "Otro" : "Other"}</option>
+                </select>
+              </div>
+
+              <button 
+                type="submit"
+                class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-200 transform hover:scale-105"
+              >
+                {lang === "es" ? "📊 Solicitar Mi Auditoría Gratuita" : "📊 Request My Free Audit"}
+              </button>
+
+              <p class="text-xs text-slate-500 text-center">
+                {lang === "es" 
+                  ? "Sin spam. Tu información está segura. Reporte en 24h máximo." 
+                  : "No spam. Your information is secure. Report within 24h max."
+                }
+              </p>
+            </form>
+          </div>
+
+          <!-- Guarantee -->
+          <div class="mt-6 bg-green-900/20 border border-green-500/30 p-4 rounded-lg text-center">
+            <h4 class="font-semibold text-green-400 mb-2">
+              {lang === "es" ? "✅ Garantía 100%" : "✅ 100% Guarantee"}
+            </h4>
+            <p class="text-sm text-slate-400">
+              {lang === "es" 
+                ? "Si no encuentro al menos 5 mejoras importantes en tu web, te devuelvo el tiempo invertido." 
+                : "If I don't find at least 5 important improvements for your website, I'll give you your time back."
+              }
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('audit-form-homepage')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    
+    // Add audit-specific data
+    data.type = 'Auditoría Web Gratuita Homepage';
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (response.ok) {
+        // Track conversion
+        if (typeof window.trackLead === 'function') {
+          window.trackLead('Website Audit', 25, 'Homepage Lead Magnet');
+        }
+        
+        // Show success message
+        const form = e.target as HTMLFormElement;
+        form.innerHTML = `
+          <div class="text-center py-8">
+            <div class="text-6xl mb-4">✅</div>
+            <h3 class="text-2xl font-bold mb-4 text-green-400">¡Solicitud Recibida!</h3>
+            <p class="text-slate-400 mb-4">Te enviaré tu auditoría completa en menos de 24 horas.</p>
+            <p class="text-sm text-slate-500">Revisa tu email (incluye spam) para actualizaciones.</p>
+            <div class="mt-6">
+              <a href="/calculadora-roi-web" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                Mientras tanto, calcula tu ROI potencial
+              </a>
+            </div>
+          </div>
+        `;
+      } else {
+        throw new Error('Error en el envío');
+      }
+    } catch (error) {
+      alert('Error al enviar la solicitud. Por favor, inténtalo de nuevo o escríbeme directamente a contact@ignacioamatweb.com');
+    }
+  });
+</script>
