@@ -46,4 +46,13 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/contacto" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/contacto" />
   </url>
+  <url>
+    <loc>https://ignacioamatweb.com/desarrollo-web-pymes</loc>
+    <lastmod>2023-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-development-smes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollo-web-pymes" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollo-web-pymes" />
+  </url>
 </urlset> 
