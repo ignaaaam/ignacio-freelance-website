@@ -24,20 +24,36 @@ const { lang = "es" } = Astro.props;
       </p>
       <!-- Enhanced social proof badges -->
       <div class="flex flex-wrap justify-center gap-4 mb-8" data-sr data-sr-delay="300">
-        <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
-          ⭐ +50 empresas Barcelona satisfechas
-        </div>
-        <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
-          📈 +200% leads promedio clientes
-        </div>
-        <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
-          ⚡ Disponible: Solo 2 proyectos este mes
-        </div>
+        {lang === "es" ? (
+          <>
+            <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+              ⭐ 50+ empresas Barcelona confían en mí
+            </div>
+            <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+              📈 +140% leads promedio clientes
+            </div>
+            <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+              ⚡ Solo 2 proyectos disponibles este mes
+            </div>
+          </>
+        ) : (
+          <>
+            <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+              ⭐ 50+ Barcelona companies trust me
+            </div>
+            <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
+              📈 +140% average client leads
+            </div>
+            <div class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">
+              ⚡ Only 2 projects available this month
+            </div>
+          </>
+        )}
       </div>
       
       <div class="flex flex-col sm:flex-row gap-4 justify-center" data-sr data-sr-delay="400">
         <a href="#leadMagnetForm" class="btn-primary relative overflow-hidden group" onclick="document.getElementById('leadMagnetForm').scrollIntoView({ behavior: 'smooth' }); if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Lead Magnet'); }">
-          <span class="relative z-10">🎯 Audit GRATIS (€497 valor)</span>
+          <span class="relative z-10"><Translate key="hero.ctaPrimary" /></span>
           <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
         </a>
         <a href="#servicios" class="btn-secondary" onclick="if(typeof window.trackCTAClick === 'function') { window.trackCTAClick('Hero CTA - Explore Services'); }">

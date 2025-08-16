@@ -26,6 +26,18 @@ export async function GET() {
       lastmod: new Date().toISOString().split('T')[0]
     },
     {
+      path: '/desarrollo-web-pymes',
+      priority: '0.9',
+      changefreq: 'monthly',
+      lastmod: new Date().toISOString().split('T')[0]
+    },
+    {
+      path: '/en/web-development-smes',
+      priority: '0.9',
+      changefreq: 'monthly',
+      lastmod: new Date().toISOString().split('T')[0]
+    },
+    {
       path: '/privacidad',
       priority: '0.3',
       changefreq: 'yearly',

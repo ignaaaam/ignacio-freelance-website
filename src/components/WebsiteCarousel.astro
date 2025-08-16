@@ -1,148 +1,186 @@
 ---
-// Website Examples Carousel Component
+// Real Website Examples Carousel Component
 interface Props {
   lang?: "es" | "en";
 }
 
 const { lang = "es" } = Astro.props;
 
-// Website examples with descriptions for Barcelona businesses
+// Real website examples with actual assets
 const websiteExamples = [
   {
     id: 1,
-    title: lang === "es" ? "Restaurante Premium Barcelona" : "Premium Restaurant Barcelona",
-    category: lang === "es" ? "Restauración" : "Restaurant",
-    description: lang === "es" ? "Página web elegante con reservas online" : "Elegant website with online reservations",
-    bgGradient: "from-orange-600 to-red-700",
-    icon: "🍽️"
+    title: lang === "es" ? "Plataforma SaaS con IA" : "AI SaaS Platform",
+    category: lang === "es" ? "SaaS / Inteligencia Artificial" : "SaaS / AI",
+    description: lang === "es" ? "Dashboard moderno con integración de IA" : "Modern dashboard with AI integration",
+    asset: "/images/hero-websites/ai-lanidng-website.webp",
+    type: "image",
+    bgGradient: "from-blue-600 to-purple-700",
+    icon: "🤖"
   },
   {
     id: 2,
-    title: lang === "es" ? "Despacho Jurídico Eixample" : "Law Firm Eixample",
-    category: lang === "es" ? "Servicios Legales" : "Legal Services", 
-    description: lang === "es" ? "Sitio corporativo con formularios de consulta" : "Corporate site with consultation forms",
-    bgGradient: "from-blue-800 to-indigo-900",
-    icon: "⚖️"
+    title: lang === "es" ? "Aplicación Fintech Credify" : "Credify Fintech App",
+    category: lang === "es" ? "Fintech / Servicios Financieros" : "Fintech / Financial Services",
+    description: lang === "es" ? "Plataforma de crédito con animaciones premium" : "Credit platform with premium animations",
+    asset: "/images/hero-websites/credify-landing-website.mp4",
+    type: "video",
+    bgGradient: "from-green-600 to-emerald-700",
+    icon: "💳"
   },
   {
     id: 3,
-    title: lang === "es" ? "Boutique Moda Gràcia" : "Fashion Boutique Gràcia",
-    category: lang === "es" ? "E-commerce" : "E-commerce",
-    description: lang === "es" ? "Tienda online con carrito y pagos" : "Online store with cart and payments",
-    bgGradient: "from-pink-600 to-purple-700",
-    icon: "👗"
+    title: lang === "es" ? "Gestión de Redes Sociales" : "Social Media Management",
+    category: lang === "es" ? "Marketing Digital / SaaS" : "Digital Marketing / SaaS",
+    description: lang === "es" ? "Herramienta completa para gestionar redes sociales" : "Complete tool for social media management",
+    asset: "/images/hero-websites/social-media-management-website-video.mp4",
+    type: "video",
+    bgGradient: "from-pink-600 to-rose-700",
+    icon: "📱"
   },
   {
     id: 4,
-    title: lang === "es" ? "Consultoría Empresarial" : "Business Consulting",
-    category: lang === "es" ? "Consultoría" : "Consulting",
-    description: lang === "es" ? "Landing page optimizada para leads" : "Lead-optimized landing page",
-    bgGradient: "from-green-600 to-teal-700",
-    icon: "📊"
+    title: lang === "es" ? "Agencia de Marketing" : "Marketing Agency",
+    category: lang === "es" ? "Agencia / Servicios Creativos" : "Agency / Creative Services",
+    description: lang === "es" ? "Landing page de alto impacto para agencia digital" : "High-impact landing page for digital agency",
+    asset: "/images/hero-websites/marketing-agency-video-website.mp4",
+    type: "video",
+    bgGradient: "from-orange-600 to-red-700",
+    icon: "🎯"
   },
   {
     id: 5,
-    title: lang === "es" ? "Clínica Dental Barcelona" : "Dental Clinic Barcelona",
-    category: lang === "es" ? "Salud" : "Healthcare",
-    description: lang === "es" ? "Web médica con sistema de citas" : "Medical website with appointment system",
-    bgGradient: "from-cyan-600 to-blue-700",
-    icon: "🦷"
+    title: lang === "es" ? "Solución Fintech Innovadora" : "Innovative Fintech Solution",
+    category: lang === "es" ? "Fintech / Aplicación Web" : "Fintech / Web Application",
+    description: lang === "es" ? "Interfaz elegante para servicios financieros" : "Elegant interface for financial services",
+    asset: "/images/hero-websites/fintech-website-video.mp4",
+    type: "video",
+    bgGradient: "from-indigo-600 to-blue-700",
+    icon: "💰"
   },
   {
     id: 6,
-    title: lang === "es" ? "Inmobiliaria Born" : "Real Estate Born",
-    category: lang === "es" ? "Inmobiliaria" : "Real Estate",
-    description: lang === "es" ? "Portal inmobiliario con búsqueda avanzada" : "Real estate portal with advanced search",
-    bgGradient: "from-yellow-600 to-orange-700",
-    icon: "🏢"
+    title: lang === "es" ? "E-commerce Premium" : "Premium E-commerce",
+    category: lang === "es" ? "Tienda Online / E-commerce" : "Online Store / E-commerce",
+    description: lang === "es" ? "Tienda online optimizada para conversiones" : "Online store optimized for conversions",
+    asset: "/images/hero-websites/marketing-website.webp",
+    type: "image",
+    bgGradient: "from-purple-600 to-pink-700",
+    icon: "🛍️"
+  },
+  {
+    id: 7,
+    title: lang === "es" ? "Restaurante Moderno" : "Modern Restaurant",
+    category: lang === "es" ? "Restauración / Hostelería" : "Restaurant / Hospitality",
+    description: lang === "es" ? "Web gastronómica con reservas online" : "Gastronomic website with online reservations",
+    asset: "/images/hero-websites/restaurant-landing.webp",
+    type: "image",
+    bgGradient: "from-amber-600 to-orange-700",
+    icon: "🍽️"
   }
 ];
 ---
 
-<div class="relative w-full h-full overflow-hidden rounded-lg bg-slate-800">
+<div class="relative w-full h-full overflow-hidden rounded-lg bg-slate-900">
   <!-- Carousel Container -->
-  <div id="website-carousel" class="flex transition-transform duration-500 ease-in-out h-full">
+  <div id="website-carousel" class="flex transition-transform duration-300 ease-out h-full">
     {websiteExamples.map((site, index) => (
       <div 
-        class="min-w-full h-full relative flex items-center justify-center bg-gradient-to-br {site.bgGradient} opacity-90"
+        class="min-w-full h-full relative flex items-center justify-center bg-gradient-to-br {site.bgGradient} opacity-95"
         data-slide={index}
       >
-        <!-- Website Mockup -->
-        <div class="relative w-full max-w-4xl mx-auto px-8">
-          <!-- Browser Frame -->
-          <div class="bg-slate-900 rounded-t-lg p-3 shadow-2xl">
-            <div class="flex items-center space-x-2">
-              <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-              <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-              <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-              <div class="flex-1 mx-4">
-                <div class="bg-slate-700 rounded px-3 py-1 text-xs text-slate-400">
+        <!-- Website Showcase -->
+        <div class="relative w-full max-w-6xl mx-auto px-4">
+          <!-- Modern Container -->
+          <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <!-- Top Bar -->
+            <div class="bg-gradient-to-r from-white/10 to-white/5 p-4 flex items-center justify-between">
+              <div class="flex items-center space-x-3">
+                <div class="flex space-x-2">
+                  <div class="w-3 h-3 bg-red-400/80 rounded-full"></div>
+                  <div class="w-3 h-3 bg-yellow-400/80 rounded-full"></div>
+                  <div class="w-3 h-3 bg-green-400/80 rounded-full"></div>
+                </div>
+                <div class="bg-white/10 rounded-lg px-3 py-1 text-xs text-white/80 font-medium">
                   {site.title.toLowerCase().replace(/\s+/g, '')}.com
                 </div>
               </div>
-            </div>
-          </div>
-          
-          <!-- Website Content -->
-          <div class="bg-white rounded-b-lg p-8 shadow-2xl min-h-[300px] relative overflow-hidden" role="img" aria-label={`${lang === "es" ? "Diseño web ejemplo para" : "Website design example for"} ${site.title}`}>
-            <!-- Header -->
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-gradient-to-br {site.bgGradient} rounded-lg flex items-center justify-center text-white text-sm" role="img" aria-label={site.category}>
-                  {site.icon}
-                </div>
-                <div class="text-slate-800 font-bold text-lg">{site.title}</div>
-              </div>
-              <div class="hidden md:flex space-x-6 text-sm text-slate-600">
-                <div>{lang === "es" ? "Inicio" : "Home"}</div>
-                <div>{lang === "es" ? "Servicios" : "Services"}</div>
-                <div>{lang === "es" ? "Contacto" : "Contact"}</div>
+              <!-- Category Badge -->
+              <div class="bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                {site.icon} {site.category}
               </div>
             </div>
             
-            <!-- Hero Section -->
-            <div class="text-center py-8">
-              <h2 class="text-3xl font-bold text-slate-800 mb-4">
-                {lang === "es" ? "Bienvenido a" : "Welcome to"} {site.title}
-              </h2>
-              <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
-                {site.description}
-              </p>
-              <div class="inline-flex items-center px-6 py-3 bg-gradient-to-r {site.bgGradient} text-white rounded-lg font-semibold text-sm">
-                {lang === "es" ? "Comenzar" : "Get Started"}
-              </div>
-            </div>
-            
-            <!-- Content Grid -->
-            <div class="grid grid-cols-3 gap-4 mt-8">
-              <div class="bg-slate-50 rounded-lg p-4 h-20"></div>
-              <div class="bg-slate-50 rounded-lg p-4 h-20"></div>
-              <div class="bg-slate-50 rounded-lg p-4 h-20"></div>
-            </div>
-            
-            <!-- Category Badge -->
-            <div class="absolute top-4 right-4 bg-gradient-to-r {site.bgGradient} text-white px-3 py-1 rounded-full text-xs font-semibold">
-              {site.category}
+            <!-- Website Content Container -->
+            <div class="relative overflow-hidden" style="min-height: 450px;">
+              {site.type === 'video' ? (
+                <video 
+                  class="w-full h-full object-cover object-top"
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline
+                  style="min-height: 450px;"
+                >
+                  <source src={site.asset} type="video/mp4" />
+                  <div class="w-full h-full bg-slate-200 flex items-center justify-center">
+                    <span class="text-slate-500">Video not supported</span>
+                  </div>
+                </video>
+              ) : (
+                <img 
+                  src={site.asset} 
+                  alt={`${lang === "es" ? "Diseño web ejemplo para" : "Website design example for"} ${site.title}`}
+                  class="w-full h-full object-cover object-top"
+                  style="min-height: 450px;"
+                  loading="lazy"
+                />
+              )}
             </div>
           </div>
         </div>
         
         <!-- Slide Info -->
-        <div class="absolute bottom-4 left-4 text-white">
-          <div class="bg-black/30 backdrop-blur-sm rounded-lg p-3">
-            <div class="text-sm opacity-75">{lang === "es" ? "Proyecto" : "Project"} {index + 1}</div>
-            <div class="font-semibold">{site.category}</div>
+        <div class="absolute bottom-8 left-8 text-white max-w-sm">
+          <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20">
+            <div class="flex items-center space-x-3 mb-3">
+              <span class="text-2xl">{site.icon}</span>
+              <div>
+                <div class="text-xs opacity-75 uppercase tracking-wide">{lang === "es" ? "Proyecto" : "Project"} {index + 1}/{websiteExamples.length}</div>
+                <div class="font-bold text-lg leading-tight">{site.title}</div>
+              </div>
+            </div>
+            <p class="text-sm opacity-90 leading-relaxed">{site.description}</p>
           </div>
         </div>
       </div>
     ))}
   </div>
+
+  <!-- Navigation Arrows -->
+  <button 
+    class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-white/40 transition-all duration-200 group z-10"
+    aria-label={lang === "es" ? "Anterior" : "Previous"}
+  >
+    <svg class="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
+  <button 
+    class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 hover:border-white/40 transition-all duration-200 group z-10"
+    aria-label={lang === "es" ? "Siguiente" : "Next"}
+  >
+    <svg class="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
   
   <!-- Navigation Dots -->
-  <div class="absolute bottom-4 right-4 flex space-x-2">
+  <div class="absolute bottom-8 right-8 flex space-x-2">
     {websiteExamples.map((_, index) => (
       <button 
-        class="w-3 h-3 rounded-full bg-white/30 hover:bg-white/60 transition-colors carousel-dot"
+        class="w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all duration-200 carousel-dot hover:scale-125"
         data-slide={index}
         aria-label={`${lang === "es" ? "Ir al slide" : "Go to slide"} ${index + 1}`}
       ></button>
@@ -151,7 +189,7 @@ const websiteExamples = [
   
   <!-- Progress Bar -->
   <div class="absolute bottom-0 left-0 w-full h-1 bg-black/20">
-    <div id="carousel-progress" class="h-full bg-gradient-to-r from-blue-400 to-purple-500 transition-all duration-500 ease-linear w-0"></div>
+    <div id="carousel-progress" class="h-full bg-gradient-to-r from-blue-400 to-purple-500 w-0"></div>
   </div>
 </div>
 
@@ -165,7 +203,7 @@ const websiteExamples = [
       this.totalSlides = this.dots.length;
       this.isPlaying = true;
       this.intervalId = null;
-      this.slideInterval = 4000; // 4 seconds per slide
+      this.slideInterval = 5000; // 5 seconds per slide for better viewing of real content
       
       this.init();
     }
@@ -174,6 +212,24 @@ const websiteExamples = [
       // Set up dot click listeners
       this.dots.forEach((dot, index) => {
         dot.addEventListener('click', () => this.goToSlide(index));
+      });
+      
+      // Set up arrow click listeners
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => this.prevSlide());
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => this.nextSlide());
+      }
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') this.prevSlide();
+        if (e.key === 'ArrowRight') this.nextSlide();
       });
       
       // Start auto-play
@@ -201,28 +257,40 @@ const websiteExamples = [
       this.goToSlide(this.currentSlide);
     }
     
+    prevSlide() {
+      this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+      this.goToSlide(this.currentSlide);
+    }
+    
     updateDots() {
       this.dots.forEach((dot, index) => {
         if (index === this.currentSlide) {
-          dot.classList.add('bg-white/80');
+          dot.classList.add('bg-white', 'scale-150');
           dot.classList.remove('bg-white/30');
         } else {
           dot.classList.add('bg-white/30');
-          dot.classList.remove('bg-white/80');
+          dot.classList.remove('bg-white', 'scale-150');
         }
       });
     }
     
     updateProgress() {
       let startTime = Date.now();
+      let lastUpdate = 0;
+      const updateInterval = 100; // Update every 100ms instead of every frame
+      
       const animate = () => {
         if (!this.isPlaying) return;
         
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min((elapsed / this.slideInterval) * 100, 100);
-        this.progress.style.width = `${progress}%`;
+        const now = Date.now();
+        if (now - lastUpdate >= updateInterval) {
+          const elapsed = now - startTime;
+          const progress = Math.min((elapsed / this.slideInterval) * 100, 100);
+          this.progress.style.width = `${progress}%`;
+          lastUpdate = now;
+        }
         
-        if (progress < 100) {
+        if (now - startTime < this.slideInterval) {
           requestAnimationFrame(animate);
         }
       };
@@ -268,28 +336,126 @@ const websiteExamples = [
   /* Ensure smooth transitions */
   #website-carousel {
     will-change: transform;
+    transform: translateZ(0); /* Hardware acceleration */
+    backface-visibility: hidden;
+  }
+  
+  /* Navigation arrows */
+  .carousel-prev, .carousel-next {
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carousel-prev:hover, .carousel-next:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   }
   
   /* Hover effects for dots */
   .carousel-dot {
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   
   .carousel-dot:hover {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
   }
   
   /* Progress bar animation */
   #carousel-progress {
     will-change: width;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.8), rgba(147, 51, 234, 0.8));
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Video and image optimization */
+  video, img {
+    transition: opacity 0.2s ease;
+  }
+  
+  /* Improved slide info panel */
+  .absolute.bottom-8.left-8 .bg-white\/10 {
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Modern container styling */
+  .bg-white\/5 {
+    backdrop-filter: blur(8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
   }
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .carousel-dot {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
     }
+    
+    .carousel-prev, .carousel-next {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .carousel-prev {
+      left: 2rem;
+    }
+    
+    .carousel-next {
+      right: 2rem;
+    }
+    
+    /* Smaller info panel on mobile */
+    .absolute.bottom-8.left-8 {
+      bottom: 1rem;
+      left: 1rem;
+      max-width: calc(100% - 8rem);
+    }
+    
+    .absolute.bottom-8.right-8 {
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carousel-prev {
+      left: 1rem;
+    }
+    
+    .carousel-next {
+      right: 1rem;
+    }
+    
+    .absolute.bottom-8.left-8 {
+      max-width: calc(100% - 6rem);
+    }
+  }
+  
+  /* Ensure videos play smoothly */
+  video {
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    transform: translateZ(0); /* Hardware acceleration for videos */
+  }
+  
+  /* Optimize slide containers */
+  .min-w-full {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Smooth hover effects for the entire container */
+  .min-w-full:hover .bg-white\/5 {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Enhanced focus states for accessibility */
+  .carousel-prev:focus,
+  .carousel-next:focus,
+  .carousel-dot:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.5);
+    outline-offset: 2px;
   }
 </style>
