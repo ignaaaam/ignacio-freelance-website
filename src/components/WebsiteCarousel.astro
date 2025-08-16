@@ -6,6 +6,9 @@ interface Props {
 
 const { lang = "es" } = Astro.props;
 
+// Cache busting version for videos
+const CACHE_VERSION = "v20250816-2";
+
 // Real website examples with actual assets
 const websiteExamples = [
   {
@@ -126,7 +129,7 @@ const websiteExamples = [
                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                   data-webm-src={site.asset}
                 >
-                  <source src={site.asset} type="video/webm" />
+                  <source src={`${site.asset}?${CACHE_VERSION}`} type="video/webm" />
                   <div class="w-full h-full bg-slate-200 flex items-center justify-center" style="display: none;">
                     <div class="text-center">
                       <div class="text-4xl mb-4">🎬</div>
@@ -147,19 +150,6 @@ const websiteExamples = [
           </div>
         </div>
         
-        <!-- Slide Info -->
-        <div class="absolute bottom-8 left-8 text-white max-w-sm z-20">
-          <div class="bg-black/70 backdrop-blur-lg rounded-xl p-5 border border-white/30 shadow-2xl">
-            <div class="flex items-center space-x-3 mb-3">
-              <span class="text-2xl filter drop-shadow-sm">{site.icon}</span>
-              <div>
-                <div class="text-xs text-white/80 uppercase tracking-wide font-medium">{lang === "es" ? "Proyecto" : "Project"} {index + 1}/{websiteExamples.length}</div>
-                <div class="font-bold text-lg leading-tight text-white drop-shadow-sm">{site.title}</div>
-              </div>
-            </div>
-            <p class="text-sm text-white/90 leading-relaxed font-medium">{site.description}</p>
-          </div>
-        </div>
       </div>
     ))}
   </div>
@@ -347,14 +337,15 @@ const websiteExamples = [
     
     fixVideoSources() {
       // Ensure all video sources are using .webm and not .mp4
+      const CACHE_VERSION = "v20250816-2";
       const videos = document.querySelectorAll('.carousel-video');
       videos.forEach((video: HTMLVideoElement) => {
         const webmSrc = video.getAttribute('data-webm-src');
         if (webmSrc) {
           const source = video.querySelector('source');
           if (source) {
-            // Force the source to use .webm extension
-            source.src = webmSrc;
+            // Force the source to use .webm extension with cache busting
+            source.src = `${webmSrc}?${CACHE_VERSION}`;
             source.type = 'video/webm';
             video.load(); // Reload the video element
           }
@@ -363,13 +354,26 @@ const websiteExamples = [
     }
   }
   
+  // Force cache clearing for videos
+  function clearVideoCache() {
+    if ('caches' in window) {
+      caches.keys().then(function(names) {
+        for (let name of names) {
+          caches.delete(name);
+        }
+      });
+    }
+  }
+
   // Initialize carousel when DOM is loaded
   document.addEventListener('DOMContentLoaded', () => {
+    clearVideoCache();
     new WebsiteCarousel();
   });
   
   // Reinitialize on navigation (for SPA behavior)
   document.addEventListener('astro:page-load', () => {
+    clearVideoCache();
     new WebsiteCarousel();
   });
 </script>
@@ -417,11 +421,6 @@ const websiteExamples = [
     transition: opacity 0.2s ease;
   }
   
-  /* Improved slide info panel */
-  .absolute.bottom-8.left-8 .bg-black\/70 {
-    backdrop-filter: blur(20px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  }
   
   /* Modern container styling */
   .bg-white\/5 {
@@ -449,13 +448,6 @@ const websiteExamples = [
       right: 2rem;
     }
     
-    /* Smaller info panel on mobile */
-    .absolute.bottom-8.left-8 {
-      bottom: 1rem;
-      left: 1rem;
-      max-width: calc(100% - 8rem);
-    }
-    
     .absolute.bottom-8.right-8 {
       bottom: 1rem;
       right: 1rem;
@@ -469,10 +461,6 @@ const websiteExamples = [
     
     .carousel-next {
       right: 1rem;
-    }
-    
-    .absolute.bottom-8.left-8 {
-      max-width: calc(100% - 6rem);
     }
   }
   

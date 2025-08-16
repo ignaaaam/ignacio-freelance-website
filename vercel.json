@@ -34,12 +34,29 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "0"
+        }
+      ]
     }
   ],
   "build": {
     "env": {
       "VERCEL_BUILD_COMMAND": "npm run build",
-      "DEPLOYMENT_VERSION": "2024-01-01"
+      "DEPLOYMENT_VERSION": "2025-08-16-v2"
     }
   }
 }
