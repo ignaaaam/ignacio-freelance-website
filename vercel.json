@@ -6,7 +6,7 @@
   },
   "headers": [
     {
-      "source": "/images/hero-websites/*.webm",
+      "source": "/images/hero-websites/(.*)\\.webm",
       "headers": [
         {
           "key": "Content-Type",
@@ -19,6 +19,10 @@
         {
           "key": "Accept-Ranges",
           "value": "bytes"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     },

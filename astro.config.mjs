@@ -11,6 +11,7 @@ export default defineConfig({
   output: 'server',
   adapter: vercel(),
   vite: {
-    envPrefix: ['CHATBASE_']
+    envPrefix: ['CHATBASE_'],
+    assetsInclude: ['**/*.webm']
   }
 });
