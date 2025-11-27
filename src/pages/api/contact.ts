@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
 // Get API key from environment variables
-const RESEND_API_KEY = import.meta.env.RESEND_API_KEY ;
+const RESEND_API_KEY = import.meta.env.RESEND_API_KEY;
 
 // Log API key status (not the actual key) for debugging
 
