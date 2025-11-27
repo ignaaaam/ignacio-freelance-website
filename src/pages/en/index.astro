@@ -4,8 +4,10 @@ import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import Features from '../../components/Features.astro';
 import Projects from '../../components/Projects.astro';
+import About from '../../components/About.astro';
 import Process from '../../components/Process.astro';
 import Pricing from '../../components/Pricing.astro';
+import Guarantee from '../../components/Guarantee.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import FAQ from '../../components/FAQ.astro';
 import Contact from '../../components/Contact.astro';
@@ -26,8 +28,10 @@ const canonicalUrl = "/en";
 		<Hero />
 		<Features />
 		<Projects />
+		<About />
 		<Process />
 		<Pricing />
+		<Guarantee />
 		<Testimonials />
 		<FAQ />
 		<Contact />
@@ -36,19 +40,19 @@ const canonicalUrl = "/en";
 		<div class="container">
 			<div class="flex flex-col md:flex-row justify-between items-center gap-4">
 				<div class="text-sm text-text-muted">
-					© {new Date().getFullYear()} Ignacio Amat. All rights reserved.
+					© {new Date().getFullYear()} Ignacio Amat Web Development LLC. | Software engineering services and digital consulting. Operating from Barcelona for the world.
 				</div>
-				<!-- <nav class="flex gap-6">
-					<a href="/en/privacy" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Privacy Policy
-					</a>
-					<a href="/en/cookies" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Cookie Policy
-					</a>
+				<nav class="flex gap-6">
 					<a href="/en/legal" class="text-sm text-text-muted hover:text-accent transition-colors">
 						Legal Notice
 					</a>
-				</nav> -->
+					<a href="/en/privacy" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Privacy
+					</a>
+					<a href="/en/clients" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Client Portal
+					</a>
+				</nav>
 			</div>
 		</div>
 	</footer>

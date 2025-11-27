@@ -4,8 +4,10 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
 import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
 import Process from '../components/Process.astro';
 import Pricing from '../components/Pricing.astro';
+import Guarantee from '../components/Guarantee.astro';
 import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
@@ -26,8 +28,10 @@ const canonicalUrl = "/";
 		<Hero />
 		<Features />
 		<Projects />
+		<About />
 		<Process />
 		<Pricing />
+		<Guarantee />
 		<Testimonials />
 		<FAQ />
 		<Contact />
@@ -36,19 +40,19 @@ const canonicalUrl = "/";
 		<div class="container">
 			<div class="flex flex-col md:flex-row justify-between items-center gap-4">
 				<div class="text-sm text-text-muted">
-					© {new Date().getFullYear()} Ignacio Amat. Todos los derechos reservados.
+					© {new Date().getFullYear()} Ignacio Amat Web Development LLC. | Servicios de ingeniería de software y consultoría digital. Operando desde Barcelona para el mundo.
 				</div>
-				<!-- <nav class="flex gap-6">
-					<a href="/privacidad" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Política de privacidad
-					</a>
-					<a href="/cookies" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Política de cookies
-					</a>
+				<nav class="flex gap-6">
 					<a href="/legal" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Aviso legal
+						Aviso Legal
 					</a>
-				</nav> -->
+					<a href="/privacidad" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Privacidad
+					</a>
+					<a href="/clientes" class="text-sm text-text-muted hover:text-accent transition-colors">
+						Portal de Clientes
+					</a>
+				</nav>
 			</div>
 		</div>
 	</footer>

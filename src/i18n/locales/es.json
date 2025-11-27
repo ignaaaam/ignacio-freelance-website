@@ -7,13 +7,13 @@
     "contact": "Contacto"
   },
   "hero": {
-    "title": "¿Necesitas una página web profesional para tu negocio o proyecto?",
-    "subtitle": "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global.",
-    "cta": "Solicita tu presupuesto gratis",
-    "services": "Ver servicios"
+    "title": "Ayudo a empresas de Barcelona a convertir visitas en clientes con una web de alto rendimiento.",
+    "subtitle": "Tu negocio pierde dinero si tu web es lenta o confusa. Desarrollo soluciones digitales a medida (con factura oficial y garantía) para que tú solo te preocupes de atender a tus nuevos clientes.",
+    "cta": "Quiero mi Auditoría Gratuita",
+    "services": "Ver casos de éxito"
   },
   "features": {
-    "title": "¿Por qué trabajar conmigo?",
+    "title": "Soluciones que generan resultados",
     "description": "Desarrollo sitios web profesionales que no solo se ven increíbles, sino que también generan resultados medibles para tu negocio.",
     "items": [
       {
@@ -37,12 +37,12 @@
   "pricing": {
     "title": "Planes y Precios",
     "description": "Soluciones profesionales adaptadas a diferentes necesidades y presupuestos.",
-    "note": "El precio final puede ajustarse según los requisitos específicos de tu proyecto.",
+    "note": "¿Necesitas algo más complejo? ¿Una app interna o un CRM? Solicita presupuesto a medida.",
     "popular": "Más Popular",
     "cta": "Solicitar Presupuesto",
     "tiers": [
       {
-        "name": "Landing Page",
+        "name": "Plan Presencia Digital",
         "features": [
           "1 página completa",
           "Diseño personalizado",
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "name": "Web Completa",
+        "name": "Plan Crecimiento & Captación",
         "features": [
           "Hasta 5 páginas",
           "Diseño personalizado",
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "name": "Tienda Online",
+        "name": "Plataforma a Medida / E-commerce",
         "features": [
           "Tienda completa",
           "Sistema de pagos",
