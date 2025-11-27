@@ -7,13 +7,13 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Do you need a professional website for your business or project?",
-    "subtitle": "Modern, fast, and optimized web design and development for global impact.",
-    "cta": "Get your free quote",
-    "services": "View services"
+    "title": "I help Barcelona businesses convert visitors into customers with high-performance websites.",
+    "subtitle": "Your business loses money if your website is slow or confusing. I develop custom digital solutions (with official invoice and guarantee) so you only need to focus on serving your new customers.",
+    "cta": "I Want My Free Audit",
+    "services": "View success cases"
   },
   "features": {
-    "title": "Why Choose Me",
+    "title": "Solutions that generate results",
     "description": "I develop professional websites that not only look amazing but also deliver measurable results for your business.",
     "items": [
       {
@@ -37,12 +37,12 @@
   "pricing": {
     "title": "Plans and Pricing",
     "description": "Professional solutions tailored to different needs and budgets.",
-    "note": "The final price may be adjusted based on your project's specific requirements.",
+    "note": "Need something more complex? An internal app or CRM? Request a custom quote.",
     "popular": "Most Popular",
     "cta": "Get a Quote",
     "tiers": [
       {
-        "name": "Landing Page",
+        "name": "Digital Presence Plan",
         "features": [
           "1 complete page",
           "Custom design",
@@ -52,7 +52,7 @@
         ]
       },
       {
-        "name": "Complete Website",
+        "name": "Growth & Lead Generation Plan",
         "features": [
           "Up to 5 pages",
           "Custom design",
@@ -63,7 +63,7 @@
         ]
       },
       {
-        "name": "Online Store",
+        "name": "Custom Platform / E-commerce",
         "features": [
           "Complete store",
           "Payment system",

@@ -1,42 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* CSS Variables for theming (light/dark mode) */
 :root {
   /* Fonts */
-  --font-heading: 'Raleway', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Inter", sans-serif;
+
   /* Light theme colors */
-  --color-primary: #FFFFFF;
-  --color-secondary: #F8FAFC;
-  --color-accent: #3B82F6;
-  --color-text: #0F172A;
-  --color-text-muted: #64748B;
-  --color-border: #E2E8F0;
-  --color-card-bg: #FFFFFF;
-  --color-button-text: #FFFFFF;
-  --color-button-text-secondary: #0F172A;
-  --color-button-bg-secondary: #F1F5F9;
+  --theme-primary: #ffffff;
+  --theme-secondary: #f8fafc;
+  --theme-accent: #3b82f6;
+  --theme-text: #0f172a;
+  --theme-text-muted: #64748b;
+  --theme-border: #e2e8f0;
+  --theme-card-bg: #ffffff;
+  --color-button-text: #ffffff;
+  --color-button-text-secondary: #0f172a;
+  --color-button-bg-secondary: #f1f5f9;
+}
+
+/* Tailwind v4 Theme Configuration - references CSS variables for theming */
+@theme {
+  /* Font Families */
+  --font-family-heading: var(--font-heading);
+  --font-family-body: var(--font-body);
+
+  /* Colors - these will automatically become utilities like bg-primary, text-accent, etc. */
+  --color-primary: var(--theme-primary);
+  --color-secondary: var(--theme-secondary);
+  --color-accent: var(--theme-accent);
+  --color-text: var(--theme-text);
+  --color-text-muted: var(--theme-text-muted);
+  --color-border: var(--theme-border);
+  --color-card-bg: var(--theme-card-bg);
+}
+
+/* Backward compatibility - map old variable names to theme variables */
+:root {
+  --color-primary: var(--theme-primary);
+  --color-secondary: var(--theme-secondary);
+  --color-accent: var(--theme-accent);
+  --color-text: var(--theme-text);
+  --color-text-muted: var(--theme-text-muted);
+  --color-border: var(--theme-border);
+  --color-card-bg: var(--theme-card-bg);
 }
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-primary: #0F172A;
-    --color-secondary: #1E293B;
-    --color-accent: #3B82F6;
-    --color-text: #F8FAFC;
-    --color-text-muted: #94A3B8;
-    --color-border: #334155;
-    --color-card-bg: rgba(30, 41, 59, 0.5);
-    --color-button-text: #FFFFFF;
-    --color-button-text-secondary: #F8FAFC;
-    --color-button-bg-secondary: #1E293B;
+    --theme-primary: #0f172a;
+    --theme-secondary: #1e293b;
+    --theme-accent: #3b82f6;
+    --theme-text: #f8fafc;
+    --theme-text-muted: #94a3b8;
+    --theme-border: #334155;
+    --theme-card-bg: rgba(30, 41, 59, 0.5);
+    --color-button-text: #ffffff;
+    --color-button-text-secondary: #f8fafc;
+    --color-button-bg-secondary: #1e293b;
   }
+}
+
+/* Custom Utility: font-heading */
+@utility font-heading {
+  font-family: var(--font-family-heading);
 }
 
 /* Base styles */
@@ -46,6 +77,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-primary);
   color: var(--color-text);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -54,7 +86,12 @@ body {
 }
 
 /* Heading styles */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   line-height: 1.2;
   color: var(--color-text);
@@ -103,7 +140,10 @@ nav a {
 }
 
 /* Form styles */
-label, input, textarea, select {
+label,
+input,
+textarea,
+select {
   font-family: var(--font-body);
 }
 

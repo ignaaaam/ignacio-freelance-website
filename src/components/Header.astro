@@ -2,9 +2,9 @@
 import Translate from './Translate.astro';
 
 const navItems = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Precios', href: '#precios' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Soluciones', href: '#servicios' },
+  { label: 'Resultados', href: '#proyectos' },
+  { label: 'Planes', href: '#precios' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -38,7 +38,7 @@ const isEnglish = currentPath.startsWith('/en');
           </button>
 
           <a href="#contacto" class="btn-primary">
-            <Translate key="contact.title" />
+            Pedir Auditoría
           </a>
         </div>
       </nav>
