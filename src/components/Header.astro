@@ -4,10 +4,23 @@ import Translate from './Translate.astro';
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith('/en');
 
+// Detectar si estamos en la página principal
+const isHomePage = currentPath === '/' || currentPath === '/en' || currentPath === '/en/';
+
+// URL base para navegación (página principal)
+const homeUrl = isEnglish ? '/en' : '/';
+
+// Función helper para generar URLs de navegación
+const getNavUrl = (anchor: string) => {
+  return isHomePage ? anchor : `${homeUrl}${anchor}`;
+};
+
+// URL para el botón de precios
+const pricingUrl = getNavUrl('#precios');
+
 const navItems = [
-  { labelKey: 'nav.solutions', href: '#servicios' },
-  { labelKey: 'nav.results', href: '#proyectos' },
-  { labelKey: 'nav.plans', href: '#precios' },
+  { labelKey: 'nav.solutions', href: getNavUrl('#servicios') },
+  { labelKey: 'nav.results', href: getNavUrl('#proyectos') },
 ];
 
 const servicePages = isEnglish ? [
@@ -44,7 +57,7 @@ const servicePages = isEnglish ? [
           <div class="absolute top-full left-0 mt-2 w-48 bg-primary border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <nav class="flex flex-col p-2">
               {servicePages.map(page => (
-                <a href={page.href} class="text-sm text-text-muted hover:text-accent hover:bg-secondary px-3 py-2 rounded transition-colors">
+                <a href={page.href} transition:animate class="text-sm text-text-muted hover:text-accent hover:bg-secondary px-3 py-2 rounded transition-colors">
                   {page.label}
                 </a>
               ))}
@@ -66,7 +79,7 @@ const servicePages = isEnglish ? [
             </svg>
           </button>
 
-          <a href="#precios" class="btn-primary">
+          <a href={pricingUrl} class="btn-primary">
             <Translate key="nav.viewPricing" />
           </a>
         </div>
@@ -114,7 +127,7 @@ const servicePages = isEnglish ? [
           <Translate key="nav.services" />
         </p>
         {servicePages.map(page => (
-          <a href={page.href} class="block text-sm text-text-muted hover:text-accent transition-colors py-2 pl-4" onclick="closeMobileMenu()">
+          <a href={page.href} transition:animate class="block text-sm text-text-muted hover:text-accent transition-colors py-2 pl-4" onclick="closeMobileMenu()">
             {page.label}
           </a>
         ))}
@@ -132,7 +145,7 @@ const servicePages = isEnglish ? [
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
         </button>
-        <a href="#precios" class="btn-primary" onclick="closeMobileMenu()">
+        <a href={pricingUrl} class="btn-primary" onclick="closeMobileMenu()">
           <Translate key="nav.viewPricing" />
         </a>
       </div>

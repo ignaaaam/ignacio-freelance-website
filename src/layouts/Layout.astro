@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { getAlternateUrls } from '../i18n/utils';
 import PlunkToaster from '../components/Toaster.tsx';
+import { ViewTransitions } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -127,6 +128,7 @@ const jsonLd = JSON.stringify(structuredData);
 		{additionalSchemas.map(schema => (
 			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 		))}
+		<ViewTransitions />
 	</head>
 	<body>
 		<slot />
