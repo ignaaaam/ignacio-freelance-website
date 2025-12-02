@@ -115,27 +115,37 @@ const servicePages = isEnglish ? [
   </div>
   
   <!-- Mobile menu -->
-  <nav id="mobile-menu" class="hidden md:hidden border-t border-border/20">
-    <div class="container py-4 space-y-4">
+  <nav id="mobile-menu" class="hidden md:hidden">
+    <div class="container py-6 space-y-1">
       {navItems.map(item => (
-        <a href={item.href} class="block text-base hover:text-accent transition-colors py-2" onclick="closeMobileMenu()">
+        <a
+          href={item.href}
+          class="mobile-nav-link block text-base font-medium px-4 py-3 rounded-lg transition-colors hover:bg-secondary hover:text-accent"
+          onclick="closeMobileMenu()"
+        >
           <Translate key={item.labelKey} />
         </a>
       ))}
-      <div class="border-t border-border/20 pt-4">
-        <p class="text-sm font-semibold mb-2 text-text-muted">
+
+      <div class="pt-2 pb-2">
+        <p class="text-xs font-semibold px-4 py-2 text-text-muted uppercase tracking-wider">
           <Translate key="nav.services" />
         </p>
         {servicePages.map(page => (
-          <a href={page.href} transition:animate class="block text-sm text-text-muted hover:text-accent transition-colors py-2 pl-4" onclick="closeMobileMenu()">
+          <a
+            href={page.href}
+            class="mobile-service-link block text-sm px-4 py-2.5 rounded-lg transition-colors hover:bg-secondary hover:text-accent"
+            onclick="closeMobileMenu()"
+          >
             {page.label}
           </a>
         ))}
       </div>
-      <div class="flex items-center justify-between pt-4 border-t border-border/20">
+
+      <div class="pt-4 flex items-center justify-between px-4">
         <button
           id="theme-toggle-mobile"
-          class="p-2 rounded-full hover:bg-secondary transition-colors"
+          class="p-2 rounded-lg hover:bg-secondary transition-colors"
           aria-label="Toggle theme"
         >
           <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -271,6 +281,16 @@ const servicePages = isEnglish ? [
 
   .bg-secondary {
     background-color: var(--color-secondary);
+  }
+
+  /* Mobile Menu Styles */
+  .mobile-nav-link {
+    font-family: var(--font-body);
+  }
+
+  .mobile-service-link {
+    font-family: var(--font-body);
+    color: var(--color-text-muted);
   }
 </style>
 
