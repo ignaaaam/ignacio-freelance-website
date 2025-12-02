@@ -38,6 +38,8 @@ pnpm-debug.log*
 # Package files
 *.jar
 
+.vercel/
+
 # Maven
 target/
 
