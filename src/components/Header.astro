@@ -294,17 +294,17 @@ const servicePages = isEnglish ? [
   }
 </style>
 
-<script>
+<script is:inline data-astro-rerun>
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     const button = document.getElementById('mobile-menu-button');
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
-    
+
     if (!menu || !button) return;
-    
+
     const isOpen = !menu.classList.contains('hidden');
-    
+
     if (isOpen) {
       menu.classList.add('hidden');
       button.setAttribute('aria-expanded', 'false');
@@ -323,7 +323,7 @@ const servicePages = isEnglish ? [
     const button = document.getElementById('mobile-menu-button');
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
-    
+
     if (menu && !menu.classList.contains('hidden')) {
       menu.classList.add('hidden');
       button?.setAttribute('aria-expanded', 'false');
@@ -332,36 +332,36 @@ const servicePages = isEnglish ? [
     }
   }
 
-  // Theme toggle for mobile
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileThemeToggle = document.getElementById('theme-toggle-mobile');
-    const desktopThemeToggle = document.getElementById('theme-toggle');
+  // Initialize mobile menu
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileThemeToggle = document.getElementById('theme-toggle-mobile');
+  const desktopThemeToggle = document.getElementById('theme-toggle');
 
-    mobileMenuButton?.addEventListener('click', toggleMobileMenu);
+  if (mobileMenuButton) {
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+  }
 
-    // Sync mobile theme toggle with desktop one
-    if (mobileThemeToggle && desktopThemeToggle) {
-      mobileThemeToggle.addEventListener('click', () => {
-        desktopThemeToggle.click();
-      });
+  // Sync mobile theme toggle with desktop one
+  if (mobileThemeToggle && desktopThemeToggle) {
+    mobileThemeToggle.addEventListener('click', () => {
+      desktopThemeToggle.click();
+    });
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-button');
+
+    if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+      closeMobileMenu();
     }
+  });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      const menu = document.getElementById('mobile-menu');
-      const button = document.getElementById('mobile-menu-button');
-      
-      if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
-        closeMobileMenu();
-      }
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeMobileMenu();
-      }
-    });
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
   });
 </script> 
