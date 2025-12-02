@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Create Website Barcelona | Professional Web Development for Businesses";
+const description = "Need to create a website for your business in Barcelona? Freelance web developer specialized in creating professional, fast and Google-optimized websites. Free quote.";
+const canonicalUrl = "/en/create-website-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Create Website for Businesses in Barcelona",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Catalonia",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Professional web development service for businesses in Barcelona. Creation of modern, fast and search engine optimized websites.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Prices from €800 for landing pages to €6,000+ for complete e-commerce"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Create Website Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema];
+
+// Manual alternate URLs for service pages
+const alternateUrls = {
+	es: "/crear-pagina-web-barcelona",
+	en: canonicalUrl
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create Website for Your Business in Barcelona</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Looking for someone to create a professional website for your business in Barcelona? 
+						I'm a freelance web developer specialized in creating websites that convert visitors into customers.
+					</p>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Why choose a web developer in Barcelona?</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							As a freelance web developer in Barcelona, I understand the specific needs of local businesses. 
+							From businesses in Eixample to startups in Poblenou, I've helped companies throughout Barcelona establish 
+							their online presence professionally.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Services I offer to create your website:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Landing Pages:</strong> Conversion-optimized landing pages (from €800)</li>
+							<li><strong>Corporate Websites:</strong> Complete professional websites for businesses (€1,500 - €3,500)</li>
+							<li><strong>Online Stores:</strong> Complete e-commerce with payment gateway (€3,000 - €6,000+)</li>
+							<li><strong>Responsive Design:</strong> Your website will look perfect on mobile, tablet and desktop</li>
+							<li><strong>SEO Optimization:</strong> Your website will appear on Google when people search for your services</li>
+							<li><strong>Maintenance:</strong> Continuous support to keep your website updated and secure</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Barcelona areas where I work:</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							I work with businesses throughout Barcelona: Eixample, Gràcia, Sants-Montjuïc, Sant Martí, 
+							Ciutat Vella, Sarrià-Sant Gervasi, and other metropolitan areas. I also offer 
+							remote services for businesses throughout Spain.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Work process:</h3>
+						<ol class="list-decimal pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Initial consultation:</strong> We analyze your needs and objectives</li>
+							<li><strong>Custom quote:</strong> I send you a detailed quote with no commitment</li>
+							<li><strong>Design and development:</strong> I create your website with the best technologies</li>
+							<li><strong>SEO optimization:</strong> I configure your website to appear on Google</li>
+							<li><strong>Launch:</strong> We publish your website and I provide training to manage it</li>
+						</ol>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to create your website?</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								If you're looking to create a website for your business in Barcelona, contact me for a free consultation. 
+								I'll help you define what type of website you need and give you a personalized quote with no commitment.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Free quote<br/>
+								✅ Response within 24-48h<br/>
+								✅ Official invoice<br/>
+								✅ Satisfaction guarantee
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>
+

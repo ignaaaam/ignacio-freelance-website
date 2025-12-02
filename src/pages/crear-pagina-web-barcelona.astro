@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Translate from '../components/Translate.astro';
+import { getTranslation } from '../i18n/utils';
+
+const locale = 'es';
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Crear Página Web Barcelona | Desarrollo Web Profesional para Empresas";
+const description = "¿Necesitas crear una página web para tu empresa en Barcelona? Desarrollador web freelance especializado en crear sitios web profesionales, rápidos y optimizados para Google. Presupuesto gratuito.";
+const canonicalUrl = "/crear-pagina-web-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Crear Página Web para Empresas en Barcelona",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Cataluña",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Servicio profesional de desarrollo web para empresas en Barcelona. Creación de páginas web modernas, rápidas y optimizadas para motores de búsqueda.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Precios desde 800€ para landing pages hasta 6,000€+ para e-commerce completos"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Crear Página Web Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema];
+
+// Manual alternate URLs for service pages
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/create-website-barcelona"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Crear Página Web para tu Empresa en Barcelona</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Buscas a alguien para crear una página web profesional para tu negocio en Barcelona? 
+						Soy desarrollador web freelance especializado en crear sitios web que convierten visitantes en clientes.
+					</p>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">¿Por qué elegir un desarrollador web en Barcelona?</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Como desarrollador web freelance en Barcelona, entiendo las necesidades específicas de las empresas locales. 
+							Desde negocios en el Eixample hasta startups en Poblenou, he ayudado a empresas de toda Barcelona a establecer 
+							su presencia online de forma profesional.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Servicios que ofrezco para crear tu página web:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Landing Pages:</strong> Páginas de aterrizaje optimizadas para conversión (desde 800€)</li>
+							<li><strong>Webs Corporativas:</strong> Sitios web profesionales completos para empresas (1.500€ - 3.500€)</li>
+							<li><strong>Tiendas Online:</strong> E-commerce completo con pasarela de pago (3.000€ - 6.000€+)</li>
+							<li><strong>Diseño Responsive:</strong> Tu web se verá perfecta en móvil, tablet y ordenador</li>
+							<li><strong>Optimización SEO:</strong> Tu página web aparecerá en Google cuando busquen tus servicios</li>
+							<li><strong>Mantenimiento:</strong> Soporte continuo para mantener tu web actualizada y segura</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Zonas de Barcelona donde trabajo:</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							Trabajo con empresas de toda Barcelona: Eixample, Gràcia, Sants-Montjuïc, Sant Martí, 
+							Ciutat Vella, Sarrià-Sant Gervasi, y resto de áreas metropolitanas. También ofrezco 
+							servicios remotos para empresas de toda España.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Proceso de trabajo:</h3>
+						<ol class="list-decimal pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Consulta inicial:</strong> Analizamos tus necesidades y objetivos</li>
+							<li><strong>Presupuesto personalizado:</strong> Te envío un presupuesto detallado sin compromiso</li>
+							<li><strong>Diseño y desarrollo:</strong> Creo tu página web con las mejores tecnologías</li>
+							<li><strong>Optimización SEO:</strong> Configuro tu web para que aparezca en Google</li>
+							<li><strong>Lanzamiento:</strong> Publicamos tu web y te doy formación para gestionarla</li>
+						</ol>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Listo para crear tu página web?</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si buscas crear una página web para tu empresa en Barcelona, contáctame para una consulta gratuita. 
+								Te ayudo a definir qué tipo de web necesitas y te doy un presupuesto personalizado sin compromiso.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito<br/>
+								✅ Respuesta en 24-48h<br/>
+								✅ Factura oficial<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>
+

@@ -25,18 +25,18 @@ const features = [
 ];
 ---
 
-<section class="py-20" id="servicios">
+<section class="py-12 sm:py-16 md:py-20" id="servicios">
   <div class="container">
-    <div class="text-center mb-16" data-sr>
-      <h2 class="text-3xl font-bold mb-4">
+    <div class="text-center mb-12 sm:mb-16" data-sr>
+      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
         <Translate key="features.title" />
       </h2>
-      <p class="text-text-muted max-w-2xl mx-auto">
+      <p class="text-text-muted max-w-2xl mx-auto text-sm sm:text-base px-4">
         <Translate key="features.description" />
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
       {features.map((feature, index) => (
         <div class="card feature-card" data-sr data-sr-delay={index * 100}>
           <div class="feature-icon mb-4">
@@ -83,6 +83,24 @@ const features = [
 
   .feature-card:hover {
     transform: translateY(-4px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .feature-card {
+      padding: 1.5rem;
+    }
+
+    .feature-icon svg {
+      height: 1.75rem;
+      width: 1.75rem;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   .feature-icon {

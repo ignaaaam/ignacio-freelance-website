@@ -11,10 +11,295 @@ import Guarantee from '../../components/Guarantee.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import FAQ from '../../components/FAQ.astro';
 import Contact from '../../components/Contact.astro';
+import Translate from '../../components/Translate.astro';
+import { getTranslation } from '../../i18n/utils';
 
-const title = "Ignacio Amat - Professional Web Design and Development";
-const description = "Modern, fast, and optimized web design and development for global impact. Landing pages, corporate websites, and online stores.";
+const locale = 'en';
+const title = getTranslation(locale, 'seo.home.title');
+const description = getTranslation(locale, 'seo.home.description');
 const canonicalUrl = "/en";
+const baseUrl = 'https://ignacioamatweb.com';
+
+// Structured Data for SEO (without phone number for privacy)
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	"@id": `${baseUrl}/en/#business`,
+	"name": "Ignacio Amat - Freelance Web Developer",
+	"image": `${baseUrl}/images/og-image.jpg`,
+	"url": `${baseUrl}/en`,
+	"priceRange": "€€",
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "6",
+		"bestRating": "5",
+		"worstRating": "5"
+	},
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Barcelona",
+		"addressRegion": "Catalonia",
+		"addressCountry": "ES"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "41.3851",
+		"longitude": "2.1734"
+	},
+	"areaServed": [
+		{
+			"@type": "City",
+			"name": "Barcelona"
+		},
+		{
+			"@type": "Country",
+			"name": "Spain"
+		}
+	],
+	"sameAs": [
+		// Add your social media links here if desired
+	]
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Web Development and Web Design",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"areaServed": {
+		"@type": "Country",
+		"name": "Spain"
+	},
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Web Development Services",
+		"itemListElement": [
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Landing Page",
+					"description": "Conversion-optimized landing pages"
+				},
+				"priceSpecification": {
+					"@type": "PriceSpecification",
+					"price": "800",
+					"priceCurrency": "EUR",
+					"valueAddedTaxIncluded": true,
+					"priceRange": "€800 - €1,500"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "Corporate Website",
+					"description": "Complete professional websites for businesses"
+				},
+				"priceSpecification": {
+					"@type": "PriceSpecification",
+					"price": "1500",
+					"priceCurrency": "EUR",
+					"valueAddedTaxIncluded": true,
+					"priceRange": "€1,500 - €3,500"
+				}
+			},
+			{
+				"@type": "Offer",
+				"itemOffered": {
+					"@type": "Service",
+					"name": "E-commerce",
+					"description": "Complete online stores with payment gateway"
+				},
+				"priceSpecification": {
+					"@type": "PriceSpecification",
+					"price": "3000",
+					"priceCurrency": "EUR",
+					"valueAddedTaxIncluded": true,
+					"priceRange": "€3,000 - €6,000+"
+				}
+			}
+		]
+	}
+};
+
+// Aggregate Rating with multiple reviews
+const aggregateRatingSchema = {
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	"name": "Ignacio Amat - Freelance Web Developer",
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "6",
+		"bestRating": "5",
+		"worstRating": "5"
+	}
+};
+
+// Individual Reviews
+const reviewsSchema = [
+	{
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"itemReviewed": {
+			"@type": "LocalBusiness",
+			"name": "Ignacio Amat - Freelance Web Developer"
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "María García"
+		},
+		"reviewBody": "Excellent professional. Delivered the project in record time and exceeded all our expectations. The website is fast, modern, and has significantly increased our conversions."
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"itemReviewed": {
+			"@type": "LocalBusiness",
+			"name": "Ignacio Amat - Freelance Web Developer"
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Carlos Rodríguez"
+		},
+		"reviewBody": "Very satisfied with the result. The process was transparent, communication was fluid, and the final result is exactly what we needed for our business."
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"itemReviewed": {
+			"@type": "LocalBusiness",
+			"name": "Ignacio Amat - Freelance Web Developer"
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Laura Martínez"
+		},
+		"reviewBody": "My online store has exceeded all my expectations. Sales have increased by 200% since launch. Totally recommended."
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"itemReviewed": {
+			"@type": "LocalBusiness",
+			"name": "Ignacio Amat - Freelance Web Developer"
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Jordi Puig"
+		},
+		"reviewBody": "We needed to create a website for our restaurant in Barcelona. Ignacio perfectly understood what we were looking for and created a website that perfectly reflects our style. Online reservations have increased by 150%."
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"itemReviewed": {
+			"@type": "LocalBusiness",
+			"name": "Ignacio Amat - Freelance Web Developer"
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Ana Fernández"
+		},
+		"reviewBody": "As a startup in Barcelona, we needed a professional website but with a tight budget. Ignacio helped us create exactly what we needed. Excellent quality-price ratio and impeccable service."
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "Review",
+		"itemReviewed": {
+			"@type": "LocalBusiness",
+			"name": "Ignacio Amat - Freelance Web Developer"
+		},
+		"reviewRating": {
+			"@type": "Rating",
+			"ratingValue": "5",
+			"bestRating": "5"
+		},
+		"author": {
+			"@type": "Person",
+			"name": "Roberto Sánchez"
+		},
+		"reviewBody": "Working with Ignacio was a pleasure. Professional, punctual and with excellent knowledge of web development. Our new website has significantly improved our online presence in Barcelona."
+	}
+];
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": getTranslation(locale, 'faq.items.0.question'),
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": getTranslation(locale, 'faq.items.0.answer')
+			}
+		},
+		{
+			"@type": "Question",
+			"name": getTranslation(locale, 'faq.items.1.question'),
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": getTranslation(locale, 'faq.items.1.answer')
+			}
+		},
+		{
+			"@type": "Question",
+			"name": getTranslation(locale, 'faq.items.2.question'),
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": getTranslation(locale, 'faq.items.2.answer')
+			}
+		},
+		{
+			"@type": "Question",
+			"name": getTranslation(locale, 'faq.items.3.question'),
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": getTranslation(locale, 'faq.items.3.answer')
+			}
+		}
+	]
+};
+
+const allSchemas = [
+	localBusinessSchema,
+	serviceSchema,
+	aggregateRatingSchema,
+	...reviewsSchema,
+	faqSchema
+];
 ---
 
 <Layout 
@@ -22,6 +307,7 @@ const canonicalUrl = "/en";
 	description={description} 
 	lang="en"
 	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
 >
 	<Header />
 	<main>
@@ -36,23 +322,53 @@ const canonicalUrl = "/en";
 		<FAQ />
 		<Contact />
 	</main>
-	<footer class="py-8 border-t border-border">
-		<div class="container">
-			<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-				<div class="text-sm text-text-muted">
-					© {new Date().getFullYear()} Ignacio Amat Web Development LLC. | Software engineering services and digital consulting. Operating from Barcelona for the world.
+	<footer class="py-8 sm:py-12 border-t border-border">
+		<div class="container px-4 sm:px-6">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+				<div>
+					<h3 class="text-sm font-semibold mb-4">Services</h3>
+					<nav class="flex flex-col gap-2">
+						<a href="/en/create-website-barcelona" class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Create Website Barcelona
+						</a>
+						<a href="/en/web-developer-barcelona" class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer Barcelona
+						</a>
+						<a href="/en/web-design-businesses" class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Design Businesses
+						</a>
+					</nav>
 				</div>
-				<nav class="flex gap-6">
-					<a href="/en/legal" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Legal Notice
+				<div>
+					<h3 class="text-sm font-semibold mb-4">Legal Information</h3>
+					<nav class="flex flex-col gap-2">
+						<a href="/en/privacy" class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							<Translate key="footer.privacy" />
+						</a>
+						<a href="/en/legal-notice" class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							<Translate key="footer.legal" />
+						</a>
+						<a href="/en/terms" class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							<Translate key="footer.terms" />
+						</a>
+					</nav>
+				</div>
+				<div>
+					<h3 class="text-sm font-semibold mb-4">Contact</h3>
+					<p class="text-xs sm:text-sm text-text-muted mb-4">
+						Need to create a website for your business? Contact me for a free quote.
+					</p>
+					<a href="#contacto" class="text-xs sm:text-sm text-accent hover:underline">
+						Go to contact form →
 					</a>
-					<a href="/en/privacy" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Privacy
-					</a>
-					<a href="/en/clients" class="text-sm text-text-muted hover:text-accent transition-colors">
-						Client Portal
-					</a>
-				</nav>
+				</div>
+			</div>
+			<div class="border-t border-border pt-6">
+				<div class="flex flex-col md:flex-row justify-between items-center gap-4">
+					<div class="text-xs sm:text-sm text-text-muted text-center md:text-left">
+						<p>© {new Date().getFullYear()} Ignacio Amat. <Translate key="footer.fullCopyright" /></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>

@@ -1,0 +1,266 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getTranslation } from '../../i18n/utils';
+
+const locale = 'en';
+const title = getTranslation(locale, 'seo.terms.title');
+const description = getTranslation(locale, 'seo.terms.description');
+const canonicalUrl = "/en/terms";
+---
+
+<Layout 
+	title={title} 
+	description={description} 
+	lang="en"
+	canonicalUrl={canonicalUrl}
+>
+	<Header />
+	<main class="py-12 md:py-20">
+		<article class="container max-w-4xl mx-auto px-4">
+			<header class="mb-12">
+				<div class="flex justify-between items-start mb-4">
+					<h1 class="text-4xl md:text-5xl font-bold">Terms and Conditions of Service</h1>
+					<a href="/terminos" class="text-sm text-text-muted hover:text-accent transition-colors whitespace-nowrap ml-4">
+						Español
+					</a>
+				</div>
+				<p class="text-text-muted text-lg">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+			</header>
+
+			<div class="prose prose-lg max-w-none">
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">1. General Information</h2>
+					<p class="text-text-muted mb-4">
+						These Terms and Conditions govern the contracting of web development and design services by Ignacio Amat as a freelance professional.
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Service provider:</strong> Ignacio Amat</li>
+						<li><strong>Activity:</strong> Freelance web development and design</li>
+						<li><strong>Location:</strong> Barcelona, Spain</li>
+					</ul>
+					<p class="text-text-muted">
+						By contracting my services, the client accepts these terms and conditions in full.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">2. Services Offered</h2>
+					<p class="text-text-muted mb-4">
+						Services include, but are not limited to:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Custom website design and development</li>
+						<li>Landing page development</li>
+						<li>Online store development (e-commerce)</li>
+						<li>SEO optimization</li>
+						<li>Maintenance and technical support</li>
+						<li>Web development consulting</li>
+					</ul>
+					<p class="text-text-muted">
+						The specific scope of each project will be defined in the quote and/or contract signed by both parties.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">3. Hiring Process</h2>
+					<p class="text-text-muted mb-4">
+						The hiring process follows these steps:
+					</p>
+					<ol class="list-decimal list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Initial consultation:</strong> The client requests information through the contact form</li>
+						<li><strong>Quote:</strong> A detailed quote is prepared with the project scope</li>
+						<li><strong>Acceptance:</strong> The client accepts the quote and the agreement is formalized</li>
+						<li><strong>Initial payment:</strong> An initial payment is made (generally 50% of total)</li>
+						<li><strong>Development:</strong> Project development begins as agreed</li>
+						<li><strong>Delivery and final payment:</strong> The project is delivered and the remaining payment is made</li>
+					</ol>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">4. Prices and Payment Methods</h2>
+					<p class="text-text-muted mb-4">
+						Prices will be established in each individual quote. General payment conditions are:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Prices are expressed in euros (€) and do not include VAT unless otherwise indicated</li>
+						<li>Payment is generally divided into two parts: 50% at start and 50% before final delivery</li>
+						<li>Bank transfers, Bizum and credit cards are accepted</li>
+						<li>Official invoice will be issued for all services provided</li>
+						<li>Payment terms will be established in the quote or contract</li>
+					</ul>
+					<p class="text-text-muted">
+						Prices may be modified if the client requests substantial changes to the original project scope.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">5. Delivery Deadlines</h2>
+					<p class="text-text-muted mb-4">
+						Delivery deadlines will be agreed in advance and indicated in the quote. Factors that may affect deadlines:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Project complexity</li>
+						<li>Availability of materials or information provided by the client</li>
+						<li>Number of revisions and changes requested</li>
+						<li>Unforeseen circumstances or force majeure</li>
+					</ul>
+					<p class="text-text-muted">
+						Any delay will be communicated to the client as soon as possible and a joint solution will be sought.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">6. Revisions and Modifications</h2>
+					<p class="text-text-muted mb-4">
+						Reasonable revisions within the original project scope are included. Conditions are:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Minor revisions are included in the agreed price</li>
+						<li>Substantial modifications that alter the original scope may involve additional costs</li>
+						<li>The client must provide clear and timely feedback</li>
+						<li>Excessive revisions or changes outside the original scope may generate additional costs</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">7. Intellectual Property</h2>
+					<p class="text-text-muted mb-4">
+						Regarding intellectual property and copyright:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Once the project is paid in full, the client obtains usage rights to the work performed</li>
+						<li>The developer reserves the right to include the project in their portfolio, unless otherwise agreed</li>
+						<li>Source code and project files will be delivered to the client after full payment</li>
+						<li>The client is responsible for obtaining necessary licenses for third-party elements (images, fonts, etc.)</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">8. Warranties</h2>
+					<p class="text-text-muted mb-4">
+						Warranty is offered on:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Functionality:</strong> The website will function according to agreed specifications</li>
+						<li><strong>Error correction:</strong> Technical errors that prevent correct functioning will be corrected</li>
+						<li><strong>Warranty period:</strong> Generally 30 days after delivery for correction of technical errors</li>
+					</ul>
+					<p class="text-text-muted">
+						The warranty does not cover modifications requested by the client after final delivery or damages caused by misuse or modifications by third parties.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">9. Client Responsibilities</h2>
+					<p class="text-text-muted mb-4">
+						The client agrees to:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Provide accurate and complete information about the project</li>
+						<li>Facilitate all necessary materials (texts, images, logos, etc.) within agreed deadlines</li>
+						<li>Review and provide feedback within reasonable timeframes</li>
+						<li>Make payments as agreed</li>
+						<li>Respect third-party intellectual property rights</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">10. Limitation of Liability</h2>
+					<p class="text-text-muted mb-4">
+						Ignacio Amat is not responsible for:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Client data loss that is not under their direct control</li>
+						<li>Damage caused by third parties or external services (hosting, domains, etc.)</li>
+						<li>Commercial decisions made by the client based on the project</li>
+						<li>Problems arising from content provided by the client</li>
+					</ul>
+					<p class="text-text-muted">
+						Maximum liability is limited to the total amount paid by the client for the specific project.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">11. Cancellation and Termination</h2>
+					<p class="text-text-muted mb-4">
+						In case of project cancellation:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>The client may cancel the project at any time with prior notice</li>
+						<li>Work performed until the time of cancellation will be invoiced</li>
+						<li>The developer may cancel the project if the client fails to meet their obligations (payments, deadlines, etc.)</li>
+						<li>In case of cancellation, completed work up to that point will be delivered</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">12. Confidentiality</h2>
+					<p class="text-text-muted">
+						Confidentiality of all information provided by the client during project development will be maintained. The developer commits not to disclose confidential information to third parties without prior authorization from the client.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">13. Applicable Law and Jurisdiction</h2>
+					<p class="text-text-muted mb-4">
+						These terms are governed by Spanish legislation. For any dispute, the parties submit to the courts and tribunals of Barcelona, expressly waiving any other jurisdiction.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">14. Modifications to Terms</h2>
+					<p class="text-text-muted">
+						Ignacio Amat reserves the right to modify these terms and conditions. The applicable terms will be those in effect at the time of service contracting. It is recommended to review these terms periodically.
+					</p>
+				</section>
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: var(--color-text);
+	}
+
+	.prose h2 {
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+
+	.prose ul, .prose ol {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.prose li {
+		margin-bottom: 0.5rem;
+		line-height: 1.7;
+	}
+
+	.prose a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>
+

@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { getTranslation } from '../i18n/utils';
+
+const locale = 'es';
+const title = getTranslation(locale, 'seo.terms.title');
+const description = getTranslation(locale, 'seo.terms.description');
+const canonicalUrl = "/terminos";
+---
+
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+>
+	<Header />
+	<main class="py-12 md:py-20">
+		<article class="container max-w-4xl mx-auto px-4">
+			<header class="mb-12">
+				<div class="flex justify-between items-start mb-4">
+					<h1 class="text-4xl md:text-5xl font-bold">Términos y Condiciones de Servicio</h1>
+					<a href="/en/terms" class="text-sm text-text-muted hover:text-accent transition-colors whitespace-nowrap ml-4">
+						English
+					</a>
+				</div>
+				<p class="text-text-muted text-lg">Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+			</header>
+
+			<div class="prose prose-lg max-w-none">
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">1. Información General</h2>
+					<p class="text-text-muted mb-4">
+						Los presentes Términos y Condiciones regulan la contratación de servicios de desarrollo y diseño web por parte de Ignacio Amat como profesional freelance.
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Prestador de servicios:</strong> Ignacio Amat</li>
+						<li><strong>Actividad:</strong> Desarrollo y diseño web freelance</li>
+						<li><strong>Ubicación:</strong> Barcelona, España</li>
+					</ul>
+					<p class="text-text-muted">
+						Para contactar, utilice el <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+					<p class="text-text-muted">
+						Al contratar mis servicios, el cliente acepta estos términos y condiciones en su totalidad.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">2. Servicios Ofrecidos</h2>
+					<p class="text-text-muted mb-4">
+						Los servicios incluyen, pero no se limitan a:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Diseño y desarrollo de sitios web personalizados</li>
+						<li>Desarrollo de landing pages</li>
+						<li>Desarrollo de tiendas online (e-commerce)</li>
+						<li>Optimización SEO</li>
+						<li>Mantenimiento y soporte técnico</li>
+						<li>Consultoría en desarrollo web</li>
+					</ul>
+					<p class="text-text-muted">
+						El alcance específico de cada proyecto se definirá en el presupuesto y/o contrato firmado por ambas partes.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">3. Proceso de Contratación</h2>
+					<p class="text-text-muted mb-4">
+						El proceso de contratación sigue los siguientes pasos:
+					</p>
+					<ol class="list-decimal list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Consulta inicial:</strong> El cliente solicita información a través del formulario de contacto</li>
+						<li><strong>Presupuesto:</strong> Se elabora un presupuesto detallado con el alcance del proyecto</li>
+						<li><strong>Aceptación:</strong> El cliente acepta el presupuesto y se formaliza el acuerdo</li>
+						<li><strong>Pago inicial:</strong> Se realiza un pago inicial (generalmente 50% del total)</li>
+						<li><strong>Desarrollo:</strong> Comienza el desarrollo del proyecto según lo acordado</li>
+						<li><strong>Entrega y pago final:</strong> Se entrega el proyecto y se realiza el pago restante</li>
+					</ol>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">4. Precios y Forma de Pago</h2>
+					<p class="text-text-muted mb-4">
+						Los precios se establecerán en cada presupuesto individual. Las condiciones generales de pago son:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Los precios se expresan en euros (€) y no incluyen IVA salvo que se indique lo contrario</li>
+						<li>El pago se divide generalmente en dos partes: 50% al inicio y 50% antes de la entrega final</li>
+						<li>Se aceptan transferencias bancarias, Bizum y tarjeta de crédito</li>
+						<li>Se emitirá factura oficial por todos los servicios prestados</li>
+						<li>Los plazos de pago se establecerán en el presupuesto o contrato</li>
+					</ul>
+					<p class="text-text-muted">
+						Los precios podrán modificarse si el cliente solicita cambios sustanciales al alcance original del proyecto.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">5. Plazos de Entrega</h2>
+					<p class="text-text-muted mb-4">
+						Los plazos de entrega se acordarán previamente y se indicarán en el presupuesto. Factores que pueden afectar los plazos:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Complejidad del proyecto</li>
+						<li>Disponibilidad de materiales o información proporcionada por el cliente</li>
+						<li>Número de revisiones y cambios solicitados</li>
+						<li>Circunstancias imprevistas o fuerza mayor</li>
+					</ul>
+					<p class="text-text-muted">
+						Se comunicará cualquier retraso al cliente con la mayor brevedad posible y se buscará una solución conjunta.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">6. Revisiones y Modificaciones</h2>
+					<p class="text-text-muted mb-4">
+						Se incluyen revisiones razonables dentro del alcance del proyecto original. Las condiciones son:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Las revisiones menores están incluidas en el precio acordado</li>
+						<li>Las modificaciones sustanciales que alteren el alcance original pueden implicar costes adicionales</li>
+						<li>El cliente debe proporcionar feedback claro y oportuno</li>
+						<li>Las revisiones excesivas o cambios fuera del alcance original pueden generar costes adicionales</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">7. Propiedad Intelectual</h2>
+					<p class="text-text-muted mb-4">
+						Respecto a la propiedad intelectual y derechos de autor:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Una vez pagado el proyecto en su totalidad, el cliente obtiene los derechos de uso del trabajo realizado</li>
+						<li>El desarrollador se reserva el derecho de incluir el proyecto en su portfolio, salvo acuerdo en contrario</li>
+						<li>El código fuente y los archivos del proyecto se entregarán al cliente tras el pago completo</li>
+						<li>El cliente es responsable de obtener las licencias necesarias para elementos de terceros (imágenes, fuentes, etc.)</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">8. Garantías</h2>
+					<p class="text-text-muted mb-4">
+						Se ofrece garantía sobre:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Funcionalidad:</strong> El sitio web funcionará según las especificaciones acordadas</li>
+						<li><strong>Corrección de errores:</strong> Se corregirán errores técnicos que impidan el funcionamiento correcto</li>
+						<li><strong>Plazo de garantía:</strong> Generalmente 30 días tras la entrega para corrección de errores técnicos</li>
+					</ul>
+					<p class="text-text-muted">
+						La garantía no cubre modificaciones solicitadas por el cliente después de la entrega final ni daños causados por uso indebido o modificaciones de terceros.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">9. Responsabilidades del Cliente</h2>
+					<p class="text-text-muted mb-4">
+						El cliente se compromete a:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Proporcionar información precisa y completa sobre el proyecto</li>
+						<li>Facilitar todos los materiales necesarios (textos, imágenes, logotipos, etc.) en los plazos acordados</li>
+						<li>Revisar y proporcionar feedback en tiempos razonables</li>
+						<li>Realizar los pagos según lo acordado</li>
+						<li>Respetar los derechos de propiedad intelectual de terceros</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">10. Limitación de Responsabilidad</h2>
+					<p class="text-text-muted mb-4">
+						Ignacio Amat no se hace responsable de:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Pérdidas de datos del cliente que no estén bajo su control directo</li>
+						<li>Daños causados por terceros o por servicios externos (hosting, dominios, etc.)</li>
+						<li>Decisiones comerciales tomadas por el cliente basadas en el proyecto</li>
+						<li>Problemas derivados del contenido proporcionado por el cliente</li>
+					</ul>
+					<p class="text-text-muted">
+						La responsabilidad máxima se limita al importe total pagado por el cliente por el proyecto específico.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">11. Cancelación y Resolución</h2>
+					<p class="text-text-muted mb-4">
+						En caso de cancelación del proyecto:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>El cliente puede cancelar el proyecto en cualquier momento con notificación previa</li>
+						<li>Se facturará el trabajo realizado hasta el momento de la cancelación</li>
+						<li>El desarrollador puede cancelar el proyecto si el cliente no cumple con sus obligaciones (pagos, plazos, etc.)</li>
+						<li>En caso de cancelación, se entregará el trabajo completado hasta ese momento</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">12. Confidencialidad</h2>
+					<p class="text-text-muted">
+						Se mantendrá la confidencialidad de toda la información proporcionada por el cliente durante el desarrollo del proyecto. El desarrollador se compromete a no divulgar información confidencial a terceros sin autorización previa del cliente.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">13. Ley Aplicable y Jurisdicción</h2>
+					<p class="text-text-muted mb-4">
+						Estos términos se rigen por la legislación española. Para cualquier controversia, las partes se someten a los juzgados y tribunales de Barcelona, renunciando expresamente a cualquier otro fuero.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">14. Modificaciones de los Términos</h2>
+					<p class="text-text-muted">
+						Ignacio Amat se reserva el derecho de modificar estos términos y condiciones. Los términos aplicables serán los vigentes en el momento de la contratación del servicio. Se recomienda revisar estos términos periódicamente.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">15. Contacto</h2>
+					<p class="text-text-muted mb-4">
+						Para cualquier consulta sobre estos términos y condiciones, puede contactarme a través del <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+				</section>
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: var(--color-text);
+	}
+
+	.prose h2 {
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+
+	.prose ul, .prose ol {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.prose li {
+		margin-bottom: 0.5rem;
+		line-height: 1.7;
+	}
+
+	.prose a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>
+

@@ -4,13 +4,29 @@
     "about": "Sobre Mí",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "solutions": "Soluciones",
+    "results": "Resultados",
+    "plans": "Planes",
+    "viewPricing": "Ver Precios"
   },
   "hero": {
-    "title": "Ayudo a empresas de Barcelona a convertir visitas en clientes con una web de alto rendimiento.",
-    "subtitle": "Tu negocio pierde dinero si tu web es lenta o confusa. Desarrollo soluciones digitales a medida (con factura oficial y garantía) para que tú solo te preocupes de atender a tus nuevos clientes.",
-    "cta": "Quiero mi Auditoría Gratuita",
-    "services": "Ver casos de éxito"
+    "title": "Creo páginas web profesionales para empresas en Barcelona y toda España",
+    "subtitle": "¿Necesitas crear una página web para tu empresa? Soy desarrollador web freelance especializado en crear sitios web modernos, rápidos y optimizados para Google. Diseño personalizado, factura oficial y garantía de satisfacción. Presupuesto gratuito sin compromiso.",
+    "cta": "Solicitar Presupuesto Gratuito",
+    "services": "Ver Tipos de Webs"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Soy desarrollador web freelance en Barcelona especializado en crear páginas web para empresas. Si buscas a alguien para crear una página web para tu negocio, estás en el lugar correcto. Ayudo a empresas de Barcelona (Eixample, Gràcia, Sants-Montjuïc, Poblenou, Ciutat Vella, Sarrià-Sant Gervasi), España y a nivel internacional a crear sitios web profesionales que convierten visitantes en clientes.",
+    "value": "Mi compromiso es ofrecer servicios de desarrollo web de calidad con total transparencia: facturación oficial, garantía de satisfacción y un trato cercano y personalizado. Cada página web que creo está optimizada para Google y diseñada para generar resultados. Trabajo con empresas de toda Barcelona y la comunidad empresarial local.",
+    "benefits": [
+      "Experiencia comprobada creando páginas web para empresas de diversos sectores en Barcelona",
+      "Conocimiento de la comunidad empresarial barcelonesa y sus necesidades",
+      "Tecnologías modernas para sitios web rápidos y seguros",
+      "Soporte continuo y mantenimiento post-lanzamiento",
+      "Relación calidad-precio competitiva para tu negocio"
+    ]
   },
   "features": {
     "title": "Soluciones que generan resultados",
@@ -34,43 +50,151 @@
       }
     ]
   },
+  "process": {
+    "title": "Proceso de Trabajo",
+    "description": "Un método probado para garantizar resultados excepcionales en cada proyecto.",
+    "steps": [
+      {
+        "title": "Consultoría y Estrategia",
+        "description": "Analizamos tu negocio, objetivos y competencia para crear una estrategia digital efectiva."
+      },
+      {
+        "title": "Diseño y Desarrollo",
+        "description": "Creamos el diseño personalizado y desarrollamos tu web con las mejores tecnologías del mercado."
+      },
+      {
+        "title": "Pruebas y Optimización",
+        "description": "Realizamos pruebas exhaustivas de rendimiento, seguridad y usabilidad antes del lanzamiento."
+      },
+      {
+        "title": "Lanzamiento y Soporte",
+        "description": "Publicamos tu web y te acompañamos con formación, documentación y soporte continuo."
+      }
+    ]
+  },
+  "guarantee": {
+    "title": "Garantía de Satisfacción",
+    "description": "Estoy tan seguro de la calidad de mi trabajo que ofrezco garantía de satisfacción. Si no estás completamente satisfecho con el resultado, trabajaremos juntos hasta que lo estés. Tu éxito es mi éxito."
+  },
+  "testimonials": {
+    "title": "Lo que Dicen Mis Clientes",
+    "description": "La satisfacción de mis clientes es mi mejor carta de presentación.",
+    "items": [
+      {
+        "name": "María García",
+        "role": "Directora de Marketing",
+        "company": "TechSolutions Barcelona",
+        "content": "Excelente profesional. Entregó el proyecto en tiempo récord y superó todas nuestras expectativas. La web es rápida, moderna y ha aumentado significativamente nuestras conversiones.",
+        "rating": 5
+      },
+      {
+        "name": "Carlos Rodríguez",
+        "role": "CEO",
+        "company": "Consultoría Empresarial",
+        "content": "Muy satisfecho con el resultado. El proceso fue transparente, la comunicación fluida y el resultado final es exactamente lo que necesitábamos para nuestro negocio.",
+        "rating": 5
+      },
+      {
+        "name": "Laura Martínez",
+        "role": "Propietaria",
+        "company": "Boutique Fashion",
+        "content": "Mi tienda online ha superado todas mis expectativas. Las ventas han aumentado un 200% desde el lanzamiento. Totalmente recomendable.",
+        "rating": 5
+      },
+      {
+        "name": "Jordi Puig",
+        "role": "Gerente",
+        "company": "Restaurante El Raval",
+        "content": "Necesitábamos crear una página web para nuestro restaurante en Barcelona. Ignacio entendió perfectamente lo que buscábamos y creó una web que refleja perfectamente nuestro estilo. Las reservas online han aumentado un 150%.",
+        "rating": 5
+      },
+      {
+        "name": "Ana Fernández",
+        "role": "Fundadora",
+        "company": "Startup Tech Poblenou",
+        "content": "Como startup en Barcelona, necesitábamos una web profesional pero con presupuesto ajustado. Ignacio nos ayudó a crear exactamente lo que necesitábamos. Excelente relación calidad-precio y servicio impecable.",
+        "rating": 5
+      },
+      {
+        "name": "Roberto Sánchez",
+        "role": "Director Comercial",
+        "company": "Consultoría Eixample",
+        "content": "Trabajar con Ignacio fue un placer. Profesional, puntual y con un conocimiento excelente de desarrollo web. Nuestra nueva web ha mejorado significativamente nuestra presencia online en Barcelona.",
+        "rating": 5
+      }
+    ]
+  },
   "pricing": {
-    "title": "Planes y Precios",
-    "description": "Soluciones profesionales adaptadas a diferentes necesidades y presupuestos.",
-    "note": "¿Necesitas algo más complejo? ¿Una app interna o un CRM? Solicita presupuesto a medida.",
+    "badge": "Inversión en tu Negocio",
+    "title": "Inversión Aproximada",
+    "description": "Cada proyecto es único. Estos rangos te dan una idea de la inversión según el tipo de web que necesitas.",
     "popular": "Más Popular",
-    "cta": "Solicitar Presupuesto",
+    "cta": "Solicitar Presupuesto Personalizado",
+    "investmentLabel": "Inversión típica",
+    "accordingToComplexity": "según complejidad y funcionalidades",
+    "idealFor": "Ideal para:",
+    "featuresNote": "Las funcionalidades se definen según tus necesidades específicas",
+    "customTitle": "¿Proyecto Personalizado?",
+    "customDescription": "Si necesitas algo más complejo como una aplicación web, CRM o sistema a medida, contáctame para un presupuesto personalizado.",
+    "customCta": "Hablemos de tu proyecto",
+    "freeQuote": "Presupuesto gratuito",
+    "noCommitment": "Sin compromiso",
+    "fastResponse": "Respuesta en 24h",
     "tiers": [
       {
-        "name": "Plan Presencia Digital",
+        "name": "Landing Page",
+        "description": "Ideal para lanzamientos, campañas específicas o servicios puntuales.",
+        "priceRange": "800€ - 1.500€",
+        "useCases": [
+          "Página de producto o servicio",
+          "Campaña de marketing puntual",
+          "Evento o lanzamiento",
+          "Captación de leads"
+        ],
         "features": [
-          "1 página completa",
-          "Diseño personalizado",
+          "Diseño personalizado y responsive",
+          "Optimización SEO básica",
           "Formulario de contacto",
-          "Optimizado para móviles",
-          "Dominio y hosting 1 año"
+          "Integración con herramientas de marketing",
+          "Hosting y dominio 1 año incluidos"
         ]
       },
       {
-        "name": "Plan Crecimiento & Captación",
+        "name": "Web Corporativa",
+        "description": "Web profesional completa para empresas que buscan presencia sólida online.",
+        "priceRange": "1.500€ - 3.500€",
+        "useCases": [
+          "Sitio corporativo de empresa",
+          "Portfolio profesional",
+          "Web de servicios",
+          "Blog o revista digital"
+        ],
         "features": [
-          "Hasta 5 páginas",
-          "Diseño personalizado",
-          "Blog o noticias",
-          "Panel de administración",
-          "SEO básico incluido",
-          "Dominio y hosting 1 año"
-        ]
-      },
-      {
-        "name": "Plataforma a Medida / E-commerce",
-        "features": [
-          "Tienda completa",
-          "Sistema de pagos",
-          "Gestión de productos",
-          "Panel de administración",
+          "Hasta 8-10 páginas",
+          "Diseño profesional a medida",
+          "Panel de administración (CMS)",
+          "Blog integrado",
           "SEO avanzado",
-          "Dominio y hosting 1 año"
+          "Hosting y dominio 1 año incluidos"
+        ]
+      },
+      {
+        "name": "E-commerce",
+        "description": "Tienda online completa para vender tus productos o servicios 24/7.",
+        "priceRange": "3.000€ - 6.000€+",
+        "useCases": [
+          "Tienda online de productos",
+          "Venta de servicios digitales",
+          "Marketplace básico",
+          "Suscripciones y membresías"
+        ],
+        "features": [
+          "Catálogo de productos ilimitado",
+          "Pasarela de pago integrada",
+          "Panel de administración completo",
+          "Gestión de inventario y pedidos",
+          "SEO para e-commerce",
+          "Hosting especializado 1 año incluido"
         ]
       }
     ]
@@ -98,12 +222,115 @@
     ]
   },
   "contact": {
-    "title": "Contáctame",
+    "title": "¿Listo para empezar tu web?",
+    "subtitle": "Cuéntame sobre tu proyecto y te ayudaré a hacerlo realidad.",
     "name": "Nombre",
     "email": "Correo Electrónico",
-    "message": "Mensaje",
-    "send": "Enviar Mensaje",
+    "projectType": "Tipo de proyecto",
+    "message": "Cuéntame sobre tu proyecto",
+    "send": "Enviar mensaje",
     "success": "¡Mensaje enviado con éxito!",
-    "error": "Hubo un error al enviar tu mensaje."
+    "error": "Hubo un error al enviar tu mensaje.",
+    "directContact": "Contacto directo",
+    "location": "Barcelona, España",
+    "response": "Respuesta",
+    "responseTime": "Respuesta en 24-48h laborables",
+    "project": "Proyecto",
+    "selectOption": "Selecciona una opción",
+    "options": {
+      "landing": "Landing Page",
+      "complete": "Web Completa",
+      "ecommerce": "Tienda Online",
+      "other": "Otro"
+    },
+    "placeholders": {
+      "name": "Tu nombre",
+      "email": "tu@email.com",
+      "message": "Cuéntame sobre tu proyecto..."
+    },
+    "sending": "Enviando...",
+    "successMessage": "Tu mensaje ha sido enviado con éxito. Te responderé lo antes posible.",
+    "errorMessage": "Ha ocurrido un error al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctame directamente por email.",
+    "requiredFields": "Todos los campos son obligatorios"
+  },
+  "footer": {
+    "copyright": "Todos los derechos reservados.",
+    "fullCopyright": "Desarrollo web freelance profesional: diseño, programación y optimización SEO. Sitios rápidos, seguros y a medida para empresas en Barcelona y a nivel internacional.",
+    "privacy": "Política de Privacidad",
+    "legal": "Aviso Legal",
+    "terms": "Términos y Condiciones"
+  },
+  "seo": {
+    "home": {
+      "title": "Crear Página Web para Mi Empresa Barcelona | Desarrollador Web Freelance",
+      "description": "Desarrollador web freelance en Barcelona. Creo páginas web profesionales para empresas: diseño personalizado, rápido y optimizado SEO. Presupuesto gratuito. Servicios en Barcelona y toda España."
+    },
+    "privacy": {
+      "title": "Política de Privacidad - Ignacio Amat | Desarrollo Web",
+      "description": "Política de privacidad y protección de datos personales. Información sobre cómo tratamos sus datos personales de forma segura y conforme al RGPD."
+    },
+    "terms": {
+      "title": "Términos y Condiciones - Ignacio Amat | Desarrollo Web",
+      "description": "Términos y condiciones de servicio para desarrollo web freelance. Condiciones de contratación, pagos, plazos, garantías y propiedad intelectual."
+    },
+    "legal": {
+      "title": "Aviso Legal - Ignacio Amat | Desarrollo Web",
+      "description": "Aviso legal con información sobre propiedad intelectual, responsabilidad y condiciones de uso del sitio web de Ignacio Amat, desarrollador web freelance."
+    }
+  },
+  "projects": {
+    "badge": "Servicios Especializados",
+    "title": "Tipos de Webs que Desarrollo",
+    "description": "Soluciones web profesionales adaptadas a las necesidades de tu negocio. Desde landing pages hasta aplicaciones complejas.",
+    "featuresLabel": "Características principales:",
+    "cta": "Solicitar presupuesto",
+    "customQuestion": "¿No encuentras lo que buscas?",
+    "customCta": "Cuéntame tu proyecto",
+    "types": [
+      {
+        "title": "Landing Pages",
+        "subtitle": "Alta Conversión",
+        "description": "Páginas de aterrizaje optimizadas para convertir visitantes en clientes. Perfectas para lanzamientos, campañas y servicios específicos.",
+        "features": [
+          "Diseño enfocado en conversión",
+          "Optimización SEO y velocidad",
+          "Integración con herramientas de marketing",
+          "Formularios y CTAs efectivos"
+        ]
+      },
+      {
+        "title": "Webs Corporativas",
+        "subtitle": "Presencia Profesional",
+        "description": "Sitios web profesionales que transmiten credibilidad y valor. Ideales para empresas, profesionales y marcas que buscan destacar.",
+        "features": [
+          "Diseño profesional y moderno",
+          "Adaptable a cualquier dispositivo",
+          "Sistema de gestión de contenidos",
+          "Optimización para buscadores"
+        ]
+      },
+      {
+        "title": "Tiendas Online",
+        "subtitle": "Ventas 24/7",
+        "description": "Soluciones e-commerce completas para vender productos o servicios online. Con pasarela de pago, gestión de inventario y automatización.",
+        "features": [
+          "Catálogo de productos completo",
+          "Pasarela de pago segura",
+          "Panel de administración",
+          "Seguimiento de pedidos y stock"
+        ]
+      },
+      {
+        "title": "Aplicaciones Web",
+        "subtitle": "Soluciones a Medida",
+        "description": "Plataformas y sistemas personalizados para necesidades específicas. Desde sistemas de gestión hasta herramientas especializadas.",
+        "features": [
+          "Desarrollo personalizado 100%",
+          "Integración con APIs y servicios",
+          "Escalable y seguro",
+          "Soporte y mantenimiento"
+        ]
+      }
+    ]
   }
 } 

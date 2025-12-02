@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getTranslation } from '../../i18n/utils';
+
+const locale = 'en';
+const title = getTranslation(locale, 'seo.legal.title');
+const description = getTranslation(locale, 'seo.legal.description');
+const canonicalUrl = "/en/legal-notice";
+---
+
+<Layout 
+	title={title} 
+	description={description} 
+	lang="en"
+	canonicalUrl={canonicalUrl}
+>
+	<Header />
+	<main class="py-12 md:py-20">
+		<article class="container max-w-4xl mx-auto px-4">
+			<header class="mb-12">
+				<div class="flex justify-between items-start mb-4">
+					<h1 class="text-4xl md:text-5xl font-bold">Legal Notice</h1>
+					<a href="/aviso-legal" class="text-sm text-text-muted hover:text-accent transition-colors whitespace-nowrap ml-4">
+						Español
+					</a>
+				</div>
+				<p class="text-text-muted text-lg">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+			</header>
+
+			<div class="prose prose-lg max-w-none">
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">1. General Information</h2>
+					<p class="text-text-muted mb-4">
+						In accordance with Spanish Law 34/2002, of July 11, on Information Society Services and Electronic Commerce, it is informed that:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Owner:</strong> Ignacio Amat</li>
+						<li><strong>Activity:</strong> Freelance web development and design</li>
+						<li><strong>Location:</strong> Barcelona, Spain</li>
+						<li><strong>Domain:</strong> ignacioamatweb.com</li>
+					</ul>
+					<p class="text-text-muted">
+						To contact me, please use the <a href="/en/#contacto" class="text-accent hover:underline">contact form</a> available on this website.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">2. General Terms of Use</h2>
+					<p class="text-text-muted mb-4">
+						Access to and use of this website implies acceptance of the following general terms of use:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>The user agrees to make appropriate and lawful use of the website</li>
+						<li>Use of the site for illegal or unauthorized purposes is prohibited</li>
+						<li>Reproduction, distribution or modification of content without prior authorization is not permitted</li>
+						<li>The user is responsible for maintaining the confidentiality of any information provided</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">3. Intellectual and Industrial Property</h2>
+					<p class="text-text-muted mb-4">
+						The design, source code, logos, texts, graphics, images, icons, as well as the structure and design of this website, are the property of Ignacio Amat or third parties who have authorized their use, and are protected by intellectual and industrial property rights.
+					</p>
+					<p class="text-text-muted mb-4">
+						The following is expressly prohibited:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Total or partial reproduction of contents without express authorization</li>
+						<li>Modification, adaptation or alteration of content</li>
+						<li>Commercial use of content without prior authorization</li>
+						<li>Removal of intellectual property or copyright notices</li>
+					</ul>
+					<p class="text-text-muted">
+						Any unauthorized use of the contents will be considered a violation of intellectual property rights and will be pursued in accordance with current legislation.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">4. Limitation of Liability</h2>
+					<p class="text-text-muted mb-4">
+						Ignacio Amat is not responsible for:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>The veracity, accuracy or timeliness of information contained on linked third-party websites</li>
+						<li>Damages that may result from unauthorized use of information contained on this website</li>
+						<li>Decisions made by the user based solely on information contained on this website</li>
+						<li>Damage caused by viruses or other harmful elements on the user's computer equipment resulting from accessing, browsing or using the website</li>
+						<li>Service interruption, technical failures or problems resulting from network or servers</li>
+					</ul>
+					<p class="text-text-muted">
+						The content of this website is for informational purposes only and does not constitute personalized professional advice.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">5. Links to Third-Party Sites</h2>
+					<p class="text-text-muted mb-4">
+						This website may contain links to third-party websites. These links are provided solely for the user's convenience. Ignacio Amat has no control over the content of these external websites and assumes no responsibility for their content, privacy policies or practices.
+					</p>
+					<p class="text-text-muted">
+						The inclusion of a link does not imply approval or endorsement of the linked site by Ignacio Amat.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">6. Website Modifications</h2>
+					<p class="text-text-muted">
+						Ignacio Amat reserves the right to make, without prior notice, any modifications it deems appropriate to its website, being able to change, delete or add both the contents and services offered through it, as well as the way in which they appear presented or located.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">7. Personal Data Protection</h2>
+					<p class="text-text-muted mb-4">
+						The processing of personal data is carried out in accordance with the Privacy Policy, which forms an integral part of this Legal Notice. For more information on how we process your personal data, please see our <a href="/en/privacy" class="text-accent hover:underline">Privacy Policy</a>.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">8. Applicable Law and Jurisdiction</h2>
+					<p class="text-text-muted mb-4">
+						For the resolution of all disputes or issues related to this website or the activities carried out on it, Spanish legislation shall apply, to which the parties expressly submit.
+					</p>
+					<p class="text-text-muted">
+						For any dispute arising from the use of this website, the parties submit to the courts and tribunals of Barcelona, expressly waiving any other jurisdiction that might correspond to them.
+					</p>
+				</section>
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: var(--color-text);
+	}
+
+	.prose h2 {
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+
+	.prose ul {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.prose li {
+		margin-bottom: 0.5rem;
+		line-height: 1.7;
+	}
+
+	.prose a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>
+

@@ -1,102 +1,205 @@
 ---
 import Translate from './Translate.astro';
+import { getTranslation, getLocaleFromPath } from '../i18n/utils';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const pricingData = getTranslation(locale, 'pricing');
 
 const pricingTiers = [
   {
-    name: "pricing.tiers.0.name",
-    price: "900",
-    features: [
-      "pricing.tiers.0.features.0",
-      "pricing.tiers.0.features.1",
-      "pricing.tiers.0.features.2",
-      "pricing.tiers.0.features.3",
-      "pricing.tiers.0.features.4"
-    ]
+    nameKey: "pricing.tiers.0.name",
+    priceRangeKey: "pricing.tiers.0.priceRange",
+    descriptionKey: "pricing.tiers.0.description",
+    useCases: pricingData.tiers[0].useCases,
+    features: pricingData.tiers[0].features,
+    icon: "landing"
   },
   {
-    name: "pricing.tiers.1.name",
-    price: "1800",
-    features: [
-      "pricing.tiers.1.features.0",
-      "pricing.tiers.1.features.1",
-      "pricing.tiers.1.features.2",
-      "pricing.tiers.1.features.3",
-      "pricing.tiers.1.features.4",
-      "pricing.tiers.1.features.5"
-    ],
-    popular: true
+    nameKey: "pricing.tiers.1.name",
+    priceRangeKey: "pricing.tiers.1.priceRange",
+    descriptionKey: "pricing.tiers.1.description",
+    useCases: pricingData.tiers[1].useCases,
+    features: pricingData.tiers[1].features,
+    popular: true,
+    icon: "corporate"
   },
   {
-    name: "pricing.tiers.2.name",
-    price: "3200",
-    features: [
-      "pricing.tiers.2.features.0",
-      "pricing.tiers.2.features.1",
-      "pricing.tiers.2.features.2",
-      "pricing.tiers.2.features.3",
-      "pricing.tiers.2.features.4",
-      "pricing.tiers.2.features.5",
-    ]
+    nameKey: "pricing.tiers.2.name",
+    priceRangeKey: "pricing.tiers.2.priceRange",
+    descriptionKey: "pricing.tiers.2.description",
+    useCases: pricingData.tiers[2].useCases,
+    features: pricingData.tiers[2].features,
+    icon: "ecommerce"
   }
 ];
 ---
 
-<section class="py-20 bg-secondary" id="precios">
+<section class="py-12 sm:py-16 md:py-20 bg-secondary" id="precios">
   <div class="container">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl font-bold mb-4">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="inline-block mb-3 sm:mb-4">
+        <span class="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wide">
+          <Translate key="pricing.badge" />
+        </span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4">
         <Translate key="pricing.title" />
       </h2>
-      <p class="text-text-muted max-w-2xl mx-auto">
+      <p class="text-text-muted max-w-2xl mx-auto text-sm sm:text-base md:text-lg px-4">
         <Translate key="pricing.description" />
-      </p>
-      <p class="text-text-muted mt-4 max-w-2xl mx-auto">
-        <Translate key="pricing.note" />
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
       {pricingTiers.map((tier, index) => (
         <div class="pricing-card-wrapper">
-          <div class={`card p-8 relative flex flex-col h-full ${tier.popular ? 'border-2 border-accent' : ''}`}>
+          <div class={`card pricing-card ${tier.popular ? 'popular-card' : ''}`}>
             {tier.popular && (
               <div class="popular-badge">
                 <Translate key="pricing.popular" />
               </div>
             )}
-            <h3 class="text-2xl font-bold mb-4">
-              <Translate key={tier.name} />
-            </h3>
-            <div class="text-4xl font-bold mb-6">
-              {tier.price}€
+
+            <!-- Icon -->
+            <div class="pricing-icon mb-4">
+              {tier.icon === "landing" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                </svg>
+              )}
+              {tier.icon === "corporate" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              )}
+              {tier.icon === "ecommerce" && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              )}
             </div>
-            <ul class="space-y-4 mb-8 flex-grow">
-              {tier.features.map((feature, i) => (
-                <li class="flex items-center">
-                  <svg class="w-5 h-5 text-accent mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <Translate key={feature} />
-                </li>
-              ))}
-            </ul>
-            <a href="#contacto" class="btn-primary w-full text-center">
-              <Translate key="pricing.cta" />
-            </a>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold mb-2">
+              <Translate key={tier.nameKey} />
+            </h3>
+
+            <!-- Description -->
+            <p class="text-text-muted text-sm mb-4">
+              <Translate key={tier.descriptionKey} />
+            </p>
+
+            <!-- Price Range -->
+            <div class="price-range-container mb-6">
+              <div class="price-label text-sm text-text-muted mb-1">
+                <Translate key="pricing.investmentLabel" />
+              </div>
+              <div class="price-range text-2xl font-bold text-accent">
+                <Translate key={tier.priceRangeKey} />
+              </div>
+              <div class="price-note text-xs text-text-muted mt-1">
+                <Translate key="pricing.accordingToComplexity" />
+              </div>
+            </div>
+
+            <!-- Use Cases -->
+            <div class="use-cases mb-6">
+              <p class="text-sm font-semibold mb-3">
+                <Translate key="pricing.idealFor" />
+              </p>
+              <ul class="space-y-2">
+                {tier.useCases.map(useCase => (
+                  <li class="flex items-start gap-2">
+                    <svg class="h-4 w-4 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span class="text-sm text-text-muted">{useCase}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Note about custom features -->
+            <div class="custom-note">
+              <p class="text-xs text-text-muted text-center italic">
+                <Translate key="pricing.featuresNote" />
+              </p>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-auto">
+              <a href="#contacto" class={`btn-cta ${tier.popular ? 'btn-primary' : 'btn-outline'}`}>
+                <Translate key="pricing.cta" />
+              </a>
+            </div>
           </div>
         </div>
       ))}
+    </div>
+
+    <!-- Custom Projects Section -->
+    <div class="custom-project-banner mt-12 sm:mt-16 max-w-4xl mx-auto">
+      <div class="card custom-card">
+        <div class="flex flex-col md:flex-row items-center gap-4 sm:gap-6">
+          <div class="custom-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div class="flex-grow text-center md:text-left">
+            <h3 class="text-2xl font-bold mb-2">
+              <Translate key="pricing.customTitle" />
+            </h3>
+            <p class="text-text-muted">
+              <Translate key="pricing.customDescription" />
+            </p>
+          </div>
+          <div class="custom-cta">
+            <a href="#contacto" class="btn-primary whitespace-nowrap">
+              <Translate key="pricing.customCta" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-section mt-8 sm:mt-12 text-center">
+      <div class="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 items-center text-text-muted text-xs sm:text-sm px-4">
+        <div class="flex items-center gap-2">
+          <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><Translate key="pricing.freeQuote" /></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><Translate key="pricing.noCommitment" /></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span><Translate key="pricing.fastResponse" /></span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
+  .bg-secondary {
+    background-color: var(--color-bg-secondary);
+  }
+
   .text-text-muted {
     color: var(--color-text-muted);
   }
-  
-  .bg-secondary {
-    background-color: var(--color-secondary);
+
+  .text-accent {
+    color: var(--color-accent);
   }
 
   .pricing-card-wrapper {
@@ -104,17 +207,160 @@ const pricingTiers = [
     height: 100%;
   }
 
+  .pricing-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .popular-card {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
   .popular-badge {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: var(--color-accent);
     color: white;
-    padding: 0.25rem 1rem;
-    border-radius: 0 0.5rem 0 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    transform: translateY(-1px);
-    z-index: 1;
+    padding: 0.375rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
-</style> 
+
+  .pricing-icon {
+    color: var(--color-accent);
+  }
+
+  .price-range-container {
+    background-color: var(--color-bg-secondary);
+    padding: 1.25rem;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .price-label {
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .use-cases {
+    padding: 1rem;
+    background-color: rgba(var(--color-accent-rgb), 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--color-accent);
+    flex-grow: 1;
+  }
+
+  .custom-note {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.875rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-accent);
+    color: white;
+    border: 2px solid var(--color-accent);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-outline {
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    background-color: transparent;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-accent);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .custom-card {
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--color-accent) 5%, transparent) 0%,
+      color-mix(in srgb, var(--color-accent) 2%, transparent) 100%);
+    border: 2px solid var(--color-accent);
+    padding: 2rem;
+  }
+
+  .custom-icon {
+    color: var(--color-accent);
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .pricing-card {
+      padding: 1.5rem;
+    }
+
+    .popular-badge {
+      top: -10px;
+      padding: 0.25rem 1rem;
+      font-size: 0.7rem;
+    }
+
+    .custom-project-banner {
+      margin-top: 2rem;
+    }
+
+    .custom-card {
+      padding: 1.5rem;
+    }
+
+    .custom-card .flex {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .custom-cta {
+      width: 100%;
+    }
+
+    .trust-section .flex {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

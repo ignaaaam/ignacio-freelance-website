@@ -13,6 +13,8 @@ interface Props {
 	type?: 'website' | 'article';
 	publishedDate?: string;
 	keywords?: string[];
+	additionalSchemas?: any[];
+	alternateUrls?: { es: string; en: string };
 }
 
 const { 
@@ -27,12 +29,14 @@ const {
 	type = "website",
 	publishedDate,
 	keywords = lang === 'es'
-		? ["desarrollo web", "diseño web", "freelance", "página web", "Ignacio Amat", "SEO", "Barcelona", "España", "sitio web profesional", "desarrollo frontend"]
-		: ["web development", "web design", "freelance", "website", "Ignacio Amat", "SEO", "Barcelona", "Spain", "professional website", "frontend development"]
+		? ["crear página web para mi empresa", "desarrollador web Barcelona", "crear página web Barcelona", "diseño web Barcelona", "desarrollo web freelance", "página web para negocio", "crear sitio web empresa", "desarrollador web España", "diseño web profesional", "SEO Barcelona", "página web optimizada", "desarrollo web personalizado", "Ignacio Amat"]
+		: ["create website for my business", "web developer Barcelona", "create website Barcelona", "web design Barcelona", "freelance web development", "website for business", "create business website", "web developer Spain", "professional web design", "SEO Barcelona", "optimized website", "custom web development", "Ignacio Amat"],
+	additionalSchemas = [],
+	alternateUrls: customAlternateUrls
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
-const alternateUrls = getAlternateUrls(currentPath);
+const alternateUrls = customAlternateUrls || getAlternateUrls(currentPath);
 const baseUrl = 'https://ignacioamatweb.com';
 const fullUrl = `${baseUrl}${currentPath}`;
 const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
@@ -102,6 +106,9 @@ const jsonLd = JSON.stringify(structuredData);
 		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
 		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
 		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
+		
+		<!-- Robots meta tag -->
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
 		<!-- Mobile specific -->
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -117,6 +124,9 @@ const jsonLd = JSON.stringify(structuredData);
 		
 		<!-- Structured Data -->
 		<script type="application/ld+json" set:html={jsonLd} />
+		{additionalSchemas.map(schema => (
+			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		))}
 	</head>
 	<body>
 		<slot />
@@ -140,42 +150,6 @@ const jsonLd = JSON.stringify(structuredData);
 		--color-card-bg: rgba(241, 245, 249, 0.5);
 	}
 
-	/* Language switcher styles */
-	.language-switcher {
-		position: fixed;
-		top: 1rem;
-		right: 1rem;
-		z-index: 1000;
-		background: var(--color-card-bg);
-		padding: 0.5rem;
-		border-radius: 0.5rem;
-		backdrop-filter: blur(10px);
-		display: flex;
-		gap: 0.5rem;
-		align-items: center;
-	}
-
-	.language-switcher a {
-		color: var(--color-text);
-		text-decoration: none;
-		font-weight: 500;
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.25rem;
-		transition: all 0.2s ease;
-	}
-
-	.language-switcher a:hover {
-		background: var(--color-secondary);
-	}
-
-	.language-switcher a.active {
-		background: var(--color-accent);
-		color: white;
-	}
-
-	.language-switcher .separator {
-		color: var(--color-text-muted);
-	}
 
 	/* Glow effects */
 	.glow {
@@ -200,6 +174,26 @@ const jsonLd = JSON.stringify(structuredData);
 		width: 400px;
 		height: 400px;
 		background: #3b82f6;
+	}
+
+	/* Reduce glow effects on mobile */
+	@media (max-width: 768px) {
+		.glow {
+			opacity: 0.08;
+			filter: blur(60px);
+		}
+
+		.glow-1 {
+			width: 200px;
+			height: 200px;
+			left: 10%;
+		}
+
+		.glow-2 {
+			width: 250px;
+			height: 250px;
+			right: 5%;
+		}
 	}
 
 	[data-theme="light"] .glow {

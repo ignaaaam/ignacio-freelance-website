@@ -1,27 +1,56 @@
 ---
 import Translate from './Translate.astro';
 
-const navItems = [
-  { label: 'Soluciones', href: '#servicios' },
-  { label: 'Resultados', href: '#proyectos' },
-  { label: 'Planes', href: '#precios' },
-];
-
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith('/en');
+
+const navItems = [
+  { labelKey: 'nav.solutions', href: '#servicios' },
+  { labelKey: 'nav.results', href: '#proyectos' },
+  { labelKey: 'nav.plans', href: '#precios' },
+];
+
+const servicePages = isEnglish ? [
+  { label: 'Create Your Website', href: '/en/create-website-barcelona' },
+  { label: 'Develop Your Website', href: '/en/web-developer-barcelona' },
+  { label: 'Design Your Website', href: '/en/web-design-businesses' },
+] : [
+  { label: 'Crea tu página web', href: '/crear-pagina-web-barcelona' },
+  { label: 'Desarrolla tu página web', href: '/desarrollador-web-barcelona' },
+  { label: 'Diseña tu página web', href: '/diseno-web-empresas' },
+];
 ---
 
-<header class="py-4 sticky top-0 bg-primary/80 backdrop-blur-sm z-50">
+<header class="py-3 sm:py-4 sticky top-0 bg-primary/80 backdrop-blur-sm z-50 border-b border-border/20">
   <div class="container flex items-center justify-between">
-    <a href={isEnglish ? '/en' : '/'} class="text-xl font-heading font-semibold">Ignacio Amat</a>
+    <a href={isEnglish ? '/en' : '/'} class="text-lg sm:text-xl font-heading font-semibold">Ignacio Amat</a>
     
     <div class="hidden md:flex items-center gap-8">
       <nav class="flex items-center gap-8">
         {navItems.map(item => (
           <a href={item.href} class="text-sm hover:text-accent transition-colors">
-            {item.label}
+            <Translate key={item.labelKey} />
           </a>
         ))}
+        
+        <!-- Services Dropdown -->
+        <div class="relative group">
+          <button class="text-sm hover:text-accent transition-colors flex items-center gap-1 cursor-pointer">
+            <Translate key="nav.services" />
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-48 bg-primary border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <nav class="flex flex-col p-2">
+              {servicePages.map(page => (
+                <a href={page.href} class="text-sm text-text-muted hover:text-accent hover:bg-secondary px-3 py-2 rounded transition-colors">
+                  {page.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </div>
         
         <div class="flex items-center gap-4">
           <button
@@ -37,8 +66,8 @@ const isEnglish = currentPath.startsWith('/en');
             </svg>
           </button>
 
-          <a href="#contacto" class="btn-primary">
-            Pedir Auditoría
+          <a href="#precios" class="btn-primary">
+            <Translate key="nav.viewPricing" />
           </a>
         </div>
       </nav>
@@ -50,12 +79,65 @@ const isEnglish = currentPath.startsWith('/en');
       </div>
     </div>
 
-    <button class="md:hidden" aria-label="Menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
+    <div class="flex items-center gap-3 md:hidden">
+      <div class="language-switcher-mobile">
+        <a href="/" class={!isEnglish ? 'active' : ''}>ES</a>
+        <span class="separator">|</span>
+        <a href="/en" class={isEnglish ? 'active' : ''}>EN</a>
+      </div>
+      <button 
+        id="mobile-menu-button"
+        class="p-2 rounded-lg hover:bg-secondary transition-colors" 
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
+  
+  <!-- Mobile menu -->
+  <nav id="mobile-menu" class="hidden md:hidden border-t border-border/20">
+    <div class="container py-4 space-y-4">
+      {navItems.map(item => (
+        <a href={item.href} class="block text-base hover:text-accent transition-colors py-2" onclick="closeMobileMenu()">
+          <Translate key={item.labelKey} />
+        </a>
+      ))}
+      <div class="border-t border-border/20 pt-4">
+        <p class="text-sm font-semibold mb-2 text-text-muted">
+          <Translate key="nav.services" />
+        </p>
+        {servicePages.map(page => (
+          <a href={page.href} class="block text-sm text-text-muted hover:text-accent transition-colors py-2 pl-4" onclick="closeMobileMenu()">
+            {page.label}
+          </a>
+        ))}
+      </div>
+      <div class="flex items-center justify-between pt-4 border-t border-border/20">
+        <button
+          id="theme-toggle-mobile"
+          class="p-2 rounded-full hover:bg-secondary transition-colors"
+          aria-label="Toggle theme"
+        >
+          <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
+        <a href="#precios" class="btn-primary" onclick="closeMobileMenu()">
+          <Translate key="nav.viewPricing" />
+        </a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <style>
@@ -69,6 +151,10 @@ const isEnglish = currentPath.startsWith('/en');
 
   .bg-primary\/80 {
     background-color: rgba(var(--color-primary), 0.8);
+  }
+
+  .border-border\/20 {
+    border-color: rgba(var(--color-border), 0.2);
   }
 
   .language-switcher {
@@ -88,6 +174,7 @@ const isEnglish = currentPath.startsWith('/en');
     padding: 0.25rem 0.5rem;
     border-radius: 0.25rem;
     transition: all 0.2s ease;
+    font-size: 0.875rem;
   }
 
   .language-switcher a:hover {
@@ -102,14 +189,146 @@ const isEnglish = currentPath.startsWith('/en');
   .language-switcher .separator {
     color: var(--color-text-muted);
   }
+
+  .language-switcher-mobile {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    background: var(--color-button-bg-secondary);
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .language-switcher-mobile a {
+    color: var(--color-button-text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    font-size: 0.875rem;
+  }
+
+  .language-switcher-mobile a:hover {
+    background: var(--color-secondary);
+  }
+
+  .language-switcher-mobile a.active {
+    background: var(--color-accent);
+    color: var(--color-button-text);
+  }
+
+  .language-switcher-mobile .separator {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+  }
+
+  #mobile-menu {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Services dropdown styles */
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
+  .group:hover .group-hover\:visible {
+    visibility: visible;
+  }
+
+  .border-border {
+    border-color: var(--color-border);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
 </style>
 
 <script>
-  // Mobile menu functionality
-  const menuButton = document.querySelector('button[aria-label="Menu"]');
-  const nav = document.querySelector('nav');
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-button');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (!menu || !button) return;
+    
+    const isOpen = !menu.classList.contains('hidden');
+    
+    if (isOpen) {
+      menu.classList.add('hidden');
+      button.setAttribute('aria-expanded', 'false');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    } else {
+      menu.classList.remove('hidden');
+      button.setAttribute('aria-expanded', 'true');
+      menuIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    }
+  }
 
-  menuButton?.addEventListener('click', () => {
-    nav?.classList.toggle('hidden');
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const button = document.getElementById('mobile-menu-button');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (menu && !menu.classList.contains('hidden')) {
+      menu.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+      menuIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  }
+
+  // Theme toggle for mobile
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileThemeToggle = document.getElementById('theme-toggle-mobile');
+    const desktopThemeToggle = document.getElementById('theme-toggle');
+
+    mobileMenuButton?.addEventListener('click', toggleMobileMenu);
+
+    // Sync mobile theme toggle with desktop one
+    if (mobileThemeToggle && desktopThemeToggle) {
+      mobileThemeToggle.addEventListener('click', () => {
+        desktopThemeToggle.click();
+      });
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('mobile-menu');
+      const button = document.getElementById('mobile-menu-button');
+      
+      if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+      }
+    });
   });
 </script> 

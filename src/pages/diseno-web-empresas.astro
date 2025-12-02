@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Diseño Web para Empresas | Diseño Profesional y Moderno";
+const description = "Diseño web profesional para empresas. Creo diseños modernos, atractivos y funcionales que reflejan la identidad de tu marca y convierten visitantes en clientes.";
+const canonicalUrl = "/diseno-web-empresas";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Diseño Web para Empresas",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"description": "Servicio de diseño web profesional para empresas. Diseños modernos, responsive y optimizados para conversión.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Diseños desde 800€ para landing pages hasta 6,000€+ para proyectos completos"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Diseño Web Empresas",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema];
+
+// Manual alternate URLs for service pages
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-design-businesses"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Diseño Web Profesional para Empresas</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Un buen diseño web es fundamental para el éxito de tu negocio online. Creo diseños web profesionales 
+						que no solo se ven increíbles, sino que también convierten visitantes en clientes.
+					</p>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">¿Por qué es importante el diseño web para tu empresa?</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							El diseño web es la primera impresión que los visitantes tienen de tu negocio. Un diseño profesional, 
+							moderno y funcional genera confianza, mejora la experiencia del usuario y aumenta las conversiones. 
+							Por eso, el diseño web no es solo estética, es una inversión en el éxito de tu negocio.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Elementos clave de un buen diseño web:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Diseño Responsive:</strong> Tu web se verá perfecta en móvil, tablet y ordenador</li>
+							<li><strong>Usabilidad:</strong> Navegación intuitiva que guía al usuario hacia la acción</li>
+							<li><strong>Velocidad:</strong> Carga rápida para no perder visitantes</li>
+							<li><strong>Identidad de marca:</strong> Diseño que refleja los valores y personalidad de tu empresa</li>
+							<li><strong>Optimización para conversión:</strong> Elementos diseñados para convertir visitantes en clientes</li>
+							<li><strong>Accesibilidad:</strong> Diseño accesible para todos los usuarios</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Tipos de diseño web que ofrezco:</h3>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Diseño Corporativo</h4>
+								<p class="text-sm sm:text-base">Diseños profesionales para empresas que buscan transmitir credibilidad y profesionalismo</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Diseño E-commerce</h4>
+								<p class="text-sm sm:text-base">Diseños optimizados para tiendas online que facilitan la compra y aumentan las ventas</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Diseño Landing Page</h4>
+								<p class="text-sm sm:text-base">Páginas de aterrizaje enfocadas en conversión para campañas específicas</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Rediseño Web</h4>
+								<p class="text-sm sm:text-base">Actualizo y modernizo tu web existente para mejorar resultados</p>
+							</div>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Proceso de diseño web:</h3>
+						<ol class="list-decimal pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Briefing:</strong> Analizamos tu marca, objetivos y público objetivo</li>
+							<li><strong>Wireframes:</strong> Creo la estructura y distribución de contenido</li>
+							<li><strong>Diseño visual:</strong> Desarrollo el diseño completo con tu identidad de marca</li>
+							<li><strong>Revisión y ajustes:</strong> Trabajamos juntos para perfeccionar cada detalle</li>
+							<li><strong>Desarrollo:</strong> Convierto el diseño en una web funcional y responsive</li>
+							<li><strong>Optimización:</strong> Aseguro velocidad, SEO y usabilidad</li>
+						</ol>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Casos de éxito en Barcelona:</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							He diseñado webs para empresas de diversos sectores en Barcelona: restaurantes en el 
+							Raval, consultorías en el Eixample, tiendas en Gràcia, y startups en Poblenou. Cada diseño 
+							está adaptado a las necesidades específicas del negocio y su público objetivo.
+						</p>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Necesitas un diseño web profesional para tu empresa?</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si buscas un diseño web profesional que refleje la identidad de tu marca y convierta 
+								visitantes en clientes, contáctame. Te ayudo a crear un diseño que impulse tu negocio.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Diseño personalizado y único<br/>
+								✅ Presupuesto gratuito sin compromiso<br/>
+								✅ Facturación oficial<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>
+

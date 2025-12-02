@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import { getTranslation } from '../i18n/utils';
+
+const locale = 'es';
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Desarrollador Web Barcelona | Freelance Especializado en Desarrollo Web";
+const description = "Desarrollador web freelance en Barcelona. Especializado en crear páginas web profesionales, tiendas online y aplicaciones web. Tecnologías modernas, SEO optimizado y diseño responsive.";
+const canonicalUrl = "/desarrollador-web-barcelona";
+
+// Structured Data
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Desarrollador Web Freelance",
+	"url": baseUrl,
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Barcelona",
+		"addressRegion": "Cataluña",
+		"addressCountry": "ES"
+	},
+	"knowsAbout": [
+		"Desarrollo Web",
+		"Diseño Web",
+		"SEO",
+		"E-commerce",
+		"Frontend Development"
+	]
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web",
+	"provider": {
+		"@type": "Person",
+		"name": "Ignacio Amat"
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Desarrollador Web Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema];
+
+// Manual alternate URLs for service pages
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-developer-barcelona"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance en Barcelona</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Soy desarrollador web freelance en Barcelona especializado en crear soluciones digitales 
+						que impulsan negocios. Si buscas un desarrollador web profesional para tu proyecto, 
+						estás en el lugar correcto.
+					</p>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">¿Qué hace un desarrollador web freelance?</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Como desarrollador web freelance en Barcelona, me encargo de crear, diseñar y optimizar 
+							páginas web para empresas. Desde landing pages hasta e-commerce completos, desarrollo 
+							soluciones web que se adaptan a las necesidades específicas de cada negocio.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Tecnologías y herramientas que utilizo:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Tailwind CSS</li>
+							<li><strong>Backend:</strong> Node.js, APIs REST, bases de datos</li>
+							<li><strong>E-commerce:</strong> Integración con pasarelas de pago, gestión de inventario</li>
+							<li><strong>SEO:</strong> Optimización on-page, schema markup, velocidad de carga</li>
+							<li><strong>Responsive Design:</strong> Diseño adaptable a todos los dispositivos</li>
+							<li><strong>Performance:</strong> Optimización de velocidad y Core Web Vitals</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Servicios de desarrollo web que ofrezco:</h3>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Desarrollo Frontend</h4>
+								<p class="text-sm sm:text-base">Interfaces modernas y atractivas que mejoran la experiencia del usuario</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Desarrollo Backend</h4>
+								<p class="text-sm sm:text-base">APIs, bases de datos y lógica de negocio robusta y escalable</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">E-commerce</h4>
+								<p class="text-sm sm:text-base">Tiendas online completas con pasarelas de pago integradas</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Optimización SEO</h4>
+								<p class="text-sm sm:text-base">Tu web aparecerá en los primeros resultados de Google</p>
+							</div>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">¿Por qué trabajar con un desarrollador web freelance en Barcelona?</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Atención personalizada:</strong> Trabajo directo contigo, sin intermediarios</li>
+							<li><strong>Precios competitivos:</strong> Sin costes de agencia, mejor relación calidad-precio</li>
+							<li><strong>Flexibilidad:</strong> Me adapto a tus horarios y necesidades</li>
+							<li><strong>Conocimiento local:</strong> Entiendo el mercado y las necesidades de empresas en Barcelona</li>
+							<li><strong>Comunicación directa:</strong> Resolución rápida de dudas y cambios</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Experiencia trabajando con empresas de Barcelona:</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							He trabajado con empresas de diversos sectores en Barcelona: desde restaurantes en el 
+							Barrio Gótico hasta startups tecnológicas en 22@, pasando por tiendas en Passeig de Gràcia 
+							y consultorías en el Eixample. Cada proyecto es único y me adapto a las necesidades específicas 
+							de cada negocio.
+						</p>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Necesitas un desarrollador web para tu proyecto?</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si buscas un desarrollador web freelance en Barcelona para crear tu página web, 
+								tienda online o aplicación web, contáctame. Te ayudo a hacer realidad tu proyecto digital.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito y sin compromiso<br/>
+								✅ Respuesta rápida (24-48h)<br/>
+								✅ Facturación oficial<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>
+

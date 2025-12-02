@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { getTranslation } from '../i18n/utils';
+
+const locale = 'es';
+const title = getTranslation(locale, 'seo.privacy.title');
+const description = getTranslation(locale, 'seo.privacy.description');
+const canonicalUrl = "/privacidad";
+---
+
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+>
+	<Header />
+	<main class="py-12 md:py-20">
+		<article class="container max-w-4xl mx-auto px-4">
+			<header class="mb-12">
+				<div class="flex justify-between items-start mb-4">
+					<h1 class="text-4xl md:text-5xl font-bold">Política de Privacidad</h1>
+					<a href="/en/privacy" class="text-sm text-text-muted hover:text-accent transition-colors whitespace-nowrap ml-4">
+						English
+					</a>
+				</div>
+				<p class="text-text-muted text-lg">Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+			</header>
+
+			<div class="prose prose-lg max-w-none">
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">1. Responsable del Tratamiento</h2>
+					<p class="text-text-muted mb-4">
+						El responsable del tratamiento de sus datos personales es:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Nombre:</strong> Ignacio Amat</li>
+						<li><strong>Actividad:</strong> Desarrollo y diseño web freelance</li>
+						<li><strong>Ubicación:</strong> Barcelona, España</li>
+					</ul>
+					<p class="text-text-muted">
+						Para contactar, utilice el <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">2. Datos que Recopilamos</h2>
+					<p class="text-text-muted mb-4">
+						Recopilamos únicamente los datos necesarios para establecer contacto y gestionar solicitudes de servicios. Los datos que podemos recopilar incluyen:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Datos de identificación:</strong> Nombre y apellidos</li>
+						<li><strong>Datos de contacto:</strong> Dirección de correo electrónico</li>
+						<li><strong>Datos de comunicación:</strong> Mensajes enviados a través del formulario de contacto</li>
+						<li><strong>Datos técnicos:</strong> Dirección IP, tipo de navegador, páginas visitadas (mediante cookies técnicas necesarias)</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">3. Finalidad del Tratamiento</h2>
+					<p class="text-text-muted mb-4">
+						Tratamos sus datos personales con las siguientes finalidades:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Responder a sus consultas y solicitudes de información sobre servicios de desarrollo web</li>
+						<li>Gestionar la comunicación comercial y profesional</li>
+						<li>Cumplir con las obligaciones legales aplicables</li>
+						<li>Mejorar la experiencia de usuario en el sitio web</li>
+					</ul>
+					<p class="text-text-muted">
+						<strong>No utilizamos sus datos para marketing no solicitado ni los compartimos con terceros para fines comerciales.</strong>
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">4. Base Legal</h2>
+					<p class="text-text-muted mb-4">
+						El tratamiento de sus datos personales se basa en:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Consentimiento:</strong> Al enviar el formulario de contacto, usted consiente el tratamiento de sus datos para responder a su consulta</li>
+						<li><strong>Ejecución de medidas precontractuales:</strong> Cuando la comunicación tenga por objeto la prestación de servicios profesionales</li>
+						<li><strong>Obligación legal:</strong> Para el cumplimiento de obligaciones fiscales y legales</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">5. Conservación de los Datos</h2>
+					<p class="text-text-muted mb-4">
+						Conservaremos sus datos personales durante:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Consultas generales:</strong> El tiempo necesario para responder a su consulta y durante los plazos legales de prescripción</li>
+						<li><strong>Relación comercial:</strong> Durante la duración del contrato y los plazos legales aplicables (generalmente 6 años para documentación fiscal)</li>
+						<li><strong>Cookies técnicas:</strong> Durante el tiempo de sesión o según se indique en la política de cookies</li>
+					</ul>
+					<p class="text-text-muted">
+						Una vez finalizados estos plazos, los datos serán eliminados de forma segura.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">6. Seguridad de los Datos</h2>
+					<p class="text-text-muted mb-4">
+						Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso no autorizado, la pérdida, la destrucción o la alteración:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Comunicación cifrada mediante protocolo HTTPS</li>
+						<li>Almacenamiento seguro de datos de contacto</li>
+						<li>No almacenamos datos sensibles innecesarios</li>
+						<li>Acceso restringido a los datos únicamente para fines legítimos</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">7. Sus Derechos</h2>
+					<p class="text-text-muted mb-4">
+						De conformidad con el Reglamento General de Protección de Datos (RGPD), usted tiene derecho a:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Acceso:</strong> Obtener información sobre qué datos personales tratamos</li>
+						<li><strong>Rectificación:</strong> Corregir datos inexactos o incompletos</li>
+						<li><strong>Supresión:</strong> Solicitar la eliminación de sus datos cuando ya no sean necesarios</li>
+						<li><strong>Oposición:</strong> Oponerse al tratamiento de sus datos en determinadas circunstancias</li>
+						<li><strong>Limitación:</strong> Solicitar la limitación del tratamiento en determinados casos</li>
+						<li><strong>Portabilidad:</strong> Recibir sus datos en un formato estructurado</li>
+						<li><strong>Retirar el consentimiento:</strong> En cualquier momento, cuando el tratamiento se base en consentimiento</li>
+					</ul>
+					<p class="text-text-muted mb-4">
+						Para ejercer estos derechos, puede contactarme a través del <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+					<p class="text-text-muted">
+						También tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD) si considera que el tratamiento de sus datos no se ajusta a la normativa vigente.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">8. Transferencias Internacionales</h2>
+					<p class="text-text-muted mb-4">
+						Sus datos se procesan y almacenan principalmente dentro del Espacio Económico Europeo (EEE). En caso de utilizar servicios de terceros con servidores fuera del EEE:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Nos aseguramos de que existan garantías adecuadas conforme al RGPD</li>
+						<li>Utilizamos únicamente servicios de proveedores que cumplen con estándares de protección de datos internacionales</li>
+						<li>Los datos se transmiten únicamente a través de conexiones cifradas</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">9. Cookies y Tecnologías Similares</h2>
+					<p class="text-text-muted mb-4">
+						Este sitio web utiliza únicamente cookies técnicas necesarias para el funcionamiento del sitio. No utilizamos cookies de seguimiento, publicitarias o de análisis de terceros.
+					</p>
+					<p class="text-text-muted">
+						Las cookies técnicas son esenciales y no requieren consentimiento, ya que permiten funciones básicas como la navegación y el acceso a áreas seguras del sitio web.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">10. Menores de Edad</h2>
+					<p class="text-text-muted">
+						Nuestros servicios están dirigidos a profesionales y empresas. No recopilamos intencionalmente datos de menores de 18 años. Si un menor nos proporciona datos personales sin el consentimiento de sus padres o tutores, nos pondremos en contacto para eliminar esa información.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">11. Modificaciones de esta Política</h2>
+					<p class="text-text-muted">
+						Nos reservamos el derecho de modificar esta política de privacidad para adaptarla a cambios legislativos o en nuestras prácticas. La versión actualizada se publicará en esta página con la fecha de última actualización. Le recomendamos revisar periódicamente esta política.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">12. Contacto</h2>
+					<p class="text-text-muted mb-4">
+						Para cualquier consulta relacionada con esta política de privacidad o el tratamiento de sus datos personales, puede contactarme a través del <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+				</section>
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: var(--color-text);
+	}
+
+	.prose h2 {
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+
+	.prose ul {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.prose li {
+		margin-bottom: 0.5rem;
+		line-height: 1.7;
+	}
+
+	.prose a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>
+

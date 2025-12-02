@@ -1,0 +1,223 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { getTranslation } from '../../i18n/utils';
+
+const locale = 'en';
+const title = getTranslation(locale, 'seo.privacy.title');
+const description = getTranslation(locale, 'seo.privacy.description');
+const canonicalUrl = "/en/privacy";
+---
+
+<Layout 
+	title={title} 
+	description={description} 
+	lang="en"
+	canonicalUrl={canonicalUrl}
+>
+	<Header />
+	<main class="py-12 md:py-20">
+		<article class="container max-w-4xl mx-auto px-4">
+			<header class="mb-12">
+				<div class="flex justify-between items-start mb-4">
+					<h1 class="text-4xl md:text-5xl font-bold">Privacy Policy</h1>
+					<a href="/privacidad" class="text-sm text-text-muted hover:text-accent transition-colors whitespace-nowrap ml-4">
+						Español
+					</a>
+				</div>
+				<p class="text-text-muted text-lg">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+			</header>
+
+			<div class="prose prose-lg max-w-none">
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">1. Data Controller</h2>
+					<p class="text-text-muted mb-4">
+						The controller of your personal data is:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Name:</strong> Ignacio Amat</li>
+						<li><strong>Activity:</strong> Freelance web development and design</li>
+						<li><strong>Location:</strong> Barcelona, Spain</li>
+					</ul>
+					<p class="text-text-muted">
+						To contact me, please use the <a href="/en/#contacto" class="text-accent hover:underline">contact form</a> available on this website.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">2. Data We Collect</h2>
+					<p class="text-text-muted mb-4">
+						We only collect data necessary to establish contact and manage service requests. The data we may collect includes:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Identification data:</strong> First and last name</li>
+						<li><strong>Contact data:</strong> Email address</li>
+						<li><strong>Communication data:</strong> Messages sent through the contact form</li>
+						<li><strong>Technical data:</strong> IP address, browser type, pages visited (through necessary technical cookies)</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">3. Purpose of Processing</h2>
+					<p class="text-text-muted mb-4">
+						We process your personal data for the following purposes:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>To respond to your inquiries and information requests about web development services</li>
+						<li>To manage commercial and professional communication</li>
+						<li>To comply with applicable legal obligations</li>
+						<li>To improve user experience on the website</li>
+					</ul>
+					<p class="text-text-muted">
+						<strong>We do not use your data for unsolicited marketing nor share it with third parties for commercial purposes.</strong>
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">4. Legal Basis</h2>
+					<p class="text-text-muted mb-4">
+						The processing of your personal data is based on:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Consent:</strong> By submitting the contact form, you consent to the processing of your data to respond to your inquiry</li>
+						<li><strong>Performance of pre-contractual measures:</strong> When communication is aimed at providing professional services</li>
+						<li><strong>Legal obligation:</strong> To comply with tax and legal obligations</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">5. Data Retention</h2>
+					<p class="text-text-muted mb-4">
+						We will retain your personal data for:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>General inquiries:</strong> The time necessary to respond to your inquiry and during applicable legal limitation periods</li>
+						<li><strong>Commercial relationship:</strong> During the contract term and applicable legal periods (generally 6 years for tax documentation)</li>
+						<li><strong>Technical cookies:</strong> During the session time or as indicated in the cookie policy</li>
+					</ul>
+					<p class="text-text-muted">
+						Once these periods end, data will be securely deleted.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">6. Data Security</h2>
+					<p class="text-text-muted mb-4">
+						We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, destruction, or alteration:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>Encrypted communication using HTTPS protocol</li>
+						<li>Secure storage of contact data</li>
+						<li>We do not store unnecessary sensitive data</li>
+						<li>Restricted access to data only for legitimate purposes</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">7. Your Rights</h2>
+					<p class="text-text-muted mb-4">
+						In accordance with the General Data Protection Regulation (GDPR), you have the right to:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Access:</strong> Obtain information about what personal data we process</li>
+						<li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
+						<li><strong>Erasure:</strong> Request deletion of your data when no longer necessary</li>
+						<li><strong>Objection:</strong> Object to the processing of your data in certain circumstances</li>
+						<li><strong>Restriction:</strong> Request restriction of processing in certain cases</li>
+						<li><strong>Portability:</strong> Receive your data in a structured format</li>
+						<li><strong>Withdraw consent:</strong> At any time, when processing is based on consent</li>
+					</ul>
+					<p class="text-text-muted mb-4">
+						To exercise these rights, you can contact me through the <a href="/en/#contacto" class="text-accent hover:underline">contact form</a> available on this website.
+					</p>
+					<p class="text-text-muted">
+						You also have the right to file a complaint with the Spanish Data Protection Agency (AEPD) if you believe that the processing of your data does not comply with current regulations.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">8. International Transfers</h2>
+					<p class="text-text-muted mb-4">
+						Your data is processed and stored primarily within the European Economic Area (EEA). In case of using third-party services with servers outside the EEA:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>We ensure adequate safeguards in accordance with GDPR</li>
+						<li>We only use services from providers that meet international data protection standards</li>
+						<li>Data is transmitted only through encrypted connections</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">9. Cookies and Similar Technologies</h2>
+					<p class="text-text-muted mb-4">
+						This website uses only necessary technical cookies for site functionality. We do not use tracking, advertising, or third-party analytics cookies.
+					</p>
+					<p class="text-text-muted">
+						Technical cookies are essential and do not require consent, as they enable basic functions such as navigation and access to secure areas of the website.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">10. Minors</h2>
+					<p class="text-text-muted">
+						Our services are directed at professionals and businesses. We do not intentionally collect data from individuals under 18 years of age. If a minor provides us with personal data without parental or guardian consent, we will contact them to delete that information.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">11. Changes to This Policy</h2>
+					<p class="text-text-muted">
+						We reserve the right to modify this privacy policy to adapt it to legislative changes or changes in our practices. The updated version will be published on this page with the last update date. We recommend reviewing this policy periodically.
+					</p>
+				</section>
+
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: var(--color-text);
+	}
+
+	.prose h2 {
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+
+	.prose ul {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.prose li {
+		margin-bottom: 0.5rem;
+		line-height: 1.7;
+	}
+
+	.prose a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>
+

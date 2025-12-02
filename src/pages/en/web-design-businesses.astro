@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Web Design for Businesses | Professional and Modern Design";
+const description = "Professional web design for businesses. I create modern, attractive and functional designs that reflect your brand identity and convert visitors into customers.";
+const canonicalUrl = "/en/web-design-businesses";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Web Design for Businesses",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"description": "Professional web design service for businesses. Modern, responsive and conversion-optimized designs.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Designs from €800 for landing pages to €6,000+ for complete projects"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web Design Businesses",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema];
+
+// Manual alternate URLs for service pages
+const alternateUrls = {
+	es: "/diseno-web-empresas",
+	en: canonicalUrl
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Professional Web Design for Businesses</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Good web design is fundamental to your business's online success. I create professional 
+						web designs that not only look amazing, but also convert visitors into customers.
+					</p>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Why is web design important for your business?</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Web design is the first impression visitors have of your business. A professional, 
+							modern and functional design generates trust, improves user experience and increases conversions. 
+							That's why web design isn't just aesthetics, it's an investment in your business's success.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Key elements of good web design:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Responsive Design:</strong> Your website will look perfect on mobile, tablet and desktop</li>
+							<li><strong>Usability:</strong> Intuitive navigation that guides users toward action</li>
+							<li><strong>Speed:</strong> Fast loading to avoid losing visitors</li>
+							<li><strong>Brand identity:</strong> Design that reflects your company's values and personality</li>
+							<li><strong>Conversion optimization:</strong> Elements designed to convert visitors into customers</li>
+							<li><strong>Accessibility:</strong> Design accessible to all users</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Types of web design I offer:</h3>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Corporate Design</h4>
+								<p class="text-sm sm:text-base">Professional designs for businesses looking to convey credibility and professionalism</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">E-commerce Design</h4>
+								<p class="text-sm sm:text-base">Designs optimized for online stores that facilitate purchases and increase sales</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Landing Page Design</h4>
+								<p class="text-sm sm:text-base">Landing pages focused on conversion for specific campaigns</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Web Redesign</h4>
+								<p class="text-sm sm:text-base">I update and modernize your existing website to improve results</p>
+							</div>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Web design process:</h3>
+						<ol class="list-decimal pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Briefing:</strong> We analyze your brand, objectives and target audience</li>
+							<li><strong>Wireframes:</strong> I create the structure and content layout</li>
+							<li><strong>Visual design:</strong> I develop the complete design with your brand identity</li>
+							<li><strong>Review and adjustments:</strong> We work together to perfect every detail</li>
+							<li><strong>Development:</strong> I convert the design into a functional and responsive website</li>
+							<li><strong>Optimization:</strong> I ensure speed, SEO and usability</li>
+						</ol>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Success stories in Barcelona:</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							I've designed websites for businesses from various sectors in Barcelona: restaurants in 
+							El Raval, consultancies in Eixample, stores in Gràcia, and startups in Poblenou. Each design 
+							is adapted to the specific needs of the business and its target audience.
+						</p>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Need professional web design for your business?</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								If you're looking for professional web design that reflects your brand identity and converts 
+								visitors into customers, contact me. I'll help you create a design that drives your business forward.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Custom and unique design<br/>
+								✅ Free quote with no commitment<br/>
+								✅ Official invoicing<br/>
+								✅ Satisfaction guarantee
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>
+

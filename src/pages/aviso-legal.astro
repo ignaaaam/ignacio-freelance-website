@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import { getTranslation } from '../i18n/utils';
+
+const locale = 'es';
+const title = getTranslation(locale, 'seo.legal.title');
+const description = getTranslation(locale, 'seo.legal.description');
+const canonicalUrl = "/aviso-legal";
+---
+
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+>
+	<Header />
+	<main class="py-12 md:py-20">
+		<article class="container max-w-4xl mx-auto px-4">
+			<header class="mb-12">
+				<div class="flex justify-between items-start mb-4">
+					<h1 class="text-4xl md:text-5xl font-bold">Aviso Legal</h1>
+					<a href="/en/legal-notice" class="text-sm text-text-muted hover:text-accent transition-colors whitespace-nowrap ml-4">
+						English
+					</a>
+				</div>
+				<p class="text-text-muted text-lg">Última actualización: {new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+			</header>
+
+			<div class="prose prose-lg max-w-none">
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">1. Información General</h2>
+					<p class="text-text-muted mb-4">
+						De acuerdo con el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, se informa que:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li><strong>Titular:</strong> Ignacio Amat</li>
+						<li><strong>Actividad:</strong> Desarrollo y diseño web freelance</li>
+						<li><strong>Ubicación:</strong> Barcelona, España</li>
+						<li><strong>Dominio:</strong> ignacioamatweb.com</li>
+					</ul>
+					<p class="text-text-muted">
+						Para contactar, utilice el <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">2. Condiciones Generales de Uso</h2>
+					<p class="text-text-muted mb-4">
+						El acceso y uso de este sitio web implica la aceptación de las siguientes condiciones generales de uso:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>El usuario se compromete a hacer un uso adecuado y lícito del sitio web</li>
+						<li>Está prohibido el uso del sitio para fines ilegales o no autorizados</li>
+						<li>No se permite la reproducción, distribución o modificación del contenido sin autorización previa</li>
+						<li>El usuario es responsable de mantener la confidencialidad de cualquier información proporcionada</li>
+					</ul>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">3. Propiedad Intelectual e Industrial</h2>
+					<p class="text-text-muted mb-4">
+						El diseño, código fuente, logotipos, textos, gráficos, imágenes, iconos, así como la estructura y el diseño de este sitio web, son propiedad de Ignacio Amat o de terceros que han autorizado su uso, y están protegidos por derechos de propiedad intelectual e industrial.
+					</p>
+					<p class="text-text-muted mb-4">
+						Está expresamente prohibido:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>La reproducción total o parcial de los contenidos sin autorización expresa</li>
+						<li>La modificación, adaptación o alteración del contenido</li>
+						<li>El uso comercial de los contenidos sin previa autorización</li>
+						<li>La eliminación de avisos de propiedad intelectual o derechos de autor</li>
+					</ul>
+					<p class="text-text-muted">
+						Cualquier uso no autorizado de los contenidos será considerado como una violación de los derechos de propiedad intelectual y será perseguido conforme a la legislación vigente.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">4. Limitación de Responsabilidad</h2>
+					<p class="text-text-muted mb-4">
+						Ignacio Amat no se hace responsable de:
+					</p>
+					<ul class="list-disc list-inside text-text-muted mb-4 space-y-2">
+						<li>La veracidad, exactitud o actualización de la información contenida en el sitio web de terceros enlazados</li>
+						<li>Los daños y perjuicios que puedan derivarse del uso no autorizado de la información contenida en este sitio web</li>
+						<li>Las decisiones tomadas por el usuario basándose únicamente en la información contenida en este sitio web</li>
+						<li>Los daños causados por virus u otros elementos nocivos en los equipos informáticos del usuario derivados del acceso, navegación o uso del sitio web</li>
+						<li>La interrupción del servicio, fallos técnicos o problemas derivados de la red o servidores</li>
+					</ul>
+					<p class="text-text-muted">
+						El contenido de este sitio web tiene carácter meramente informativo y no constituye asesoramiento profesional personalizado.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">5. Enlaces a Sitios de Terceros</h2>
+					<p class="text-text-muted mb-4">
+						Este sitio web puede contener enlaces a sitios web de terceros. Estos enlaces se proporcionan únicamente para la conveniencia del usuario. Ignacio Amat no tiene control sobre el contenido de estos sitios web externos y no asume responsabilidad alguna por su contenido, políticas de privacidad o prácticas.
+					</p>
+					<p class="text-text-muted">
+						La inclusión de un enlace no implica aprobación o respaldo del sitio enlazado por parte de Ignacio Amat.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">6. Modificaciones del Sitio Web</h2>
+					<p class="text-text-muted">
+						Ignacio Amat se reserva el derecho de realizar, sin previo aviso, las modificaciones que considere oportunas en su sitio web, pudiendo cambiar, suprimir o añadir tanto los contenidos como los servicios que se ofrecen a través de la misma como la forma en la que éstos aparecen presentados o localizados.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">7. Protección de Datos Personales</h2>
+					<p class="text-text-muted mb-4">
+						El tratamiento de datos personales se realiza conforme a la Política de Privacidad, que forma parte integrante de este Aviso Legal. Para más información sobre cómo tratamos sus datos personales, consulte nuestra <a href="/privacidad" class="text-accent hover:underline">Política de Privacidad</a>.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">8. Ley Aplicable y Jurisdicción</h2>
+					<p class="text-text-muted mb-4">
+						Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes.
+					</p>
+					<p class="text-text-muted">
+						Para cualquier controversia derivada del uso de este sitio web, las partes se someten a los juzgados y tribunales de Barcelona, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.
+					</p>
+				</section>
+
+				<section class="mb-8">
+					<h2 class="text-2xl font-bold mb-4">9. Contacto</h2>
+					<p class="text-text-muted mb-4">
+						Para cualquier consulta relacionada con este aviso legal, puede contactarme a través del <a href="/#contacto" class="text-accent hover:underline">formulario de contacto</a> disponible en este sitio web.
+					</p>
+				</section>
+			</div>
+		</article>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: var(--color-text);
+	}
+
+	.prose h2 {
+		color: var(--color-text);
+		font-family: var(--font-heading);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.7;
+	}
+
+	.prose ul {
+		margin-bottom: 1rem;
+		padding-left: 1.5rem;
+	}
+
+	.prose li {
+		margin-bottom: 0.5rem;
+		line-height: 1.7;
+	}
+
+	.prose a {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.prose a:hover {
+		text-decoration: underline;
+	}
+
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>
+

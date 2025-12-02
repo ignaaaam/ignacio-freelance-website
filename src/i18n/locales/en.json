@@ -4,13 +4,29 @@
     "about": "About",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Contact"
+    "contact": "Contact",
+    "solutions": "Solutions",
+    "results": "Results",
+    "plans": "Plans",
+    "viewPricing": "View Pricing"
   },
   "hero": {
-    "title": "I help Barcelona businesses convert visitors into customers with high-performance websites.",
-    "subtitle": "Your business loses money if your website is slow or confusing. I develop custom digital solutions (with official invoice and guarantee) so you only need to focus on serving your new customers.",
-    "cta": "I Want My Free Audit",
-    "services": "View success cases"
+    "title": "I create professional websites for businesses in Barcelona and throughout Spain",
+    "subtitle": "Need to create a website for your business? I'm a freelance web developer specialized in creating modern, fast and Google-optimized websites. Custom design, official invoice and satisfaction guarantee. Free quote with no commitment.",
+    "cta": "Get Free Quote",
+    "services": "View Website Types"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I'm a freelance web developer in Barcelona specialized in creating websites for businesses. If you're looking for someone to create a website for your business, you're in the right place. I help businesses in Barcelona (Eixample, Gràcia, Sants-Montjuïc, Poblenou, Ciutat Vella, Sarrià-Sant Gervasi), Spain and internationally create professional websites that convert visitors into customers.",
+    "value": "My commitment is to offer quality web development services with complete transparency: official invoicing, satisfaction guarantee, and a close, personalized relationship. Every website I create is optimized for Google and designed to generate results. I work with businesses throughout Barcelona and the local business community.",
+    "benefits": [
+      "Proven experience creating websites for businesses across various sectors in Barcelona",
+      "Knowledge of the Barcelona business community and its needs",
+      "Modern technologies for fast and secure websites",
+      "Continuous support and post-launch maintenance",
+      "Competitive quality-price ratio for your business"
+    ]
   },
   "features": {
     "title": "Solutions that generate results",
@@ -34,43 +50,151 @@
       }
     ]
   },
+  "process": {
+    "title": "Work Process",
+    "description": "A proven method to guarantee exceptional results in every project.",
+    "steps": [
+      {
+        "title": "Consulting and Strategy",
+        "description": "We analyze your business, goals, and competition to create an effective digital strategy."
+      },
+      {
+        "title": "Design and Development",
+        "description": "We create a custom design and develop your website with the best market technologies."
+      },
+      {
+        "title": "Testing and Optimization",
+        "description": "We perform thorough testing of performance, security, and usability before launch."
+      },
+      {
+        "title": "Launch and Support",
+        "description": "We publish your website and accompany you with training, documentation, and continuous support."
+      }
+    ]
+  },
+  "guarantee": {
+    "title": "Satisfaction Guarantee",
+    "description": "I'm so confident in the quality of my work that I offer a satisfaction guarantee. If you're not completely satisfied with the result, we'll work together until you are. Your success is my success."
+  },
+  "testimonials": {
+    "title": "What My Clients Say",
+    "description": "My clients' satisfaction is my best introduction.",
+    "items": [
+      {
+        "name": "María García",
+        "role": "Marketing Director",
+        "company": "TechSolutions Barcelona",
+        "content": "Excellent professional. Delivered the project in record time and exceeded all our expectations. The website is fast, modern, and has significantly increased our conversions.",
+        "rating": 5
+      },
+      {
+        "name": "Carlos Rodríguez",
+        "role": "CEO",
+        "company": "Business Consulting",
+        "content": "Very satisfied with the result. The process was transparent, communication was fluid, and the final result is exactly what we needed for our business.",
+        "rating": 5
+      },
+      {
+        "name": "Laura Martínez",
+        "role": "Owner",
+        "company": "Boutique Fashion",
+        "content": "My online store has exceeded all my expectations. Sales have increased by 200% since launch. Totally recommended.",
+        "rating": 5
+      },
+      {
+        "name": "Jordi Puig",
+        "role": "Manager",
+        "company": "Restaurant El Raval",
+        "content": "We needed to create a website for our restaurant in Barcelona. Ignacio perfectly understood what we were looking for and created a website that perfectly reflects our style. Online reservations have increased by 150%.",
+        "rating": 5
+      },
+      {
+        "name": "Ana Fernández",
+        "role": "Founder",
+        "company": "Tech Startup Poblenou",
+        "content": "As a startup in Barcelona, we needed a professional website but with a tight budget. Ignacio helped us create exactly what we needed. Excellent quality-price ratio and impeccable service.",
+        "rating": 5
+      },
+      {
+        "name": "Roberto Sánchez",
+        "role": "Commercial Director",
+        "company": "Eixample Consulting",
+        "content": "Working with Ignacio was a pleasure. Professional, punctual and with excellent knowledge of web development. Our new website has significantly improved our online presence in Barcelona.",
+        "rating": 5
+      }
+    ]
+  },
   "pricing": {
-    "title": "Plans and Pricing",
-    "description": "Professional solutions tailored to different needs and budgets.",
-    "note": "Need something more complex? An internal app or CRM? Request a custom quote.",
+    "badge": "Investment in Your Business",
+    "title": "Approximate Investment",
+    "description": "Every project is unique. These ranges give you an idea of the investment based on the type of website you need.",
     "popular": "Most Popular",
-    "cta": "Get a Quote",
+    "cta": "Request Custom Quote",
+    "investmentLabel": "Typical investment",
+    "accordingToComplexity": "depending on complexity and features",
+    "idealFor": "Ideal for:",
+    "featuresNote": "Features are defined based on your specific needs",
+    "customTitle": "Custom Project?",
+    "customDescription": "If you need something more complex like a web application, CRM, or custom system, contact me for a personalized quote.",
+    "customCta": "Let's talk about your project",
+    "freeQuote": "Free quote",
+    "noCommitment": "No commitment",
+    "fastResponse": "Response within 24h",
     "tiers": [
       {
-        "name": "Digital Presence Plan",
+        "name": "Landing Page",
+        "description": "Perfect for launches, specific campaigns, or individual services.",
+        "priceRange": "€800 - €1,500",
+        "useCases": [
+          "Product or service page",
+          "Specific marketing campaign",
+          "Event or launch",
+          "Lead generation"
+        ],
         "features": [
-          "1 complete page",
-          "Custom design",
+          "Custom responsive design",
+          "Basic SEO optimization",
           "Contact form",
-          "Mobile optimized",
-          "Domain and hosting for 1 year"
+          "Marketing tools integration",
+          "Hosting and domain 1 year included"
         ]
       },
       {
-        "name": "Growth & Lead Generation Plan",
+        "name": "Corporate Website",
+        "description": "Professional complete website for companies seeking solid online presence.",
+        "priceRange": "€1,500 - €3,500",
+        "useCases": [
+          "Corporate company website",
+          "Professional portfolio",
+          "Services website",
+          "Digital blog or magazine"
+        ],
         "features": [
-          "Up to 5 pages",
-          "Custom design",
-          "Blog or news section",
-          "Admin panel",
-          "Basic SEO included",
-          "Domain and hosting for 1 year"
-        ]
-      },
-      {
-        "name": "Custom Platform / E-commerce",
-        "features": [
-          "Complete store",
-          "Payment system",
-          "Product management",
-          "Admin panel",
+          "Up to 8-10 pages",
+          "Custom professional design",
+          "Admin panel (CMS)",
+          "Integrated blog",
           "Advanced SEO",
-          "Domain and hosting for 1 year"
+          "Hosting and domain 1 year included"
+        ]
+      },
+      {
+        "name": "E-commerce",
+        "description": "Complete online store to sell your products or services 24/7.",
+        "priceRange": "€3,000 - €6,000+",
+        "useCases": [
+          "Online product store",
+          "Digital services sales",
+          "Basic marketplace",
+          "Subscriptions and memberships"
+        ],
+        "features": [
+          "Unlimited product catalog",
+          "Integrated payment gateway",
+          "Complete admin panel",
+          "Inventory and order management",
+          "E-commerce SEO",
+          "Specialized hosting 1 year included"
         ]
       }
     ]
@@ -98,12 +222,115 @@
     ]
   },
   "contact": {
-    "title": "Get in Touch",
+    "title": "Ready to start your website?",
+    "subtitle": "Tell me about your project and I will help you make it happen.",
     "name": "Name",
     "email": "Email",
-    "message": "Message",
-    "send": "Send Message",
+    "projectType": "Project type",
+    "message": "Tell me about your project",
+    "send": "Send message",
     "success": "Message sent successfully!",
-    "error": "There was an error sending your message."
+    "error": "There was an error sending your message.",
+    "directContact": "Direct contact",
+    "location": "Barcelona, Spain",
+    "response": "Response",
+    "responseTime": "Response within 24-48h business days",
+    "project": "Project",
+    "selectOption": "Select an option",
+    "options": {
+      "landing": "Landing Page",
+      "complete": "Complete Website",
+      "ecommerce": "Online Store",
+      "other": "Other"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "message": "Tell me about your project..."
+    },
+    "sending": "Sending...",
+    "successMessage": "Your message has been sent successfully. I'll respond as soon as possible.",
+    "errorMessage": "An error occurred while sending your message. Please try again or contact me directly via email.",
+    "requiredFields": "All fields are required"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "fullCopyright": "Professional freelance web development: custom design, programming, and SEO optimization. Fast, secure, and tailored websites for businesses in Spain and internationally.",
+    "privacy": "Privacy Policy",
+    "legal": "Legal Notice",
+    "terms": "Terms and Conditions"
+  },
+  "seo": {
+    "home": {
+      "title": "Create Website for My Business Barcelona | Freelance Web Developer",
+      "description": "Freelance web developer in Barcelona. I create professional websites for businesses: custom design, fast and SEO optimized. Free quote. Services in Barcelona and throughout Spain."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Ignacio Amat | Web Development",
+      "description": "Privacy policy and personal data protection. Information about how we process your personal data securely and in compliance with GDPR."
+    },
+    "terms": {
+      "title": "Terms and Conditions - Ignacio Amat | Web Development",
+      "description": "Terms and conditions of service for freelance web development. Hiring conditions, payments, deadlines, warranties and intellectual property."
+    },
+    "legal": {
+      "title": "Legal Notice - Ignacio Amat | Web Development",
+      "description": "Legal notice with information about intellectual property, liability and terms of use of Ignacio Amat's freelance web developer website."
+    }
+  },
+  "projects": {
+    "badge": "Specialized Services",
+    "title": "Types of Websites I Develop",
+    "description": "Professional web solutions tailored to your business needs. From landing pages to complex applications.",
+    "featuresLabel": "Key features:",
+    "cta": "Get a Quote",
+    "customQuestion": "Can't find what you're looking for?",
+    "customCta": "Tell me about your project",
+    "types": [
+      {
+        "title": "Landing Pages",
+        "subtitle": "High Conversion",
+        "description": "Optimized landing pages designed to convert visitors into customers. Perfect for launches, campaigns, and specific services.",
+        "features": [
+          "Conversion-focused design",
+          "SEO and speed optimization",
+          "Marketing tools integration",
+          "Effective forms and CTAs"
+        ]
+      },
+      {
+        "title": "Corporate Websites",
+        "subtitle": "Professional Presence",
+        "description": "Professional websites that convey credibility and value. Ideal for companies, professionals, and brands looking to stand out.",
+        "features": [
+          "Professional and modern design",
+          "Responsive on any device",
+          "Content management system",
+          "Search engine optimization"
+        ]
+      },
+      {
+        "title": "Online Stores",
+        "subtitle": "Sales 24/7",
+        "description": "Complete e-commerce solutions to sell products or services online. With payment gateway, inventory management, and automation.",
+        "features": [
+          "Complete product catalog",
+          "Secure payment gateway",
+          "Admin dashboard",
+          "Order and stock tracking"
+        ]
+      },
+      {
+        "title": "Web Applications",
+        "subtitle": "Custom Solutions",
+        "description": "Custom platforms and systems for specific needs. From management systems to specialized tools.",
+        "features": [
+          "100% custom development",
+          "API and service integration",
+          "Scalable and secure",
+          "Support and maintenance"
+        ]
+      }
+    ]
   }
 } 
