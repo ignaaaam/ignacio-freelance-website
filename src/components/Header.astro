@@ -57,7 +57,7 @@ const servicePages = isEnglish ? [
           <div class="absolute top-full left-0 mt-2 w-48 bg-primary border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
             <nav class="flex flex-col p-2">
               {servicePages.map(page => (
-                <a href={page.href} transition:animate class="text-sm text-text-muted hover:text-accent hover:bg-secondary px-3 py-2 rounded transition-colors">
+                <a href={page.href} class="text-sm text-text-muted hover:text-accent hover:bg-secondary px-3 py-2 rounded transition-colors">
                   {page.label}
                 </a>
               ))}
@@ -295,6 +295,7 @@ const servicePages = isEnglish ? [
 </style>
 
 <script is:inline data-astro-rerun>
+(function() {
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
     const button = document.getElementById('mobile-menu-button');
@@ -349,19 +350,27 @@ const servicePages = isEnglish ? [
   }
 
   // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
+  function handleOutsideClick(e) {
     const menu = document.getElementById('mobile-menu');
     const button = document.getElementById('mobile-menu-button');
 
     if (menu && button && !menu.contains(e.target) && !button.contains(e.target)) {
       closeMobileMenu();
     }
-  });
+  }
 
   // Close menu on escape key
-  document.addEventListener('keydown', (e) => {
+  function handleEscapeKey(e) {
     if (e.key === 'Escape') {
       closeMobileMenu();
     }
-  });
+  }
+
+  // Remove old listeners before adding new ones
+  document.removeEventListener('click', handleOutsideClick);
+  document.removeEventListener('keydown', handleEscapeKey);
+
+  document.addEventListener('click', handleOutsideClick);
+  document.addEventListener('keydown', handleEscapeKey);
+})();
 </script> 
