@@ -122,7 +122,24 @@ const jsonLd = JSON.stringify(structuredData);
 		<!-- Preconnect to required origins -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		
+
+		<!-- Preload LCP image -->
+		<link rel="preload" as="image" href="/images/hero-website.png" fetchpriority="high" />
+
+		<!-- Preload critical fonts -->
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" />
+		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+
+		<!-- Load fonts asynchronously -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
+
+		<!-- Fallback for no-JS -->
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+		</noscript>
+
 		<!-- Structured Data -->
 		<script type="application/ld+json" set:html={jsonLd} />
 		{additionalSchemas.map(schema => (
@@ -132,7 +149,7 @@ const jsonLd = JSON.stringify(structuredData);
 	</head>
 	<body>
 		<slot />
-		<PlunkToaster client:load />
+		<PlunkToaster client:idle />
 	</body>
 </html>
 
@@ -234,31 +251,22 @@ const jsonLd = JSON.stringify(structuredData);
 		}
 	});
 
-	// Initialize ScrollReveal
+	// Intersection Observer for scroll animations
 	document.addEventListener('DOMContentLoaded', () => {
-		const script = document.createElement('script');
-		script.src = 'https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js';
-		script.onload = () => {
-			// @ts-ignore
-			const sr = window.ScrollReveal({
-				origin: 'bottom',
-				distance: '60px',
-				duration: 1000,
-				delay: 200,
-				reset: true,
-				easing: 'cubic-bezier(0.5, 0, 0, 1)',
-			});
-
-			// Reveal elements with data-sr attribute
-			document.querySelectorAll('[data-sr]').forEach((el) => {
-				sr.reveal(el, {
-					delay: el.getAttribute('data-sr-delay') ? parseInt(el.getAttribute('data-sr-delay')!) : 200,
-					origin: el.getAttribute('data-sr-origin') || 'bottom',
-					distance: el.getAttribute('data-sr-distance') || '60px',
-					duration: el.getAttribute('data-sr-duration') ? parseInt(el.getAttribute('data-sr-duration')!) : 1000,
-				});
-			});
+		const observerOptions = {
+			threshold: 0.1,
+			rootMargin: '0px 0px -50px 0px'
 		};
-		document.head.appendChild(script);
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					observer.unobserve(entry.target); // Animate only once - no CLS
+				}
+			});
+		}, observerOptions);
+
+		document.querySelectorAll('[data-sr]').forEach(el => observer.observe(el));
 	});
 </script>
