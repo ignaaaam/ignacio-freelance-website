@@ -1,0 +1,142 @@
+---
+import Translate from './Translate.astro';
+
+interface Props {
+	ctaText?: string;
+	ctaHref?: string;
+}
+
+const {
+	ctaText = "contact.title",
+	ctaHref = "#contacto"
+} = Astro.props;
+---
+
+<div id="sticky-cta" class="sticky-cta">
+	<div class="sticky-cta-content">
+		<div class="sticky-cta-text">
+			<span class="font-semibold"><Translate key="hero.cta" /></span>
+			<span class="text-xs hidden sm:inline ml-2 opacity-80">Respuesta en 24h</span>
+		</div>
+		<a href={ctaHref} class="sticky-cta-button">
+			Contactar Ahora →
+		</a>
+	</div>
+</div>
+
+<style>
+	.sticky-cta {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+		box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+		padding: 0.75rem 1rem;
+		z-index: 50;
+		transform: translateY(100%);
+		transition: transform 0.3s ease-in-out;
+		border-top: 2px solid rgba(255, 255, 255, 0.1);
+	}
+
+	.sticky-cta.visible {
+		transform: translateY(0);
+	}
+
+	.sticky-cta-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.sticky-cta-text {
+		color: white;
+		font-size: 0.875rem;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.sticky-cta-button {
+		background: white;
+		color: #3b82f6;
+		padding: 0.625rem 1.25rem;
+		border-radius: 0.5rem;
+		font-weight: 600;
+		font-size: 0.875rem;
+		text-decoration: none;
+		transition: all 0.2s;
+		white-space: nowrap;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	.sticky-cta-button:hover {
+		background: #f8fafc;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	[data-theme="light"] .sticky-cta {
+		background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+	}
+
+	[data-theme="dark"] .sticky-cta {
+		background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+	}
+
+	@media (max-width: 640px) {
+		.sticky-cta {
+			padding: 0.625rem 0.75rem;
+		}
+
+		.sticky-cta-content {
+			gap: 0.5rem;
+		}
+
+		.sticky-cta-text {
+			font-size: 0.75rem;
+		}
+
+		.sticky-cta-button {
+			padding: 0.5rem 1rem;
+			font-size: 0.8125rem;
+		}
+	}
+</style>
+
+<script>
+	// Show sticky CTA after user scrolls down
+	function initStickyCTA() {
+		const stickyCTA = document.getElementById('sticky-cta');
+		if (!stickyCTA) return;
+
+		let lastScroll = 0;
+		const showAfterScroll = 300; // Show after scrolling 300px
+
+		function handleScroll() {
+			const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+			if (currentScroll > showAfterScroll) {
+				stickyCTA.classList.add('visible');
+			} else {
+				stickyCTA.classList.remove('visible');
+			}
+
+			lastScroll = currentScroll;
+		}
+
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		// Check on page load
+		handleScroll();
+	}
+
+	// Initialize on page load
+	document.addEventListener('DOMContentLoaded', initStickyCTA);
+
+	// Re-initialize after view transitions
+	document.addEventListener('astro:after-swap', initStickyCTA);
+</script>

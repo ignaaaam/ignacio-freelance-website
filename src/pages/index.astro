@@ -12,6 +12,7 @@ import Testimonials from '../components/Testimonials.astro';
 import FAQ from '../components/FAQ.astro';
 import Contact from '../components/Contact.astro';
 import Translate from '../components/Translate.astro';
+import StickyCTA from '../components/StickyGTA.astro';
 import { getTranslation } from '../i18n/utils';
 
 const locale = 'es';
@@ -58,7 +59,9 @@ const localBusinessSchema = {
 		}
 	],
 	"sameAs": [
-		// Agregar tus redes sociales aquí
+		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
+		"https://github.com/ignaaaam",
+		"https://x.com/ignathedev",
 	]
 };
 
@@ -322,6 +325,7 @@ const allSchemas = [
 		<FAQ />
 		<Contact />
 	</main>
+	<StickyCTA />
 	<footer class="py-8 sm:py-12 border-t border-border">
 		<div class="container px-4 sm:px-6">
 			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -357,6 +361,9 @@ const allSchemas = [
 					<h3 class="text-sm font-semibold mb-4">Contacto</h3>
 					<p class="text-xs sm:text-sm text-text-muted mb-4">
 						¿Necesitas crear una página web para tu empresa? Contáctame para un presupuesto gratuito.
+					</p>
+					<p class="text-xs sm:text-sm text-text-muted mb-2">
+						Desarrollador web freelance en Barcelona especializado en webs modernas y optimizadas para SEO.
 					</p>
 					<a href="#contacto" class="text-xs sm:text-sm text-accent hover:underline">
 						Ir al formulario de contacto →

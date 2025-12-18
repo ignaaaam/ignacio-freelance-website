@@ -145,6 +145,19 @@ const jsonLd = JSON.stringify(structuredData);
 		{additionalSchemas.map(schema => (
 			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 		))}
+
+		<!-- Google Analytics 4 -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3ZDBF6HWZX"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-3ZDBF6HWZX', {
+				page_path: window.location.pathname,
+				anonymize_ip: true
+			});
+		</script>
+
 		<ViewTransitions />
 	</head>
 	<body>
