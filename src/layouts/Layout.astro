@@ -25,7 +25,7 @@ const {
 		? "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global."
 		: "Modern, fast, and optimized web design and development for global impact.",
 	canonicalUrl,
-	image = "https://ignacioamatweb.com/images/og-image.jpg",
+	image = "https://ignacioamatweb.com/images/og-image.png",
 	author = "Ignacio Amat",
 	type = "website",
 	publishedDate,
@@ -61,10 +61,52 @@ const structuredData: any = {
 // Add publishedDate for articles
 if (type === 'article' && publishedDate) {
 	structuredData.datePublished = publishedDate;
+	structuredData.dateModified = new Date().toISOString().split('T')[0];
 }
+
+// Organization structured data
+const organizationSchema = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "Ignacio Amat",
+	"url": baseUrl,
+	"logo": `${baseUrl}/images/og-image.png`,
+	"sameAs": [
+		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
+		"https://github.com/ignaaaam",
+		"https://x.com/ignathedev"
+	],
+	"contactPoint": {
+		"@type": "ContactPoint",
+		"contactType": "Customer Service",
+		"availableLanguage": ["Spanish", "English"]
+	}
+};
+
+// Breadcrumb schema for non-home pages
+const breadcrumbSchema = currentPath !== '/' && currentPath !== '/en/' ? {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": title,
+			"item": fullUrl
+		}
+	]
+} : null;
 
 // JSON-LD structured data
 const jsonLd = JSON.stringify(structuredData);
+const orgJsonLd = JSON.stringify(organizationSchema);
+const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : null;
 ---
 
 <!DOCTYPE html>
@@ -96,20 +138,33 @@ const jsonLd = JSON.stringify(structuredData);
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@ignacioamatweb" />
-		<meta name="twitter:creator" content="@ignacioamatweb" />
+		<meta name="twitter:site" content="@ignathedev" />
+		<meta name="twitter:creator" content="@ignathedev" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={image} />
 		<meta name="twitter:image:alt" content={title} />
+		<meta name="twitter:domain" content="ignacioamatweb.com" />
+
+		<!-- Additional SEO Meta Tags -->
+		<meta name="rating" content="general" />
+		<meta name="distribution" content="global" />
+		<meta name="coverage" content="Worldwide" />
+		<meta name="target" content="all" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
 
 		<!-- Language and SEO meta tags -->
 		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
 		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
 		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
+		<meta http-equiv="content-language" content={lang} />
 		
 		<!-- Robots meta tag -->
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+		<!-- Google Search Console Verification -->
+		<meta name="google-site-verification" content="VERIFICATION_CODE_PLACEHOLDER" />
 
 		<!-- Mobile specific -->
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -125,6 +180,10 @@ const jsonLd = JSON.stringify(structuredData);
 
 		<!-- Preload LCP image -->
 		<link rel="preload" as="image" href="/images/hero-website.png" fetchpriority="high" />
+
+		<!-- DNS Prefetch for external resources -->
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
 		<!-- Preload critical fonts -->
 		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" />
@@ -142,6 +201,8 @@ const jsonLd = JSON.stringify(structuredData);
 
 		<!-- Structured Data -->
 		<script type="application/ld+json" set:html={jsonLd} />
+		<script type="application/ld+json" set:html={orgJsonLd} />
+		{breadcrumbJsonLd && <script type="application/ld+json" set:html={breadcrumbJsonLd} />}
 		{additionalSchemas.map(schema => (
 			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 		))}
@@ -154,7 +215,35 @@ const jsonLd = JSON.stringify(structuredData);
 			gtag('js', new Date());
 			gtag('config', 'G-3ZDBF6HWZX', {
 				page_path: window.location.pathname,
-				anonymize_ip: true
+				anonymize_ip: true,
+				send_page_view: true,
+				cookie_flags: 'SameSite=None;Secure'
+			});
+
+			// Track scroll depth
+			let scrollDepth = 0;
+			window.addEventListener('scroll', function() {
+				const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+				if (scrollPercentage > scrollDepth && scrollPercentage % 25 === 0) {
+					scrollDepth = scrollPercentage;
+					gtag('event', 'scroll_depth', {
+						'event_category': 'engagement',
+						'event_label': scrollPercentage + '%',
+						'value': scrollPercentage
+					});
+				}
+			});
+
+			// Track outbound links
+			document.addEventListener('click', function(e) {
+				const link = e.target.closest('a');
+				if (link && link.hostname !== window.location.hostname) {
+					gtag('event', 'click', {
+						'event_category': 'outbound',
+						'event_label': link.href,
+						'transport_type': 'beacon'
+					});
+				}
 			});
 		</script>
 

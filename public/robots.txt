@@ -1,11 +1,40 @@
 # robots.txt for ignacioamatweb.com
+
+# Allow all major search engines
 User-agent: *
 Allow: /
 
-# Disallow potential duplicate content like thank you pages
+# Disallow potential duplicate content
 Disallow: /thanks
 Disallow: /error
 Disallow: /404
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
 
-# Sitemap location
-Sitemap: https://ignacioamatweb.com/sitemap-index.xml 
+# Special rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Special rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap locations
+Sitemap: https://ignacioamatweb.com/sitemap-index.xml
+Sitemap: https://ignacioamatweb.com/sitemap-es.xml
+Sitemap: https://ignacioamatweb.com/sitemap-en.xml 

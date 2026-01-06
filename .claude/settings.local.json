@@ -6,7 +6,9 @@
       "Bash(node -e:*)",
       "Bash(npm run dev:*)",
       "Bash(findstr:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(node check-seo.js:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

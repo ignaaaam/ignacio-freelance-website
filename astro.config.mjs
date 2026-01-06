@@ -22,7 +22,14 @@ export default defineConfig({
     },
   },
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true
+    },
+    speedInsights: {
+      enabled: true
+    }
+  }),
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
@@ -34,4 +41,5 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   compressHTML: true,
+  site: 'https://ignacioamatweb.com',
 });
