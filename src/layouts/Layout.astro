@@ -131,10 +131,14 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={title} />
 		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
 		<meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
 		{publishedDate && <meta property="article:published_time" content={publishedDate} />}
+		{type === 'article' && <meta property="article:author" content={author} />}
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -163,8 +167,8 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<!-- Robots meta tag -->
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-		<!-- Google Search Console Verification -->
-		<meta name="google-site-verification" content="VERIFICATION_CODE_PLACEHOLDER" />
+		<!-- Google Search Console Verification - Add your verification code -->
+		<!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
 
 		<!-- Mobile specific -->
 		<meta name="apple-mobile-web-app-capable" content="yes" />

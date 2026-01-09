@@ -55,7 +55,38 @@ const breadcrumbSchema = {
 	]
 };
 
-const allSchemas = [serviceSchema, breadcrumbSchema];
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does it cost to create a website for my business in Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "The price to create a website varies according to your needs: Landing pages from €800, complete corporate websites from €1,500 to €3,500, and e-commerce online stores from €3,000. I offer personalized quotes with no commitment adapted to your business in Barcelona."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "How long does it take for my website to be ready?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A landing page can be ready in 2-4 days, a corporate website in 2-3 weeks, and a complete e-commerce in 4-6 weeks. I work with realistic deadlines to ensure the quality of your website."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Will my website appear on Google after creating it?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, I optimize all websites I create for SEO. This includes technical configuration, content optimization, and submission to Google Search Console so your website appears in searches related to your business in Barcelona."
+			}
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {

@@ -58,7 +58,38 @@ const breadcrumbSchema = {
 	]
 };
 
-const allSchemas = [serviceSchema, breadcrumbSchema];
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta crear una página web para mi empresa en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "El precio para crear una página web varía según tus necesidades: Landing pages desde 800€, webs corporativas completas de 1.500€ a 3.500€, y tiendas online e-commerce desde 3.000€. Te ofrezco presupuesto personalizado sin compromiso adaptado a tu negocio en Barcelona."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tiempo tarda en estar lista mi página web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una landing page puede estar lista en 2-4 días, una web corporativa en 2-3 semanas, y un e-commerce completo en 4-6 semanas. Trabajo con plazos realistas para garantizar la calidad de tu página web."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Mi página web aparecerá en Google después de crearla?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, optimizo todas las páginas web que creo para SEO. Esto incluye configuración técnica, optimización de contenido, y envío a Google Search Console para que tu web aparezca en búsquedas relacionadas con tu negocio en Barcelona."
+			}
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {
