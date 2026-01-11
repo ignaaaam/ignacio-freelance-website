@@ -44,7 +44,6 @@ const t = (key: string) => getTranslation(locale, key);
           id="contact-form"
           class="space-y-4 sm:space-y-6"
           method="POST"
-          onsubmit="handleSubmit(event); return false;"
         >
           <div>
             <label for="name" class="block mb-2 text-sm sm:text-base"><Translate key="contact.name" /></label>
@@ -350,6 +349,20 @@ const t = (key: string) => getTranslation(locale, key);
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = t('send');
+    }
+  }
+
+  // Attach event listener when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initForm);
+  } else {
+    initForm();
+  }
+
+  function initForm() {
+    const form = document.getElementById('contact-form');
+    if (form) {
+      form.addEventListener('submit', handleSubmit);
     }
   }
 </script>
