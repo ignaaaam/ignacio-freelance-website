@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Blog de Desarrollo Web Barcelona | Guías, Precios y Consejos";
+const description = "Artículos sobre desarrollo web, diseño, SEO y marketing digital para empresas en Barcelona. Guías de precios, consejos prácticos y tendencias 2026.";
+const canonicalUrl = "/blog";
+
+// Lista de artículos del blog
+const blogPosts = [
+	{
+		slug: "cuanto-cuesta-crear-pagina-web-barcelona-2026",
+		title: "¿Cuánto Cuesta Crear una Página Web en Barcelona? [Guía 2026]",
+		description: "Desglose completo de precios para crear una web en Barcelona: landing pages, webs corporativas y tiendas online. Con ejemplos reales y factores que afectan el precio.",
+		date: "2026-01-14",
+		readTime: "12 min",
+		category: "Precios"
+	}
+];
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Blog",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const blogSchema = {
+	"@context": "https://schema.org",
+	"@type": "Blog",
+	"name": "Blog de Ignacio Amat - Desarrollo Web Barcelona",
+	"description": "Artículos sobre desarrollo web, diseño y marketing digital para empresas",
+	"url": `${baseUrl}/blog`,
+	"author": {
+		"@type": "Person",
+		"name": "Ignacio Amat"
+	}
+};
+
+const allSchemas = [breadcrumbSchema, blogSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	keywords={["blog desarrollo web", "precios páginas web Barcelona", "guías diseño web", "consejos SEO", "marketing digital Barcelona"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<div class="text-center mb-12">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							📚 Blog
+						</span>
+						<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+							Blog de Desarrollo Web
+						</h1>
+						<p class="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto">
+							Guías prácticas, consejos y recursos sobre desarrollo web, diseño y marketing digital 
+							para empresas en Barcelona y toda España.
+						</p>
+					</div>
+
+					<div class="space-y-6">
+						{blogPosts.map((post) => (
+							<article class="bg-secondary rounded-lg p-6 hover:shadow-lg transition-all">
+								<a href={`/blog/${post.slug}`} class="block">
+									<div class="flex items-center gap-3 mb-3">
+										<span class="px-2 py-1 text-xs font-medium bg-accent/10 text-accent rounded">
+											{post.category}
+										</span>
+										<span class="text-sm text-text-muted">{post.date}</span>
+										<span class="text-sm text-text-muted">· {post.readTime} lectura</span>
+									</div>
+									<h2 class="text-xl sm:text-2xl font-bold mb-2 hover:text-accent transition-colors">
+										{post.title}
+									</h2>
+									<p class="text-text-muted mb-4">
+										{post.description}
+									</p>
+									<span class="text-accent font-medium">Leer artículo →</span>
+								</a>
+							</article>
+						))}
+					</div>
+
+					<div class="mt-12 text-center">
+						<p class="text-text-muted mb-4">
+							¿Tienes una pregunta sobre desarrollo web que te gustaría que respondiera en un artículo?
+						</p>
+						<a href="/#contacto" class="btn-primary inline-block">
+							Sugerir un tema
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+</style>

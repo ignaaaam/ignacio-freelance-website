@@ -1,0 +1,554 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "¿Cuánto Cuesta Crear una Página Web en Barcelona? [Guía Actualizada 2026]";
+const description = "Descubre los precios reales para crear una página web en Barcelona en 2026. Desglose completo: landing pages desde 800€, webs corporativas 1.500-3.500€, e-commerce 3.000-6.000€+. Con factores que afectan el precio.";
+const canonicalUrl = "/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026";
+const publishedDate = "2026-01-14";
+
+// Structured Data
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": title,
+	"description": description,
+	"image": `${baseUrl}/images/og-image.png`,
+	"author": {
+		"@type": "Person",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Ignacio Amat - Desarrollador Web",
+		"logo": {
+			"@type": "ImageObject",
+			"url": `${baseUrl}/images/og-image.png`
+		}
+	},
+	"datePublished": publishedDate,
+	"dateModified": publishedDate,
+	"mainEntityOfPage": {
+		"@type": "WebPage",
+		"@id": `${baseUrl}${canonicalUrl}`
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una landing page en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una landing page profesional en Barcelona cuesta entre 800€ y 1.500€. El precio varía según el diseño, integraciones con herramientas de marketing, formularios avanzados y optimización para conversión."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una web corporativa en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una web corporativa completa en Barcelona cuesta entre 1.500€ y 3.500€. Incluye diseño personalizado, múltiples páginas, blog, SEO on-page y panel de administración."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta crear una tienda online en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una tienda online profesional en Barcelona cuesta entre 3.000€ y 6.000€+. El precio incluye catálogo de productos, carrito, pasarela de pago, gestión de pedidos e inventario."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Qué factores afectan el precio de una página web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Los principales factores son: número de páginas, complejidad del diseño, funcionalidades especiales, integraciones con terceros, SEO avanzado, mantenimiento incluido y plazos de entrega."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Es más barato un freelance o una agencia en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un freelance suele ser 30-50% más económico que una agencia por el mismo trabajo. Un freelance cobra entre 800-4.000€ por una web, mientras que una agencia cobra entre 2.000-10.000€+."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Blog",
+			"item": `${baseUrl}/blog`
+		},
+		{
+			"@type": "ListItem",
+			"position": 3,
+			"name": "Cuánto cuesta crear una página web",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [articleSchema, faqSchema, breadcrumbSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	type="article"
+	publishedDate={publishedDate}
+	additionalSchemas={allSchemas}
+	keywords={["precio página web Barcelona", "cuánto cuesta crear web", "presupuesto web Barcelona", "precio diseño web", "coste tienda online", "precio landing page", "tarifa desarrollador web Barcelona"]}
+>
+	<Header />
+	<main>
+		<article class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-3xl mx-auto">
+					<!-- Header del artículo -->
+					<header class="mb-8 sm:mb-12">
+						<div class="flex items-center gap-3 mb-4">
+							<span class="px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full">
+								💰 Precios
+							</span>
+							<time datetime={publishedDate} class="text-sm text-text-muted">
+								14 Enero 2026
+							</time>
+							<span class="text-sm text-text-muted">· 12 min lectura</span>
+						</div>
+						
+						<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
+							¿Cuánto Cuesta Crear una Página Web en Barcelona? [Guía 2026]
+						</h1>
+						
+						<p class="text-lg sm:text-xl text-text-muted">
+							Si estás buscando crear una página web para tu empresa en Barcelona, probablemente 
+							te preguntes cuánto te va a costar. En esta guía te doy los precios reales de 2026, 
+							desglosados por tipo de web y con los factores que afectan el precio.
+						</p>
+					</header>
+
+					<!-- Tabla de contenidos -->
+					<nav class="bg-secondary p-4 sm:p-6 rounded-lg mb-8 sm:mb-12">
+						<h2 class="text-lg font-bold mb-3">📋 Contenido de esta guía</h2>
+						<ol class="space-y-2 text-sm sm:text-base">
+							<li><a href="#resumen" class="text-accent hover:underline">1. Resumen rápido de precios</a></li>
+							<li><a href="#landing-page" class="text-accent hover:underline">2. Precio de Landing Pages</a></li>
+							<li><a href="#web-corporativa" class="text-accent hover:underline">3. Precio de Webs Corporativas</a></li>
+							<li><a href="#tienda-online" class="text-accent hover:underline">4. Precio de Tiendas Online</a></li>
+							<li><a href="#factores" class="text-accent hover:underline">5. Factores que afectan el precio</a></li>
+							<li><a href="#freelance-vs-agencia" class="text-accent hover:underline">6. Freelance vs Agencia: ¿qué es mejor?</a></li>
+							<li><a href="#costes-ocultos" class="text-accent hover:underline">7. Costes ocultos a tener en cuenta</a></li>
+							<li><a href="#como-ahorrar" class="text-accent hover:underline">8. Cómo ahorrar sin sacrificar calidad</a></li>
+							<li><a href="#faq" class="text-accent hover:underline">9. Preguntas frecuentes</a></li>
+						</ol>
+					</nav>
+
+					<!-- Contenido del artículo -->
+					<div class="prose prose-lg max-w-none">
+						
+						<section id="resumen">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								1. Resumen rápido: Precios de páginas web en Barcelona 2026
+							</h2>
+							
+							<p class="mb-6">
+								Si tienes prisa, aquí tienes un resumen de los precios actuales para crear una página 
+								web en Barcelona:
+							</p>
+
+							<div class="overflow-x-auto mb-6">
+								<table class="w-full border-collapse bg-secondary rounded-lg overflow-hidden">
+									<thead>
+										<tr class="bg-accent/10">
+											<th class="p-3 text-left font-bold">Tipo de Web</th>
+											<th class="p-3 text-left font-bold">Precio Freelance</th>
+											<th class="p-3 text-left font-bold">Precio Agencia</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="border-t border-accent/10">
+											<td class="p-3">Landing Page</td>
+											<td class="p-3 font-semibold text-accent">800€ - 1.500€</td>
+											<td class="p-3">1.500€ - 3.000€</td>
+										</tr>
+										<tr class="border-t border-accent/10">
+											<td class="p-3">Web Corporativa</td>
+											<td class="p-3 font-semibold text-accent">1.500€ - 3.500€</td>
+											<td class="p-3">3.000€ - 8.000€</td>
+										</tr>
+										<tr class="border-t border-accent/10">
+											<td class="p-3">Tienda Online</td>
+											<td class="p-3 font-semibold text-accent">3.000€ - 6.000€</td>
+											<td class="p-3">5.000€ - 15.000€+</td>
+										</tr>
+										<tr class="border-t border-accent/10">
+											<td class="p-3">App Web / MVP</td>
+											<td class="p-3 font-semibold text-accent">5.000€ - 15.000€</td>
+											<td class="p-3">15.000€ - 50.000€+</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="bg-accent/10 p-4 rounded-lg mb-6">
+								<p class="text-sm">
+									<strong>💡 Nota:</strong> Estos precios son orientativos y pueden variar según las funcionalidades 
+									específicas de cada proyecto. Un presupuesto personalizado te dará el precio exacto para tu caso.
+								</p>
+							</div>
+						</section>
+
+						<section id="landing-page">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								2. ¿Cuánto cuesta una Landing Page en Barcelona?
+							</h2>
+
+							<p class="mb-4">
+								Una <strong>landing page</strong> es una página única diseñada para convertir visitantes en clientes 
+								o leads. Es ideal para campañas de marketing, lanzamientos de productos o servicios específicos.
+							</p>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg mb-6 border-l-4 border-accent">
+								<h3 class="text-xl font-bold mb-2">💰 Precio: 800€ - 1.500€</h3>
+								<p class="text-sm text-text-muted mb-3">Tiempo de desarrollo: 2-5 días</p>
+								<p class="mb-3"><strong>¿Qué incluye?</strong></p>
+								<ul class="text-sm space-y-1">
+									<li>✅ Diseño personalizado y responsive</li>
+									<li>✅ Formulario de contacto/captación</li>
+									<li>✅ Optimización SEO básica</li>
+									<li>✅ Integración con Google Analytics</li>
+									<li>✅ Hosting y dominio 1 año</li>
+								</ul>
+							</div>
+
+							<p class="mb-4">
+								El precio varía según:
+							</p>
+							<ul class="list-disc pl-6 space-y-2 mb-6">
+								<li><strong>Complejidad del diseño:</strong> Diseño básico vs animaciones avanzadas</li>
+								<li><strong>Integraciones:</strong> Mailchimp, HubSpot, CRMs, etc.</li>
+								<li><strong>Funcionalidades extra:</strong> Chat en vivo, calculadoras, etc.</li>
+								<li><strong>Plazos de entrega:</strong> Entregas urgentes cuestan más</li>
+							</ul>
+						</section>
+
+						<section id="web-corporativa">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								3. ¿Cuánto cuesta una Web Corporativa en Barcelona?
+							</h2>
+
+							<p class="mb-4">
+								Una <strong>web corporativa</strong> es un sitio web completo con múltiples páginas que presenta 
+								tu empresa, servicios, equipo y permite que te contacten.
+							</p>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg mb-6 border-l-4 border-green-500">
+								<h3 class="text-xl font-bold mb-2">💰 Precio: 1.500€ - 3.500€</h3>
+								<p class="text-sm text-text-muted mb-3">Tiempo de desarrollo: 2-4 semanas</p>
+								<p class="mb-3"><strong>¿Qué incluye típicamente?</strong></p>
+								<ul class="text-sm space-y-1">
+									<li>✅ 5-10 páginas personalizadas</li>
+									<li>✅ Panel de administración (CMS)</li>
+									<li>✅ Blog integrado</li>
+									<li>✅ Formularios de contacto</li>
+									<li>✅ SEO on-page completo</li>
+									<li>✅ Integración redes sociales</li>
+									<li>✅ Hosting y dominio 1 año</li>
+								</ul>
+							</div>
+
+							<p class="mb-4">
+								El precio sube si necesitas:
+							</p>
+							<ul class="list-disc pl-6 space-y-2 mb-6">
+								<li><strong>Más páginas:</strong> Cada página adicional (+100-200€)</li>
+								<li><strong>Diseño premium:</strong> Animaciones, efectos especiales</li>
+								<li><strong>Multi-idioma:</strong> Español, inglés, catalán (+500-1.000€)</li>
+								<li><strong>Funcionalidades especiales:</strong> Reservas, calendario, etc.</li>
+							</ul>
+						</section>
+
+						<section id="tienda-online">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								4. ¿Cuánto cuesta una Tienda Online en Barcelona?
+							</h2>
+
+							<p class="mb-4">
+								Una <strong>tienda online (e-commerce)</strong> te permite vender productos o servicios directamente 
+								desde tu web, con carrito de compra y pagos online.
+							</p>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg mb-6 border-l-4 border-purple-500">
+								<h3 class="text-xl font-bold mb-2">💰 Precio: 3.000€ - 6.000€+</h3>
+								<p class="text-sm text-text-muted mb-3">Tiempo de desarrollo: 4-8 semanas</p>
+								<p class="mb-3"><strong>¿Qué incluye típicamente?</strong></p>
+								<ul class="text-sm space-y-1">
+									<li>✅ Catálogo de productos ilimitado</li>
+									<li>✅ Carrito de compra</li>
+									<li>✅ Pasarela de pago (Stripe, PayPal, Redsys)</li>
+									<li>✅ Gestión de inventario</li>
+									<li>✅ Gestión de pedidos</li>
+									<li>✅ Cálculo de envíos</li>
+									<li>✅ Panel de administración</li>
+									<li>✅ SEO para e-commerce</li>
+								</ul>
+							</div>
+
+							<p class="mb-4">
+								Factores que aumentan el precio:
+							</p>
+							<ul class="list-disc pl-6 space-y-2 mb-6">
+								<li><strong>Número de productos:</strong> Migrar un catálogo grande lleva tiempo</li>
+								<li><strong>Variantes:</strong> Tallas, colores, opciones (+complejidad)</li>
+								<li><strong>Integraciones:</strong> ERP, TPV, contabilidad</li>
+								<li><strong>Multi-tienda:</strong> B2B + B2C, varios idiomas</li>
+								<li><strong>Suscripciones:</strong> Pagos recurrentes</li>
+							</ul>
+						</section>
+
+						<section id="factores">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								5. Factores que afectan el precio de una web
+							</h2>
+
+							<p class="mb-4">
+								¿Por qué un presupuesto puede ser 1.000€ y otro 5.000€ para "lo mismo"? Estos son los factores clave:
+							</p>
+
+							<div class="space-y-4 mb-6">
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">📐 Complejidad del diseño</h3>
+									<p class="text-sm text-text-muted">Un diseño único desde cero cuesta más que adaptar una plantilla. Las animaciones, efectos parallax y diseños creativos añaden horas de trabajo.</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">⚙️ Funcionalidades especiales</h3>
+									<p class="text-sm text-text-muted">Reservas online, calculadoras, áreas de cliente, integraciones con software... cada funcionalidad extra aumenta el precio.</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">📝 Contenido</h3>
+									<p class="text-sm text-text-muted">¿Tienes los textos y fotos listos o necesitas que te los creen? La redacción profesional y fotografía añaden coste.</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">⏰ Plazos de entrega</h3>
+									<p class="text-sm text-text-muted">Un proyecto urgente (menos de 2 semanas) puede costar 20-50% más que uno con plazos normales.</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">🔧 Mantenimiento incluido</h3>
+									<p class="text-sm text-text-muted">Algunos presupuestos incluyen mantenimiento durante el primer año, otros no. Compara el total.</p>
+								</div>
+							</div>
+						</section>
+
+						<section id="freelance-vs-agencia">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								6. Freelance vs Agencia: ¿Qué es mejor para tu web?
+							</h2>
+
+							<p class="mb-4">
+								Tanto freelances como agencias pueden hacer un excelente trabajo. La diferencia está en:
+							</p>
+
+							<div class="grid md:grid-cols-2 gap-4 mb-6">
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-3 text-accent">👨‍💻 Freelance</h3>
+									<ul class="text-sm space-y-2">
+										<li><strong>✅ Precio:</strong> 30-50% más económico</li>
+										<li><strong>✅ Comunicación:</strong> Directa, sin intermediarios</li>
+										<li><strong>✅ Flexibilidad:</strong> Mayor adaptabilidad</li>
+										<li><strong>⚠️ Capacidad:</strong> Proyectos medianos/pequeños</li>
+										<li><strong>⚠️ Riesgo:</strong> Dependes de una persona</li>
+									</ul>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-3 text-purple-500">🏢 Agencia</h3>
+									<ul class="text-sm space-y-2">
+										<li><strong>✅ Capacidad:</strong> Proyectos grandes y complejos</li>
+										<li><strong>✅ Equipo:</strong> Diseñador + desarrollador + PM</li>
+										<li><strong>✅ Respaldo:</strong> Continuidad garantizada</li>
+										<li><strong>⚠️ Precio:</strong> 2-3x más caro</li>
+										<li><strong>⚠️ Comunicación:</strong> A través de account manager</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="bg-accent/10 p-4 rounded-lg mb-6">
+								<p class="font-semibold mb-2">💡 Mi recomendación:</p>
+								<p class="text-sm">
+									Para webs de hasta 5.000€, un freelance profesional es la mejor opción por relación calidad-precio. 
+									Para proyectos de +10.000€ con múltiples desarrolladores y diseñadores, una agencia puede tener sentido.
+								</p>
+							</div>
+						</section>
+
+						<section id="costes-ocultos">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								7. Costes ocultos a tener en cuenta
+							</h2>
+
+							<p class="mb-4">
+								Además del desarrollo de la web, hay costes recurrentes que debes considerar:
+							</p>
+
+							<ul class="list-disc pl-6 space-y-2 mb-6">
+								<li><strong>Dominio:</strong> 10-15€/año (.com, .es)</li>
+								<li><strong>Hosting:</strong> 50-200€/año según tráfico</li>
+								<li><strong>SSL (HTTPS):</strong> Gratis con Let's Encrypt o incluido en hosting</li>
+								<li><strong>Email profesional:</strong> 50-100€/año (Google Workspace, Microsoft 365)</li>
+								<li><strong>Mantenimiento:</strong> 50-150€/mes si lo contratas</li>
+								<li><strong>Actualizaciones de seguridad:</strong> Incluido en mantenimiento o tú mismo</li>
+							</ul>
+
+							<div class="bg-secondary p-4 rounded-lg mb-6">
+								<p class="text-sm">
+									<strong>🎁 Consejo:</strong> Muchos freelances (yo incluido) incluimos el primer año de hosting 
+									y dominio en el precio. Pregunta siempre qué está incluido.
+								</p>
+							</div>
+						</section>
+
+						<section id="como-ahorrar">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								8. Cómo ahorrar sin sacrificar calidad
+							</h2>
+
+							<ol class="list-decimal pl-6 space-y-3 mb-6">
+								<li>
+									<strong>Ten claro lo que necesitas:</strong> 
+									Cuanto más definido esté tu proyecto, menos horas de consultoría y cambios.
+								</li>
+								<li>
+									<strong>Prepara el contenido:</strong> 
+									Textos y fotos listos ahorran horas de trabajo y reducen el precio.
+								</li>
+								<li>
+									<strong>Empieza con lo esencial:</strong> 
+									Lanza con las funcionalidades básicas y añade más adelante.
+								</li>
+								<li>
+									<strong>Plazos razonables:</strong> 
+									Sin urgencias = sin recargos por prisa.
+								</li>
+								<li>
+									<strong>Elige un freelance profesional:</strong> 
+									Mejor precio que agencia con la misma calidad.
+								</li>
+							</ol>
+						</section>
+
+						<section id="faq">
+							<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+								9. Preguntas frecuentes sobre precios de webs
+							</h2>
+
+							<div class="space-y-4 mb-6">
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">¿Por qué hay webs por 300€ y otras por 3.000€?</h3>
+									<p class="text-sm text-text-muted">
+										Las webs muy baratas suelen ser plantillas sin personalización, con plugins de baja calidad 
+										y sin optimización SEO real. Una web profesional personalizada requiere horas de trabajo 
+										de diseño, desarrollo y optimización.
+									</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">¿Puedo crear mi web yo mismo gratis?</h3>
+									<p class="text-sm text-text-muted">
+										Sí, con herramientas como Wix o WordPress.com puedes crear una web básica. Pero el resultado 
+										será menos profesional, más lento, peor SEO y limitado en funcionalidades.
+									</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">¿Cuánto tiempo tarda en estar lista una web?</h3>
+									<p class="text-sm text-text-muted">
+										Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas. 
+										Estos plazos asumen que tienes el contenido listo y respondes rápido al feedback.
+									</p>
+								</div>
+								<div class="bg-secondary p-4 rounded-lg">
+									<h3 class="font-bold mb-2">¿Cómo se paga normalmente?</h3>
+									<p class="text-sm text-text-muted">
+										Lo habitual es 50% al inicio del proyecto y 50% antes de publicar. Algunos profesionales 
+										ofrecen planes de pago o financiación para proyectos grandes.
+									</p>
+								</div>
+							</div>
+						</section>
+
+						<!-- CTA Final -->
+						<div class="bg-gradient-to-r from-accent/10 to-purple-500/10 p-6 sm:p-8 rounded-lg mt-8 sm:mt-12">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">
+								¿Quieres saber cuánto costaría tu web exactamente?
+							</h2>
+							<p class="mb-4">
+								Cada proyecto es único. Cuéntame qué necesitas y te preparo un presupuesto personalizado 
+								sin compromiso en menos de 24 horas.
+							</p>
+							<div class="flex flex-col sm:flex-row gap-3">
+								<a href="/#contacto" class="btn-primary text-center">
+									Solicitar Presupuesto Gratuito
+								</a>
+								<a href="/crear-pagina-web-barcelona" class="btn-secondary text-center">
+									Ver mis servicios
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+
+	table {
+		width: 100%;
+	}
+
+	th, td {
+		text-align: left;
+	}
+</style>

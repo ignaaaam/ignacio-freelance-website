@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Página Web para Clínicas y Dentistas Barcelona | Citas Online desde 1.200€";
+const description = "¿Tienes una clínica dental, médica o de estética en Barcelona? Creo webs profesionales con sistema de citas online, tratamientos y precios. Transmite confianza y capta más pacientes. Presupuesto gratis.";
+const canonicalUrl = "/pagina-web-clinicas-dentistas-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Diseño Web para Clínicas y Consultas Médicas",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Desarrollador Web",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Cataluña",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Desarrollo de páginas web profesionales para clínicas dentales, médicas, estéticas y centros de salud en Barcelona con sistema de citas online y SEO local.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€1,200 - €4,000",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una página web para mi clínica dental en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una web profesional para clínica dental en Barcelona cuesta desde 1.200€ para una web básica con información de tratamientos, hasta 3.500€ para una web completa con sistema de citas online, blog y SEO avanzado. El precio depende de las funcionalidades."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿La web cumple con la normativa sanitaria y RGPD?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, todas las webs que creo para clínicas cumplen con la normativa sanitaria española y el RGPD. Incluyo política de privacidad, aviso legal, gestión de cookies y formularios conformes. También puedo adaptar la web a los requisitos del Colegio de Médicos o Dentistas."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Puedo integrar un sistema de citas online?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, puedo integrar sistemas de citas online como Doctoralia, DOCTOLIB, o crear un sistema propio que te notifique por email. Los pacientes pueden elegir día, hora y tipo de consulta directamente desde tu web."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿La web ayudará a que me encuentren más pacientes en Google?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, optimizo todas las webs para SEO local de Barcelona. Esto incluye configurar Google Business Profile, schema markup médico, y optimizar para búsquedas como 'dentista en Barcelona' o 'clínica estética Eixample'. Los primeros resultados se ven en 2-4 meses."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web para Clínicas Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	keywords={["página web clínica dental Barcelona", "web dentista Barcelona", "diseño web clínicas médicas", "página web centro estético Barcelona", "web consulta médica Barcelona", "citas online clínica", "marketing digital dentistas", "SEO clínicas Barcelona"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							🏥 Especializado en Sector Sanitario
+						</span>
+					</div>
+					
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Páginas Web Profesionales para Clínicas y Dentistas en Barcelona
+					</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tienes una clínica dental, médica o de estética en Barcelona? Creo páginas web que transmiten 
+						profesionalidad y confianza, con sistema de citas online que facilita la vida a tus pacientes.
+						<strong>El 92% de los pacientes buscan información sobre su médico online antes de pedir cita.</strong>
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Incluido en todas las webs para clínicas:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>📅 Sistema de citas online</span>
+							<span>🩺 Página de tratamientos/servicios</span>
+							<span>👨‍⚕️ Perfil del equipo médico</span>
+							<span>📍 Ubicación y contacto</span>
+							<span>📋 Cumplimiento RGPD sanitario</span>
+							<span>🔍 SEO local Barcelona</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Por qué tu clínica necesita una web profesional?
+						</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							En el sector sanitario, la <strong>confianza es fundamental</strong>. Una página web profesional 
+							es tu tarjeta de presentación digital y puede ser la diferencia entre que un paciente te elija 
+							a ti o a tu competencia.
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Transmite profesionalidad:</strong> Una web bien diseñada genera confianza inmediata en potenciales pacientes</li>
+							<li><strong>Recibe citas 24/7:</strong> Tus pacientes pueden pedir cita a cualquier hora, incluso cuando la clínica está cerrada</li>
+							<li><strong>Reduce llamadas telefónicas:</strong> La web responde preguntas sobre tratamientos, precios y horarios</li>
+							<li><strong>Aparece en Google:</strong> Cuando busquen "dentista en [tu zona]", tu clínica estará ahí</li>
+							<li><strong>Muestra tu experiencia:</strong> Presenta tu equipo, formación, tecnología y casos de éxito</li>
+							<li><strong>Cumple la normativa:</strong> Web adaptada a requisitos legales del sector sanitario</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Tipos de clínicas con las que trabajo en Barcelona
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🦷 Clínicas Dentales</h3>
+								<p class="text-sm sm:text-base">Webs con tratamientos de odontología, ortodoncia, implantes, estética dental. Sistema de citas por especialidad.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💆 Centros de Estética</h3>
+								<p class="text-sm sm:text-base">Tratamientos faciales, corporales, medicina estética. Galerías de antes/después, promociones.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏥 Clínicas Médicas</h3>
+								<p class="text-sm sm:text-base">Consultas de especialistas, centros de diagnóstico, policlínicas. Múltiples especialidades.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🧘 Centros de Bienestar</h3>
+								<p class="text-sm sm:text-base">Fisioterapia, psicología, nutrición, yoga. Reserva de clases y sesiones individuales.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Precios de webs para clínicas en Barcelona
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Básica para Clínica</h3>
+								<p class="text-2xl font-bold text-accent mb-2">Desde 1.200€</p>
+								<p class="text-sm text-text-muted mb-3">Presentación de la clínica, tratamientos, equipo médico, ubicación y formulario de citas básico.</p>
+								<p class="text-sm">✅ Ideal para: Consultas individuales, clínicas pequeñas</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Completa para Clínica</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">2.000€ - 3.500€</p>
+								<p class="text-sm text-text-muted mb-3">Todo lo anterior + sistema de citas avanzado, blog de salud, testimonios de pacientes, SEO avanzado.</p>
+								<p class="text-sm">✅ Ideal para: Clínicas dentales, centros de estética, policlínicas</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Premium con Portal de Pacientes</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">3.500€ - 5.000€+</p>
+								<p class="text-sm text-text-muted mb-3">Sistema completo con área privada para pacientes, historial de citas, recordatorios automáticos.</p>
+								<p class="text-sm">✅ Ideal para: Clínicas grandes, franquicias, grupos médicos</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Funcionalidades especiales para el sector sanitario
+						</h2>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Sistema de citas online:</strong> Integración con Doctoralia, DOCTOLIB o sistema propio</li>
+							<li><strong>Cumplimiento normativo:</strong> RGPD sanitario, política de privacidad médica, aviso legal</li>
+							<li><strong>Página de tratamientos:</strong> Descripciones detalladas, precios orientativos, duración</li>
+							<li><strong>Perfil del equipo:</strong> Currículum, formación, colegiado de cada profesional</li>
+							<li><strong>Blog de salud:</strong> Artículos que posicionan en Google y educan a pacientes</li>
+							<li><strong>Testimonios verificados:</strong> Opiniones de pacientes reales que generan confianza</li>
+							<li><strong>Galería antes/después:</strong> Para tratamientos estéticos (con consentimiento)</li>
+							<li><strong>WhatsApp Business:</strong> Botón de contacto directo para urgencias o consultas rápidas</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Preguntas frecuentes sobre webs para clínicas
+						</h2>
+						
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿La web cumple con la normativa sanitaria y RGPD?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, todas las webs cumplen con la normativa sanitaria española y el RGPD. Incluyo política de privacidad, 
+									aviso legal, gestión de cookies y formularios conformes. También puedo adaptar la web a requisitos del Colegio de Médicos o Dentistas.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedo integrar un sistema de citas online?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, puedo integrar sistemas como Doctoralia, DOCTOLIB, o crear un sistema propio que te notifique por email. 
+									Los pacientes pueden elegir día, hora y tipo de consulta directamente desde tu web.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿La web me ayudará a conseguir más pacientes?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, optimizo tu web para SEO local de Barcelona. Cuando alguien busque "dentista en Gràcia" o 
+									"clínica estética Barcelona", tu web aparecerá en los resultados. Los primeros resultados se ven en 2-4 meses.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedo mostrar precios de los tratamientos?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, puedes mostrar precios orientativos o rangos de precio para cada tratamiento. Esto ayuda a filtrar 
+									pacientes y genera confianza por la transparencia. Tú decides qué información mostrar.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								¿Listo para que tu clínica destaque online?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Cuéntame sobre tu clínica y te preparo un presupuesto personalizado. Incluye una llamada 
+								de 15 minutos para entender tus necesidades y el perfil de tus pacientes.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Experiencia en sector sanitario<br/>
+								✅ Cumplimiento normativo garantizado<br/>
+								✅ Soporte post-lanzamiento incluido
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Otros servicios relacionados:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/crear-pagina-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Crear Página Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Servicios generales de desarrollo web para empresas en Barcelona.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Diseño Web para Empresas →</h4>
+								<p class="text-sm text-text-muted">Diseños profesionales que transmiten la identidad de tu marca.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

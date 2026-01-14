@@ -1,0 +1,330 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Página Web para Abogados y Despachos en Barcelona | Marketing Jurídico desde 1.000€";
+const description = "¿Tienes un despacho de abogados en Barcelona y necesitas captar más clientes? Creo webs profesionales para bufetes con SEO local, formulario de consultas y blog jurídico. Transmite confianza. Presupuesto gratis.";
+const canonicalUrl = "/pagina-web-abogados-despachos-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Diseño Web para Abogados y Despachos Jurídicos",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Desarrollador Web",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Cataluña",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Desarrollo de páginas web profesionales para abogados, bufetes y despachos jurídicos en Barcelona con SEO local y marketing digital jurídico.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€1,000 - €4,000",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una página web para mi despacho de abogados?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una web profesional para abogados en Barcelona cuesta desde 1.000€ para una web básica con áreas de práctica y contacto, hasta 3.500€ para una web completa con blog jurídico, SEO avanzado y sistema de consultas online. El precio depende del tamaño del despacho y funcionalidades."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿La web cumple con la normativa deontológica de la abogacía?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, todas las webs que creo para abogados cumplen con el código deontológico del ICAB y la normativa de publicidad de servicios jurídicos. No incluimos elementos que puedan considerarse captación indebida de clientela."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿El blog jurídico ayuda a posicionar en Google?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, un blog con artículos sobre temas legales es una de las mejores estrategias para posicionar un despacho en Google. Artículos sobre 'cómo hacer un testamento', 'derechos en un despido' o 'qué hacer si me detienen' atraen clientes que buscan esa información."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Puedo ofrecer consultas online a través de la web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, puedo integrar un sistema de consultas online donde los clientes describen su caso y tú respondes por email o programas una videollamada. También puedo añadir un sistema de pago para consultas de pago previo."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web para Abogados Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	keywords={["página web abogados Barcelona", "web despacho abogados", "diseño web bufete Barcelona", "marketing digital abogados", "SEO abogados Barcelona", "página web bufete jurídico", "web asesoría legal Barcelona", "captación clientes abogados"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							⚖️ Especializado en Sector Legal
+						</span>
+					</div>
+					
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Páginas Web Profesionales para Abogados y Despachos en Barcelona
+					</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tienes un despacho de abogados en Barcelona y quieres captar más clientes? Creo páginas web 
+						que transmiten profesionalidad, confianza y experiencia. <strong>El 96% de las personas buscan 
+						abogado en Google antes de llamar.</strong> ¿Estás ahí cuando te buscan?
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Incluido en todas las webs para abogados:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>⚖️ Áreas de práctica detalladas</span>
+							<span>👨‍⚖️ Perfil del equipo jurídico</span>
+							<span>📝 Formulario de consultas</span>
+							<span>📰 Blog jurídico optimizado SEO</span>
+							<span>📋 Cumplimiento normativo ICAB</span>
+							<span>🔍 SEO local Barcelona</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Por qué tu despacho necesita una web profesional?
+						</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							En el sector legal, la <strong>imagen de profesionalidad y confianza</strong> lo es todo. 
+							Cuando alguien tiene un problema legal, busca en Google. Si tu despacho no aparece o tiene 
+							una web anticuada, estás perdiendo clientes frente a la competencia.
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Transmite autoridad:</strong> Una web profesional genera confianza inmediata en potenciales clientes</li>
+							<li><strong>Capta clientes 24/7:</strong> Tu web trabaja para ti incluso cuando el despacho está cerrado</li>
+							<li><strong>Filtra casos:</strong> Los formularios de consulta te permiten evaluar casos antes de la primera llamada</li>
+							<li><strong>Posiciónate como experto:</strong> El blog jurídico te posiciona como referente en tu especialidad</li>
+							<li><strong>Aparece en Google:</strong> Cuando busquen "abogado divorcio Barcelona", tu despacho estará ahí</li>
+							<li><strong>Diferénciate:</strong> Muestra tu experiencia, casos de éxito y lo que te hace único</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Especialidades jurídicas con las que trabajo
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">👨‍👩‍👧 Derecho de Familia</h3>
+								<p class="text-sm sm:text-base">Divorcios, custodia, pensiones alimenticias. Web enfocada en empatía y resolución.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💼 Derecho Laboral</h3>
+								<p class="text-sm sm:text-base">Despidos, reclamaciones, acoso laboral. Web orientada a trabajadores y empresas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏢 Derecho Mercantil</h3>
+								<p class="text-sm sm:text-base">Constitución empresas, contratos, concursos. Web profesional para empresarios.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">⚖️ Derecho Penal</h3>
+								<p class="text-sm sm:text-base">Defensa penal, delitos económicos, violencia. Web que transmite confidencialidad.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏠 Derecho Inmobiliario</h3>
+								<p class="text-sm sm:text-base">Compraventas, arrendamientos, comunidades. Web para particulares y promotoras.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🌍 Extranjería</h3>
+								<p class="text-sm sm:text-base">Visados, residencia, nacionalidad. Web multiidioma para clientes internacionales.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Precios de webs para abogados en Barcelona
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Básica para Abogado Individual</h3>
+								<p class="text-2xl font-bold text-accent mb-2">Desde 1.000€</p>
+								<p class="text-sm text-text-muted mb-3">Presentación, áreas de práctica, perfil profesional, formulario de contacto.</p>
+								<p class="text-sm">✅ Ideal para: Abogados individuales, pequeños despachos</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Completa para Despacho</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">2.000€ - 3.500€</p>
+								<p class="text-sm text-text-muted mb-3">Todo lo anterior + blog jurídico, equipo, casos de éxito, SEO avanzado, sistema de consultas.</p>
+								<p class="text-sm">✅ Ideal para: Bufetes medianos, despachos con varias áreas</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Premium para Bufete Grande</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">3.500€ - 5.000€+</p>
+								<p class="text-sm text-text-muted mb-3">Sistema completo con área de clientes, documentos seguros, multiidioma, intranets.</p>
+								<p class="text-sm">✅ Ideal para: Bufetes grandes, firmas internacionales</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							El poder del blog jurídico para captar clientes
+						</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Un blog con artículos sobre temas legales es <strong>la mejor herramienta de marketing para un abogado</strong>. 
+							Cuando alguien busca "qué hacer si me despiden" o "cómo hacer un testamento", tu artículo aparece en Google 
+							y ese visitante se convierte en cliente potencial.
+						</p>
+
+						<p class="text-base sm:text-lg mb-4">
+							Ejemplos de artículos que posicionan:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li>"Qué hacer si me despiden: guía completa de derechos laborales"</li>
+							<li>"Divorcio en Barcelona: proceso, costes y duración"</li>
+							<li>"Cómo reclamar una herencia: pasos y plazos legales"</li>
+							<li>"Derechos del inquilino en Barcelona: todo lo que debes saber"</li>
+							<li>"Cómo constituir una empresa en España: guía paso a paso"</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Preguntas frecuentes sobre webs para abogados
+						</h2>
+						
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿La web cumple con la normativa deontológica?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, todas las webs cumplen con el código deontológico del ICAB y la normativa de publicidad 
+									de servicios jurídicos. No incluimos elementos que puedan considerarse captación indebida de clientela.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿El blog ayuda realmente a captar clientes?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, es una de las mejores estrategias. Artículos sobre temas legales atraen a personas con 
+									problemas jurídicos reales que buscan soluciones. Muchos se convierten en clientes.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedo ofrecer consultas online?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, puedo integrar un sistema de consultas online donde los clientes describen su caso y tú 
+									respondes por email o videollamada. También puedo añadir pago previo para consultas de pago.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tarda en posicionar en Google?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Con SEO local bien hecho, puedes empezar a ver resultados en 2-4 meses para búsquedas 
+									específicas como "abogado divorcio Gràcia". Para términos más competitivos puede tomar 6-12 meses.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								¿Listo para que tu despacho destaque en Barcelona?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Cuéntame sobre tu despacho y especialidades. Te preparo un presupuesto personalizado 
+								y una estrategia de contenidos para posicionar en tu área de práctica.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Experiencia en sector legal<br/>
+								✅ Cumplimiento normativo ICAB<br/>
+								✅ Estrategia de contenidos incluida
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Otros servicios relacionados:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/crear-pagina-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Crear Página Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Servicios generales de desarrollo web para empresas en Barcelona.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Diseño Web para Empresas →</h4>
+								<p class="text-sm text-text-muted">Diseños profesionales que transmiten la identidad de tu marca.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

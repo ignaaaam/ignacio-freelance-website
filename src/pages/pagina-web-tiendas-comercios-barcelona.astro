@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Página Web para Tiendas y Comercios en Barcelona | Vende Online desde 1.200€";
+const description = "¿Tienes una tienda o comercio en Barcelona y quieres vender online? Creo tiendas online profesionales con catálogo, carrito y pago seguro. Aumenta tus ventas 24/7. Presupuesto gratis.";
+const canonicalUrl = "/pagina-web-tiendas-comercios-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo de Tiendas Online para Comercios",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Desarrollador Web",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Cataluña",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Desarrollo de tiendas online y páginas web para comercios y tiendas físicas en Barcelona que quieren vender por internet.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€1,200 - €6,000+",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta crear una tienda online para mi comercio en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una tienda online profesional para comercios en Barcelona cuesta desde 1.200€ para un catálogo básico, hasta 4.500€+ para un e-commerce completo con gestión de inventario, múltiples formas de pago y envíos automatizados."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Puedo gestionar yo mismo los productos y pedidos?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, todas las tiendas incluyen un panel de administración fácil de usar donde puedes añadir productos, actualizar precios, gestionar pedidos y ver estadísticas de ventas. Te doy formación incluida."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Qué formas de pago puedo ofrecer a mis clientes?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Puedes ofrecer tarjeta de crédito/débito (Stripe, Redsys), PayPal, Bizum, transferencia bancaria, y pago contra reembolso. Configuramos las opciones que mejor se adapten a tu negocio y clientes."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿La tienda incluye gestión de envíos?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, puedo integrar calculadora de envíos automática con las principales empresas de transporte (Correos, SEUR, MRW, GLS). También se puede configurar envío gratis a partir de cierto importe o recogida en tienda."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web para Tiendas Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	keywords={["tienda online Barcelona", "crear tienda online", "e-commerce Barcelona", "página web comercio Barcelona", "vender por internet Barcelona", "diseño web tienda", "tienda online barata", "web para comercio local"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							🛒 Especializado en E-commerce
+						</span>
+					</div>
+					
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Tiendas Online para Comercios en Barcelona
+					</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tienes una tienda física en Barcelona y quieres vender también por internet? Creo tiendas 
+						online profesionales que te permiten llegar a clientes de toda España.
+						<strong>Vende 24 horas al día, 7 días a la semana, incluso cuando tu tienda está cerrada.</strong>
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Todas las tiendas online incluyen:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>🛍️ Catálogo de productos ilimitado</span>
+							<span>💳 Pago seguro con tarjeta y PayPal</span>
+							<span>📦 Gestión de envíos automatizada</span>
+							<span>📊 Panel de administración fácil</span>
+							<span>📱 Diseño adaptado a móviles</span>
+							<span>🔍 SEO para que te encuentren en Google</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Por qué tu comercio necesita una tienda online?
+						</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							El <strong>76% de los españoles compra online</strong>. Si tu tienda solo vende en físico, 
+							estás perdiendo una enorme oportunidad de negocio. Una tienda online te permite:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Vender 24/7:</strong> Tu tienda online está abierta mientras duermes, en festivos, siempre</li>
+							<li><strong>Llegar a toda España:</strong> No te limites a los clientes que pasan por tu puerta</li>
+							<li><strong>Reducir costes:</strong> Menos alquiler, menos personal, más margen</li>
+							<li><strong>Complementar tu tienda física:</strong> Los clientes pueden ver productos online y recoger en tienda</li>
+							<li><strong>Competir con los grandes:</strong> Una buena tienda online iguala el terreno de juego</li>
+							<li><strong>Datos de tus clientes:</strong> Saber qué productos interesan, de dónde vienen, qué compran</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Tipos de comercios con los que trabajo
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">👗 Moda y Complementos</h3>
+								<p class="text-sm sm:text-base">Tiendas de ropa, zapatos, bolsos, joyería. Tallas, colores, filtros avanzados.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏠 Hogar y Decoración</h3>
+								<p class="text-sm sm:text-base">Muebles, decoración, textil hogar. Fotos de ambiente, productos relacionados.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🍷 Alimentación Gourmet</h3>
+								<p class="text-sm sm:text-base">Vinos, productos delicatessen, alimentación especial. Maridajes, packs regalo.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🎨 Arte y Artesanía</h3>
+								<p class="text-sm sm:text-base">Obras de arte, artesanía, productos hechos a mano. Piezas únicas, personalización.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💄 Belleza y Cosmética</h3>
+								<p class="text-sm sm:text-base">Perfumería, cosmética, productos de belleza. Muestras gratis, ofertas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏃 Deportes y Fitness</h3>
+                <p class="text-sm sm:text-base">Material deportivo, suplementos, ropa técnica. Guías de tallas, asesoramiento.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Precios de tiendas online para comercios
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tienda Online Básica</h3>
+								<p class="text-2xl font-bold text-accent mb-2">Desde 1.200€</p>
+								<p class="text-sm text-text-muted mb-3">Catálogo de hasta 50 productos, carrito, pago con tarjeta, gestión de pedidos básica.</p>
+								<p class="text-sm">✅ Ideal para: Pequeños comercios, venta de pocos productos</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tienda Online Completa</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">2.500€ - 4.500€</p>
+								<p class="text-sm text-text-muted mb-3">Productos ilimitados, múltiples pagos, gestión de inventario, cálculo de envíos, cupones.</p>
+								<p class="text-sm">✅ Ideal para: Comercios con catálogo amplio, venta en toda España</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tienda Online Premium</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">4.500€ - 8.000€+</p>
+								<p class="text-sm text-text-muted mb-3">Multitienda, B2B, integración con ERP/TPV, personalización avanzada, marketplace.</p>
+								<p class="text-sm">✅ Ideal para: Comercios grandes, mayoristas, franquicias</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Funcionalidades que puedo incluir
+						</h2>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Múltiples formas de pago:</strong> Tarjeta, PayPal, Bizum, transferencia, contra reembolso</li>
+							<li><strong>Gestión de envíos:</strong> Integración con Correos, SEUR, MRW, GLS, cálculo automático</li>
+							<li><strong>Cupones y descuentos:</strong> Códigos promocionales, ofertas por tiempo limitado</li>
+							<li><strong>Opiniones de clientes:</strong> Sistema de reseñas verificadas para generar confianza</li>
+							<li><strong>Click & Collect:</strong> Compra online, recoge en tienda</li>
+							<li><strong>Wishlist:</strong> Lista de deseos para que los clientes guarden favoritos</li>
+							<li><strong>Productos relacionados:</strong> "Clientes que compraron esto también compraron..."</li>
+							<li><strong>Newsletter:</strong> Captación de emails para marketing</li>
+							<li><strong>Multi-idioma:</strong> Vende en español, catalán, inglés...</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Preguntas frecuentes sobre tiendas online
+						</h2>
+						
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedo gestionar yo mismo los productos y pedidos?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, todas las tiendas incluyen un panel de administración fácil de usar donde puedes 
+									añadir productos, actualizar precios, gestionar pedidos y ver estadísticas. Te doy formación incluida.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Qué formas de pago puedo ofrecer?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Tarjeta de crédito/débito (Stripe, Redsys), PayPal, Bizum, transferencia bancaria y 
+									pago contra reembolso. Configuramos las que mejor se adapten a tus clientes.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿La tienda incluye gestión de envíos?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, integro calculadora de envíos automática con Correos, SEUR, MRW, GLS. También 
+									puedo configurar envío gratis a partir de cierto importe o recogida en tienda.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tarda en estar lista la tienda?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Una tienda básica puede estar lista en 2-3 semanas. Una tienda completa con muchos 
+									productos e integraciones puede tardar 4-6 semanas.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								¿Listo para vender online?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Cuéntame sobre tu comercio y los productos que vendes. Te preparo un presupuesto 
+								personalizado y te asesoro sobre la mejor solución para tu negocio.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Formación incluida<br/>
+								✅ Soporte post-lanzamiento<br/>
+								✅ Factura oficial
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Otros servicios relacionados:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/crear-pagina-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Crear Página Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Servicios generales de desarrollo web para empresas en Barcelona.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Diseño Web para Empresas →</h4>
+								<p class="text-sm text-text-muted">Diseños profesionales que reflejan la identidad de tu marca.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

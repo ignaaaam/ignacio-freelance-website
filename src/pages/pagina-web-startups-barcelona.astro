@@ -1,0 +1,362 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Página Web para Startups en Barcelona | Landing Pages y MVPs desde 800€";
+const description = "¿Tienes una startup en Barcelona y necesitas una web que convierta? Creo landing pages, MVPs y webs para startups del 22@, Pier01 y todo Barcelona. Tecnología moderna, entrega rápida. Presupuesto gratis.";
+const canonicalUrl = "/pagina-web-startups-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web para Startups",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Desarrollador Web",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Cataluña",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Desarrollo de páginas web, landing pages y MVPs para startups en Barcelona. Tecnología moderna, entrega rápida y precios competitivos para emprendedores.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una landing page para mi startup?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una landing page profesional para startup cuesta desde 800€. Este precio incluye diseño personalizado, formulario de captación, integración con herramientas de marketing y optimización para conversión. En 2-5 días puede estar lista."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Puedes ayudarme a crear un MVP web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, desarrollo MVPs web funcionales para validar tu idea de negocio rápidamente. Un MVP básico puede estar listo en 2-4 semanas por 2.500-5.000€ dependiendo de la complejidad. Usamos tecnología moderna que permite escalar fácilmente."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con startups del ecosistema Barcelona (22@, Pier01)?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, he trabajado con startups del 22@, Pier01, Barcelona Tech City y otras incubadoras y aceleradoras de Barcelona. Entiendo las necesidades específicas de las startups: velocidad, flexibilidad y presupuestos ajustados."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Ofreces descuentos para startups en fase early-stage?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, tengo precios especiales para startups en fase pre-seed y seed. También ofrezco opciones de pago flexibles. Cuéntame en qué fase estás y buscaremos la mejor solución para tu presupuesto."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web para Startups Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	keywords={["página web startup Barcelona", "landing page startup", "MVP desarrollo Barcelona", "web emprendedores Barcelona", "desarrollo web 22@ Barcelona", "página web SaaS", "web tech startup", "desarrollador freelance startups"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							🚀 Especializado en Tech & Startups
+						</span>
+					</div>
+					
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Desarrollo Web para Startups en Barcelona
+					</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tienes una startup y necesitas una web que convierta visitantes en usuarios o clientes? 
+						Desarrollo landing pages, MVPs y webs para startups del ecosistema tech de Barcelona.
+						<strong>Entrega rápida, tecnología moderna y precios para emprendedores.</strong>
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">🎯 Perfecto para startups en:</p>
+						<div class="grid sm:grid-cols-3 gap-2 text-sm">
+							<span>📍 22@ Barcelona</span>
+							<span>🏢 Pier01 / Barcelona Tech City</span>
+							<span>🎓 Incubadoras y aceleradoras</span>
+							<span>💰 Fases Pre-seed y Seed</span>
+							<span>📈 SaaS y productos digitales</span>
+							<span>🌐 Startups B2B y B2C</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Qué necesita tu startup ahora mismo?
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">🎯 Landing Page de Captación</h3>
+								<p class="text-2xl font-bold text-accent mb-2">Desde 800€</p>
+								<p class="text-sm text-text-muted mb-3">
+									Página única optimizada para convertir. Perfecta para validar tu idea, captar early adopters 
+									o lanzar una campaña de crowdfunding.
+								</p>
+								<ul class="text-sm space-y-1 mb-3">
+									<li>✅ Diseño moderno y profesional</li>
+									<li>✅ Formulario de captación (email, waitlist)</li>
+									<li>✅ Integración con Mailchimp, HubSpot, etc.</li>
+									<li>✅ Analytics y tracking de conversiones</li>
+									<li>✅ Entrega en 2-5 días</li>
+								</ul>
+								<p class="text-sm">💡 Ideal para: Validación de idea, Product Hunt, campañas</p>
+							</div>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">🏢 Web Corporativa Startup</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">1.500€ - 3.000€</p>
+								<p class="text-sm text-text-muted mb-3">
+									Web completa para presentar tu startup a inversores, clientes y talento. 
+									Transmite profesionalidad y credibilidad.
+								</p>
+								<ul class="text-sm space-y-1 mb-3">
+									<li>✅ Home + Producto + Equipo + Blog + Contacto</li>
+									<li>✅ Página de careers/trabaja con nosotros</li>
+									<li>✅ Press kit / recursos para medios</li>
+									<li>✅ Integración con CRM</li>
+									<li>✅ Entrega en 2-3 semanas</li>
+								</ul>
+								<p class="text-sm">💡 Ideal para: Rondas de inversión, B2B, contratación</p>
+							</div>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">⚡ MVP Web Funcional</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">2.500€ - 6.000€+</p>
+								<p class="text-sm text-text-muted mb-3">
+									Producto mínimo viable funcional para validar tu modelo de negocio con usuarios reales. 
+									Listo para iterar y escalar.
+								</p>
+								<ul class="text-sm space-y-1 mb-3">
+									<li>✅ Funcionalidad core de tu producto</li>
+									<li>✅ Sistema de autenticación de usuarios</li>
+									<li>✅ Dashboard/panel de usuario</li>
+									<li>✅ Integración con APIs necesarias</li>
+									<li>✅ Arquitectura escalable</li>
+									<li>✅ Entrega en 3-6 semanas</li>
+								</ul>
+								<p class="text-sm">💡 Ideal para: Validar con usuarios, demo para inversores</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Por qué las startups de Barcelona trabajan conmigo?
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">⚡ Velocidad</h3>
+								<p class="text-sm sm:text-base">Landing pages en días, no semanas. MVPs en semanas, no meses. Entiendo que el time-to-market es crítico.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💰 Precios Startup</h3>
+								<p class="text-sm sm:text-base">Precios competitivos y opciones flexibles de pago. Descuentos para startups en early-stage.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🔧 Stack Moderno</h3>
+								<p class="text-sm sm:text-base">React, Astro, Next.js, Node.js, APIs. Código limpio que tu equipo técnico puede mantener y escalar.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🎯 Foco en Conversión</h3>
+								<p class="text-sm sm:text-base">Cada elemento diseñado para convertir. Analytics integrado para medir y optimizar.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Startups con las que he trabajado
+						</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							He colaborado con startups de diferentes sectores del ecosistema tech de Barcelona:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>FinTech:</strong> Landing pages para apps de pagos, inversión y banca digital</li>
+							<li><strong>HealthTech:</strong> Webs para startups de salud digital, telemedicina y wellness</li>
+							<li><strong>EdTech:</strong> Plataformas de cursos online, e-learning y formación corporativa</li>
+							<li><strong>PropTech:</strong> Webs para startups inmobiliarias y gestión de propiedades</li>
+							<li><strong>FoodTech:</strong> Landing pages para delivery, dark kitchens y alimentación sostenible</li>
+							<li><strong>SaaS B2B:</strong> Webs corporativas y demos de producto para software empresarial</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Integraciones que las startups necesitan
+						</h2>
+
+						<div class="grid sm:grid-cols-3 gap-4 mb-6 sm:mb-8 text-sm">
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Marketing</strong><br/>
+								Mailchimp, HubSpot, ActiveCampaign, Intercom
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Analytics</strong><br/>
+								GA4, Mixpanel, Amplitude, Hotjar
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Pagos</strong><br/>
+								Stripe, PayPal, Bizum
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Auth</strong><br/>
+								Auth0, Firebase, OAuth
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>CRM</strong><br/>
+								Salesforce, Pipedrive, Notion
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Comunicación</strong><br/>
+								Slack, Discord, WhatsApp API
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Preguntas frecuentes de startups
+						</h2>
+						
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cuesta una landing page para mi startup?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Desde 800€ para una landing profesional con formulario de captación, integraciones y 
+									optimización para conversión. Lista en 2-5 días.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedes ayudarme a crear un MVP?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, desarrollo MVPs web funcionales para validar tu idea. Un MVP básico puede estar 
+									listo en 2-4 semanas por 2.500-5.000€ dependiendo de la complejidad.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Trabajas con el ecosistema startup de Barcelona?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, he trabajado con startups del 22@, Pier01, Barcelona Tech City y otras 
+									incubadoras. Entiendo las necesidades de velocidad, flexibilidad y presupuestos ajustados.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Ofreces descuentos para early-stage?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, tengo precios especiales para startups en fase pre-seed y seed. También ofrezco 
+									opciones de pago flexibles. Cuéntame en qué fase estás.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-accent/10 to-purple-500/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								🚀 ¿Listo para lanzar tu startup al mundo?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Cuéntame sobre tu startup, en qué fase estás y qué necesitas. Te preparo un presupuesto 
+								personalizado y un plan de ejecución adaptado a tu timeline y budget.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Precios especiales para startups<br/>
+								✅ Entrega rápida garantizada<br/>
+								✅ Código escalable y mantenible
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Otros servicios relacionados:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/crear-pagina-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Crear Página Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Servicios generales de desarrollo web para empresas en Barcelona.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Desarrollo web profesional con las últimas tecnologías.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

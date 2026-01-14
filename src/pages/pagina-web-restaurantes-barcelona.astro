@@ -1,0 +1,335 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Página Web para Restaurantes en Barcelona | Menú Digital y Reservas Online desde 800€";
+const description = "¿Tienes un restaurante en Barcelona y necesitas una web profesional? Creo páginas web con menú digital, sistema de reservas online, galería de fotos y SEO local. Aumenta tus reservas un 150%. Presupuesto gratis.";
+const canonicalUrl = "/pagina-web-restaurantes-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Diseño Web para Restaurantes",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Desarrollador Web",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Cataluña",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Desarrollo de páginas web profesionales para restaurantes, bares y cafeterías en Barcelona con menú digital, reservas online y optimización SEO local.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €3,500",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una página web para mi restaurante en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una web profesional para restaurante en Barcelona cuesta desde 800€ para una landing page con menú digital, hasta 2.500€ para una web completa con sistema de reservas online, galería y SEO local. El precio depende de las funcionalidades que necesites."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Puedo actualizar el menú yo mismo?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, todas mis webs incluyen un panel de administración fácil de usar donde puedes actualizar tu menú, precios, fotos y horarios sin conocimientos técnicos. Te doy formación incluida para que seas autónomo."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿La web incluye sistema de reservas online?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, puedo integrar sistema de reservas online que te llega por email o WhatsApp. También puedo conectar con plataformas como TheFork, OpenTable o crear un sistema propio según tus necesidades."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Mi restaurante aparecerá en Google cuando busquen dónde comer en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Optimizo tu web para SEO local de Barcelona, lo que incluye configuración de Google Business Profile, schema markup para restaurantes, y optimización para búsquedas como 'restaurante italiano Barcelona' o 'dónde comer en Gràcia'. Los resultados se ven en 2-4 meses."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tarda en estar lista la web de mi restaurante?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una web para restaurante suele estar lista en 1-3 semanas dependiendo de la complejidad. Si tienes las fotos y el menú preparados, puede ser incluso más rápido."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web para Restaurantes Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	keywords={["página web restaurante Barcelona", "web para restaurante", "menú digital restaurante", "reservas online restaurante", "diseño web hostelería Barcelona", "página web bar Barcelona", "web cafetería Barcelona", "SEO restaurantes Barcelona"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							🍽️ Especializado en Hostelería
+						</span>
+					</div>
+					
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Página Web Profesional para tu Restaurante en Barcelona
+					</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tienes un restaurante, bar o cafetería en Barcelona y quieres más clientes? 
+						Creo páginas web que aumentan las reservas y dan visibilidad a tu negocio en Google. 
+						<strong>Mis clientes han aumentado sus reservas online hasta un 150%.</strong>
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Incluido en todas las webs para restaurantes:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>📱 Menú digital actualizable</span>
+							<span>📅 Sistema de reservas online</span>
+							<span>📸 Galería de fotos profesional</span>
+							<span>🗺️ Integración Google Maps</span>
+							<span>📞 Click-to-call para reservas</span>
+							<span>🔍 SEO local Barcelona</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Por qué tu restaurante necesita una página web profesional?
+						</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							El <strong>87% de los clientes buscan restaurantes en Google</strong> antes de decidir dónde ir. 
+							Si tu restaurante no tiene una web profesional o no aparece en las búsquedas, estás perdiendo 
+							clientes cada día frente a tu competencia.
+						</p>
+
+						<p class="text-base sm:text-lg mb-4">
+							Una página web profesional para tu restaurante te permite:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Recibir reservas 24/7:</strong> Tus clientes pueden reservar mesa incluso cuando estás cerrado o ocupado</li>
+							<li><strong>Mostrar tu menú actualizado:</strong> Carta digital que puedes actualizar en minutos desde el móvil</li>
+							<li><strong>Aparecer en Google:</strong> Cuando busquen "restaurante en [tu zona]", tu web estará ahí</li>
+							<li><strong>Transmitir profesionalidad:</strong> Una web bonita genera confianza y mejora tu imagen</li>
+							<li><strong>Reducir llamadas telefónicas:</strong> La web responde las preguntas más comunes automáticamente</li>
+							<li><strong>Diferenciarte de la competencia:</strong> La mayoría de restaurantes solo tienen redes sociales</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							¿Qué incluye una web para restaurante?
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">📱 Menú Digital</h3>
+								<p class="text-sm sm:text-base">Carta elegante con fotos, descripciones, alérgenos y precios. Actualizable desde el móvil en minutos. Compatible con códigos QR.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">📅 Reservas Online</h3>
+								<p class="text-sm sm:text-base">Formulario de reservas que te llega por email o WhatsApp. Opción de integración con TheFork, OpenTable u otras plataformas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">📸 Galería de Fotos</h3>
+								<p class="text-sm sm:text-base">Muestra tu local, platos estrella y ambiente. Las fotos profesionales aumentan las reservas hasta un 30%.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🔍 SEO Local</h3>
+								<p class="text-sm sm:text-base">Optimización para que aparezcas cuando busquen restaurantes en tu zona de Barcelona. Configuración de Google Business Profile.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Precios de webs para restaurantes en Barcelona
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Básica para Restaurante</h3>
+								<p class="text-2xl font-bold text-accent mb-2">Desde 800€</p>
+								<p class="text-sm text-text-muted mb-3">Landing page con menú, ubicación, horarios y formulario de reservas.</p>
+								<p class="text-sm">✅ Ideal para: Bares, cafeterías, restaurantes pequeños</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Completa para Restaurante</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">1.500€ - 2.500€</p>
+								<p class="text-sm text-text-muted mb-3">Web multipágina con menú dinámico, galería, blog de eventos, sistema de reservas avanzado.</p>
+								<p class="text-sm">✅ Ideal para: Restaurantes con carta variada, grupos de restaurantes</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web con Pedidos Online</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">2.500€ - 4.000€</p>
+								<p class="text-sm text-text-muted mb-3">Todo lo anterior + sistema de pedidos a domicilio/take away con pasarela de pago.</p>
+								<p class="text-sm">✅ Ideal para: Restaurantes con delivery, dark kitchens</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Restaurantes de Barcelona que ya tienen web profesional
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							He trabajado con restaurantes, bares y cafeterías de diferentes zonas de Barcelona:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Restaurantes en el Born:</strong> Webs elegantes para cocina mediterránea y de autor</li>
+							<li><strong>Bares en Gràcia:</strong> Webs con carta de vinos y cócteles, reservas para eventos</li>
+							<li><strong>Cafeterías en el Eixample:</strong> Menús de brunch, tienda online de productos propios</li>
+							<li><strong>Restaurantes en Poblenou:</strong> Estilo moderno para público joven y empresas del 22@</li>
+							<li><strong>Tabernas en el Raval:</strong> Webs con historia del local y menú de tapas tradicionales</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Preguntas frecuentes sobre webs para restaurantes
+						</h2>
+						
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cuesta una página web para mi restaurante en Barcelona?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Una web profesional para restaurante cuesta desde 800€ para una landing page con menú digital, 
+									hasta 2.500€ para una web completa con sistema de reservas online, galería y SEO local.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedo actualizar el menú yo mismo?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, todas mis webs incluyen un panel de administración fácil donde puedes actualizar menú, 
+									precios, fotos y horarios sin conocimientos técnicos. Te doy formación incluida.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿La web incluye sistema de reservas online?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, puedo integrar reservas que te llegan por email o WhatsApp. También puedo conectar con 
+									TheFork, OpenTable o crear un sistema propio según tus necesidades.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Mi restaurante aparecerá en Google?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Optimizo tu web para SEO local de Barcelona: Google Business Profile, schema markup para 
+									restaurantes, y búsquedas como "restaurante italiano Barcelona". Resultados en 2-4 meses.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tarda en estar lista la web?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Una web para restaurante suele estar lista en 1-3 semanas dependiendo de la complejidad. 
+									Si tienes las fotos y el menú preparados, puede ser incluso más rápido.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								¿Listo para llenar tu restaurante de clientes?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Cuéntame sobre tu restaurante y te preparo un presupuesto personalizado sin compromiso. 
+								Incluye una llamada de 15 minutos para entender tus necesidades.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Sin compromiso<br/>
+								✅ Factura oficial<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Otros servicios que pueden interesarte:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/crear-pagina-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Crear Página Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Servicios generales de desarrollo web para empresas en Barcelona.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web Barcelona →</h4>
+								<p class="text-sm text-text-muted">Desarrollo web freelance profesional con las últimas tecnologías.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+	
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+	
+	.text-accent {
+		color: var(--color-accent);
+	}
+	
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+	
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

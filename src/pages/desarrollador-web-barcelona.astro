@@ -65,7 +65,46 @@ const breadcrumbSchema = {
 	]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema];
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web freelance en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en Barcelona cobra entre 800€ y 6.000€+ por proyecto, dependiendo de la complejidad. Landing pages desde 800€, webs corporativas 1.500-3.500€, y tiendas online desde 3.000€. Por hora, las tarifas van de 40€ a 80€/hora según experiencia."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tiempo tarda un desarrollador web en crear una página?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "El tiempo depende del tipo de web: una landing page puede estar lista en 2-5 días, una web corporativa en 2-4 semanas, y una tienda online completa en 4-8 semanas. Tener el contenido preparado acelera el proceso."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Es mejor contratar un freelance o una agencia en Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Para proyectos de hasta 5.000€, un freelance ofrece mejor relación calidad-precio: 30-50% más económico, comunicación directa y mayor flexibilidad. Las agencias son mejores para proyectos muy grandes (+10.000€) que requieren múltiples especialistas simultáneamente."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Qué tecnologías utiliza un desarrollador web moderno?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web moderno utiliza HTML5, CSS3, JavaScript y frameworks como React, Astro o Next.js para el frontend. Para el backend: Node.js, APIs REST. Para e-commerce: integraciones con Stripe, PayPal. Todo optimizado para SEO y rendimiento."
+			}
+		}
+	]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {
@@ -150,7 +189,39 @@ const alternateUrls = {
 							de cada negocio.
 						</p>
 
-						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Preguntas frecuentes sobre desarrollo web en Barcelona</h3>
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cobra un desarrollador web freelance en Barcelona?</h4>
+								<p class="text-sm sm:text-base text-text-muted">
+									Entre 800€ y 6.000€+ por proyecto según complejidad. Landing pages desde 800€, webs corporativas 
+									1.500-3.500€, tiendas online desde 3.000€. Por hora: 40-80€/hora según experiencia.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tiempo tarda en estar lista mi web?</h4>
+								<p class="text-sm sm:text-base text-text-muted">
+									Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas. 
+									Tener el contenido preparado acelera significativamente el proceso.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Es mejor freelance o agencia?</h4>
+								<p class="text-sm sm:text-base text-text-muted">
+									Para proyectos de hasta 5.000€, un freelance ofrece 30-50% mejor precio, comunicación directa 
+									y mayor flexibilidad. Las agencias son mejores para proyectos muy grandes (+10.000€).
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Qué tecnologías utilizas?</h4>
+								<p class="text-sm sm:text-base text-text-muted">
+									HTML5, CSS3, JavaScript, React, Astro, Next.js, Node.js, Tailwind CSS. 
+									Para e-commerce: Stripe, PayPal, Redsys. Todo optimizado para SEO y rendimiento.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
 							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Necesitas un desarrollador web para tu proyecto?</h3>
 							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
 								Si buscas un desarrollador web freelance en Barcelona para crear tu página web, 
@@ -162,6 +233,26 @@ const alternateUrls = {
 								✅ Facturación oficial<br/>
 								✅ Garantía de satisfacción
 							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Páginas especializadas por sector:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/pagina-web-restaurantes-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">🍽️ Web para Restaurantes →</h4>
+								<p class="text-sm text-text-muted">Menú digital y reservas online para hostelería.</p>
+							</a>
+							<a href="/pagina-web-clinicas-dentistas-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">🏥 Web para Clínicas →</h4>
+								<p class="text-sm text-text-muted">Sistema de citas online para sector sanitario.</p>
+							</a>
+							<a href="/pagina-web-abogados-despachos-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">⚖️ Web para Abogados →</h4>
+								<p class="text-sm text-text-muted">Webs profesionales para despachos jurídicos.</p>
+							</a>
+							<a href="/pagina-web-startups-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">🚀 Web para Startups →</h4>
+								<p class="text-sm text-text-muted">Landing pages y MVPs para emprendedores.</p>
+							</a>
 						</div>
 					</div>
 				</div>
