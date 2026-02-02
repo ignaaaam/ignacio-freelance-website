@@ -22,16 +22,16 @@ const {
 	title,
 	lang = 'es', 
 	description = lang === 'es' 
-		? "Diseño y desarrollo webs modernas, rápidas y optimizadas para destacar a nivel global."
-		: "Modern, fast, and optimized web design and development for global impact.",
+		? "Landing pages y proyectos web complejos en Barcelona. Desarrollador freelance: diseño a medida, SEO y garantía. Presupuesto gratuito sin compromiso."
+		: "Landing pages and complex web projects in Barcelona. Freelance developer: custom design, SEO, guarantee. Free quote with no commitment.",
 	canonicalUrl,
 	image = "https://ignacioamatweb.com/images/og-image.png",
 	author = "Ignacio Amat",
 	type = "website",
 	publishedDate,
 	keywords = lang === 'es'
-		? ["crear página web para mi empresa", "desarrollador web Barcelona", "crear página web Barcelona", "diseño web Barcelona", "desarrollo web freelance", "página web para negocio", "crear sitio web empresa", "desarrollador web España", "diseño web profesional", "SEO Barcelona", "página web optimizada", "desarrollo web personalizado", "Ignacio Amat"]
-		: ["create website for my business", "web developer Barcelona", "create website Barcelona", "web design Barcelona", "freelance web development", "website for business", "create business website", "web developer Spain", "professional web design", "SEO Barcelona", "optimized website", "custom web development", "Ignacio Amat"],
+		? ["crear página web Barcelona", "desarrollador web Barcelona", "landing page Barcelona", "página web empresas", "presupuesto web Barcelona", "diseño web Barcelona", "proyectos web complejos", "tienda online Barcelona", "web corporativa Barcelona", "desarrollo web freelance", "SEO Barcelona", "página web optimizada", "crear sitio web empresa", "Ignacio Amat"]
+		: ["create website Barcelona", "web developer Barcelona", "landing page Barcelona", "business website Barcelona", "website quote Barcelona", "web design Barcelona", "complex web projects", "online store Barcelona", "corporate website Barcelona", "freelance web development", "SEO Barcelona", "optimized website", "create business website", "Ignacio Amat"],
 	additionalSchemas = [],
 	alternateUrls: customAlternateUrls
 } = Astro.props;
@@ -54,8 +54,14 @@ const structuredData: any = {
 		"name": author,
 		"url": baseUrl
 	},
-	"inLanguage": lang,
-	"image": image
+	"inLanguage": lang === 'es' ? 'es-ES' : 'en-US',
+	"image": image,
+	"publisher": type === 'website' ? {
+		"@type": "Organization",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"logo": { "@type": "ImageObject", "url": `${baseUrl}/images/og-image.png` }
+	} : undefined
 };
 
 // Add publishedDate for articles

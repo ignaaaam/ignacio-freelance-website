@@ -4,7 +4,7 @@
   <!-- Home Page -->
   <url>
     <loc>https://ignacioamatweb.com/</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/" />
@@ -15,7 +15,7 @@
   <!-- Service Pages - High Priority for conversions -->
   <url>
     <loc>https://ignacioamatweb.com/crear-pagina-web-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/crear-pagina-web-barcelona" />
@@ -25,7 +25,7 @@
 
   <url>
     <loc>https://ignacioamatweb.com/desarrollador-web-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-web-barcelona" />
@@ -35,7 +35,7 @@
 
   <url>
     <loc>https://ignacioamatweb.com/diseno-web-empresas</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/diseno-web-empresas" />
@@ -46,7 +46,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://ignacioamatweb.com/contact</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/contact" />
@@ -57,7 +57,7 @@
   <!-- Legal Pages -->
   <url>
     <loc>https://ignacioamatweb.com/privacidad</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/privacidad" />
@@ -67,7 +67,7 @@
 
   <url>
     <loc>https://ignacioamatweb.com/aviso-legal</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/aviso-legal" />
@@ -77,7 +77,7 @@
 
   <url>
     <loc>https://ignacioamatweb.com/terminos</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/terminos" />
@@ -88,35 +88,35 @@
   <!-- Páginas de Nicho por Sector - Alta Conversión -->
   <url>
     <loc>https://ignacioamatweb.com/pagina-web-restaurantes-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://ignacioamatweb.com/pagina-web-clinicas-dentistas-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://ignacioamatweb.com/pagina-web-abogados-despachos-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://ignacioamatweb.com/pagina-web-startups-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://ignacioamatweb.com/pagina-web-tiendas-comercios-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -124,7 +124,7 @@
   <!-- Páginas por Zona de Barcelona -->
   <url>
     <loc>https://ignacioamatweb.com/desarrollador-web-eixample-barcelona</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -132,14 +132,14 @@
   <!-- Blog -->
   <url>
     <loc>https://ignacioamatweb.com/blog</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026</loc>
-    <lastmod>2026-01-14</lastmod>
+    <lastmod>2026-02-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

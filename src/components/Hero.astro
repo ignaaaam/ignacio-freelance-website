@@ -1,5 +1,10 @@
 ---
 import Translate from './Translate.astro';
+
+interface Props {
+	imageAlt?: string;
+}
+const { imageAlt = "Diseño web moderno y profesional para empresas en Barcelona" } = Astro.props;
 ---
 
 <section class="py-12 sm:py-16 md:py-20 relative overflow-hidden">
@@ -33,7 +38,7 @@ import Translate from './Translate.astro';
         
         <img
           src="/images/hero-website.png"
-          alt="Diseño web moderno y profesional para empresas en Barcelona"
+          alt={imageAlt}
           class="w-full h-full object-cover relative z-10"
           fetchpriority="high"
           loading="eager"

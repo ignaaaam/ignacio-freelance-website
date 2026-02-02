@@ -292,6 +292,22 @@ const faqSchema = {
 				"@type": "Answer",
 				"text": getTranslation(locale, 'faq.items.3.answer')
 			}
+		},
+		{
+			"@type": "Question",
+			"name": getTranslation(locale, 'faq.items.4.question'),
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": getTranslation(locale, 'faq.items.4.answer')
+			}
+		},
+		{
+			"@type": "Question",
+			"name": getTranslation(locale, 'faq.items.5.question'),
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": getTranslation(locale, 'faq.items.5.answer')
+			}
 		}
 	]
 };
@@ -314,7 +330,7 @@ const allSchemas = [
 >
 	<Header />
 	<main>
-		<Hero />
+		<Hero imageAlt={getTranslation(locale, 'seo.hero.imageAlt')} />
 		<Features />
 		<Projects />
 		<About />

@@ -34,4 +34,10 @@ export function getAlternateUrls(path: string): { en: string; es: string } {
     en: pathWithoutLocale === '/' ? '/en' : `/en${pathWithoutLocale}`,
     es: pathWithoutLocale === '/' ? '/' : pathWithoutLocale,
   };
+}
+
+/** Returns a translation function for the given path (used in Astro pages). */
+export function useTranslations(path: string): (key: TranslationKey) => string {
+  const locale = getLocaleFromPath(path);
+  return (key: TranslationKey) => getTranslation(locale, key);
 } 

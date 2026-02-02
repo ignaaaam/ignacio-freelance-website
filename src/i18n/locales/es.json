@@ -218,6 +218,14 @@
       {
         "question": "¿Ofreces servicio de mantenimiento?",
         "answer": "Sí, ofrezco planes de mantenimiento mensuales que incluyen actualizaciones, copias de seguridad, y soporte técnico para mantener tu web segura y actualizada."
+      },
+      {
+        "question": "¿Haces solo landing pages o también proyectos web complejos?",
+        "answer": "Ambos. Desde landing pages de una página hasta webs corporativas, tiendas online y aplicaciones web a medida. Cada proyecto se adapta a tus necesidades en Barcelona."
+      },
+      {
+        "question": "¿Cuánto cuesta una landing page en Barcelona?",
+        "answer": "Una landing page profesional en Barcelona cuesta entre 800€ y 1.500€. Incluye diseño personalizado, responsive, SEO básico y formularios. Presupuesto gratuito sin compromiso."
       }
     ]
   },
@@ -262,8 +270,15 @@
   },
   "seo": {
     "home": {
-      "title": "Crear Página Web para Mi Empresa en Barcelona | Desarrollador Web Freelance Ignacio Amat",
-      "description": "¿Necesitas crear una página web para tu empresa en Barcelona? Desarrollador web freelance con +5 años experiencia. Diseño personalizado, rápido, optimizado SEO desde 800€. Presupuesto gratuito sin compromiso. Factura oficial y garantía de satisfacción."
+      "title": "Crear Página Web Barcelona | Landing y Webs Complejas | Ignacio Amat",
+      "description": "Landing pages y proyectos web complejos en Barcelona. Desarrollador freelance: diseño a medida, SEO, desde 800€. Presupuesto gratuito. Factura oficial y garantía."
+    },
+    "contact": {
+      "title": "Presupuesto Página Web Barcelona | Contacto Ignacio Amat",
+      "description": "Solicita presupuesto gratuito para tu página web en Barcelona. Respuesta en 24h. Landing, web corporativa o tienda online. Sin compromiso."
+    },
+    "hero": {
+      "imageAlt": "Diseño web moderno para empresas en Barcelona: landing pages y proyectos complejos por Ignacio Amat"
     },
     "privacy": {
       "title": "Política de Privacidad - Ignacio Amat | Desarrollo Web",

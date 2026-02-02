@@ -3,9 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 
 const baseUrl = 'https://ignacioamatweb.com';
-const title = "Blog de Desarrollo Web Barcelona | Guías, Precios y Consejos";
-const description = "Artículos sobre desarrollo web, diseño, SEO y marketing digital para empresas en Barcelona. Guías de precios, consejos prácticos y tendencias 2026.";
+const title = "Blog Desarrollo Web Barcelona | Precios, Landing y Proyectos Complejos";
+const description = "Guías sobre precios de páginas web en Barcelona, landing pages y proyectos complejos. Consejos SEO y diseño web para empresas. Presupuesto gratuito.";
 const canonicalUrl = "/blog";
+const keywords = ["blog desarrollo web Barcelona", "precios página web Barcelona", "landing page Barcelona", "proyectos web complejos", "cuánto cuesta una web", "diseño web empresas"];
 
 // Lista de artículos del blog
 const blogPosts = [
@@ -58,7 +59,7 @@ const allSchemas = [breadcrumbSchema, blogSchema];
 	lang="es"
 	canonicalUrl={canonicalUrl}
 	additionalSchemas={allSchemas}
-	keywords={["blog desarrollo web", "precios páginas web Barcelona", "guías diseño web", "consejos SEO", "marketing digital Barcelona"]}
+	keywords={keywords}
 >
 	<Header />
 	<main>

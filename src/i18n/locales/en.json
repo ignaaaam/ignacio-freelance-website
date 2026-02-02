@@ -218,6 +218,14 @@
       {
         "question": "Do you offer maintenance service?",
         "answer": "Yes, I offer monthly maintenance plans that include updates, backups, and technical support to keep your website secure and up to date."
+      },
+      {
+        "question": "Do you do only landing pages or also complex web projects?",
+        "answer": "Both. From one-page landing pages to corporate websites, online stores, and custom web applications. Each project is tailored to your needs in Barcelona."
+      },
+      {
+        "question": "How much does a landing page cost in Barcelona?",
+        "answer": "A professional landing page in Barcelona costs between €800 and €1,500. It includes custom design, responsive layout, basic SEO, and forms. Free quote with no commitment."
       }
     ]
   },
@@ -262,8 +270,15 @@
   },
   "seo": {
     "home": {
-      "title": "Create Website for My Business in Barcelona | Freelance Web Developer Ignacio Amat",
-      "description": "Need to create a website for your business in Barcelona? Freelance web developer with +5 years experience. Custom design, fast, SEO optimized from €800. Free quote with no commitment. Official invoice and satisfaction guarantee."
+      "title": "Create Website Barcelona | Landing & Complex Web Projects | Ignacio Amat",
+      "description": "Landing pages and complex web projects in Barcelona. Freelance developer: custom design, SEO, from €800. Free quote. Official invoice and guarantee."
+    },
+    "contact": {
+      "title": "Website Quote Barcelona | Contact Ignacio Amat",
+      "description": "Request a free quote for your website in Barcelona. Response within 24h. Landing, corporate site or online store. No commitment."
+    },
+    "hero": {
+      "imageAlt": "Modern web design for businesses in Barcelona: landing pages and complex projects by Ignacio Amat"
     },
     "privacy": {
       "title": "Privacy Policy - Ignacio Amat | Web Development",

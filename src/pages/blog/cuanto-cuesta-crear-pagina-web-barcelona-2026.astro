@@ -9,10 +9,10 @@ const description = "Descubre los precios reales para crear una página web en B
 const canonicalUrl = "/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026";
 const publishedDate = "2026-01-14";
 
-// Structured Data
+// Structured Data (BlogPosting for rich results in search)
 const articleSchema = {
 	"@context": "https://schema.org",
-	"@type": "Article",
+	"@type": "BlogPosting",
 	"headline": title,
 	"description": description,
 	"image": `${baseUrl}/images/og-image.png`,
@@ -30,7 +30,12 @@ const articleSchema = {
 		}
 	},
 	"datePublished": publishedDate,
-	"dateModified": publishedDate,
+	"dateModified": "2026-02-02",
+	"isPartOf": {
+		"@type": "Blog",
+		"name": "Blog de Ignacio Amat - Desarrollo Web Barcelona",
+		"url": `${baseUrl}/blog`
+	},
 	"mainEntityOfPage": {
 		"@type": "WebPage",
 		"@id": `${baseUrl}${canonicalUrl}`
