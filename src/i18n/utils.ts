@@ -10,6 +10,18 @@ const translations = {
   es,
 };
 
+const routeMappings: Record<string, { es: string; en: string }> = {
+  '/': { es: '/', en: '/en/' },
+  '/contact': { es: '/contact', en: '/en/contact' },
+  '/privacidad': { es: '/privacidad', en: '/en/privacy' },
+  '/aviso-legal': { es: '/aviso-legal', en: '/en/legal-notice' },
+  '/terminos': { es: '/terminos', en: '/en/terms' },
+  '/crear-pagina-web-barcelona': { es: '/crear-pagina-web-barcelona', en: '/en/create-website-barcelona' },
+  '/desarrollador-web-barcelona': { es: '/desarrollador-web-barcelona', en: '/en/web-developer-barcelona' },
+  '/diseno-web-empresas': { es: '/diseno-web-empresas', en: '/en/web-design-businesses' },
+  '/contratar-desarrollador-full-stack': { es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' },
+};
+
 function getNestedValue(obj: any, path: string): string {
   return path.split('.').reduce((o, i) => o?.[i], obj);
 }
@@ -29,11 +41,29 @@ export function getPathWithoutLocale(path: string): string {
 }
 
 export function getAlternateUrls(path: string): { en: string; es: string } {
-  const pathWithoutLocale = getPathWithoutLocale(path);
-  return {
-    en: pathWithoutLocale === '/' ? '/en' : `/en${pathWithoutLocale}`,
-    es: pathWithoutLocale === '/' ? '/' : pathWithoutLocale,
-  };
+  const normalizedPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
+  const bySpanishRoute = routeMappings[normalizedPath];
+
+  if (bySpanishRoute) {
+    return bySpanishRoute;
+  }
+
+  const fromEnglish = Object.values(routeMappings).find((entry) => {
+    const normalizedEn = entry.en.endsWith('/') && entry.en !== '/en/' ? entry.en.slice(0, -1) : entry.en;
+    return normalizedEn === normalizedPath;
+  });
+
+  if (fromEnglish) {
+    return fromEnglish;
+  }
+
+  // For pages without a translation pair, keep the current page in its language
+  // and point the alternate locale to its homepage.
+  if (normalizedPath.startsWith('/en/')) {
+    return { es: '/', en: normalizedPath };
+  }
+
+  return { es: normalizedPath || '/', en: '/en/' };
 }
 
 /** Returns a translation function for the given path (used in Astro pages). */

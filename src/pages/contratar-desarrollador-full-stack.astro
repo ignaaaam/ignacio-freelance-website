@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const title = 'Contratar Desarrollador Full Stack Freelance | Ignacio Amat';
+const description = 'Desarrollador full stack freelance para empresas y startups. Webs y apps a medida con foco en SEO, rendimiento y conversión. Trabajo remoto para clientes internacionales.';
+const canonicalUrl = '/contratar-desarrollador-full-stack';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': '¿Trabajas con clientes fuera de España?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Sí. Trabajo en remoto con clientes de distintos países y zonas horarias.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Qué tipo de proyectos desarrollas?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages, webs corporativas, ecommerce y aplicaciones web a medida.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Cuánto tarda un proyecto?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Depende del alcance. Una landing page puede estar en pocos dias y un producto mas complejo suele requerir varias semanas.'
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  alternateUrls={{ es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' }}
+  additionalSchemas={[faqSchema]}
+>
+  <Header />
+  <main class="container py-12 sm:py-16 md:py-20">
+    <section class="max-w-4xl">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Contratar Desarrollador Full Stack Freelance</h1>
+      <p class="text-text-muted text-base sm:text-lg mb-8">
+        Si necesitas lanzar o mejorar un producto digital, trabajo contigo como desarrollador full stack
+        para convertir objetivos de negocio en una web o app que genere oportunidades reales.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div class="card p-5">
+          <h2 class="text-xl font-semibold mb-2">Para empresas y startups</h2>
+          <p class="text-text-muted">Desarrollo soluciones web orientadas a captacion de leads y crecimiento.</p>
+        </div>
+        <div class="card p-5">
+          <h2 class="text-xl font-semibold mb-2">Trabajo remoto internacional</h2>
+          <p class="text-text-muted">Colaboracion en espanol e ingles con clientes de cualquier pais.</p>
+        </div>
+      </div>
+      <a href="#contacto" class="btn-primary inline-block">Solicitar presupuesto</a>
+    </section>
+    <Contact />
+  </main>
+</Layout>

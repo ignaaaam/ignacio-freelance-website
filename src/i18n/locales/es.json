@@ -11,18 +11,18 @@
     "viewPricing": "Ver Precios"
   },
   "hero": {
-    "title": "Creo páginas web profesionales que atraen clientes para tu empresa en Barcelona",
-    "subtitle": "¿Necesitas crear una página web que genere ventas para tu negocio? Soy Ignacio Amat, desarrollador web freelance en Barcelona especializado en crear sitios web modernos, rápidos y optimizados para Google. Tu web estará lista en 2-6 semanas. Diseño 100% personalizado, factura oficial y garantía de satisfacción. Presupuesto gratuito sin compromiso.",
+    "title": "Desarrollador web freelance full stack para empresas de todo el mundo",
+    "subtitle": "¿Buscas una web o app que te ayude a vender más? Soy Ignacio Amat, desarrollador web freelance full stack. Diseño, desarrollo y optimizo proyectos digitales rápidos, seguros y preparados para SEO internacional. Trabajo en remoto con clientes de cualquier país. Presupuesto gratuito sin compromiso.",
     "cta": "Solicitar Presupuesto Gratuito",
     "services": "Ver Tipos de Webs"
   },
   "about": {
     "title": "Sobre Mí",
-    "intro": "Soy desarrollador web freelance en Barcelona especializado en crear páginas web para empresas. Si buscas a alguien para crear una página web para tu negocio, estás en el lugar correcto. Ayudo a empresas de Barcelona (Eixample, Gràcia, Sants-Montjuïc, Poblenou, Ciutat Vella, Sarrià-Sant Gervasi), España y a nivel internacional a crear sitios web profesionales que convierten visitantes en clientes.",
-    "value": "Mi compromiso es ofrecer servicios de desarrollo web de calidad con total transparencia: facturación oficial, garantía de satisfacción y un trato cercano y personalizado. Cada página web que creo está optimizada para Google y diseñada para generar resultados. Trabajo con empresas de toda Barcelona y la comunidad empresarial local.",
+    "intro": "Soy desarrollador web freelance full stack y ayudo a empresas, startups y agencias a crear webs y aplicaciones que generan negocio. Si buscas a alguien para lanzar o mejorar tu producto digital con criterio técnico y enfoque en resultados, estás en el lugar correcto. Trabajo en remoto con clientes de España, Europa, Estados Unidos y Latinoamérica.",
+    "value": "Mi compromiso es ofrecer desarrollo web de alta calidad con total transparencia: facturación oficial, planificación clara y comunicación directa. Cada proyecto se construye para crecer: buen rendimiento, arquitectura mantenible y SEO técnico para captar demanda cualificada.",
     "benefits": [
-      "Experiencia comprobada creando páginas web para empresas de diversos sectores en Barcelona",
-      "Conocimiento de la comunidad empresarial barcelonesa y sus necesidades",
+      "Experiencia real en proyectos para empresas de distintos sectores y mercados",
+      "Trabajo remoto internacional con procesos claros y entregas por fases",
       "Tecnologías modernas para sitios web rápidos y seguros",
       "Soporte continuo y mantenimiento post-lanzamiento",
       "Relación calidad-precio competitiva para tu negocio"
@@ -221,11 +221,11 @@
       },
       {
         "question": "¿Haces solo landing pages o también proyectos web complejos?",
-        "answer": "Ambos. Desde landing pages de una página hasta webs corporativas, tiendas online y aplicaciones web a medida. Cada proyecto se adapta a tus necesidades en Barcelona."
+        "answer": "Ambos. Desarrollo landing pages, webs corporativas, ecommerce y aplicaciones web a medida. El alcance se adapta a tus objetivos y al estado actual de tu negocio."
       },
       {
-        "question": "¿Cuánto cuesta una landing page en Barcelona?",
-        "answer": "Una landing page profesional en Barcelona cuesta entre 800€ y 1.500€. Incluye diseño personalizado, responsive, SEO básico y formularios. Presupuesto gratuito sin compromiso."
+        "question": "¿Cuál es la inversión habitual de una landing page profesional?",
+        "answer": "Una landing page profesional suele estar entre 800€ y 1.500€, según objetivos, copy, diseño y funcionalidades. Te envío un presupuesto claro y personalizado tras revisar tu caso."
       }
     ]
   },
@@ -240,9 +240,9 @@
     "success": "¡Mensaje enviado con éxito!",
     "error": "Hubo un error al enviar tu mensaje.",
     "directContact": "Contacto directo",
-    "location": "Barcelona, España",
+    "location": "Remoto · Clientes en todo el mundo",
     "response": "Respuesta",
-    "responseTime": "Respuesta en 24-48h laborables",
+    "responseTime": "Respuesta en 24h laborables (zona horaria CET)",
     "project": "Proyecto",
     "selectOption": "Selecciona una opción",
     "options": {
@@ -254,31 +254,40 @@
     "placeholders": {
       "name": "Tu nombre",
       "email": "tu@email.com",
-      "message": "Cuéntame sobre tu proyecto..."
+      "message": "Cuéntame sobre tu proyecto...",
+      "company": "Nombre de tu empresa"
     },
     "sending": "Enviando...",
     "successMessage": "Tu mensaje ha sido enviado con éxito. Te responderé lo antes posible.",
     "errorMessage": "Ha ocurrido un error al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctame directamente por email.",
-    "requiredFields": "Todos los campos son obligatorios"
+    "requiredFields": "Todos los campos son obligatorios",
+    "company": "Empresa (opcional)",
+    "budget": "Presupuesto estimado (opcional)",
+    "budgetOptions": [
+      "800€ - 1.500€",
+      "1.500€ - 3.500€",
+      "3.500€ - 7.000€",
+      "7.000€+"
+    ]
   },
   "footer": {
     "copyright": "Todos los derechos reservados.",
-    "fullCopyright": "Desarrollo web freelance profesional: diseño, programación y optimización SEO. Sitios rápidos, seguros y a medida para empresas en Barcelona y a nivel internacional.",
+    "fullCopyright": "Desarrollo web freelance full stack: diseño, programación y SEO técnico para captar clientes en mercados internacionales.",
     "privacy": "Política de Privacidad",
     "legal": "Aviso Legal",
     "terms": "Términos y Condiciones"
   },
   "seo": {
     "home": {
-      "title": "Crear Página Web Barcelona | Landing y Webs Complejas | Ignacio Amat",
-      "description": "Landing pages y proyectos web complejos en Barcelona. Desarrollador freelance: diseño a medida, SEO, desde 800€. Presupuesto gratuito. Factura oficial y garantía."
+      "title": "Desarrollador Web Freelance Full Stack | Webs y Apps para Empresas",
+      "description": "Desarrollo landing pages, webs corporativas y aplicaciones web a medida para empresas de todo el mundo. SEO técnico, rendimiento y enfoque en conversión."
     },
     "contact": {
-      "title": "Presupuesto Página Web Barcelona | Contacto Ignacio Amat",
-      "description": "Solicita presupuesto gratuito para tu página web en Barcelona. Respuesta en 24h. Landing, web corporativa o tienda online. Sin compromiso."
+      "title": "Solicitar Presupuesto Web | Contacto Ignacio Amat",
+      "description": "Cuéntame tu proyecto y recibe una propuesta clara en 24h laborables. Trabajo remoto para clientes de España y mercado internacional."
     },
     "hero": {
-      "imageAlt": "Diseño web moderno para empresas en Barcelona: landing pages y proyectos complejos por Ignacio Amat"
+      "imageAlt": "Desarrollo web profesional full stack para empresas internacionales"
     },
     "privacy": {
       "title": "Política de Privacidad - Ignacio Amat | Desarrollo Web",
@@ -347,5 +356,9 @@
         ]
       }
     ]
+  },
+  "sticky": {
+    "response24h": "Respuesta en 24h",
+    "ctaNow": "Contactar ahora"
   }
-} 
+}

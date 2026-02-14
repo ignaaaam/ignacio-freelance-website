@@ -21,241 +21,70 @@ const description = getTranslation(locale, 'seo.home.description');
 const canonicalUrl = "/en/";
 const baseUrl = 'https://ignacioamatweb.com';
 
-// Structured Data for SEO (without phone number for privacy)
-const localBusinessSchema = {
+// Structured Data for SEO
+const professionalServiceSchema = {
 	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	"@id": `${baseUrl}/en/#business`,
-	"name": "Ignacio Amat - Freelance Web Developer",
+	"@type": "ProfessionalService",
+	"@id": `${baseUrl}${canonicalUrl}#professional-service`,
+	"name": "Ignacio Amat",
+	"url": `${baseUrl}${canonicalUrl}`,
 	"image": `${baseUrl}/images/og-image.png`,
-	"url": `${baseUrl}/en`,
-	"priceRange": "€€",
-	"aggregateRating": {
-		"@type": "AggregateRating",
-		"ratingValue": "5",
-		"reviewCount": "6",
-		"bestRating": "5",
-		"worstRating": "5"
+	"description": description,
+	"founder": {
+		"@type": "Person",
+		"name": "Ignacio Amat"
 	},
-	"address": {
-		"@type": "PostalAddress",
-		"addressLocality": "Barcelona",
-		"addressRegion": "Catalonia",
-		"addressCountry": "ES"
-	},
-	"geo": {
-		"@type": "GeoCoordinates",
-		"latitude": "41.3851",
-		"longitude": "2.1734"
-	},
-	"areaServed": [
-		{
-			"@type": "City",
-			"name": "Barcelona"
-		},
-		{
-			"@type": "Country",
-			"name": "Spain"
-		}
-	],
+	"areaServed": "Worldwide",
+	"availableLanguage": ["en", "es"],
 	"sameAs": [
 		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
 		"https://github.com/ignaaaam",
-		"https://x.com/ignathedev",
+		"https://x.com/ignathedev"
 	]
 };
 
 const serviceSchema = {
 	"@context": "https://schema.org",
 	"@type": "Service",
-	"serviceType": "Web Development and Web Design",
+	"serviceType": "Full-stack web development and conversion-focused web design",
 	"provider": {
-		"@type": "LocalBusiness",
+		"@type": "ProfessionalService",
 		"name": "Ignacio Amat",
 		"url": baseUrl
 	},
-	"areaServed": {
-		"@type": "Country",
-		"name": "Spain"
+	"areaServed": "Worldwide",
+	"availableChannel": {
+		"@type": "ServiceChannel",
+		"serviceUrl": `${baseUrl}/en/contact`
 	},
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
-		"name": "Web Development Services",
+		"name": "Web development services",
 		"itemListElement": [
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Landing Page",
-					"description": "Conversion-optimized landing pages"
-				},
-				"priceSpecification": {
-					"@type": "PriceSpecification",
-					"price": "800",
-					"priceCurrency": "EUR",
-					"valueAddedTaxIncluded": true,
-					"priceRange": "€800 - €1,500"
+					"name": "High-converting landing pages"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Corporate Website",
-					"description": "Complete professional websites for businesses"
-				},
-				"priceSpecification": {
-					"@type": "PriceSpecification",
-					"price": "1500",
-					"priceCurrency": "EUR",
-					"valueAddedTaxIncluded": true,
-					"priceRange": "€1,500 - €3,500"
+					"name": "Business website development"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "E-commerce",
-					"description": "Complete online stores with payment gateway"
-				},
-				"priceSpecification": {
-					"@type": "PriceSpecification",
-					"price": "3000",
-					"priceCurrency": "EUR",
-					"valueAddedTaxIncluded": true,
-					"priceRange": "€3,000 - €6,000+"
+					"name": "Custom web application development"
 				}
 			}
 		]
 	}
 };
-
-// Aggregate Rating with multiple reviews
-const aggregateRatingSchema = {
-	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	"name": "Ignacio Amat - Freelance Web Developer",
-	"aggregateRating": {
-		"@type": "AggregateRating",
-		"ratingValue": "5",
-		"reviewCount": "6",
-		"bestRating": "5",
-		"worstRating": "5"
-	}
-};
-
-// Individual Reviews
-const reviewsSchema = [
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Freelance Web Developer"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "María García"
-		},
-		"reviewBody": "Excellent professional. Delivered the project in record time and exceeded all our expectations. The website is fast, modern, and has significantly increased our conversions."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Freelance Web Developer"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Carlos Rodríguez"
-		},
-		"reviewBody": "Very satisfied with the result. The process was transparent, communication was fluid, and the final result is exactly what we needed for our business."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Freelance Web Developer"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Laura Martínez"
-		},
-		"reviewBody": "My online store has exceeded all my expectations. Sales have increased by 200% since launch. Totally recommended."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Freelance Web Developer"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Jordi Puig"
-		},
-		"reviewBody": "We needed to create a website for our restaurant in Barcelona. Ignacio perfectly understood what we were looking for and created a website that perfectly reflects our style. Online reservations have increased by 150%."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Freelance Web Developer"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Ana Fernández"
-		},
-		"reviewBody": "As a startup in Barcelona, we needed a professional website but with a tight budget. Ignacio helped us create exactly what we needed. Excellent quality-price ratio and impeccable service."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Freelance Web Developer"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Roberto Sánchez"
-		},
-		"reviewBody": "Working with Ignacio was a pleasure. Professional, punctual and with excellent knowledge of web development. Our new website has significantly improved our online presence in Barcelona."
-	}
-];
 
 const faqSchema = {
 	"@context": "https://schema.org",
@@ -313,10 +142,8 @@ const faqSchema = {
 };
 
 const allSchemas = [
-	localBusinessSchema,
+	professionalServiceSchema,
 	serviceSchema,
-	aggregateRatingSchema,
-	...reviewsSchema,
 	faqSchema
 ];
 ---
@@ -348,14 +175,14 @@ const allSchemas = [
 				<div>
 					<h3 class="text-sm font-semibold mb-4">Services</h3>
 					<nav class="flex flex-col gap-2">
-						<a href="/en/create-website-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Create Website Barcelona
-						</a>
-						<a href="/en/web-developer-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer Barcelona
+						<a href="/en/hire-full-stack-web-developer" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Hire Full-Stack Developer
 						</a>
 						<a href="/en/web-design-businesses" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Design Businesses
+							Business Website Development
+						</a>
+						<a href="/en/web-developer-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer in Barcelona
 						</a>
 					</nav>
 				</div>
@@ -376,7 +203,7 @@ const allSchemas = [
 				<div>
 					<h3 class="text-sm font-semibold mb-4">Contact</h3>
 					<p class="text-xs sm:text-sm text-text-muted mb-4">
-						Need to create a website for your business? Contact me for a free quote.
+						Need a website or web app for your business? I work remotely with clients worldwide.
 					</p>
 					<a href="#contacto" class="text-xs sm:text-sm text-accent hover:underline">
 						Go to contact form →

@@ -22,16 +22,16 @@ const {
 	title,
 	lang = 'es', 
 	description = lang === 'es' 
-		? "Landing pages y proyectos web complejos en Barcelona. Desarrollador freelance: diseño a medida, SEO y garantía. Presupuesto gratuito sin compromiso."
-		: "Landing pages and complex web projects in Barcelona. Freelance developer: custom design, SEO, guarantee. Free quote with no commitment.",
+		? "Desarrollador web freelance full stack para empresas de todo el mundo. Landing pages, webs corporativas y aplicaciones web enfocadas en SEO y conversión."
+		: "Freelance full-stack web developer for businesses worldwide. Landing pages, business websites, and web apps focused on SEO and conversion.",
 	canonicalUrl,
 	image = "https://ignacioamatweb.com/images/og-image.png",
 	author = "Ignacio Amat",
 	type = "website",
 	publishedDate,
 	keywords = lang === 'es'
-		? ["crear página web Barcelona", "desarrollador web Barcelona", "landing page Barcelona", "página web empresas", "presupuesto web Barcelona", "diseño web Barcelona", "proyectos web complejos", "tienda online Barcelona", "web corporativa Barcelona", "desarrollo web freelance", "SEO Barcelona", "página web optimizada", "crear sitio web empresa", "Ignacio Amat"]
-		: ["create website Barcelona", "web developer Barcelona", "landing page Barcelona", "business website Barcelona", "website quote Barcelona", "web design Barcelona", "complex web projects", "online store Barcelona", "corporate website Barcelona", "freelance web development", "SEO Barcelona", "optimized website", "create business website", "Ignacio Amat"],
+		? ["desarrollador web freelance", "desarrollador full stack", "crear página web profesional", "desarrollo web para empresas", "landing page de alta conversión", "diseño web a medida", "aplicación web a medida", "servicios SEO técnico", "desarrollo ecommerce", "Ignacio Amat"]
+		: ["freelance web developer", "hire full stack web developer", "professional website development", "web development for businesses", "high-converting landing page", "custom web design", "custom web app development", "technical SEO services", "ecommerce development", "Ignacio Amat"],
 	additionalSchemas = [],
 	alternateUrls: customAlternateUrls
 } = Astro.props;
@@ -116,10 +116,11 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 ---
 
 <!DOCTYPE html>
-<html lang={lang} data-theme="dark">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+		<meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -260,7 +261,12 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<ViewTransitions />
 	</head>
 	<body>
-		<slot />
+		<a class="skip-link" href="#main-content">
+			{lang === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}
+		</a>
+		<div id="main-content">
+			<slot />
+		</div>
 		<PlunkToaster client:idle />
 	</body>
 </html>
@@ -268,7 +274,23 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 <style>
 	/* Theme transitions */
 	:root {
-		transition: all 0.3s ease;
+		transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+	}
+
+	.skip-link {
+		position: absolute;
+		left: 0.75rem;
+		top: 0.75rem;
+		padding: 0.6rem 0.9rem;
+		background: #111827;
+		color: #fff;
+		border-radius: 0.5rem;
+		transform: translateY(-200%);
+		z-index: 999;
+	}
+
+	.skip-link:focus {
+		transform: translateY(0);
 	}
 
 	/* Light theme overrides */

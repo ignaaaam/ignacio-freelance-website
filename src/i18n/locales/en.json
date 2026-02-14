@@ -11,18 +11,18 @@
     "viewPricing": "View Pricing"
   },
   "hero": {
-    "title": "I create professional websites that attract clients for your business in Barcelona",
-    "subtitle": "Need to create a website that generates sales for your business? I'm Ignacio Amat, freelance web developer in Barcelona specialized in creating modern, fast and Google-optimized websites. Your website will be ready in 2-6 weeks. 100% custom design, official invoice and satisfaction guarantee. Free quote with no commitment.",
+    "title": "Freelance full-stack web developer for companies worldwide",
+    "subtitle": "Need a website or web app that helps you generate revenue? I am Ignacio Amat, a freelance full-stack developer. I design, build, and optimize fast, secure digital products prepared for international SEO. I work remotely with clients worldwide. Free quote, no commitment.",
     "cta": "Get Free Quote",
     "services": "View Website Types"
   },
   "about": {
     "title": "About Me",
-    "intro": "I'm a freelance web developer in Barcelona specialized in creating websites for businesses. If you're looking for someone to create a website for your business, you're in the right place. I help businesses in Barcelona (Eixample, Gràcia, Sants-Montjuïc, Poblenou, Ciutat Vella, Sarrià-Sant Gervasi), Spain and internationally create professional websites that convert visitors into customers.",
-    "value": "My commitment is to offer quality web development services with complete transparency: official invoicing, satisfaction guarantee, and a close, personalized relationship. Every website I create is optimized for Google and designed to generate results. I work with businesses throughout Barcelona and the local business community.",
+    "intro": "I am a freelance full-stack web developer helping companies, startups, and agencies launch websites and applications that drive business results. If you need a reliable technical partner to ship or improve your digital product, you are in the right place. I work remotely with clients across Europe, the United States, and Latin America.",
+    "value": "My commitment is high-quality web development with full transparency: official invoicing, clear planning, and direct communication. Every project is built to scale with strong performance, maintainable architecture, and technical SEO to attract qualified leads.",
     "benefits": [
-      "Proven experience creating websites for businesses across various sectors in Barcelona",
-      "Knowledge of the Barcelona business community and its needs",
+      "Proven experience delivering projects for businesses in multiple sectors and markets",
+      "International remote collaboration with clear process and phased delivery",
       "Modern technologies for fast and secure websites",
       "Continuous support and post-launch maintenance",
       "Competitive quality-price ratio for your business"
@@ -221,11 +221,11 @@
       },
       {
         "question": "Do you do only landing pages or also complex web projects?",
-        "answer": "Both. From one-page landing pages to corporate websites, online stores, and custom web applications. Each project is tailored to your needs in Barcelona."
+        "answer": "Both. I build landing pages, corporate websites, ecommerce stores, and custom web applications. Scope is adapted to your goals and current business stage."
       },
       {
-        "question": "How much does a landing page cost in Barcelona?",
-        "answer": "A professional landing page in Barcelona costs between €800 and €1,500. It includes custom design, responsive layout, basic SEO, and forms. Free quote with no commitment."
+        "question": "What is the usual investment for a professional landing page?",
+        "answer": "A professional landing page usually ranges from EUR800 to EUR1500 depending on goals, copy, design, and features. I send a clear custom quote after reviewing your case."
       }
     ]
   },
@@ -240,9 +240,9 @@
     "success": "Message sent successfully!",
     "error": "There was an error sending your message.",
     "directContact": "Direct contact",
-    "location": "Barcelona, Spain",
+    "location": "Remote · Worldwide clients",
     "response": "Response",
-    "responseTime": "Response within 24-48h business days",
+    "responseTime": "Response within 24 business hours (CET timezone)",
     "project": "Project",
     "selectOption": "Select an option",
     "options": {
@@ -254,31 +254,40 @@
     "placeholders": {
       "name": "Your name",
       "email": "your@email.com",
-      "message": "Tell me about your project..."
+      "message": "Tell me about your project...",
+      "company": "Your company name"
     },
     "sending": "Sending...",
     "successMessage": "Your message has been sent successfully. I'll respond as soon as possible.",
     "errorMessage": "An error occurred while sending your message. Please try again or contact me directly via email.",
-    "requiredFields": "All fields are required"
+    "requiredFields": "All fields are required",
+    "company": "Company (optional)",
+    "budget": "Estimated budget (optional)",
+    "budgetOptions": [
+      "EUR800 - EUR1500",
+      "EUR1500 - EUR3500",
+      "EUR3500 - EUR7000",
+      "EUR7000+"
+    ]
   },
   "footer": {
     "copyright": "All rights reserved.",
-    "fullCopyright": "Professional freelance web development: custom design, programming, and SEO optimization. Fast, secure, and tailored websites for businesses in Spain and internationally.",
+    "fullCopyright": "Freelance full-stack web development: design, engineering, and technical SEO focused on generating qualified leads in international markets.",
     "privacy": "Privacy Policy",
     "legal": "Legal Notice",
     "terms": "Terms and Conditions"
   },
   "seo": {
     "home": {
-      "title": "Create Website Barcelona | Landing & Complex Web Projects | Ignacio Amat",
-      "description": "Landing pages and complex web projects in Barcelona. Freelance developer: custom design, SEO, from €800. Free quote. Official invoice and guarantee."
+      "title": "Freelance Full-Stack Web Developer | Websites and Web Apps for Business",
+      "description": "I build high-converting landing pages, business websites, and custom web apps for companies worldwide. Technical SEO, performance, and conversion-focused delivery."
     },
     "contact": {
-      "title": "Website Quote Barcelona | Contact Ignacio Amat",
-      "description": "Request a free quote for your website in Barcelona. Response within 24h. Landing, corporate site or online store. No commitment."
+      "title": "Request a Web Project Quote | Contact Ignacio Amat",
+      "description": "Tell me about your project and get a clear proposal within 24 business hours. Remote collaboration for clients worldwide."
     },
     "hero": {
-      "imageAlt": "Modern web design for businesses in Barcelona: landing pages and complex projects by Ignacio Amat"
+      "imageAlt": "Professional full-stack web development for international companies"
     },
     "privacy": {
       "title": "Privacy Policy - Ignacio Amat | Web Development",
@@ -347,5 +356,9 @@
         ]
       }
     ]
+  },
+  "sticky": {
+    "response24h": "24h response",
+    "ctaNow": "Contact now"
   }
-} 
+}

@@ -26,7 +26,16 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     const data = await request.json();
-    const { name, email, type, message, locale = 'es' } = data;
+    const {
+      name = '',
+      email = '',
+      type = '',
+      message = '',
+      company = '',
+      budget = '',
+      website = '',
+      locale = 'es'
+    } = data;
 
     // Validation error messages based on locale
     const errorMessages = {
@@ -41,8 +50,20 @@ export const POST: APIRoute = async ({ request }) => {
         : 'Message sent successfully'
     };
 
+    // Basic anti-bot honeypot validation
+    if (website) {
+      return new Response(JSON.stringify({ message: errorMessages.success }), { status: 200, headers });
+    }
+
+    const safeName = String(name).trim();
+    const safeEmail = String(email).trim();
+    const safeMessage = String(message).trim();
+    const safeType = String(type).trim();
+    const safeCompany = String(company).trim();
+    const safeBudget = String(budget).trim();
+
     // Validate required fields
-    if (!name || !email || !message) {
+    if (!safeName || !safeEmail || !safeMessage) {
       console.error('Missing required fields:', { name, email, message });
       return new Response(
         JSON.stringify({ 
@@ -55,32 +76,36 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Set subject based on locale
     const subject = locale === 'es'
-      ? `Nuevo mensaje de contacto: ${type || 'General'}`
-      : `New contact message: ${type || 'General'}`;
+      ? `Nuevo mensaje de contacto: ${safeType || 'General'}`
+      : `New contact message: ${safeType || 'General'}`;
 
     // Set appropriate HTML content based on locale
     const htmlContent = locale === 'es'
       ? `
         <h2>Nuevo mensaje de contacto</h2>
-        <p><strong>Nombre:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Tipo de proyecto:</strong> ${type || 'No especificado'}</p>
+        <p><strong>Nombre:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
+        <p><strong>Empresa:</strong> ${safeCompany || 'No especificada'}</p>
+        <p><strong>Tipo de proyecto:</strong> ${safeType || 'No especificado'}</p>
+        <p><strong>Presupuesto:</strong> ${safeBudget || 'No especificado'}</p>
         <p><strong>Mensaje:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${safeMessage.replace(/\n/g, '<br>')}</p>
       `
       : `
         <h2>New contact message</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Project type:</strong> ${type || 'Not specified'}</p>
+        <p><strong>Name:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
+        <p><strong>Company:</strong> ${safeCompany || 'Not specified'}</p>
+        <p><strong>Project type:</strong> ${safeType || 'Not specified'}</p>
+        <p><strong>Budget:</strong> ${safeBudget || 'Not specified'}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${safeMessage.replace(/\n/g, '<br>')}</p>
       `;
 
     const { error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', 
       to: 'ignasiamat10@gmail.com',
-      reply_to: email,
+      reply_to: safeEmail,
       subject: subject,
       html: htmlContent,
     });

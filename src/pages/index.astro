@@ -22,240 +22,69 @@ const canonicalUrl = "/";
 const baseUrl = 'https://ignacioamatweb.com';
 
 // Structured Data for SEO
-const localBusinessSchema = {
+const professionalServiceSchema = {
 	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	"@id": `${baseUrl}/#business`,
-	"name": "Ignacio Amat - Desarrollador Web Freelance",
+	"@type": "ProfessionalService",
+	"@id": `${baseUrl}${canonicalUrl}#professional-service`,
+	"name": "Ignacio Amat",
+	"url": `${baseUrl}${canonicalUrl}`,
 	"image": `${baseUrl}/images/og-image.png`,
-	"url": baseUrl,
-	"priceRange": "€€",
-	"aggregateRating": {
-		"@type": "AggregateRating",
-		"ratingValue": "5",
-		"reviewCount": "6",
-		"bestRating": "5",
-		"worstRating": "5"
+	"description": description,
+	"founder": {
+		"@type": "Person",
+		"name": "Ignacio Amat"
 	},
-	"address": {
-		"@type": "PostalAddress",
-		"addressLocality": "Barcelona",
-		"addressRegion": "Cataluña",
-		"addressCountry": "ES"
-	},
-	"geo": {
-		"@type": "GeoCoordinates",
-		"latitude": "41.3851",
-		"longitude": "2.1734"
-	},
-	"areaServed": [
-		{
-			"@type": "City",
-			"name": "Barcelona"
-		},
-		{
-			"@type": "Country",
-			"name": "España"
-		}
-	],
+	"areaServed": "Worldwide",
+	"availableLanguage": ["es", "en"],
 	"sameAs": [
 		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
 		"https://github.com/ignaaaam",
-		"https://x.com/ignathedev",
+		"https://x.com/ignathedev"
 	]
 };
 
 const serviceSchema = {
 	"@context": "https://schema.org",
 	"@type": "Service",
-	"serviceType": "Desarrollo Web y Diseño Web",
+	"serviceType": "Desarrollo web full stack y diseño web orientado a conversión",
 	"provider": {
-		"@type": "LocalBusiness",
+		"@type": "ProfessionalService",
 		"name": "Ignacio Amat",
 		"url": baseUrl
 	},
-	"areaServed": {
-		"@type": "Country",
-		"name": "España"
+	"areaServed": "Worldwide",
+	"availableChannel": {
+		"@type": "ServiceChannel",
+		"serviceUrl": `${baseUrl}/contact`
 	},
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
-		"name": "Servicios de Desarrollo Web",
+		"name": "Servicios de desarrollo web",
 		"itemListElement": [
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Landing Page",
-					"description": "Páginas de aterrizaje optimizadas para conversión"
-				},
-				"priceSpecification": {
-					"@type": "PriceSpecification",
-					"price": "800",
-					"priceCurrency": "EUR",
-					"valueAddedTaxIncluded": true,
-					"priceRange": "€800 - €1,500"
+					"name": "Landing pages de alta conversión"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "Web Corporativa",
-					"description": "Sitios web profesionales completos para empresas"
-				},
-				"priceSpecification": {
-					"@type": "PriceSpecification",
-					"price": "1500",
-					"priceCurrency": "EUR",
-					"valueAddedTaxIncluded": true,
-					"priceRange": "€1,500 - €3,500"
+					"name": "Web corporativa"
 				}
 			},
 			{
 				"@type": "Offer",
 				"itemOffered": {
 					"@type": "Service",
-					"name": "E-commerce",
-					"description": "Tiendas online completas con pasarela de pago"
-				},
-				"priceSpecification": {
-					"@type": "PriceSpecification",
-					"price": "3000",
-					"priceCurrency": "EUR",
-					"valueAddedTaxIncluded": true,
-					"priceRange": "€3,000 - €6,000+"
+					"name": "Aplicaciones web a medida"
 				}
 			}
 		]
 	}
 };
-
-// Aggregate Rating with multiple reviews
-const aggregateRatingSchema = {
-	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
-	"name": "Ignacio Amat - Desarrollador Web Freelance",
-	"aggregateRating": {
-		"@type": "AggregateRating",
-		"ratingValue": "5",
-		"reviewCount": "6",
-		"bestRating": "5",
-		"worstRating": "5"
-	}
-};
-
-// Individual Reviews
-const reviewsSchema = [
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Desarrollador Web Freelance"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "María García"
-		},
-		"reviewBody": "Excelente profesional. Entregó el proyecto en tiempo récord y superó todas nuestras expectativas. La web es rápida, moderna y ha aumentado significativamente nuestras conversiones."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Desarrollador Web Freelance"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Carlos Rodríguez"
-		},
-		"reviewBody": "Muy satisfecho con el resultado. El proceso fue transparente, la comunicación fluida y el resultado final es exactamente lo que necesitábamos para nuestro negocio."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Desarrollador Web Freelance"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Laura Martínez"
-		},
-		"reviewBody": "Mi tienda online ha superado todas mis expectativas. Las ventas han aumentado un 200% desde el lanzamiento. Totalmente recomendable."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Desarrollador Web Freelance"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Jordi Puig"
-		},
-		"reviewBody": "Necesitábamos crear una página web para nuestro restaurante en Barcelona. Ignacio entendió perfectamente lo que buscábamos y creó una web que refleja perfectamente nuestro estilo. Las reservas online han aumentado un 150%."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Desarrollador Web Freelance"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Ana Fernández"
-		},
-		"reviewBody": "Como startup en Barcelona, necesitábamos una web profesional pero con presupuesto ajustado. Ignacio nos ayudó a crear exactamente lo que necesitábamos. Excelente relación calidad-precio y servicio impecable."
-	},
-	{
-		"@context": "https://schema.org",
-		"@type": "Review",
-		"itemReviewed": {
-			"@type": "LocalBusiness",
-			"name": "Ignacio Amat - Desarrollador Web Freelance"
-		},
-		"reviewRating": {
-			"@type": "Rating",
-			"ratingValue": "5",
-			"bestRating": "5"
-		},
-		"author": {
-			"@type": "Person",
-			"name": "Roberto Sánchez"
-		},
-		"reviewBody": "Trabajar con Ignacio fue un placer. Profesional, puntual y con un conocimiento excelente de desarrollo web. Nuestra nueva web ha mejorado significativamente nuestra presencia online en Barcelona."
-	}
-];
 
 const faqSchema = {
 	"@context": "https://schema.org",
@@ -313,10 +142,8 @@ const faqSchema = {
 };
 
 const allSchemas = [
-	localBusinessSchema,
+	professionalServiceSchema,
 	serviceSchema,
-	aggregateRatingSchema,
-	...reviewsSchema,
 	faqSchema
 ];
 ---
@@ -346,19 +173,16 @@ const allSchemas = [
 		<div class="container px-4 sm:px-6">
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 				<div>
-					<h3 class="text-sm font-semibold mb-4">Servicios</h3>
+					<h3 class="text-sm font-semibold mb-4">Servicios Globales</h3>
 					<nav class="flex flex-col gap-2">
-						<a href="/crear-pagina-web-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Crear Página Web Barcelona
+						<a href="/contratar-desarrollador-full-stack" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Contratar Desarrollador Full Stack
+						</a>
+						<a href="/diseno-web-empresas" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Diseño Web para Empresas
 						</a>
 						<a href="/desarrollador-web-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
 							Desarrollador Web Barcelona
-						</a>
-						<a href="/diseno-web-empresas" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Diseño Web Empresas
-						</a>
-						<a href="/pagina-web-tiendas-comercios-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Tiendas Online Barcelona
 						</a>
 					</nav>
 				</div>
@@ -396,10 +220,10 @@ const allSchemas = [
 				<div>
 					<h3 class="text-sm font-semibold mb-4">Contacto</h3>
 					<p class="text-xs sm:text-sm text-text-muted mb-4">
-						¿Necesitas crear una página web para tu empresa? Contáctame para un presupuesto gratuito.
+						¿Necesitas una web o app para tu empresa? Trabajo en remoto con clientes de todo el mundo.
 					</p>
 					<p class="text-xs sm:text-sm text-text-muted mb-2">
-						Desarrollador web freelance en Barcelona especializado en webs modernas y optimizadas para SEO.
+						Desarrollador web freelance full stack con enfoque en SEO, conversion y rendimiento.
 					</p>
 					<a href="#contacto" class="text-xs sm:text-sm text-accent hover:underline">
 						Ir al formulario de contacto →

@@ -15,11 +15,11 @@ const {
 <div id="sticky-cta" class="sticky-cta">
 	<div class="sticky-cta-content">
 		<div class="sticky-cta-text">
-			<span class="font-semibold"><Translate key="hero.cta" /></span>
-			<span class="text-xs hidden sm:inline ml-2 opacity-80">Respuesta en 24h</span>
+			<span class="font-semibold"><Translate key={ctaText} /></span>
+			<span class="text-xs hidden sm:inline ml-2 opacity-80"><Translate key="sticky.response24h" /></span>
 		</div>
 		<a href={ctaHref} class="sticky-cta-button">
-			Contactar Ahora →
+			<Translate key="sticky.ctaNow" /> →
 		</a>
 	</div>
 </div>

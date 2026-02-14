@@ -1,5 +1,6 @@
 ---
 import Translate from './Translate.astro';
+import { getAlternateUrls } from '../i18n/utils';
 
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith('/en');
@@ -9,6 +10,7 @@ const isHomePage = currentPath === '/' || currentPath === '/en' || currentPath =
 
 // URL base para navegación (página principal)
 const homeUrl = isEnglish ? '/en' : '/';
+const alternateUrls = getAlternateUrls(currentPath);
 
 // Función helper para generar URLs de navegación
 const getNavUrl = (anchor: string) => {
@@ -24,13 +26,13 @@ const navItems = [
 ];
 
 const servicePages = isEnglish ? [
-  { label: 'Create Your Website', href: '/en/create-website-barcelona' },
-  { label: 'Develop Your Website', href: '/en/web-developer-barcelona' },
-  { label: 'Design Your Website', href: '/en/web-design-businesses' },
+  { label: 'Hire Full-Stack Developer', href: '/en/hire-full-stack-web-developer' },
+  { label: 'Business Website Development', href: '/en/web-design-businesses' },
+  { label: 'Developer in Barcelona', href: '/en/web-developer-barcelona' },
 ] : [
-  { label: 'Crea tu página web', href: '/crear-pagina-web-barcelona' },
-  { label: 'Desarrolla tu página web', href: '/desarrollador-web-barcelona' },
-  { label: 'Diseña tu página web', href: '/diseno-web-empresas' },
+  { label: 'Contratar Desarrollador Full Stack', href: '/contratar-desarrollador-full-stack' },
+  { label: 'Diseño Web para Empresas', href: '/diseno-web-empresas' },
+  { label: 'Desarrollador Web en Barcelona', href: '/desarrollador-web-barcelona' },
 ];
 ---
 
@@ -86,17 +88,17 @@ const servicePages = isEnglish ? [
       </nav>
 
       <div class="language-switcher">
-        <a href="/" class={!isEnglish ? 'active' : ''}>ES</a>
+        <a href={alternateUrls.es} class={!isEnglish ? 'active' : ''}>ES</a>
         <span class="separator">|</span>
-        <a href="/en" class={isEnglish ? 'active' : ''}>EN</a>
+        <a href={alternateUrls.en} class={isEnglish ? 'active' : ''}>EN</a>
       </div>
     </div>
 
     <div class="flex items-center gap-3 md:hidden">
       <div class="language-switcher-mobile">
-        <a href="/" class={!isEnglish ? 'active' : ''}>ES</a>
+        <a href={alternateUrls.es} class={!isEnglish ? 'active' : ''}>ES</a>
         <span class="separator">|</span>
-        <a href="/en" class={isEnglish ? 'active' : ''}>EN</a>
+        <a href={alternateUrls.en} class={isEnglish ? 'active' : ''}>EN</a>
       </div>
       <button 
         id="mobile-menu-button"

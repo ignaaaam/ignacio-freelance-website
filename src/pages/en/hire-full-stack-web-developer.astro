@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const title = 'Hire a Freelance Full-Stack Web Developer | Ignacio Amat';
+const description = 'Hire a freelance full-stack web developer for websites and custom web apps. Remote collaboration, technical SEO, performance, and conversion-focused delivery.';
+const canonicalUrl = '/en/hire-full-stack-web-developer';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'Do you work with clients outside Spain?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I work remotely with international clients across different time zones.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What type of projects do you build?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages, business websites, ecommerce stores, and custom web applications.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How long does a project take?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'It depends on scope. A landing page can be delivered quickly, while larger products usually take several weeks.'
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  alternateUrls={{ es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' }}
+  additionalSchemas={[faqSchema]}
+>
+  <Header />
+  <main class="container py-12 sm:py-16 md:py-20">
+    <section class="max-w-4xl">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Hire a Freelance Full-Stack Web Developer</h1>
+      <p class="text-text-muted text-base sm:text-lg mb-8">
+        If you need to launch or improve a digital product, I help you turn business goals into a website
+        or web app that generates qualified opportunities.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+        <div class="card p-5">
+          <h2 class="text-xl font-semibold mb-2">For companies and startups</h2>
+          <p class="text-text-muted">I build web solutions focused on lead generation and measurable growth.</p>
+        </div>
+        <div class="card p-5">
+          <h2 class="text-xl font-semibold mb-2">Remote international delivery</h2>
+          <p class="text-text-muted">Clear communication in English and Spanish with clients worldwide.</p>
+        </div>
+      </div>
+      <a href="#contacto" class="btn-primary inline-block">Request a quote</a>
+    </section>
+    <Contact />
+  </main>
+</Layout>
