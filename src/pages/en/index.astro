@@ -26,16 +26,32 @@ const professionalServiceSchema = {
 	"@context": "https://schema.org",
 	"@type": "ProfessionalService",
 	"@id": `${baseUrl}${canonicalUrl}#professional-service`,
-	"name": "Ignacio Amat",
+	"name": "Ignacio Amat - Freelance Web Developer",
 	"url": `${baseUrl}${canonicalUrl}`,
 	"image": `${baseUrl}/images/og-image.png`,
 	"description": description,
 	"founder": {
 		"@type": "Person",
-		"name": "Ignacio Amat"
+		"name": "Ignacio Amat",
+		"jobTitle": "Freelance Full-Stack Web Developer",
+		"url": baseUrl,
+		"sameAs": [
+			"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
+			"https://github.com/ignaaaam",
+			"https://x.com/ignathedev"
+		]
 	},
-	"areaServed": "Worldwide",
+	"areaServed": [
+		{ "@type": "Country", "name": "Spain" },
+		{ "@type": "City", "name": "Madrid" },
+		{ "@type": "City", "name": "Barcelona" },
+		{ "@type": "City", "name": "Valencia" },
+		{ "@type": "City", "name": "Sevilla" },
+		{ "@type": "City", "name": "Bilbao" },
+		{ "@type": "City", "name": "Zaragoza" }
+	],
 	"availableLanguage": ["en", "es"],
+	"priceRange": "EUR800-EUR6000",
 	"sameAs": [
 		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
 		"https://github.com/ignaaaam",
@@ -52,7 +68,7 @@ const serviceSchema = {
 		"name": "Ignacio Amat",
 		"url": baseUrl
 	},
-	"areaServed": "Worldwide",
+	"areaServed": "Spain and international remote clients",
 	"availableChannel": {
 		"@type": "ServiceChannel",
 		"serviceUrl": `${baseUrl}/en/contact`
@@ -171,7 +187,27 @@ const allSchemas = [
 	<StickyCTA />
 	<footer class="py-8 sm:py-12 border-t border-border">
 		<div class="container px-4 sm:px-6">
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+				<div>
+					<h3 class="text-sm font-semibold mb-4">By City</h3>
+					<nav class="flex flex-col gap-2">
+						<a href="/en/web-developer-spain" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer Spain
+						</a>
+						<a href="/en/web-developer-madrid" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer Madrid
+						</a>
+						<a href="/en/web-developer-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer Barcelona
+						</a>
+						<a href="/en/web-developer-valencia" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer Valencia
+						</a>
+						<a href="/en/web-developer-sevilla" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Web Developer Sevilla
+						</a>
+					</nav>
+				</div>
 				<div>
 					<h3 class="text-sm font-semibold mb-4">Services</h3>
 					<nav class="flex flex-col gap-2">
@@ -179,10 +215,13 @@ const allSchemas = [
 							Hire Full-Stack Developer
 						</a>
 						<a href="/en/web-design-businesses" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Business Website Development
+							Web Design for Businesses
 						</a>
-						<a href="/en/web-developer-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer in Barcelona
+						<a href="/en/create-website-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Website Pricing Guide
+						</a>
+						<a href="/en/contact" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Request a Quote
 						</a>
 					</nav>
 				</div>
@@ -203,7 +242,7 @@ const allSchemas = [
 				<div>
 					<h3 class="text-sm font-semibold mb-4">Contact</h3>
 					<p class="text-xs sm:text-sm text-text-muted mb-4">
-						Need a website or web app for your business? I work remotely with clients worldwide.
+						Need a website or web app for your business? I work remotely with companies in Spain and international clients.
 					</p>
 					<a href="#contacto" class="text-xs sm:text-sm text-accent hover:underline">
 						Go to contact form →

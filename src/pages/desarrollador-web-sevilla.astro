@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Desarrollador Web Sevilla | Freelance Full Stack | Ignacio Amat";
+const description = "Desarrollador web freelance para empresas de Sevilla. Landing pages, webs corporativas y aplicaciones desde 800€. Trabajo en remoto. Presupuesto gratuito.";
+const canonicalUrl = "/desarrollador-web-sevilla";
+const keywords = ["desarrollador web Sevilla", "desarrollador web freelance Sevilla", "crear página web Sevilla", "diseño web Sevilla", "landing page Sevilla", "web corporativa Sevilla", "freelance web Sevilla", "programador web Sevilla"];
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Desarrollador Web Freelance",
+	"url": baseUrl,
+	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development"]
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web",
+	"provider": { "@type": "Person", "name": "Ignacio Amat", "url": baseUrl },
+	"areaServed": { "@type": "City", "name": "Sevilla" },
+	"offers": { "@type": "Offer", "priceRange": "800€ - 6.000€+" }
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": baseUrl },
+		{ "@type": "ListItem", "position": 2, "name": "Desarrollador Web Sevilla", "item": `${baseUrl}${canonicalUrl}` }
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web en Sevilla?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en Sevilla cobra entre 800€ y 6.000€+ por proyecto. Landing pages desde 800€, webs corporativas 1.500-3.500€ y tiendas online desde 3.000€."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas de Sevilla de forma remota?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Trabajo 100% en remoto con empresas de Sevilla y toda Andalucía. Sin necesidad de reuniones presenciales. Nos coordinamos por videollamada, email o las herramientas que prefieras."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tarda en estar lista mi web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Una landing page puede estar lista en 2-5 días. Una web corporativa en 2-4 semanas. Una tienda online en 4-8 semanas."
+			}
+		}
+	]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-developer-sevilla"
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-4xl mx-auto">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance para Empresas de Sevilla</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tu empresa sevillana necesita una web que funcione de verdad? Soy Ignacio Amat, desarrollador web freelance full stack.
+						Creo páginas web rápidas, posicionadas en Google y orientadas a convertir visitas en clientes.
+						Trabajo en remoto con empresas de Sevilla y toda Andalucía. Presupuesto gratuito y sin compromiso.
+					</p>
+
+					<div class="flex flex-wrap gap-3 mb-8">
+						<a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+					</div>
+
+					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Desarrollo web para empresas de Sevilla y Andalucía</h2>
+						<p class="text-base sm:text-lg mb-4">
+							Sevilla es un motor económico del sur de España, con un ecosistema empresarial diverso: turismo, hostelería, construcción, tecnología, asesorías y más.
+							Todas estas empresas necesitan una presencia digital profesional para competir en un mercado cada vez más online.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Trabajo con empresas de Triana, Los Remedios, el Aljarafe, Dos Hermanas, Alcalá de Guadaíra, Camas, Mairena del Aljarafe
+							y cualquier punto de Sevilla y Andalucía — 100% en remoto, sin costes extras.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Servicios web para empresas de Sevilla</h2>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages</h3>
+								<p class="text-sm sm:text-base">Para captar leads y clientes desde Google Ads o redes sociales. Lista en 2-5 días. Desde 800€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Corporativa</h3>
+								<p class="text-sm sm:text-base">Presencia online completa con múltiples páginas, blog y SEO avanzado. Desde 1.500€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tienda Online</h3>
+								<p class="text-sm sm:text-base">E-commerce con pasarelas de pago (Stripe, Redsys, Bizum). Desde 3.000€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Aplicaciones Web</h3>
+								<p class="text-sm sm:text-base">CRMs, portales de clientes y herramientas digitales a medida. Presupuesto personalizado.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Ventajas de contratar un desarrollador web freelance</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+							<li><strong>30-50% más económico</strong> que agencias locales con la misma calidad.</li>
+							<li><strong>Comunicación directa</strong> con el desarrollador, sin intermediarios.</li>
+							<li><strong>Tecnología moderna:</strong> React, Astro, Node.js para webs ultrarrápidas.</li>
+							<li><strong>SEO incluido:</strong> Tu web optimizada desde el primer día.</li>
+							<li><strong>Factura oficial</strong> para empresas y autónomos.</li>
+							<li><strong>Garantía de satisfacción.</strong></li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Precios orientativos para empresas de Sevilla</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Landing Page — desde 800€</h3>
+								<p class="text-sm sm:text-base text-text-muted">Lista en 2-5 días. Perfecta para captación de leads o campañas de marketing.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Web Corporativa — 1.500€ a 3.500€</h3>
+								<p class="text-sm sm:text-base text-text-muted">Lista en 2-4 semanas. Blog, CMS y SEO avanzado incluidos.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Tienda Online — 3.000€ a 6.000€+</h3>
+								<p class="text-sm sm:text-base text-text-muted">Lista en 4-8 semanas. Catálogo completo y gestión de pedidos.</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">¿Tu empresa de Sevilla necesita una web profesional?</h2>
+							<p class="mb-3 text-sm sm:text-base">
+								Cuéntame tu proyecto y en 24 horas te envío un presupuesto claro, sin compromiso.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Sin compromiso<br/>
+								✅ Facturación oficial<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">También trabajo con empresas de toda España</h2>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-espana" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🇪🇸 Desarrollador Web España →</h3>
+								<p class="text-sm text-text-muted">Servicio nacional para empresas de ciudades y pueblos.</p>
+							</a>
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Madrid →</h3>
+								<p class="text-sm text-text-muted">Servicios para empresas de la capital.</p>
+							</a>
+							<a href="/desarrollador-web-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🌊 Desarrollador Web Valencia →</h3>
+								<p class="text-sm text-text-muted">Servicios para empresas valencianas.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Barcelona →</h3>
+								<p class="text-sm text-text-muted">Mi perfil y servicios principales.</p>
+							</a>
+							<a href="/contratar-desarrollador-full-stack" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💻 Contratar Desarrollador Full Stack →</h3>
+								<p class="text-sm text-text-muted">Para proyectos complejos y apps web.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted { color: var(--color-text-muted); }
+	.bg-secondary { background-color: var(--color-secondary); }
+	.prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+	.prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

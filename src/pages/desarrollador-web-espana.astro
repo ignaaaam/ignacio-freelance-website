@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Desarrollador Web España | Freelance Full Stack para Empresas | Ignacio Amat';
+const description = 'Desarrollador web freelance para empresas de cualquier ciudad o pueblo de España. Landing pages, webs corporativas, ecommerce y aplicaciones web desde 800EUR.';
+const canonicalUrl = '/desarrollador-web-espana';
+const keywords = [
+  'desarrollador web espana',
+  'desarrollador web freelance espana',
+  'crear pagina web espana',
+  'diseno web empresas espana',
+  'programador web espana'
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Desarrollo Web Freelance',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'Country',
+    'name': 'España'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': '800EUR-6000EUR+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': baseUrl },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Desarrollador Web España', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': '¿Trabajas solo en ciudades grandes o también en pueblos?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Trabajo con empresas de cualquier ciudad o pueblo de España. El servicio es 100% remoto, con el mismo nivel de calidad y seguimiento.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Qué tipo de proyectos desarrollas para empresas en España?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages, webs corporativas, tiendas online y aplicaciones web a medida. Cada proyecto se adapta a objetivos de captacion, ventas o automatizacion.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Cuanto cuesta una web profesional?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Los proyectos suelen empezar en 800EUR para landing pages y crecer segun alcance. Una web corporativa suele estar entre 1500EUR y 3500EUR.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: canonicalUrl,
+  en: '/en/web-developer-spain'
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+            Desarrollador Web Freelance para Empresas de Toda España
+          </h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Si tu empresa esta en una gran ciudad o en un pueblo pequeno, puedes contratar desarrollo web profesional
+            con enfoque en SEO, rendimiento y conversion. Trabajo en remoto con clientes de toda España.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+            <a href="/contratar-desarrollador-full-stack" class="btn-secondary">Ver Servicio Full Stack</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Servicio nacional para cualquier ciudad o pueblo</h2>
+            <p class="text-base sm:text-lg mb-4">
+              No necesitas una agencia local para tener resultados. Con un proceso remoto bien definido,
+              obtienes una web profesional con la misma calidad, independientemente de donde este tu negocio.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Que puedo desarrollar para tu empresa</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages</h3>
+                <p class="text-sm sm:text-base">Páginas orientadas a captar leads para servicios concretos o campañas.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Webs Corporativas</h3>
+                <p class="text-sm sm:text-base">Sitios completos para empresas con servicios, blog y SEO tecnico.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Tiendas Online</h3>
+                <p class="text-sm sm:text-base">Ecommerce con pagos seguros, catalogo y gestion de pedidos.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Aplicaciones Web</h3>
+                <p class="text-sm sm:text-base">CRMs, paneles internos y herramientas web personalizadas.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cobertura por zonas</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Desarrollador Web Madrid -></h3>
+                <p class="text-sm text-text-muted">Servicios para empresas de Madrid y alrededores.</p>
+              </a>
+              <a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Desarrollador Web Barcelona -></h3>
+                <p class="text-sm text-text-muted">Proyectos para empresas de Barcelona.</p>
+              </a>
+              <a href="/desarrollador-web-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Desarrollador Web Valencia -></h3>
+                <p class="text-sm text-text-muted">Servicios para Valencia y Comunidad Valenciana.</p>
+              </a>
+              <a href="/desarrollador-web-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Desarrollador Web Sevilla -></h3>
+                <p class="text-sm text-text-muted">Servicios para Sevilla y Andalucia.</p>
+              </a>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Quieres visibilidad real en Google?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                Te ayudo a construir una web que no solo se vea bien, sino que atraiga trafico cualificado y genere oportunidades.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                Presupuesto en 24h laborables<br/>
+                Sin compromiso<br/>
+                Facturacion oficial
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

@@ -3,9 +3,68 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 
-const title = 'Hire a Freelance Full-Stack Web Developer | Ignacio Amat';
-const description = 'Hire a freelance full-stack web developer for websites and custom web apps. Remote collaboration, technical SEO, performance, and conversion-focused delivery.';
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Hire a Freelance Full-Stack Web Developer in Spain | Ignacio Amat';
+const description = 'Hire a freelance full-stack web developer for your company. Landing pages, business websites, ecommerce, and custom web apps from EUR800. Remote collaboration across Spain.';
 const canonicalUrl = '/en/hire-full-stack-web-developer';
+const keywords = [
+  'hire full stack web developer spain',
+  'freelance web developer spain',
+  'hire web developer madrid barcelona',
+  'freelance full stack developer',
+  'web development services spain'
+];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'sameAs': [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam'
+  ],
+  'knowsAbout': ['Web Development', 'React', 'Astro', 'Node.js', 'Technical SEO', 'E-commerce']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Freelance Full-Stack Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'Country',
+    'name': 'Spain'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  },
+  'hasOfferCatalog': {
+    '@type': 'OfferCatalog',
+    'name': 'Web development services',
+    'itemListElement': [
+      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'High-converting landing pages' } },
+      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Business websites' } },
+      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Ecommerce websites' } },
+      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Custom web applications' } }
+    ]
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Hire Full-Stack Web Developer', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -13,18 +72,26 @@ const faqSchema = {
   'mainEntity': [
     {
       '@type': 'Question',
-      'name': 'Do you work with clients outside Spain?',
+      'name': 'Do you work with companies outside Barcelona or Madrid?',
       'acceptedAnswer': {
         '@type': 'Answer',
-        'text': 'Yes. I work remotely with international clients across different time zones.'
+        'text': 'Yes. I work remotely with companies across all of Spain, including Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza, and smaller towns.'
       }
     },
     {
       '@type': 'Question',
-      'name': 'What type of projects do you build?',
+      'name': 'What can you build as a full-stack developer?',
       'acceptedAnswer': {
         '@type': 'Answer',
-        'text': 'Landing pages, business websites, ecommerce stores, and custom web applications.'
+        'text': 'I build landing pages, business websites, ecommerce stores, and custom web applications including CRMs, client portals, and API-based systems.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How much does it cost to hire you?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages start at EUR800, business websites range from EUR1500 to EUR3500, ecommerce projects start at EUR3000, and custom applications start around EUR4000 depending on scope.'
       }
     },
     {
@@ -32,10 +99,17 @@ const faqSchema = {
       'name': 'How long does a project take?',
       'acceptedAnswer': {
         '@type': 'Answer',
-        'text': 'It depends on scope. A landing page can be delivered quickly, while larger products usually take several weeks.'
+        'text': 'A landing page usually takes 2-5 days, a business website 2-4 weeks, and a larger custom project 6-16 weeks depending on complexity.'
       }
     }
   ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: '/contratar-desarrollador-full-stack',
+  en: canonicalUrl
 };
 ---
 
@@ -44,29 +118,101 @@ const faqSchema = {
   description={description}
   lang="en"
   canonicalUrl={canonicalUrl}
-  alternateUrls={{ es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' }}
-  additionalSchemas={[faqSchema]}
+  keywords={keywords}
+  alternateUrls={alternateUrls}
+  additionalSchemas={allSchemas}
 >
   <Header />
-  <main class="container py-12 sm:py-16 md:py-20">
-    <section class="max-w-4xl">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Hire a Freelance Full-Stack Web Developer</h1>
-      <p class="text-text-muted text-base sm:text-lg mb-8">
-        If you need to launch or improve a digital product, I help you turn business goals into a website
-        or web app that generates qualified opportunities.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-        <div class="card p-5">
-          <h2 class="text-xl font-semibold mb-2">For companies and startups</h2>
-          <p class="text-text-muted">I build web solutions focused on lead generation and measurable growth.</p>
-        </div>
-        <div class="card p-5">
-          <h2 class="text-xl font-semibold mb-2">Remote international delivery</h2>
-          <p class="text-text-muted">Clear communication in English and Spanish with clients worldwide.</p>
+  <main>
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+            Hire a Freelance Full-Stack Web Developer for Your Company
+          </h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            If your company needs a website or web app that generates leads, sales, or operational efficiency,
+            I can handle the full cycle: frontend, backend, performance, technical SEO, and deployment.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/web-design-businesses" class="btn-secondary">See Web Design Service</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">What I build</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+              <div class="card p-5">
+                <h3 class="text-xl font-semibold mb-2">Landing Pages</h3>
+                <p class="text-text-muted">High-converting pages for campaigns and lead generation.</p>
+              </div>
+              <div class="card p-5">
+                <h3 class="text-xl font-semibold mb-2">Business Websites</h3>
+                <p class="text-text-muted">Scalable websites with clear information architecture and SEO-ready setup.</p>
+              </div>
+              <div class="card p-5">
+                <h3 class="text-xl font-semibold mb-2">Ecommerce</h3>
+                <p class="text-text-muted">Online stores with secure payment flows and product management.</p>
+              </div>
+              <div class="card p-5">
+                <h3 class="text-xl font-semibold mb-2">Custom Web Applications</h3>
+                <p class="text-text-muted">Internal tools, SaaS products, and custom workflows adapted to your business.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Coverage across Spain</h2>
+            <p class="text-base sm:text-lg mb-4">
+              I work remotely with companies in any city or town in Spain. You are not limited to Barcelona or Madrid.
+              The same process works for clients in Valencia, Sevilla, Bilbao, Zaragoza, Malaga, Alicante, and smaller local markets.
+            </p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              <a href="/en/web-developer-spain" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Spain</a>
+              <a href="/en/web-developer-madrid" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Madrid</a>
+              <a href="/en/web-developer-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Barcelona</a>
+              <a href="/en/web-developer-valencia" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Valencia</a>
+              <a href="/en/web-developer-sevilla" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Sevilla</a>
+              <a href="/en/web-design-businesses" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Design for Businesses</a>
+              <a href="/en/create-website-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Website Pricing Guide</a>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why companies hire a freelance instead of an agency</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Direct communication:</strong> no account manager layer.</li>
+              <li><strong>Cost efficiency:</strong> usually 30-50% lower overhead than agencies.</li>
+              <li><strong>Faster iteration:</strong> less bureaucracy, faster decision loops.</li>
+              <li><strong>Technical ownership:</strong> clean code, documentation, and long-term maintainability.</li>
+            </ul>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a clear proposal for your project?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                Tell me what you need and I will send a practical scope, timeline, and price range with no commitment.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                Free quote in 24 business hours<br/>
+                Official invoicing<br/>
+                Technical and SEO-focused delivery
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      <a href="#contacto" class="btn-primary inline-block">Request a quote</a>
     </section>
+
     <Contact />
   </main>
 </Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .card {
+    background-color: var(--color-secondary);
+    border-radius: 0.5rem;
+  }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

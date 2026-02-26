@@ -18,6 +18,10 @@ const routeMappings: Record<string, { es: string; en: string }> = {
   '/terminos': { es: '/terminos', en: '/en/terms' },
   '/crear-pagina-web-barcelona': { es: '/crear-pagina-web-barcelona', en: '/en/create-website-barcelona' },
   '/desarrollador-web-barcelona': { es: '/desarrollador-web-barcelona', en: '/en/web-developer-barcelona' },
+  '/desarrollador-web-espana': { es: '/desarrollador-web-espana', en: '/en/web-developer-spain' },
+  '/desarrollador-web-madrid': { es: '/desarrollador-web-madrid', en: '/en/web-developer-madrid' },
+  '/desarrollador-web-valencia': { es: '/desarrollador-web-valencia', en: '/en/web-developer-valencia' },
+  '/desarrollador-web-sevilla': { es: '/desarrollador-web-sevilla', en: '/en/web-developer-sevilla' },
   '/diseno-web-empresas': { es: '/diseno-web-empresas', en: '/en/web-design-businesses' },
   '/contratar-desarrollador-full-stack': { es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' },
 };

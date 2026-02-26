@@ -1,0 +1,290 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = "Desarrollador Web Freelance en España: Cómo Elegir el Mejor [2026]";
+const description = "Guía completa para contratar un desarrollador web freelance en España. Precios, tecnologías, qué mirar en el portfolio y cómo evitar errores comunes. Con ejemplos reales.";
+const canonicalUrl = "/blog/desarrollador-web-freelance-espana-2026";
+const keywords = ["desarrollador web freelance España", "contratar desarrollador web España", "freelance web España", "cuánto cobra desarrollador web España", "mejor desarrollador web freelance España", "contratar programador web"];
+const publishedDate = "2026-02-26";
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": baseUrl },
+		{ "@type": "ListItem", "position": 2, "name": "Blog", "item": `${baseUrl}/blog` },
+		{ "@type": "ListItem", "position": 3, "name": "Desarrollador Web Freelance España", "item": `${baseUrl}${canonicalUrl}` }
+	]
+};
+
+const articleSchema = {
+	"@context": "https://schema.org",
+	"@type": "Article",
+	"headline": title,
+	"description": description,
+	"image": `${baseUrl}/images/og-image.png`,
+	"author": {
+		"@type": "Person",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"publisher": {
+		"@type": "Organization",
+		"name": "Ignacio Amat - Desarrollo Web",
+		"logo": { "@type": "ImageObject", "url": `${baseUrl}/images/og-image.png` }
+	},
+	"datePublished": publishedDate,
+	"dateModified": publishedDate,
+	"mainEntityOfPage": { "@type": "WebPage", "@id": `${baseUrl}${canonicalUrl}` }
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web freelance en España?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en España cobra entre 800€ y 6.000€+ por proyecto completo. Una landing page cuesta 800-1.500€, una web corporativa 1.500-3.500€ y una tienda online desde 3.000€. La tarifa por hora ronda 40-80€/hora según experiencia y tecnología."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Es mejor contratar un freelance o una agencia web en España?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Para proyectos de hasta 8.000-10.000€, un freelance senior es generalmente la mejor opción: 30-50% más económico, comunicación directa y mayor agilidad. Las agencias son más adecuadas para proyectos grandes y complejos (+15.000€) que requieren múltiples especialistas."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Qué tecnologías usa un buen desarrollador web en España?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "En 2026, los mejores desarrolladores web en España usan React, Astro o Next.js para el frontend, Node.js o Python para el backend, y Tailwind CSS para estilos. Evita a freelances que solo ofrecen WordPress sin personalización, ya que limita el rendimiento y el SEO."
+			}
+		}
+	]
+};
+
+const allSchemas = [breadcrumbSchema, articleSchema, faqSchema];
+---
+<Layout
+	title={title}
+	description={description}
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	type="article"
+	publishedDate={publishedDate}
+	additionalSchemas={allSchemas}
+>
+	<Header />
+	<main>
+		<article class="py-12 sm:py-16 md:py-20">
+			<div class="container px-4 sm:px-6">
+				<div class="max-w-3xl mx-auto">
+
+					<!-- Breadcrumb -->
+					<nav class="flex items-center gap-2 text-sm text-text-muted mb-6">
+						<a href="/" class="hover:text-accent">Inicio</a>
+						<span>/</span>
+						<a href="/blog" class="hover:text-accent">Blog</a>
+						<span>/</span>
+						<span>Desarrollador Web Freelance España</span>
+					</nav>
+
+					<!-- Header -->
+					<div class="mb-8">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							Guía
+						</span>
+						<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+							Desarrollador Web Freelance en España: Cómo Elegir el Mejor [2026]
+						</h1>
+						<div class="flex items-center gap-4 text-sm text-text-muted">
+							<span>Ignacio Amat</span>
+							<span>·</span>
+							<span>26 de febrero, 2026</span>
+							<span>·</span>
+							<span>10 min lectura</span>
+						</div>
+					</div>
+
+					<!-- Intro -->
+					<p class="text-lg sm:text-xl text-text-muted mb-8 leading-relaxed">
+						Contratar un desarrollador web freelance en España puede marcar la diferencia entre un proyecto
+						que fracasa y uno que genera negocio real. En esta guía te explico qué mirar, qué preguntar
+						y cómo evitar los errores más comunes que cometen las empresas españolas al buscar un freelance.
+					</p>
+
+					<div class="prose prose-lg max-w-none">
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Por qué cada vez más empresas españolas buscan desarrolladores freelance</h2>
+						<p class="mb-4">
+							El mercado de desarrollo web en España ha cambiado drásticamente. Las empresas han aprendido que
+							una agencia no siempre es sinónimo de mejor calidad —a menudo es sinónimo de mayor precio y más burocracia.
+							Un desarrollador freelance senior puede ofrecer el mismo nivel técnico con mayor agilidad y a un coste
+							30-50% inferior.
+						</p>
+						<p class="mb-4">
+							Además, el trabajo remoto ha eliminado las barreras geográficas. Una empresa de Zaragoza, Málaga o
+							Bilbao puede contratar al mejor desarrollador disponible en España sin importar dónde esté ubicado.
+							Esto ha democratizado el acceso a talento de primer nivel.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Cuánto cobra un desarrollador web freelance en España en 2026?</h2>
+						<p class="mb-4">Los precios varían mucho según la experiencia y el tipo de proyecto:</p>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-5 rounded-lg">
+								<h3 class="font-bold mb-1">Landing Page — 800€ a 1.500€</h3>
+								<p class="text-sm text-text-muted">Una página orientada a conversión, lista en 2-5 días. Perfecta para campañas de Google Ads o captación de leads.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-5 rounded-lg">
+								<h3 class="font-bold mb-1">Web Corporativa — 1.500€ a 3.500€</h3>
+								<p class="text-sm text-text-muted">Varios servicios, blog, formulario de contacto y SEO avanzado. Lista en 2-4 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-5 rounded-lg">
+								<h3 class="font-bold mb-1">Tienda Online — 3.000€ a 6.000€+</h3>
+								<p class="text-sm text-text-muted">Catálogo completo, pasarela de pago y gestión de pedidos. Lista en 4-8 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-5 rounded-lg">
+								<h3 class="font-bold mb-1">Aplicación Web a Medida — desde 4.000€</h3>
+								<p class="text-sm text-text-muted">CRMs, plataformas SaaS o herramientas internas. Presupuesto según alcance.</p>
+							</div>
+						</div>
+						<p class="mb-4">
+							<strong>Ojo con las ofertas demasiado baratas.</strong> Un desarrollador que ofrece una web corporativa
+							por 300-400€ probablemente usa plantillas genéricas de WordPress sin personalización, lo que limita
+							el rendimiento, la seguridad y el SEO. Esto puede costarle más caro a tu empresa a largo plazo.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Qué tecnologías debe dominar un buen desarrollador web en 2026</h2>
+						<p class="mb-4">El stack tecnológico importa más de lo que parece. Afecta directamente a la velocidad de carga, el SEO y la facilidad de mantenimiento:</p>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+							<li><strong>Frontend moderno:</strong> React, Astro, Next.js o Vue.js. Evita a freelances que solo saben HTML estático o jQuery.</li>
+							<li><strong>Estilos eficientes:</strong> Tailwind CSS o CSS moderno. Las webs deben ser ligeras y rápidas.</li>
+							<li><strong>Backend sólido:</strong> Node.js, Python/Django o similar. Para proyectos que requieren lógica de servidor.</li>
+							<li><strong>SEO técnico:</strong> Conocimiento de Core Web Vitals, schema markup, hreflang y optimización de imágenes.</li>
+							<li><strong>Pasarelas de pago:</strong> Stripe, Redsys (Servired), Bizum — imprescindible para e-commerce en España.</li>
+						</ul>
+						<p class="mb-4">
+							<strong>Red flag importante:</strong> Si un freelance solo trabaja con WordPress y no puede explicarte
+							qué son los Core Web Vitals, es probable que tu web no esté optimizada para SEO ni para velocidad.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">5 preguntas que debes hacerle a un desarrollador web antes de contratar</h2>
+						<ol class="list-decimal pl-5 sm:pl-6 space-y-4 mb-8">
+							<li>
+								<strong>¿Puedo ver tu portfolio con URLs reales?</strong>
+								<p class="text-text-muted mt-1">Comprueba que las webs del portfolio cargan rápido y están bien estructuradas. Pásalas por PageSpeed Insights de Google.</p>
+							</li>
+							<li>
+								<strong>¿Emites factura oficial?</strong>
+								<p class="text-text-muted mt-1">Imprescindible para desgravar el coste del proyecto como inversión empresarial. Huye de quien solo acepta transferencia sin factura.</p>
+							</li>
+							<li>
+								<strong>¿El SEO está incluido o es un extra?</strong>
+								<p class="text-text-muted mt-1">Un buen desarrollador incluye la optimización básica de SEO en el precio, no la vende aparte como "extra".</p>
+							</li>
+							<li>
+								<strong>¿Qué ocurre si no estoy contento con el resultado?</strong>
+								<p class="text-text-muted mt-1">Busca a alguien que ofrezca revisiones incluidas y garantía de satisfacción.</p>
+							</li>
+							<li>
+								<strong>¿Cómo es la estructura de pagos?</strong>
+								<p class="text-text-muted mt-1">Lo habitual y justo es 50% al inicio y 50% en la entrega. Desconfía de quien pide el 100% por adelantado.</p>
+							</li>
+						</ol>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Freelance vs. agencia: ¿Qué conviene más a tu empresa?</h2>
+						<div class="grid sm:grid-cols-2 gap-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-5 rounded-lg">
+								<h3 class="font-bold mb-3">✅ Elige un freelance si...</h3>
+								<ul class="text-sm space-y-1 text-text-muted">
+									<li>· Tu presupuesto es inferior a 8.000-10.000€</li>
+									<li>· Quieres comunicación directa y rápida</li>
+									<li>· Necesitas agilidad en cambios y revisiones</li>
+									<li>· Tu proyecto tiene un alcance bien definido</li>
+								</ul>
+							</div>
+							<div class="bg-secondary p-4 sm:p-5 rounded-lg">
+								<h3 class="font-bold mb-3">🏢 Elige una agencia si...</h3>
+								<ul class="text-sm space-y-1 text-text-muted">
+									<li>· Tu proyecto requiere +15.000€ de inversión</li>
+									<li>· Necesitas múltiples especialistas simultáneos</li>
+									<li>· Tienes necesidades de branding y estrategia</li>
+									<li>· Prefieres un contrato de servicio corporativo</li>
+								</ul>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Dónde encontrar buenos desarrolladores web freelance en España</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+							<li><strong>LinkedIn:</strong> Busca por "desarrollador web freelance" + tu ciudad. Revisa el perfil, proyectos y recomendaciones.</li>
+							<li><strong>Google:</strong> Busca "desarrollador web freelance + tu ciudad". Los que aparecen en los primeros resultados saben de SEO —buena señal.</li>
+							<li><strong>Plataformas como Malt o Freelancer:</strong> Tienen reviews de otros clientes, lo que reduce el riesgo.</li>
+							<li><strong>Referencias:</strong> Pregunta a otras empresas de tu sector quién les ha hecho la web.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Errores comunes al contratar un desarrollador web en España</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+							<li><strong>Elegir solo por precio:</strong> La web más barata suele ser la más cara a largo plazo (en tiempo perdido, SEO dañado o necesidad de rehacerla).</li>
+							<li><strong>No pedir el código fuente:</strong> Asegúrate de que la web quede en tu poder, no hospedada en la cuenta del freelance.</li>
+							<li><strong>No definir el alcance por escrito:</strong> Siempre con contrato o propuesta detallada para evitar malentendidos.</li>
+							<li><strong>Ignorar el rendimiento y el SEO:</strong> Una web bonita que no carga rápido ni aparece en Google no te genera negocio.</li>
+							<li><strong>No preguntar por mantenimiento:</strong> ¿Quién actualiza la web después? ¿Quién soluciona un problema técnico?</li>
+						</ul>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-10 mb-8">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">¿Buscas un desarrollador web freelance para tu empresa?</h2>
+							<p class="mb-3">
+								Soy Ignacio Amat, desarrollador full stack freelance con experiencia en proyectos para empresas de
+								toda España. Trabajo en remoto, emito factura oficial y ofrezco garantía de satisfacción.
+								Cuéntame tu proyecto y te envío presupuesto gratuito en 24h.
+							</p>
+							<div class="flex flex-wrap gap-3 mt-4">
+								<a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Más recursos útiles</h2>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+							<a href="/contratar-desarrollador-full-stack" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💻 Contratar Desarrollador Full Stack →</h3>
+								<p class="text-sm text-text-muted">Mis servicios y stack tecnológico completo.</p>
+							</a>
+							<a href="/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💰 Cuánto cuesta una web en 2026 →</h3>
+								<p class="text-sm text-text-muted">Desglose detallado de precios por tipo de proyecto.</p>
+							</a>
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Madrid →</h3>
+								<p class="text-sm text-text-muted">Servicios para empresas de la capital.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🎨 Diseño Web para Empresas →</h3>
+								<p class="text-sm text-text-muted">Diseños orientados a conversión y resultados.</p>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted { color: var(--color-text-muted); }
+	.bg-secondary { background-color: var(--color-secondary); }
+	.prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+	.prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

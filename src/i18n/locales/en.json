@@ -11,8 +11,8 @@
     "viewPricing": "View Pricing"
   },
   "hero": {
-    "title": "Freelance full-stack web developer for companies worldwide",
-    "subtitle": "Need a website or web app that helps you generate revenue? I am Ignacio Amat, a freelance full-stack developer. I design, build, and optimize fast, secure digital products prepared for international SEO. I work remotely with clients worldwide. Free quote, no commitment.",
+    "title": "Freelance full-stack web developer for companies across Spain",
+    "subtitle": "Need a website that generates qualified leads? I am Ignacio Amat, a freelance full-stack web developer. I work remotely with companies in Madrid, Barcelona, Valencia, Sevilla, across Spain, and international markets. Fast websites, technical SEO, and conversion-focused delivery. Free quote, no commitment.",
     "cta": "Get Free Quote",
     "services": "View Website Types"
   },
@@ -22,7 +22,7 @@
     "value": "My commitment is high-quality web development with full transparency: official invoicing, clear planning, and direct communication. Every project is built to scale with strong performance, maintainable architecture, and technical SEO to attract qualified leads.",
     "benefits": [
       "Proven experience delivering projects for businesses in multiple sectors and markets",
-      "International remote collaboration with clear process and phased delivery",
+      "Remote collaboration across Spain and international markets with a clear process and phased delivery",
       "Modern technologies for fast and secure websites",
       "Continuous support and post-launch maintenance",
       "Competitive quality-price ratio for your business"
@@ -240,7 +240,7 @@
     "success": "Message sent successfully!",
     "error": "There was an error sending your message.",
     "directContact": "Direct contact",
-    "location": "Remote · Worldwide clients",
+    "location": "Remote · Clients in Spain and worldwide",
     "response": "Response",
     "responseTime": "Response within 24 business hours (CET timezone)",
     "project": "Project",
@@ -272,22 +272,22 @@
   },
   "footer": {
     "copyright": "All rights reserved.",
-    "fullCopyright": "Freelance full-stack web development: design, engineering, and technical SEO focused on generating qualified leads in international markets.",
+    "fullCopyright": "Freelance full-stack web development: design, engineering, and technical SEO focused on generating qualified leads in Spain and international markets.",
     "privacy": "Privacy Policy",
     "legal": "Legal Notice",
     "terms": "Terms and Conditions"
   },
   "seo": {
     "home": {
-      "title": "Freelance Full-Stack Web Developer | Websites and Web Apps for Business",
-      "description": "I build high-converting landing pages, business websites, and custom web apps for companies worldwide. Technical SEO, performance, and conversion-focused delivery."
+      "title": "Freelance Web Developer Spain | Landing Pages and Business Websites | Ignacio Amat",
+      "description": "Freelance full-stack web developer for companies in Spain and international markets. High-converting landing pages, business websites, and web apps from EUR800. Madrid, Barcelona, Valencia, Sevilla, and beyond."
     },
     "contact": {
       "title": "Request a Web Project Quote | Contact Ignacio Amat",
-      "description": "Tell me about your project and get a clear proposal within 24 business hours. Remote collaboration for clients worldwide."
+      "description": "Tell me about your project and get a clear proposal within 24 business hours. Remote collaboration for companies in Spain and international markets."
     },
     "hero": {
-      "imageAlt": "Professional full-stack web development for international companies"
+      "imageAlt": "Professional full-stack web development for companies across Spain"
     },
     "privacy": {
       "title": "Privacy Policy - Ignacio Amat | Web Development",

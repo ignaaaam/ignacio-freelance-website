@@ -26,16 +26,32 @@ const professionalServiceSchema = {
 	"@context": "https://schema.org",
 	"@type": "ProfessionalService",
 	"@id": `${baseUrl}${canonicalUrl}#professional-service`,
-	"name": "Ignacio Amat",
+	"name": "Ignacio Amat - Desarrollador Web Freelance",
 	"url": `${baseUrl}${canonicalUrl}`,
 	"image": `${baseUrl}/images/og-image.png`,
 	"description": description,
 	"founder": {
 		"@type": "Person",
-		"name": "Ignacio Amat"
+		"name": "Ignacio Amat",
+		"jobTitle": "Desarrollador Web Full Stack Freelance",
+		"url": baseUrl,
+		"sameAs": [
+			"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
+			"https://github.com/ignaaaam",
+			"https://x.com/ignathedev"
+		]
 	},
-	"areaServed": "Worldwide",
+	"areaServed": [
+		{ "@type": "Country", "name": "España" },
+		{ "@type": "City", "name": "Madrid" },
+		{ "@type": "City", "name": "Barcelona" },
+		{ "@type": "City", "name": "Valencia" },
+		{ "@type": "City", "name": "Sevilla" },
+		{ "@type": "City", "name": "Bilbao" },
+		{ "@type": "City", "name": "Zaragoza" }
+	],
 	"availableLanguage": ["es", "en"],
+	"priceRange": "€€",
 	"sameAs": [
 		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
 		"https://github.com/ignaaaam",
@@ -52,7 +68,7 @@ const serviceSchema = {
 		"name": "Ignacio Amat",
 		"url": baseUrl
 	},
-	"areaServed": "Worldwide",
+	"areaServed": "España y clientes internacionales en remoto",
 	"availableChannel": {
 		"@type": "ServiceChannel",
 		"serviceUrl": `${baseUrl}/contact`
@@ -173,7 +189,27 @@ const allSchemas = [
 		<div class="container px-4 sm:px-6">
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
 				<div>
-					<h3 class="text-sm font-semibold mb-4">Servicios Globales</h3>
+					<h3 class="text-sm font-semibold mb-4">Por Ciudad</h3>
+					<nav class="flex flex-col gap-2">
+						<a href="/desarrollador-web-espana" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Desarrollador Web España
+						</a>
+						<a href="/desarrollador-web-madrid" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Desarrollador Web Madrid
+						</a>
+						<a href="/desarrollador-web-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Desarrollador Web Barcelona
+						</a>
+						<a href="/desarrollador-web-valencia" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Desarrollador Web Valencia
+						</a>
+						<a href="/desarrollador-web-sevilla" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
+							Desarrollador Web Sevilla
+						</a>
+					</nav>
+				</div>
+				<div>
+					<h3 class="text-sm font-semibold mb-4">Servicios</h3>
 					<nav class="flex flex-col gap-2">
 						<a href="/contratar-desarrollador-full-stack" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
 							Contratar Desarrollador Full Stack
@@ -181,19 +217,8 @@ const allSchemas = [
 						<a href="/diseno-web-empresas" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
 							Diseño Web para Empresas
 						</a>
-						<a href="/desarrollador-web-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Desarrollador Web Barcelona
-						</a>
-					</nav>
-				</div>
-				<div>
-					<h3 class="text-sm font-semibold mb-4">Por Sector</h3>
-					<nav class="flex flex-col gap-2">
 						<a href="/pagina-web-restaurantes-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
 							Web Restaurantes
-						</a>
-						<a href="/pagina-web-clinicas-dentistas-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Clínicas y Dentistas
 						</a>
 						<a href="/pagina-web-abogados-despachos-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
 							Web Abogados
@@ -220,7 +245,7 @@ const allSchemas = [
 				<div>
 					<h3 class="text-sm font-semibold mb-4">Contacto</h3>
 					<p class="text-xs sm:text-sm text-text-muted mb-4">
-						¿Necesitas una web o app para tu empresa? Trabajo en remoto con clientes de todo el mundo.
+						¿Necesitas una web o app para tu empresa? Trabajo en remoto con empresas de España y clientes internacionales.
 					</p>
 					<p class="text-xs sm:text-sm text-text-muted mb-2">
 						Desarrollador web freelance full stack con enfoque en SEO, conversion y rendimiento.

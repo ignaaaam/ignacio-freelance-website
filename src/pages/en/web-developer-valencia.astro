@@ -1,0 +1,180 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Web Developer Valencia | Freelance Full-Stack | Ignacio Amat';
+const description = 'Freelance web developer for companies in Valencia. Landing pages, business websites, ecommerce, and custom web apps from EUR800. Remote collaboration and free quote.';
+const canonicalUrl = '/en/web-developer-valencia';
+const keywords = ['web developer valencia', 'freelance web developer valencia', 'website development valencia', 'landing page valencia', 'business website valencia'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Valencia'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Valencia', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How much does web development cost in Valencia?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Typical projects range from EUR800 to EUR6000+ depending on features and scope. Landing pages start around EUR800 and full ecommerce projects usually start at EUR3000.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can we work remotely if my company is in Valencia?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I work remotely with companies in Valencia and all of Spain. Communication is handled through video calls, email, and project management tools.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How long does it take to launch a website?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages can be ready in 2-5 days, business websites in 2-4 weeks, and ecommerce projects in 4-8 weeks.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-valencia',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Valencia</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            I help companies in Valencia launch websites that load fast, rank in Google,
+            and convert traffic into real business opportunities.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/hire-full-stack-web-developer" class="btn-secondary">See Full-Stack Service</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">What I build for Valencia-based businesses</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages</h3>
+                <p class="text-sm sm:text-base">Built to capture leads for campaigns and specific services.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Business Websites</h3>
+                <p class="text-sm sm:text-base">Professional multi-page websites with technical SEO and strong structure.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Ecommerce Sites</h3>
+                <p class="text-sm sm:text-base">Online stores with secure payment integrations and simple management.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Custom Web Apps</h3>
+                <p class="text-sm sm:text-base">Portals, internal systems, and SaaS tools tailored to your operations.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why companies in Valencia hire me</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Clear process:</strong> scope, timeline, and pricing from day one.</li>
+              <li><strong>Direct execution:</strong> no account manager bottlenecks.</li>
+              <li><strong>SEO-ready delivery:</strong> structured content, metadata, schema, and performance.</li>
+              <li><strong>Nationwide service:</strong> remote collaboration for any city or town in Spain.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">More city-specific pages</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Spain -></h3>
+                <p class="text-sm text-text-muted">Nationwide service for any city or town in Spain.</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Web services for Madrid-based companies.</p>
+              </a>
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Landing pages and complex business projects.</p>
+              </a>
+              <a href="/en/web-developer-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Sevilla -></h3>
+                <p class="text-sm text-text-muted">Service page for Sevilla and Andalusia.</p>
+              </a>
+              <a href="/en/web-design-businesses" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Design for Businesses -></h3>
+                <p class="text-sm text-text-muted">UX and conversion-driven web design service.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

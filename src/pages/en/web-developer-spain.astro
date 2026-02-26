@@ -1,0 +1,185 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Web Developer Spain | Freelance Full-Stack for Businesses | Ignacio Amat';
+const description = 'Freelance web developer for companies in any city or town in Spain. Landing pages, business websites, ecommerce, and custom web apps from EUR800.';
+const canonicalUrl = '/en/web-developer-spain';
+const keywords = [
+  'web developer spain',
+  'freelance web developer spain',
+  'website development spain',
+  'business web design spain',
+  'hire web developer spain'
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Freelance Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'Country',
+    'name': 'Spain'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Spain', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'Do you only work with large cities?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No. I work with companies in any city or town in Spain through a fully remote process.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What services do you offer nationwide?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'I build landing pages, business websites, ecommerce stores, and custom web applications with SEO and performance best practices.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How much does a website project usually cost?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Projects usually start at EUR800 for landing pages. Business websites often range between EUR1500 and EUR3500 depending on scope.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-espana',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+            Freelance Web Developer for Companies Across Spain
+          </h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            If your business is in a major city or a small town, you can still get high-quality web development
+            focused on SEO, speed, and conversion. I work remotely with companies across all of Spain.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/hire-full-stack-web-developer" class="btn-secondary">See Full-Stack Service</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Nationwide service for any city or town</h2>
+            <p class="text-base sm:text-lg mb-4">
+              You do not need a local agency to get results. With a clear remote workflow, your company can launch
+              a website that attracts qualified traffic and generates more inbound opportunities.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">What I can build for your company</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages</h3>
+                <p class="text-sm sm:text-base">Lead-focused pages for campaigns, launches, and service offers.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Business Websites</h3>
+                <p class="text-sm sm:text-base">Professional websites with clear structure and technical SEO.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Ecommerce Stores</h3>
+                <p class="text-sm sm:text-base">Online stores with secure payments and scalable architecture.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Custom Web Apps</h3>
+                <p class="text-sm sm:text-base">Internal systems, portals, and tailored SaaS workflows.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">City pages and local intent coverage</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Service page for Madrid and surrounding areas.</p>
+              </a>
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Service page for Barcelona companies.</p>
+              </a>
+              <a href="/en/web-developer-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Valencia -></h3>
+                <p class="text-sm text-text-muted">Service page for Valencia and nearby markets.</p>
+              </a>
+              <a href="/en/web-developer-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Sevilla -></h3>
+                <p class="text-sm text-text-muted">Service page for Sevilla and Andalusia.</p>
+              </a>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Need stronger visibility and inbound leads?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                I can help you launch a website that supports SEO growth and drives more qualified business inquiries.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                Free quote in 24 business hours<br/>
+                No commitment<br/>
+                Official invoicing
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

@@ -11,8 +11,8 @@
     "viewPricing": "Ver Precios"
   },
   "hero": {
-    "title": "Desarrollador web freelance full stack para empresas de todo el mundo",
-    "subtitle": "¿Buscas una web o app que te ayude a vender más? Soy Ignacio Amat, desarrollador web freelance full stack. Diseño, desarrollo y optimizo proyectos digitales rápidos, seguros y preparados para SEO internacional. Trabajo en remoto con clientes de cualquier país. Presupuesto gratuito sin compromiso.",
+    "title": "Desarrollador web freelance full stack para empresas de toda España",
+    "subtitle": "¿Tu empresa necesita una web que genere clientes? Soy Ignacio Amat, desarrollador web freelance full stack. Trabajo en remoto con empresas de Madrid, Barcelona, Valencia, Sevilla y toda España. Webs rápidas, SEO real y enfoque en conversión. Presupuesto gratuito sin compromiso.",
     "cta": "Solicitar Presupuesto Gratuito",
     "services": "Ver Tipos de Webs"
   },
@@ -22,7 +22,7 @@
     "value": "Mi compromiso es ofrecer desarrollo web de alta calidad con total transparencia: facturación oficial, planificación clara y comunicación directa. Cada proyecto se construye para crecer: buen rendimiento, arquitectura mantenible y SEO técnico para captar demanda cualificada.",
     "benefits": [
       "Experiencia real en proyectos para empresas de distintos sectores y mercados",
-      "Trabajo remoto internacional con procesos claros y entregas por fases",
+      "Trabajo remoto con empresas de toda España y clientes internacionales, con procesos claros y entregas por fases",
       "Tecnologías modernas para sitios web rápidos y seguros",
       "Soporte continuo y mantenimiento post-lanzamiento",
       "Relación calidad-precio competitiva para tu negocio"
@@ -240,7 +240,7 @@
     "success": "¡Mensaje enviado con éxito!",
     "error": "Hubo un error al enviar tu mensaje.",
     "directContact": "Contacto directo",
-    "location": "Remoto · Clientes en todo el mundo",
+    "location": "Remoto · Clientes en España e internacional",
     "response": "Respuesta",
     "responseTime": "Respuesta en 24h laborables (zona horaria CET)",
     "project": "Proyecto",
@@ -272,22 +272,22 @@
   },
   "footer": {
     "copyright": "Todos los derechos reservados.",
-    "fullCopyright": "Desarrollo web freelance full stack: diseño, programación y SEO técnico para captar clientes en mercados internacionales.",
+    "fullCopyright": "Desarrollo web freelance full stack: diseño, programación y SEO técnico para captar clientes en España y mercados internacionales.",
     "privacy": "Política de Privacidad",
     "legal": "Aviso Legal",
     "terms": "Términos y Condiciones"
   },
   "seo": {
     "home": {
-      "title": "Desarrollador Web Freelance Full Stack | Webs y Apps para Empresas",
-      "description": "Desarrollo landing pages, webs corporativas y aplicaciones web a medida para empresas de todo el mundo. SEO técnico, rendimiento y enfoque en conversión."
+      "title": "Desarrollador Web Freelance España | Landing Pages y Webs para Empresas | Ignacio Amat",
+      "description": "Desarrollador web freelance full stack para empresas de toda España. Landing pages, webs corporativas y aplicaciones web desde 800€. Madrid, Barcelona, Valencia, Sevilla y toda España. Presupuesto gratuito."
     },
     "contact": {
       "title": "Solicitar Presupuesto Web | Contacto Ignacio Amat",
-      "description": "Cuéntame tu proyecto y recibe una propuesta clara en 24h laborables. Trabajo remoto para clientes de España y mercado internacional."
+      "description": "Cuéntame tu proyecto y recibe una propuesta clara en 24h laborables. Trabajo remoto para empresas de España y mercado internacional."
     },
     "hero": {
-      "imageAlt": "Desarrollo web profesional full stack para empresas internacionales"
+      "imageAlt": "Desarrollo web profesional full stack para empresas de España e internacionales"
     },
     "privacy": {
       "title": "Política de Privacidad - Ignacio Amat | Desarrollo Web",
