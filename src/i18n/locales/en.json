@@ -225,7 +225,7 @@
       },
       {
         "question": "What is the usual investment for a professional landing page?",
-        "answer": "A professional landing page usually ranges from EUR800 to EUR1500 depending on goals, copy, design, and features. I send a clear custom quote after reviewing your case."
+        "answer": "A professional landing page usually ranges from €800 to €1,500 depending on goals, copy, design, and features. I send a clear custom quote after reviewing your case."
       }
     ]
   },
@@ -264,10 +264,10 @@
     "company": "Company (optional)",
     "budget": "Estimated budget (optional)",
     "budgetOptions": [
-      "EUR800 - EUR1500",
-      "EUR1500 - EUR3500",
-      "EUR3500 - EUR7000",
-      "EUR7000+"
+      "€800 – €1,500",
+      "€1,500 – €3,500",
+      "€3,500 – €7,000",
+      "€7,000+"
     ]
   },
   "footer": {
