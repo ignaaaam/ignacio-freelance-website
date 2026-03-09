@@ -6,7 +6,6 @@ import { siteConfig } from '../data/siteConfig';
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].hero;
 const isEnglish = locale === 'en';
-const panelStatus = isEnglish ? 'Open for selected projects' : 'Disponible para proyectos seleccionados';
 const panelFocusLabel = isEnglish ? 'Typical fit' : 'Encaje habitual';
 const panelCapabilitiesLabel = isEnglish ? 'In brief' : 'En breve';
 const panelContactLabel = isEnglish ? 'Direct contact' : 'Contacto directo';
@@ -34,11 +33,6 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
     </div>
 
     <aside class="hero__panel surface-card" data-sr>
-      <div class="hero__panel-status">
-        <span class="hero__status-dot"></span>
-        <span>{panelStatus}</span>
-      </div>
-
       <div class="hero__panel-header">
         <div class="hero__portrait-visual">
           <span>IA</span>
@@ -144,31 +138,6 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
     inset: 0 0 auto;
     height: 1px;
     background: linear-gradient(90deg, rgba(184, 104, 54, 0.3), rgba(33, 68, 63, 0.45));
-  }
-
-  .hero__panel-status {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
-    width: fit-content;
-    padding: 0.28rem 0.68rem;
-    border: 1px solid rgba(33, 68, 63, 0.14);
-    border-radius: 999px;
-    background: rgba(255, 252, 247, 0.78);
-    font-size: 0.72rem;
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--theme-highlight);
-  }
-
-  .hero__status-dot {
-    width: 0.48rem;
-    height: 0.48rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--theme-accent), var(--theme-highlight));
-    box-shadow: 0 0 0 0.18rem rgba(184, 104, 54, 0.13);
   }
 
   .hero__panel-header {
