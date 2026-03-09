@@ -1,0 +1,258 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Website Redesign and Improvements for Your Business | Ignacio Amat';
+const description = 'Website redesign and improvement work for businesses that need a clearer, faster and more credible site with stronger UX, SEO and conversion foundations.';
+const canonicalUrl = '/en/website-redesign-improvements';
+const keywords = [
+  'website redesign',
+  'website improvement',
+  'web optimization',
+  'update website',
+  'improve existing website',
+  'professional website redesign',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Website Redesign and Improvements',
+  'provider': {
+    '@type': 'ProfessionalService',
+    'name': 'Ignacio Amat - Web Developer',
+    'url': baseUrl,
+  },
+  'areaServed': { '@type': 'Country', 'name': 'Spain' },
+  'description': 'Professional website redesign and technical improvement services. Speed optimization, UX, SEO, and conversion rate optimization.',
+  'offers': {
+    '@type': 'AggregateOffer',
+    'lowPrice': '1200',
+    'highPrice': '6000',
+    'priceCurrency': 'EUR',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'When is a full website redesign necessary?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'A full redesign is necessary when the website is 4-5+ years old, uses obsolete technology, is not mobile-responsive, or has issues so deep that partial improvements are not enough.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'How much does a website redesign cost?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Technical improvements (speed, SEO, security, UX) start from €1,200. A full website redesign with new structure and design starts from €2,500 and can reach €6,000+ depending on complexity.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Will I lose my SEO rankings if I redesign?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No, if done correctly. I maintain existing URLs or set up proper 301 redirects, preserve SEO tags, and transfer domain authority. A well-executed redesign improves rankings in the medium term.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'How long does a redesign take?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Technical improvements: 1-2 weeks. Full redesign: 3-8 weeks depending on the size and complexity of the project.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you work with any CMS or technology?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'I analyze your existing site regardless of current technology. For redesigns, I work with Astro, Next.js, and React for high-performance modern projects. I can also help with WordPress optimization.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you issue official invoices?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I issue official invoices for businesses and freelancers.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Website Redesign', 'item': `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const facts = [
+  { label: 'When it helps', value: 'Low conversion, outdated design, weak mobile UX, slow performance or SEO issues.' },
+  { label: 'Approach', value: 'Audit first, then improve what matters or redesign when patching is no longer efficient.' },
+  { label: 'Outcome', value: 'A clearer website with stronger trust, faster performance and better lead generation.' },
+];
+---
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang='en'
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={{ es: '/rediseno-web-mejoras', en: '/en/website-redesign-improvements' }}
+  badge="Website redesign"
+  pageTitle="Website redesign and improvement work focused on trust, speed and conversion"
+  lead="If your current website looks outdated, loads slowly or fails to turn traffic into enquiries, I help you fix the real issues first and redesign where it makes business sense."
+  primaryCta={{ label: 'Request a quote', href: '#contacto' }}
+  secondaryCta={{ label: 'See business web design', href: '/en/web-design-businesses' }}
+  facts={facts}
+>
+          <div class="prose prose-lg max-w-none">
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Signs your website needs improvements or a redesign</h2>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Slow loading</h3>
+                <p class="text-sm sm:text-base">If your site takes more than 3 seconds to load, you lose over 50% of visitors before they see anything. Google also penalizes slow sites in search rankings.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Outdated design</h3>
+                <p class="text-sm sm:text-base">A design from 5+ years ago projects an image of a dated business and generates distrust. Users evaluate a business's credibility in less than 0.1 seconds.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Poor mobile experience</h3>
+                <p class="text-sm sm:text-base">Over 60% of web traffic comes from smartphones. If your site isn't mobile-adapted, you're losing more than half your potential customers.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Low conversions</h3>
+                <p class="text-sm sm:text-base">Many visits but few contacts, calls, or sales. This indicates the site isn't guiding users toward action and that CTAs aren't working.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Stagnant SEO</h3>
+                <p class="text-sm sm:text-base">No organic traffic growth for months. There are likely technical SEO issues: missing heading structure, no schema markup, unoptimized meta tags.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Security vulnerabilities</h3>
+                <p class="text-sm sm:text-base">Outdated plugins, old CMS versions, or lack of HTTPS expose your site to attacks. A security breach can take your business offline overnight.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Specific problems I solve</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-3 mb-6 text-sm sm:text-base">
+              <li><strong>Loading speed:</strong> Image optimization, dead code removal, lazy loading, asset compression, and Core Web Vitals improvement to achieve Lighthouse scores above 90.</li>
+              <li><strong>User experience (UX):</strong> Information architecture review, simplified navigation, improved readability, and redesigned conversion flows.</li>
+              <li><strong>Technical SEO:</strong> Crawl error fixes, JSON-LD schema markup, hreflang tags, proper heading structure, canonical tags, and sitemap configuration.</li>
+              <li><strong>Mobile adaptation:</strong> Responsive design that works perfectly on any screen size with intuitive touch menus and optimized mobile loading times.</li>
+              <li><strong>Security:</strong> HTTPS upgrade, security header configuration, dependency updates, and removal of vulnerable plugins.</li>
+              <li><strong>Conversion:</strong> CTA review and improvement, contact forms, social proof, and trust elements that increase the percentage of visitors converting to leads.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Targeted improvements vs. full redesign</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Improvements & optimization</h3>
+                <p class="text-sm sm:text-base mb-3">Ideal when the base structure and design are solid but there are technical or performance issues holding back results.</p>
+                <ul class="text-sm space-y-1">
+                  <li>Speed optimization & Core Web Vitals</li>
+                  <li>Technical SEO & error fixes</li>
+                  <li>UX improvements on specific sections</li>
+                  <li>Security updates</li>
+                  <li>From €1,200 — ready in 1-2 weeks</li>
+                </ul>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Full website redesign</h3>
+                <p class="text-sm sm:text-base mb-3">Necessary when the design is very outdated, technology is obsolete, or problems are too deep for patches.</p>
+                <ul class="text-sm space-y-1">
+                  <li>New modern responsive visual design</li>
+                  <li>Redefined information architecture</li>
+                  <li>Updated technology (Astro, Next.js, React)</li>
+                  <li>SEO integrated from day one</li>
+                  <li>From €2,500 — ready in 3-8 weeks</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Before and after: what changes with a redesign</h2>
+            <div class="bg-secondary p-4 sm:p-6 rounded-lg mb-8">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <h3 class="font-bold text-base mb-2 text-red-500">Before redesign</h3>
+                  <ul class="text-sm space-y-1 text-text-muted">
+                    <li>8-12 second load time</li>
+                    <li>Lighthouse score: 30-45</li>
+                    <li>Bounce rate: 80%+</li>
+                    <li>No organic rankings</li>
+                    <li>No mobile conversions</li>
+                    <li>2015-2018 design</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base mb-2 text-accent">After redesign</h3>
+                  <ul class="text-sm space-y-1 text-text-muted">
+                    <li>Under 1.5 second load time</li>
+                    <li>Lighthouse score: 90-100</li>
+                    <li>Bounce rate: 40-55%</li>
+                    <li>Organic growth in 2-4 months</li>
+                    <li>Conversions from all devices</li>
+                    <li>Modern brand-consistent design</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions about website redesign</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">When is a full redesign necessary?</h3>
+                <p class="text-sm sm:text-base text-text-muted">When the technology is obsolete, the design is 4-5+ years old, it's not mobile-responsive, or problems are too deep for partial improvements to give sustained results.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Will I lose my SEO if I redesign?</h3>
+                <p class="text-sm sm:text-base text-text-muted">No, if done correctly. I maintain URLs or set up 301 redirects and preserve all accumulated domain authority. A good redesign improves SEO in the medium term.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">How long does it take?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Technical improvements: 1-2 weeks. Full redesign: 3-8 weeks depending on size and complexity.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do you work with clients outside Barcelona?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. I work 100% remotely with businesses across Spain and internationally.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do you issue official invoices?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. Official invoices for businesses and freelancers.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">What happens to my current content?</h3>
+                <p class="text-sm sm:text-base text-text-muted">All existing text, images, and content are migrated to the new design. Nothing is lost. If you want to update the copy, I can help with that too.</p>
+              </div>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Is your website holding back your business?</h2>
+              <p class="mb-3 text-sm sm:text-base">Tell me about the current site and the result you want from it. I will tell you whether targeted improvements are enough or whether a broader redesign makes more sense.</p>
+              <p class="font-semibold text-sm sm:text-base">
+                Free audit included<br/>
+                Quote within 24 business hours<br/>
+                No commitment<br/>
+                Official invoice
+              </p>
+            </div>
+
+          </div>
+</MarketingContentPage>

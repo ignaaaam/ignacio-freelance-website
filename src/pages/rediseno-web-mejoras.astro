@@ -1,0 +1,457 @@
+---
+import MarketingContentPage from '../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Rediseño Web y Mejoras para tu Negocio | Ignacio Amat';
+const description = 'Rediseno web y mejoras para empresas que necesitan una web mas clara, mas rapida y mejor planteada a nivel de UX, SEO y conversion.';
+const canonicalUrl = '/rediseno-web-mejoras';
+const keywords = [
+  'rediseño web',
+  'mejoras web',
+  'optimización web',
+  'actualizar página web',
+  'mejorar web existente',
+  'rediseño web profesional',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Rediseño Web y Mejoras',
+  'provider': {
+    '@type': 'ProfessionalService',
+    'name': 'Ignacio Amat - Desarrollador Web',
+    'url': baseUrl,
+  },
+  'description': 'Servicio profesional de rediseño web y mejoras técnicas para empresas. Optimización de velocidad, experiencia de usuario, SEO y conversión.',
+  'areaServed': {
+    '@type': 'Country',
+    'name': 'España',
+  },
+  'offers': {
+    '@type': 'AggregateOffer',
+    'lowPrice': '1200',
+    'highPrice': '6000',
+    'priceCurrency': 'EUR',
+    'offerCount': '2',
+    'offers': [
+      {
+        '@type': 'Offer',
+        'name': 'Optimización y mejoras web',
+        'price': '1200',
+        'priceCurrency': 'EUR',
+        'description': 'Mejoras de velocidad, SEO técnico, UX y seguridad para tu web actual',
+      },
+      {
+        '@type': 'Offer',
+        'name': 'Rediseño web completo',
+        'price': '2500',
+        'priceCurrency': 'EUR',
+        'description': 'Rediseño integral de tu web con nueva estructura, diseño y tecnología',
+      },
+    ],
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': '¿Cuándo es necesario un rediseño web completo?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Un rediseño completo es necesario cuando la web tiene más de 4-5 años, la tecnología está obsoleta (por ejemplo, Flash o versiones antiguas de WordPress), el diseño no es responsive en móvil, o los problemas son tan profundos que las mejoras parciales no bastan. Si la estructura, el diseño visual y el código de base son deficientes, un rediseño desde cero da mejores resultados que parchear.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Cuánto cuesta mejorar o rediseñar una web existente?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Las mejoras tecnicas suelen partir de 1.200 EUR. Un rediseno web completo con nueva estructura y nuevo planteamiento visual parte normalmente de 2.500 EUR y sube segun el alcance real.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Cuánto tiempo tarda un rediseño web?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Un paquete de mejoras técnicas puede estar listo en 1-2 semanas. Un rediseño completo tarda entre 3 y 8 semanas según el tamaño de la web, el número de páginas y la complejidad del proyecto.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Pierdo mi posicionamiento SEO si rediseño la web?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No, si el rediseño se hace correctamente. Mantengo las URLs existentes o configuro redirecciones 301 adecuadas, preservo las etiquetas SEO y transfiero la autoridad de dominio. Un rediseño bien ejecutado mejora el posicionamiento a medio plazo gracias a una mejor velocidad, estructura y experiencia de usuario.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Trabajas con cualquier CMS o tecnología?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Analizo la web existente independientemente de la tecnología actual. Para el rediseño, trabajo con Astro, Next.js y React para proyectos modernos de alto rendimiento. Si necesitas seguir en WordPress, también puedo ayudarte con optimización técnica dentro de esa plataforma.',
+      },
+    },
+    {
+      '@type': 'Question',
+      'name': '¿Emites factura oficial para empresas?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Si. Emito facturas oficiales para empresas y autonomos.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Inicio',
+      'item': baseUrl,
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Rediseño Web y Mejoras',
+      'item': `${baseUrl}${canonicalUrl}`,
+    },
+  ],
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const alternateUrls = {
+  es: canonicalUrl,
+  en: '/en/website-redesign-improvements',
+};
+
+const facts = [
+  { label: 'Tipo de trabajo', value: 'Mejoras tecnicas, optimizacion UX o rediseno integral segun el estado actual.' },
+  { label: 'Inversion orientativa', value: 'Desde 1.200 EUR para mejoras; rediseno completo desde 2.500 EUR.' },
+  { label: 'Objetivo', value: 'Corregir una web que no transmite, no convierte o se ha quedado tecnicamente atras.' },
+];
+---
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+  badge="Rediseño web profesional"
+  pageTitle="Rediseño Web y Mejoras para tu Negocio"
+  lead="Si tu web actual frena la conversion, da una imagen anticuada o genera dudas, no siempre hace falta empezar de cero, pero si hace falta replantear bien la experiencia. Trabajo redisenos y mejoras con foco en claridad, velocidad, SEO y confianza."
+  primaryCta={{ label: 'Solicitar presupuesto gratuito', href: '#contacto' }}
+  secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
+  facts={facts}
+>
+          <div class="prose prose-lg max-w-none">
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Señales de que tu web necesita mejoras o un rediseño</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Muchas empresas conviven con una web que ya no les da resultados sin saber exactamente por qué.
+              Hay síntomas claros que indican que ha llegado el momento de actuar, y cuanto antes se detectan,
+              antes se recupera el rendimiento perdido.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Carga lenta</h3>
+                <p class="text-sm sm:text-base">
+                  Si tu web tarda más de 3 segundos en cargar, pierdes más del 50% de los visitantes antes de que vean nada.
+                  Google también penaliza la velocidad en el ranking de búsqueda.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Diseño anticuado</h3>
+                <p class="text-sm sm:text-base">
+                  Un diseño de hace 5 o más años proyecta una imagen de empresa desfasada y genera desconfianza.
+                  Los usuarios evalúan la credibilidad de un negocio en menos de 0,1 segundos.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Mala experiencia en móvil</h3>
+                <p class="text-sm sm:text-base">
+                  Más del 60% del tráfico web llega desde smartphones. Si tu web no está adaptada al móvil,
+                  estás perdiendo más de la mitad de tus clientes potenciales.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Conversiones bajas</h3>
+                <p class="text-sm sm:text-base">
+                  Muchas visitas pero pocos contactos, llamadas o ventas. Indica que la web no guía correctamente
+                  al usuario hacia la acción y que los llamados a la acción no funcionan.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">SEO estancado</h3>
+                <p class="text-sm sm:text-base">
+                  Sin crecimiento en visitas orgánicas desde hace meses. Probablemente hay problemas técnicos de SEO:
+                  falta de estructura de encabezados, sin schema markup, sin metadatos optimizados, sin sitemap.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Vulnerabilidades de seguridad</h3>
+                <p class="text-sm sm:text-base">
+                  Plugins desactualizados, versiones antiguas de CMS o falta de HTTPS exponen tu web a ataques.
+                  Una brecha de seguridad puede tumbar tu negocio online de un día para otro.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Problemas concretos que resuelvo</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Tanto si necesitas mejoras puntuales como un rediseño web completo, trabajo sobre los elementos
+              que tienen mayor impacto en el rendimiento real de tu negocio online.
+            </p>
+
+            <ul class="list-disc pl-5 sm:pl-6 space-y-3 mb-6 text-sm sm:text-base">
+              <li>
+                <strong>Velocidad de carga:</strong> Optimización de imágenes, eliminación de código muerto, implementación
+                de lazy loading, compresión de assets y mejora de Core Web Vitals para alcanzar puntuaciones Lighthouse superiores a 90.
+              </li>
+              <li>
+                <strong>Experiencia de usuario (UX):</strong> Revisión de la arquitectura de información, simplificación de
+                la navegación, mejora de la legibilidad y rediseño de los flujos de conversión para que el usuario llegue
+                más rápido a lo que busca.
+              </li>
+              <li>
+                <strong>SEO técnico:</strong> Corrección de errores de rastreo, implementación de schema markup JSON-LD,
+                etiquetas hreflang para contenido multilingüe, estructura de encabezados correcta, canonical tags
+                y configuración de sitemap.
+              </li>
+              <li>
+                <strong>Adaptación a móvil:</strong> Diseño responsive que funciona perfectamente en cualquier tamaño de
+                pantalla, con menús táctiles intuitivos y tiempos de carga optimizados para redes móviles.
+              </li>
+              <li>
+                <strong>Seguridad:</strong> Actualización a HTTPS, configuración de cabeceras de seguridad, actualización
+                de dependencias y eliminación de plugins o extensiones vulnerables.
+              </li>
+              <li>
+                <strong>Conversión:</strong> Revisión y mejora de llamadas a la acción (CTA), formularios de contacto,
+                pruebas sociales y elementos de confianza que incrementan el porcentaje de visitantes que se convierten en leads.
+              </li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Mejoras puntuales frente a rediseño completo</h2>
+            <p class="text-base sm:text-lg mb-4">
+              No todos los casos requieren empezar desde cero. Analizo la situación real de tu web antes de
+              recomendarte uno u otro enfoque. La decisión depende del estado técnico del código, la antigüedad
+              del diseño y los objetivos del negocio.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Mejoras y optimización</h3>
+                <p class="text-sm sm:text-base mb-3">
+                  Ideal cuando la estructura y el diseño base son sólidos pero hay problemas técnicos
+                  o de rendimiento que frenan los resultados.
+                </p>
+                <ul class="text-sm space-y-1">
+                  <li>Optimización de velocidad y Core Web Vitals</li>
+                  <li>SEO técnico y corrección de errores</li>
+                  <li>Mejoras de UX en secciones concretas</li>
+                  <li>Actualización de seguridad</li>
+                  <li>Desde 1.200€ — listo en 1-2 semanas</li>
+                </ul>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+                <h3 class="text-lg sm:text-xl font-bold mb-3">Rediseño web completo</h3>
+                <p class="text-sm sm:text-base mb-3">
+                  Necesario cuando el diseño está muy desfasado, la tecnología es obsoleta o los problemas
+                  son tan profundos que parchear no basta.
+                </p>
+                <ul class="text-sm space-y-1">
+                  <li>Nuevo diseño visual moderno y responsive</li>
+                  <li>Arquitectura de información redefinida</li>
+                  <li>Tecnología actualizada (Astro, Next.js, React)</li>
+                  <li>SEO integrado desde el primer día</li>
+                  <li>Desde 2.500€ — listo en 3-8 semanas</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cómo es el proceso de trabajo</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Trabajo de forma estructurada para que sepas exactamente qué se va a hacer, en qué plazos y con qué resultados.
+              No hay sorpresas ni costes ocultos.
+            </p>
+
+            <ol class="list-decimal pl-5 sm:pl-6 space-y-3 mb-8 text-sm sm:text-base">
+              <li>
+                <strong>Auditoría inicial:</strong> Analizo tu web actual en profundidad: velocidad, SEO técnico, UX,
+                conversión y seguridad. Te entrego un informe con los problemas detectados y su impacto.
+              </li>
+              <li>
+                <strong>Propuesta personalizada:</strong> Basándome en la auditoría, te recomiendo si son suficientes
+                mejoras puntuales o conviene un rediseño completo, con presupuesto detallado para cada opción.
+              </li>
+              <li>
+                <strong>Diseño y aprobación:</strong> En caso de rediseño, te presento mockups del nuevo diseño para
+                que puedas ver el resultado antes de desarrollar. Hacemos las iteraciones necesarias hasta que estés conforme.
+              </li>
+              <li>
+                <strong>Desarrollo:</strong> Implemento los cambios o construyo el nuevo sitio con tecnología moderna,
+                manteniendo todos los contenidos existentes y preservando el SEO acumulado.
+              </li>
+              <li>
+                <strong>Migración sin cortes:</strong> El lanzamiento se prepara para que no haya tiempo de inactividad.
+                Tu web antigua sigue funcionando hasta que la nueva esté lista y verificada.
+              </li>
+              <li>
+                <strong>Revisión y entrega:</strong> Comprobamos juntos que todo funciona correctamente, te entrego
+                acceso completo y te doy formación básica si necesitas gestionar contenidos.
+              </li>
+            </ol>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Antes y después: qué cambia con un rediseño web</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <h3 class="font-bold text-base mb-2 text-red-500">Antes del rediseño</h3>
+                    <ul class="text-sm space-y-1 text-text-muted">
+                      <li>Carga en 8-12 segundos</li>
+                      <li>Puntuación Lighthouse: 30-45</li>
+                      <li>Tasa de rebote: 80%+</li>
+                      <li>Sin posicionamiento orgánico</li>
+                      <li>Sin conversiones desde móvil</li>
+                      <li>Diseño de 2015-2018</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-base mb-2 text-accent">Despues del rediseño</h3>
+                    <ul class="text-sm space-y-1 text-text-muted">
+                      <li>Carga en menos de 1,5 segundos</li>
+                      <li>Puntuación Lighthouse: 90-100</li>
+                      <li>Tasa de rebote: 40-55%</li>
+                      <li>Crecimiento orgánico en 2-4 meses</li>
+                      <li>Conversiones desde todos los dispositivos</li>
+                      <li>Diseño moderno y coherente con la marca</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Stack tecnológico para el rediseño</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Utilizo tecnología moderna que garantiza velocidad, seguridad y mantenibilidad a largo plazo.
+              No trabajo con plantillas genéricas ni tecnologías obsoletas.
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Frontend:</strong> Astro, Next.js, React y TypeScript para interfaces rápidas y modernas</li>
+              <li><strong>Estilos:</strong> Tailwind CSS para diseño responsive sin código CSS innecesario</li>
+              <li><strong>SEO técnico:</strong> Schema markup JSON-LD, hreflang, sitemap automático, canonical tags</li>
+              <li><strong>Rendimiento:</strong> Core Web Vitals optimizados, imágenes en formato WebP/AVIF, lazy loading</li>
+              <li><strong>Seguridad:</strong> HTTPS, cabeceras HTTP seguras, sin dependencias vulnerables</li>
+              <li><strong>Deploy:</strong> Vercel o Netlify con CDN global para carga rápida desde cualquier pais</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Precios orientativos</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-1">Optimizacion y mejoras tecnicas — desde 1.200€</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Velocidad, SEO tecnico, UX y seguridad. Listo en 1-2 semanas. Ideal para webs con base solida.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-1">Rediseno web completo — desde 2.500€</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Nuevo diseno, nueva tecnologia, migracion de contenidos y SEO integrado. Listo en 3-8 semanas segun tamano.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-1">Rediseno con e-commerce o funcionalidades avanzadas — desde 4.500€</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Rediseno completo mas tienda online, integracion de pagos o desarrollo a medida de funcionalidades especificas.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes sobre rediseno web</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Cuando es necesario un rediseno completo?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Cuando la tecnologia esta obsoleta, el diseño tiene mas de 4-5 anos, no es responsive en movil
+                  o los problemas son tan profundos que las mejoras parciales no dan resultados sostenidos.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Pierdo el SEO si rediseno la web?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  No, si el rediseno se hace correctamente. Mantengo las URLs o configuro redirecciones 301 y preservo
+                  toda la autoridad de dominio acumulada. Un buen rediseno mejora el SEO a medio plazo.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Cuanto tiempo tarda?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Mejoras tecnicas: 1-2 semanas. Rediseno completo: 3-8 semanas segun el tamano y complejidad del proyecto.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Trabajas con webs fuera de Barcelona?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Si. Trabajo 100% en remoto con empresas de toda España: Madrid, Valencia, Sevilla, Bilbao, Zaragoza y cualquier ciudad.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Emites factura oficial?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Si. Facturas oficiales para empresas y autonomos.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Que pasa con mis contenidos actuales?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Todos los textos, imagenes y contenidos existentes se migran al nuevo diseño. No pierdes nada. Si quieres
+                  actualizar los textos, tambien puedo ayudarte con eso dentro del mismo proyecto.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Rediseno web para empresas de toda Espana</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Trabajo en remoto con empresas de cualquier ciudad espanola. La distancia no afecta al proceso
+              ni a la calidad del resultado. Todo se gestiona de forma eficiente por videollamada y correo electronico.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              <a href="/desarrollador-web-espana" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Espana</a>
+              <a href="/desarrollador-web-madrid" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Madrid</a>
+              <a href="/desarrollador-web-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Barcelona</a>
+              <a href="/desarrollador-web-valencia" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Valencia</a>
+              <a href="/desarrollador-web-sevilla" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Sevilla</a>
+              <a href="/diseno-web-empresas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseno web empresas</a>
+              <a href="/contratar-desarrollador-full-stack" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contratar desarrollador</a>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">¿Tu web esta frenando tu negocio?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                Cuentame como esta tu web ahora y que resultados esperas. En menos de 24 horas te digo
+                si conviene trabajar mejoras puntuales o un rediseno completo, con una orientacion clara sobre el siguiente paso.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                Auditoria gratuita incluida<br/>
+                Presupuesto en 24 horas laborables<br/>
+                Sin compromiso<br/>
+                Factura oficial
+              </p>
+            </div>
+
+          </div>
+</MarketingContentPage>

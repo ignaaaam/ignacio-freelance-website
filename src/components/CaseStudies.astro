@@ -1,0 +1,37 @@
+---
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const content = siteContent[locale].cases;
+---
+
+<section class="section section-alt" id="casos">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2>{content.title}</h2>
+      <p class="section-copy">{content.description}</p>
+    </div>
+
+    <div class="case-grid">
+      {content.items.map((item) => (
+        <article class="case-card surface-card">
+          <p class="case-card__client">{item.client}</p>
+          <div class="case-card__row">
+            <span>Challenge</span>
+            <p>{item.challenge}</p>
+          </div>
+          <div class="case-card__row">
+            <span>Solution</span>
+            <p>{item.solution}</p>
+          </div>
+          <div class="case-card__result">
+            <span>Result</span>
+            <p>{item.result}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

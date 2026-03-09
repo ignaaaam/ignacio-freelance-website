@@ -1,120 +1,74 @@
 ---
-import Translate from './Translate.astro';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
 
-const faqs = [
-  {
-    question: "faq.items.0.question",
-    answer: "faq.items.0.answer"
-  },
-  {
-    question: "faq.items.1.question",
-    answer: "faq.items.1.answer"
-  },
-  {
-    question: "faq.items.2.question",
-    answer: "faq.items.2.answer"
-  },
-  {
-    question: "faq.items.3.question",
-    answer: "faq.items.3.answer"
-  },
-  {
-    question: "faq.items.4.question",
-    answer: "faq.items.4.answer"
-  },
-  {
-    question: "faq.items.5.question",
-    answer: "faq.items.5.answer"
-  }
-];
+const locale = getLocaleFromPath(Astro.url.pathname);
+const content = siteContent[locale].faq;
 ---
 
-<section class="py-12 sm:py-16 md:py-20 bg-secondary" id="faq">
+<section class="section" id="faq">
   <div class="container">
-    <div class="text-center mb-12 sm:mb-16 px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-        <Translate key="faq.title" />
-      </h2>
-      <p class="text-text-muted max-w-2xl mx-auto text-sm sm:text-base">
-        <Translate key="faq.description" />
-      </p>
+    <div class="section-heading">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2>{content.title}</h2>
+      <p class="section-copy">{content.description}</p>
     </div>
 
-    <div class="max-w-3xl mx-auto px-4">
-      <div class="space-y-4 sm:space-y-6">
-        {faqs.map(faq => (
-          <details class="faq-item">
-            <summary class="faq-question">
-              <span><Translate key={faq.question} /></span>
-              <svg class="arrow-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </summary>
-            <div class="faq-answer">
-              <p><Translate key={faq.answer} /></p>
-            </div>
-          </details>
-        ))}
-      </div>
+    <div class="faq-list">
+      {content.items.map((item) => (
+        <details class="faq-item surface-card" data-sr>
+          <summary>
+            <span>{item.question}</span>
+            <span aria-hidden="true">+</span>
+          </summary>
+          <p>{item.answer}</p>
+        </details>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  .text-text-muted {
-    color: var(--color-text-muted);
-  }
-  
-  .bg-secondary {
-    background-color: var(--color-secondary);
+  .faq-list {
+    display: grid;
+    gap: 0.8rem;
   }
 
   .faq-item {
-    background-color: var(--color-card-bg);
-    border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 1.2rem 1.35rem;
   }
 
-  .faq-question {
+  .faq-item summary {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
+    gap: 1rem;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 800;
+    list-style: none;
   }
 
-  .faq-answer {
-    margin-top: 1rem;
+  .faq-item summary span:first-child {
+    flex: 1;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item p {
+    margin-top: 0.9rem;
     color: var(--color-text-muted);
+    line-height: 1.75;
   }
 
-  .arrow-icon {
-    transition: transform 0.3s ease;
+  .faq-item[open] summary span:last-child {
+    transform: rotate(45deg);
   }
 
-  details[open] .arrow-icon {
-    transform: rotate(180deg);
+  @media (max-width: 720px) {
+    .faq-item {
+      padding: 1rem 1.05rem;
+    }
   }
 </style>
-
-<script>
-  // Add smooth animation to FAQ items
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', (event: Event) => {
-      const target = event.target as HTMLElement;
-      if (target && target.tagName.toLowerCase() === 'summary') {
-        event.preventDefault();
-        const details = target.parentElement as HTMLDetailsElement;
-        if (details && details.hasAttribute('open')) {
-          details.classList.add('closing');
-          setTimeout(() => {
-            details.removeAttribute('open');
-            details.classList.remove('closing');
-          }, 300);
-        } else if (details) {
-          details.setAttribute('open', '');
-        }
-      }
-    });
-  });
-</script> 

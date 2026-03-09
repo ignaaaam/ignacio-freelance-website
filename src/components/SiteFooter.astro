@@ -1,0 +1,63 @@
+---
+import { getLanguageSwitchUrls, getLocaleFromPath } from '../i18n/utils';
+import { siteConfig } from '../data/siteConfig';
+import { siteContent } from '../data/siteContent';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const languageSwitchUrls = getLanguageSwitchUrls(Astro.url);
+const content = siteContent[locale].footer;
+const isEnglish = locale === 'en';
+---
+
+<footer class="site-footer" data-footer-root>
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href={isEnglish ? '/en' : '/'} class="site-footer__name">
+          <img src="/brand-mark.svg" alt="" width="34" height="34" />
+          <span>{siteConfig.name}</span>
+        </a>
+        <p>{content.summary}</p>
+        <div class="site-footer__socials">
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">{isEnglish ? 'Services' : 'Servicios'}</p>
+        <nav class="site-footer__links">
+          {content.serviceLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">{isEnglish ? 'Resources' : 'Recursos'}</p>
+        <nav class="site-footer__links">
+          {content.resourceLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </nav>
+      </div>
+
+      <div>
+        <p class="site-footer__heading">{isEnglish ? 'Language' : 'Idioma'}</p>
+        <nav class="site-footer__links">
+          <a href={languageSwitchUrls.es}>ES</a>
+          <a href={languageSwitchUrls.en}>EN</a>
+          <a href={isEnglish ? '/en/privacy' : '/privacidad'}>{isEnglish ? 'Privacy' : 'Privacidad'}</a>
+          <a href={isEnglish ? '/en/legal-notice' : '/aviso-legal'}>{isEnglish ? 'Legal notice' : 'Aviso legal'}</a>
+          <a href={isEnglish ? '/en/terms' : '/terminos'}>{isEnglish ? 'Terms' : 'Terminos'}</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>{isEnglish ? 'Independent web development for websites, redesigns and product work.' : 'Desarrollo web independiente para webs, redisenos y producto digital.'}</span>
+      <span>{new Date().getFullYear()} {siteConfig.name}</span>
+    </div>
+  </div>
+</footer>

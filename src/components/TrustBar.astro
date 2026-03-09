@@ -1,0 +1,25 @@
+---
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
+import { siteConfig } from '../data/siteConfig';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const content = siteContent[locale];
+---
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-strip__shell">
+      <p class="trust-strip__label">{content.trust.label}</p>
+      <div class="trust-strip__items">
+        {content.trust.items.map((item) => (
+          <span class="trust-pill">{item}</span>
+        ))}
+      </div>
+      <div class="trust-strip__social">
+        <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>

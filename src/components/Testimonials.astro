@@ -1,62 +1,106 @@
 ---
-import Translate from './Translate.astro';
-import { getLocaleFromPath, getTranslation } from '../i18n/utils';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
-const testimonials = getTranslation(locale, 'testimonials.items');
+const content = siteContent[locale].testimonials;
 ---
 
-<section class="py-12 sm:py-16 md:py-20" id="testimonios">
+<section class="section section-alt" id="testimonios">
   <div class="container">
-    <div class="text-center mb-12 sm:mb-16 px-4">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4"><Translate key="testimonials.title" /></h2>
-      <p class="text-text-muted text-sm sm:text-base"><Translate key="testimonials.description" /></p>
+    <div class="section-heading">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2>{content.title}</h2>
+      <p class="section-copy">{content.description}</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {Array.isArray(testimonials) && testimonials.map(testimonial => (
-        <div class="card testimonial-card">
-          <svg class="quote-icon" width="45" height="36" viewBox="0 0 45 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.4 36L0 24.6V0H19.8V24.6H6.4L19.8 36H13.4ZM38.6 36L25.2 24.6V0H45V24.6H31.6L45 36H38.6Z" fill="currentColor"/>
-          </svg>
-
-          <blockquote class="mt-6 mb-8">
-            <p class="text-lg">{testimonial.content}</p>
-          </blockquote>
-
-          <footer class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-              <span class="text-xl font-bold">{testimonial.name[0]}</span>
-            </div>
+    <div class="testimonial-grid">
+      {content.items.map((item) => (
+        <article class="testimonial-card surface-card" data-sr>
+          <p class="testimonial-card__quote">"{item.quote}"</p>
+          <div class="testimonial-card__meta">
+            <div class="testimonial-card__avatar">{item.name[0]}</div>
             <div>
-              <cite class="not-italic font-semibold">{testimonial.name}</cite>
-              <p class="text-text-muted text-sm">{testimonial.role}</p>
-              {testimonial.company && <p class="text-text-muted text-xs">{testimonial.company}</p>}
+              <strong>{item.name}</strong>
+              <p>{item.role} · {item.company}</p>
+              <span>{item.context}</span>
             </div>
-          </footer>
-        </div>
+          </div>
+        </article>
       ))}
     </div>
   </div>
 </section>
 
 <style>
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
   .testimonial-card {
-    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
   }
 
-  .quote-icon {
-    color: var(--color-accent);
-    opacity: 0.2;
+  .testimonial-card__quote {
+    font-size: 1.08rem;
+    line-height: 1.75;
   }
 
-  .text-text-muted {
+  .testimonial-card__meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.85rem;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonial-card__avatar {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 999px;
+    background: var(--color-text);
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+  }
+
+  .testimonial-card__meta p,
+  .testimonial-card__meta span {
     color: var(--color-text-muted);
+    line-height: 1.6;
   }
 
-  blockquote p {
-    position: relative;
-    color: var(--color-text);
-    line-height: 1.6;
+  .testimonial-card__meta span {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 1100px) {
+    .testimonial-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .testimonial-card {
+      padding: 1.15rem;
+      gap: 1.15rem;
+    }
+
+    .testimonial-card__meta {
+      align-items: start;
+    }
   }
 </style>

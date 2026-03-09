@@ -1,153 +1,74 @@
 ---
-import Translate from './Translate.astro';
-import { getLocaleFromPath, getTranslation } from '../i18n/utils';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
-const steps = getTranslation(locale, 'process.steps');
+const content = siteContent[locale].process;
 ---
 
-<section class="py-12 sm:py-16 md:py-20" id="proceso">
+<section class="section section-alt" id="proceso">
   <div class="container">
-    <div class="text-center mb-12 sm:mb-16">
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 px-4"><Translate key="process.title" /></h2>
-      <p class="text-text-muted max-w-2xl mx-auto text-sm sm:text-base px-4"><Translate key="process.description" /></p>
+    <div class="section-heading">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2>{content.title}</h2>
+      <p class="section-copy">{content.description}</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
-      {Array.isArray(steps) && steps.map((step, index) => (
-        <div class="process-step">
-          <div class="card process-card">
-            <div class="step-number">
-              <span>{index + 1}</span>
-              {index < steps.length - 1 && (
-                <div class="step-connector">
-                  <svg class="connector-line" viewBox="0 0 100 12" preserveAspectRatio="none">
-                    <path d="M0 6 L90 6" />
-                    <path class="arrow" d="M90 1 L98 6 L90 11" />
-                  </svg>
-                </div>
-              )}
-            </div>
-            <h3 class="text-xl font-bold mb-4">{step.title}</h3>
-            <p class="text-text-muted">{step.description}</p>
-          </div>
-        </div>
+    <div class="process-grid">
+      {content.steps.map((step, index) => (
+        <article class="process-card surface-card" data-sr>
+          <div class="process-card__number">{index + 1}</div>
+          <h3>{step.title}</h3>
+          <p>{step.description}</p>
+        </article>
       ))}
     </div>
   </div>
 </section>
 
 <style>
-  .process-step {
-    position: relative;
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .process-card {
-    padding-top: 3rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    padding: 1.5rem;
   }
 
-  .step-number {
-    position: absolute;
-    top: -1.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--color-accent);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .process-card__number {
+    display: inline-grid;
+    place-items: center;
+    width: 2.4rem;
+    aspect-ratio: 1;
+    margin-bottom: 1rem;
+    border-radius: 999px;
+    background: var(--color-text);
+    color: var(--color-primary);
     font-family: var(--font-heading);
-    font-weight: 600;
-    font-size: 1.25rem;
-    z-index: 10;
+    font-weight: 800;
   }
 
-  .step-connector {
-    position: absolute;
-    left: calc(100% - 1rem);
-    top: 50%;
-    width: calc(100% - 1rem);
-    height: 12px;
-    transform: translateY(-50%);
-    display: none;
-  }
-
-  @media (min-width: 1024px) {
-    .step-connector {
-      display: block;
-    }
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 640px) {
-    .process-card {
-      padding-top: 2.5rem;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      padding-bottom: 1.5rem;
-    }
-
-    .step-number {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1rem;
-      top: -1.25rem;
-    }
-  }
-
-  @media (min-width: 641px) and (max-width: 1023px) {
-    .step-connector {
-      display: none;
-    }
-  }
-
-  .connector-line {
-    width: 100%;
-    height: 100%;
-    fill: none;
-    stroke: var(--color-accent);
-    stroke-width: 2;
-  }
-
-  .connector-line .arrow {
-    fill: none;
-    stroke: var(--color-accent);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  .text-text-muted {
+  .process-card p {
+    margin-top: 0.85rem;
     color: var(--color-text-muted);
+    line-height: 1.75;
   }
 
-  /* Add animation on hover */
-  .process-card {
-    transition: transform 0.3s ease;
+  @media (max-width: 1100px) {
+    .process-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
-  .process-card:hover {
-    transform: translateY(-4px);
-  }
+  @media (max-width: 720px) {
+    .process-grid {
+      grid-template-columns: 1fr;
+    }
 
-  .step-number::after {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    background: var(--color-accent);
-    opacity: 0.2;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-  }
-
-  .process-card:hover .step-number::after {
-    opacity: 0.3;
+    .process-card {
+      padding: 1.15rem;
+    }
   }
 </style>

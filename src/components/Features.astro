@@ -1,113 +1,174 @@
 ---
-import Translate from './Translate.astro';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
 
-const features = [
-  {
-    icon: "speed",
-    title: "features.items.0.title",
-    description: "features.items.0.description"
-  },
-  {
-    icon: "design",
-    title: "features.items.1.title",
-    description: "features.items.1.description"
-  },
-  {
-    icon: "seo",
-    title: "features.items.2.title",
-    description: "features.items.2.description"
-  },
-  {
-    icon: "support",
-    title: "features.items.3.title",
-    description: "features.items.3.description"
-  }
-];
+const locale = getLocaleFromPath(Astro.url.pathname);
+const content = siteContent[locale].services;
 ---
 
-<section class="py-12 sm:py-16 md:py-20" id="servicios">
+<section class="section" id="servicios">
   <div class="container">
-    <div class="text-center mb-12 sm:mb-16" data-sr>
-      <h2 class="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-        <Translate key="features.title" />
-      </h2>
-      <p class="text-text-muted max-w-2xl mx-auto text-sm sm:text-base px-4">
-        <Translate key="features.description" />
-      </p>
+    <div class="section-heading">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2>{content.title}</h2>
+      <p class="section-copy">{content.description}</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-      {features.map((feature, index) => (
-        <div class="card feature-card" data-sr data-sr-delay={index * 100}>
-          <div class="feature-icon mb-4">
-            {feature.icon === "speed" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            )}
-            {feature.icon === "design" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-              </svg>
-            )}
-            {feature.icon === "seo" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            )}
-            {feature.icon === "support" && (
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
-            )}
+    <div class="service-grid">
+      {content.items.map((item, index) => (
+        <article class="service-card surface-card" data-sr>
+          <div class="service-card__top">
+            <span class="service-card__index">{String(index + 1).padStart(2, '0')}</span>
+            <span class="service-card__eyebrow">{locale === 'en' ? 'Core offer' : 'Servicio principal'}</span>
           </div>
-          <h3 class="text-xl font-bold mb-3">
-            <Translate key={feature.title} />
-          </h3>
-          <p class="text-text-muted">
-            <Translate key={feature.description} />
-          </p>
-        </div>
+
+          <div class="service-card__heading">
+            <h3>{item.name}</h3>
+            <p>{item.summary}</p>
+          </div>
+
+          <div class="service-card__benefits">
+            <article>
+              <span>{locale === 'en' ? 'Built for' : 'Pensado para'}</span>
+              <p>{item.bulletA}</p>
+            </article>
+            <article>
+              <span>{locale === 'en' ? 'Delivers' : 'Aporta'}</span>
+              <p>{item.bulletB}</p>
+            </article>
+          </div>
+
+          <a href={item.href} class="service-card__link">
+            <span>{locale === 'en' ? 'View service' : 'Ver servicio'}</span>
+            <strong>{locale === 'en' ? 'Open page' : 'Abrir pagina'}</strong>
+          </a>
+        </article>
       ))}
+    </div>
+
+    <div class="service-hub-cta">
+      <a href={siteContent[locale].nav.servicesHubHref} class="btn-secondary">{content.hubCta}</a>
     </div>
   </div>
 </section>
 
 <style>
-  .feature-card {
-    transition: transform 0.3s ease;
-    height: 100%;
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .service-card {
+    display: grid;
+    gap: 1.15rem;
+    padding: 1.5rem;
+  }
+
+  .service-card__top {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
   }
 
-  .feature-card:hover {
-    transform: translateY(-4px);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 640px) {
-    .feature-card {
-      padding: 1.5rem;
-    }
-
-    .feature-icon svg {
-      height: 1.75rem;
-      width: 1.75rem;
-    }
-  }
-
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .feature-icon {
+  .service-card__index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.25rem;
+    height: 2.25rem;
+    padding: 0 0.55rem;
+    border-radius: 999px;
+    background: var(--theme-warm-soft);
     color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 800;
   }
 
-  .text-text-muted {
+  .service-card__eyebrow {
+    color: var(--theme-highlight);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .service-card__heading {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .service-card__heading h3 {
+    font-size: 1.4rem;
+  }
+
+  .service-card__heading p,
+  .service-card__benefits p {
+    color: var(--color-text-muted);
+    line-height: 1.75;
+  }
+
+  .service-card__benefits {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .service-card__benefits article {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.95rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.85);
+  }
+
+  .service-card__benefits span {
+    color: var(--theme-highlight);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  .service-card__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.85rem;
+    margin-top: auto;
+    padding: 0.95rem 1rem;
+    border-radius: 1rem;
+    background: rgba(33, 68, 63, 0.06);
+    color: var(--color-text);
+  }
+
+  .service-card__link span {
     color: var(--color-text-muted);
   }
-</style> 
+
+  .service-hub-cta {
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 1100px) {
+    .service-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .service-card {
+      padding: 1.15rem;
+    }
+
+    .service-card__link {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

@@ -1,142 +1,126 @@
 ---
-import Translate from './Translate.astro';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
 
-interface Props {
-	ctaText?: string;
-	ctaHref?: string;
-}
-
-const {
-	ctaText = "contact.title",
-	ctaHref = "#contacto"
-} = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+const nav = siteContent[locale].nav;
 ---
 
 <div id="sticky-cta" class="sticky-cta">
-	<div class="sticky-cta-content">
-		<div class="sticky-cta-text">
-			<span class="font-semibold"><Translate key={ctaText} /></span>
-			<span class="text-xs hidden sm:inline ml-2 opacity-80"><Translate key="sticky.response24h" /></span>
-		</div>
-		<a href={ctaHref} class="sticky-cta-button">
-			<Translate key="sticky.ctaNow" /> →
-		</a>
-	</div>
+  <div class="sticky-cta__content">
+    <div>
+      <strong>{locale === 'en' ? 'Want a clearer proposal?' : 'Quieres una propuesta mas clara?'}</strong>
+      <p>{locale === 'en' ? 'Share the project and I will send you a useful first recommendation.' : 'Cuentame el proyecto y te dare una primera recomendacion util.'}</p>
+    </div>
+    <a href={nav.contactHref} class="btn-primary">{nav.primaryCta}</a>
+  </div>
 </div>
 
 <style>
-	.sticky-cta {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-		box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
-		padding: 0.75rem 1rem;
-		z-index: 50;
-		transform: translateY(100%);
-		transition: transform 0.3s ease-in-out;
-		border-top: 2px solid rgba(255, 255, 255, 0.1);
-	}
+  .sticky-cta {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: max(0.85rem, env(safe-area-inset-bottom));
+    z-index: 40;
+    display: none;
+    justify-content: center;
+    pointer-events: none;
+  }
 
-	.sticky-cta.visible {
-		transform: translateY(0);
-	}
+  .sticky-cta[data-visible='true'] {
+    display: flex;
+  }
 
-	.sticky-cta-content {
-		max-width: 1200px;
-		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 1rem;
-	}
+  .sticky-cta__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: min(920px, calc(100% - 1.2rem));
+    padding: 1rem 1.05rem;
+    border: 1px solid rgba(74, 54, 41, 0.08);
+    border-radius: 1.35rem;
+    background: rgba(31, 23, 18, 0.95);
+    box-shadow: 0 20px 48px rgba(15, 11, 8, 0.28);
+    pointer-events: auto;
+  }
 
-	.sticky-cta-text {
-		color: white;
-		font-size: 0.875rem;
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-	}
+  .sticky-cta__content strong,
+  .sticky-cta__content p {
+    color: #fff8f2;
+  }
 
-	.sticky-cta-button {
-		background: white;
-		color: #3b82f6;
-		padding: 0.625rem 1.25rem;
-		border-radius: 0.5rem;
-		font-weight: 600;
-		font-size: 0.875rem;
-		text-decoration: none;
-		transition: all 0.2s;
-		white-space: nowrap;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-	}
+  .sticky-cta__content p {
+    margin-top: 0.25rem;
+    font-size: 0.94rem;
+    opacity: 0.86;
+  }
 
-	.sticky-cta-button:hover {
-		background: #f8fafc;
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-	}
+  .sticky-cta .btn-primary {
+    min-width: max-content;
+  }
 
-	[data-theme="light"] .sticky-cta {
-		background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-	}
-
-	[data-theme="dark"] .sticky-cta {
-		background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-	}
-
-	@media (max-width: 640px) {
-		.sticky-cta {
-			padding: 0.625rem 0.75rem;
-		}
-
-		.sticky-cta-content {
-			gap: 0.5rem;
-		}
-
-		.sticky-cta-text {
-			font-size: 0.75rem;
-		}
-
-		.sticky-cta-button {
-			padding: 0.5rem 1rem;
-			font-size: 0.8125rem;
-		}
-	}
+  @media (max-width: 720px) {
+    .sticky-cta__content {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0.95rem;
+      border-radius: 1.15rem;
+    }
+  }
 </style>
 
-<script>
-	// Show sticky CTA after user scrolls down
-	function initStickyCTA() {
-		const stickyCTA = document.getElementById('sticky-cta');
-		if (!stickyCTA) return;
+<script is:inline data-astro-rerun>
+  function bindStickyCta() {
+    const sticky = document.getElementById('sticky-cta');
+    const contactRoot = document.querySelector('[data-contact-root]');
+    const footerRoot = document.querySelector('[data-footer-root]');
+    if (!sticky || sticky.dataset.bound === 'true') return;
 
-		let lastScroll = 0;
-		const showAfterScroll = 300; // Show after scrolling 300px
+    sticky.dataset.bound = 'true';
 
-		function handleScroll() {
-			const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const toggleByScroll = () => {
+      if (window.scrollY > 520) {
+        sticky.setAttribute('data-visible', 'true');
+      } else {
+        sticky.removeAttribute('data-visible');
+      }
+    };
 
-			if (currentScroll > showAfterScroll) {
-				stickyCTA.classList.add('visible');
-			} else {
-				stickyCTA.classList.remove('visible');
-			}
+    const hideSticky = () => sticky.removeAttribute('data-visible');
+    toggleByScroll();
+    window.addEventListener('scroll', toggleByScroll, { passive: true });
 
-			lastScroll = currentScroll;
-		}
+    if (contactRoot) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            hideSticky();
+          } else {
+            toggleByScroll();
+          }
+        });
+      }, { threshold: 0.15 });
 
-		window.addEventListener('scroll', handleScroll, { passive: true });
+      observer.observe(contactRoot);
+    }
 
-		// Check on page load
-		handleScroll();
-	}
+    if (footerRoot) {
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            hideSticky();
+          } else {
+            toggleByScroll();
+          }
+        });
+      }, { threshold: 0.08 });
 
-	// Initialize on page load
-	document.addEventListener('DOMContentLoaded', initStickyCTA);
+      footerObserver.observe(footerRoot);
+    }
+  }
 
-	// Re-initialize after view transitions
-	document.addEventListener('astro:after-swap', initStickyCTA);
+  bindStickyCta();
+  document.addEventListener('astro:after-swap', bindStickyCta);
 </script>

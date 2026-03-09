@@ -24,10 +24,7 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     webAnalytics: {
-      enabled: true
-    },
-    speedInsights: {
-      enabled: true
+      enabled: false
     }
   }),
   i18n: {

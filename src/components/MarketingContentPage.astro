@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Contact from './Contact.astro';
+import StickyCTA from './StickyGTA.astro';
+
+type CTA = {
+  label: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+};
+
+type Fact = {
+  label: string;
+  value: string;
+};
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'es' | 'en';
+  canonicalUrl: string;
+  keywords?: string[];
+  additionalSchemas?: any[];
+  alternateUrls?: { es: string; en: string };
+  badge: string;
+  pageTitle: string;
+  lead: string;
+  primaryCta: CTA;
+  secondaryCta?: CTA;
+  facts?: Fact[];
+}
+
+const {
+  title,
+  description,
+  lang,
+  canonicalUrl,
+  keywords = [],
+  additionalSchemas = [],
+  alternateUrls,
+  badge,
+  pageTitle,
+  lead,
+  primaryCta,
+  secondaryCta,
+  facts = [],
+} = Astro.props;
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={additionalSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="content-page-hero surface-card" data-sr>
+          <div class="content-page-hero__main">
+            <span class="content-page-hero__badge">{badge}</span>
+            <h1>{pageTitle}</h1>
+            <p class="content-page-hero__lead">{lead}</p>
+            <div class="content-page-hero__actions">
+              <a href={primaryCta.href} class="btn-primary">{primaryCta.label}</a>
+              {secondaryCta && <a href={secondaryCta.href} class="btn-secondary">{secondaryCta.label}</a>}
+            </div>
+          </div>
+
+          {facts.length > 0 && (
+            <div class="content-page-hero__facts">
+              {facts.map((fact) => (
+                <article class="content-page-hero__fact">
+                  <span>{fact.label}</span>
+                  <p>{fact.value}</p>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="content-page-body">
+      <div class="container">
+        <article class="content-page-body__card surface-card">
+          <div class="content-page-body__inner">
+            <slot />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <StickyCTA />
+</Layout>
+
+<style>
+  .content-page-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 1rem;
+    padding: 1.45rem;
+  }
+
+  .content-page-hero__badge {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    padding: 0.45rem 0.8rem;
+    border: 1px solid rgba(33, 68, 63, 0.14);
+    border-radius: 999px;
+    background: rgba(255, 250, 244, 0.86);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--theme-highlight);
+  }
+
+  .content-page-hero__lead {
+    max-width: 62ch;
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
+  .content-page-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.35rem;
+  }
+
+  .content-page-hero__facts {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .content-page-hero__fact {
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.9);
+  }
+
+  .content-page-hero__fact span {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--theme-highlight);
+  }
+
+  .content-page-hero__fact p {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .content-page-body {
+    padding-bottom: 4rem;
+  }
+
+  .content-page-body__card {
+    padding: 1.5rem;
+  }
+
+  .content-page-body__inner {
+    max-width: 62rem;
+    margin: 0 auto;
+  }
+
+  .content-page-body__inner :global(h2),
+  .content-page-body__inner :global(h3),
+  .content-page-body__inner :global(h4) {
+    color: var(--color-text);
+  }
+
+  .content-page-body__inner :global(p),
+  .content-page-body__inner :global(li),
+  .content-page-body__inner :global(td),
+  .content-page-body__inner :global(th) {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  .content-page-body__inner :global(a) {
+    color: var(--theme-highlight);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .content-page-body__inner :global(.bg-secondary),
+  .content-page-body__inner :global(.card) {
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.88);
+  }
+
+  .content-page-body__inner :global(table) {
+    overflow: hidden;
+    border: 1px solid rgba(74, 54, 41, 0.12);
+    border-radius: 1rem;
+  }
+
+  .content-page-body__inner :global(.price-table thead tr) {
+    background: rgba(184, 104, 54, 0.08);
+  }
+
+  @media (max-width: 1040px) {
+    .content-page-hero {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .content-page-hero,
+    .content-page-body__card {
+      padding: 1.2rem;
+    }
+
+    .content-page-hero__actions {
+      flex-direction: column;
+    }
+  }
+</style>

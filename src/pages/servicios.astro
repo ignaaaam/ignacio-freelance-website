@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Features from '../components/Features.astro';
+import Projects from '../components/Projects.astro';
+import Pricing from '../components/Pricing.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+import { siteContent } from '../data/siteContent';
+
+const page = siteContent.es;
+const canonicalUrl = '/servicios';
+---
+
+<Layout
+  title="Servicios de desarrollo web freelance | Ignacio Amat"
+  description="Hub de servicios para landing pages, webs de empresa, Laravel, redisenos, mantenimiento y MVPs."
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  alternateUrls={{ es: canonicalUrl, en: '/en/services' }}
+>
+  <Header />
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-eyebrow">{page.servicesPage.eyebrow}</p>
+          <h1>{page.servicesPage.title}</h1>
+          <p class="section-copy">{page.servicesPage.description}</p>
+        </div>
+        <div class="service-page__actions">
+          <a href="#contacto" class="btn-primary">{page.servicesPage.ctaPrimary}</a>
+          <a href="#proyectos" class="btn-secondary">{page.servicesPage.ctaSecondary}</a>
+        </div>
+      </div>
+    </section>
+    <Features />
+    <Projects />
+    <Pricing />
+    <Contact />
+  </main>
+  <StickyCTA />
+</Layout>
+
+<style>
+  .service-page__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 1.4rem;
+  }
+</style>

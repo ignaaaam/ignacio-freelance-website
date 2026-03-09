@@ -1,0 +1,255 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Web application, SaaS and MVP development | Ignacio Amat';
+const description =
+  'MVP, SaaS and custom web application development for teams that need to validate, launch and grow on a maintainable technical base. Laravel, React, Node and practical product scope.';
+const canonicalUrl = '/en/web-application-saas-development';
+const keywords = [
+  'web application development',
+  'saas development',
+  'mvp development',
+  'custom web app',
+  'build web application',
+  'freelance saas developer',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Web application and SaaS development',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Ignacio Amat - Web Developer',
+    url: baseUrl,
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Spain',
+  },
+  description:
+    'MVP, web application and SaaS development for teams that need to validate an idea, ship a first useful version or build a maintainable product foundation.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: 'Starting from EUR 3,000',
+    priceCurrency: 'EUR',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an MVP and when should you start there?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An MVP is the first useful version of the product. It makes sense when you want to validate an idea, reduce risk or ship a core workflow to real users without overbuilding.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a web application or SaaS project cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An MVP often starts around EUR 3,000. SaaS work or broader applications with multiple modules, users and integrations need a custom proposal based on scope.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What technologies do you use for this kind of work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The stack depends on the case, but I often work with Laravel, React, Astro, Node.js and PostgreSQL when the goal is to launch something maintainable.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you stay involved after launch?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Many product projects are built in phases. I can stay involved for maintenance, iterative improvements, support or new features after the first release.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Web application and SaaS development', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Built for', value: 'Teams that need to validate an idea, ship an MVP or bring more structure to a product that will keep growing.' },
+  { label: 'Approach', value: 'Useful scope first, then a first functional release that can improve cleanly over time.' },
+  { label: 'Typical stack', value: 'Laravel, React, Astro, Node.js and PostgreSQL when the product calls for them.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  alternateUrls={{ es: '/desarrollo-aplicacion-web-saas', en: canonicalUrl }}
+  additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+  badge="Web apps, SaaS and MVPs"
+  pageTitle="Web applications, SaaS and MVPs built to launch a useful first version and grow from there"
+  lead="I work with teams that need to turn an idea or a messy process into a real application, with practical scope, a first useful release and a technical base that will not collapse in the next phase."
+  primaryCta={{ label: 'Request a proposal', href: '#contacto' }}
+  secondaryCta={{ label: 'See full-stack services', href: '/en/hire-full-stack-web-developer' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why starting with an MVP often makes sense</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Many teams do not need a massive platform on day one. They need a first version that lets users complete
+      the main workflow, gives the team real feedback and makes it easier to decide what should be built next.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      An MVP is not about shipping something weak. It is about cutting the non-essential parts so you can launch
+      earlier, learn faster and avoid spending months building around assumptions that have not yet earned the cost.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Lower risk at the start</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          You validate the idea or workflow before locking too much time and budget into secondary features.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Real product learning</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Product decisions improve once real users interact with the first version and basic usage data starts to exist.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">More realistic scope</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          It becomes easier to separate what is essential from what is only desirable, which keeps launch cleaner.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A base for iteration</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          If the first release is shaped properly, the next phase becomes an evolution instead of a rescue job.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Product types that often fit here</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Internal tools</h3>
+        <p class="text-sm sm:text-base">
+          Dashboards, operations, internal workflows and tools that replace spreadsheets or half-working manual setups.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Client portals</h3>
+        <p class="text-sm sm:text-base">
+          Private areas for status tracking, documents, orders, incidents or any flow where clients need to log in and operate.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Product MVPs</h3>
+        <p class="text-sm sm:text-base">
+          For validating a proposition with a first useful version before expanding team size, features or budget.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">SaaS and business software</h3>
+        <p class="text-sm sm:text-base">
+          Products with users, permissions, dashboards, subscriptions or modules that need a more serious architecture.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How I usually approach the build</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>The minimum useful flow is defined first:</strong> what a user must be able to do in the first release for the product to make sense.</li>
+      <li><strong>Scope is split into phases:</strong> that makes it easier to launch earlier and avoids loading the first release with everything imaginable.</li>
+      <li><strong>The implementation is built to stay maintainable:</strong> auth, data, dashboards and integrations sit on a cleaner technical base.</li>
+      <li><strong>Technology follows the product need:</strong> Laravel, React, Astro or Node are used when they actually help the product do its job well.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Indicative investment</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Functional MVP — from EUR 3,000</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For a first release with authentication, core workflow, database and a launch-ready setup for real users.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Application with several modules — from EUR 6,000</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For projects that need dashboards, permissions, integrations or a broader operational layer from the start.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Product with a phased roadmap — custom scoped</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Better suited to SaaS work, recurring products or applications that need a longer evolution path.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">What is an MVP and when does it make sense?</h3>
+        <p class="text-sm sm:text-base">
+          It is the first useful version of the product. It makes sense when you want to validate an idea, reduce risk or ship a key workflow to real users without overbuilding too early.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">How long does a first version take?</h3>
+        <p class="text-sm sm:text-base">
+          It depends on scope, but a well-bounded MVP can ship far sooner than a product planned with every possible feature from day one.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Can the product keep evolving after launch?</h3>
+        <p class="text-sm sm:text-base">
+          Yes. That is usually the point. The first release should leave a useful base for better decisions in the next phase.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Do you only work with startups?</h3>
+        <p class="text-sm sm:text-base">
+          No. I also work with established companies that need internal tools, portals or software to structure existing operations better.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/en/freelance-laravel-developer" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Laravel development &rarr;</a>
+      <a href="/en/hire-full-stack-web-developer" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full-stack freelance &rarr;</a>
+      <a href="/en/services" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">All services &rarr;</a>
+      <a href="/en/how-much-does-website-cost" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Pricing guide &rarr;</a>
+      <a href="/en/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contact &rarr;</a>
+      <a href="/en/website-maintenance" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Maintenance &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Have a product idea or internal need that now calls for proper software?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        If you tell me the problem, who will use it and what the first version needs to do, I can help frame the most reasonable starting scope.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Better scope from the start<br />
+        First phase shaped for learning and validation<br />
+        Technical base built to grow cleanly
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

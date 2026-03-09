@@ -126,14 +126,16 @@
   },
   "pricing": {
     "badge": "Inversión en tu Negocio",
-    "title": "Inversión Aproximada",
-    "description": "Cada proyecto es único. Estos rangos te dan una idea de la inversión según el tipo de web que necesitas.",
+    "title": "Cómo Funciona la Inversión",
+    "description": "Cada proyecto es único. Estos precios orientativos te ayudan a planificar tu inversión. El precio final se ajusta a tus necesidades concretas.",
     "popular": "Más Popular",
     "cta": "Solicitar Presupuesto Personalizado",
-    "investmentLabel": "Inversión típica",
-    "accordingToComplexity": "según complejidad y funcionalidades",
+    "investmentLabel": "Inversión desde",
+    "accordingToComplexity": "Precio final según tus necesidades",
     "idealFor": "Ideal para:",
     "featuresNote": "Las funcionalidades se definen según tus necesidades específicas",
+    "whatAffectsPrice": ["Número de páginas", "Funcionalidades a medida", "Integraciones externas", "Plazo de entrega"],
+    "whatsIncluded": ["Diseño personalizado", "Desarrollo completo", "SEO básico incluido", "Diseño responsive", "Configuración de hosting"],
     "customTitle": "¿Proyecto Personalizado?",
     "customDescription": "Si necesitas algo más complejo como una aplicación web, CRM o sistema a medida, contáctame para un presupuesto personalizado.",
     "customCta": "Hablemos de tu proyecto",
@@ -144,7 +146,7 @@
       {
         "name": "Landing Page",
         "description": "Ideal para lanzamientos, campañas específicas o servicios puntuales.",
-        "priceRange": "800€ - 1.500€",
+        "priceRange": "Desde 800€",
         "useCases": [
           "Página de producto o servicio",
           "Campaña de marketing puntual",
@@ -162,7 +164,7 @@
       {
         "name": "Web Corporativa",
         "description": "Web profesional completa para empresas que buscan presencia sólida online.",
-        "priceRange": "1.500€ - 3.500€",
+        "priceRange": "Desde 1.500€",
         "useCases": [
           "Sitio corporativo de empresa",
           "Portfolio profesional",
@@ -181,7 +183,7 @@
       {
         "name": "E-commerce",
         "description": "Tienda online completa para vender tus productos o servicios 24/7.",
-        "priceRange": "3.000€ - 6.000€+",
+        "priceRange": "Desde 3.000€",
         "useCases": [
           "Tienda online de productos",
           "Venta de servicios digitales",
@@ -226,6 +228,22 @@
       {
         "question": "¿Cuál es la inversión habitual de una landing page profesional?",
         "answer": "Una landing page profesional suele estar entre 800€ y 1.500€, según objetivos, copy, diseño y funcionalidades. Te envío un presupuesto claro y personalizado tras revisar tu caso."
+      },
+      {
+        "question": "¿Trabajas con clientes fuera de España?",
+        "answer": "Sí, trabajo en remoto con clientes de toda Europa, Estados Unidos y Latinoamérica. La comunicación se adapta a tu zona horaria y todo el proceso se gestiona online de forma eficiente."
+      },
+      {
+        "question": "¿Qué tecnologías utilizas?",
+        "answer": "Trabajo con tecnologías modernas como Laravel, React, Astro, Node.js, TailwindCSS y bases de datos SQL/NoSQL. Elijo la tecnología más adecuada para cada proyecto según sus necesidades específicas."
+      },
+      {
+        "question": "¿Puedes mejorar o arreglar mi web actual?",
+        "answer": "Sí, ofrezco servicios de rediseño, optimización de rendimiento, mejoras de SEO y corrección de errores en webs existentes. Puedo evaluar tu web actual y proponerte mejoras concretas."
+      },
+      {
+        "question": "¿Cómo funciona el proceso de trabajo en remoto?",
+        "answer": "Tras una primera llamada para entender tu proyecto, defino una propuesta clara con fases y entregas. Usamos herramientas de gestión de proyectos, videollamadas periódicas y comunicación directa para que siempre sepas el estado de tu proyecto."
       }
     ]
   },
@@ -249,6 +267,10 @@
       "landing": "Landing Page",
       "complete": "Web Completa",
       "ecommerce": "Tienda Online",
+      "redesign": "Rediseño / Mejora web",
+      "webapp": "Aplicación web / SaaS / MVP",
+      "maintenance": "Mantenimiento web",
+      "laravel": "Proyecto Laravel",
       "other": "Otro"
     },
     "placeholders": {
@@ -264,10 +286,11 @@
     "company": "Empresa (opcional)",
     "budget": "Presupuesto estimado (opcional)",
     "budgetOptions": [
-      "800€ - 1.500€",
-      "1.500€ - 3.500€",
-      "3.500€ - 7.000€",
-      "7.000€+"
+      "Menos de 1.500€",
+      "1.500€ – 3.000€",
+      "3.000€ – 6.000€",
+      "6.000€ – 10.000€",
+      "Más de 10.000€"
     ]
   },
   "footer": {

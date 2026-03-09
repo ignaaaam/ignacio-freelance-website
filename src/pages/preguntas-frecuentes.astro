@@ -1,0 +1,192 @@
+---
+import MarketingContentPage from '../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Preguntas frecuentes sobre desarrollo web | Ignacio Amat';
+const description =
+  'Respuestas sobre servicios, precios, plazos, trabajo remoto, mantenimiento y desarrollo a medida para empresas, startups y equipos que necesitan una web o un producto digital mejor resuelto.';
+const canonicalUrl = '/preguntas-frecuentes';
+const keywords = [
+  'preguntas frecuentes desarrollo web',
+  'dudas crear web',
+  'faq desarrollador web',
+  'preguntas diseno web',
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Que servicios ofreces?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Trabajo landing pages, webs de empresa, redisenos, mantenimiento, desarrollo con Laravel, MVPs y aplicaciones web cuando el proyecto necesita una base mas seria.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Trabajas en remoto?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Si. Trabajo en remoto con clientes de Espana y con equipos internacionales cuando el proyecto encaja bien.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Cuanto cuesta una web?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Una landing sencilla puede partir de 800 EUR, una web de empresa suele moverse desde 1.500 EUR y una aplicacion o MVP normalmente desde 3.000 EUR, siempre segun alcance.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Puedes mejorar una web existente?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Si. Muchas veces el mejor paso es mejorar estructura, copy, rendimiento o conversion antes que rehacerlo todo desde cero.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Preguntas frecuentes', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Resuelve', value: 'Dudas sobre servicios, plazos, trabajo remoto, mantenimiento e inversion orientativa.' },
+  { label: 'Pensado para', value: 'Empresas, startups y profesionales que quieren contexto antes de pedir propuesta.' },
+  { label: 'Si falta algo', value: 'La ultima seccion de contacto sirve para preguntas concretas sobre tu caso.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={[faqSchema, breadcrumbSchema]}
+  alternateUrls={{ es: canonicalUrl, en: '/en/frequently-asked-questions' }}
+  badge="FAQ de servicios y proceso"
+  pageTitle="Preguntas frecuentes sobre servicios, precios y forma de trabajar"
+  lead="Aqui estan respondidas las dudas mas habituales antes de pedir una propuesta: que tipo de proyectos trabajo, como suelo enfocar el proceso, que rangos son razonables y cuando tiene sentido mejorar una web en lugar de rehacerla."
+  primaryCta={{ label: 'Hablar sobre mi proyecto', href: '#contacto' }}
+  secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-6">Servicios y encaje</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Que servicios ofreces?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Trabajo <a href="/crear-landing-page-profesional" class="text-accent hover:underline">landing pages</a>,
+          <a href="/diseno-web-empresas" class="text-accent hover:underline"> webs de empresa</a>,
+          <a href="/rediseno-web-mejoras" class="text-accent hover:underline"> redisenos y mejoras</a>,
+          <a href="/mantenimiento-web" class="text-accent hover:underline"> mantenimiento</a>,
+          <a href="/desarrollador-laravel-freelance" class="text-accent hover:underline"> desarrollo con Laravel</a> y
+          <a href="/desarrollo-aplicacion-web-saas" class="text-accent hover:underline"> apps web, MVPs y SaaS</a>.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Con que tipo de cliente sueles trabajar?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Con empresas de servicios, startups, equipos pequenos y negocios que necesitan una web mas clara, una mejora puntual o una primera version de producto bien planteada.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Trabajas en remoto?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Si. Trabajo en remoto con clientes de Espana y con equipos internacionales cuando el encaje es bueno. La comunicacion y la entrega no dependen de estar en la misma ciudad.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Proceso y forma de trabajo</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Como empieza normalmente un proyecto?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Con una primera conversacion para entender objetivo, punto de partida y alcance probable. A partir de ahi preparo una propuesta o una orientacion inicial con el siguiente paso mas razonable.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Necesito tenerlo todo definido antes de escribirte?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          No. Si el proyecto aun esta verde, basta con explicar que quieres conseguir, a quien va dirigido y que existe ya. Con eso se puede ordenar mucho.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Trabajas por fases o todo de una vez?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Depende del proyecto, pero cuando tiene sentido prefiero dividir por fases. Eso ayuda a validar antes, reducir riesgo y no inflar la primera entrega innecesariamente.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Precios e inversion</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Cuanto cuesta una web?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Una landing sencilla puede partir de 800 EUR, una web de empresa suele arrancar en 1.500 EUR y una app web o MVP normalmente desde 3.000 EUR. El rango exacto depende del alcance, el contenido y las integraciones.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Por que es dificil dar precio cerrado sin contexto?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Porque no cuesta lo mismo maquetar algo ya definido que ordenar oferta, rehacer copy, conectar herramientas o corregir una base antigua. La inversion cambia mucho con esos detalles.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Tambien haces mejoras puntuales o bolsas de horas?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Si. Hay proyectos donde no hace falta una web nueva, sino arreglar una parte concreta, mejorar conversion, corregir errores o trabajar por soporte continuado.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Tecnico y mantenimiento</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Puedes mejorar o arreglar una web que ya existe?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Si. De hecho, muchas veces es la mejor opcion. Puedo trabajar estructura, copy, rendimiento, errores tecnicos o una capa visual que ya no esta ayudando a vender bien.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Incluyes SEO tecnico base?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Si. Estructura semantica, metadatos, rendimiento, schema cuando encaja y una base razonable para que el proyecto no nazca flojo a nivel tecnico.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Ofreces mantenimiento despues del lanzamiento?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Si. Puedo seguir con soporte, mantenimiento, cambios y evolutivo para que la web o el producto no se queden congelados tras salir.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">No ves aqui tu caso exacto?</h2>
+      <p class="text-sm sm:text-base mb-4">
+        Es normal. Cuanto mas concreto es el proyecto, mas util suele ser comentarlo directamente. Si me explicas el objetivo y el punto de partida, te digo por donde empezaria.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Respuesta inicial clara<br />
+        Sin necesidad de tener el briefing perfecto<br />
+        Orientacion practica sobre siguiente paso
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

@@ -1,0 +1,225 @@
+---
+import MarketingContentPage from '../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Cuanto cuesta una pagina web en 2026? | Guia de precios real';
+const description =
+  'Guia orientativa de precios web en 2026 para landing pages, webs corporativas, ecommerce y aplicaciones web. Rangos reales, factores que mueven el presupuesto y como comparar propuestas.';
+const canonicalUrl = '/cuanto-cuesta-pagina-web';
+const keywords = [
+  'cuanto cuesta pagina web',
+  'precio pagina web',
+  'presupuesto web',
+  'cuanto cuesta crear web',
+  'precio desarrollo web',
+  'coste pagina web 2026',
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Cuanto cuesta una pagina web en Espana en 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Depende del tipo de proyecto. Una landing page sencilla puede partir de 800 EUR, una web de empresa suele moverse desde 1.500 EUR y una aplicacion web o MVP parte normalmente de 3.000 EUR.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Por que dos presupuestos pueden ser tan distintos?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Porque cambian el alcance, el nivel de personalizacion, el contenido, las integraciones, la tecnologia y lo que realmente se entrega despues del lanzamiento.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Es mejor empezar por algo pequeno?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Muchas veces si. Una landing page o una primera fase bien definida suele ser mejor que sobredimensionar el proyecto desde el principio.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Que conviene revisar antes de aceptar un presupuesto?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Conviene revisar que incluye, que no incluye, como se plantean las fases, si hay soporte posterior y si la propuesta responde al problema de negocio real, no solo a una lista tecnica.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Cuanto cuesta una pagina web', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Sirve para', value: 'Entender rangos, factores de precio y como se traduce el alcance en presupuesto real.' },
+  { label: 'Importante', value: 'Un precio bajo no siempre significa eficiencia. A menudo significa menos trabajo del que parece.' },
+  { label: 'Siguiente paso', value: 'Usar esta guia para orientarte y despues pedir una propuesta basada en tu caso concreto.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  additionalSchemas={[faqSchema, breadcrumbSchema]}
+  keywords={keywords}
+  alternateUrls={{ es: canonicalUrl, en: '/en/how-much-does-website-cost' }}
+  badge="Guia de precios web"
+  pageTitle="Cuanto cuesta una pagina web y que explica de verdad esa inversion"
+  lead="Esta guia no intenta darte una tarifa magica. Sirve para entender que rangos son razonables, que hace subir o bajar un presupuesto y como distinguir una propuesta seria de una que oculta trabajo por detras."
+  primaryCta={{ label: 'Pedir presupuesto', href: '#contacto' }}
+  secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Rangos orientativos por tipo de proyecto</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="price-table w-full text-sm sm:text-base border-collapse">
+        <thead>
+          <tr>
+            <th class="text-left py-3 px-4">Tipo de proyecto</th>
+            <th class="text-left py-3 px-4">Rango orientativo</th>
+            <th class="text-left py-3 px-4">Plazo habitual</th>
+            <th class="text-left py-3 px-4">Cuando suele encajar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-3 px-4 font-medium">Landing page</td>
+            <td class="py-3 px-4">800 EUR - 1.500 EUR</td>
+            <td class="py-3 px-4">Dias a 2 semanas</td>
+            <td class="py-3 px-4">Campanas, servicios concretos, captacion</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium">Web de empresa</td>
+            <td class="py-3 px-4">1.500 EUR - 4.000 EUR</td>
+            <td class="py-3 px-4">2 a 6 semanas</td>
+            <td class="py-3 px-4">Empresas de servicios, marca, presencia comercial</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium">Ecommerce</td>
+            <td class="py-3 px-4">3.000 EUR - 8.000 EUR o mas</td>
+            <td class="py-3 px-4">4 a 12 semanas</td>
+            <td class="py-3 px-4">Catalogo, pagos, pedidos, area cliente</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium">App web / MVP / SaaS</td>
+            <td class="py-3 px-4">3.000 EUR - 15.000 EUR o mas</td>
+            <td class="py-3 px-4">Segun fases</td>
+            <td class="py-3 px-4">Producto digital, herramientas internas, portales</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Que es lo que mas mueve el precio</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Alcance real</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Cuantas paginas, pantallas o modulos hay que resolver y cuanto trabajo implican de verdad.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Contenido y mensaje</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          No cuesta lo mismo maquetar algo ya definido que ordenar una oferta, rehacer copy y estructurar desde cero.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Integraciones y funcionalidades</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          CRM, pagos, automatizaciones, areas privadas o flujos de datos anaden complejidad y trabajo de QA.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Punto de partida</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          No es igual empezar limpio que corregir una base antigua, migrar contenido o rehacer una arquitectura ya degradada.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Como leer un presupuesto sin quedarte solo con el numero</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>Que problema resuelve:</strong> un buen presupuesto explica el objetivo del proyecto, no solo una lista de tareas.</li>
+      <li><strong>Que incluye y que no incluye:</strong> si esto no esta claro, el precio puede parecer mejor de lo que realmente es.</li>
+      <li><strong>Como se organiza la entrega:</strong> fases, hitos, revisiones y criterio para dar el trabajo por cerrado.</li>
+      <li><strong>Que ocurre despues del lanzamiento:</strong> soporte, mantenimiento, pequenas correcciones o siguiente fase.</li>
+      <li><strong>Si el alcance esta inflado:</strong> a veces un proyecto pequeño necesita menos de lo que se propone. Otras veces el presupuesto es bajo porque falta medio proyecto.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cuando conviene empezar mas pequeño</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Muchas veces una landing page o una primera fase bien acotada da mas aprendizaje y mejor retorno que intentar
+      lanzar una web grande o un producto mas complejo del necesario.
+    </p>
+    <p class="text-base sm:text-lg mb-8">
+      Empezar pequeño no significa quedarse corto. Significa construir lo que de verdad hace falta ahora y dejar margen
+      para decidir mejor el siguiente paso.
+    </p>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes sobre precios web</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Cuanto cuesta una web en Espana en 2026?</h3>
+        <p class="text-sm sm:text-base">
+          Depende del proyecto, pero una landing sencilla puede partir de 800 EUR, una web de empresa suele arrancar en 1.500 EUR y una app web normalmente a partir de 3.000 EUR.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Por que dos presupuestos pueden ser tan distintos?</h3>
+        <p class="text-sm sm:text-base">
+          Porque cambian el alcance, el contenido, la personalizacion, las integraciones, la tecnologia y la implicacion real de quien ejecuta el proyecto.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Es mejor contratar una web barata para salir rapido?</h3>
+        <p class="text-sm sm:text-base">
+          A veces conviene salir con algo simple y bien planteado. Lo que suele salir caro es pagar poco por una solucion que no resuelve el problema real y obliga a rehacer despues.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Que deberia pedir antes de aceptar una propuesta?</h3>
+        <p class="text-sm sm:text-base">
+          Alcance, hitos, tiempos, revisiones, entregables y cualquier coste recurrente o dependencia externa que vaya a formar parte del proyecto.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/crear-landing-page-profesional" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/diseno-web-empresas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Webs de empresa &rarr;</a>
+      <a href="/desarrollo-aplicacion-web-saas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Apps web y MVPs &rarr;</a>
+      <a href="/servicios" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Todos los servicios &rarr;</a>
+      <a href="/preguntas-frecuentes" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">FAQ &rarr;</a>
+      <a href="/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contacto &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Quieres una propuesta basada en tu caso y no en una tabla general?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Cuentame que quieres lanzar o mejorar y te doy una orientacion mas util sobre alcance, prioridad e inversion probable.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Rangos claros antes de decidir<br />
+        Propuesta aterrizada al caso real<br />
+        Sin inflar ni recortar el alcance por sistema
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

@@ -1,371 +1,209 @@
 ---
-import Translate from './Translate.astro';
-import { getTranslation, getLocaleFromPath } from '../i18n/utils';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
-const projectsData = getTranslation(locale, 'projects');
-const isEnglish = locale === 'en';
-
-const projectTypes = [
-  {
-    icon: "landing",
-    titleKey: "projects.types.0.title",
-    subtitleKey: "projects.types.0.subtitle",
-    descriptionKey: "projects.types.0.description",
-    features: projectsData.types[0].features,
-    colorClass: "gradient-1"
-  },
-  {
-    icon: "corporate",
-    titleKey: "projects.types.1.title",
-    subtitleKey: "projects.types.1.subtitle",
-    descriptionKey: "projects.types.1.description",
-    features: projectsData.types[1].features,
-    colorClass: "gradient-2"
-  },
-  {
-    icon: "ecommerce",
-    titleKey: "projects.types.2.title",
-    subtitleKey: "projects.types.2.subtitle",
-    descriptionKey: "projects.types.2.description",
-    features: projectsData.types[2].features,
-    colorClass: "gradient-3"
-  },
-  {
-    icon: "webapp",
-    titleKey: "projects.types.3.title",
-    subtitleKey: "projects.types.3.subtitle",
-    descriptionKey: "projects.types.3.description",
-    features: projectsData.types[3].features,
-    colorClass: "gradient-4"
-  }
-];
+const content = siteContent[locale].portfolio;
 ---
 
-<section class="py-12 sm:py-16 md:py-20 bg-secondary relative overflow-hidden" id="proyectos">
-  <!-- Background gradient effect -->
-  <div class="absolute inset-0 bg-gradient-radial opacity-5"></div>
-
-  <div class="container relative z-10">
-    <div class="text-center mb-12 sm:mb-16">
-      <div class="inline-block mb-3 sm:mb-4">
-        <span class="text-xs sm:text-sm font-semibold text-accent uppercase tracking-wide">
-          <Translate key="projects.badge" />
-        </span>
-      </div>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4">
-        <Translate key="projects.title" />
-      </h2>
-      <p class="text-text-muted max-w-2xl mx-auto text-sm sm:text-base md:text-lg px-4">
-        <Translate key="projects.description" />
-      </p>
+<section class="section" id="proyectos">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h2>{content.title}</h2>
+      <p class="section-copy">{content.description}</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-      {projectTypes.map((project, index) => (
-        <div class="project-card-wrapper" data-index={index}>
-          <div class="card project-card">
-            <!-- Gradient header -->
-            <div class={`gradient-header ${project.colorClass}`}>
-              <div class="project-icon">
-                {project.icon === "landing" && (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
-                  </svg>
-                )}
-                {project.icon === "corporate" && (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                )}
-                {project.icon === "ecommerce" && (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                )}
-                {project.icon === "webapp" && (
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                  </svg>
-                )}
-              </div>
+    <div class="project-grid">
+      {content.items.map((item) => (
+        <article class="project-card surface-card" data-sr>
+          <div class="project-card__visual">
+            <div class="project-card__browser">
+              <span></span><span></span><span></span>
             </div>
-
-            <!-- Content -->
-            <div class="card-content">
-              <div class="mb-4">
-                <h3 class="text-2xl font-bold mb-1">
-                  <Translate key={project.titleKey} />
-                </h3>
-                <p class="text-accent font-semibold text-sm">
-                  <Translate key={project.subtitleKey} />
-                </p>
-              </div>
-
-              <p class="text-text-muted mb-6 leading-relaxed">
-                <Translate key={project.descriptionKey} />
-              </p>
-
-              <div class="features-list">
-                <p class="text-sm font-semibold mb-3 text-text-primary">
-                  <Translate key="projects.featuresLabel" />
-                </p>
-                <ul class="space-y-2">
-                  {project.features.map(feature => (
-                    <li class="flex items-start gap-3">
-                      <svg class="h-5 w-5 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span class="text-sm text-text-muted">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <!-- CTA -->
-            <div class="card-footer">
-              {project.icon === "landing" && (
-                <a href={isEnglish ? "/en/create-website-barcelona" : "/crear-pagina-web-barcelona"} class="btn-outline w-full text-center group">
-                  <span><Translate key="projects.cta" /></span>
-                  <svg class="h-4 w-4 inline-block ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              )}
-              {project.icon === "corporate" && (
-                <a href={isEnglish ? "/en/web-developer-barcelona" : "/desarrollador-web-barcelona"} class="btn-outline w-full text-center group">
-                  <span><Translate key="projects.cta" /></span>
-                  <svg class="h-4 w-4 inline-block ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              )}
-              {project.icon === "ecommerce" && (
-                <a href={isEnglish ? "/en/web-design-businesses" : "/diseno-web-empresas"} class="btn-outline w-full text-center group">
-                  <span><Translate key="projects.cta" /></span>
-                  <svg class="h-4 w-4 inline-block ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              )}
-              {project.icon === "webapp" && (
-                <a href="#contacto" class="btn-outline w-full text-center group">
-                  <span><Translate key="projects.cta" /></span>
-                  <svg class="h-4 w-4 inline-block ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </a>
-              )}
+            <img
+              src={item.visual.imageSrc}
+              alt={item.visual.imageAlt}
+              class="project-card__image"
+              loading="lazy"
+              decoding="async"
+              width="1600"
+              height="1000"
+            />
+            <p class="project-card__eyebrow">{item.visual.eyebrow}</p>
+            <h3>{item.visual.headline}</h3>
+            <p>{item.visual.caption}</p>
+            <div class="project-card__metrics">
+              {item.visual.metrics.map((metric) => (
+                <span>{metric}</span>
+              ))}
             </div>
           </div>
-        </div>
-      ))}
-    </div>
 
-    <!-- Additional CTA section -->
-    <div class="text-center mt-12 sm:mt-16 px-4">
-      <p class="text-text-muted mb-4 sm:mb-6 text-sm sm:text-base">
-        <Translate key="projects.customQuestion" />
-      </p>
-      <a href="#contacto" class="btn-primary inline-flex items-center gap-2">
-        <span><Translate key="projects.customCta" /></span>
-        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </a>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <p class="project-card__type">{item.category}</p>
+              <h3>{item.name}</h3>
+            </div>
+            <p class="project-card__summary">{item.summary}</p>
+
+            <div class="project-card__stack">
+              {item.stack.map((entry) => (
+                <span>{entry}</span>
+              ))}
+            </div>
+
+            <div class="project-card__result">
+              <strong>{locale === 'en' ? 'Expected impact' : 'Impacto esperado'}</strong>
+              <p>{item.outcome}</p>
+            </div>
+
+            <p class="project-card__detail">{item.detail}</p>
+
+            <div class="project-card__actions">
+              <a href={item.primaryLink.href} class="btn-primary">{item.primaryLink.label}</a>
+              {item.secondaryLink && <a href={item.secondaryLink.href} class="btn-secondary">{item.secondaryLink.label}</a>}
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  .bg-secondary {
-    background-color: var(--color-bg-secondary);
-  }
-
-  .bg-gradient-radial {
-    background: radial-gradient(circle at 50% 50%, var(--color-accent), transparent 70%);
-  }
-
-  .project-card-wrapper {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  .project-card-wrapper:nth-child(1) { animation-delay: 0.1s; }
-  .project-card-wrapper:nth-child(2) { animation-delay: 0.2s; }
-  .project-card-wrapper:nth-child(3) { animation-delay: 0.3s; }
-  .project-card-wrapper:nth-child(4) { animation-delay: 0.4s; }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  .project-grid {
+    display: grid;
+    gap: 1.2rem;
   }
 
   .project-card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
     overflow: hidden;
-    transition: all 0.3s ease;
   }
 
-  .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--color-accent);
+  .project-card__visual,
+  .project-card__body {
+    padding: 1.6rem;
+    min-width: 0;
   }
 
-  .gradient-header {
-    padding: 2rem;
-    position: relative;
+  .project-card__visual {
+    border-right: 1px solid var(--color-border);
+    background:
+      radial-gradient(circle at top right, rgba(192, 106, 42, 0.18), transparent 35%),
+      linear-gradient(160deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.18));
+  }
+
+  .project-card__browser {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 120px;
-    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+    gap: 0.35rem;
+    margin-bottom: 1.2rem;
   }
 
-  /* Variaciones monocromáticas del color de acento */
-  .gradient-1 {
-    background: linear-gradient(135deg,
-      color-mix(in srgb, var(--color-accent) 100%, transparent) 0%,
-      color-mix(in srgb, var(--color-accent) 85%, black 15%) 100%);
+  .project-card__browser span {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 999px;
+    background: rgba(30, 21, 16, 0.15);
   }
 
-  .gradient-2 {
-    background: linear-gradient(135deg,
-      color-mix(in srgb, var(--color-accent) 90%, white 10%) 0%,
-      color-mix(in srgb, var(--color-accent) 100%, transparent) 100%);
+  .project-card__eyebrow,
+  .project-card__type {
+    margin-bottom: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--theme-highlight);
   }
 
-  .gradient-3 {
-    background: linear-gradient(135deg,
-      color-mix(in srgb, var(--color-accent) 100%, transparent) 0%,
-      color-mix(in srgb, var(--color-accent) 80%, black 20%) 100%);
+  .project-card__visual h3,
+  .project-card__heading h3 {
+    font-size: 1.55rem;
   }
 
-  .gradient-4 {
-    background: linear-gradient(135deg,
-      color-mix(in srgb, var(--color-accent) 95%, white 5%) 0%,
-      color-mix(in srgb, var(--color-accent) 90%, black 10%) 100%);
+  .project-card__image {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
   }
 
-  .project-icon {
-    color: white;
-    position: relative;
-    z-index: 10;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-  }
-
-  .card-content {
-    padding: 2rem;
-    flex-grow: 1;
-  }
-
-  .card-footer {
-    padding: 0 2rem 2rem 2rem;
-    margin-top: auto;
-  }
-
-  .features-list {
-    background-color: var(--color-bg-secondary);
-    padding: 1.25rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-  }
-
-  .text-accent {
-    color: var(--color-accent);
-  }
-
-  .text-text-muted {
+  .project-card__visual p,
+  .project-card__summary,
+  .project-card__detail,
+  .project-card__result p {
     color: var(--color-text-muted);
+    line-height: 1.75;
   }
 
-  .text-text-primary {
-    color: var(--color-text-primary);
+  .project-card__metrics,
+  .project-card__stack,
+  .project-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
   }
 
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--color-accent);
-    color: var(--color-accent);
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .project-card__metrics {
+    margin-top: 1.25rem;
   }
 
-  .btn-outline:hover {
-    background-color: var(--color-accent);
-    color: white;
-    transform: translateY(-2px);
+  .project-card__metrics span,
+  .project-card__stack span {
+    padding: 0.45rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-border);
+    font-size: 0.86rem;
   }
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    background-color: var(--color-accent);
-    color: white;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .project-card__stack {
+    margin-top: 1rem;
   }
 
-  .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .project-card__result {
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--color-border);
   }
 
-  /* Responsive adjustments */
-  @media (max-width: 640px) {
-    .gradient-header {
-      min-height: 100px;
-      padding: 1.5rem;
+  .project-card__detail {
+    margin-top: 1rem;
+  }
+
+  .project-card__actions {
+    margin-top: 1.3rem;
+  }
+
+  @media (max-width: 1024px) {
+    .project-card {
+      grid-template-columns: 1fr;
     }
 
-    .project-icon svg {
-      height: 2.5rem;
-      width: 2.5rem;
-    }
-
-    .card-content {
-      padding: 1.5rem;
-    }
-
-    .card-footer {
-      padding: 0 1.5rem 1.5rem 1.5rem;
-    }
-
-    .features-list {
-      padding: 1rem;
-    }
-
-    .btn-primary {
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9375rem;
+    .project-card__visual {
+      border-right: 0;
+      border-bottom: 1px solid var(--color-border);
     }
   }
 
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .gradient-header {
-      min-height: 110px;
-      padding: 1.75rem;
+  @media (max-width: 720px) {
+    .project-card__visual,
+    .project-card__body {
+      padding: 1.15rem;
+    }
+
+    .project-card__visual h3,
+    .project-card__heading h3 {
+      font-size: 1.35rem;
+    }
+
+    .project-card__actions {
+      flex-direction: column;
+      align-items: stretch;
     }
   }
 </style>

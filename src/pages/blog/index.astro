@@ -3,137 +3,196 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 
 const baseUrl = 'https://ignacioamatweb.com';
-const title = "Blog Desarrollo Web Barcelona | Precios, Landing y Proyectos Complejos";
-const description = "Guías sobre precios de páginas web en Barcelona, landing pages y proyectos complejos. Consejos SEO y diseño web para empresas. Presupuesto gratuito.";
-const canonicalUrl = "/blog";
-const keywords = ["blog desarrollo web Barcelona", "precios página web Barcelona", "landing page Barcelona", "proyectos web complejos", "cuánto cuesta una web", "diseño web empresas"];
+const title = 'Blog de desarrollo web, precios y decisiones de proyecto | Ignacio Amat';
+const description = 'Guias practicas sobre precios web, contratacion de freelance, landing pages, webs de empresa y decisiones tecnicas que afectan conversion, SEO y confianza.';
+const canonicalUrl = '/blog';
+const keywords = ['blog desarrollo web', 'precios pagina web', 'landing page profesional', 'contratar desarrollador web freelance', 'rediseno web empresas', 'seo tecnico freelance'];
 
-// Lista de artículos del blog
 const blogPosts = [
-	{
-		slug: "desarrollador-web-freelance-espana-2026",
-		title: "Desarrollador Web Freelance en España: Cómo Elegir el Mejor [2026]",
-		description: "Guía completa para contratar un desarrollador web freelance en España. Precios, tecnologías, qué mirar en el portfolio y cómo evitar errores comunes. Con ejemplos reales.",
-		date: "2026-02-26",
-		readTime: "10 min",
-		category: "Guía"
-	},
-	{
-		slug: "cuanto-cuesta-crear-pagina-web-barcelona-2026",
-		title: "¿Cuánto Cuesta Crear una Página Web en Barcelona? [Guía 2026]",
-		description: "Desglose completo de precios para crear una web en Barcelona: landing pages, webs corporativas y tiendas online. Con ejemplos reales y factores que afectan el precio.",
-		date: "2026-01-14",
-		readTime: "12 min",
-		category: "Precios"
-	}
+  {
+    slug: 'desarrollador-web-freelance-espana-2026',
+    title: 'Desarrollador Web Freelance en España: Cómo Elegir el Mejor [2026]',
+    description: 'Guía completa para contratar un desarrollador web freelance en España. Qué mirar en portfolio, precios orientativos, red flags y preguntas clave antes de decidir.',
+    date: '2026-02-26',
+    readTime: '10 min',
+    category: 'Contratacion',
+  },
+  {
+    slug: 'cuanto-cuesta-crear-pagina-web-barcelona-2026',
+    title: '¿Cuánto Cuesta Crear una Página Web en Barcelona? [Guía 2026]',
+    description: 'Desglose realista de precios para landing pages, webs corporativas, tiendas online y proyectos a medida, con foco en qué mueve el presupuesto de verdad.',
+    date: '2026-01-14',
+    readTime: '12 min',
+    category: 'Precios',
+  },
 ];
 
 const breadcrumbSchema = {
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [
-		{
-			"@type": "ListItem",
-			"position": 1,
-			"name": "Inicio",
-			"item": baseUrl
-		},
-		{
-			"@type": "ListItem",
-			"position": 2,
-			"name": "Blog",
-			"item": `${baseUrl}${canonicalUrl}`
-		}
-	]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Inicio',
+      item: baseUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${baseUrl}${canonicalUrl}`,
+    },
+  ],
 };
 
 const blogSchema = {
-	"@context": "https://schema.org",
-	"@type": "Blog",
-	"name": "Blog de Ignacio Amat - Desarrollo Web Barcelona",
-	"description": "Artículos sobre desarrollo web, diseño y marketing digital para empresas",
-	"url": `${baseUrl}/blog`,
-	"author": {
-		"@type": "Person",
-		"name": "Ignacio Amat"
-	}
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'Blog de Ignacio Amat',
+  description,
+  url: `${baseUrl}${canonicalUrl}`,
+  author: {
+    '@type': 'Person',
+    name: 'Ignacio Amat',
+  },
 };
 
 const allSchemas = [breadcrumbSchema, blogSchema];
 ---
-<Layout 
-	title={title} 
-	description={description} 
-	lang="es"
-	canonicalUrl={canonicalUrl}
-	additionalSchemas={allSchemas}
-	keywords={keywords}
+
+<Layout
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  additionalSchemas={allSchemas}
+  keywords={keywords}
 >
-	<Header />
-	<main>
-		<section class="py-12 sm:py-16 md:py-20">
-			<div class="container px-4 sm:px-6">
-				<div class="max-w-4xl mx-auto">
-					<div class="text-center mb-12">
-						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
-							📚 Blog
-						</span>
-						<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-							Blog de Desarrollo Web
-						</h1>
-						<p class="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto">
-							Guías prácticas, consejos y recursos sobre desarrollo web, diseño y marketing digital 
-							para empresas en Barcelona y toda España.
-						</p>
-					</div>
+  <Header />
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="blog-hero surface-card" data-sr>
+          <p class="section-eyebrow">Blog</p>
+          <h1>Articulos para tomar mejores decisiones antes de contratar, rediseñar o lanzar una web.</h1>
+          <p class="section-copy">Contenido pensado para responder dudas reales sobre precios, alcance, SEO, rediseños, mantenimiento y contratacion freelance. Sin relleno y sin lenguaje de plantilla.</p>
+        </div>
 
-					<div class="space-y-6">
-						{blogPosts.map((post) => (
-							<article class="bg-secondary rounded-lg p-6 hover:shadow-lg transition-all">
-								<a href={`/blog/${post.slug}`} class="block">
-									<div class="flex items-center gap-3 mb-3">
-										<span class="px-2 py-1 text-xs font-medium bg-accent/10 text-accent rounded">
-											{post.category}
-										</span>
-										<span class="text-sm text-text-muted">{post.date}</span>
-										<span class="text-sm text-text-muted">· {post.readTime} lectura</span>
-									</div>
-									<h2 class="text-xl sm:text-2xl font-bold mb-2 hover:text-accent transition-colors">
-										{post.title}
-									</h2>
-									<p class="text-text-muted mb-4">
-										{post.description}
-									</p>
-									<span class="text-accent font-medium">Leer artículo →</span>
-								</a>
-							</article>
-						))}
-					</div>
+        <div class="blog-grid">
+          {blogPosts.map((post) => (
+            <article class="blog-card surface-card" data-sr>
+              <a href={`/blog/${post.slug}`} class="blog-card__link">
+                <div class="blog-card__meta">
+                  <span class="blog-card__badge">{post.category}</span>
+                  <time datetime={post.date}>{new Date(post.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
+                  <span>{post.readTime} lectura</span>
+                </div>
+                <h2>{post.title}</h2>
+                <p>{post.description}</p>
+                <span class="btn-tertiary">Leer articulo</span>
+              </a>
+            </article>
+          ))}
+        </div>
 
-					<div class="mt-12 text-center">
-						<p class="text-text-muted mb-4">
-							¿Tienes una pregunta sobre desarrollo web que te gustaría que respondiera en un artículo?
-						</p>
-						<a href="/#contacto" class="btn-primary inline-block">
-							Sugerir un tema
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
+        <div class="blog-cta surface-card" data-sr>
+          <div>
+            <p class="section-eyebrow">Ideas para el blog</p>
+            <h2>¿Hay algun tema que te interese ver resuelto en una guia?</h2>
+            <p class="section-copy">Si detectas una duda frecuente de clientes o una decision tecnica o comercial que merezca una explicacion clara, puedes proponermela.</p>
+          </div>
+          <a href="/#contacto" class="btn-primary">Sugerir un tema</a>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-	.text-text-muted {
-		color: var(--color-text-muted);
-	}
-	
-	.bg-secondary {
-		background-color: var(--color-secondary);
-	}
-	
-	.text-accent {
-		color: var(--color-accent);
-	}
+  .blog-hero,
+  .blog-card,
+  .blog-cta {
+    padding: 1.45rem;
+  }
+
+  .blog-hero {
+    max-width: 860px;
+  }
+
+  .blog-hero h1 {
+    max-width: 14ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2.6rem, 6vw, 4.9rem);
+  }
+
+  .blog-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .blog-card__link {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .blog-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+  }
+
+  .blog-card__badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0.28rem 0.72rem;
+    border-radius: 999px;
+    background: rgba(33, 68, 63, 0.08);
+    color: var(--theme-highlight);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+  }
+
+  .blog-card h2 {
+    max-width: 24ch;
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+  }
+
+  .blog-card p {
+    max-width: 64ch;
+    color: var(--color-text-muted);
+    line-height: 1.82;
+  }
+
+  .blog-cta {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.4rem;
+  }
+
+  @media (max-width: 720px) {
+    .blog-hero,
+    .blog-card,
+    .blog-cta {
+      padding: 1.2rem;
+    }
+
+    .blog-hero h1 {
+      max-width: none;
+    }
+
+    .blog-cta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
 </style>

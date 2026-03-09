@@ -2,7 +2,9 @@
 import '../styles/global.css';
 import { getAlternateUrls } from '../i18n/utils';
 import PlunkToaster from '../components/Toaster.tsx';
-import { ViewTransitions } from 'astro:transitions';
+import SiteFooter from '../components/SiteFooter.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -46,7 +48,7 @@ const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
 const structuredData: any = {
 	"@context": "https://schema.org",
 	"@type": type === 'website' ? 'WebSite' : 'Article',
-	"url": fullUrl,
+	"url": canonical,
 	"name": title,
 	"description": description,
 	"author": {
@@ -60,7 +62,7 @@ const structuredData: any = {
 		"@type": "Organization",
 		"name": "Ignacio Amat",
 		"url": baseUrl,
-		"logo": { "@type": "ImageObject", "url": `${baseUrl}/images/og-image.png` }
+		"logo": { "@type": "ImageObject", "url": `${baseUrl}/brand-mark.svg` }
 	} : undefined
 };
 
@@ -74,9 +76,10 @@ if (type === 'article' && publishedDate) {
 const organizationSchema = {
 	"@context": "https://schema.org",
 	"@type": "Organization",
-	"name": "Ignacio Amat",
+	"name": "Ignacio Amat Web Development",
 	"url": baseUrl,
-	"logo": `${baseUrl}/images/og-image.png`,
+	"logo": `${baseUrl}/brand-mark.svg`,
+	"foundingDate": "2023",
 	"sameAs": [
 		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
 		"https://github.com/ignaaaam",
@@ -86,7 +89,32 @@ const organizationSchema = {
 		"@type": "ContactPoint",
 		"contactType": "Customer Service",
 		"availableLanguage": ["Spanish", "English"]
-	}
+	},
+	"areaServed": [
+		{ "@type": "Country", "name": "Spain" },
+		{ "@type": "City", "name": "Madrid" },
+		{ "@type": "City", "name": "Barcelona" },
+		{ "@type": "City", "name": "Valencia" },
+		{ "@type": "City", "name": "Sevilla" }
+	],
+	"knowsAbout": ["Web Development", "Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Landing Pages", "SaaS", "MVP Development"]
+};
+
+// Person structured data (AEO critical)
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Freelance Full-Stack Web Developer",
+	"url": baseUrl,
+	"sameAs": [
+		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
+		"https://github.com/ignaaaam",
+		"https://x.com/ignathedev"
+	],
+	"knowsAbout": ["Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Web Development", "TailwindCSS", "Full-Stack Development"],
+	"worksFor": { "@type": "Organization", "name": "Ignacio Amat Web Development" },
+	"knowsLanguage": ["Spanish", "English"]
 };
 
 // Breadcrumb schema for non-home pages
@@ -112,6 +140,7 @@ const breadcrumbSchema = currentPath !== '/' && currentPath !== '/en/' ? {
 // JSON-LD structured data
 const jsonLd = JSON.stringify(structuredData);
 const orgJsonLd = JSON.stringify(organizationSchema);
+const personJsonLd = JSON.stringify(personSchema);
 const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : null;
 ---
 
@@ -119,8 +148,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 <html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-		<meta name="color-scheme" content="light dark" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
@@ -134,7 +162,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content={type} />
-		<meta property="og:url" content={fullUrl} />
+		<meta property="og:url" content={canonical} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={image} />
@@ -157,19 +185,10 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta name="twitter:image:alt" content={title} />
 		<meta name="twitter:domain" content="ignacioamatweb.com" />
 
-		<!-- Additional SEO Meta Tags -->
-		<meta name="rating" content="general" />
-		<meta name="distribution" content="global" />
-		<meta name="coverage" content="Worldwide" />
-		<meta name="target" content="all" />
-		<meta name="HandheldFriendly" content="True" />
-		<meta name="MobileOptimized" content="320" />
-
 		<!-- Language and SEO meta tags -->
 		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
 		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
 		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
-		<meta http-equiv="content-language" content={lang} />
 		
 		<!-- Robots meta tag -->
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -183,82 +202,24 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta name="format-detection" content="telephone=no" />
 
 		<!-- Theme color -->
-		<meta name="theme-color" content="#0F172A" />
+		<meta name="theme-color" content="#c06a2a" />
 		
 		<!-- Preconnect to required origins -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<!-- Preload LCP image -->
-		<link rel="preload" as="image" href="/images/hero-website.png" fetchpriority="high" />
-
-		<!-- DNS Prefetch for external resources -->
-		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
-
-		<!-- Preload critical fonts -->
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" />
-		<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
-
-		<!-- Load fonts asynchronously -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'" />
-
-		<!-- Fallback for no-JS -->
-		<noscript>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" />
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
-		</noscript>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
 
 		<!-- Structured Data -->
-		<script type="application/ld+json" set:html={jsonLd} />
-		<script type="application/ld+json" set:html={orgJsonLd} />
-		{breadcrumbJsonLd && <script type="application/ld+json" set:html={breadcrumbJsonLd} />}
+		<script is:inline type="application/ld+json" set:html={jsonLd} />
+		<script is:inline type="application/ld+json" set:html={orgJsonLd} />
+		<script is:inline type="application/ld+json" set:html={personJsonLd} />
+		{breadcrumbJsonLd && <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />}
 		{additionalSchemas.map(schema => (
-			<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+			<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
 		))}
 
-		<!-- Google Analytics 4 -->
-		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3ZDBF6HWZX"></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-3ZDBF6HWZX', {
-				page_path: window.location.pathname,
-				anonymize_ip: true,
-				send_page_view: true,
-				cookie_flags: 'SameSite=None;Secure'
-			});
-
-			// Track scroll depth
-			let scrollDepth = 0;
-			window.addEventListener('scroll', function() {
-				const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-				if (scrollPercentage > scrollDepth && scrollPercentage % 25 === 0) {
-					scrollDepth = scrollPercentage;
-					gtag('event', 'scroll_depth', {
-						'event_category': 'engagement',
-						'event_label': scrollPercentage + '%',
-						'value': scrollPercentage
-					});
-				}
-			});
-
-			// Track outbound links
-			document.addEventListener('click', function(e) {
-				const link = e.target.closest('a');
-				if (link && link.hostname !== window.location.hostname) {
-					gtag('event', 'click', {
-						'event_category': 'outbound',
-						'event_label': link.href,
-						'transport_type': 'beacon'
-					});
-				}
-			});
-		</script>
-
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 	<body>
 		<a class="skip-link" href="#main-content">
@@ -267,24 +228,21 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<div id="main-content">
 			<slot />
 		</div>
+		<CookieConsent />
+		<SiteFooter />
 		<PlunkToaster client:idle />
 	</body>
 </html>
 
 <style>
-	/* Theme transitions */
-	:root {
-		transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-	}
-
 	.skip-link {
 		position: absolute;
 		left: 0.75rem;
 		top: 0.75rem;
 		padding: 0.6rem 0.9rem;
-		background: #111827;
-		color: #fff;
-		border-radius: 0.5rem;
+		background: var(--color-text);
+		color: var(--color-primary);
+		border-radius: 999px;
 		transform: translateY(-200%);
 		z-index: 999;
 	}
@@ -292,101 +250,69 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 	.skip-link:focus {
 		transform: translateY(0);
 	}
-
-	/* Light theme overrides */
-	[data-theme="light"] {
-		--color-primary: #ffffff;
-		--color-secondary: #f1f5f9;
-		--color-text: #0f172a;
-		--color-text-muted: #64748b;
-		--color-border: #e2e8f0;
-		--color-card-bg: rgba(241, 245, 249, 0.5);
-	}
-
-
-	/* Glow effects */
-	.glow {
-		position: absolute;
-		border-radius: 50%;
-		filter: blur(100px);
-		opacity: 0.15;
-		pointer-events: none;
-	}
-
-	.glow-1 {
-		top: 0;
-		left: 15%;
-		width: 300px;
-		height: 300px;
-		background: var(--color-accent);
-	}
-
-	.glow-2 {
-		top: 20%;
-		right: 10%;
-		width: 400px;
-		height: 400px;
-		background: #3b82f6;
-	}
-
-	/* Reduce glow effects on mobile */
-	@media (max-width: 768px) {
-		.glow {
-			opacity: 0.08;
-			filter: blur(60px);
-		}
-
-		.glow-1 {
-			width: 200px;
-			height: 200px;
-			left: 10%;
-		}
-
-		.glow-2 {
-			width: 250px;
-			height: 250px;
-			right: 5%;
-		}
-	}
-
-	[data-theme="light"] .glow {
-		opacity: 0.1;
-	}
 </style>
 
-<script>
-	// Theme toggle functionality
-	const themeToggle = document.getElementById('theme-toggle');
-	const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-	
-	function setTheme(isDark: boolean) {
-		document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-		localStorage.setItem('theme', isDark ? 'dark' : 'light');
+<script is:inline>
+	const GA_ID = 'G-3ZDBF6HWZX';
+	let analyticsLoaded = false;
+
+	/** @type {Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }} */
+	const analyticsWindow = window;
+
+	function loadAnalytics() {
+		if (analyticsLoaded || !GA_ID) return;
+		analyticsLoaded = true;
+
+		const tag = document.createElement('script');
+		tag.async = true;
+		tag.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+		document.head.appendChild(tag);
+
+		analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
+		analyticsWindow.gtag = analyticsWindow.gtag || function gtag() {
+			analyticsWindow.dataLayer?.push(arguments);
+		};
+
+		analyticsWindow.gtag('js', new Date());
+		analyticsWindow.gtag('config', GA_ID, {
+			page_path: window.location.pathname,
+			anonymize_ip: true,
+			send_page_view: true,
+		});
+
+		let scrollDepth = 0;
+		window.addEventListener('scroll', function() {
+			const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+			if (scrollPercentage > scrollDepth && scrollPercentage % 25 === 0) {
+				scrollDepth = scrollPercentage;
+				analyticsWindow.gtag?.('event', 'scroll_depth', {
+					event_category: 'engagement',
+					event_label: scrollPercentage + '%',
+					value: scrollPercentage,
+				});
+			}
+		}, { passive: true });
+
+		document.addEventListener('click', function(e) {
+			if (!(e.target instanceof Element)) return;
+			const link = e.target.closest('a');
+			if (link && link.hostname !== window.location.hostname) {
+				analyticsWindow.gtag?.('event', 'click', {
+					event_category: 'outbound',
+					event_label: link.href,
+					transport_type: 'beacon',
+				});
+			}
+		});
 	}
 
-	// Initialize theme
-	const savedTheme = localStorage.getItem('theme');
-	if (savedTheme) {
-		setTheme(savedTheme === 'dark');
-	} else {
-		setTheme(prefersDark.matches);
-	}
-
-	// Listen for theme toggle clicks
-	themeToggle?.addEventListener('click', () => {
-		const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-		setTheme(!isDark);
-	});
-
-	// Listen for system theme changes
-	prefersDark.addEventListener('change', (e) => {
-		if (!localStorage.getItem('theme')) {
-			setTheme(e.matches);
+	function syncAnalyticsConsent() {
+		if (localStorage.getItem('cookie-consent') === 'accept') {
+			loadAnalytics();
 		}
-	});
+	}
 
-	// Intersection Observer for scroll animations
-	document.addEventListener('DOMContentLoaded', () => {
+	function bindScrollReveal() {
 		const observerOptions = {
 			threshold: 0.1,
 			rootMargin: '0px 0px -50px 0px'
@@ -402,5 +328,15 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		}, observerOptions);
 
 		document.querySelectorAll('[data-sr]').forEach(el => observer.observe(el));
+	}
+
+	document.addEventListener('DOMContentLoaded', bindScrollReveal);
+	document.addEventListener('DOMContentLoaded', syncAnalyticsConsent);
+	document.addEventListener('astro:after-swap', bindScrollReveal);
+	document.addEventListener('astro:after-swap', syncAnalyticsConsent);
+	window.addEventListener('site:consent-changed', (event) => {
+		if (event instanceof CustomEvent && event.detail === 'accept') {
+			loadAnalytics();
+		}
 	});
 </script>

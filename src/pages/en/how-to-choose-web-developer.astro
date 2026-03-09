@@ -1,0 +1,164 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'How to Choose a Web Developer | Complete Guide 2026';
+const description = 'Complete guide to choosing the best web developer for your project. Key criteria, freelancer vs agency comparison, red flags, and questions to ask before hiring.';
+const canonicalUrl = '/en/how-to-choose-web-developer';
+const keywords = ['how to choose web developer', 'hire web developer', 'choose web developer', 'freelance vs agency', 'find web developer'];
+
+const faqSchema = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'What should I look for in a web developer?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Portfolio with similar projects, mastery of modern technologies, clear communication, realistic timelines, transparent budget, and verifiable references.' } },
+    { '@type': 'Question', 'name': 'Freelancer or agency?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'For projects up to €50,000, a senior freelancer usually offers better value and more direct communication. Agencies are better for very large enterprise projects requiring simultaneous multidisciplinary teams.' } },
+    { '@type': 'Question', 'name': 'What are the red flags when hiring a developer?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'No itemized budget, no portfolio, unrealistic timeline promises, no written contract, no defined process, and poor communication during the quote phase.' } },
+    { '@type': 'Question', 'name': 'What questions should I ask before hiring?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Can I see similar projects? What technology do you recommend and why? What is your work process? What does the price include? What if I am not satisfied? Do you issue official invoices?' } },
+    { '@type': 'Question', 'name': 'How to evaluate a portfolio?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Check loading speed with PageSpeed Insights, mobile design quality, source code quality, and whether projects are still online and maintained.' } },
+    { '@type': 'Question', 'name': 'Is it important that the developer understands SEO?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, a good web developer must understand at minimum technical SEO: heading structure, meta tags, schema markup, loading speed, and friendly URLs. Without this, your site may be invisible on Google.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'How to Choose a Web Developer', 'item': `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const allSchemas = [faqSchema, breadcrumbSchema];
+---
+<Layout title={title} description={description} lang="en" canonicalUrl={canonicalUrl} keywords={keywords} additionalSchemas={allSchemas} alternateUrls={{ es: '/como-elegir-desarrollador-web', en: '/en/how-to-choose-web-developer' }}>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">How to Choose the Best Web Developer for Your Project</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            <strong>To choose a good web developer, evaluate their portfolio for similar projects, verify they master modern technologies, check they have a clear work process, and confirm they offer a detailed no-obligation quote.</strong> Direct communication and verifiable references are just as important as technical skills.
+          </p>
+
+          <div class="prose prose-lg max-w-none">
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Key criteria for choosing a web developer</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Relevant portfolio</h3>
+                <p class="text-sm sm:text-base">Look for projects similar to yours in sector or complexity. Test loading speed with PageSpeed Insights and check mobile appearance.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Modern technologies</h3>
+                <p class="text-sm sm:text-base">A good developer works with current technologies (React, Laravel, Astro, Node.js) and can explain why they choose one over another for your project.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Clear communication</h3>
+                <p class="text-sm sm:text-base">If communication fails during the quote phase, it will fail during the project. Look for clear answers, defined timelines, and real availability.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Transparent pricing</h3>
+                <p class="text-sm sm:text-base">A detailed quote with phase breakdown, deliverables, and timelines. Be wary of "all-inclusive" prices that don't specify what's included.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Technical SEO</h3>
+                <p class="text-sm sm:text-base">Technical SEO should be standard: meta tags, schema markup, speed, friendly URLs. Without this, your site will be invisible on Google.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Post-launch support</h3>
+                <p class="text-sm sm:text-base">Ask what happens after delivery. A good developer offers support, <a href="/en/website-maintenance" class="text-accent hover:underline">maintenance plans</a>, and guarantees.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Freelancer vs. agency comparison</h2>
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full text-sm sm:text-base border-collapse">
+                <thead>
+                  <tr class="bg-secondary">
+                    <th class="text-left p-3 font-bold">Criteria</th>
+                    <th class="text-left p-3 font-bold">Freelancer</th>
+                    <th class="text-left p-3 font-bold">Agency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-border"><td class="p-3">Communication</td><td class="p-3 text-text-muted">Direct with the developer</td><td class="p-3 text-text-muted">Through project manager</td></tr>
+                  <tr class="border-b border-border bg-secondary/50"><td class="p-3">Price</td><td class="p-3 text-text-muted">30-50% lower</td><td class="p-3 text-text-muted">Team overhead</td></tr>
+                  <tr class="border-b border-border"><td class="p-3">Speed</td><td class="p-3 text-text-muted">Quick decisions</td><td class="p-3 text-text-muted">Internal processes</td></tr>
+                  <tr class="border-b border-border bg-secondary/50"><td class="p-3">Scalability</td><td class="p-3 text-text-muted">Limited to 1-2 projects</td><td class="p-3 text-text-muted">Larger teams</td></tr>
+                  <tr class="border-b border-border"><td class="p-3">Best for</td><td class="p-3 text-text-muted">Projects up to €50K</td><td class="p-3 text-text-muted">Enterprise €100K+</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Red flags to watch for</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>No portfolio:</strong> If they can't show previous work, it's high risk.</li>
+              <li><strong>No itemized budget:</strong> "Your website for €500" without explaining what's included.</li>
+              <li><strong>Unrealistic timelines:</strong> Promising "your site in 3 days" for complex projects.</li>
+              <li><strong>No contract:</strong> Every professional agreement should be in writing.</li>
+              <li><strong>No defined process:</strong> If they can't explain how they work, they'll improvise with your project.</li>
+              <li><strong>Disappears after payment:</strong> Check references and confirm they offer post-delivery support.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Questions to ask before hiring</h2>
+            <ol class="list-decimal pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li>Can I see projects similar to mine?</li>
+              <li>What technology do you recommend for my case and why?</li>
+              <li>What is your step-by-step work process?</li>
+              <li>What exactly does the price include?</li>
+              <li>What happens if I'm not satisfied with the result?</li>
+              <li>Do you issue official invoices?</li>
+              <li>Do you offer support or maintenance after delivery?</li>
+              <li>How long will it take and what are the milestones?</li>
+            </ol>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">What should I look for?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Relevant portfolio, modern technologies, clear communication, transparent pricing, included technical SEO, and post-launch support.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Freelancer or agency?</h3>
+                <p class="text-sm sm:text-base text-text-muted">For projects up to €50K, a senior freelancer offers better value and more direct communication.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">How much should my project cost?</h3>
+                <p class="text-sm sm:text-base text-text-muted">It depends on the type. Check our <a href="/en/how-much-does-website-cost" class="text-accent hover:underline">complete pricing guide</a> for detailed ranges.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Is technical SEO important?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes, essential. Without technical SEO from the start, your site will be invisible on Google no matter how much you invest in design.</p>
+              </div>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Looking for a reliable web developer?</h2>
+              <p class="mb-3 text-sm sm:text-base">Tell me about your project and I'll send a clear proposal with relevant portfolio, phase breakdown, and fixed price. No commitment.</p>
+              <p class="font-semibold text-sm sm:text-base">Free quote in 24h<br/>Verifiable portfolio<br/>Clear work process<br/>Official invoice</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .text-accent { color: var(--color-accent); }
+  .border-border { border-color: var(--color-border); }
+  .prose h2, .prose h3 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+  table { color: var(--color-text); }
+  th { color: var(--color-text); }
+</style>

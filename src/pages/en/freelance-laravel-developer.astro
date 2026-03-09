@@ -1,0 +1,265 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Freelance Laravel developer for business software | Ignacio Amat';
+const description =
+  'Laravel development for CRMs, internal tools, APIs, SaaS and custom business software. Remote collaboration for companies that need a robust, maintainable application base.';
+const canonicalUrl = '/en/freelance-laravel-developer';
+const keywords = [
+  'freelance laravel developer',
+  'laravel developer for hire',
+  'custom laravel development',
+  'laravel web application',
+  'laravel freelancer',
+  'laravel expert',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Freelance Laravel development',
+  provider: {
+    '@type': 'Person',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    sameAs: [
+      'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+      'https://github.com/ignaaaam',
+    ],
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Spain',
+  },
+  offers: {
+    '@type': 'Offer',
+    priceRange: 'EUR 2,000 - EUR 10,000',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'When is Laravel the right choice?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Laravel is a strong choice when the project needs real business logic, multiple user layers, admin systems, integrations or a foundation that can grow cleanly over time.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What kinds of projects do you build with Laravel?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'I use Laravel for custom CRMs, internal dashboards, APIs, operational tools, SaaS products, client portals and applications that do not fit well inside a CMS or template.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a Laravel project cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Smaller Laravel projects can start around EUR 2,000. Larger systems with several modules, integrations or product requirements usually need a more detailed proposal based on scope.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work directly or through an agency setup?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'I work directly with you. That keeps communication tighter, removes layers and makes technical decisions faster and clearer.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Freelance Laravel developer', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Best fit', value: 'CRMs, SaaS, APIs, internal systems and business logic that does not belong inside a template.' },
+  { label: 'Working style', value: 'Direct communication, iterative delivery and a codebase built to stay maintainable.' },
+  { label: 'Typical setup', value: 'Laravel with React, Inertia, Livewire, MySQL or PostgreSQL depending on the product.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  alternateUrls={{ es: '/desarrollador-laravel-freelance', en: canonicalUrl }}
+  additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+  badge="Laravel for business software"
+  pageTitle="Laravel for companies that need software beyond a standard website"
+  lead="I work with Laravel when the project needs real workflows, business rules, integrations or a stable base that can grow without turning into a patchwork system."
+  primaryCta={{ label: 'Request a proposal', href: '#contacto' }}
+  secondaryCta={{ label: 'See full-stack services', href: '/en/hire-full-stack-web-developer' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">When Laravel is a good decision</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Laravel is not the right tool for a simple brochure site. It becomes the right decision when the project
+      needs business rules, different user permissions, internal panels, integrations or an architecture that can
+      scale cleanly instead of relying on patches.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      If the project has already outgrown what a CMS or off-the-shelf setup can handle, Laravel gives you a base
+      where the product can actually behave the way the business needs.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Business processes and rules</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Useful when the system has states, validation, automation or data relationships that need to behave reliably.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Dashboards and internal tooling</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          For teams that need to manage operations, clients, content or workflows without being forced into a generic product.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">APIs and integrations</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          When the application needs to connect to payments, CRMs, external systems or a richer frontend layer.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A foundation that can grow</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Laravel fits well when you do not want to rewrite once the product gains complexity or new requirements appear.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Project types where I usually use Laravel</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Custom CRMs</h3>
+        <p class="text-sm sm:text-base">
+          For companies that want a sales or operations flow built around how they actually work.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Internal dashboards and operations</h3>
+        <p class="text-sm sm:text-base">
+          User management, orders, content, incidents or any internal process currently spread across too many tools.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">APIs and integration layers</h3>
+        <p class="text-sm sm:text-base">
+          For powering a modern frontend, a mobile app or a wider system of external services.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">SaaS and digital products</h3>
+        <p class="text-sm sm:text-base">
+          When the project is no longer just a website, but a real product with users, permissions, subscriptions or business modules.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How I approach this kind of work</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>Useful scope comes first:</strong> what needs to be built now and what should wait for a later phase.</li>
+      <li><strong>The foundation is built to last:</strong> clear structure, iterative delivery and technical decisions explained with intent.</li>
+      <li><strong>Laravel is part of a stack, not the whole story:</strong> I combine it with React, Livewire or Inertia when the experience calls for it, without adding needless complexity.</li>
+      <li><strong>The goal is business value, not framework theatre:</strong> technology is chosen to solve the actual case well.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Indicative investment</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Functional base or small internal tool — from EUR 2,000</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Suitable for simpler admin panels, CRUD-heavy tools, authentication and a first layer of clear business logic.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">System with several modules — from EUR 4,000</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For projects with permissions, several functional areas, integrations and a stronger operational layer.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Product or SaaS with a longer roadmap — custom scoped</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Better for product-shaped work with billing, advanced user flows, multi-user needs or staged evolution.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why a specialized freelance setup often fits better than a heavier structure</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>You talk directly to the person making the technical decisions.</strong></li>
+      <li><strong>Scope gets framed more realistically</strong> because there is no commercial layer separated from delivery.</li>
+      <li><strong>Iteration moves faster</strong> when every adjustment does not need to pass through multiple people.</li>
+      <li><strong>The code is delivered to be maintained</strong> instead of becoming a black box after launch.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">When is Laravel the right choice?</h3>
+        <p class="text-sm sm:text-base">
+          When the project needs business rules, workflows, permissions, integrations or a base that should not be forced into a CMS.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">What kinds of projects do you build with Laravel?</h3>
+        <p class="text-sm sm:text-base">
+          CRMs, admin systems, APIs, internal tooling, SaaS products and applications where the behavior of the system matters as much as the interface.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Can I start small and expand later?</h3>
+        <p class="text-sm sm:text-base">
+          Yes. That is often the best move. We define the first useful version and leave the base ready for a cleaner second phase.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Do you only work with companies in Spain?</h3>
+        <p class="text-sm sm:text-base">
+          No. I work remotely with companies in Spain and with international teams when the project is a strong fit.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/en/web-application-saas-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web apps and MVPs &rarr;</a>
+      <a href="/en/hire-full-stack-web-developer" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full-stack freelance &rarr;</a>
+      <a href="/en/services" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">All services &rarr;</a>
+      <a href="/en/how-much-does-website-cost" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Pricing guide &rarr;</a>
+      <a href="/en/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contact &rarr;</a>
+      <a href="/en/website-redesign-improvements" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Redesigns and improvements &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Have a project where Laravel may genuinely fit?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Tell me what process, tool or product you need to build. From there I can tell you whether Laravel is the right base and how the first phase should look.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Real scope before build work starts<br />
+        Direct collaboration without agency layers<br />
+        A base designed to grow with intent
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

@@ -1,185 +1,279 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Contact from '../../components/Contact.astro';
-import StickyCTA from '../../components/StickyGTA.astro';
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
 
 const baseUrl = 'https://ignacioamatweb.com';
-const title = "Web Design for Businesses in Spain | Freelance Full-Stack | Ignacio Amat";
-const description = "Professional web design for companies across Spain. Landing pages, business websites, and complex web projects from EUR800. Remote collaboration and free quote.";
-const canonicalUrl = "/en/web-design-businesses";
-const keywords = ["web design for businesses", "web design spain", "landing page design", "business website design", "freelance web designer spain", "conversion-focused web design"];
+const title = 'Web design for businesses that need a clearer web presence | Ignacio Amat';
+const description =
+  'Business website design and development for companies that need clearer service pages, stronger trust signals and a website that supports SEO, contact and commercial clarity.';
+const canonicalUrl = '/en/web-design-businesses';
+const keywords = [
+  'web design for businesses',
+  'business website design',
+  'freelance web designer spain',
+  'conversion-focused web design',
+  'business web development',
+];
 
-// Structured Data
 const serviceSchema = {
-	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Web Design for Businesses",
-	"provider": {
-		"@type": "LocalBusiness",
-		"name": "Ignacio Amat",
-		"url": baseUrl
-	},
-	"description": "Professional web design service for businesses. Modern, responsive and conversion-optimized designs.",
-	"offers": {
-		"@type": "Offer",
-		"priceRange": "€800 - €6,000+",
-		"description": "Designs from €800 for landing pages to €6,000+ for complete projects"
-	}
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Web design for businesses',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+  },
+  description:
+    'Business websites designed and built to explain the offer more clearly, strengthen trust and leave a technically sound foundation for SEO and growth.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: 'EUR 1,500 - EUR 4,000',
+    priceCurrency: 'EUR',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is usually included in a business website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A business website usually includes content structure, core pages, contact flows, responsive design, technical SEO basics and an architecture that can grow without needing a rebuild straight away.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a business website cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A well-scoped business website often starts around EUR 1,500 and moves up depending on page count, content depth, integrations and the level of customization required.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Should we redesign or improve the existing website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'That depends on the starting point. Some projects only need sharper messaging, clearer structure and better performance. Others need a more complete redesign because the current base is holding everything back.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work remotely with companies outside Barcelona?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. I work remotely with companies across Spain and with international clients when the project is a strong fit.',
+      },
+    },
+  ],
 };
 
 const breadcrumbSchema = {
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [
-		{
-			"@type": "ListItem",
-			"position": 1,
-			"name": "Home",
-			"item": `${baseUrl}/en`
-		},
-		{
-			"@type": "ListItem",
-			"position": 2,
-			"name": "Web Design Businesses",
-			"item": `${baseUrl}${canonicalUrl}`
-		}
-	]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Web design for businesses', item: `${baseUrl}${canonicalUrl}` },
+  ],
 };
 
-const allSchemas = [serviceSchema, breadcrumbSchema];
-
-// Manual alternate URLs for service pages
-const alternateUrls = {
-	es: "/diseno-web-empresas",
-	en: canonicalUrl
-};
+const facts = [
+  { label: 'Best for', value: 'Service companies, B2B teams and businesses that need to explain their offer more clearly.' },
+  { label: 'Focus', value: 'Sharper messaging, stronger visual hierarchy and a website ready for SEO, trust and lead generation.' },
+  { label: 'Typical range', value: 'Usually between EUR 1,500 and EUR 4,000 depending on scope, content and integrations.' },
+];
 ---
-<Layout 
-	title={title} 
-	description={description} 
-	lang="en"
-	canonicalUrl={canonicalUrl}
-	keywords={keywords}
-	additionalSchemas={allSchemas}
-	alternateUrls={alternateUrls}
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+  alternateUrls={{ es: '/diseno-web-empresas', en: canonicalUrl }}
+  badge="Business websites"
+  pageTitle="Business websites built to explain the offer better and leave a stronger first impression"
+  lead="I design and build business websites for companies that need a clearer, more credible web presence instead of something that looks acceptable on the surface but does little to support sales."
+  primaryCta={{ label: 'Request a proposal', href: '#contacto' }}
+  secondaryCta={{ label: 'See services', href: '/en/services' }}
+  facts={facts}
 >
-	<Header />
-	<main>
-		<section class="py-12 sm:py-16 md:py-20">
-			<div class="container px-4 sm:px-6">
-				<div class="max-w-4xl mx-auto">
-					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Professional Web Design for Businesses</h1>
-					
-					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-						Good web design is fundamental to your business's online success. I create professional 
-						web designs that not only look amazing, but also convert visitors into customers.
-					</p>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">What a good business website should actually do</h2>
+    <p class="text-base sm:text-lg mb-4">
+      A business website is not there to simply fill an online presence gap. It needs to explain the offer,
+      reinforce that the company is credible and make it easier for the right prospects to move toward contact.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      When that does not happen, the site stays live but does not really help the business. It looks presentable
+      enough while failing to make a strong case for why someone should choose you.
+    </p>
 
-					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
-						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Why is web design important for your business?</h2>
-						
-						<p class="text-base sm:text-lg mb-4">
-							Web design is the first impression visitors have of your business. A professional, 
-							modern and functional design generates trust, improves user experience and increases conversions. 
-							That's why web design isn't just aesthetics, it's an investment in your business's success.
-						</p>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">An easier offer to understand</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Structure and message work together so visitors quickly understand what you do, who it is for and why it is worth trusting.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Real trust layers</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Visible services, FAQs, proof points and clearer contact paths reduce doubt while prospects are evaluating the business.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">SEO and performance baseline</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          A site that is technically sound loads better, positions better and creates fewer problems once it is live.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Room to grow</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          The architecture is set up so new services, content or future improvements do not require another rebuild too soon.
+        </p>
+      </div>
+    </div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Key elements of good web design:</h3>
-						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Responsive Design:</strong> Your website will look perfect on mobile, tablet and desktop</li>
-							<li><strong>Usability:</strong> Intuitive navigation that guides users toward action</li>
-							<li><strong>Speed:</strong> Fast loading to avoid losing visitors</li>
-							<li><strong>Brand identity:</strong> Design that reflects your company's values and personality</li>
-							<li><strong>Conversion optimization:</strong> Elements designed to convert visitors into customers</li>
-							<li><strong>Accessibility:</strong> Design accessible to all users</li>
-						</ul>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">When it is time to rethink the website</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>The offer is still unclear:</strong> people visit the site but do not quickly understand what you sell or what problem you solve.</li>
+      <li><strong>The site feels weaker than the actual business:</strong> the service is solid, but the digital presence does not reflect that level.</li>
+      <li><strong>Everything depends on direct conversations:</strong> if the site does no filtering or clarifying, every sales conversation starts too far back.</li>
+      <li><strong>Traffic is there but trust is not:</strong> visits or referrals do not translate into useful enquiries.</li>
+      <li><strong>The technical base is getting in the way:</strong> weak performance, poor structure or an old stack makes further improvements inefficient.</li>
+    </ul>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Types of web design I offer:</h3>
-						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Corporate Design</h4>
-								<p class="text-sm sm:text-base">Professional designs for businesses looking to convey credibility and professionalism</p>
-							</div>
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">E-commerce Design</h4>
-								<p class="text-sm sm:text-base">Designs optimized for online stores that facilitate purchases and increase sales</p>
-							</div>
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Landing Page Design</h4>
-								<p class="text-sm sm:text-base">Landing pages focused on conversion for specific campaigns</p>
-							</div>
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Web Redesign</h4>
-								<p class="text-sm sm:text-base">I update and modernize your existing website to improve results</p>
-							</div>
-						</div>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How I approach a business website</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Clear architecture</h3>
+        <p class="text-sm sm:text-base">
+          I define the pages and sections that are actually needed to explain services, process, FAQs, proof and contact without unnecessary noise.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Cleaner commercial messaging</h3>
+        <p class="text-sm sm:text-base">
+          Headlines, sections and CTAs are reworked so the website sells more clearly without sounding inflated or generic.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Design with intent</h3>
+        <p class="text-sm sm:text-base">
+          The visual layer should reinforce trust and readability, not just imitate a polished template.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Well-resolved implementation</h3>
+        <p class="text-sm sm:text-base">
+          The technical base stays light, responsive, SEO-ready and maintainable after launch.
+        </p>
+      </div>
+    </div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Web design process:</h3>
-						<ol class="list-decimal pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Briefing:</strong> We analyze your brand, objectives and target audience</li>
-							<li><strong>Wireframes:</strong> I create the structure and content layout</li>
-							<li><strong>Visual design:</strong> I develop the complete design with your brand identity</li>
-							<li><strong>Review and adjustments:</strong> We work together to perfect every detail</li>
-							<li><strong>Development:</strong> I convert the design into a functional and responsive website</li>
-							<li><strong>Optimization:</strong> I ensure speed, SEO and usability</li>
-						</ol>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Project types that usually fit here</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A business website from scratch</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          For companies that need a current, professional site with a clear structure from day one.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A rethink of an existing site</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          When a site already exists but the message, hierarchy or overall impression are working against the business.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A website built for enquiries</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Useful when the business depends on requests, booked calls or forms and wants to improve current conversion performance.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A modular foundation for growth</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Set up so the business can add services, content or new lines later without rebuilding the whole thing again.
+        </p>
+      </div>
+    </div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Remote work with companies across Spain:</h3>
-						<p class="mb-4 text-sm sm:text-base">
-							I've designed websites for companies in different sectors across Spain, from local service businesses
-							to legal firms, startups, healthcare practices, and ecommerce brands. I collaborate remotely with clients
-							in Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza, and smaller local markets.
-						</p>
-						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
-							<a href="/en/web-developer-spain" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web design Spain -></a>
-							<a href="/en/web-developer-madrid" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web design Madrid -></a>
-							<a href="/en/web-developer-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web design Barcelona -></a>
-							<a href="/en/web-developer-valencia" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web design Valencia -></a>
-							<a href="/en/web-developer-sevilla" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web design Sevilla -></a>
-							<a href="/en/hire-full-stack-web-developer" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Hire full-stack developer -></a>
-							<a href="/en/create-website-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Website pricing guide -></a>
-						</div>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Indicative investment</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Essential business website — from EUR 1,500</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For a company with a defined offer, a small set of key pages and the need for a clear, professional baseline.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Full business website — typically EUR 2,000 to 4,000</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For projects with more content depth, trust sections, FAQs, blog, lead generation and a more refined messaging pass.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Custom scope — quoted around the real brief</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          When the project includes integrations, private areas, product-like requirements or technical work beyond a classic business site.
+        </p>
+      </div>
+    </div>
 
-						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
-							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Need professional web design for your business?</h3>
-							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
-								If you're looking for professional web design that reflects your brand identity and converts 
-								visitors into customers, contact me. I'll help you create a design that drives your business forward.
-							</p>
-							<p class="font-semibold text-sm sm:text-base">
-								✅ Custom and unique design<br/>
-								✅ Free quote with no commitment<br/>
-								✅ Official invoicing<br/>
-								✅ Satisfaction guarantee
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">What is usually included in a business website?</h3>
+        <p class="text-sm sm:text-base">
+          Usually the content architecture, core pages, contact flows, technical SEO basics, responsive design and a structure that can evolve after launch.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">How long does a business website take?</h3>
+        <p class="text-sm sm:text-base">
+          It depends on scope and content readiness, but a business website often falls somewhere between two and six weeks when the brief is clear.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Does it always make sense to rebuild from scratch?</h3>
+        <p class="text-sm sm:text-base">
+          Not always. Some sites only need sharper messaging, structure and performance work. Others need a fuller redesign because the current base is too weak.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Do you work with companies outside Barcelona?</h3>
+        <p class="text-sm sm:text-base">
+          Yes. I work remotely with companies across Spain and with international clients when the fit is strong.
+        </p>
+      </div>
+    </div>
 
-		<Contact />
-		<StickyCTA />
-	</main>
-</Layout>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/en/services" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">All services &rarr;</a>
+      <a href="/en/website-redesign-improvements" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Redesigns and improvements &rarr;</a>
+      <a href="/en/professional-landing-page-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/en/how-much-does-website-cost" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Pricing guide &rarr;</a>
+      <a href="/en/hire-full-stack-web-developer" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full-stack freelance &rarr;</a>
+      <a href="/en/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contact &rarr;</a>
+    </div>
 
-<style>
-	.text-text-muted {
-		color: var(--color-text-muted);
-	}
-	
-	.bg-secondary {
-		background-color: var(--color-secondary);
-	}
-	
-	.prose h2, .prose h3, .prose h4 {
-		color: var(--color-text);
-	}
-	
-	.prose p, .prose li {
-		color: var(--color-text);
-		line-height: 1.8;
-	}
-</style>
-
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a website that matches the real level of your business?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        If the current site feels weak or is no longer helping sales, tell me the starting point and I will tell you what is worth fixing first.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Clear proposal without agency noise<br />
+        Direct work with me<br />
+        Foundation built to grow and stay maintainable
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

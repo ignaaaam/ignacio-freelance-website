@@ -1,0 +1,223 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'How much does a website cost in 2026? | Real pricing guide';
+const description =
+  'Indicative website pricing guide for 2026 covering landing pages, business websites, ecommerce and web applications. Realistic ranges, scope factors and what to compare in a proposal.';
+const canonicalUrl = '/en/how-much-does-website-cost';
+const keywords = [
+  'how much does a website cost',
+  'website cost',
+  'website price',
+  'web development cost',
+  'website budget 2026',
+  'website pricing',
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a website cost in 2026?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on the project type. A straightforward landing page can start around EUR 800, a business website often starts around EUR 1,500 and a web application or MVP usually starts around EUR 3,000.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why can two proposals look so different?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Because scope, customization, content work, integrations, technology and post-launch involvement can change a project far more than the headline number suggests.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is it better to start with something smaller?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Often yes. A focused landing page or a first scoped phase is frequently better than overbuilding a larger website or product too early.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What should I review before accepting a quote?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Check what is included, what is excluded, how delivery is phased, whether support exists after launch and whether the proposal actually addresses the business problem rather than listing technical tasks.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'How much does a website cost', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Use it for', value: 'Understanding price ranges, cost drivers and how scope translates into a real budget.' },
+  { label: 'Important', value: 'A cheaper quote is not always more efficient. Often it simply hides work that will surface later.' },
+  { label: 'Best next step', value: 'Use this guide for orientation, then request a quote based on your actual scope.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  additionalSchemas={[faqSchema, breadcrumbSchema]}
+  keywords={keywords}
+  alternateUrls={{ es: '/cuanto-cuesta-pagina-web', en: canonicalUrl }}
+  badge="Website pricing guide"
+  pageTitle="How much a website costs and what that investment is really paying for"
+  lead="This guide is not meant to give you a magic flat rate. It is meant to show what price ranges are realistic, what actually moves a budget and how to tell a serious proposal from one that hides work behind a low number."
+  primaryCta={{ label: 'Request a quote', href: '#contacto' }}
+  secondaryCta={{ label: 'See services', href: '/en/services' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Indicative ranges by project type</h2>
+    <div class="overflow-x-auto mb-8">
+      <table class="price-table w-full text-sm sm:text-base border-collapse">
+        <thead>
+          <tr>
+            <th class="text-left py-3 px-4">Project type</th>
+            <th class="text-left py-3 px-4">Indicative range</th>
+            <th class="text-left py-3 px-4">Typical timeline</th>
+            <th class="text-left py-3 px-4">Best fit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-3 px-4 font-medium">Landing page</td>
+            <td class="py-3 px-4">EUR 800 - EUR 1,500</td>
+            <td class="py-3 px-4">Days to 2 weeks</td>
+            <td class="py-3 px-4">Campaigns, focused offers, lead generation</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium">Business website</td>
+            <td class="py-3 px-4">EUR 1,500 - EUR 4,000</td>
+            <td class="py-3 px-4">2 to 6 weeks</td>
+            <td class="py-3 px-4">Service companies, brand presence, commercial clarity</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium">Ecommerce</td>
+            <td class="py-3 px-4">EUR 3,000 - EUR 8,000 or more</td>
+            <td class="py-3 px-4">4 to 12 weeks</td>
+            <td class="py-3 px-4">Catalog, checkout, orders, customer area</td>
+          </tr>
+          <tr>
+            <td class="py-3 px-4 font-medium">Web app / MVP / SaaS</td>
+            <td class="py-3 px-4">EUR 3,000 - EUR 15,000 or more</td>
+            <td class="py-3 px-4">Phased</td>
+            <td class="py-3 px-4">Digital product, internal tooling, portals</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">What tends to move the budget most</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Real scope</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          How many pages, screens or modules actually need to be solved and how much work they really involve.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Content and messaging</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          It is one thing to implement finished content. It is another to clarify the offer, reshape the copy and structure everything properly.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Integrations and functionality</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          CRM connections, payments, automation, private areas or data flows add complexity and QA work.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Starting point</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Starting clean is very different from fixing an old setup, migrating content or rebuilding on a weak foundation.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How to read a proposal without fixating on the number alone</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>What problem it solves:</strong> a strong proposal explains the project goal, not just a checklist of tasks.</li>
+      <li><strong>What is included and excluded:</strong> if this is vague, the headline price may be more attractive than the real scope.</li>
+      <li><strong>How delivery is organized:</strong> phases, milestones, revision logic and what counts as completed work.</li>
+      <li><strong>What happens after launch:</strong> support, maintenance, small fixes or a likely second phase.</li>
+      <li><strong>Whether scope is artificially inflated or cut:</strong> some proposals are oversized, others are cheap because half the project is missing.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">When starting smaller is the smarter move</h2>
+    <p class="text-base sm:text-lg mb-4">
+      In many cases, a focused landing page or a tightly scoped first phase creates more learning and better return than trying to launch a larger site or product too early.
+    </p>
+    <p class="text-base sm:text-lg mb-8">
+      Starting smaller does not mean thinking small. It means building what is actually useful now and leaving room to make the next decision with better context.
+    </p>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">How much does a website cost in 2026?</h3>
+        <p class="text-sm sm:text-base">
+          It depends on the project, but a simple landing page can start around EUR 800, a business website often starts around EUR 1,500 and a web app normally from EUR 3,000.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Why can two quotes be so different?</h3>
+        <p class="text-sm sm:text-base">
+          Because scope, content work, customization, integrations, technology and implementation ownership all change the amount of real work involved.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Is it worth hiring something cheap just to launch fast?</h3>
+        <p class="text-sm sm:text-base">
+          Sometimes a simpler first phase is smart. What usually becomes expensive is paying less for a setup that never solves the real problem and needs to be rebuilt soon after.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">What should I ask for before accepting a proposal?</h3>
+        <p class="text-sm sm:text-base">
+          Scope, milestones, timelines, revisions, deliverables and any recurring cost or external dependency that will be part of the project.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/en/professional-landing-page-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/en/web-design-businesses" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Business websites &rarr;</a>
+      <a href="/en/web-application-saas-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web apps and MVPs &rarr;</a>
+      <a href="/en/services" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">All services &rarr;</a>
+      <a href="/en/frequently-asked-questions" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">FAQ &rarr;</a>
+      <a href="/en/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contact &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a proposal based on your case instead of a generic table?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Tell me what you want to launch or improve and I can give you a more practical view of likely scope, priorities and investment.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Clear ranges before you decide<br />
+        Proposal shaped around the actual case<br />
+        No default over-scoping or under-scoping
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

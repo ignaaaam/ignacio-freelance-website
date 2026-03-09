@@ -1,0 +1,192 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Frequently asked questions about web development | Ignacio Amat';
+const description =
+  'Answers about services, pricing, timelines, remote collaboration, maintenance and custom development for companies, startups and teams that need a better-resolved website or digital product.';
+const canonicalUrl = '/en/frequently-asked-questions';
+const keywords = [
+  'web development faq',
+  'website development questions',
+  'web developer faq',
+  'website design questions',
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What services do you offer?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'I work on landing pages, business websites, redesigns, maintenance, Laravel development, MVPs and web applications when the project needs a more serious foundation.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work remotely?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. I work remotely with clients across Spain and with international teams when the fit is strong.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How much does a website cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A straightforward landing page can start around EUR 800, a business website often starts around EUR 1,500 and an app or MVP usually starts around EUR 3,000, depending on scope.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you improve an existing website?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. In many cases the best move is improving structure, copy, performance or conversion before rebuilding everything from scratch.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Frequently asked questions', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Covers', value: 'Services, timelines, remote collaboration, maintenance and indicative investment.' },
+  { label: 'Built for', value: 'Companies, startups and professionals who want context before requesting a proposal.' },
+  { label: 'If something is missing', value: 'The final contact section is there for project-specific questions.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={[faqSchema, breadcrumbSchema]}
+  alternateUrls={{ es: '/preguntas-frecuentes', en: canonicalUrl }}
+  badge="FAQ on services and process"
+  pageTitle="Frequently asked questions about services, pricing and how I work"
+  lead="This page answers the questions people usually have before requesting a proposal: what kinds of projects I take on, how I approach the work, what ranges are realistic and when improving an existing website makes more sense than rebuilding it."
+  primaryCta={{ label: 'Talk about my project', href: '#contacto' }}
+  secondaryCta={{ label: 'See services', href: '/en/services' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-6">Services and fit</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">What services do you offer?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          I work on <a href="/en/professional-landing-page-development" class="text-accent hover:underline">landing pages</a>,
+          <a href="/en/web-design-businesses" class="text-accent hover:underline"> business websites</a>,
+          <a href="/en/website-redesign-improvements" class="text-accent hover:underline"> redesigns and improvements</a>,
+          <a href="/en/website-maintenance" class="text-accent hover:underline"> maintenance</a>,
+          <a href="/en/freelance-laravel-developer" class="text-accent hover:underline"> Laravel development</a> and
+          <a href="/en/web-application-saas-development" class="text-accent hover:underline"> web apps, MVPs and SaaS work</a>.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">What kind of client do you usually work with?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Service businesses, startups, small teams and companies that need a clearer website, a focused improvement or a first product version built on a solid foundation.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Do you work remotely?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Yes. I work remotely with clients across Spain and with international teams when the project is a strong fit. Delivery quality does not depend on being in the same city.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Process and working style</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">How does a project usually start?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          With an initial conversation to understand the goal, the starting point and the likely scope. From there I prepare either a proposal or a practical first direction.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Do I need everything fully defined before reaching out?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          No. If the project is still rough, it is enough to explain what you want to achieve, who it is for and what already exists. That is usually enough to start framing it properly.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Do you work in phases or all at once?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          It depends on the project, but when it makes sense I prefer phases. That helps validate earlier, reduce risk and avoid overloading the first release.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Pricing and investment</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">How much does a website cost?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          A straightforward landing page can start around EUR 800, a business website usually starts around EUR 1,500 and an app or MVP normally from EUR 3,000. The exact range depends on scope, content and integrations.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Why is it hard to give a fixed price without context?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Because implementing something already defined is very different from clarifying the offer, reshaping the copy, integrating tools or fixing an old base.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Do you also handle smaller improvements or support blocks?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Yes. Some projects do not need a new website. They need a specific fix, a conversion pass, bug fixing or ongoing support.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Technical questions and maintenance</h2>
+    <div class="space-y-4 mb-10">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Can you improve or fix an existing website?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Yes. In many cases that is the smartest option. I can work on structure, copy, performance, technical issues or a visual layer that no longer supports conversion well.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Is basic technical SEO included?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Yes. Semantic structure, metadata, performance work, structured data where useful and a reasonable baseline so the project does not launch technically weak.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Do you offer maintenance after launch?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Yes. I can stay involved for support, maintenance, changes and iterative work so the site or product does not freeze after launch.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Do not see your exact case here?</h2>
+      <p class="text-sm sm:text-base mb-4">
+        That is normal. The more specific the project, the more useful it is to talk about it directly. If you explain the goal and the starting point, I can tell you where I would begin.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Clear first response<br />
+        No need for a perfect brief upfront<br />
+        Practical guidance on the next step
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

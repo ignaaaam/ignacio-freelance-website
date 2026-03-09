@@ -1,4 +1,3 @@
-import type { APIRoute } from 'astro';
 import en from './locales/en.json';
 import es from './locales/es.json';
 
@@ -24,7 +23,38 @@ const routeMappings: Record<string, { es: string; en: string }> = {
   '/desarrollador-web-sevilla': { es: '/desarrollador-web-sevilla', en: '/en/web-developer-sevilla' },
   '/diseno-web-empresas': { es: '/diseno-web-empresas', en: '/en/web-design-businesses' },
   '/contratar-desarrollador-full-stack': { es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' },
+  '/servicios': { es: '/servicios', en: '/en/services' },
+  // Phase 2 — Service pages
+  '/desarrollador-laravel-freelance': { es: '/desarrollador-laravel-freelance', en: '/en/freelance-laravel-developer' },
+  '/rediseno-web-mejoras': { es: '/rediseno-web-mejoras', en: '/en/website-redesign-improvements' },
+  '/desarrollo-aplicacion-web-saas': { es: '/desarrollo-aplicacion-web-saas', en: '/en/web-application-saas-development' },
+  '/crear-landing-page-profesional': { es: '/crear-landing-page-profesional', en: '/en/professional-landing-page-development' },
+  '/mantenimiento-web': { es: '/mantenimiento-web', en: '/en/website-maintenance' },
+  // Phase 3 — AEO pages
+  '/preguntas-frecuentes': { es: '/preguntas-frecuentes', en: '/en/frequently-asked-questions' },
+  '/cuanto-cuesta-pagina-web': { es: '/cuanto-cuesta-pagina-web', en: '/en/how-much-does-website-cost' },
+  '/como-elegir-desarrollador-web': { es: '/como-elegir-desarrollador-web', en: '/en/how-to-choose-web-developer' },
 };
+
+function normalizePath(path: string): string {
+  if (!path) return '/';
+  const cleaned = path !== '/' ? path.replace(/\/+$/, '') : path;
+  return cleaned || '/';
+}
+
+function findRoutePair(path: string): { es: string; en: string } | null {
+  const normalizedPath = normalizePath(path);
+  const bySpanishRoute = routeMappings[normalizedPath];
+  if (bySpanishRoute) {
+    return bySpanishRoute;
+  }
+
+  const fromEnglish = Object.values(routeMappings).find((entry) => {
+    return normalizePath(entry.en) === normalizedPath;
+  });
+
+  return fromEnglish || null;
+}
 
 function getNestedValue(obj: any, path: string): string {
   return path.split('.').reduce((o, i) => o?.[i], obj);
@@ -37,28 +67,28 @@ export function getTranslation(locale: Locale, key: TranslationKey): string {
 }
 
 export function getLocaleFromPath(path: string): Locale {
-  return path.startsWith('/en') ? 'en' : 'es';
+  return normalizePath(path).startsWith('/en') ? 'en' : 'es';
 }
 
 export function getPathWithoutLocale(path: string): string {
-  return path.startsWith('/en') ? path.slice(3) : path;
+  const normalized = normalizePath(path);
+  return normalized.startsWith('/en') ? normalized.slice(3) || '/' : normalized;
 }
 
 export function getAlternateUrls(path: string): { en: string; es: string } {
-  const normalizedPath = path.endsWith('/') && path !== '/' ? path.slice(0, -1) : path;
-  const bySpanishRoute = routeMappings[normalizedPath];
+  const normalizedPath = normalizePath(path);
+  const routePair = findRoutePair(normalizedPath);
 
-  if (bySpanishRoute) {
-    return bySpanishRoute;
+  if (routePair) {
+    return routePair;
   }
 
-  const fromEnglish = Object.values(routeMappings).find((entry) => {
-    const normalizedEn = entry.en.endsWith('/') && entry.en !== '/en/' ? entry.en.slice(0, -1) : entry.en;
-    return normalizedEn === normalizedPath;
-  });
+  if (normalizedPath === '/en') {
+    return { es: '/', en: '/en/' };
+  }
 
-  if (fromEnglish) {
-    return fromEnglish;
+  if (normalizedPath === '/blog' || normalizedPath.startsWith('/blog/')) {
+    return { es: normalizedPath, en: '/en/' };
   }
 
   // For pages without a translation pair, keep the current page in its language
@@ -68,6 +98,30 @@ export function getAlternateUrls(path: string): { en: string; es: string } {
   }
 
   return { es: normalizedPath || '/', en: '/en/' };
+}
+
+export function getLanguageSwitchUrls(url: URL): { en: string; es: string } {
+  const path = normalizePath(url.pathname);
+  const routePair = findRoutePair(path);
+  if (routePair) {
+    return routePair;
+  }
+
+  const from = url.searchParams.get('from');
+
+  if (path === '/en/' && from && !from.startsWith('/en')) {
+    return { es: from, en: '/en/' };
+  }
+
+  if (path === '/' && from && from.startsWith('/en')) {
+    return { es: '/', en: from };
+  }
+
+  if (path.startsWith('/en/')) {
+    return { es: `/?from=${encodeURIComponent(path)}`, en: path };
+  }
+
+  return { es: path, en: `/en/?from=${encodeURIComponent(path)}` };
 }
 
 /** Returns a translation function for the given path (used in Astro pages). */

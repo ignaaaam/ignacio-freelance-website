@@ -1,108 +1,266 @@
 ---
-import Translate from './Translate.astro';
+import { getLocaleFromPath } from '../i18n/utils';
+import { siteContent } from '../data/siteContent';
+import { siteConfig } from '../data/siteConfig';
 
-interface Props {
-	imageAlt?: string;
-}
-const { imageAlt = "Desarrollo web moderno y profesional para empresas internacionales" } = Astro.props;
+const locale = getLocaleFromPath(Astro.url.pathname);
+const content = siteContent[locale].hero;
+const isEnglish = locale === 'en';
 ---
 
-<section class="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-  <!-- Glow effects -->
-  <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
+<section class="hero section">
+  <div class="container hero__grid">
+    <div class="hero__content" data-sr>
+      <p class="section-eyebrow">{content.eyebrow}</p>
+      <h1>{content.title}</h1>
+      <p class="hero__copy">{content.subtitle}</p>
 
-  <div class="container relative">
-    <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2" data-sr data-sr-delay="0">
-        <Translate key="hero.title" />
-      </h1>
-      <p class="text-text-muted text-base sm:text-lg mb-6 sm:mb-8 px-4" data-sr data-sr-delay="200">
-        <Translate key="hero.subtitle" />
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4" data-sr data-sr-delay="400">
-        <a href="#contacto" class="btn-primary text-center">
-          <Translate key="hero.cta" />
-        </a>
-        <a href="#proyectos" class="btn-secondary text-center">
-          <Translate key="hero.services" />
-        </a>
+      <div class="hero__actions">
+        <a href={content.primaryHref} class="btn-primary">{content.primaryCta}</a>
+        <a href={content.secondaryHref} class="btn-secondary">{content.secondaryCta}</a>
+      </div>
+
+      <div class="hero__proof">
+        {content.proof.map((item) => (
+          <span class="pill">{item}</span>
+        ))}
       </div>
     </div>
 
-    <div class="mt-12 sm:mt-16 relative px-4 sm:px-0">
-      <div class="aspect-video rounded-lg overflow-hidden bg-secondary relative" data-sr data-sr-delay="600" data-sr-duration="1200">
-        <!-- Glow effect behind the image -->
-        <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-accent/10 to-transparent blur-2xl opacity-50"></div>
-        <div class="absolute inset-0 bg-gradient-to-tr from-accent/20 via-accent/10 to-transparent blur-2xl opacity-50"></div>
-        
-        <img
-          src="/images/hero-website.png"
-          alt={imageAlt}
-          class="w-full h-full object-cover relative z-10"
-          fetchpriority="high"
-          loading="eager"
-          decoding="async"
-          width="1200"
-          height="675"
-        />
+    <aside class="hero__panel surface-card" data-sr>
+      <div class="hero__panel-header">
+        <div class="hero__portrait-visual">
+          <span>IA</span>
+        </div>
+        <div>
+          <p class="hero__panel-name">{content.portraitLabel}</p>
+          <p class="hero__panel-role">{content.availability}</p>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Background gradient effect -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[120%] h-full 
-              bg-gradient-to-b from-accent/10 via-primary/5 to-transparent
-              pointer-events-none blur-3xl opacity-50">
+      <div class="hero__meta-grid">
+        {content.portraitMeta.map((item) => (
+          <article class="hero__meta-card">
+            <span>{isEnglish ? 'Built for' : 'Pensado para'}</span>
+            <p>{item}</p>
+          </article>
+        ))}
+      </div>
+
+      <div class="hero__panel-footer">
+        <div class="hero__channel">
+          <span>{isEnglish ? 'Direct email' : 'Email directo'}</span>
+          <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+        </div>
+
+        <div class="hero__links">
+          <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
 <style>
-  .text-text-muted {
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .hero__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.92fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .hero h1 {
+    max-width: 10.5ch;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+  }
+
+  .hero__copy {
+    max-width: 60ch;
+    margin-top: 1.25rem;
     color: var(--color-text-muted);
-  }
-  
-  .bg-secondary {
-    background-color: var(--color-secondary);
-  }
-  
-  .from-accent\/10 {
-    --tw-gradient-from: rgb(59 130 246 / 0.1);
-  }
-  
-  .via-primary\/5 {
-    --tw-gradient-via: rgb(15 23 42 / 0.05);
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    line-height: 1.8;
   }
 
-  h1 {
+  .hero__actions,
+  .hero__proof,
+  .hero__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .hero__actions {
+    margin-top: 1.6rem;
+  }
+
+  .hero__proof {
+    margin-top: 1.55rem;
+  }
+
+  .hero__panel {
+    display: grid;
+    gap: 1.15rem;
+    padding: 1.35rem;
+    overflow: hidden;
+    align-self: stretch;
+  }
+
+  .hero__panel-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.95rem;
+    align-items: center;
+  }
+
+  .hero__portrait-visual {
+    display: grid;
+    place-items: center;
+    width: 5rem;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.3rem;
+    background:
+      radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.38), transparent 25%),
+      linear-gradient(160deg, rgba(184, 104, 54, 0.94), rgba(33, 68, 63, 0.94));
+    color: #fff8f2;
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
     font-weight: 800;
-    line-height: 1.1;
   }
 
-  /* Glow effect for the hero image */
-  .aspect-video {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.1);
+  .hero__panel-name {
+    font-family: var(--font-heading);
+    font-size: 1.28rem;
+    font-weight: 800;
   }
 
-  [data-theme="light"] .aspect-video {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.15);
+  .hero__panel-role {
+    margin-top: 0.35rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
   }
 
-  [data-theme="dark"] .aspect-video {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.2);
+  .hero__meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
-  /* Responsive adjustments */
+  .hero__meta-card {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0.95rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.82);
+  }
+
+  .hero__meta-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero__meta-card span {
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--theme-highlight);
+  }
+
+  .hero__meta-card p {
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+
+  .hero__panel-footer {
+    display: grid;
+    gap: 0.85rem;
+    padding-top: 0.1rem;
+  }
+
+  .hero__channel {
+    display: grid;
+    gap: 0.3rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.82);
+  }
+
+  .hero__channel span {
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--theme-highlight);
+  }
+
+  .hero__channel a {
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .hero__links a {
+    color: var(--color-text-muted);
+    font-weight: 700;
+  }
+
+  .hero__links a:hover {
+    color: var(--color-text);
+  }
+
+  @media (max-width: 1040px) {
+    .hero__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+      max-width: 12ch;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero h1 {
+      max-width: none;
+      font-size: clamp(2.55rem, 12vw, 3.8rem);
+      line-height: 0.98;
+    }
+
+    .hero__copy {
+      margin-top: 1rem;
+      font-size: 0.99rem;
+    }
+
+    .hero__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .hero__panel {
+      padding: 1.15rem;
+    }
+  }
+
   @media (max-width: 640px) {
-    .btn-primary,
-    .btn-secondary {
-      width: 100%;
-      padding: 0.75rem 1.5rem;
-      font-size: 0.9375rem;
+    .hero__meta-grid {
+      grid-template-columns: 1fr;
     }
 
-    .aspect-video {
-      border-radius: 0.5rem;
+    .hero__meta-card:last-child {
+      grid-column: auto;
+    }
+
+    .hero__panel-header {
+      gap: 0.8rem;
+    }
+
+    .hero__portrait-visual {
+      width: 4.2rem;
     }
   }
-</style> 
+</style>

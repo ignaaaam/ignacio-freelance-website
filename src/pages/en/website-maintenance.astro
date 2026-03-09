@@ -1,0 +1,155 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Professional Website Maintenance for Businesses | Ignacio Amat';
+const description = 'Professional website maintenance service. Updates, backups, monitoring, and technical support. Plans from €150/month. Keep your site secure, fast, and up to date.';
+const canonicalUrl = '/en/website-maintenance';
+const keywords = ['website maintenance', 'website maintenance service', 'professional website maintenance', 'web support', 'website maintenance plan', 'website maintenance for business'];
+
+const serviceSchema = {
+  '@context': 'https://schema.org', '@type': 'Service',
+  'serviceType': 'Website Maintenance',
+  'provider': { '@type': 'ProfessionalService', 'name': 'Ignacio Amat - Web Developer', 'url': baseUrl },
+  'areaServed': { '@type': 'Country', 'name': 'Spain' },
+  'description': 'Professional website maintenance including updates, backups, monitoring, and technical support for businesses.',
+  'offers': { '@type': 'Offer', 'priceRange': 'From €150/month', 'priceCurrency': 'EUR' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': 'What is included in website maintenance?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Regular updates, automated backups, uptime monitoring, security patches, performance optimization, and technical support. Higher plans include SEO monitoring, monthly reports, and development hours.' } },
+    { '@type': 'Question', 'name': 'How much does website maintenance cost?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Plans start from €150/month for basic maintenance, €300/month for professional with SEO monitoring and priority support, and €500/month for premium including development hours and advanced analytics.' } },
+    { '@type': 'Question', 'name': 'Do I really need website maintenance?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes. Without maintenance, your website becomes vulnerable to security breaches, slows down over time, and loses search rankings. Regular maintenance protects your investment and ensures consistent performance.' } },
+    { '@type': 'Question', 'name': 'What happens if my site goes down?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'With a maintenance plan, I monitor your site 24/7 and respond immediately to any downtime. Priority support clients get response within 2 hours during business hours.' } },
+    { '@type': 'Question', 'name': 'Can I cancel the maintenance plan?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes. There is no long-term commitment. You can cancel with 30 days notice. I believe in earning your trust monthly, not locking you into contracts.' } },
+    { '@type': 'Question', 'name': 'Do you maintain sites built by other developers?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Yes, I can maintain websites built with most modern technologies. I will assess the codebase first and let you know if there are any limitations.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Website Maintenance', 'item': `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const facts = [
+  { label: 'Core coverage', value: 'Updates, backups, monitoring, support and performance reviews.' },
+  { label: 'Best for', value: 'Business websites that need ongoing reliability without a full internal team.' },
+  { label: 'Flexible plans', value: 'Start with maintenance and add support, SEO checks or development hours as needed.' },
+];
+---
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang='en'
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={{ es: '/mantenimiento-web', en: '/en/website-maintenance' }}
+  badge="Website maintenance"
+  pageTitle="Ongoing website maintenance for businesses that need reliability, not fire drills"
+  lead="I keep business websites updated, backed up and monitored so they stay secure, fast and commercially useful instead of slowly degrading in the background."
+  primaryCta={{ label: 'Request a quote', href: '#contacto' }}
+  secondaryCta={{ label: 'See all services', href: '/en/services' }}
+  facts={facts}
+>
+          <div class="prose prose-lg max-w-none">
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why website maintenance matters</h2>
+            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Security</h3>
+                <p class="text-sm sm:text-base">Outdated software is the #1 attack vector. Regular updates and security patches protect your site and your customers' data.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Performance</h3>
+                <p class="text-sm sm:text-base">Websites slow down over time. Database optimization, cache management, and code cleanup keep loading times fast.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">SEO</h3>
+                <p class="text-sm sm:text-base">Search engines reward well-maintained sites. Regular content updates, technical fixes, and performance improvements boost rankings.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Maintenance plans</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Basic — €150/month</h3>
+                <ul class="text-sm sm:text-base space-y-1 text-text-muted">
+                  <li>Software and security updates</li>
+                  <li>Daily automated backups</li>
+                  <li>24/7 uptime monitoring</li>
+                  <li>Monthly performance check</li>
+                  <li>Email support (48h response)</li>
+                </ul>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Professional — €300/month</h3>
+                <ul class="text-sm sm:text-base space-y-1 text-text-muted">
+                  <li>Everything in Basic</li>
+                  <li>SEO monitoring and recommendations</li>
+                  <li>Priority support (24h response)</li>
+                  <li>Monthly performance report</li>
+                  <li>Minor content updates (up to 2h/month)</li>
+                  <li>Core Web Vitals optimization</li>
+                </ul>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Premium — €500/month</h3>
+                <ul class="text-sm sm:text-base space-y-1 text-text-muted">
+                  <li>Everything in Professional</li>
+                  <li>4 development hours/month for new features</li>
+                  <li>A/B testing and conversion optimization</li>
+                  <li>Advanced analytics dashboard</li>
+                  <li>Priority support (2h response in business hours)</li>
+                  <li>Quarterly strategy review call</li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How it works</h2>
+            <ol class="list-decimal pl-5 sm:pl-6 space-y-3 mb-6 text-sm sm:text-base">
+              <li><strong>Onboarding:</strong> I audit your current site, set up monitoring tools, and establish a backup system.</li>
+              <li><strong>Monthly maintenance:</strong> Regular updates, security patches, performance checks, and content updates as needed.</li>
+              <li><strong>Monthly report:</strong> Clear summary of work done, uptime statistics, performance metrics, and recommendations.</li>
+              <li><strong>Ongoing support:</strong> Direct communication channel for any issues or requests.</li>
+            </ol>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">What's included in maintenance?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Updates, backups, monitoring, security patches, performance optimization, and support. Higher plans add SEO monitoring, reports, and development hours.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do I really need maintenance?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. Without it, your site becomes vulnerable, slows down, and loses rankings. Maintenance protects your investment.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">What if my site goes down?</h3>
+                <p class="text-sm sm:text-base text-text-muted">I monitor 24/7 and respond immediately. Priority clients get 2-hour response during business hours.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Can I cancel anytime?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. 30 days notice, no long-term contracts. I earn your trust monthly.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do you maintain sites built by others?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes, for most modern technologies. I assess the codebase first and communicate any limitations.</p>
+              </div>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Keep your website in top shape</h2>
+              <p class="mb-3 text-sm sm:text-base">Tell me about your site and I'll recommend the right maintenance plan. Free initial audit included.</p>
+              <p class="font-semibold text-sm sm:text-base">Free site audit<br/>No long-term contracts<br/>Monthly reports<br/>Direct communication</p>
+            </div>
+
+          </div>
+</MarketingContentPage>

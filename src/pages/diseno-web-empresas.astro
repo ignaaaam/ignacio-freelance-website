@@ -1,186 +1,280 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Contact from '../components/Contact.astro';
-import StickyCTA from '../components/StickyGTA.astro';
+import MarketingContentPage from '../components/MarketingContentPage.astro';
 
 const baseUrl = 'https://ignacioamatweb.com';
-const title = "Diseño Web para Empresas | Freelance Full Stack | Ignacio Amat";
-const description = "Diseño web profesional para empresas de toda España. Landing pages, webs corporativas y proyectos complejos desde 800€. Trabajo en remoto. Presupuesto gratuito.";
-const canonicalUrl = "/diseno-web-empresas";
-const keywords = ["diseño web empresas", "diseño web profesional", "diseño web empresas España", "landing page empresas", "web corporativa España", "crear página web empresa", "diseño web freelance", "diseño web a medida"];
+const title = 'Diseno web para empresas que necesitan una presencia mas clara | Ignacio Amat';
+const description =
+  'Diseno y desarrollo webs de empresa para explicar mejor servicios, reforzar confianza y facilitar el contacto. Webs corporativas, redisenos y estructuras preparadas para SEO y conversion.';
+const canonicalUrl = '/diseno-web-empresas';
+const keywords = [
+  'diseno web empresas',
+  'diseno web profesional',
+  'web corporativa espana',
+  'crear pagina web empresa',
+  'diseno web freelance',
+  'diseno web a medida',
+];
 
-// Structured Data
 const serviceSchema = {
-	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Diseño Web para Empresas",
-	"provider": {
-		"@type": "LocalBusiness",
-		"name": "Ignacio Amat",
-		"url": baseUrl
-	},
-	"description": "Servicio de diseño web profesional para empresas. Diseños modernos, responsive y optimizados para conversión.",
-	"offers": {
-		"@type": "Offer",
-		"priceRange": "€800 - €6,000+",
-		"description": "Diseños desde 800€ para landing pages hasta 6,000€+ para proyectos completos"
-	}
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Diseno web para empresas',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+  },
+  description:
+    'Webs de empresa y webs corporativas pensadas para explicar la oferta con mas claridad, transmitir confianza y dejar una base tecnica bien resuelta.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '1.500 EUR - 4.000 EUR',
+    priceCurrency: 'EUR',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Que incluye normalmente una web de empresa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Suele incluir estructura de contenidos, paginas clave, formularios, base SEO, diseno responsive y una arquitectura preparada para crecer sin rehacerlo todo despues.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Cuanto cuesta una web corporativa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Una web de empresa bien resuelta suele moverse desde 1.500 EUR hasta 4.000 EUR o mas, segun el numero de paginas, el contenido, las integraciones y el nivel de personalizacion.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Es mejor hacer una web nueva o mejorar la actual?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Depende del punto de partida. Hay casos donde basta con mejorar estructura, copy y rendimiento, y otros donde conviene redisenar para no seguir construyendo sobre una base floja.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Trabajas en remoto con empresas fuera de Barcelona?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Si. Trabajo en remoto con empresas de toda Espana y con clientes internacionales cuando el proyecto encaja.',
+      },
+    },
+  ],
 };
 
 const breadcrumbSchema = {
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [
-		{
-			"@type": "ListItem",
-			"position": 1,
-			"name": "Inicio",
-			"item": baseUrl
-		},
-		{
-			"@type": "ListItem",
-			"position": 2,
-			"name": "Diseño Web Empresas",
-			"item": `${baseUrl}${canonicalUrl}`
-		}
-	]
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Diseno web para empresas', item: `${baseUrl}${canonicalUrl}` },
+  ],
 };
 
-const allSchemas = [serviceSchema, breadcrumbSchema];
-
-// Manual alternate URLs for service pages
-const alternateUrls = {
-	es: canonicalUrl,
-	en: "/en/web-design-businesses"
-};
+const facts = [
+  { label: 'Pensado para', value: 'Empresas de servicios, equipos B2B y negocios que necesitan explicar mejor su oferta.' },
+  { label: 'Enfoque', value: 'Mensaje mas claro, mejor jerarquia visual y una web preparada para SEO, confianza y captacion.' },
+  { label: 'Rango habitual', value: 'Entre 1.500 EUR y 4.000 EUR segun alcance, contenido e integraciones.' },
+];
 ---
-<Layout 
-	title={title} 
-	description={description} 
-	lang="es"
-	canonicalUrl={canonicalUrl}
-	keywords={keywords}
-	additionalSchemas={allSchemas}
-	alternateUrls={alternateUrls}
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+  alternateUrls={{ es: canonicalUrl, en: '/en/web-design-businesses' }}
+  badge="Webs de empresa"
+  pageTitle="Webs de empresa para explicar mejor lo que haces y dejar mejor impresion"
+  lead="Diseno y desarrollo webs corporativas para empresas que necesitan una presencia mas clara, mas creible y mejor preparada para captar oportunidades sin parecer una plantilla generica."
+  primaryCta={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
+  facts={facts}
 >
-	<Header />
-	<main>
-		<section class="py-12 sm:py-16 md:py-20">
-			<div class="container px-4 sm:px-6">
-				<div class="max-w-4xl mx-auto">
-					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Diseño Web Profesional para Empresas</h1>
-					
-					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-						Un buen diseño web es fundamental para el éxito de tu negocio online. Creo diseños web profesionales 
-						que no solo se ven increíbles, sino que también convierten visitantes en clientes.
-					</p>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Que deberia conseguir una buena web de empresa</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Una web corporativa no esta para rellenar presencia online. Tiene que explicar la oferta con claridad,
+      transmitir que la empresa es seria y facilitar que un cliente potencial entienda rapido si quiere seguir hablando.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      Cuando eso no ocurre, la web sigue publicada, pero no ayuda al negocio. Da una imagen correcta sin terminar
+      de justificar por que deberian elegirte frente a otra opcion.
+    </p>
 
-					<div class="prose prose-lg max-w-none mb-8 sm:mb-12">
-						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">¿Por qué es importante el diseño web para tu empresa?</h2>
-						
-						<p class="text-base sm:text-lg mb-4">
-							El diseño web es la primera impresión que los visitantes tienen de tu negocio. Un diseño profesional, 
-							moderno y funcional genera confianza, mejora la experiencia del usuario y aumenta las conversiones. 
-							Por eso, el diseño web no es solo estética, es una inversión en el éxito de tu negocio.
-						</p>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Oferta mas facil de entender</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          La estructura y el mensaje ayudan a que un visitante entienda rapido que haces, para quien y por que confiar.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Capas reales de confianza</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Servicios visibles, FAQs, prueba social y puntos de contacto mejor presentados para reducir dudas durante la evaluacion.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Base SEO y rendimiento</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Una web bien resuelta tecnicamente posiciona mejor, carga mejor y deja menos problemas despues del lanzamiento.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Escalable y mantenible</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          La arquitectura queda preparada para crecer con nuevos servicios, contenidos o mejoras sin rehacerla al poco tiempo.
+        </p>
+      </div>
+    </div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Elementos clave de un buen diseño web:</h3>
-						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Diseño Responsive:</strong> Tu web se verá perfecta en móvil, tablet y ordenador</li>
-							<li><strong>Usabilidad:</strong> Navegación intuitiva que guía al usuario hacia la acción</li>
-							<li><strong>Velocidad:</strong> Carga rápida para no perder visitantes</li>
-							<li><strong>Identidad de marca:</strong> Diseño que refleja los valores y personalidad de tu empresa</li>
-							<li><strong>Optimización para conversión:</strong> Elementos diseñados para convertir visitantes en clientes</li>
-							<li><strong>Accesibilidad:</strong> Diseño accesible para todos los usuarios</li>
-						</ul>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cuando suele hacer falta replantear la web</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>La oferta no se entiende bien:</strong> el visitante llega, pero no capta con rapidez que vendes o que problema resuelves.</li>
+      <li><strong>La web transmite menos nivel que el negocio real:</strong> el servicio es bueno, pero la presencia digital no lo refleja.</li>
+      <li><strong>Todo depende del contacto directo:</strong> si la web no filtra ni aclara nada, cada conversacion empieza demasiado atras.</li>
+      <li><strong>Hay trafico, pero poca confianza:</strong> visitas o referencias no se convierten en una conversacion con contexto.</li>
+      <li><strong>La base tecnica se ha quedado corta:</strong> velocidad floja, estructura pobre o una tecnologia que ya limita cualquier mejora razonable.</li>
+    </ul>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Tipos de diseño web que ofrezco:</h3>
-						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Diseño Corporativo</h4>
-								<p class="text-sm sm:text-base">Diseños profesionales para empresas que buscan transmitir credibilidad y profesionalismo</p>
-							</div>
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Diseño E-commerce</h4>
-								<p class="text-sm sm:text-base">Diseños optimizados para tiendas online que facilitan la compra y aumentan las ventas</p>
-							</div>
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Diseño Landing Page</h4>
-								<p class="text-sm sm:text-base">Páginas de aterrizaje enfocadas en conversión para campañas específicas</p>
-							</div>
-							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Rediseño Web</h4>
-								<p class="text-sm sm:text-base">Actualizo y modernizo tu web existente para mejorar resultados</p>
-							</div>
-						</div>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Como planteo una web de empresa</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Arquitectura clara</h3>
+        <p class="text-sm sm:text-base">
+          Defino las paginas y secciones que hacen falta de verdad para explicar servicios, proceso, equipo, FAQ y contacto sin ruido innecesario.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Mensaje comercial mas limpio</h3>
+        <p class="text-sm sm:text-base">
+          Reordeno titulares, bloques y llamadas a la accion para que la web venda mejor sin sonar grandilocuente.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Diseno con criterio</h3>
+        <p class="text-sm sm:text-base">
+          La parte visual tiene que reforzar confianza y legibilidad, no parecer una plantilla bonita sin fondo.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Implementacion bien resuelta</h3>
+        <p class="text-sm sm:text-base">
+          Trabajo con una base tecnica ligera, preparada para SEO, responsive y facil de mantener despues.
+        </p>
+      </div>
+    </div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Proceso de diseño web:</h3>
-						<ol class="list-decimal pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Briefing:</strong> Analizamos tu marca, objetivos y público objetivo</li>
-							<li><strong>Wireframes:</strong> Creo la estructura y distribución de contenido</li>
-							<li><strong>Diseño visual:</strong> Desarrollo el diseño completo con tu identidad de marca</li>
-							<li><strong>Revisión y ajustes:</strong> Trabajamos juntos para perfeccionar cada detalle</li>
-							<li><strong>Desarrollo:</strong> Convierto el diseño en una web funcional y responsive</li>
-							<li><strong>Optimización:</strong> Aseguro velocidad, SEO y usabilidad</li>
-						</ol>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Tipos de proyecto que suelen encajar aqui</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Web corporativa desde cero</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Para empresas que necesitan una presencia actual y profesional con una estructura clara desde el principio.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Replanteo de una web existente</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Cuando ya existe una web pero el mensaje, la jerarquia o la sensacion general no acompanan al negocio.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Web orientada a captacion</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Para negocios que dependen de solicitudes, reuniones o formularios y necesitan mejorar la conversion del trafico actual.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Web modular para crecer</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Pensada para ampliar servicios, contenidos o nuevas lineas de negocio sin rehacer la base cada pocos meses.
+        </p>
+      </div>
+    </div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Trabajo con empresas de toda España:</h3>
-						<p class="mb-4 text-sm sm:text-base">
-							He diseñado webs para empresas de diversos sectores en toda España: desde restaurantes hasta consultorías jurídicas,
-							startups tecnológicas, clínicas, academias y tiendas online. Trabajo 100% en remoto con clientes de
-							Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza y cualquier ciudad española. Cada diseño
-							está adaptado a las necesidades específicas del negocio y su público objetivo.
-						</p>
-						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
-							<a href="/desarrollador-web-espana" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseño web España →</a>
-							<a href="/desarrollador-web-madrid" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseño web Madrid →</a>
-							<a href="/desarrollador-web-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseño web Barcelona →</a>
-							<a href="/desarrollador-web-valencia" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseño web Valencia →</a>
-							<a href="/desarrollador-web-sevilla" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseño web Sevilla →</a>
-							<a href="/pagina-web-restaurantes-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web restaurantes →</a>
-							<a href="/pagina-web-abogados-despachos-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web abogados →</a>
-						</div>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Inversion orientativa</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Web corporativa esencial — desde 1.500 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Para una empresa con oferta definida, pocas paginas clave y necesidad de salir con una base clara y profesional.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Web de empresa completa — habitual 2.000 a 4.000 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Para proyectos con mas profundidad de contenidos, bloques de confianza, FAQs, blog, captacion y trabajo mas fino de mensaje.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Proyecto a medida — presupuesto segun alcance</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Cuando hay integraciones, areas privadas, necesidades de producto o una parte tecnica que va mas alla de una web corporativa clasica.
+        </p>
+      </div>
+    </div>
 
-						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
-							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Necesitas un diseño web profesional para tu empresa?</h3>
-							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
-								Si buscas un diseño web profesional que refleje la identidad de tu marca y convierta 
-								visitantes en clientes, contáctame. Te ayudo a crear un diseño que impulse tu negocio.
-							</p>
-							<p class="font-semibold text-sm sm:text-base">
-								✅ Diseño personalizado y único<br/>
-								✅ Presupuesto gratuito sin compromiso<br/>
-								✅ Facturación oficial<br/>
-								✅ Garantía de satisfacción
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Que incluye normalmente una web de empresa?</h3>
+        <p class="text-sm sm:text-base">
+          Suele incluir la arquitectura de contenidos, las paginas clave, formularios, base SEO, diseno responsive y una estructura preparada para evolucionar despues.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Cuanto tarda una web corporativa?</h3>
+        <p class="text-sm sm:text-base">
+          Depende del alcance y del estado del contenido, pero una web de empresa suele moverse entre dos y seis semanas cuando el proyecto esta bien enfocado.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Hace falta rehacerlo todo desde cero?</h3>
+        <p class="text-sm sm:text-base">
+          No siempre. Hay proyectos donde basta con mejorar estructura, copy y rendimiento. En otros, la base es tan floja que conviene redisenar sin seguir parcheando.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Trabajas con empresas fuera de Barcelona?</h3>
+        <p class="text-sm sm:text-base">
+          Si. Trabajo en remoto con empresas de toda Espana y tambien con clientes internacionales cuando el encaje es bueno.
+        </p>
+      </div>
+    </div>
 
-		<Contact />
-		<StickyCTA />
-	</main>
-</Layout>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/servicios" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Todos los servicios &rarr;</a>
+      <a href="/rediseno-web-mejoras" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Redisenos y mejoras &rarr;</a>
+      <a href="/crear-landing-page-profesional" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/cuanto-cuesta-pagina-web" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Guia de precios &rarr;</a>
+      <a href="/contratar-desarrollador-full-stack" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full stack freelance &rarr;</a>
+      <a href="/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contacto &rarr;</a>
+    </div>
 
-<style>
-	.text-text-muted {
-		color: var(--color-text-muted);
-	}
-	
-	.bg-secondary {
-		background-color: var(--color-secondary);
-	}
-	
-	.prose h2, .prose h3, .prose h4 {
-		color: var(--color-text);
-	}
-	
-	.prose p, .prose li {
-		color: var(--color-text);
-		line-height: 1.8;
-	}
-</style>
-
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Necesitas una web que este a la altura real de tu empresa?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Si tu presencia actual se ha quedado corta o no esta ayudando a vender mejor, cuentame el punto de partida y te digo que conviene replantear primero.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Propuesta clara sin rodeos<br />
+        Trabajo directo conmigo<br />
+        Base lista para crecer y mantenerse
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import { getAlternateUrls, getLanguageSwitchUrls } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: 'es' | 'en';
+  canonicalUrl: string;
+  pageTitle: string;
+  updatedAt?: string;
+}
+
+const { title, description, lang, canonicalUrl, pageTitle, updatedAt } = Astro.props;
+const alternateUrls = getAlternateUrls(canonicalUrl);
+const languageSwitchUrls = getLanguageSwitchUrls(Astro.url);
+const updatedLabel = lang === 'en' ? 'Last updated' : 'Ultima actualizacion';
+const formattedUpdatedAt = new Date(updatedAt ?? Date.now()).toLocaleDateString(lang === 'en' ? 'en-US' : 'es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  canonicalUrl={canonicalUrl}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="section">
+      <div class="container">
+        <article class="policy-card surface-card">
+          <header class="policy-card__header">
+            <div>
+              <p class="section-eyebrow">{lang === 'en' ? 'Legal' : 'Legal'}</p>
+              <h1>{pageTitle}</h1>
+            </div>
+            <div class="policy-card__meta">
+              <div class="policy-card__lang">
+                <a href={languageSwitchUrls.es} class={lang === 'es' ? 'is-active' : undefined}>ES</a>
+                <a href={languageSwitchUrls.en} class={lang === 'en' ? 'is-active' : undefined}>EN</a>
+              </div>
+              <p>{updatedLabel}: {formattedUpdatedAt}</p>
+            </div>
+          </header>
+
+          <div class="policy-card__body legal-content">
+            <slot />
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .policy-card {
+    padding: 1.45rem;
+  }
+
+  .policy-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1.35rem;
+    border-bottom: 1px solid rgba(74, 54, 41, 0.1);
+  }
+
+  .policy-card__header h1 {
+    margin-top: 0.35rem;
+    font-size: clamp(2.3rem, 6vw, 4rem);
+  }
+
+  .policy-card__meta {
+    display: grid;
+    gap: 0.8rem;
+    justify-items: end;
+    color: var(--color-text-muted);
+    font-size: 0.94rem;
+  }
+
+  .policy-card__lang {
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.28rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 999px;
+    background: #fff9f3;
+  }
+
+  .policy-card__lang a {
+    padding: 0.38rem 0.68rem;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+
+  .policy-card__lang .is-active {
+    background: var(--theme-highlight);
+    color: #fffaf4;
+  }
+
+  .policy-card__body {
+    padding-top: 1.4rem;
+  }
+
+  @media (max-width: 720px) {
+    .policy-card {
+      padding: 1.2rem;
+    }
+
+    .policy-card__header {
+      flex-direction: column;
+    }
+
+    .policy-card__meta {
+      justify-items: start;
+    }
+
+    .policy-card__lang {
+      flex-wrap: wrap;
+    }
+  }
+</style>

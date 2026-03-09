@@ -1,6 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Contact from '../../components/Contact.astro';
+import Header from '../../components/Header.astro';
+import ContactSection from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
 import { getTranslation } from '../../i18n/utils';
 
 const locale = 'en';
@@ -14,10 +16,9 @@ const t = (key: string) => getTranslation(locale, key);
 	canonicalUrl="/en/contact"
 	alternateUrls={{ es: '/contact', en: '/en/contact' }}
 >
-	<main class="container mx-auto px-4 py-8">
-		<h1 class="text-4xl font-bold mb-8">{t('contact.title')}</h1>
-		<div class="max-w-2xl mx-auto">
-			<Contact />
-		</div>
+	<Header />
+	<main>
+		<ContactSection />
 	</main>
+	<StickyCTA />
 </Layout>

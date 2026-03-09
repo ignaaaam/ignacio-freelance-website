@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://ignacioamatweb.com';
+const title = 'Cómo Elegir un Desarrollador Web | Guía Completa 2026';
+const description = 'Guía completa para elegir el mejor desarrollador web para tu proyecto. Criterios clave, freelancer vs agencia, red flags y preguntas que debes hacer antes de contratar.';
+const canonicalUrl = '/como-elegir-desarrollador-web';
+const keywords = ['como elegir desarrollador web', 'contratar desarrollador web', 'elegir programador web', 'freelance vs agencia web', 'buscar desarrollador web'];
+
+const faqSchema = {
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  'mainEntity': [
+    { '@type': 'Question', 'name': '¿Qué debo buscar en un desarrollador web?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Portfolio con proyectos similares al tuyo, dominio de tecnologías modernas, comunicación clara, plazos realistas, presupuesto transparente y referencias verificables.' } },
+    { '@type': 'Question', 'name': '¿Freelance o agencia?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Para proyectos de hasta 50.000€, un freelance senior suele ofrecer mejor relación calidad-precio y comunicación más directa. Las agencias son más adecuadas para proyectos enterprise muy grandes que requieren equipos multidisciplinares simultáneos.' } },
+    { '@type': 'Question', 'name': '¿Cuáles son las red flags al contratar un desarrollador?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Presupuestos sin desglose, sin portfolio, promesas de plazos irrealistas, sin contrato escrito, sin proceso definido, y falta de comunicación durante la fase de presupuesto.' } },
+    { '@type': 'Question', 'name': '¿Qué preguntas debo hacer antes de contratar?', 'acceptedAnswer': { '@type': 'Answer', 'text': '¿Puedo ver proyectos similares? ¿Qué tecnología recomiendas y por qué? ¿Cuál es el proceso de trabajo? ¿Qué incluye el precio? ¿Qué pasa si no estoy conforme? ¿Emites factura oficial?' } },
+    { '@type': 'Question', 'name': '¿Cómo evaluar la calidad de un portfolio?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Mira la velocidad de carga de los proyectos (usa PageSpeed Insights), el diseño en móvil, la calidad del código fuente, y si los proyectos siguen online y actualizados.' } },
+    { '@type': 'Question', 'name': '¿Es importante que el desarrollador entienda de SEO?', 'acceptedAnswer': { '@type': 'Answer', 'text': 'Sí, un buen desarrollador web debe entender SEO técnico como mínimo: estructura de encabezados, meta tags, schema markup, velocidad de carga, y URLs amigables. Sin esto, tu web puede quedar invisible en Google.' } },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': baseUrl },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Cómo Elegir Desarrollador Web', 'item': `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const allSchemas = [faqSchema, breadcrumbSchema];
+---
+<Layout title={title} description={description} lang="es" canonicalUrl={canonicalUrl} keywords={keywords} additionalSchemas={allSchemas} alternateUrls={{ es: '/como-elegir-desarrollador-web', en: '/en/how-to-choose-web-developer' }}>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20">
+      <div class="container px-4 sm:px-6">
+        <div class="max-w-4xl mx-auto">
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Cómo Elegir el Mejor Desarrollador Web para tu Proyecto</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            <strong>Para elegir un buen desarrollador web, evalúa su portfolio con proyectos similares al tuyo, verifica que domine tecnologías modernas, comprueba que tenga un proceso de trabajo claro y que ofrezca presupuesto detallado sin compromiso.</strong> La comunicación directa y las referencias verificables son igual de importantes que las habilidades técnicas.
+          </p>
+
+          <div class="prose prose-lg max-w-none">
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Criterios clave para elegir desarrollador web</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Portfolio relevante</h3>
+                <p class="text-sm sm:text-base">Busca proyectos similares al tuyo en sector o complejidad. Prueba la velocidad de carga con PageSpeed Insights y mira cómo se ven en móvil.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Tecnologías modernas</h3>
+                <p class="text-sm sm:text-base">Un buen desarrollador trabaja con tecnologías actuales (React, Laravel, Astro, Node.js) y sabe explicar por qué elige una u otra para tu proyecto.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Comunicación clara</h3>
+                <p class="text-sm sm:text-base">Si la comunicación falla durante el presupuesto, fallará durante el proyecto. Busca respuestas claras, plazos definidos y disponibilidad real.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Presupuesto transparente</h3>
+                <p class="text-sm sm:text-base">Un presupuesto detallado con desglose de fases, entregables y plazos. Desconfía de precios "todo incluido" sin especificar qué incluyen.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">SEO técnico</h3>
+                <p class="text-sm sm:text-base">El SEO técnico debe estar incluido de serie: meta tags, schema markup, velocidad, URLs amigables. Sin esto, tu web será invisible en Google.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg font-bold mb-2">Soporte post-lanzamiento</h3>
+                <p class="text-sm sm:text-base">Pregunta qué pasa después de entregar el proyecto. Un buen desarrollador ofrece soporte, <a href="/mantenimiento-web" class="text-accent hover:underline">planes de mantenimiento</a> y garantía.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Freelance vs. agencia: comparativa</h2>
+            <div class="overflow-x-auto mb-8">
+              <table class="w-full text-sm sm:text-base border-collapse">
+                <thead>
+                  <tr class="bg-secondary">
+                    <th class="text-left p-3 font-bold">Criterio</th>
+                    <th class="text-left p-3 font-bold">Freelance</th>
+                    <th class="text-left p-3 font-bold">Agencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-border"><td class="p-3">Comunicación</td><td class="p-3 text-text-muted">Directa con quien ejecuta</td><td class="p-3 text-text-muted">A través de project manager</td></tr>
+                  <tr class="border-b border-border bg-secondary/50"><td class="p-3">Precio</td><td class="p-3 text-text-muted">30-50% menos</td><td class="p-3 text-text-muted">Overhead de equipo</td></tr>
+                  <tr class="border-b border-border"><td class="p-3">Velocidad</td><td class="p-3 text-text-muted">Decisiones rápidas</td><td class="p-3 text-text-muted">Procesos internos</td></tr>
+                  <tr class="border-b border-border bg-secondary/50"><td class="p-3">Escalabilidad</td><td class="p-3 text-text-muted">Limitada a 1-2 proyectos</td><td class="p-3 text-text-muted">Equipos más grandes</td></tr>
+                  <tr class="border-b border-border"><td class="p-3">Ideal para</td><td class="p-3 text-text-muted">Proyectos hasta 50.000€</td><td class="p-3 text-text-muted">Proyectos enterprise 100.000€+</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Red flags: señales de alarma</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Sin portfolio:</strong> Si no puede mostrar trabajo anterior, es un riesgo alto.</li>
+              <li><strong>Presupuesto sin desglose:</strong> "Tu web por 500€" sin explicar qué incluye ni qué no.</li>
+              <li><strong>Plazos irrealistas:</strong> Promesas de "tu web en 3 días" para proyectos complejos.</li>
+              <li><strong>Sin contrato:</strong> Todo acuerdo profesional debe quedar por escrito.</li>
+              <li><strong>Sin proceso definido:</strong> Si no puede explicar cómo trabaja, improvisará con tu proyecto.</li>
+              <li><strong>Desaparece tras el pago:</strong> Busca referencias y comprueba que ofrece soporte post-entrega.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Preguntas que debes hacer antes de contratar</h2>
+            <ol class="list-decimal pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li>¿Puedo ver proyectos similares al mío?</li>
+              <li>¿Qué tecnología recomiendas para mi caso y por qué?</li>
+              <li>¿Cuál es tu proceso de trabajo paso a paso?</li>
+              <li>¿Qué incluye exactamente el precio?</li>
+              <li>¿Qué pasa si no estoy conforme con el resultado?</li>
+              <li>¿Emites factura oficial?</li>
+              <li>¿Ofreces soporte o mantenimiento después de la entrega?</li>
+              <li>¿Cuánto tiempo tardarás y qué hitos hay?</li>
+            </ol>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Qué debo buscar en un desarrollador web?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Portfolio relevante, tecnologías modernas, comunicación clara, presupuesto transparente, SEO técnico incluido y soporte post-lanzamiento.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Es mejor un freelance o una agencia?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Para proyectos de hasta 50.000€, un freelance senior ofrece mejor relación calidad-precio y comunicación más directa.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto debería costar mi proyecto?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Depende del tipo. Consulta nuestra <a href="/cuanto-cuesta-pagina-web" class="text-accent hover:underline">guía completa de precios</a> para rangos detallados.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">¿Es importante el SEO técnico?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Sí, imprescindible. Sin SEO técnico desde el inicio, tu web será invisible en Google por mucho que inviertas en diseño.</p>
+              </div>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">¿Buscas un desarrollador web de confianza?</h2>
+              <p class="mb-3 text-sm sm:text-base">Cuéntame tu proyecto y te envío una propuesta clara con portfolio relevante, desglose de fases y precio fijo. Sin compromiso.</p>
+              <p class="font-semibold text-sm sm:text-base">Presupuesto gratuito en 24h<br/>Portfolio verificable<br/>Proceso de trabajo claro<br/>Factura oficial</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .text-accent { color: var(--color-accent); }
+  .border-border { border-color: var(--color-border); }
+  .prose h2, .prose h3 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+  table { color: var(--color-text); }
+  th { color: var(--color-text); }
+</style>

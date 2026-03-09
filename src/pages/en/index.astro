@@ -2,274 +2,84 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
-import Features from '../../components/Features.astro';
+import TrustBar from '../../components/TrustBar.astro';
 import Projects from '../../components/Projects.astro';
-import About from '../../components/About.astro';
+import Features from '../../components/Features.astro';
+import CaseStudies from '../../components/CaseStudies.astro';
 import Process from '../../components/Process.astro';
 import Pricing from '../../components/Pricing.astro';
-import Guarantee from '../../components/Guarantee.astro';
 import Testimonials from '../../components/Testimonials.astro';
 import FAQ from '../../components/FAQ.astro';
 import Contact from '../../components/Contact.astro';
-import Translate from '../../components/Translate.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
-import { getTranslation } from '../../i18n/utils';
+import { siteContent } from '../../data/siteContent';
 
 const locale = 'en';
-const title = getTranslation(locale, 'seo.home.title');
-const description = getTranslation(locale, 'seo.home.description');
-const canonicalUrl = "/en/";
+const page = siteContent[locale];
 const baseUrl = 'https://ignacioamatweb.com';
+const canonicalUrl = '/en/';
 
-// Structured Data for SEO
 const professionalServiceSchema = {
-	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
-	"@id": `${baseUrl}${canonicalUrl}#professional-service`,
-	"name": "Ignacio Amat - Freelance Web Developer",
-	"url": `${baseUrl}${canonicalUrl}`,
-	"image": `${baseUrl}/images/og-image.png`,
-	"description": description,
-	"founder": {
-		"@type": "Person",
-		"name": "Ignacio Amat",
-		"jobTitle": "Freelance Full-Stack Web Developer",
-		"url": baseUrl,
-		"sameAs": [
-			"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
-			"https://github.com/ignaaaam",
-			"https://x.com/ignathedev"
-		]
-	},
-	"areaServed": [
-		{ "@type": "Country", "name": "Spain" },
-		{ "@type": "City", "name": "Madrid" },
-		{ "@type": "City", "name": "Barcelona" },
-		{ "@type": "City", "name": "Valencia" },
-		{ "@type": "City", "name": "Sevilla" },
-		{ "@type": "City", "name": "Bilbao" },
-		{ "@type": "City", "name": "Zaragoza" }
-	],
-	"availableLanguage": ["en", "es"],
-	"priceRange": "EUR800-EUR6000",
-	"sameAs": [
-		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
-		"https://github.com/ignaaaam",
-		"https://x.com/ignathedev"
-	]
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': `${baseUrl}${canonicalUrl}#professional-service`,
+  name: 'Ignacio Amat',
+  url: `${baseUrl}${canonicalUrl}`,
+  description: page.meta.description,
+  areaServed: 'Spain and international clients',
+  availableLanguage: ['en', 'es'],
+  sameAs: [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam',
+    'https://x.com/ignathedev',
+  ],
 };
 
 const serviceSchema = {
-	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Full-stack web development and conversion-focused web design",
-	"provider": {
-		"@type": "ProfessionalService",
-		"name": "Ignacio Amat",
-		"url": baseUrl
-	},
-	"areaServed": "Spain and international remote clients",
-	"availableChannel": {
-		"@type": "ServiceChannel",
-		"serviceUrl": `${baseUrl}/en/contact`
-	},
-	"hasOfferCatalog": {
-		"@type": "OfferCatalog",
-		"name": "Web development services",
-		"itemListElement": [
-			{
-				"@type": "Offer",
-				"itemOffered": {
-					"@type": "Service",
-					"name": "High-converting landing pages"
-				}
-			},
-			{
-				"@type": "Offer",
-				"itemOffered": {
-					"@type": "Service",
-					"name": "Business website development"
-				}
-			},
-			{
-				"@type": "Offer",
-				"itemOffered": {
-					"@type": "Service",
-					"name": "Custom web application development"
-				}
-			}
-		]
-	}
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Landing pages, business websites, redesigns, Laravel and MVP development',
+  provider: {
+    '@type': 'Person',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+  },
+  areaServed: 'Spain and international clients',
 };
 
 const faqSchema = {
-	"@context": "https://schema.org",
-	"@type": "FAQPage",
-	"mainEntity": [
-		{
-			"@type": "Question",
-			"name": getTranslation(locale, 'faq.items.0.question'),
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": getTranslation(locale, 'faq.items.0.answer')
-			}
-		},
-		{
-			"@type": "Question",
-			"name": getTranslation(locale, 'faq.items.1.question'),
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": getTranslation(locale, 'faq.items.1.answer')
-			}
-		},
-		{
-			"@type": "Question",
-			"name": getTranslation(locale, 'faq.items.2.question'),
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": getTranslation(locale, 'faq.items.2.answer')
-			}
-		},
-		{
-			"@type": "Question",
-			"name": getTranslation(locale, 'faq.items.3.question'),
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": getTranslation(locale, 'faq.items.3.answer')
-			}
-		},
-		{
-			"@type": "Question",
-			"name": getTranslation(locale, 'faq.items.4.question'),
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": getTranslation(locale, 'faq.items.4.answer')
-			}
-		},
-		{
-			"@type": "Question",
-			"name": getTranslation(locale, 'faq.items.5.question'),
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": getTranslation(locale, 'faq.items.5.answer')
-			}
-		}
-	]
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: page.faq.items.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
 };
-
-const allSchemas = [
-	professionalServiceSchema,
-	serviceSchema,
-	faqSchema
-];
 ---
 
-<Layout 
-	title={title} 
-	description={description} 
-	lang="en"
-	canonicalUrl={canonicalUrl}
-	additionalSchemas={allSchemas}
+<Layout
+  title={page.meta.title}
+  description={page.meta.description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  additionalSchemas={[professionalServiceSchema, serviceSchema, faqSchema]}
 >
-	<Header />
-	<main>
-		<Hero imageAlt={getTranslation(locale, 'seo.hero.imageAlt')} />
-		<Features />
-		<Projects />
-		<About />
-		<Process />
-		<Pricing />
-		<Guarantee />
-		<Testimonials />
-		<FAQ />
-		<Contact />
-	</main>
-	<StickyCTA />
-	<footer class="py-8 sm:py-12 border-t border-border">
-		<div class="container px-4 sm:px-6">
-			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-				<div>
-					<h3 class="text-sm font-semibold mb-4">By City</h3>
-					<nav class="flex flex-col gap-2">
-						<a href="/en/web-developer-spain" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer Spain
-						</a>
-						<a href="/en/web-developer-madrid" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer Madrid
-						</a>
-						<a href="/en/web-developer-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer Barcelona
-						</a>
-						<a href="/en/web-developer-valencia" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer Valencia
-						</a>
-						<a href="/en/web-developer-sevilla" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Developer Sevilla
-						</a>
-					</nav>
-				</div>
-				<div>
-					<h3 class="text-sm font-semibold mb-4">Services</h3>
-					<nav class="flex flex-col gap-2">
-						<a href="/en/hire-full-stack-web-developer" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Hire Full-Stack Developer
-						</a>
-						<a href="/en/web-design-businesses" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Web Design for Businesses
-						</a>
-						<a href="/en/create-website-barcelona" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Website Pricing Guide
-						</a>
-						<a href="/en/contact" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							Request a Quote
-						</a>
-					</nav>
-				</div>
-				<div>
-					<h3 class="text-sm font-semibold mb-4">Legal Information</h3>
-					<nav class="flex flex-col gap-2">
-						<a href="/en/privacy" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							<Translate key="footer.privacy" />
-						</a>
-						<a href="/en/legal-notice" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							<Translate key="footer.legal" />
-						</a>
-						<a href="/en/terms" transition:animate class="text-xs sm:text-sm text-text-muted hover:text-accent transition-colors">
-							<Translate key="footer.terms" />
-						</a>
-					</nav>
-				</div>
-				<div>
-					<h3 class="text-sm font-semibold mb-4">Contact</h3>
-					<p class="text-xs sm:text-sm text-text-muted mb-4">
-						Need a website or web app for your business? I work remotely with companies in Spain and international clients.
-					</p>
-					<a href="#contacto" class="text-xs sm:text-sm text-accent hover:underline">
-						Go to contact form →
-					</a>
-				</div>
-			</div>
-			<div class="border-t border-border pt-6">
-				<div class="flex flex-col md:flex-row justify-between items-center gap-4">
-					<div class="text-xs sm:text-sm text-text-muted text-center md:text-left">
-						<p>© {new Date().getFullYear()} Ignacio Amat. <Translate key="footer.fullCopyright" /></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+  <Header />
+  <main>
+    <Hero />
+    <TrustBar />
+    <Projects />
+    <Features />
+    <CaseStudies />
+    <Process />
+    <Pricing />
+    <Testimonials />
+    <FAQ />
+    <Contact />
+  </main>
+  <StickyCTA />
 </Layout>
-
-<style>
-	.border-border {
-		border-color: var(--color-border);
-	}
-
-	.text-text-muted {
-		color: var(--color-text-muted);
-	}
-
-	.text-accent {
-		color: var(--color-accent);
-	}
-</style> 

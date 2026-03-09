@@ -1,290 +1,249 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Contact from '../components/Contact.astro';
-import StickyCTA from '../components/StickyGTA.astro';
+import MarketingContentPage from '../components/MarketingContentPage.astro';
 
 const baseUrl = 'https://ignacioamatweb.com';
-const title = 'Contratar Desarrollador Full Stack Freelance en España | Ignacio Amat';
-const description = 'Contrata un desarrollador full stack freelance para tu empresa o startup. Webs y apps a medida con foco en SEO, rendimiento y conversión. Trabajo remoto para clientes de toda España e internacional. Presupuesto gratuito.';
+const title = 'Contratar desarrollador full stack freelance | Ignacio Amat';
+const description =
+  'Desarrollador full stack freelance para landing pages, webs de empresa, ecommerce, mejoras y aplicaciones web. Trabajo remoto con empresas que necesitan una ejecucion directa y bien resuelta.';
 const canonicalUrl = '/contratar-desarrollador-full-stack';
-const keywords = ['contratar desarrollador web freelance', 'desarrollador full stack freelance España', 'contratar desarrollador web España', 'desarrollador web remoto España', 'freelance desarrollador web', 'contratar programador web', 'desarrollador full stack para empresas'];
+const keywords = [
+  'contratar desarrollador web freelance',
+  'desarrollador full stack freelance espana',
+  'contratar desarrollador web espana',
+  'freelance desarrollador web',
+  'contratar programador web',
+];
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Desarrollador Full Stack Freelance',
-  'url': baseUrl,
-  'sameAs': [
+  name: 'Ignacio Amat',
+  jobTitle: 'Desarrollador Full Stack Freelance',
+  url: baseUrl,
+  sameAs: [
     'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
-    'https://github.com/ignaaaam'
+    'https://github.com/ignaaaam',
   ],
-  'knowsAbout': ['Desarrollo Web Full Stack', 'React', 'Astro', 'Node.js', 'SEO Técnico', 'E-commerce', 'Aplicaciones Web']
 };
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  'serviceType': 'Desarrollo Full Stack Freelance',
-  'provider': {
+  serviceType: 'Desarrollo full stack freelance',
+  provider: {
     '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+    name: 'Ignacio Amat',
+    url: baseUrl,
   },
-  'areaServed': {
+  areaServed: {
     '@type': 'Country',
-    'name': 'España'
+    name: 'Espana',
   },
-  'offers': {
+  offers: {
     '@type': 'Offer',
-    'priceRange': '800€ - 6.000€+'
+    priceRange: '800 EUR - 6.000 EUR',
   },
-  'hasOfferCatalog': {
-    '@type': 'OfferCatalog',
-    'name': 'Servicios de desarrollo web full stack',
-    'itemListElement': [
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Landing pages de alta conversión' } },
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Webs corporativas' } },
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Aplicaciones web a medida' } },
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Tiendas online (e-commerce)' } }
-    ]
-  }
 };
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  'itemListElement': [
-    { '@type': 'ListItem', 'position': 1, 'name': 'Inicio', 'item': baseUrl },
-    { '@type': 'ListItem', 'position': 2, 'name': 'Contratar Desarrollador Full Stack', 'item': `${baseUrl}${canonicalUrl}` }
-  ]
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Contratar desarrollador full stack', item: `${baseUrl}${canonicalUrl}` },
+  ],
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  'mainEntity': [
+  mainEntity: [
     {
       '@type': 'Question',
-      'name': '¿Trabajas con clientes fuera de Barcelona o España?',
-      'acceptedAnswer': {
+      name: 'Para que tipo de proyectos tiene sentido contratar un full stack freelance?',
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': 'Sí. Trabajo 100% en remoto con clientes de Madrid, Valencia, Sevilla, Bilbao, Zaragoza, y cualquier ciudad de España, así como con clientes internacionales de Europa y América Latina. La distancia no es un problema.'
-      }
+        text: 'Suele encajar en landing pages, webs de empresa, mejoras sobre proyectos existentes, ecommerce y aplicaciones web donde interesa tener una sola persona resolviendo frontend, backend y despliegue.',
+      },
     },
     {
       '@type': 'Question',
-      'name': '¿Qué tipo de proyectos desarrollas como full stack?',
-      'acceptedAnswer': {
+      name: 'Que ventaja tiene frente a una agencia?',
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': 'Landing pages de alta conversión, webs corporativas, tiendas online (e-commerce), aplicaciones web SaaS, CRMs personalizados, portales de clientes, APIs REST y cualquier producto digital que tu empresa necesite.'
-      }
+        text: 'La comunicacion es directa, el alcance se aterriza mas rapido y hay menos capas entre quien decide y quien ejecuta el trabajo.',
+      },
     },
     {
       '@type': 'Question',
-      'name': '¿Cuánto cuesta contratar un desarrollador full stack freelance?',
-      'acceptedAnswer': {
+      name: 'Trabajas en remoto?',
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': 'Depende del proyecto: landing pages desde 800€, webs corporativas entre 1.500€ y 3.500€, tiendas online desde 3.000€ y aplicaciones web a medida desde 4.000€. Siempre envío presupuesto detallado y sin compromiso.'
-      }
+        text: 'Si. Trabajo en remoto con empresas de Espana y con clientes internacionales cuando el proyecto encaja.',
+      },
     },
-    {
-      '@type': 'Question',
-      'name': '¿Cuánto tarda un proyecto de desarrollo web?',
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': 'Una landing page puede estar lista en 2-5 días. Una web corporativa en 2-4 semanas. Una tienda online completa en 4-8 semanas. Un proyecto más complejo (app web, SaaS) en 6-16 semanas según alcance.'
-      }
-    },
-    {
-      '@type': 'Question',
-      'name': '¿Emites factura oficial para empresas?',
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': 'Sí. Emito facturas oficiales para empresas y autónomos. La inversión en desarrollo web es totalmente desgravable como gasto empresarial.'
-      }
-    },
-    {
-      '@type': 'Question',
-      'name': '¿En qué me diferencio de una agencia de desarrollo web?',
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': 'Comunicación directa con el desarrollador (sin account managers), precios 30-50% más bajos que agencias, mayor agilidad en cambios y revisiones, y dedicación exclusiva a tu proyecto. Para proyectos de hasta 8.000-10.000€, un freelance senior es la mejor opción.'
-      }
-    }
-  ]
+  ],
 };
+
+const facts = [
+  { label: 'Encaja bien para', value: 'Webs de negocio, redisenos, ecommerce, apps web y mejoras sobre proyectos existentes.' },
+  { label: 'Ventaja principal', value: 'Una sola persona toma responsabilidad sobre estructura, implementacion y puesta en produccion.' },
+  { label: 'Forma de trabajo', value: 'Directa, remota y con mas rapidez para aterrizar alcance y decisiones.' },
+];
 ---
 
-<Layout
+<MarketingContentPage
   title={title}
   description={description}
   lang="es"
   canonicalUrl={canonicalUrl}
   keywords={keywords}
-  alternateUrls={{ es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' }}
+  alternateUrls={{ es: canonicalUrl, en: '/en/hire-full-stack-web-developer' }}
   additionalSchemas={[personSchema, serviceSchema, breadcrumbSchema, faqSchema]}
+  badge="Full stack freelance"
+  pageTitle="Contratar un full stack freelance para web, ecommerce o producto sin pasar por una estructura pesada"
+  lead="Si necesitas a una sola persona que pueda aterrizar el alcance, resolver frontend y backend y dejar el proyecto bien publicado, trabajo de forma directa para reducir ruido y acelerar decisiones."
+  primaryCta={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
+  facts={facts}
 >
-  <Header />
-  <main>
-    <section class="py-12 sm:py-16 md:py-20">
-      <div class="container px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto">
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Cuando tiene sentido contratar un full stack freelance</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Tiene sentido cuando el proyecto necesita avanzar sin pasar por varias capas de coordinacion y cuando
+      te conviene que la misma persona pueda entender el objetivo, aterrizar el alcance y ejecutar la solucion.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      No siempre hace falta una estructura grande. En muchos proyectos de web, rediseno o producto, una
+      ejecucion mas directa da mejor ritmo, menos ruido y una relacion mas clara entre coste y valor entregado.
+    </p>
 
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            Contratar Desarrollador Full Stack Freelance para tu Empresa
-          </h1>
-
-          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-            Soy Ignacio Amat, desarrollador full stack freelance con experiencia en proyectos para empresas, startups y agencias.
-            Si necesitas lanzar o mejorar un producto digital —una web, una tienda online o una aplicación—
-            trabajo contigo para convertir tus objetivos de negocio en resultados reales.
-            Trabajo en remoto con clientes de toda España e internacional.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mb-10">
-            <a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
-            <a href="/desarrollador-web-barcelona" class="btn-secondary">Ver mi perfil completo</a>
-          </div>
-
-          <div class="prose prose-lg max-w-none">
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">¿Por qué contratar un desarrollador full stack freelance?</h2>
-            <p class="text-base sm:text-lg mb-4">
-              Un desarrollador full stack puede encargarse de todo el proceso: diseño de la interfaz, desarrollo del frontend,
-              lógica del backend, base de datos e integración de APIs. Esto elimina los problemas de coordinación entre equipos
-              y acelera la entrega del proyecto. Además, como freelance, tienes comunicación directa conmigo en todo momento —
-              sin intermediarios, sin malentendidos.
-            </p>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Qué desarrollo como full stack</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Landing Pages de Alta Conversión</h3>
-                <p class="text-text-muted text-sm sm:text-base">Páginas diseñadas para captar leads y clientes. Optimizadas para Google Ads y SEO orgánico. Desde 800€, listas en 2-5 días.</p>
-              </div>
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Webs Corporativas</h3>
-                <p class="text-text-muted text-sm sm:text-base">Presencia online completa para tu empresa. Blog, formularios, múltiples secciones y SEO avanzado. Entre 1.500€ y 3.500€.</p>
-              </div>
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Tiendas Online (E-commerce)</h3>
-                <p class="text-text-muted text-sm sm:text-base">Vende 24/7 con catálogos completos, pasarelas de pago (Stripe, Redsys, Bizum) y gestión de pedidos. Desde 3.000€.</p>
-              </div>
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Aplicaciones Web a Medida</h3>
-                <p class="text-text-muted text-sm sm:text-base">CRMs, portales SaaS, herramientas de gestión interna, APIs REST. Para cuando tu negocio necesita algo que no existe en el mercado.</p>
-              </div>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Stack tecnológico</h2>
-            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
-              <li><strong>Frontend:</strong> React, Astro, Next.js, TypeScript, Tailwind CSS</li>
-              <li><strong>Backend:</strong> Node.js, APIs REST, bases de datos SQL y NoSQL</li>
-              <li><strong>E-commerce:</strong> Stripe, Redsys (Servired), Bizum</li>
-              <li><strong>SEO técnico:</strong> Core Web Vitals, schema markup JSON-LD, sitemap, hreflang</li>
-              <li><strong>Rendimiento:</strong> Lighthouse &gt;90, carga &lt;1.5s, imágenes optimizadas</li>
-              <li><strong>Deploy:</strong> Vercel, Netlify, VPS — siempre con HTTPS y dominio configurado</li>
-            </ul>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Trabajo en remoto con empresas de toda España</h2>
-            <p class="text-base sm:text-lg mb-4">
-              No importa donde esté tu empresa. Trabajo de forma 100% remota con clientes de Madrid, Barcelona, Valencia,
-              Sevilla, Bilbao, Zaragoza, Málaga, Alicante, Murcia, y cualquier otra ciudad española.
-              También con clientes internacionales de Europa y América Latina.
-            </p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-              <a href="/desarrollador-web-espana" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web España →</a>
-              <a href="/desarrollador-web-madrid" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Madrid →</a>
-              <a href="/desarrollador-web-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Barcelona →</a>
-              <a href="/desarrollador-web-valencia" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Valencia →</a>
-              <a href="/desarrollador-web-sevilla" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Desarrollador web Sevilla →</a>
-              <a href="/diseno-web-empresas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseño web empresas →</a>
-              <a href="/crear-pagina-web-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Precios páginas web →</a>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Ventajas de contratar un freelance frente a una agencia</h2>
-            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
-              <li><strong>30-50% más económico</strong> que agencias web equivalentes.</li>
-              <li><strong>Comunicación directa</strong> conmigo, el desarrollador que ejecuta el proyecto.</li>
-              <li><strong>Mayor agilidad:</strong> cambios y revisiones sin burocracia interna.</li>
-              <li><strong>Tecnología actual:</strong> no trabajo con plantillas ni WordPress desactualizado.</li>
-              <li><strong>SEO desde el primer día:</strong> cada web entregada está lista para posicionar en Google.</li>
-              <li><strong>Factura oficial</strong> desgravable al 100% como inversión empresarial.</li>
-              <li><strong>Garantía de satisfacción:</strong> seguimos trabajando hasta que estés contento.</li>
-            </ul>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Precios orientativos</h2>
-            <div class="space-y-4 mb-8">
-              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-1">Landing Page — desde 800€</h3>
-                <p class="text-sm sm:text-base text-text-muted">Lista en 2-5 días. Para captar leads con Google Ads o SEO.</p>
-              </div>
-              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-1">Web Corporativa — 1.500€ a 3.500€</h3>
-                <p class="text-sm sm:text-base text-text-muted">Lista en 2-4 semanas. Con blog, CMS y SEO avanzado.</p>
-              </div>
-              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-1">Tienda Online — 3.000€ a 6.000€+</h3>
-                <p class="text-sm sm:text-base text-text-muted">Lista en 4-8 semanas. Con catálogo y pasarela de pago.</p>
-              </div>
-              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-1">Aplicación Web — desde 4.000€</h3>
-                <p class="text-sm sm:text-base text-text-muted">Presupuesto personalizado según alcance y complejidad.</p>
-              </div>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Preguntas frecuentes</h2>
-            <div class="space-y-4 mb-8">
-              <div class="bg-secondary p-4 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-2">¿Trabajas con empresas de toda España?</h3>
-                <p class="text-sm sm:text-base text-text-muted">Sí. 100% en remoto. Tengo clientes en Madrid, Valencia, Sevilla, Bilbao, Zaragoza y muchas otras ciudades.</p>
-              </div>
-              <div class="bg-secondary p-4 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cuesta contratar un desarrollador full stack?</h3>
-                <p class="text-sm sm:text-base text-text-muted">Landing pages desde 800€, webs corporativas 1.500-3.500€, tiendas online 3.000-6.000€, apps web desde 4.000€.</p>
-              </div>
-              <div class="bg-secondary p-4 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-2">¿Emites factura oficial?</h3>
-                <p class="text-sm sm:text-base text-text-muted">Sí. Factura oficial para empresas y autónomos. Desgravable al 100%.</p>
-              </div>
-              <div class="bg-secondary p-4 rounded-lg">
-                <h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tarda el proyecto?</h3>
-                <p class="text-sm sm:text-base text-text-muted">Landing: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas. App web: 6-16 semanas.</p>
-              </div>
-            </div>
-
-            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
-              <h2 class="text-xl sm:text-2xl font-bold mb-3">¿Listo para contratar un desarrollador full stack?</h2>
-              <p class="mb-3 text-sm sm:text-base">
-                Cuéntame tu proyecto. En menos de 24 horas te envío un presupuesto detallado, sin rodeos y sin compromiso.
-              </p>
-              <p class="font-semibold text-sm sm:text-base">
-                ✅ Presupuesto gratuito en 24h laborables<br/>
-                ✅ Sin compromiso<br/>
-                ✅ Factura oficial desgravable<br/>
-                ✅ Garantía de satisfacción
-              </p>
-            </div>
-
-          </div>
-        </div>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Una sola responsabilidad tecnica</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          El proyecto no se reparte entre perfiles que luego tienen que reinterpretar lo que necesita el negocio.
+        </p>
       </div>
-    </section>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Mas rapidez para decidir</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          El feedback y los cambios no tienen que cruzar una cadena larga de interlocutores antes de llegar a quien implementa.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Mejor encaje en proyectos medianos</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Especialmente util cuando quieres lanzar algo bien resuelto sin sobredimensionar equipo ni proceso.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Mas continuidad despues del lanzamiento</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Si el proyecto crece, es mas facil evolucionarlo sobre una base ya entendida que empezar de cero con otro equipo.
+        </p>
+      </div>
+    </div>
 
-    <Contact />
-    <StickyCTA />
-  </main>
-</Layout>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Que tipo de proyectos suelo trabajar asi</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Landing pages y captacion</h3>
+        <p class="text-sm sm:text-base">
+          Para campanas, servicios o propuestas donde importa mas convertir bien que parecer una web enorme.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Webs de empresa y redisenos</h3>
+        <p class="text-sm sm:text-base">
+          Cuando la prioridad es aclarar la oferta, reforzar confianza y dejar una base mejor resuelta que la actual.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Ecommerce y flujos comerciales</h3>
+        <p class="text-sm sm:text-base">
+          Para proyectos con pagos, catalogo, formularios o integraciones donde conviene cuidar tambien la capa tecnica.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Apps web, paneles y MVPs</h3>
+        <p class="text-sm sm:text-base">
+          Cuando el proyecto ya necesita mas que una web y conviene trabajar con una primera fase util y mantenible.
+        </p>
+      </div>
+    </div>
 
-<style>
-  .text-text-muted { color: var(--color-text-muted); }
-  .bg-secondary { background-color: var(--color-secondary); }
-  .card {
-    background-color: var(--color-secondary);
-    border-radius: 0.5rem;
-  }
-  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
-  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
-</style>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Que valor aporta frente a una estructura mas grande</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>Comunicacion directa:</strong> hablas con quien entiende el problema y ejecuta la solucion.</li>
+      <li><strong>Menos friccion:</strong> menos traspasos internos significa menos malentendidos y menos tiempo perdido.</li>
+      <li><strong>Mas criterio en el alcance:</strong> se puede decidir antes que hace falta ahora y que deberia esperar.</li>
+      <li><strong>Mejor relacion entre inversion y trabajo real:</strong> especialmente en proyectos de tamano medio donde una estructura pesada no aporta tanto.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Rangos orientativos</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Landing page o mejora concreta — desde 800 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Para proyectos enfocados, correcciones con impacto o una primera pieza comercial bien resuelta.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Web de empresa o rediseno — desde 1.500 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Cuando la necesidad ya pasa por replantear estructura, mensaje y presencia digital con mas profundidad.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Aplicacion web o MVP — desde 3.000 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Para producto digital, paneles o software de negocio donde ya existe una capa funcional mas importante.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Para que tipo de proyectos encaja un full stack freelance?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Landing pages, webs de empresa, redisenos, ecommerce, apps web y mejoras donde interesa tener una sola persona resolviendo varias capas del proyecto.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Trabajas en remoto?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Si. Trabajo en remoto con empresas de toda Espana y con clientes internacionales cuando el proyecto encaja bien.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Que pasa si solo necesito una parte concreta?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Tambien trabajo mejoras puntuales, correcciones, revisiones y fases cortas cuando es la mejor forma de avanzar.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/servicios" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Todos los servicios &rarr;</a>
+      <a href="/crear-landing-page-profesional" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/diseno-web-empresas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Webs de empresa &rarr;</a>
+      <a href="/desarrollo-aplicacion-web-saas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Apps web y MVPs &rarr;</a>
+      <a href="/cuanto-cuesta-pagina-web" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Guia de precios &rarr;</a>
+      <a href="/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contacto &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Quieres una propuesta clara sin pasar por capas innecesarias?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Cuentame el proyecto, el punto de partida y que necesitas mover primero. Si encaja, te dire como enfocaria el alcance y la primera fase.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Propuesta mas directa<br />
+        Menos friccion entre idea y ejecucion<br />
+        Alcance pensado con criterio tecnico y comercial
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

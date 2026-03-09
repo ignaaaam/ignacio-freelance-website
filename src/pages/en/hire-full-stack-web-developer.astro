@@ -1,220 +1,249 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
-import Contact from '../../components/Contact.astro';
-import StickyCTA from '../../components/StickyGTA.astro';
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
 
 const baseUrl = 'https://ignacioamatweb.com';
-const title = 'Hire a Freelance Full-Stack Web Developer in Spain | Ignacio Amat';
-const description = 'Hire a freelance full-stack web developer for your company. Landing pages, business websites, ecommerce, and custom web apps from EUR800. Remote collaboration across Spain.';
+const title = 'Hire a freelance full-stack web developer | Ignacio Amat';
+const description =
+  'Freelance full-stack web developer for landing pages, business websites, ecommerce, improvements and web applications. Remote collaboration for companies that need direct, well-resolved execution.';
 const canonicalUrl = '/en/hire-full-stack-web-developer';
 const keywords = [
   'hire full stack web developer spain',
   'freelance web developer spain',
-  'hire web developer madrid barcelona',
   'freelance full stack developer',
-  'web development services spain'
+  'web development services spain',
+  'hire web developer',
 ];
 
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'sameAs': [
+  name: 'Ignacio Amat',
+  jobTitle: 'Freelance Full-Stack Web Developer',
+  url: baseUrl,
+  sameAs: [
     'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
-    'https://github.com/ignaaaam'
+    'https://github.com/ignaaaam',
   ],
-  'knowsAbout': ['Web Development', 'React', 'Astro', 'Node.js', 'Technical SEO', 'E-commerce']
 };
 
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  'serviceType': 'Freelance Full-Stack Web Development',
-  'provider': {
+  serviceType: 'Freelance full-stack web development',
+  provider: {
     '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+    name: 'Ignacio Amat',
+    url: baseUrl,
   },
-  'areaServed': {
+  areaServed: {
     '@type': 'Country',
-    'name': 'Spain'
+    name: 'Spain',
   },
-  'offers': {
+  offers: {
     '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
+    priceRange: 'EUR 800 - EUR 6,000',
   },
-  'hasOfferCatalog': {
-    '@type': 'OfferCatalog',
-    'name': 'Web development services',
-    'itemListElement': [
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'High-converting landing pages' } },
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Business websites' } },
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Ecommerce websites' } },
-      { '@type': 'Offer', 'itemOffered': { '@type': 'Service', 'name': 'Custom web applications' } }
-    ]
-  }
 };
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  'itemListElement': [
-    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
-    { '@type': 'ListItem', 'position': 2, 'name': 'Hire Full-Stack Web Developer', 'item': `${baseUrl}${canonicalUrl}` }
-  ]
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Hire a freelance full-stack web developer', item: `${baseUrl}${canonicalUrl}` },
+  ],
 };
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  'mainEntity': [
+  mainEntity: [
     {
       '@type': 'Question',
-      'name': 'Do you work with companies outside Barcelona or Madrid?',
-      'acceptedAnswer': {
+      name: 'What kind of projects suit a freelance full-stack developer?',
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': 'Yes. I work remotely with companies across all of Spain, including Madrid, Barcelona, Valencia, Sevilla, Bilbao, Zaragoza, and smaller towns.'
-      }
+        text: 'This usually fits landing pages, business websites, redesigns, ecommerce, web apps and targeted improvements where having one person solve several layers of the project is useful.',
+      },
     },
     {
       '@type': 'Question',
-      'name': 'What can you build as a full-stack developer?',
-      'acceptedAnswer': {
+      name: 'What is the advantage over an agency setup?',
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': 'I build landing pages, business websites, ecommerce stores, and custom web applications including CRMs, client portals, and API-based systems.'
-      }
+        text: 'Communication is direct, scope gets clarified faster and there are fewer layers between the business decision and the technical execution.',
+      },
     },
     {
       '@type': 'Question',
-      'name': 'How much does it cost to hire you?',
-      'acceptedAnswer': {
+      name: 'Do you work remotely?',
+      acceptedAnswer: {
         '@type': 'Answer',
-        'text': 'Landing pages start at EUR800, business websites range from EUR1500 to EUR3500, ecommerce projects start at EUR3000, and custom applications start around EUR4000 depending on scope.'
-      }
+        text: 'Yes. I work remotely with companies across Spain and with international clients when the project is a strong fit.',
+      },
     },
-    {
-      '@type': 'Question',
-      'name': 'How long does a project take?',
-      'acceptedAnswer': {
-        '@type': 'Answer',
-        'text': 'A landing page usually takes 2-5 days, a business website 2-4 weeks, and a larger custom project 6-16 weeks depending on complexity.'
-      }
-    }
-  ]
+  ],
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
-
-const alternateUrls = {
-  es: '/contratar-desarrollador-full-stack',
-  en: canonicalUrl
-};
+const facts = [
+  { label: 'Good fit for', value: 'Business websites, redesigns, ecommerce, web apps and improvements on existing projects.' },
+  { label: 'Main advantage', value: 'One person takes responsibility for structure, implementation and getting the project live.' },
+  { label: 'Working style', value: 'Direct, remote and better suited to framing scope quickly and clearly.' },
+];
 ---
 
-<Layout
+<MarketingContentPage
   title={title}
   description={description}
   lang="en"
   canonicalUrl={canonicalUrl}
   keywords={keywords}
-  alternateUrls={alternateUrls}
-  additionalSchemas={allSchemas}
+  alternateUrls={{ es: '/contratar-desarrollador-full-stack', en: canonicalUrl }}
+  additionalSchemas={[personSchema, serviceSchema, breadcrumbSchema, faqSchema]}
+  badge="Freelance full-stack"
+  pageTitle="Hire a freelance full-stack developer for websites, ecommerce or product work without agency overhead"
+  lead="If you need one person who can frame the scope, handle frontend and backend work and get the project live properly, I work directly with you to reduce noise and speed up decisions."
+  primaryCta={{ label: 'Request a proposal', href: '#contacto' }}
+  secondaryCta={{ label: 'See services', href: '/en/services' }}
+  facts={facts}
 >
-  <Header />
-  <main>
-    <section class="py-12 sm:py-16 md:py-20">
-      <div class="container px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            Hire a Freelance Full-Stack Web Developer for Your Company
-          </h1>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">When hiring a freelance full-stack developer makes sense</h2>
+    <p class="text-base sm:text-lg mb-4">
+      It makes sense when the project needs to move without passing through several layers of coordination and when
+      it helps to have the same person understand the goal, tighten the scope and execute the solution.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      A larger structure is not always necessary. In many website, redesign or product projects, a more direct setup
+      creates better momentum, less noise and a clearer relationship between budget and delivered value.
+    </p>
 
-          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-            If your company needs a website or web app that generates leads, sales, or operational efficiency,
-            I can handle the full cycle: frontend, backend, performance, technical SEO, and deployment.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mb-10">
-            <a href="#contacto" class="btn-primary">Request Free Quote</a>
-            <a href="/en/web-design-businesses" class="btn-secondary">See Web Design Service</a>
-          </div>
-
-          <div class="prose prose-lg max-w-none">
-            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">What I build</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Landing Pages</h3>
-                <p class="text-text-muted">High-converting pages for campaigns and lead generation.</p>
-              </div>
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Business Websites</h3>
-                <p class="text-text-muted">Scalable websites with clear information architecture and SEO-ready setup.</p>
-              </div>
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Ecommerce</h3>
-                <p class="text-text-muted">Online stores with secure payment flows and product management.</p>
-              </div>
-              <div class="card p-5">
-                <h3 class="text-xl font-semibold mb-2">Custom Web Applications</h3>
-                <p class="text-text-muted">Internal tools, SaaS products, and custom workflows adapted to your business.</p>
-              </div>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Coverage across Spain</h2>
-            <p class="text-base sm:text-lg mb-4">
-              I work remotely with companies in any city or town in Spain. You are not limited to Barcelona or Madrid.
-              The same process works for clients in Valencia, Sevilla, Bilbao, Zaragoza, Malaga, Alicante, and smaller local markets.
-            </p>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
-              <a href="/en/web-developer-spain" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Spain</a>
-              <a href="/en/web-developer-madrid" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Madrid</a>
-              <a href="/en/web-developer-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Barcelona</a>
-              <a href="/en/web-developer-valencia" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Valencia</a>
-              <a href="/en/web-developer-sevilla" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Sevilla</a>
-              <a href="/en/web-design-businesses" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Design for Businesses</a>
-              <a href="/en/create-website-barcelona" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Website Pricing Guide</a>
-            </div>
-
-            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why companies hire a freelance instead of an agency</h2>
-            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
-              <li><strong>Direct communication:</strong> no account manager layer.</li>
-              <li><strong>Cost efficiency:</strong> usually 30-50% lower overhead than agencies.</li>
-              <li><strong>Faster iteration:</strong> less bureaucracy, faster decision loops.</li>
-              <li><strong>Technical ownership:</strong> clean code, documentation, and long-term maintainability.</li>
-            </ul>
-
-            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
-              <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a clear proposal for your project?</h2>
-              <p class="mb-3 text-sm sm:text-base">
-                Tell me what you need and I will send a practical scope, timeline, and price range with no commitment.
-              </p>
-              <p class="font-semibold text-sm sm:text-base">
-                Free quote in 24 business hours<br/>
-                Official invoicing<br/>
-                Technical and SEO-focused delivery
-              </p>
-            </div>
-          </div>
-        </div>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">One technical owner</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          The project is not split across several profiles who then need to reinterpret what the business actually needs.
+        </p>
       </div>
-    </section>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Faster decision-making</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Feedback and changes do not have to travel through a long chain before reaching the person implementing the work.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">A strong fit for mid-sized work</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Especially useful when you want a well-resolved outcome without overbuilding the process or the team around it.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">More continuity after launch</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          If the project grows, it is easier to extend something already understood than to restart with a new team later.
+        </p>
+      </div>
+    </div>
 
-    <Contact />
-    <StickyCTA />
-  </main>
-</Layout>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">The kinds of projects I usually handle this way</h2>
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Landing pages and lead generation</h3>
+        <p class="text-sm sm:text-base">
+          For campaigns, services or offers where converting well matters more than looking like a huge website.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Business websites and redesigns</h3>
+        <p class="text-sm sm:text-base">
+          When the priority is clarifying the offer, strengthening trust and leaving a better-resolved foundation than the current site.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Ecommerce and commercial flows</h3>
+        <p class="text-sm sm:text-base">
+          For projects with checkout, catalog, forms or integrations where the technical layer also needs proper attention.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Web apps, dashboards and MVPs</h3>
+        <p class="text-sm sm:text-base">
+          When the project needs more than a website and benefits from a useful first phase built to stay maintainable.
+        </p>
+      </div>
+    </div>
 
-<style>
-  .text-text-muted { color: var(--color-text-muted); }
-  .bg-secondary { background-color: var(--color-secondary); }
-  .card {
-    background-color: var(--color-secondary);
-    border-radius: 0.5rem;
-  }
-  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
-  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
-</style>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">What this setup gives you over a heavier structure</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>Direct communication:</strong> you speak with the person understanding the problem and executing the work.</li>
+      <li><strong>Less friction:</strong> fewer handoffs mean fewer misunderstandings and less lost time.</li>
+      <li><strong>Better scope judgement:</strong> it is easier to decide what is needed now and what should wait.</li>
+      <li><strong>A clearer link between investment and real work:</strong> especially on medium-sized projects where a larger setup adds overhead more than value.</li>
+    </ul>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Indicative ranges</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Landing page or targeted improvement — from EUR 800</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For focused projects, commercially useful fixes or a smaller first deliverable with real impact.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Business website or redesign — from EUR 1,500</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          When the need already includes rethinking structure, message and digital presence more broadly.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Web app or MVP — from EUR 3,000</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          For digital product, dashboards or business software with a more important functional layer.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Frequently asked questions</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">What kind of projects fit a freelance full-stack setup?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Landing pages, business websites, redesigns, ecommerce, web apps and improvements where having one person solve multiple layers of the work is useful.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">Do you work remotely?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Yes. I work remotely with companies across Spain and with international clients when the project is a strong fit.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-2">What if I only need one specific part solved?</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          That also works. I take on targeted improvements, fixes, reviews and shorter phases when that is the smartest way to move the project forward.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/en/services" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">All services &rarr;</a>
+      <a href="/en/professional-landing-page-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/en/web-design-businesses" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Business websites &rarr;</a>
+      <a href="/en/web-application-saas-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web apps and MVPs &rarr;</a>
+      <a href="/en/how-much-does-website-cost" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Pricing guide &rarr;</a>
+      <a href="/en/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contact &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a clear proposal without unnecessary layers?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Tell me about the project, the current starting point and what needs to move first. If it is a fit, I will tell you how I would scope the first phase.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        More direct proposal<br />
+        Less friction between idea and execution<br />
+        Scope shaped with both technical and commercial judgement
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>
