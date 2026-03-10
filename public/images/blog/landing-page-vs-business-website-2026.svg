@@ -1,0 +1,20 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#F8F0E8"/>
+  <circle cx="210" cy="172" r="152" fill="#EDD6C4"/>
+  <circle cx="1022" cy="740" r="202" fill="#E4EEE9"/>
+  <rect x="88" y="120" width="1024" height="660" rx="36" fill="#FFF9F2" stroke="#E5D8CC" stroke-width="4"/>
+  <rect x="140" y="194" width="412" height="500" rx="30" fill="#B86836"/>
+  <rect x="646" y="194" width="412" height="500" rx="30" fill="#21443F"/>
+  <rect x="198" y="266" width="298" height="42" rx="16" fill="#FFF5EF"/>
+  <rect x="198" y="334" width="246" height="42" rx="16" fill="#FFF5EF"/>
+  <rect x="704" y="266" width="298" height="42" rx="16" fill="#E7EFEB"/>
+  <rect x="704" y="334" width="246" height="42" rx="16" fill="#E7EFEB"/>
+  <rect x="198" y="458" width="296" height="132" rx="24" fill="#FFF0E7"/>
+  <rect x="704" y="458" width="296" height="132" rx="24" fill="#D7E6E1"/>
+  <text x="228" y="236" fill="#FFF9F3" font-size="40" font-family="Arial, sans-serif" font-weight="700">LANDING PAGE</text>
+  <text x="744" y="236" fill="#FFF9F3" font-size="34" font-family="Arial, sans-serif" font-weight="700">BUSINESS WEBSITE</text>
+  <text x="232" y="522" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">One offer</text>
+  <text x="232" y="568" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">One CTA</text>
+  <text x="740" y="522" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">Services</text>
+  <text x="740" y="568" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">Trust and depth</text>
+</svg>

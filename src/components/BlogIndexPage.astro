@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import type { BlogEntry, BlogLocale } from '../data/blog';
+import { formatBlogDate, getBlogPostUrl } from '../data/blog';
+
+interface Props {
+  locale: BlogLocale;
+  posts: BlogEntry[];
+}
+
+const { locale, posts } = Astro.props;
+const isEnglish = locale === 'en';
+const title = isEnglish
+  ? 'Web development, product strategy and business website insights | Ignacio Amat'
+  : 'Blog de desarrollo web, tecnologia y decisiones de proyecto | Ignacio Amat';
+const description = isEnglish
+  ? 'Practical articles on websites, product decisions, technical tradeoffs, SEO, conversion and the systems behind better digital projects.'
+  : 'Guias practicas sobre tecnologia, producto, SEO, conversion y decisiones web que ayudan a vender mejor y evitar errores caros.';
+const canonicalUrl = isEnglish ? '/en/blog' : '/blog';
+const alternateUrls = { es: '/blog', en: '/en/blog' };
+const keywords = isEnglish
+  ? ['web development blog', 'business website blog', 'web strategy', 'astro vs wordpress', 'custom web app', 'lead generation website']
+  : ['blog desarrollo web', 'blog tecnologia para empresas', 'decisiones web', 'astro vs wordpress', 'aplicacion web a medida', 'captacion de leads'];
+
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: isEnglish ? 'Ignacio Amat Blog' : 'Blog de Ignacio Amat',
+  description,
+  url: `https://ignacioamatweb.com${canonicalUrl}`,
+  inLanguage: isEnglish ? 'en-US' : 'es-ES',
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={locale}
+  canonicalUrl={canonicalUrl}
+  alternateUrls={alternateUrls}
+  additionalSchemas={[blogSchema]}
+  keywords={keywords}
+>
+  <Header languageSwitchUrls={alternateUrls} />
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="blog-hero surface-card" data-sr>
+          <p class="section-eyebrow">{isEnglish ? 'Blog' : 'Blog'}</p>
+          <h1>
+            {isEnglish
+              ? 'Articles for companies comparing platforms, redesigns, websites and product decisions.'
+              : 'Articulos para empresas que comparan plataformas, redisenos, webs y decisiones de producto.'}
+          </h1>
+          <p class="section-copy">
+            {isEnglish
+              ? 'Technology and web development topics explained from a business angle: what to build, what to avoid, where the budget goes and what actually helps a site convert.'
+              : 'Temas de tecnologia y desarrollo web explicados desde negocio: que construir, que evitar, donde se va el presupuesto y que ayuda de verdad a convertir.'}
+          </p>
+        </div>
+
+        <div class="blog-grid">
+          {posts.map((post) => (
+            <article class="blog-card surface-card" data-sr>
+              <a href={getBlogPostUrl(locale, post.slug)} class="blog-card__link">
+                <img
+                  src={post.data.heroImage}
+                  alt={post.data.heroImageAlt}
+                  class="blog-card__image"
+                  loading="lazy"
+                  width="1200"
+                  height="900"
+                />
+                <div class="blog-card__content">
+                  <div class="blog-card__meta">
+                    <span class="blog-card__badge">{post.data.category}</span>
+                    <time datetime={post.data.publishedDate.toISOString()}>{formatBlogDate(post.data.publishedDate, locale)}</time>
+                    <span>{post.data.readTime}</span>
+                  </div>
+                  <h2>{post.data.title}</h2>
+                  <p>{post.data.description}</p>
+                  <span class="btn-tertiary">{isEnglish ? 'Read article' : 'Leer articulo'}</span>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+
+        <div class="blog-cta surface-card" data-sr>
+          <div>
+            <p class="section-eyebrow">{isEnglish ? 'Need a clearer website?' : 'Necesitas una web mas clara?'}</p>
+            <h2>
+              {isEnglish
+                ? 'If one of these topics sounds familiar, the site is probably blocking sales already.'
+                : 'Si alguno de estos temas te suena, probablemente la web ya este bloqueando ventas.'}
+            </h2>
+            <p class="section-copy">
+              {isEnglish
+                ? 'Tell me what is not working and I will tell you whether you need a landing page, a redesign, a stronger business website or a custom build.'
+                : 'Cuentame que no esta funcionando y te dire si necesitas una landing, un rediseno, una web de empresa mejor planteada o un desarrollo a medida.'}
+            </p>
+          </div>
+          <a href={isEnglish ? '/en/#contacto' : '/#contacto'} class="btn-primary">
+            {isEnglish ? 'Request a proposal' : 'Solicitar propuesta'}
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .blog-hero,
+  .blog-card,
+  .blog-cta {
+    padding: 1.2rem;
+  }
+
+  .blog-hero {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    gap: 0.65rem;
+    padding: 1.1rem 1.2rem 1.15rem;
+  }
+
+  .blog-hero h1 {
+    max-width: 16ch;
+    margin-bottom: 0;
+    font-size: clamp(1.95rem, 3.3vw, 3.1rem);
+    line-height: 0.96;
+  }
+
+  .blog-hero .section-copy {
+    max-width: 74ch;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  .blog-grid {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1rem;
+  }
+
+  .blog-card__link {
+    display: grid;
+    grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .blog-card__image {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+    border-radius: 0.95rem;
+    object-fit: cover;
+    border: 1px solid rgba(74, 54, 41, 0.12);
+    background: rgba(255, 255, 255, 0.68);
+  }
+
+  .blog-card__content {
+    display: grid;
+    align-content: start;
+    gap: 0.7rem;
+    min-width: 0;
+    padding-block: 0.15rem;
+  }
+
+  .blog-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem 0.75rem;
+    align-items: center;
+    color: var(--color-text-muted);
+    font-size: 0.88rem;
+  }
+
+  .blog-card__badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    padding: 0.24rem 0.62rem;
+    border-radius: 999px;
+    background: rgba(33, 68, 63, 0.08);
+    color: var(--theme-highlight);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+  }
+
+  .blog-card h2 {
+    max-width: 24ch;
+    font-size: clamp(1.25rem, 1.8vw, 1.75rem);
+    line-height: 1.02;
+  }
+
+  .blog-card p {
+    max-width: 58ch;
+    color: var(--color-text-muted);
+    line-height: 1.68;
+  }
+
+  .blog-cta {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 0.9rem;
+    margin-top: 1.2rem;
+  }
+
+  @media (max-width: 720px) {
+    .blog-hero,
+    .blog-card,
+    .blog-cta {
+      padding: 1rem;
+    }
+
+    .blog-hero h1 {
+      max-width: none;
+    }
+
+    .blog-card__link {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .blog-card__image {
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+    }
+
+    .blog-cta {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>

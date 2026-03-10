@@ -1,0 +1,20 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#F8F1E9"/>
+  <circle cx="214" cy="160" r="150" fill="#E4EEE8"/>
+  <circle cx="1006" cy="742" r="194" fill="#EFD4C0"/>
+  <rect x="88" y="118" width="1024" height="664" rx="36" fill="#FFF9F2" stroke="#E5D8CC" stroke-width="4"/>
+  <rect x="152" y="188" width="430" height="522" rx="30" fill="#21443F"/>
+  <rect x="618" y="188" width="430" height="522" rx="30" fill="#B86836"/>
+  <circle cx="370" cy="330" r="74" fill="#FFF9F3"/>
+  <circle cx="834" cy="330" r="74" fill="#FFF4EC"/>
+  <rect x="226" y="472" width="286" height="34" rx="14" fill="#D7E7E1"/>
+  <rect x="226" y="526" width="236" height="34" rx="14" fill="#D7E7E1"/>
+  <rect x="690" y="472" width="286" height="34" rx="14" fill="#FFE6D5"/>
+  <rect x="690" y="526" width="236" height="34" rx="14" fill="#FFE6D5"/>
+  <text x="288" y="340" fill="#21443F" font-size="44" font-family="Arial, sans-serif" font-weight="700">A</text>
+  <text x="756" y="340" fill="#8F4C21" font-size="34" font-family="Arial, sans-serif" font-weight="700">W</text>
+  <text x="236" y="238" fill="#FFF9F3" font-size="44" font-family="Arial, sans-serif" font-weight="700">ASTRO</text>
+  <text x="678" y="238" fill="#FFF9F3" font-size="44" font-family="Arial, sans-serif" font-weight="700">WORDPRESS</text>
+  <text x="230" y="628" fill="#FFF9F3" font-size="30" font-family="Arial, sans-serif" font-weight="700">Performance first</text>
+  <text x="694" y="628" fill="#FFF9F3" font-size="30" font-family="Arial, sans-serif" font-weight="700">Editing flexibility</text>
+</svg>

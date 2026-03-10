@@ -1,0 +1,322 @@
+---
+import { render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Contact from './Contact.astro';
+import StickyCTA from './StickyGTA.astro';
+import type { BlogEntry } from '../data/blog';
+import {
+  formatBlogDate,
+  getBlogIndexUrl,
+  getBlogPostUrl,
+  getLocalizedServiceLinks,
+} from '../data/blog';
+
+interface Props {
+  entry: BlogEntry;
+  alternateUrls: { es: string; en: string };
+  relatedPosts: BlogEntry[];
+}
+
+const { entry, alternateUrls, relatedPosts } = Astro.props;
+const { Content, headings } = await render(entry);
+const locale = entry.data.locale;
+const isEnglish = locale === 'en';
+const canonicalUrl = getBlogPostUrl(locale, entry.slug);
+const baseUrl = 'https://ignacioamatweb.com';
+const serviceLinks = getLocalizedServiceLinks(entry.data.relatedServices, locale);
+const publishedDate = entry.data.publishedDate.toISOString().split('T')[0];
+const modifiedDate = (entry.data.updatedDate ?? entry.data.publishedDate).toISOString().split('T')[0];
+const pageTitle = entry.data.title;
+const pageDescription = entry.data.description;
+const image = `${baseUrl}${entry.data.heroImage}`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: isEnglish ? 'Home' : 'Inicio',
+      item: isEnglish ? `${baseUrl}/en/` : baseUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: `${baseUrl}${getBlogIndexUrl(locale)}`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: entry.data.title,
+      item: `${baseUrl}${canonicalUrl}`,
+    },
+  ],
+};
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: entry.data.title,
+  description: entry.data.description,
+  image,
+  author: {
+    '@type': 'Person',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Ignacio Amat - Web Development',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/brand-mark.svg`,
+    },
+  },
+  datePublished: publishedDate,
+  dateModified: modifiedDate,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `${baseUrl}${canonicalUrl}`,
+  },
+  inLanguage: isEnglish ? 'en-US' : 'es-ES',
+  keywords: entry.data.keywords.join(', '),
+};
+
+const faqSchema = entry.data.faq?.length
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: entry.data.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
+
+const additionalSchemas = faqSchema ? [breadcrumbSchema, articleSchema, faqSchema] : [breadcrumbSchema, articleSchema];
+const tocHeadings = headings.filter((heading) => heading.depth <= 2);
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  lang={locale}
+  canonicalUrl={canonicalUrl}
+  image={image}
+  type="article"
+  publishedDate={publishedDate}
+  alternateUrls={alternateUrls}
+  additionalSchemas={additionalSchemas}
+  keywords={entry.data.keywords}
+>
+  <Header languageSwitchUrls={alternateUrls} />
+  <main>
+    <article class="section">
+      <div class="container article-layout">
+        <header class="article-hero surface-card" data-sr>
+          <nav class="article-breadcrumbs" aria-label="Breadcrumb">
+            <a href={isEnglish ? '/en/' : '/'}>{isEnglish ? 'Home' : 'Inicio'}</a>
+            <span>/</span>
+            <a href={getBlogIndexUrl(locale)}>Blog</a>
+            <span>/</span>
+            <span>{entry.data.category}</span>
+          </nav>
+
+          <p class="section-eyebrow">{entry.data.category}</p>
+          <h1>{entry.data.title}</h1>
+          <div class="article-meta">
+            <span>Ignacio Amat</span>
+            <span>{formatBlogDate(entry.data.publishedDate, locale)}</span>
+            <span>{entry.data.readTime}</span>
+          </div>
+          <p class="article-intro">{entry.data.description}</p>
+          <img
+            src={entry.data.heroImage}
+            alt={entry.data.heroImageAlt}
+            class="article-hero__image"
+            width="1200"
+            height="900"
+            loading="eager"
+          />
+        </header>
+
+        <div class="article-shell surface-card" data-sr>
+          <div class="article-layout__content">
+            {tocHeadings.length > 0 && (
+              <aside class="toc-card">
+                <h2>{isEnglish ? 'Contents' : 'Contenido'}</h2>
+                <ol>
+                  {tocHeadings.map((heading) => (
+                    <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+                  ))}
+                </ol>
+              </aside>
+            )}
+
+            <div class="article-content">
+              <Content />
+            </div>
+          </div>
+        </div>
+
+        <div class="article-footer-grid">
+          {serviceLinks.length > 0 && (
+            <section class="article-panel surface-card" data-sr>
+              <p class="section-eyebrow">{isEnglish ? 'Relevant services' : 'Servicios relacionados'}</p>
+              <h2>{isEnglish ? 'Where this topic connects with the work I do' : 'Donde este tema conecta con el trabajo que hago'}</h2>
+              <div class="article-links">
+                {serviceLinks.map((link) => (
+                  <a href={link.href} class="article-links__card">
+                    <h3>{link.label}</h3>
+                    <p>{isEnglish ? 'See service details and fit' : 'Ver detalles del servicio y encaje'}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {relatedPosts.length > 0 && (
+            <section class="article-panel surface-card" data-sr>
+              <p class="section-eyebrow">{isEnglish ? 'More articles' : 'Mas articulos'}</p>
+              <h2>{isEnglish ? 'Keep reading' : 'Seguir leyendo'}</h2>
+              <div class="article-links">
+                {relatedPosts.map((post) => (
+                  <a href={getBlogPostUrl(locale, post.slug)} class="article-links__card">
+                    <h3>{post.data.title}</h3>
+                    <p>{post.data.description}</p>
+                  </a>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
+      </div>
+    </article>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .article-layout {
+    display: grid;
+    gap: 1rem;
+    max-width: 980px;
+  }
+
+  .article-hero,
+  .article-shell,
+  .article-panel {
+    padding: 1.45rem;
+  }
+
+  .article-breadcrumbs,
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    color: var(--color-text-muted);
+    font-size: 0.94rem;
+  }
+
+  .article-breadcrumbs {
+    margin-bottom: 1rem;
+  }
+
+  .article-hero h1 {
+    max-width: 16ch;
+    margin-bottom: 1rem;
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+  }
+
+  .article-intro {
+    max-width: 66ch;
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+    line-height: 1.85;
+  }
+
+  .article-hero__image {
+    width: 100%;
+    margin-top: 1.3rem;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 1.2rem;
+    border: 1px solid rgba(74, 54, 41, 0.12);
+    background: rgba(255, 255, 255, 0.72);
+  }
+
+  .article-layout__content {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .toc-card {
+    padding: 1rem 1.05rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.88);
+  }
+
+  .toc-card h2 {
+    font-size: 1.15rem;
+  }
+
+  .toc-card ol {
+    margin: 0.9rem 0 0;
+    padding-left: 1.2rem;
+    color: var(--color-text-muted);
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .article-footer-grid {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .article-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+  }
+
+  .article-links__card {
+    padding: 1rem 1.05rem;
+    border: 1px solid rgba(74, 54, 41, 0.1);
+    border-radius: 1rem;
+    background: rgba(255, 250, 244, 0.88);
+  }
+
+  .article-links__card p {
+    margin-top: 0.45rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 720px) {
+    .article-hero,
+    .article-shell,
+    .article-panel {
+      padding: 1.2rem;
+    }
+
+    .article-hero h1 {
+      max-width: none;
+    }
+
+    .article-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

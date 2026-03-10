@@ -1,0 +1,18 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" rx="40" fill="#F8F0E8"/>
+  <circle cx="1034" cy="160" r="170" fill="#E4EEE8"/>
+  <circle cx="160" cy="724" r="190" fill="#EDD4BF"/>
+  <rect x="88" y="116" width="1024" height="668" rx="36" fill="#FFF9F2" stroke="#E5D8CC" stroke-width="4"/>
+  <rect x="140" y="182" width="352" height="536" rx="28" fill="#B86836"/>
+  <rect x="552" y="182" width="502" height="152" rx="28" fill="#21443F"/>
+  <rect x="552" y="378" width="238" height="138" rx="24" fill="#F2E6DB"/>
+  <rect x="816" y="378" width="238" height="138" rx="24" fill="#F2E6DB"/>
+  <rect x="552" y="552" width="502" height="138" rx="24" fill="#F2E6DB"/>
+  <text x="188" y="258" fill="#FFF9F3" font-size="42" font-family="Arial, sans-serif" font-weight="700">CUSTOM</text>
+  <text x="188" y="314" fill="#FFF9F3" font-size="42" font-family="Arial, sans-serif" font-weight="700">WEB APP</text>
+  <text x="188" y="370" fill="#FFF9F3" font-size="42" font-family="Arial, sans-serif" font-weight="700">OR NO-CODE?</text>
+  <text x="598" y="266" fill="#FFF9F3" font-size="34" font-family="Arial, sans-serif" font-weight="700">When rules and workflows matter</text>
+  <text x="604" y="448" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">Permissions</text>
+  <text x="868" y="448" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">Logic</text>
+  <text x="600" y="628" fill="#21443F" font-size="28" font-family="Arial, sans-serif" font-weight="700">Operations that do not fit a template</text>
+</svg>

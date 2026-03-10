@@ -1,0 +1,24 @@
+---
+import BlogPostTemplate from '../../components/BlogPostTemplate.astro';
+import { getPublishedBlogEntries, getRelatedBlogEntries, getTranslatedBlogEntry, getBlogPostUrl } from '../../data/blog';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const posts = await getPublishedBlogEntries('es');
+  return posts.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const translatedEntry = await getTranslatedBlogEntry(entry);
+const relatedPosts = await getRelatedBlogEntries(entry);
+const alternateUrls = {
+  es: getBlogPostUrl('es', entry.slug),
+  en: translatedEntry ? getBlogPostUrl('en', translatedEntry.slug) : '/en/blog',
+};
+---
+
+<BlogPostTemplate entry={entry} relatedPosts={relatedPosts} alternateUrls={alternateUrls} />

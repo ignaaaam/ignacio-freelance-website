@@ -1,0 +1,8 @@
+---
+import BlogIndexPage from '../../../components/BlogIndexPage.astro';
+import { getPublishedBlogEntries } from '../../../data/blog';
+
+const posts = await getPublishedBlogEntries('en');
+---
+
+<BlogIndexPage locale="en" posts={posts} />
