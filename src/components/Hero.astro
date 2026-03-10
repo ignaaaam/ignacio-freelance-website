@@ -37,15 +37,15 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
         <div class="hero__portrait-visual">
           <span>IA</span>
         </div>
-        <div>
+        <div class="hero__panel-intro">
           <p class="hero__panel-name">{content.portraitLabel}</p>
           <p class="hero__panel-role">{isEnglish ? 'Freelance web developer' : 'Desarrollador web freelance'}</p>
-        </div>
-      </div>
 
-      <div class="hero__panel-highlight">
-        <span class="hero__panel-label">{panelFocusLabel}</span>
-        <p>{content.availability}</p>
+          <div class="hero__panel-highlight">
+            <span class="hero__panel-label">{panelFocusLabel}</span>
+            <p>{content.availability}</p>
+          </div>
+        </div>
       </div>
 
       <div class="hero__panel-body">
@@ -80,27 +80,37 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
 
 <style>
   .hero {
-    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - 5.85rem);
+    padding-block: clamp(0.5rem, 1.1vw, 0.95rem) clamp(1.15rem, 2vw, 1.7rem);
   }
 
   .hero__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.18fr) minmax(320px, 0.88fr);
-    gap: 1.25rem;
-    align-items: start;
+    width: 100%;
+    grid-template-columns: minmax(0, 1.24fr) minmax(300px, 0.76fr);
+    gap: clamp(0.9rem, 1.5vw, 1.35rem);
+    align-items: center;
+  }
+
+  .hero__content {
+    display: grid;
+    align-content: center;
   }
 
   .hero h1 {
-    max-width: 11.75ch;
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    max-width: 12.4ch;
+    font-size: clamp(2.2rem, 4vw, 3.95rem);
+    line-height: 0.92;
   }
 
   .hero__copy {
     max-width: 58ch;
-    margin-top: 1.15rem;
+    margin-top: 0.8rem;
     color: var(--color-text-muted);
-    font-size: clamp(0.99rem, 1.55vw, 1.08rem);
-    line-height: 1.75;
+    font-size: clamp(0.94rem, 1.1vw, 1rem);
+    line-height: 1.58;
   }
 
   .hero__actions,
@@ -112,19 +122,32 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
   }
 
   .hero__actions {
-    margin-top: 1.6rem;
+    margin-top: 1.05rem;
   }
 
   .hero__proof {
-    margin-top: 1.55rem;
+    margin-top: 0.9rem;
+    gap: 0.55rem;
+  }
+
+  .hero__actions .btn-primary,
+  .hero__actions .btn-secondary {
+    min-height: 2.9rem;
+    padding: 0.72rem 1.1rem;
+  }
+
+  .hero__proof .pill {
+    min-height: 2.05rem;
+    padding: 0.32rem 0.72rem;
+    font-size: 0.86rem;
   }
 
   .hero__panel {
     display: grid;
-    gap: 1rem;
-    padding: 1.35rem;
+    gap: 0.7rem;
+    padding: 1rem;
     overflow: hidden;
-    align-self: stretch;
+    align-self: start;
     position: relative;
     background:
       radial-gradient(circle at top right, rgba(184, 104, 54, 0.18), transparent 34%),
@@ -143,51 +166,56 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
   .hero__panel-header {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 0.95rem;
-    align-items: center;
-    padding-bottom: 0.2rem;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .hero__panel-intro {
+    display: grid;
+    gap: 0.3rem;
   }
 
   .hero__portrait-visual {
     display: grid;
     place-items: center;
-    width: 4.9rem;
+    width: 3.95rem;
     aspect-ratio: 1;
-    border-radius: 1.5rem;
+    border-radius: 1.15rem;
     background:
       radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.38), transparent 25%),
       linear-gradient(160deg, rgba(184, 104, 54, 0.94), rgba(33, 68, 63, 0.94));
     color: #fff8f2;
     font-family: var(--font-heading);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 800;
     box-shadow: 0 18px 36px rgba(33, 68, 63, 0.16);
   }
 
   .hero__panel-name {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.12rem;
     font-weight: 800;
   }
 
   .hero__panel-role {
-    margin-top: 0.22rem;
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.35;
+    font-size: 0.9rem;
   }
 
   .hero__panel-highlight,
   .hero__panel-section,
   .hero__panel-footer {
-    padding: 1rem 1.05rem;
+    padding: 0.78rem 0.85rem;
     border: 1px solid rgba(74, 54, 41, 0.1);
-    border-radius: 1.15rem;
+    border-radius: 1rem;
     background: rgba(255, 250, 244, 0.78);
   }
 
   .hero__panel-highlight {
     display: grid;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    margin-top: 0.2rem;
     background:
       linear-gradient(135deg, rgba(184, 104, 54, 0.1), rgba(255, 250, 244, 0.82)),
       rgba(255, 250, 244, 0.82);
@@ -195,37 +223,36 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
 
   .hero__panel-highlight p {
     font-family: var(--font-heading);
-    font-size: clamp(1.2rem, 2vw, 1.55rem);
-    line-height: 1.15;
+    font-size: clamp(0.94rem, 1.2vw, 1.06rem);
+    line-height: 1.22;
   }
 
   .hero__panel-body {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: 0.8rem;
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    gap: 0.6rem;
   }
 
   .hero__panel-section {
     display: grid;
-    gap: 0.8rem;
+    gap: 0.55rem;
   }
 
   .hero__panel-section--contact {
     align-content: start;
-    grid-column: 1 / -1;
   }
 
   .hero__panel-label {
-    font-size: 0.76rem;
+    font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.11em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--theme-highlight);
   }
 
   .hero__panel-list {
     display: grid;
-    gap: 0.7rem;
+    gap: 0.4rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -233,56 +260,61 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
 
   .hero__panel-list li {
     position: relative;
-    padding-left: 1.15rem;
+    padding-left: 0.95rem;
     color: var(--color-text);
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.35;
   }
 
   .hero__panel-list li::before {
     content: '';
     position: absolute;
-    top: 0.72rem;
+    top: 0.58rem;
     left: 0;
-    width: 0.45rem;
-    height: 0.45rem;
+    width: 0.4rem;
+    height: 0.4rem;
     border-radius: 999px;
     background: linear-gradient(135deg, var(--theme-accent), var(--theme-highlight));
   }
 
   .hero__channel {
     display: grid;
-    gap: 0.4rem;
+    gap: 0.25rem;
   }
 
   .hero__channel a {
     font-weight: 700;
     max-width: 100%;
-    font-size: clamp(0.8rem, 1vw, 0.92rem);
-    white-space: nowrap;
-    overflow-wrap: normal;
-    word-break: normal;
+    font-size: 0.84rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .hero__channel p {
     color: var(--color-text-muted);
-    line-height: 1.65;
+    font-size: 0.88rem;
+    line-height: 1.42;
   }
 
   .hero__panel-footer {
-    display: grid;
-    gap: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.7rem;
   }
 
   .hero__links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.65rem;
-    padding: 0.55rem 0.95rem;
+    min-height: 2.4rem;
+    padding: 0.4rem 0.74rem;
     border: 1px solid rgba(74, 54, 41, 0.12);
     border-radius: 999px;
     background: rgba(255, 252, 247, 0.82);
     color: var(--color-text-muted);
+    font-size: 0.88rem;
     font-weight: 700;
   }
 
@@ -291,8 +323,15 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
   }
 
   @media (max-width: 1040px) {
+    .hero {
+      display: block;
+      min-height: auto;
+      padding-block: 1.15rem 3rem;
+    }
+
     .hero__grid {
       grid-template-columns: 1fr;
+      align-items: start;
     }
 
     .hero h1 {
@@ -305,6 +344,10 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
   }
 
   @media (max-width: 720px) {
+    .hero {
+      padding-block: 0.9rem 2.35rem;
+    }
+
     .hero h1 {
       max-width: none;
       font-size: clamp(2.4rem, 11vw, 3.55rem);
@@ -322,13 +365,17 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
     }
 
     .hero__panel {
-      padding: 1.15rem;
+      padding: 1rem;
     }
 
     .hero__panel-highlight,
     .hero__panel-section,
     .hero__panel-footer {
-      padding: 0.95rem;
+      padding: 0.88rem;
+    }
+
+    .hero__panel-footer {
+      display: grid;
     }
   }
 
@@ -337,12 +384,16 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
       grid-template-columns: 1fr;
     }
 
+    .hero__panel-section--contact {
+      grid-column: 1 / -1;
+    }
+
     .hero__panel-header {
       gap: 0.8rem;
     }
 
     .hero__portrait-visual {
-      width: 4.2rem;
+      width: 3.9rem;
     }
   }
 </style>

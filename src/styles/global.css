@@ -3,6 +3,7 @@
 :root {
   --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-body: "Manrope", sans-serif;
+  --container-max: 1280px;
 
   --theme-primary: #f5efe7;
   --theme-secondary: #fff9f2;
@@ -155,7 +156,7 @@ summary::-webkit-details-marker {
 }
 
 .container {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(var(--container-max), calc(100% - 2rem));
   margin: 0 auto;
 }
 
@@ -170,7 +171,7 @@ summary::-webkit-details-marker {
 }
 
 .section-heading {
-  max-width: 780px;
+  max-width: 920px;
   margin-bottom: 2.35rem;
 }
 
@@ -193,7 +194,7 @@ summary::-webkit-details-marker {
 }
 
 .section-copy {
-  max-width: 62ch;
+  max-width: 68ch;
   color: var(--color-text-muted);
   font-size: 1.04rem;
   line-height: 1.8;
@@ -406,7 +407,7 @@ summary::-webkit-details-marker {
 .trust-strip__shell {
   display: grid;
   gap: 1rem;
-  padding: 1.25rem 1.35rem;
+  padding: 1.15rem 1.2rem;
   border: 1px solid var(--color-border);
   border-radius: 1.4rem;
   background: rgba(255, 249, 242, 0.92);
@@ -568,7 +569,7 @@ summary::-webkit-details-marker {
   }
 
   .trust-strip__shell {
-    padding: 1.15rem;
+    padding: 1.05rem;
   }
 }
 
@@ -582,6 +583,7 @@ summary::-webkit-details-marker {
   }
 
   .section-copy {
+    max-width: none;
     font-size: 0.99rem;
   }
 
@@ -621,7 +623,7 @@ summary::-webkit-details-marker {
 
 @media (max-width: 640px) {
   .container {
-    width: min(100% - 1.2rem, 1180px);
+    width: min(100% - 1.2rem, var(--container-max));
   }
 
   .card,

@@ -515,7 +515,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       title: 'Servicios de desarrollo web para empresas que necesitan vender mejor, lanzar antes o corregir una web que ya no responde como deberia.',
       description:
         'Este hub reune las lineas principales de trabajo para que la oferta sea visible desde el menu, desde SEO y desde cualquier punto de entrada con intencion comercial.',
-      ctaPrimary: 'Hablar sobre tu proyecto',
+      ctaPrimary: 'Solicitar propuesta',
       ctaSecondary: 'Ver trabajos seleccionados',
     },
   },
@@ -536,7 +536,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       faq: 'FAQ',
       faqHref: '#faq',
       blog: 'Blog',
-      blogHref: '/blog',
+      blogHref: '/en/blog',
       contact: 'Contact',
       contactHref: '#contacto',
       primaryCta: 'Request a proposal',
@@ -857,7 +857,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       resourceLinks: [
         { label: 'FAQ', href: '/en/frequently-asked-questions' },
         { label: 'Pricing guide', href: '/en/how-much-does-website-cost' },
-        { label: 'Blog', href: '/blog' },
+        { label: 'Blog', href: '/en/blog' },
         { label: 'Contact', href: '/en/contact' },
       ],
     },
@@ -866,7 +866,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       title: 'Web development services for companies that need to sell more clearly, launch faster or fix a site that is no longer doing its job.',
       description:
         'This hub keeps the offer visible from navigation, SEO and service discovery instead of hiding the most valuable pages deep in the site.',
-      ctaPrimary: 'Talk about your project',
+      ctaPrimary: 'Request a proposal',
       ctaSecondary: 'See selected work',
     },
   },
