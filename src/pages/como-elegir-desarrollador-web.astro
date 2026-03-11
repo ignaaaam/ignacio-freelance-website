@@ -35,9 +35,9 @@ const allSchemas = [faqSchema, breadcrumbSchema];
 <Layout title={title} description={description} lang="es" canonicalUrl={canonicalUrl} keywords={keywords} additionalSchemas={allSchemas} alternateUrls={{ es: '/como-elegir-desarrollador-web', en: '/en/how-to-choose-web-developer' }}>
   <Header />
   <main>
-    <section class="py-12 sm:py-16 md:py-20">
-      <div class="container px-4 sm:px-6">
-        <div class="max-w-4xl mx-auto">
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
 
           <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Cómo Elegir el Mejor Desarrollador Web para tu Proyecto</h1>
 
@@ -45,7 +45,7 @@ const allSchemas = [faqSchema, breadcrumbSchema];
             <strong>Para elegir un buen desarrollador web, evalúa su portfolio con proyectos similares al tuyo, verifica que domine tecnologías modernas, comprueba que tenga un proceso de trabajo claro y que ofrezca presupuesto detallado sin compromiso.</strong> La comunicación directa y las referencias verificables son igual de importantes que las habilidades técnicas.
           </p>
 
-          <div class="prose prose-lg max-w-none">
+          <div class="prose prose-lg max-w-none content-page__prose">
 
             <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Criterios clave para elegir desarrollador web</h2>
             <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
@@ -77,7 +77,7 @@ const allSchemas = [faqSchema, breadcrumbSchema];
 
             <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Freelance vs. agencia: comparativa</h2>
             <div class="overflow-x-auto mb-8">
-              <table class="w-full text-sm sm:text-base border-collapse">
+              <table class="comparison-table w-full text-sm sm:text-base border-collapse">
                 <thead>
                   <tr class="bg-secondary">
                     <th class="text-left p-3 font-bold">Criterio</th>
@@ -161,4 +161,14 @@ const allSchemas = [faqSchema, breadcrumbSchema];
   .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
   table { color: var(--color-text); }
   th { color: var(--color-text); }
+
+  .comparison-table {
+    table-layout: fixed;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 </style>
