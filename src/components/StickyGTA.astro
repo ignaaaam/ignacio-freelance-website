@@ -9,8 +9,8 @@ const nav = siteContent[locale].nav;
 <div id="sticky-cta" class="sticky-cta">
   <div class="sticky-cta__content">
     <div>
-      <strong>{locale === 'en' ? 'Want a clearer proposal?' : 'Quieres una propuesta mas clara?'}</strong>
-      <p>{locale === 'en' ? 'Share the project and I will send you a useful first recommendation.' : 'Cuentame el proyecto y te dare una primera recomendacion util.'}</p>
+      <strong>{locale === 'en' ? 'Need a website for your business?' : 'Necesitas una web para tu negocio?'}</strong>
+      <p>{locale === 'en' ? 'Tell me about the project and get a clear proposal within 24 hours.' : 'Cuentame el proyecto y recibe una propuesta clara en 24 horas.'}</p>
     </div>
     <a href={nav.contactHref} class="btn-primary">{nav.primaryCta}</a>
   </div>
@@ -37,7 +37,7 @@ const nav = siteContent[locale].nav;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    width: min(920px, calc(100% - 1.2rem));
+    width: min(920px, calc(100% - 2rem));
     padding: 1rem 1.05rem;
     border: 1px solid rgba(74, 54, 41, 0.08);
     border-radius: 1.35rem;
@@ -68,6 +68,10 @@ const nav = siteContent[locale].nav;
       padding: 0.95rem;
       border-radius: 1.15rem;
     }
+
+    .sticky-cta__content p {
+      font-size: 0.92rem;
+    }
   }
 </style>
 
@@ -76,11 +80,18 @@ const nav = siteContent[locale].nav;
     const sticky = document.getElementById('sticky-cta');
     const contactRoot = document.querySelector('[data-contact-root]');
     const footerRoot = document.querySelector('[data-footer-root]');
+    const consentBanner = document.getElementById('cookie-consent');
     if (!sticky || sticky.dataset.bound === 'true') return;
 
     sticky.dataset.bound = 'true';
 
     const toggleByScroll = () => {
+      const consentVisible = consentBanner && !consentBanner.hidden && consentBanner.getAttribute('data-visible') === 'true';
+      if (consentVisible) {
+        hideSticky();
+        return;
+      }
+
       if (window.scrollY > 520) {
         sticky.setAttribute('data-visible', 'true');
       } else {
