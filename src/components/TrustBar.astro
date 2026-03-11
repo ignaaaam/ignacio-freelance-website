@@ -18,7 +18,7 @@ const content = siteContent[locale];
       </div>
       <div class="trust-strip__social">
         <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+        <span class="trust-strip__badge">{locale === 'en' ? '24h response' : 'Respuesta en 24h'}</span>
       </div>
     </div>
   </div>
