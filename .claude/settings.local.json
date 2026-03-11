@@ -8,7 +8,9 @@
       "Bash(findstr:*)",
       "Bash(npm run build:*)",
       "Bash(node check-seo.js:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:ignathedev.com)",
+      "Bash(pnpm astro check)"
     ],
     "deny": [],
     "ask": []
