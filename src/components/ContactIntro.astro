@@ -1,0 +1,115 @@
+---
+import { getLocaleFromPath } from '../i18n/utils';
+
+const locale = getLocaleFromPath(Astro.url.pathname);
+const isEnglish = locale === 'en';
+
+const trust = isEnglish
+  ? ['5+ years experience', '24h response', 'Remote · Spain and international', 'No commitment required']
+  : ['5+ anos de experiencia', 'Respuesta en 24h', 'Remoto · Espana e internacional', 'Sin compromiso'];
+---
+
+<section class="contact-intro">
+  <div class="container contact-intro__shell">
+    <div class="contact-intro__main">
+      <h1 class="contact-intro__heading">
+        {isEnglish ? 'Start your project' : 'Empieza tu proyecto'}
+      </h1>
+      <p class="contact-intro__sub">
+        {isEnglish
+          ? 'Describe what you need and get a clear, scoped proposal — usually within 24 business hours.'
+          : 'Describe lo que necesitas y recibe una propuesta clara y concreta, normalmente en 24 horas laborables.'}
+      </p>
+    </div>
+
+    <div class="contact-intro__meta">
+      <div class="contact-intro__pills">
+        {trust.map((item) => (
+          <span class="contact-intro__pill">{item}</span>
+        ))}
+      </div>
+      <a href={isEnglish ? '/en/services' : '/servicios'} class="contact-intro__back">
+        {isEnglish ? '← See all services' : '← Ver todos los servicios'}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-intro {
+    padding-block: clamp(2.4rem, 4vw, 3.5rem) clamp(1.8rem, 3vw, 2.6rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .contact-intro__shell {
+    display: grid;
+    gap: 1.4rem;
+  }
+
+  .contact-intro__main {
+    display: grid;
+    gap: 0.65rem;
+    max-width: 56ch;
+  }
+
+  .contact-intro__heading {
+    font-size: clamp(1.9rem, 3.5vw, 3rem);
+    line-height: 1.05;
+  }
+
+  .contact-intro__sub {
+    color: var(--color-text-muted);
+    font-size: clamp(0.96rem, 1.1vw, 1.05rem);
+    line-height: 1.65;
+  }
+
+  .contact-intro__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  .contact-intro__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+
+  .contact-intro__pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.38rem 0.82rem;
+    border: 1px solid rgba(74, 54, 41, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 250, 244, 0.9);
+    color: var(--color-text);
+    font-size: 0.88rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .contact-intro__back {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .contact-intro__back:hover {
+    color: var(--theme-highlight);
+  }
+
+  @media (max-width: 720px) {
+    .contact-intro__meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .contact-intro__back {
+      order: -1;
+    }
+  }
+</style>
