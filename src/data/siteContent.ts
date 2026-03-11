@@ -147,7 +147,6 @@ type HomeContent = {
     title: string;
     description: string;
     emailLabel: string;
-    bookingLabel: string;
     responseLabel: string;
     responseText: string;
     formTitle: string;
@@ -180,7 +179,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       servicesLabel: 'Servicios',
       work: 'Trabajos',
       workHref: '#proyectos',
-      investment: 'Inversion',
+      investment: 'Precios',
       investmentHref: '#inversion',
       faq: 'FAQ',
       faqHref: '#faq',
@@ -191,7 +190,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryCta: 'Solicitar propuesta',
     },
     hero: {
-      eyebrow: 'Freelance full-stack para empresas, startups y equipos que necesitan una web mejor planteada o un producto digital que pueda crecer.',
+      eyebrow: 'Servicio de desarrollo web · Disponible para nuevos proyectos',
       title: 'Webs y productos digitales que explican mejor tu oferta y reducen friccion al convertir.',
       subtitle:
         'Diseno y desarrollo landing pages, webs de empresa, redisenos, productos Laravel y MVPs con criterio comercial, base tecnica solida y una ejecucion directa de principio a fin.',
@@ -200,21 +199,21 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryHref: '#contacto',
       secondaryHref: '#proyectos',
       proof: [
-        'Landing pages y webs de negocio',
-        'Laravel, Astro, React y Node',
-        'Colaboracion directa, sin capas intermedias',
+        'Landing pages y webs de empresa',
+        'Entrega en semanas, no en meses',
+        'Colaboracion directa, sin intermediarios',
       ],
       portraitLabel: 'Ignacio Amat',
-      portraitMeta: ['Full-stack freelance', 'ES / EN', 'Disponible para nuevos proyectos'],
-      availability: 'Proyectos de negocio, redisenos y MVPs',
+      portraitMeta: ['Desarrollo web para negocios', 'Remoto · Espana e internacional', '5+ anos de experiencia'],
+      availability: 'Webs de empresa, landing pages y MVPs',
     },
     trust: {
-      label: 'Lo que suelen necesitar mis clientes',
+      label: 'Por que empresas y startups eligen este servicio',
       items: [
-        'Propuestas claras y alcance definido',
+        'Propuesta clara y alcance definido antes de empezar',
         'Entrega remota para Espana y clientes internacionales',
         'Base tecnica orientada a SEO, rendimiento y conversion',
-        'Facturacion oficial y comunicacion directa',
+        'Comunicacion directa y facturacion oficial en Espana',
       ],
     },
     portfolio: {
@@ -488,7 +487,6 @@ export const siteContent: Record<Locale, HomeContent> = {
       description:
         'He reducido la friccion inicial: menos campos visibles, mejor contexto y una forma mas directa de pasar de la idea a una propuesta util.',
       emailLabel: 'Email directo',
-      bookingLabel: 'Llamada inicial',
       responseLabel: 'Tiempo de respuesta',
       responseText: 'Normalmente contesto en 24h laborables con una primera orientacion.',
       formTitle: 'Cuentame lo esencial',
@@ -531,7 +529,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       servicesLabel: 'Services',
       work: 'Work',
       workHref: '#proyectos',
-      investment: 'Investment',
+      investment: 'Pricing',
       investmentHref: '#inversion',
       faq: 'FAQ',
       faqHref: '#faq',
@@ -542,7 +540,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryCta: 'Request a proposal',
     },
     hero: {
-      eyebrow: 'Freelance full-stack partner for companies, startups and teams that need a better-structured website or a digital product that can grow cleanly.',
+      eyebrow: 'Web development service · Open to new projects',
       title: 'Websites and digital products that explain the offer better and make conversion easier.',
       subtitle:
         'I design and build landing pages, business websites, Laravel products, redesigns and MVPs with commercial clarity, strong technical foundations and direct execution from start to launch.',
@@ -552,20 +550,20 @@ export const siteContent: Record<Locale, HomeContent> = {
       secondaryHref: '#proyectos',
       proof: [
         'Landing pages and business websites',
-        'Laravel, Astro, React and Node',
-        'Direct collaboration without extra layers',
+        'Delivered in weeks, not months',
+        'Direct collaboration, no middlemen',
       ],
       portraitLabel: 'Ignacio Amat',
-      portraitMeta: ['Freelance full-stack developer', 'Spanish / English', 'Open to new projects'],
-      availability: 'Business websites, redesigns and MVPs',
+      portraitMeta: ['Web development for businesses', 'Remote · Spain and international', '5+ years experience'],
+      availability: 'Business websites, landing pages and MVPs',
     },
     trust: {
-      label: 'What clients usually come here for',
+      label: 'Why companies and startups choose this service',
       items: [
-        'Clear proposals and scoped deliverables',
-        'Remote work for Spain and international clients',
+        'Clear proposal and defined scope before any work begins',
+        'Remote delivery for Spain and international clients',
         'SEO, performance and conversion built into the baseline',
-        'Direct communication and official invoicing',
+        'Direct communication and official invoicing in Spain',
       ],
     },
     portfolio: {
@@ -839,7 +837,6 @@ export const siteContent: Record<Locale, HomeContent> = {
       description:
         'The first contact flow is lighter now: fewer visible fields, better context and a clearer way to move from idea to practical proposal.',
       emailLabel: 'Direct email',
-      bookingLabel: 'Intro call',
       responseLabel: 'Response time',
       responseText: 'I usually reply within 24 business hours with an initial direction.',
       formTitle: 'Share the essentials',
