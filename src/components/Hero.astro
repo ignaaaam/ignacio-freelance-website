@@ -6,10 +6,10 @@ import { siteConfig } from '../data/siteConfig';
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].hero;
 const isEnglish = locale === 'en';
-const panelFocusLabel = isEnglish ? 'Typical fit' : 'Encaje habitual';
-const panelCapabilitiesLabel = isEnglish ? 'In brief' : 'En breve';
-const panelContactLabel = isEnglish ? 'Direct contact' : 'Contacto directo';
-const panelProfilesLabel = isEnglish ? 'Profiles' : 'Perfiles';
+const panelFocusLabel = isEnglish ? 'Good fit for' : 'Pensado para';
+const panelCapabilitiesLabel = isEnglish ? 'What I build' : 'Que construyo';
+const panelContactLabel = isEnglish ? 'Best next step' : 'Siguiente paso';
+const panelVerifyLabel = isEnglish ? 'Verify' : 'Verificar';
 const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.responseTimeEs;
 ---
 
@@ -61,17 +61,17 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
         <section class="hero__panel-section hero__panel-section--contact">
           <span class="hero__panel-label">{panelContactLabel}</span>
           <div class="hero__channel">
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+            <a href={content.primaryHref}>{isEnglish ? 'Use the contact form' : 'Usa el formulario de contacto'}</a>
             <p>{panelResponse}</p>
           </div>
         </section>
       </div>
 
       <div class="hero__panel-footer">
-        <span class="hero__panel-label">{panelProfilesLabel}</span>
+        <span class="hero__panel-label">{panelVerifyLabel}</span>
         <div class="hero__links">
           <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href="#contacto" class="hero__cta-link">{isEnglish ? 'Start project' : 'Iniciar proyecto'}</a>
         </div>
       </div>
     </aside>
@@ -322,6 +322,18 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
     color: var(--color-text);
   }
 
+  .hero__cta-link {
+    background: var(--theme-highlight) !important;
+    color: #fffaf4 !important;
+    border-color: transparent !important;
+    font-weight: 700;
+  }
+
+  .hero__cta-link:hover {
+    background: var(--theme-accent-strong) !important;
+    color: #fffaf4 !important;
+  }
+
   @media (max-width: 1040px) {
     .hero {
       display: block;
@@ -345,7 +357,7 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
 
   @media (max-width: 720px) {
     .hero {
-      padding-block: 0.9rem 2.35rem;
+      padding-block: 1.05rem 2.7rem;
     }
 
     .hero h1 {
@@ -356,22 +368,28 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
 
     .hero__copy {
       margin-top: 1rem;
-      font-size: 0.97rem;
+      font-size: 0.99rem;
+      line-height: 1.68;
+    }
+
+    .hero__content {
+      padding-inline: 0.2rem;
     }
 
     .hero__actions {
       flex-direction: column;
       align-items: stretch;
+      gap: 0.72rem;
     }
 
     .hero__panel {
-      padding: 1rem;
+      padding: 1.1rem;
     }
 
     .hero__panel-highlight,
     .hero__panel-section,
     .hero__panel-footer {
-      padding: 0.88rem;
+      padding: 0.95rem;
     }
 
     .hero__panel-footer {
