@@ -1,6 +1,5 @@
 ---
 import PolicyPage from '../components/PolicyPage.astro';
-import { siteConfig } from '../data/siteConfig';
 import { getTranslation } from '../i18n/utils';
 
 const locale = 'es';
@@ -24,7 +23,7 @@ const updatedAt = '2026-03-09';
     <ul>
       <li><strong>Nombre:</strong> Ignacio Amat</li>
       <li><strong>Actividad:</strong> Desarrollo y diseno web freelance</li>
-      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+      <li><strong>Canal de contacto:</strong> formulario de contacto disponible en este sitio.</li>
       <li><strong>Ubicacion:</strong> Barcelona, Espana</li>
     </ul>
   </section>
@@ -34,7 +33,7 @@ const updatedAt = '2026-03-09';
     <p>Los datos que se pueden tratar dependen de como interactues con la web.</p>
     <ul>
       <li><strong>Formulario de contacto:</strong> nombre, email, empresa, presupuesto orientativo y mensaje si decides enviarlos.</li>
-      <li><strong>Email directo:</strong> la informacion que incluyas voluntariamente en tu mensaje.</li>
+      <li><strong>Formulario de contacto:</strong> la informacion que incluyas voluntariamente cuando contactes a traves del formulario disponible en este sitio.</li>
       <li><strong>Datos tecnicos esenciales:</strong> informacion minima necesaria para que la web funcione correctamente, prevenir abuso y mantener la seguridad.</li>
       <li><strong>Analitica opcional:</strong> si aceptas cookies de analitica, se pueden recoger datos agregados de navegacion mediante Google Analytics 4.</li>
     </ul>
@@ -88,7 +87,7 @@ const updatedAt = '2026-03-09';
 
   <section>
     <h2>8. Derechos</h2>
-    <p>Puedes ejercer tus derechos de acceso, rectificacion, supresion, oposicion, limitacion y portabilidad escribiendo a <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. Tambien puedes retirar el consentimiento para el tratamiento basado en el mismo en cualquier momento.</p>
+    <p>Puedes ejercer tus derechos de acceso, rectificacion, supresion, oposicion, limitacion y portabilidad a traves del <a href="/contact">formulario de contacto</a>. Tambien puedes retirar el consentimiento para el tratamiento basado en el mismo en cualquier momento.</p>
     <p>Si consideras que el tratamiento no se ajusta a la normativa, puedes presentar una reclamacion ante la Agencia Espanola de Proteccion de Datos.</p>
   </section>
 

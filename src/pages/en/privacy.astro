@@ -1,6 +1,5 @@
 ---
 import PolicyPage from '../../components/PolicyPage.astro';
-import { siteConfig } from '../../data/siteConfig';
 import { getTranslation } from '../../i18n/utils';
 
 const locale = 'en';
@@ -24,7 +23,7 @@ const updatedAt = '2026-03-09';
     <ul>
       <li><strong>Name:</strong> Ignacio Amat</li>
       <li><strong>Business activity:</strong> Freelance web design and development</li>
-      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+      <li><strong>Contact channel:</strong> the contact form available on this website.</li>
       <li><strong>Location:</strong> Barcelona, Spain</li>
     </ul>
   </section>
@@ -34,7 +33,7 @@ const updatedAt = '2026-03-09';
     <p>The information processed depends on how you interact with the website.</p>
     <ul>
       <li><strong>Contact form:</strong> name, email, company, indicative budget and message, if you choose to provide them.</li>
-      <li><strong>Direct email:</strong> any information you voluntarily include in your email.</li>
+      <li><strong>Contact form:</strong> any information you voluntarily provide when using the contact form available on this website.</li>
       <li><strong>Essential technical data:</strong> minimum information required for security, abuse prevention and basic website operation.</li>
       <li><strong>Optional analytics data:</strong> if you accept analytics cookies, aggregated navigation data may be collected through Google Analytics 4.</li>
     </ul>
@@ -88,7 +87,7 @@ const updatedAt = '2026-03-09';
 
   <section>
     <h2>8. Your rights</h2>
-    <p>You may exercise your rights of access, rectification, erasure, objection, restriction and portability by writing to <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>. You may also withdraw consent at any time where processing is based on consent.</p>
+    <p>You may exercise your rights of access, rectification, erasure, objection, restriction and portability through the <a href="/en/contact">contact form</a>. You may also withdraw consent at any time where processing is based on consent.</p>
     <p>If you believe your data is being processed unlawfully, you may lodge a complaint with the Spanish Data Protection Agency.</p>
   </section>
 

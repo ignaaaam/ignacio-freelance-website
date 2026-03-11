@@ -1,6 +1,5 @@
 ---
 import PolicyPage from '../components/PolicyPage.astro';
-import { siteConfig } from '../data/siteConfig';
 import { getTranslation } from '../i18n/utils';
 
 const locale = 'es';
@@ -24,7 +23,7 @@ const updatedAt = '2026-03-09';
     <ul>
       <li><strong>Titular:</strong> Ignacio Amat</li>
       <li><strong>Actividad:</strong> Desarrollo y diseno web freelance</li>
-      <li><strong>Email:</strong> <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></li>
+      <li><strong>Canal de contacto:</strong> formulario de contacto disponible en este sitio.</li>
       <li><strong>Ubicacion:</strong> Barcelona, Espana</li>
       <li><strong>Dominio:</strong> ignacioamatweb.com</li>
     </ul>
@@ -66,7 +65,7 @@ const updatedAt = '2026-03-09';
 
   <section>
     <h2>7. Proteccion de datos</h2>
-    <p>El tratamiento de datos personales se regula en la <a href="/privacidad">Politica de privacidad</a>. Si escribes a traves del formulario o por email, tus datos se usan solo para gestionar esa comunicacion y el posible proceso comercial asociado.</p>
+    <p>El tratamiento de datos personales se regula en la <a href="/privacidad">Politica de privacidad</a>. Si escribes a traves del formulario de contacto, tus datos se usan solo para gestionar esa comunicacion y el posible proceso comercial asociado.</p>
   </section>
 
   <section>
