@@ -88,7 +88,22 @@ const faqSchema = {
 	]
 };
 
-const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Crear Página Web Barcelona",
+	"url": `https://ignacioamatweb.com${canonicalUrl}`,
+	"image": "https://ignacioamatweb.com/og-image.png",
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Barcelona" },
+	"areaServed": { "@type": "City", "name": "Barcelona" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {

@@ -103,7 +103,22 @@ const faqSchema = {
 	]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Madrid",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Madrid" },
+	"areaServed": { "@type": "City", "name": "Madrid" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressRegion": "Comunidad de Madrid", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
 
 const alternateUrls = {
 	es: canonicalUrl,

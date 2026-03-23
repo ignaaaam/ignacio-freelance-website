@@ -104,7 +104,22 @@ const faqSchema = {
 	]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Barcelona",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Barcelona" },
+	"areaServed": { "@type": "City", "name": "Barcelona" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {

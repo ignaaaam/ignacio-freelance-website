@@ -95,7 +95,22 @@ const faqSchema = {
 	]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Valencia",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Valencia" },
+	"areaServed": { "@type": "City", "name": "Valencia" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressRegion": "Comunitat Valenciana", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
 
 const alternateUrls = {
 	es: canonicalUrl,

@@ -15,6 +15,7 @@ interface Props {
 	author?: string;
 	type?: 'website' | 'article';
 	publishedDate?: string;
+	articleSection?: string;
 	keywords?: string[];
 	additionalSchemas?: any[];
 	alternateUrls?: { es: string; en: string };
@@ -31,6 +32,7 @@ const {
 	author = "Ignacio Amat",
 	type = "website",
 	publishedDate,
+	articleSection,
 	keywords = lang === 'es'
 		? ["desarrollador web freelance", "desarrollador full stack", "crear página web profesional", "desarrollo web para empresas", "landing page de alta conversión", "diseño web a medida", "aplicación web a medida", "servicios SEO técnico", "desarrollo ecommerce", "Ignacio Amat"]
 		: ["freelance web developer", "hire full stack web developer", "professional website development", "web development for businesses", "high-converting landing page", "custom web design", "custom web app development", "technical SEO services", "ecommerce development", "Ignacio Amat"],
@@ -69,7 +71,7 @@ const structuredData: any = {
 // Add publishedDate for articles
 if (type === 'article' && publishedDate) {
 	structuredData.datePublished = publishedDate;
-	structuredData.dateModified = new Date().toISOString().split('T')[0];
+	structuredData.dateModified = publishedDate;
 }
 
 // Organization structured data
@@ -79,6 +81,10 @@ const organizationSchema = {
 	"name": "Ignacio Amat Web Development",
 	"url": baseUrl,
 	"logo": `${baseUrl}/brand-mark.svg`,
+	"description": lang === 'es'
+		? "Desarrollo web freelance profesional. Webs corporativas, landing pages, aplicaciones a medida y proyectos Laravel. Disponible en España e internacional."
+		: "Professional freelance web development. Corporate websites, landing pages, custom web apps and Laravel projects. Available in Spain and internationally.",
+	"email": "ignasiamat10@gmail.com",
 	"foundingDate": "2023",
 	"sameAs": [
 		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
@@ -87,6 +93,7 @@ const organizationSchema = {
 	],
 	"contactPoint": {
 		"@type": "ContactPoint",
+		"email": "ignasiamat10@gmail.com",
 		"contactType": "Customer Service",
 		"availableLanguage": ["Spanish", "English"]
 	},
@@ -97,7 +104,14 @@ const organizationSchema = {
 		{ "@type": "City", "name": "Valencia" },
 		{ "@type": "City", "name": "Sevilla" }
 	],
-	"knowsAbout": ["Web Development", "Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Landing Pages", "SaaS", "MVP Development"]
+	"knowsAbout": ["Web Development", "Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Landing Pages", "SaaS", "MVP Development"],
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"bestRating": "5",
+		"worstRating": "1",
+		"reviewCount": "6"
+	}
 };
 
 // Person structured data (AEO critical)
@@ -184,6 +198,11 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta name="twitter:image" content={image} />
 		<meta name="twitter:image:alt" content={title} />
 		<meta name="twitter:domain" content="ignacioamatweb.com" />
+		<meta name="twitter:url" content={canonical} />
+
+		<!-- Article meta tags -->
+		{type === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
+		{type === 'article' && keywords?.map(kw => <meta property="article:tag" content={kw} />)}
 
 		<!-- Language and SEO meta tags -->
 		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
@@ -204,6 +223,9 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<!-- Theme color -->
 		<meta name="theme-color" content="#c06a2a" />
 		
+		<!-- RSS Feed -->
+		<link rel="alternate" type="application/rss+xml" title={lang === 'es' ? 'Blog | Ignacio Amat' : 'Blog | Ignacio Amat'} href={`${baseUrl}/rss.xml`} />
+
 		<!-- Preconnect to required origins -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
