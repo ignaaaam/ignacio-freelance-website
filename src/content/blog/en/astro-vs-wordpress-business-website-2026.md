@@ -12,9 +12,9 @@ keywords:
   - "astro vs wordpress"
   - "business website astro or wordpress"
   - "cms vs static site"
-heroImage: "/images/blog/astro-vs-wordpress-business-website-2026.svg"
-heroImageAlt: "Editorial illustration comparing Astro and WordPress for a business website"
-heroImagePrompt: "Editorial illustration comparing Astro and WordPress for business websites, premium web technology style, warm brand colors, no text overlay"
+heroImage: "https://images.unsplash.com/photo-1737737351943-82e01f866e53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHx3ZWIlMjB0ZWNobm9sb2d5JTIwZnJhbWV3b3JrfGVufDB8MHx8fDE3NzQyNzk5OTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Screen showing modern web technology comparison"
+heroImageCredit: "Photo by Maik Winnecke on Unsplash"
 draft: false
 relatedServices:
   - "business-websites"

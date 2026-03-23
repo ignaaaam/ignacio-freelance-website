@@ -12,9 +12,9 @@ keywords:
   - "landing page vs web corporativa"
   - "que necesita mi empresa landing o web"
   - "captar clientes web empresa"
-heroImage: "/images/blog/landing-page-vs-business-website-2026.svg"
-heroImageAlt: "Comparativa visual entre landing page y web corporativa para empresas"
-heroImagePrompt: "Editorial comparison illustration between landing page and business website, modern layout cards, warm brand colors, premium technology feel, no text overlay"
+heroImage: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHdlYnNpdGUlMjBkaWdpdGFsJTIwbWFya2V0aW5nfGVufDB8MHx8fDE3NzQyNzk5OTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Equipo revisando estrategia de marketing digital en pizarra"
+heroImageCredit: "Photo by Campaign Creators on Unsplash"
 draft: false
 relatedServices:
   - "landing-pages"

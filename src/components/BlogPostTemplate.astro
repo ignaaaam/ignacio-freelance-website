@@ -29,7 +29,9 @@ const publishedDate = entry.data.publishedDate.toISOString().split('T')[0];
 const modifiedDate = (entry.data.updatedDate ?? entry.data.publishedDate).toISOString().split('T')[0];
 const pageTitle = entry.data.title;
 const pageDescription = entry.data.description;
-const image = `${baseUrl}${entry.data.heroImage}`;
+const image = entry.data.heroImage.startsWith('http')
+  ? entry.data.heroImage
+  : `${baseUrl}${entry.data.heroImage}`;
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -112,6 +114,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
   image={image}
   type="article"
   publishedDate={publishedDate}
+  articleSection={entry.data.category}
   alternateUrls={alternateUrls}
   additionalSchemas={additionalSchemas}
   keywords={entry.data.keywords}
@@ -145,6 +148,9 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
             height="900"
             loading="eager"
           />
+          {entry.data.heroImageCredit && (
+            <p class="image-credit">{entry.data.heroImageCredit}</p>
+          )}
         </header>
 
         <div class="article-shell surface-card" data-sr>
@@ -253,6 +259,14 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
     border-radius: 1.2rem;
     border: 1px solid rgba(74, 54, 41, 0.12);
     background: rgba(255, 255, 255, 0.72);
+  }
+
+  .image-credit {
+    font-size: 0.72rem;
+    color: var(--color-text-muted, #888);
+    text-align: right;
+    margin-top: 0.35rem;
+    opacity: 0.75;
   }
 
   .article-layout__content {

@@ -12,9 +12,9 @@ keywords:
   - "custom web app"
   - "no-code vs custom development"
   - "when business needs custom software"
-heroImage: "/images/blog/when-company-needs-custom-web-app.svg"
-heroImageAlt: "Editorial illustration about moving from no-code tools to a custom web application"
-heroImagePrompt: "Editorial illustration about moving from no-code to custom web application, permissions, workflows and business logic, premium tech style, warm brand palette, no text overlay"
+heroImage: "https://images.unsplash.com/photo-1517309561013-16f6e4020305?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBzb2Z0d2FyZSUyMGFwcGxpY2F0aW9uJTIwZGV2ZWxvcG1lbnR8ZW58MHwwfHx8MTc3NDI3OTk5Mnww&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Developer building a custom web application on screen"
+heroImageCredit: "Photo by Nandha Kumar on Unsplash"
 draft: false
 relatedServices:
   - "saas-mvp"

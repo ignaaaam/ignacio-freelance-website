@@ -13,9 +13,9 @@ keywords:
   - "business website pricing"
   - "landing page cost"
   - "web development budget"
-heroImage: "/images/blog/website-cost-barcelona-2026.svg"
-heroImageAlt: "Editorial illustration about website pricing ranges and business website budgets"
-heroImagePrompt: "Editorial illustration about website pricing, business website budgets, modern dashboard cards, warm neutral palette, no text overlay, premium tech look"
+heroImage: "https://images.unsplash.com/photo-1660970781103-ba6749cb9ce3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwcHJpY2luZyUyMG1vbmV5fGVufDB8MHx8fDE3NzQyNzk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Person reviewing website project budget at a desk"
+heroImageCredit: "Photo by 2H Media on Unsplash"
 draft: false
 relatedServices:
   - "pricing"

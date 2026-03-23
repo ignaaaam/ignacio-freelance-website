@@ -12,9 +12,9 @@ keywords:
   - "integraciones web empresa"
   - "crm web empresa"
   - "automatizaciones captacion leads"
-heroImage: "/images/blog/business-website-integrations-save-time-sell-better.svg"
-heroImageAlt: "Ilustracion editorial sobre integraciones utiles para una web de empresa"
-heroImagePrompt: "Editorial illustration about business website integrations, CRM, forms, calendar and automation, premium tech style, warm brand colors, no text overlay"
+heroImage: "https://images.unsplash.com/photo-1758626099012-2904337e9c60?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGF1dG9tYXRpb24lMjBzb2Z0d2FyZXxlbnwwfDB8fHwxNzc0Mjc5OTkxfDA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Interfaz de software de automatización empresarial en pantalla"
+heroImageCredit: "Photo by Jo Lin on Unsplash"
 draft: false
 relatedServices:
   - "business-websites"

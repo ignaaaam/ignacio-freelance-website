@@ -13,9 +13,9 @@ keywords:
   - "contratar desarrollador web"
   - "freelance vs agencia"
   - "portfolio desarrollador web"
-heroImage: "/images/blog/freelance-web-developer-spain-2026.svg"
-heroImageAlt: "Ilustracion editorial sobre como evaluar y contratar un desarrollador web freelance"
-heroImagePrompt: "Editorial illustration about hiring a freelance web developer, portfolio review, questions checklist, warm neutral palette, professional tech look, no text overlay"
+heroImage: "https://images.unsplash.com/photo-1758612215020-842383aadb9e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHxmcmVlbGFuY2UlMjByZW1vdGUlMjB3b3JrJTIwbGFwdG9wfGVufDB8MHx8fDE3NzQyNzk5OTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Desarrollador freelance trabajando con laptop en remoto"
+heroImageCredit: "Photo by Vitaly Gariev on Unsplash"
 draft: false
 relatedServices:
   - "business-websites"

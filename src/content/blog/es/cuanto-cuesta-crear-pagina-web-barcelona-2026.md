@@ -13,9 +13,9 @@ keywords:
   - "precio pagina web barcelona"
   - "presupuesto web corporativa"
   - "precio landing page"
-heroImage: "/images/blog/website-cost-barcelona-2026.svg"
-heroImageAlt: "Ilustracion editorial sobre rangos de precios para crear una pagina web"
-heroImagePrompt: "Editorial illustration about website pricing, business website budgets, modern dashboard cards, warm neutral palette, no text overlay, premium tech look"
+heroImage: "https://images.unsplash.com/photo-1660970781103-ba6749cb9ce3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwcHJpY2luZyUyMG1vbmV5fGVufDB8MHx8fDE3NzQyNzk5ODl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Persona revisando presupuesto para proyecto web en escritorio"
+heroImageCredit: "Photo by 2H Media on Unsplash"
 draft: false
 relatedServices:
   - "pricing"

@@ -12,9 +12,9 @@ keywords:
   - "errores web profesional"
   - "por que mi web no genera contactos"
   - "web no convierte"
-heroImage: "/images/blog/professional-website-mistakes-no-leads.svg"
-heroImageAlt: "Ilustracion editorial sobre errores que impiden que una web genere leads"
-heroImagePrompt: "Editorial illustration about website mistakes that reduce lead generation, dashboard cards, conversion blockers, warm premium palette, no text overlay"
+heroImage: "https://images.unsplash.com/photo-1633307057722-a4740ba0c5d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDM3NjR8MHwxfHNlYXJjaHwxfHx3ZWJzaXRlJTIwYW5hbHl0aWNzJTIwY29udmVyc2lvbnxlbnwwfDB8fHwxNzc0Mjc5OTkwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+heroImageAlt: "Dashboard de analíticas web mostrando métricas de conversión"
+heroImageCredit: "Photo by Justin Morgan on Unsplash"
 draft: false
 relatedServices:
   - "business-websites"

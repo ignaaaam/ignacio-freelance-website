@@ -20,6 +20,7 @@ const blogCollection = defineCollection({
     heroImage: z.string(),
     heroImageAlt: z.string(),
     heroImagePrompt: z.string().optional(),
+    heroImageCredit: z.string().optional(),
     draft: z.boolean().default(false),
     relatedServices: z.array(z.string()).default([]),
     faq: z.array(faqItem).optional(),
