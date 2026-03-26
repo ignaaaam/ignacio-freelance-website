@@ -53,6 +53,18 @@ Props: `title` (required), `description`, `lang`, `canonicalUrl`, `image`, `keyw
 - `src/pages/en/[slug].astro` — English counterparts
 - `src/pages/blog/` — Blog index + articles
 
+### Blog articles — required fields
+
+Every new blog article (`.md` in `src/content/blog/es/` or `src/content/blog/en/`) **must** include a `heroImage` from Unsplash in its frontmatter. Use the following format:
+
+```yaml
+heroImage: "https://images.unsplash.com/photo-{PHOTO_ID}?auto=format&fit=crop&w=1200&q=80"
+heroImageAlt: "Descriptive alt text for the image"
+heroImageCredit: "Photo by {Photographer name} on Unsplash"
+```
+
+To find a suitable image: search Unsplash (unsplash.com) for a relevant keyword, pick a high-quality photo, and copy its ID from the URL (e.g. `unsplash.com/photos/abc123` → ID is `abc123`). Always include `heroImageAlt` with a meaningful description (for SEO and accessibility) and `heroImageCredit` with the photographer's name.
+
 ### Styling
 
 TailwindCSS v4 via `@tailwindcss/vite` (no `tailwind.config.js` — configured purely through CSS). Global styles in `src/styles/global.css`. Theme variables use `data-theme="light"` / `data-theme="dark"` on the `<html>` element.
