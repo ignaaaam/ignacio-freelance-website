@@ -38,5 +38,5 @@ export default defineConfig({
     inlineStylesheets: 'auto',
   },
   compressHTML: true,
-  site: 'https://ignacioamatweb.com',
+  site: 'https://www.ignacioamatweb.com',
 });

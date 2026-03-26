@@ -4,46 +4,28 @@ import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
 import StickyCTA from '../components/StickyGTA.astro';
 
-const baseUrl = 'https://ignacioamatweb.com';
-const title = "Desarrollador Web Barcelona | Landing y Proyectos Complejos | Ignacio Amat";
-const description = "Desarrollador web freelance en Barcelona. Landing pages, webs corporativas y proyectos complejos. Desde 800€. Presupuesto gratuito. SEO y garantía.";
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Desarrollador web en Barcelona para webs de negocio y landing pages | Ignacio Amat";
+const description = "Desarrollador web freelance para empresas de Barcelona. Landing pages, webs de negocio, redisenos, Laravel y mejoras tecnicas con foco en claridad, conversion y rendimiento.";
 const canonicalUrl = "/desarrollador-web-barcelona";
-const keywords = ["desarrollador web Barcelona", "landing page Barcelona", "proyectos web complejos", "freelance web Barcelona", "crear página web", "tienda online Barcelona", "web corporativa Barcelona"];
-
-// Structured Data
-const personSchema = {
-	"@context": "https://schema.org",
-	"@type": "Person",
-	"name": "Ignacio Amat",
-	"jobTitle": "Desarrollador Web Freelance",
-	"url": baseUrl,
-	"address": {
-		"@type": "PostalAddress",
-		"addressLocality": "Barcelona",
-		"addressRegion": "Cataluña",
-		"addressCountry": "ES"
-	},
-	"knowsAbout": [
-		"Desarrollo Web",
-		"Diseño Web",
-		"SEO",
-		"E-commerce",
-		"Frontend Development"
-	]
-};
+const keywords = ["desarrollador web Barcelona", "freelance web Barcelona", "landing page Barcelona", "web empresa Barcelona", "rediseño web Barcelona", "crear pagina web Barcelona"];
 
 const serviceSchema = {
 	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Desarrollo Web",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat - Desarrollo web para empresas en Barcelona",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"description": description,
 	"provider": {
 		"@type": "Person",
-		"name": "Ignacio Amat"
+		"name": "Ignacio Amat",
+		"url": baseUrl
 	},
 	"areaServed": {
 		"@type": "City",
 		"name": "Barcelona"
-	}
+	},
+	"availableLanguage": ["Spanish", "English"]
 };
 
 const breadcrumbSchema = {
@@ -71,55 +53,39 @@ const faqSchema = {
 	"mainEntity": [
 		{
 			"@type": "Question",
-			"name": "¿Cuánto cobra un desarrollador web freelance en Barcelona?",
+			"name": "¿Cuanto cuesta normalmente una web de negocio o una landing page en Barcelona?",
 			"acceptedAnswer": {
 				"@type": "Answer",
-				"text": "Un desarrollador web freelance en Barcelona cobra entre 800€ y 6.000€+ por proyecto, dependiendo de la complejidad. Landing pages desde 800€, webs corporativas 1.500-3.500€, y tiendas online desde 3.000€. Por hora, las tarifas van de 40€ a 80€/hora según experiencia."
+				"text": "Una landing page bien enfocada suele partir de 800 EUR. Una web de negocio suele moverse entre 1.800 y 4.000 EUR. Si hay integraciones, logica de negocio o una fase de producto, el presupuesto se define por alcance."
 			}
 		},
 		{
 			"@type": "Question",
-			"name": "¿Cuánto tiempo tarda un desarrollador web en crear una página?",
+			"name": "¿Cuanto suele tardar un proyecto?",
 			"acceptedAnswer": {
 				"@type": "Answer",
-				"text": "El tiempo depende del tipo de web: una landing page puede estar lista en 2-5 días, una web corporativa en 2-4 semanas, y una tienda online completa en 4-8 semanas. Tener el contenido preparado acelera el proceso."
+				"text": "Una landing page bien definida puede moverse en pocos dias. Una web de negocio suele estar entre 2 y 6 semanas. Si hay rediseño, integraciones o una app web, lo razonable es plantearlo por fases."
 			}
 		},
 		{
 			"@type": "Question",
-			"name": "¿Es mejor contratar un freelance o una agencia en Barcelona?",
+			"name": "¿Trabajas solo con empresas de Barcelona?",
 			"acceptedAnswer": {
 				"@type": "Answer",
-				"text": "Para proyectos de hasta 5.000€, un freelance ofrece mejor relación calidad-precio: 30-50% más económico, comunicación directa y mayor flexibilidad. Las agencias son mejores para proyectos muy grandes (+10.000€) que requieren múltiples especialistas simultáneamente."
+				"text": "No. Trabajo en remoto con empresas de Barcelona y con equipos de otras ciudades o paises. Barcelona es una de las zonas donde hay mas demanda para webs de negocio, landings y mejoras de conversion."
 			}
 		},
 		{
 			"@type": "Question",
-			"name": "¿Qué tecnologías utiliza un desarrollador web moderno?",
+			"name": "¿Que tipo de proyectos encajan mejor contigo?",
 			"acceptedAnswer": {
 				"@type": "Answer",
-				"text": "Un desarrollador web moderno utiliza HTML5, CSS3, JavaScript y frameworks como React, Astro o Next.js para el frontend. Para el backend: Node.js, APIs REST. Para e-commerce: integraciones con Stripe, PayPal. Todo optimizado para SEO y rendimiento."
+				"text": "Encajan especialmente bien las landing pages, webs de empresa, redisenos orientados a conversion, proyectos con Laravel y primeras fases de producto o MVP."
 			}
 		}
 	]
 };
-
-const localBusinessSchema = {
-	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
-	"name": "Ignacio Amat — Desarrollador Web Barcelona",
-	"url": `${baseUrl}${canonicalUrl}`,
-	"image": `${baseUrl}/og-image.png`,
-	"priceRange": "€€",
-	"currenciesAccepted": "EUR",
-	"serviceArea": { "@type": "City", "name": "Barcelona" },
-	"areaServed": { "@type": "City", "name": "Barcelona" },
-	"address": { "@type": "PostalAddress", "addressLocality": "Barcelona", "addressRegion": "Cataluña", "addressCountry": "ES" },
-	"availableLanguage": ["Spanish", "English"],
-	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
-};
-
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {
@@ -144,114 +110,119 @@ const alternateUrls = {
 					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance en Barcelona</h1>
 					
 					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-						Soy desarrollador web freelance en Barcelona especializado en crear soluciones digitales 
-						que impulsan negocios. Si buscas un desarrollador web profesional para tu proyecto, 
-						estás en el lugar correcto.
+						Trabajo con empresas de Barcelona que necesitan una web mas clara para vender servicios,
+						una landing page para captar demanda o mejoras en una web que hoy no transmite bien
+						lo que ofrece.
 					</p>
 
 					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
-						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">¿Qué hace un desarrollador web freelance?</h2>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Cuando esta pagina te puede ayudar</h2>
 						
 						<p class="text-base sm:text-lg mb-4">
-							Como desarrollador web freelance en Barcelona, me encargo de crear, diseñar y optimizar 
-							páginas web para empresas. Desde landing pages hasta e-commerce completos, desarrollo 
-							soluciones web que se adaptan a las necesidades específicas de cada negocio.
+							No todo negocio necesita lo mismo. A veces hace falta una landing enfocada en captar
+							contactos. Otras veces la prioridad es una web de empresa mas creible, un rediseño
+							que ordene mejor el mensaje o una mejora tecnica que deje de frenar el contacto.
+						</p>
+						<p class="text-base sm:text-lg mb-6">
+							Si tu empresa esta en Barcelona y buscas un proveedor directo, con criterio comercial
+							y base tecnica solida, este tipo de colaboracion suele encajar especialmente bien.
 						</p>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Tecnologías y herramientas que utilizo:</h3>
-						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Tailwind CSS</li>
-							<li><strong>Backend:</strong> Node.js, APIs REST, bases de datos</li>
-							<li><strong>E-commerce:</strong> Integración con pasarelas de pago, gestión de inventario</li>
-							<li><strong>SEO:</strong> Optimización on-page, schema markup, velocidad de carga</li>
-							<li><strong>Responsive Design:</strong> Diseño adaptable a todos los dispositivos</li>
-							<li><strong>Performance:</strong> Optimización de velocidad y Core Web Vitals</li>
-						</ul>
-
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Servicios de desarrollo web que ofrezco:</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Servicios que suelen encajar mejor</h2>
 						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Desarrollo Frontend</h4>
-								<p class="text-sm sm:text-base">Interfaces modernas y atractivas que mejoran la experiencia del usuario</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Landing pages</h3>
+								<p class="text-sm sm:text-base">Para campanas, captacion o servicios concretos donde conviene una sola accion principal.</p>
 							</div>
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Desarrollo Backend</h4>
-								<p class="text-sm sm:text-base">APIs, bases de datos y lógica de negocio robusta y escalable</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Webs de negocio</h3>
+								<p class="text-sm sm:text-base">Para explicar mejor la oferta, reforzar confianza y facilitar la evaluacion inicial.</p>
 							</div>
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">E-commerce</h4>
-								<p class="text-sm sm:text-base">Tiendas online completas con pasarelas de pago integradas</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Redisenos y mejoras</h3>
+								<p class="text-sm sm:text-base">Cuando la web actual ya existe, pero no convence, no convierte o se ha quedado atras.</p>
 							</div>
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Optimización SEO</h4>
-								<p class="text-sm sm:text-base">Tu web aparecerá en los primeros resultados de Google</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Laravel y desarrollo a medida</h3>
+								<p class="text-sm sm:text-base">Para paneles, procesos internos, integraciones o producto con logica real de negocio.</p>
 							</div>
 						</div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">¿Por qué trabajar con un desarrollador web freelance en Barcelona?</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Problemas que suelen aparecer antes de contratar</h2>
 						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Atención personalizada:</strong> Trabajo directo contigo, sin intermediarios</li>
-							<li><strong>Precios competitivos:</strong> Sin costes de agencia, mejor relación calidad-precio</li>
-							<li><strong>Flexibilidad:</strong> Me adapto a tus horarios y necesidades</li>
-							<li><strong>Conocimiento local:</strong> Entiendo el mercado y las necesidades de empresas en Barcelona</li>
-							<li><strong>Comunicación directa:</strong> Resolución rápida de dudas y cambios</li>
+							<li><strong>La oferta no se entiende rapido:</strong> el visitante llega, pero no tiene claro que vendes ni por que deberia escribirte.</li>
+							<li><strong>La web parece mas floja que el servicio real:</strong> la primera impresion no acompana al nivel del negocio.</li>
+							<li><strong>El contacto tiene demasiada friccion:</strong> formulario, CTA o estructura no guian bien hacia la accion.</li>
+							<li><strong>La base tecnica esta floja:</strong> rendimiento, SEO tecnico, estructura o mantenimiento terminan frenando resultados.</li>
 						</ul>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Experiencia trabajando con empresas de Barcelona:</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Por que trabajar con un freelance y no perderte en capas</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Contacto directo:</strong> hablas con la misma persona que define y construye el proyecto.</li>
+							<li><strong>Alcance mas claro:</strong> antes de empezar queda mas visible que sentido tiene hacer ahora y que puede esperar.</li>
+							<li><strong>Mejor encaje comercial:</strong> la web no se plantea solo como diseno, sino como herramienta para explicar mejor y captar mejor.</li>
+							<li><strong>Trabajo remoto sin complicaciones:</strong> puedo colaborar con empresas de Barcelona sin depender de procesos pesados.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Precios y plazos orientativos</h2>
 						<p class="mb-4 text-sm sm:text-base">
-							He trabajado con empresas de diversos sectores en Barcelona: desde restaurantes en el 
-							Barrio Gótico hasta startups tecnológicas en 22@, pasando por tiendas en Passeig de Gràcia 
-							y consultorías en el Eixample. Cada proyecto es único y me adapto a las necesidades específicas 
-							de cada negocio.
+							Una landing page enfocada suele partir de 800 EUR. Una web de negocio suele moverse
+							entre 1.800 y 4.000 EUR. Si el proyecto necesita integraciones, paneles o logica de
+							negocio, el presupuesto se plantea por alcance y fases.
+						</p>
+						<p class="mb-6 text-sm sm:text-base">
+							En tiempos, una landing bien definida puede moverse en pocos dias. Una web de empresa
+							suele ir de 2 a 6 semanas. Si la prioridad es un MVP o una mejora sobre algo existente,
+							lo mas sensato suele ser trabajar por fases.
 						</p>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Preguntas frecuentes sobre desarrollo web en Barcelona</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Preguntas frecuentes sobre desarrollo web en Barcelona</h2>
 						<div class="space-y-4 mb-6 sm:mb-8">
 							<div class="bg-secondary p-4 rounded-lg">
-								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cobra un desarrollador web freelance en Barcelona?</h4>
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuanto cuesta normalmente una web de negocio o una landing page?</h4>
 								<p class="text-sm sm:text-base text-text-muted">
-									Entre 800€ y 6.000€+ por proyecto según complejidad. Landing pages desde 800€, webs corporativas 
-									1.500-3.500€, tiendas online desde 3.000€. Por hora: 40-80€/hora según experiencia.
+									Una landing page bien enfocada suele partir de 800 EUR. Una web de negocio suele moverse
+									entre 1.800 y 4.000 EUR. Si hay integraciones o logica de negocio, el alcance manda mas que la tarifa fija.
 								</p>
 							</div>
 							<div class="bg-secondary p-4 rounded-lg">
-								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tiempo tarda en estar lista mi web?</h4>
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuanto puede tardar mi proyecto?</h4>
 								<p class="text-sm sm:text-base text-text-muted">
-									Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas. 
-									Tener el contenido preparado acelera significativamente el proceso.
+									Una landing bien definida puede salir en pocos dias. Una web de empresa suele ir de
+									2 a 6 semanas. Si hay rediseño, integraciones o producto, lo razonable es dividir por fases.
 								</p>
 							</div>
 							<div class="bg-secondary p-4 rounded-lg">
-								<h4 class="font-bold text-base sm:text-lg mb-2">¿Es mejor freelance o agencia?</h4>
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Trabajas solo con empresas de Barcelona?</h4>
 								<p class="text-sm sm:text-base text-text-muted">
-									Para proyectos de hasta 5.000€, un freelance ofrece 30-50% mejor precio, comunicación directa 
-									y mayor flexibilidad. Las agencias son mejores para proyectos muy grandes (+10.000€).
+									No. Trabajo en remoto con empresas de Barcelona y con equipos de otras ciudades o paises.
+									Barcelona es simplemente una de las zonas donde mas encaja este tipo de servicio.
 								</p>
 							</div>
 							<div class="bg-secondary p-4 rounded-lg">
-								<h4 class="font-bold text-base sm:text-lg mb-2">¿Qué tecnologías utilizas?</h4>
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Que tipo de proyectos encajan mejor contigo?</h4>
 								<p class="text-sm sm:text-base text-text-muted">
-									HTML5, CSS3, JavaScript, React, Astro, Next.js, Node.js, Tailwind CSS. 
-									Para e-commerce: Stripe, PayPal, Redsys. Todo optimizado para SEO y rendimiento.
+									Landing pages, webs de empresa, redisenos orientados a conversion, proyectos con
+									Laravel y primeras fases de producto o MVP.
 								</p>
 							</div>
 						</div>
 
 						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
-							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">¿Necesitas un desarrollador web para tu proyecto?</h3>
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Si buscas un desarrollador web en Barcelona, lo importante es ver si el proyecto encaja</h3>
 							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
-								Si buscas un desarrollador web freelance en Barcelona para crear tu página web, 
-								tienda online o aplicación web, contáctame. Te ayudo a hacer realidad tu proyecto digital.
+								Cuentame que quieres mejorar, que tipo de cliente quieres atraer y si partes de algo ya existente.
+								Con eso te puedo decir rapido si conviene una landing, una web de negocio, un rediseño o un alcance por fases.
 							</p>
 							<p class="font-semibold text-sm sm:text-base">
-								✅ Presupuesto gratuito y sin compromiso<br/>
-								✅ Respuesta rápida (24-48h)<br/>
+								✅ Primera respuesta util en 24h laborables<br/>
+								✅ Alcance inicial sin compromiso<br/>
 								✅ Facturación oficial<br/>
-								✅ Garantía de satisfacción
+								✅ Trabajo directo y sin intermediarios
 							</p>
 						</div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Páginas especializadas por sector:</h3>
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Paginas relacionadas:</h3>
 						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
 							<a href="/pagina-web-restaurantes-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
 								<h4 class="font-bold mb-2">🍽️ Web para Restaurantes →</h4>

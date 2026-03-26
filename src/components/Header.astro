@@ -92,7 +92,7 @@ const servicePages = isEnglish
         <a href={languageSwitchUrls.es} class={!isEnglish ? 'is-active' : undefined}>ES</a>
         <a href={languageSwitchUrls.en} class={isEnglish ? 'is-active' : undefined}>EN</a>
       </div>
-      <a href={toHomeAnchor(content.nav.contactHref)} class="btn-primary site-header__cta">{content.nav.primaryCta}</a>
+      <a href={toHomeAnchor(content.nav.contactHref)} class="btn-primary site-header__cta" data-cta="header-primary">{content.nav.primaryCta}</a>
       <button id="mobile-menu-button" class="site-header__menu" aria-expanded="false" aria-label={isEnglish ? 'Open menu' : 'Abrir menu'}>
         <span></span>
         <span></span>
@@ -117,7 +117,7 @@ const servicePages = isEnglish
           <a href={languageSwitchUrls.es} class={!isEnglish ? 'is-active' : undefined}>ES</a>
           <a href={languageSwitchUrls.en} class={isEnglish ? 'is-active' : undefined}>EN</a>
         </div>
-        <a href={toHomeAnchor(content.nav.contactHref)} class="btn-primary">{content.nav.primaryCta}</a>
+        <a href={toHomeAnchor(content.nav.contactHref)} class="btn-primary" data-cta="header-mobile-primary">{content.nav.primaryCta}</a>
       </div>
     </nav>
   </div>

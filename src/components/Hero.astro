@@ -9,7 +9,7 @@ const isEnglish = locale === 'en';
 const panelFocusLabel = isEnglish ? 'Good fit for' : 'Pensado para';
 const panelCapabilitiesLabel = isEnglish ? 'What I build' : 'Que construyo';
 const panelContactLabel = isEnglish ? 'Best next step' : 'Siguiente paso';
-const panelVerifyLabel = isEnglish ? 'Verify' : 'Verificar';
+const panelVerifyLabel = isEnglish ? 'Profiles' : 'Perfiles';
 const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.responseTimeEs;
 ---
 
@@ -21,8 +21,8 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
       <p class="hero__copy">{content.subtitle}</p>
 
       <div class="hero__actions">
-        <a href={content.primaryHref} class="btn-primary">{content.primaryCta}</a>
-        <a href={content.secondaryHref} class="btn-secondary">{content.secondaryCta}</a>
+        <a href={content.primaryHref} class="btn-primary" data-cta="hero-primary">{content.primaryCta}</a>
+        <a href={content.secondaryHref} class="btn-secondary" data-cta="hero-secondary">{content.secondaryCta}</a>
       </div>
 
       <div class="hero__proof">
@@ -61,7 +61,7 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
         <section class="hero__panel-section hero__panel-section--contact">
           <span class="hero__panel-label">{panelContactLabel}</span>
           <div class="hero__channel">
-            <a href={content.primaryHref}>{isEnglish ? 'Use the contact form' : 'Usa el formulario de contacto'}</a>
+            <a href={content.primaryHref} data-cta="hero-panel-contact">{isEnglish ? 'Use the contact form' : 'Usa el formulario de contacto'}</a>
             <p>{panelResponse}</p>
           </div>
         </section>
@@ -71,7 +71,8 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
         <span class="hero__panel-label">{panelVerifyLabel}</span>
         <div class="hero__links">
           <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="#contacto" class="hero__cta-link">{isEnglish ? 'Start project' : 'Iniciar proyecto'}</a>
+          <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={`mailto:${siteConfig.email}`} class="hero__cta-link">{isEnglish ? 'Email direct' : 'Email directo'}</a>
         </div>
       </div>
     </aside>

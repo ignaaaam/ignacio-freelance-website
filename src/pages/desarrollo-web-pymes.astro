@@ -1,0 +1,267 @@
+---
+import MarketingContentPage from '../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title =
+  'Desarrollo web para pymes: web clara, rapida de lanzar y facil de mantener | Ignacio Amat';
+const description =
+  'Desarrollo y diseno web para pymes que necesitan vender mejor online sin proyectos enormes. Webs enfocadas en mensaje, confianza, SEO basico y presupuestos realistas.';
+const canonicalUrl = '/desarrollo-web-pymes';
+const keywords = [
+  'desarrollo web pymes',
+  'pagina web pyme',
+  'web para pequena empresa',
+  'diseno web pymes espana',
+  'crear web autonomo empresa pequena',
+  'desarrollo web freelance pymes',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Desarrollo web para pymes',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+  },
+  description:
+    'Webs para pequenas y medianas empresas: mensaje claro, estructura sencilla, buena base tecnica y un alcance ajustado al tamano del negocio.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '1.200 EUR - 4.000 EUR',
+    priceCurrency: 'EUR',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Cuanto puede costar una web para una pyme?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Depende de paginas, contenidos e integraciones, pero muchas pymes encajan entre 1.200 EUR y 3.500 EUR cuando el alcance esta bien acotado. Si el proyecto crece, se define por fases.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Una pyme necesita la misma web que una gran empresa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Lo habitual es priorizar paginas que generen confianza y contacto, un mensaje entendible en segundos y una base tecnica ligera. Se puede ampliar cuando el negocio lo pida.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Puedo ir publicando por fases?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Si. Muchas pymes arrancan con lo esencial (servicios, confianza, contacto) y despues anaden blog, casos de uso o nuevas secciones sin tirar la base inicial.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Trabajas con pymes fuera de Barcelona?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Si. El trabajo es en remoto con empresas de toda Espana cuando el encaje del proyecto es bueno.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
+    { '@type': 'ListItem', position: 2, name: 'Desarrollo web para pymes', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  {
+    label: 'Pensado para',
+    value: 'Pymes, equipos pequenos y negocios locales que necesitan ordenar la oferta y captar contacto sin inflar el alcance.',
+  },
+  {
+    label: 'Enfoque',
+    value: 'Priorizar lo que vende de verdad: claridad, velocidad de carga, SEO razonable y un mantenimiento sencillo.',
+  },
+  {
+    label: 'Rango habitual',
+    value: 'Desde 1.200 EUR en proyectos muy acotados hasta 4.000 EUR o mas si hay mas paginas, contenido o integraciones.',
+  },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+  alternateUrls={{ es: canonicalUrl, en: '/en/web-design-businesses' }}
+  badge="Pymes"
+  pageTitle="Desarrollo web para pymes que necesitan resultados sin complicarse la vida"
+  lead="Las pymes no necesitan una web gigante: necesitan que se entienda que hacen, que transmita seriedad y que el contacto sea facil. Trabajo con alcances realistas, mensaje comercial claro y una implementacion ligera que no se convierta en un problema al mes siguiente."
+  primaryCta={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Que suele fallar en las webs de pymes</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Muchas pymes tienen web porque toca, no porque ayude a vender. Textos genericos, demasiadas secciones vacias o un mensaje que solo entiende quien ya conoce el negocio.
+    </p>
+    <p class="text-base sm:text-lg mb-6">
+      El visitante no tiene tiempo: si en pocos segundos no capta que problema resuelves y por que eres una opcion seria, la web no esta haciendo su trabajo aunque el diseno sea bonito.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Mensaje demasiado tecnico o abstracto</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Jargon interno, titulares vacios o demasiado corporativos alejan al cliente que aun no te conoce.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Demasiado alcance para el presupuesto</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Querer abarcarlo todo al inicio suele diluir calidad. Mejor lanzar bien lo esencial y crecer con criterio.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Base tecnica pesada o dificil de mantener</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Una pyme necesita poder actualizar textos o pedir cambios sin depender de un sistema opaco o lento.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Poca conexion con captacion real</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Si el CTA no esta claro o el formulario esta escondido, el trafico no se convierte en conversaciones utiles.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Como planteo el desarrollo web para una pyme</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li>
+        <strong>Prioridades primero:</strong> definimos que paginas son imprescindibles y que puede esperar a una segunda fase.
+      </li>
+      <li>
+        <strong>Mensaje y estructura:</strong> ordeno titulares, servicios, prueba de confianza y dudas frecuentes para que la evaluacion sea rapida.
+      </li>
+      <li>
+        <strong>Diseno con sentido comercial:</strong> legibilidad, jerarquia visual y una sensacion acorde al nivel del negocio, sin plantillas vacias.
+      </li>
+      <li>
+        <strong>Tecnologia ligera:</strong> base rapida, SEO tecnico razonable y codigo que se puede mantener sin sorpresas.
+      </li>
+    </ul>
+
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Lanzamiento esencial</h3>
+        <p class="text-sm sm:text-base">
+          Home, servicios, sobre el negocio, confianza basica y contacto. Ideal cuando necesitas salir ya con una presencia creible.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Web con mas profundidad</h3>
+        <p class="text-sm sm:text-base">
+          Mas paginas de servicio, FAQs ampliadas, casos o blog inicial cuando la pyme ya tiene contenido o captacion activa.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Orientada a contacto</h3>
+        <p class="text-sm sm:text-base">
+          Formularios claros, CTAs visibles y textos que reduzcan friccion antes de pedir una reunion o un presupuesto.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Relacion con otras paginas del sitio</h3>
+        <p class="text-sm sm:text-base">
+          Si encaja, enlazo con guias como precios o con la pagina de diseno web para empresas cuando el alcance es mayor.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Relacion con webs corporativas mas grandes</h2>
+    <p class="text-base sm:text-lg mb-6">
+      Esta pagina esta pensada para pymes con necesidades acotadas. Si tu caso es una empresa con mas areas, mas stakeholders o una narrativa mas compleja, suele encajar mejor una
+      <a href="/diseno-web-empresas" class="text-accent font-semibold underline-offset-2 hover:underline">web corporativa con mas profundidad</a>.
+    </p>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Inversion orientativa para pymes</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Presencia esencial — desde 1.200 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Pocas paginas, mensaje claro y lo necesario para generar confianza y contacto cuando el contenido ya esta razonablemente definido.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Web pyme completa — habitual 1.800 a 3.500 EUR</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Mas secciones, trabajo de copy mas fino, FAQs, casos o blog inicial, y ajustes de conversion segun el canal de captacion.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="font-bold text-base sm:text-lg mb-1">Si necesitas contexto de precios general</h3>
+        <p class="text-sm sm:text-base text-text-muted">
+          Puedes ver rangos y factores en la
+          <a href="/cuanto-cuesta-pagina-web" class="text-accent font-semibold underline-offset-2 hover:underline">guia sobre cuanto cuesta una pagina web</a>.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes</h2>
+    <div class="space-y-4 mb-8">
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Hace falta tener todo el contenido cerrado antes de empezar?</h3>
+        <p class="text-sm sm:text-base">
+          No hace falta perfeccion, pero si un borrador claro de servicios y diferencias. A partir de ahi se afinan textos y estructura sin paralizar el arranque.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Es mejor WordPress o una web a medida?</h3>
+        <p class="text-sm sm:text-base">
+          Depende de quien vaya a mantenerla y que necesitas a medio plazo. Lo importante es que la solucion encaje con el tamano del negocio y no genere deuda tecnica innecesaria.
+        </p>
+      </div>
+      <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+        <h3 class="text-base sm:text-lg font-bold mb-2">Puedes ayudar con SEO despues del lanzamiento?</h3>
+        <p class="text-sm sm:text-base">
+          Si. Partimos de una base tecnica sana; luego se pueden priorizar mejoras de contenido, velocidad o ampliaciones segun objetivos.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/servicios" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Todos los servicios &rarr;</a>
+      <a href="/diseno-web-empresas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Diseno web empresas &rarr;</a>
+      <a href="/crear-landing-page-profesional" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/cuanto-cuesta-pagina-web" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Guia de precios &rarr;</a>
+      <a href="/contratar-desarrollador-full-stack" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full stack freelance &rarr;</a>
+      <a href="/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contacto &rarr;</a>
+    </div>
+
+    <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">Tienes una pyme y la web no te esta ayudando?</h2>
+      <p class="mb-3 text-sm sm:text-base">
+        Cuentame tamano del negocio, que vendes y que te falla ahora. Te propongo un alcance realista y un siguiente paso claro.
+      </p>
+      <p class="font-semibold text-sm sm:text-base">
+        Sin paquetes opacos<br />
+        Trabajo directo conmigo<br />
+        Base lista para crecer cuando toque
+      </p>
+    </div>
+  </div>
+</MarketingContentPage>

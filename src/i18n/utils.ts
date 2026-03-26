@@ -22,6 +22,7 @@ const routeMappings: Record<string, { es: string; en: string }> = {
   '/desarrollador-web-valencia': { es: '/desarrollador-web-valencia', en: '/en/web-developer-valencia' },
   '/desarrollador-web-sevilla': { es: '/desarrollador-web-sevilla', en: '/en/web-developer-sevilla' },
   '/diseno-web-empresas': { es: '/diseno-web-empresas', en: '/en/web-design-businesses' },
+  '/desarrollo-web-pymes': { es: '/desarrollo-web-pymes', en: '/en/web-design-businesses' },
   '/contratar-desarrollador-full-stack': { es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' },
   '/servicios': { es: '/servicios', en: '/en/services' },
   // Phase 2 — Service pages
@@ -75,7 +76,7 @@ export function getPathWithoutLocale(path: string): string {
   return normalized.startsWith('/en') ? normalized.slice(3) || '/' : normalized;
 }
 
-export function getAlternateUrls(path: string): { en: string; es: string } {
+export function getAlternateUrls(path: string): { en?: string; es?: string } {
   const normalizedPath = normalizePath(path);
   const routePair = findRoutePair(normalizedPath);
 
@@ -87,17 +88,12 @@ export function getAlternateUrls(path: string): { en: string; es: string } {
     return { es: '/', en: '/en/' };
   }
 
-  if (normalizedPath === '/blog' || normalizedPath.startsWith('/blog/')) {
-    return { es: normalizedPath, en: '/en/' };
-  }
-
-  // For pages without a translation pair, keep the current page in its language
-  // and point the alternate locale to its homepage.
+  // For pages without a translation pair, keep only the current locale URL.
   if (normalizedPath.startsWith('/en/')) {
-    return { es: '/', en: normalizedPath };
+    return { en: normalizedPath };
   }
 
-  return { es: normalizedPath || '/', en: '/en/' };
+  return { es: normalizedPath || '/' };
 }
 
 export function getLanguageSwitchUrls(url: URL): { en: string; es: string } {

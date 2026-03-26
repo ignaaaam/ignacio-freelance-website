@@ -319,6 +319,7 @@ async function sendLeadEmail(params: {
 export const POST: APIRoute = async ({ request }) => {
   const headers = {
     'Content-Type': 'application/json',
+    'X-Robots-Tag': 'noindex, nofollow',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',

@@ -9,10 +9,10 @@ const nav = siteContent[locale].nav;
 <div id="sticky-cta" class="sticky-cta">
   <div class="sticky-cta__content">
     <div>
-      <strong>{locale === 'en' ? 'Need a website for your business?' : 'Necesitas una web para tu negocio?'}</strong>
-      <p>{locale === 'en' ? 'Tell me about the project and get a clear proposal within 24 hours.' : 'Cuentame el proyecto y recibe una propuesta clara en 24 horas.'}</p>
+      <strong>{locale === 'en' ? 'Need a website that helps you sell more clearly?' : 'Necesitas una web que te ayude a vender con mas claridad?'}</strong>
+      <p>{locale === 'en' ? 'Tell me the goal, timing and context. I will tell you if it is a fit and what the next step should be.' : 'Cuentame objetivo, plazo y contexto. Te dire si encaja y cual deberia ser el siguiente paso.'}</p>
     </div>
-    <a href={nav.contactHref} class="btn-primary">{nav.primaryCta}</a>
+    <a href={nav.contactHref} class="btn-primary" data-cta="sticky-primary">{nav.primaryCta}</a>
   </div>
 </div>
 

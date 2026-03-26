@@ -4,6 +4,9 @@ import { siteContent } from '../data/siteContent';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].cases;
+const labels = locale === 'en'
+  ? { challenge: 'Challenge', solution: 'Solution', result: 'Result' }
+  : { challenge: 'Problema', solution: 'Enfoque', result: 'Resultado' };
 ---
 
 <section class="section section-alt" id="casos">
@@ -19,15 +22,15 @@ const content = siteContent[locale].cases;
         <article class="case-card surface-card">
           <p class="case-card__client">{item.client}</p>
           <div class="case-card__row">
-            <span>Challenge</span>
+            <span>{labels.challenge}</span>
             <p>{item.challenge}</p>
           </div>
           <div class="case-card__row">
-            <span>Solution</span>
+            <span>{labels.solution}</span>
             <p>{item.solution}</p>
           </div>
           <div class="case-card__result">
-            <span>Result</span>
+            <span>{labels.result}</span>
             <p>{item.result}</p>
           </div>
         </article>

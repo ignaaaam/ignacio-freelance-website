@@ -18,7 +18,7 @@ interface Props {
 	articleSection?: string;
 	keywords?: string[];
 	additionalSchemas?: any[];
-	alternateUrls?: { es: string; en: string };
+	alternateUrls?: { es?: string; en?: string };
 }
 
 const { 
@@ -28,7 +28,7 @@ const {
 		? "Desarrollador web freelance full stack para empresas de todo el mundo. Landing pages, webs corporativas y aplicaciones web enfocadas en SEO y conversión."
 		: "Freelance full-stack web developer for businesses worldwide. Landing pages, business websites, and web apps focused on SEO and conversion.",
 	canonicalUrl,
-	image = "https://ignacioamatweb.com/images/og-image.png",
+	image = "https://www.ignacioamatweb.com/images/og-image.png",
 	author = "Ignacio Amat",
 	type = "website",
 	publishedDate,
@@ -42,9 +42,13 @@ const {
 
 const currentPath = Astro.url.pathname;
 const alternateUrls = customAlternateUrls || getAlternateUrls(currentPath);
-const baseUrl = 'https://ignacioamatweb.com';
+const baseUrl = 'https://www.ignacioamatweb.com';
 const fullUrl = `${baseUrl}${currentPath}`;
 const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
+const homePath = lang === 'en' ? '/en/' : '/';
+const homeLabel = lang === 'en' ? 'Home' : 'Inicio';
+const hasCustomBreadcrumb = additionalSchemas.some((schema) => schema?.['@type'] === 'BreadcrumbList');
+const xDefaultHref = alternateUrls.es ?? alternateUrls.en ?? currentPath;
 
 // Build structured data for different page types
 const structuredData: any = {
@@ -104,43 +108,19 @@ const organizationSchema = {
 		{ "@type": "City", "name": "Valencia" },
 		{ "@type": "City", "name": "Sevilla" }
 	],
-	"knowsAbout": ["Web Development", "Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Landing Pages", "SaaS", "MVP Development"],
-	"aggregateRating": {
-		"@type": "AggregateRating",
-		"ratingValue": "5",
-		"bestRating": "5",
-		"worstRating": "1",
-		"reviewCount": "6"
-	}
-};
-
-// Person structured data (AEO critical)
-const personSchema = {
-	"@context": "https://schema.org",
-	"@type": "Person",
-	"name": "Ignacio Amat",
-	"jobTitle": "Freelance Full-Stack Web Developer",
-	"url": baseUrl,
-	"sameAs": [
-		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
-		"https://github.com/ignaaaam",
-		"https://x.com/ignathedev"
-	],
-	"knowsAbout": ["Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Web Development", "TailwindCSS", "Full-Stack Development"],
-	"worksFor": { "@type": "Organization", "name": "Ignacio Amat Web Development" },
-	"knowsLanguage": ["Spanish", "English"]
+	"knowsAbout": ["Web Development", "Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Landing Pages", "SaaS", "MVP Development"]
 };
 
 // Breadcrumb schema for non-home pages
-const breadcrumbSchema = currentPath !== '/' && currentPath !== '/en/' ? {
+const breadcrumbSchema = !hasCustomBreadcrumb && currentPath !== '/' && currentPath !== '/en/' ? {
 	"@context": "https://schema.org",
 	"@type": "BreadcrumbList",
 	"itemListElement": [
 		{
 			"@type": "ListItem",
 			"position": 1,
-			"name": "Home",
-			"item": baseUrl
+			"name": homeLabel,
+			"item": `${baseUrl}${homePath}`
 		},
 		{
 			"@type": "ListItem",
@@ -154,7 +134,6 @@ const breadcrumbSchema = currentPath !== '/' && currentPath !== '/en/' ? {
 // JSON-LD structured data
 const jsonLd = JSON.stringify(structuredData);
 const orgJsonLd = JSON.stringify(organizationSchema);
-const personJsonLd = JSON.stringify(personSchema);
 const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : null;
 ---
 
@@ -205,9 +184,9 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		{type === 'article' && keywords?.map(kw => <meta property="article:tag" content={kw} />)}
 
 		<!-- Language and SEO meta tags -->
-		<link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />
-		<link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />
-		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${alternateUrls.es}`} />
+		{alternateUrls.es && <link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />}
+		{alternateUrls.en && <link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />}
+		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${xDefaultHref}`} />
 		
 		<!-- Robots meta tag -->
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -235,7 +214,6 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<!-- Structured Data -->
 		<script is:inline type="application/ld+json" set:html={jsonLd} />
 		<script is:inline type="application/ld+json" set:html={orgJsonLd} />
-		<script is:inline type="application/ld+json" set:html={personJsonLd} />
 		{breadcrumbJsonLd && <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />}
 		{additionalSchemas.map(schema => (
 			<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -317,6 +295,14 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 
 		document.addEventListener('click', function(e) {
 			if (!(e.target instanceof Element)) return;
+			const cta = e.target.closest('[data-cta]');
+			if (cta instanceof HTMLElement) {
+				analyticsWindow.gtag?.('event', 'cta_click', {
+					event_category: 'engagement',
+					event_label: cta.dataset.cta || cta.textContent?.trim() || 'unknown_cta',
+				});
+			}
+
 			const link = e.target.closest('a');
 			if (link && link.hostname !== window.location.hostname) {
 				analyticsWindow.gtag?.('event', 'click', {
@@ -360,5 +346,12 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		if (event instanceof CustomEvent && event.detail === 'accept') {
 			loadAnalytics();
 		}
+	});
+	window.addEventListener('site:lead-submitted', (event) => {
+		if (!(event instanceof CustomEvent)) return;
+		analyticsWindow.gtag?.('event', 'generate_lead', {
+			event_category: 'conversion',
+			event_label: event.detail?.locale || 'unknown',
+		});
 	});
 </script>

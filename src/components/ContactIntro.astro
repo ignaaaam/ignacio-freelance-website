@@ -5,20 +5,20 @@ const locale = getLocaleFromPath(Astro.url.pathname);
 const isEnglish = locale === 'en';
 
 const trust = isEnglish
-  ? ['5+ years experience', '24h response', 'Remote · Spain and international', 'No commitment required']
-  : ['5+ anos de experiencia', 'Respuesta en 24h', 'Remoto · Espana e internacional', 'Sin compromiso'];
+  ? ['Indicative budgets from EUR 800', 'Typical reply within 24 business hours', 'Remote from Spain', 'No commitment required']
+  : ['Presupuestos orientativos desde 800 EUR', 'Respuesta habitual en 24h laborables', 'Remoto desde Espana', 'Sin compromiso'];
 ---
 
 <section class="contact-intro">
   <div class="container contact-intro__shell">
     <div class="contact-intro__main">
       <h1 class="contact-intro__heading">
-        {isEnglish ? 'Start your project' : 'Empieza tu proyecto'}
+        {isEnglish ? 'Start with a clear brief' : 'Empieza con un briefing claro'}
       </h1>
       <p class="contact-intro__sub">
         {isEnglish
-          ? 'Describe what you need and get a clear, scoped proposal — usually within 24 business hours.'
-          : 'Describe lo que necesitas y recibe una propuesta clara y concreta, normalmente en 24 horas laborables.'}
+          ? 'Describe what you need, what outcome you are aiming for and what timeline you have in mind. That is usually enough for a useful first reply.'
+          : 'Describe que necesitas, que resultado quieres conseguir y con que plazo te mueves. Con eso suele bastar para una primera respuesta util.'}
       </p>
     </div>
 

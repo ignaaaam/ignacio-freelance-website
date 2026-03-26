@@ -23,7 +23,7 @@ const { Content, headings } = await render(entry);
 const locale = entry.data.locale;
 const isEnglish = locale === 'en';
 const canonicalUrl = getBlogPostUrl(locale, entry.slug);
-const baseUrl = 'https://ignacioamatweb.com';
+const baseUrl = 'https://www.ignacioamatweb.com';
 const serviceLinks = getLocalizedServiceLinks(entry.data.relatedServices, locale);
 const publishedDate = entry.data.publishedDate.toISOString().split('T')[0];
 const modifiedDate = (entry.data.updatedDate ?? entry.data.publishedDate).toISOString().split('T')[0];

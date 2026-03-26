@@ -1,6 +1,7 @@
 ---
 import { getLocaleFromPath } from '../i18n/utils';
 import { siteContent } from '../data/siteContent';
+import { siteConfig } from '../data/siteConfig';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].contact;
@@ -61,14 +62,20 @@ const budgetOptions =
         <div class="contact-panel__stack">
           <article class="contact-channel">
             <span>{locale === 'en' ? 'Recommended path' : 'Paso recomendado'}</span>
-            <a href="#contact-form">{locale === 'en' ? 'Use the contact form' : 'Usar el formulario'}</a>
-            <p>{locale === 'en' ? 'It is the clearest way to explain the project and get a useful first reply.' : 'Es la forma mas clara de explicar el proyecto y recibir una primera respuesta util.'}</p>
+            <a href="#contact-form" data-cta="contact-recommended">{locale === 'en' ? 'Use the contact form' : 'Usar el formulario'}</a>
+            <p>{locale === 'en' ? 'It is the clearest way to explain the project, timing and budget context in one place.' : 'Es la forma mas clara de explicar el proyecto, el plazo y el contexto de presupuesto en un solo paso.'}</p>
           </article>
 
           <article class="contact-channel">
-            <span>{locale === 'en' ? 'What happens next' : 'Que pasa despues'}</span>
-            <strong class="contact-channel__next">{locale === 'en' ? 'You will hear back within 24 business hours' : 'Recibiras respuesta en 24 horas laborables'}</strong>
-            <p>{locale === 'en' ? 'A first reply with an initial direction, clarifying questions if needed, or a proposal outline.' : 'Una primera respuesta con orientacion inicial, preguntas si hacen falta, o un esquema de propuesta.'}</p>
+            <span>{content.emailLabel}</span>
+            <a href={`mailto:${siteConfig.email}`} data-cta="contact-email">{siteConfig.email}</a>
+            <p>{locale === 'en' ? 'Useful if you prefer to write directly, forward the enquiry internally or continue by email.' : 'Util si prefieres escribir directamente, reenviar la consulta internamente o seguir por email.'}</p>
+          </article>
+
+          <article class="contact-channel">
+            <span>{locale === 'en' ? 'What happens next' : 'Qué pasa después'}</span>
+            <strong class="contact-channel__next">{locale === 'en' ? 'You will hear back within 24 business hours' : 'Recibirás respuesta en 24 horas laborables'}</strong>
+            <p>{locale === 'en' ? 'A first reply with direction, clarifying questions if needed and the most sensible next step for the project.' : 'Una primera respuesta con orientación, preguntas si hacen falta y el siguiente paso con más sentido para el proyecto.'}</p>
           </article>
         </div>
 
@@ -94,7 +101,7 @@ const budgetOptions =
 
           <div class="contact-form__row">
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" />
+            <input id="email" name="email" type="email" required autocomplete="email" inputmode="email" spellcheck="false" />
           </div>
 
           <div class="contact-form__row">
@@ -110,7 +117,7 @@ const budgetOptions =
           <div class="contact-form__row">
             <label for="budget">
               {locale === 'en' ? 'Approximate budget' : 'Presupuesto aproximado'}
-              <span class="contact-form__hint">{locale === 'en' ? '(optional — helps me tailor the proposal)' : '(opcional — ayuda a ajustar la propuesta)'}</span>
+              <span class="contact-form__hint">{locale === 'en' ? '(optional - helps me tailor the proposal)' : '(opcional - ayuda a ajustar la propuesta)'}</span>
             </label>
             <select id="budget" name="budget">
               {budgetOptions.map(([value, label]) => (
@@ -121,7 +128,13 @@ const budgetOptions =
 
           <div class="contact-form__row">
             <label for="message">{locale === 'en' ? 'Project context' : 'Contexto del proyecto'}</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              placeholder={locale === 'en' ? 'What do you need, who is it for and what timeline are you working with…' : 'Que necesitas, para quien es y con que plazo estas trabajando…'}
+            ></textarea>
           </div>
 
           <details class="contact-form__optional">
@@ -133,8 +146,8 @@ const budgetOptions =
             </div>
           </details>
 
-          <button type="submit" class="btn-primary">{locale === 'en' ? 'Send project details' : 'Enviar detalles del proyecto'}</button>
-          <p class="contact-form__assurance">{locale === 'en' ? 'No commitment required. You will get a reply within 24 business hours.' : 'Sin compromiso. Recibiras respuesta en 24 horas laborables.'}</p>
+          <button type="submit" class="btn-primary" data-cta="contact-submit">{locale === 'en' ? 'Send project brief' : 'Enviar proyecto'}</button>
+          <p class="contact-form__assurance">{locale === 'en' ? 'No commitment required. If it is a fit, you will get a useful first reply within 24 business hours.' : 'Sin compromiso. Si encaja, recibirás una primera respuesta útil en 24 horas laborables.'}</p>
           <p id="contact-feedback" class="contact-feedback" role="status" aria-live="polite" tabindex="-1" hidden></p>
         </form>
       </div>
@@ -382,17 +395,17 @@ const budgetOptions =
 <script is:inline define:vars={{ locale }}>
   const messages = {
     es: {
-      send: 'Enviar detalles del proyecto',
-      sending: 'Enviando...',
-      sendingDetail: 'Enviando tu mensaje...',
+      send: 'Enviar proyecto',
+      sending: 'Enviando…',
+      sendingDetail: 'Enviando tu mensaje…',
       required: 'Completa nombre, email, tipo de proyecto y mensaje.',
       success: 'Mensaje enviado correctamente.',
       error: 'No se pudo enviar el mensaje. Intentalo de nuevo mas tarde.',
     },
     en: {
-      send: 'Send project details',
-      sending: 'Sending...',
-      sendingDetail: 'Sending your message...',
+      send: 'Send project brief',
+      sending: 'Sending…',
+      sendingDetail: 'Sending your message…',
       required: 'Please complete name, email, project type and message.',
       success: 'Message sent successfully.',
       error: 'The message could not be sent. Please try again later.',
@@ -465,6 +478,7 @@ const budgetOptions =
 
         form.reset();
         setFeedback('success', result.message || t.success);
+        window.dispatchEvent(new CustomEvent('site:lead-submitted', { detail: { locale } }));
       } catch (error) {
         setFeedback('error', error instanceof Error ? error.message : t.error);
       } finally {

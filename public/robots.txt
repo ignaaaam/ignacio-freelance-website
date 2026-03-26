@@ -100,9 +100,9 @@ User-agent: Google-Extended
 Disallow: /
 
 # Sitemap locations
-Sitemap: https://ignacioamatweb.com/sitemap-index.xml
-Sitemap: https://ignacioamatweb.com/sitemap-es.xml
-Sitemap: https://ignacioamatweb.com/sitemap-en.xml
+Sitemap: https://www.ignacioamatweb.com/sitemap-index.xml
+Sitemap: https://www.ignacioamatweb.com/sitemap-es.xml
+Sitemap: https://www.ignacioamatweb.com/sitemap-en.xml
 
 # Host directive (for Yandex and other engines)
-Host: https://ignacioamatweb.com
+Host: www.ignacioamatweb.com

@@ -4,46 +4,28 @@ import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
 
-const baseUrl = 'https://ignacioamatweb.com';
-const title = "Web Developer Barcelona | Landing & Complex Projects | Ignacio Amat";
-const description = "Freelance web developer in Barcelona. Landing pages, corporate sites and complex projects. From €800. Free quote. SEO and guarantee.";
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Web developer in Barcelona for business websites and landing pages | Ignacio Amat";
+const description = "Freelance web developer for Barcelona-based companies. Landing pages, business websites, redesigns, Laravel and technical improvements focused on clarity, conversion and performance.";
 const canonicalUrl = "/en/web-developer-barcelona";
-const keywords = ["web developer Barcelona", "landing page Barcelona", "complex web projects", "freelance web Barcelona", "create website", "online store Barcelona", "corporate website Barcelona"];
-
-// Structured Data
-const personSchema = {
-	"@context": "https://schema.org",
-	"@type": "Person",
-	"name": "Ignacio Amat",
-	"jobTitle": "Freelance Web Developer",
-	"url": baseUrl,
-	"address": {
-		"@type": "PostalAddress",
-		"addressLocality": "Barcelona",
-		"addressRegion": "Catalonia",
-		"addressCountry": "ES"
-	},
-	"knowsAbout": [
-		"Web Development",
-		"Web Design",
-		"SEO",
-		"E-commerce",
-		"Frontend Development"
-	]
-};
+const keywords = ["web developer Barcelona", "freelance web Barcelona", "landing page Barcelona", "business website Barcelona", "website redesign Barcelona", "create website Barcelona"];
 
 const serviceSchema = {
 	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Web Development",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat - Web development for companies in Barcelona",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"description": description,
 	"provider": {
 		"@type": "Person",
-		"name": "Ignacio Amat"
+		"name": "Ignacio Amat",
+		"url": baseUrl
 	},
 	"areaServed": {
 		"@type": "City",
 		"name": "Barcelona"
-	}
+	},
+	"availableLanguage": ["English", "Spanish"]
 };
 
 const breadcrumbSchema = {
@@ -65,7 +47,46 @@ const breadcrumbSchema = {
 	]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema];
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does a landing page or business website usually cost?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A focused landing page usually starts from EUR 800. A business website often sits between EUR 1,800 and 4,000. If the project needs integrations or business logic, the quote depends on scope rather than a fixed package."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "How long does a project usually take?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A well-defined landing page can move in a matter of days. A business website often takes 2 to 6 weeks. If the work involves a redesign, integrations or a product phase, the sensible approach is to break it into stages."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Do you only work with companies in Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "No. I work remotely with Barcelona-based companies as well as teams in other cities and countries. Barcelona is simply one of the places where this type of service is in high demand."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What kind of projects are the best fit?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Landing pages, business websites, conversion-focused redesigns, Laravel work and early product or MVP phases are usually the strongest fit."
+			}
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {
@@ -90,65 +111,70 @@ const alternateUrls = {
 					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer in Barcelona</h1>
 					
 					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-						I'm a freelance web developer in Barcelona specialized in creating digital solutions 
-						that drive businesses forward. If you're looking for a professional web developer for your project, 
-						you're in the right place.
+						I work with Barcelona-based companies that need a clearer business website, a landing page
+						for lead generation or improvements to a website that is no longer doing a good job of
+						explaining the offer.
 					</p>
 
 					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
-						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">What does a freelance web developer do?</h2>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">When this page is useful</h2>
 						
 						<p class="text-base sm:text-lg mb-4">
-							As a freelance web developer in Barcelona, I'm responsible for creating, designing and optimizing 
-							websites for businesses. From landing pages to complete e-commerce, I develop 
-							web solutions that adapt to the specific needs of each business.
+							Not every business needs the same thing. Sometimes the right move is a focused landing page.
+							In other cases the priority is a more credible business website, a redesign that clarifies the message
+							or technical improvements that stop getting in the way of contact.
+						</p>
+						<p class="text-base sm:text-lg mb-6">
+							If your company is in Barcelona and you want a direct collaborator with commercial judgement
+							and a solid technical base, this kind of setup is usually a good fit.
 						</p>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Technologies and tools I use:</h3>
-						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Tailwind CSS</li>
-							<li><strong>Backend:</strong> Node.js, REST APIs, databases</li>
-							<li><strong>E-commerce:</strong> Payment gateway integration, inventory management</li>
-							<li><strong>SEO:</strong> On-page optimization, schema markup, loading speed</li>
-							<li><strong>Responsive Design:</strong> Design adaptable to all devices</li>
-							<li><strong>Performance:</strong> Speed optimization and Core Web Vitals</li>
-						</ul>
-
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Web development services I offer:</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Services that usually fit best</h2>
 						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Frontend Development</h4>
-								<p class="text-sm sm:text-base">Modern and attractive interfaces that improve user experience</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Landing pages</h3>
+								<p class="text-sm sm:text-base">For campaigns, lead capture or focused offers where one primary action matters most.</p>
 							</div>
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Backend Development</h4>
-								<p class="text-sm sm:text-base">APIs, databases and robust, scalable business logic</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Business websites</h3>
+								<p class="text-sm sm:text-base">For companies that need to explain services better, build trust faster and improve first impressions.</p>
 							</div>
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">E-commerce</h4>
-								<p class="text-sm sm:text-base">Complete online stores with integrated payment gateways</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Redesigns and improvements</h3>
+								<p class="text-sm sm:text-base">When the current site exists already but feels outdated, weak or poor at generating contact.</p>
 							</div>
 							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
-								<h4 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">SEO Optimization</h4>
-								<p class="text-sm sm:text-base">Your website will appear in the top Google results</p>
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Laravel and custom work</h3>
+								<p class="text-sm sm:text-base">For dashboards, internal workflows, integrations or product work with real business rules.</p>
 							</div>
 						</div>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Why work with a freelance web developer in Barcelona?</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Problems that often show up before hiring</h2>
 						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
-							<li><strong>Personalized attention:</strong> Direct work with you, no intermediaries</li>
-							<li><strong>Competitive prices:</strong> No agency costs, better quality-price ratio</li>
-							<li><strong>Flexibility:</strong> I adapt to your schedule and needs</li>
-							<li><strong>Local knowledge:</strong> I understand the market and needs of businesses in Barcelona</li>
-							<li><strong>Direct communication:</strong> Quick resolution of questions and changes</li>
+							<li><strong>The offer is not clear quickly enough:</strong> visitors arrive but do not understand what the company actually sells.</li>
+							<li><strong>The site feels weaker than the real service quality:</strong> first impressions do not match the business.</li>
+							<li><strong>Contact friction is too high:</strong> the structure, CTA or form flow do not guide people toward action.</li>
+							<li><strong>The technical base is too weak:</strong> performance, technical SEO, structure or maintainability start holding the site back.</li>
 						</ul>
 
-						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Experience working with Barcelona businesses:</h3>
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Why work with a freelancer and avoid extra layers</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Direct contact:</strong> you talk to the same person who scopes and builds the project.</li>
+							<li><strong>Clearer scope:</strong> it becomes easier to see what makes sense now and what should wait.</li>
+							<li><strong>Commercial fit:</strong> the site is treated as a business tool, not just as a visual exercise.</li>
+							<li><strong>Remote collaboration without heavy process:</strong> I can work with Barcelona-based teams without unnecessary overhead.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Indicative pricing and timing</h2>
 						<p class="mb-4 text-sm sm:text-base">
-							I've worked with businesses from various sectors in Barcelona: from restaurants in the 
-							Gothic Quarter to tech startups in 22@, including stores on Passeig de Gràcia 
-							and consultancies in Eixample. Each project is unique and I adapt to the specific needs 
-							of each business.
+							A focused landing page usually starts from EUR 800. A business website often falls between
+							EUR 1,800 and 4,000. If the project needs integrations, dashboards or business logic,
+							the quote is normally phased around scope.
+						</p>
+						<p class="mb-6 text-sm sm:text-base">
+							In terms of timing, a well-defined landing page can move in a matter of days. A business
+							website often takes 2 to 6 weeks. If the priority is an MVP or a substantial improvement,
+							the sensible approach is normally to work in stages.
 						</p>
 						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
 							<a href="/en/web-developer-spain" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Web Developer Spain -></a>
@@ -161,16 +187,15 @@ const alternateUrls = {
 						</div>
 
 						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
-							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Need a web developer for your project?</h3>
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">If you need a web developer in Barcelona, the important part is whether the project is a fit</h3>
 							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
-								If you're looking for a freelance web developer in Barcelona to create your website, 
-								online store or web application, contact me. I'll help you make your digital project a reality.
+								Tell me what you want to improve, what kind of client you want to attract and whether you already have something live. That is usually enough to tell whether you need a landing page, a business website, a redesign or a phased scope.
 							</p>
 							<p class="font-semibold text-sm sm:text-base">
-								✅ Free quote with no commitment<br/>
-								✅ Quick response (24-48h)<br/>
+								✅ Useful first reply within 24 business hours<br/>
+								✅ Initial scope with no commitment<br/>
 								✅ Official invoicing<br/>
-								✅ Satisfaction guarantee
+								✅ Direct implementation without agency layers
 							</p>
 						</div>
 					</div>

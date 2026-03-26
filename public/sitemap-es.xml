@@ -3,100 +3,110 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Home Page -->
   <url>
-    <loc>https://ignacioamatweb.com/</loc>
+    <loc>https://www.ignacioamatweb.com/</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/" />
   </url>
 
   <!-- Páginas de Servicio - Alta Prioridad -->
   <url>
-    <loc>https://ignacioamatweb.com/contratar-desarrollador-full-stack</loc>
+    <loc>https://www.ignacioamatweb.com/contratar-desarrollador-full-stack</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/contratar-desarrollador-full-stack" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/hire-full-stack-web-developer" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/contratar-desarrollador-full-stack" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/contratar-desarrollador-full-stack" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/hire-full-stack-web-developer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/contratar-desarrollador-full-stack" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/diseno-web-empresas</loc>
+    <loc>https://www.ignacioamatweb.com/diseno-web-empresas</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/diseno-web-empresas" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-design-businesses" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/diseno-web-empresas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/diseno-web-empresas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-design-businesses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/diseno-web-empresas" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/desarrollo-web-pymes</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollo-web-pymes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-design-businesses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollo-web-pymes" />
   </url>
 
   <!-- Páginas por Ciudad - Alta Prioridad -->
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-web-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-web-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-web-barcelona" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-developer-barcelona" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollador-web-barcelona" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollador-web-barcelona" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-developer-barcelona" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollador-web-barcelona" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-web-espana</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-web-espana</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-web-espana" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-developer-spain" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollador-web-espana" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollador-web-espana" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-developer-spain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollador-web-espana" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-web-madrid</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-web-madrid</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-web-madrid" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-developer-madrid" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollador-web-madrid" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollador-web-madrid" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-developer-madrid" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollador-web-madrid" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-web-valencia</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-web-valencia</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-web-valencia" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-developer-valencia" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollador-web-valencia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollador-web-valencia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-developer-valencia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollador-web-valencia" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-web-sevilla</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-web-sevilla</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-web-sevilla" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-developer-sevilla" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollador-web-sevilla" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollador-web-sevilla" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-developer-sevilla" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollador-web-sevilla" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/crear-pagina-web-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/crear-pagina-web-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/crear-pagina-web-barcelona" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/create-website-barcelona" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/crear-pagina-web-barcelona" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/crear-pagina-web-barcelona" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/create-website-barcelona" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/crear-pagina-web-barcelona" />
   </url>
 
   <!-- Páginas por Zona de Barcelona -->
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-web-eixample-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-web-eixample-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -104,35 +114,35 @@
 
   <!-- Páginas de Nicho por Sector -->
   <url>
-    <loc>https://ignacioamatweb.com/pagina-web-restaurantes-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/pagina-web-restaurantes-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/pagina-web-clinicas-dentistas-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/pagina-web-clinicas-dentistas-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/pagina-web-abogados-despachos-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/pagina-web-abogados-despachos-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/pagina-web-startups-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/pagina-web-startups-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/pagina-web-tiendas-comercios-barcelona</loc>
+    <loc>https://www.ignacioamatweb.com/pagina-web-tiendas-comercios-barcelona</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -140,253 +150,256 @@
 
   <!-- Páginas de Servicio - Nuevas -->
   <url>
-    <loc>https://ignacioamatweb.com/desarrollador-laravel-freelance</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollador-laravel-freelance</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollador-laravel-freelance" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/freelance-laravel-developer" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollador-laravel-freelance" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollador-laravel-freelance" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/freelance-laravel-developer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollador-laravel-freelance" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/rediseno-web-mejoras</loc>
+    <loc>https://www.ignacioamatweb.com/rediseno-web-mejoras</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/rediseno-web-mejoras" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/website-redesign-improvements" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/rediseno-web-mejoras" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/rediseno-web-mejoras" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/website-redesign-improvements" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/rediseno-web-mejoras" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/desarrollo-aplicacion-web-saas</loc>
+    <loc>https://www.ignacioamatweb.com/desarrollo-aplicacion-web-saas</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/desarrollo-aplicacion-web-saas" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/web-application-saas-development" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/desarrollo-aplicacion-web-saas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/desarrollo-aplicacion-web-saas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/web-application-saas-development" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/desarrollo-aplicacion-web-saas" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/crear-landing-page-profesional</loc>
+    <loc>https://www.ignacioamatweb.com/crear-landing-page-profesional</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/crear-landing-page-profesional" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/professional-landing-page-development" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/crear-landing-page-profesional" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/crear-landing-page-profesional" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/professional-landing-page-development" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/crear-landing-page-profesional" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/mantenimiento-web</loc>
+    <loc>https://www.ignacioamatweb.com/mantenimiento-web</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/mantenimiento-web" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/website-maintenance" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/mantenimiento-web" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/mantenimiento-web" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/website-maintenance" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/mantenimiento-web" />
   </url>
 
   <!-- Páginas AEO -->
   <url>
-    <loc>https://ignacioamatweb.com/preguntas-frecuentes</loc>
+    <loc>https://www.ignacioamatweb.com/preguntas-frecuentes</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/preguntas-frecuentes" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/frequently-asked-questions" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/preguntas-frecuentes" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/preguntas-frecuentes" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/frequently-asked-questions" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/preguntas-frecuentes" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/cuanto-cuesta-pagina-web</loc>
+    <loc>https://www.ignacioamatweb.com/cuanto-cuesta-pagina-web</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/cuanto-cuesta-pagina-web" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/how-much-does-website-cost" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/cuanto-cuesta-pagina-web" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/cuanto-cuesta-pagina-web" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/how-much-does-website-cost" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/cuanto-cuesta-pagina-web" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/como-elegir-desarrollador-web</loc>
+    <loc>https://www.ignacioamatweb.com/como-elegir-desarrollador-web</loc>
     <lastmod>2026-03-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/como-elegir-desarrollador-web" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/how-to-choose-web-developer" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/como-elegir-desarrollador-web" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/como-elegir-desarrollador-web" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/how-to-choose-web-developer" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/como-elegir-desarrollador-web" />
   </url>
 
   <!-- Contacto -->
   <url>
-    <loc>https://ignacioamatweb.com/contact</loc>
+    <loc>https://www.ignacioamatweb.com/contact</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/contact" />
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://ignacioamatweb.com/blog</loc>
+    <loc>https://www.ignacioamatweb.com/blog</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/desarrollador-web-freelance-espana-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/desarrollador-web-freelance-espana-2026</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/desarrollador-web-freelance-espana-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/freelance-web-developer-spain-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/desarrollador-web-freelance-espana-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/desarrollador-web-freelance-espana-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/freelance-web-developer-spain-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/desarrollador-web-freelance-espana-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/how-much-does-it-cost-to-build-website-barcelona-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/how-much-does-it-cost-to-build-website-barcelona-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/cuanto-cuesta-crear-pagina-web-barcelona-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/ia-en-el-desarrollo-web-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/ia-en-el-desarrollo-web-2026</loc>
     <lastmod>2026-03-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/ia-en-el-desarrollo-web-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/ai-in-web-development-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/ia-en-el-desarrollo-web-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/ia-en-el-desarrollo-web-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/ai-in-web-development-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/ia-en-el-desarrollo-web-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/core-web-vitals-guia-empresas-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/core-web-vitals-guia-empresas-2026</loc>
     <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/core-web-vitals-guia-empresas-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/core-web-vitals-guide-businesses-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/core-web-vitals-guia-empresas-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/core-web-vitals-guia-empresas-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/core-web-vitals-guide-businesses-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/core-web-vitals-guia-empresas-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/por-que-empresas-abandonan-wordpress-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/por-que-empresas-abandonan-wordpress-2026</loc>
     <lastmod>2026-03-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/por-que-empresas-abandonan-wordpress-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/why-businesses-are-leaving-wordpress-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/por-que-empresas-abandonan-wordpress-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/por-que-empresas-abandonan-wordpress-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/why-businesses-are-leaving-wordpress-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/por-que-empresas-abandonan-wordpress-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/typescript-2026-estandar-desarrollo-profesional</loc>
+    <loc>https://www.ignacioamatweb.com/blog/typescript-2026-estandar-desarrollo-profesional</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/typescript-2026-estandar-desarrollo-profesional" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/typescript-2026-professional-development-standard" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/typescript-2026-estandar-desarrollo-profesional" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/typescript-2026-estandar-desarrollo-profesional" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/typescript-2026-professional-development-standard" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/typescript-2026-estandar-desarrollo-profesional" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/tendencias-diseno-web-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/tendencias-diseno-web-2026</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/tendencias-diseno-web-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/web-design-trends-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/tendencias-diseno-web-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/tendencias-diseno-web-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/web-design-trends-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/tendencias-diseno-web-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/landing-page-vs-web-corporativa-empresa-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/landing-page-vs-web-corporativa-empresa-2026</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/landing-page-vs-web-corporativa-empresa-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/landing-page-vs-business-website-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/landing-page-vs-web-corporativa-empresa-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/landing-page-vs-web-corporativa-empresa-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/landing-page-vs-business-website-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/landing-page-vs-web-corporativa-empresa-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/errores-web-profesional-no-genera-contactos</loc>
+    <loc>https://www.ignacioamatweb.com/blog/errores-web-profesional-no-genera-contactos</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/errores-web-profesional-no-genera-contactos" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/professional-website-mistakes-no-leads" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/errores-web-profesional-no-genera-contactos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/errores-web-profesional-no-genera-contactos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/professional-website-mistakes-no-leads" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/errores-web-profesional-no-genera-contactos" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/astro-vs-wordpress-web-empresa-2026</loc>
+    <loc>https://www.ignacioamatweb.com/blog/astro-vs-wordpress-web-empresa-2026</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/astro-vs-wordpress-web-empresa-2026" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/astro-vs-wordpress-business-website-2026" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/astro-vs-wordpress-web-empresa-2026" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/astro-vs-wordpress-web-empresa-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/astro-vs-wordpress-business-website-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/astro-vs-wordpress-web-empresa-2026" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/integraciones-web-empresa-ahorrar-tiempo-vender</loc>
+    <loc>https://www.ignacioamatweb.com/blog/integraciones-web-empresa-ahorrar-tiempo-vender</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/integraciones-web-empresa-ahorrar-tiempo-vender" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/business-website-integrations-save-time-sell-better" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/integraciones-web-empresa-ahorrar-tiempo-vender" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/integraciones-web-empresa-ahorrar-tiempo-vender" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/business-website-integrations-save-time-sell-better" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/integraciones-web-empresa-ahorrar-tiempo-vender" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/blog/cuando-empresa-necesita-aplicacion-web-a-medida</loc>
+    <loc>https://www.ignacioamatweb.com/blog/cuando-empresa-necesita-aplicacion-web-a-medida</loc>
     <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/blog/cuando-empresa-necesita-aplicacion-web-a-medida" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/blog/when-company-needs-custom-web-app" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/blog/cuando-empresa-necesita-aplicacion-web-a-medida" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/cuando-empresa-necesita-aplicacion-web-a-medida" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/when-company-needs-custom-web-app" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/cuando-empresa-necesita-aplicacion-web-a-medida" />
   </url>
 
   <!-- Páginas Legales -->
   <url>
-    <loc>https://ignacioamatweb.com/privacidad</loc>
+    <loc>https://www.ignacioamatweb.com/privacidad</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/privacidad" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/privacy" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/privacidad" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/privacidad" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/aviso-legal</loc>
+    <loc>https://www.ignacioamatweb.com/aviso-legal</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/aviso-legal" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/legal-notice" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/aviso-legal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/aviso-legal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/aviso-legal" />
   </url>
 
   <url>
-    <loc>https://ignacioamatweb.com/terminos</loc>
+    <loc>https://www.ignacioamatweb.com/terminos</loc>
     <lastmod>2026-02-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ignacioamatweb.com/terminos" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://ignacioamatweb.com/en/terms" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ignacioamatweb.com/terminos" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/terminos" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/terminos" />
   </url>
 </urlset>

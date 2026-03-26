@@ -171,7 +171,7 @@ export const siteContent: Record<Locale, HomeContent> = {
     meta: {
       title: 'Desarrollador web freelance para webs, redisenos y MVPs | Ignacio Amat',
       description:
-        'Desarrollo landing pages, webs de negocio, productos Laravel y redisenos centrados en conversion, rendimiento y confianza.',
+        'Desarrollo landing pages, webs de negocio, productos Laravel y rediseños centrados en conversión, rendimiento y claridad comercial.',
     },
     nav: {
       servicesHub: 'Servicios',
@@ -190,99 +190,99 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryCta: 'Solicitar propuesta',
     },
     hero: {
-      eyebrow: 'Servicio de desarrollo web · Disponible para nuevos proyectos',
-      title: 'Webs y productos digitales que explican mejor tu oferta y reducen friccion al convertir.',
+      eyebrow: 'Desarrollo web freelance para empresas y equipos que necesitan vender mejor o lanzar antes',
+      title: 'Creo webs, landing pages y MVPs que hacen más fácil entender tu oferta y dar el siguiente paso.',
       subtitle:
-        'Diseno y desarrollo landing pages, webs de empresa, redisenos, productos Laravel y MVPs con criterio comercial, base tecnica solida y una ejecucion directa de principio a fin.',
-      primaryCta: 'Cuentame tu proyecto',
-      secondaryCta: 'Ver trabajos seleccionados',
+        'Trabajo con empresas de servicios, startups y equipos que necesitan una web de negocio, una landing page o un producto inicial con criterio comercial, base técnica sólida y ejecución directa.',
+      primaryCta: 'Solicitar propuesta',
+      secondaryCta: 'Ver servicios',
       primaryHref: '#contacto',
-      secondaryHref: '#proyectos',
+      secondaryHref: '/servicios',
       proof: [
-        'Landing pages y webs de empresa',
-        'Entrega en semanas, no en meses',
-        'Colaboracion directa, sin intermediarios',
+        'Presupuesto orientativo desde 800 EUR',
+        'Respuesta habitual en 24h laborables',
+        'Trabajo directo contigo, sin intermediarios',
       ],
       portraitLabel: 'Ignacio Amat',
-      portraitMeta: ['Desarrollo web para negocios', 'Remoto · Espana e internacional', '5+ anos de experiencia'],
-      availability: 'Webs de empresa, landing pages y MVPs',
+      portraitMeta: ['Webs de negocio, landing pages y MVPs', 'Remoto desde España · ES/EN', 'SEO técnico, rendimiento y conversión'],
+      availability: 'Empresas de servicios, startups y productos B2B',
     },
     trust: {
-      label: 'Por que empresas y startups eligen este servicio',
+      label: 'Qué suele valorar un cliente antes de contratar este servicio',
       items: [
-        'Propuesta clara y alcance definido antes de empezar',
-        'Entrega remota para Espana y clientes internacionales',
-        'Base tecnica orientada a SEO, rendimiento y conversion',
-        'Comunicacion directa y facturacion oficial en Espana',
+        'Alcance y entregables claros antes de empezar',
+        'Contacto directo con quien diseña y desarrolla',
+        'Base técnica pensada para SEO, rendimiento y evolución',
+        'Trabajo remoto con facturación oficial en España',
       ],
     },
     portfolio: {
-      eyebrow: 'Trabajo seleccionado',
-      title: 'Trabajo seleccionado con foco en estructura, mensaje y decision comercial.',
+      eyebrow: 'Tipos de proyecto',
+      title: 'Ejemplos del tipo de webs y productos que suelo desarrollar.',
       description:
-        'La seccion esta preparada para mostrar capturas, enlaces y casos reales sin recurrir a etiquetas vagas. Mientras tanto, ya deja claro el tipo de proyecto, el stack y el objetivo de negocio.',
+        'Más allá de la captura, lo importante es el enfoque: qué problema resuelve cada proyecto, qué stack encaja y qué objetivo de negocio persigue.',
       items: [
         {
-          name: 'Landing de captacion para servicio B2B',
+          name: 'Landing page para captar leads B2B',
           category: 'Landing page',
-          summary: 'Pagina enfocada en reducir friccion, ordenar la oferta y llevar al usuario a una consulta.',
+          summary: 'Página pensada para aclarar la oferta, filtrar mejor el interés y llevar al usuario a una consulta o propuesta.',
           stack: ['Astro', 'Tailwind CSS', 'Form flow', 'SEO on-page'],
-          outcome: 'Mas claridad comercial y menos friccion para pedir una reunion o una propuesta.',
-          detail: 'Preparada para anadir captura final, enlace en vivo y resultado real cuando esos activos esten listos.',
+          outcome: 'Convertir tráfico de campaña o de búsqueda en conversaciones cualificadas.',
+          detail: 'Suele incluir propuesta clara, prueba de confianza, formulario corto y seguimiento básico de conversión.',
           primaryLink: { label: 'Ver servicio de landing pages', href: '/crear-landing-page-profesional' },
           secondaryLink: { label: 'Ir al contacto', href: '#contacto' },
           visual: {
             eyebrow: 'Lead generation',
-            headline: 'Oferta clara + CTA principal + prueba de confianza',
-            caption: 'Espacio listo para screenshot real',
+            headline: 'Oferta clara, prueba de confianza y CTA visible',
+            caption: 'Landing enfocada en una sola acción principal',
             metrics: ['Copy orientado a conversion', 'CTA jerarquizado', 'Diseno responsive'],
             imageSrc: '/images/portfolio/Project1.png',
-            imageAlt: 'Mockup editorial de una landing page orientada a captacion',
+            imageAlt: 'Vista de una landing page orientada a captación de leads',
           },
         },
         {
-          name: 'Web corporativa para empresa de servicios',
+          name: 'Web de negocio para empresa de servicios',
           category: 'Web de negocio',
-          summary: 'Arquitectura pensada para vender mejor servicios, facilitar descubrimiento y dar mas credibilidad.',
+          summary: 'Arquitectura pensada para explicar mejor servicios, generar confianza y hacer más fácil la evaluación inicial.',
           stack: ['Astro', 'CMS-ready', 'Structured data', 'Performance'],
-          outcome: 'Una presencia mas creible para explicar servicios y facilitar la evaluacion inicial.',
-          detail: 'Lista para incorporar captura final, URL publica y un caso breve cuando se puedan mostrar.',
+          outcome: 'Mejor primera impresión y menos fricción antes del contacto.',
+          detail: 'Suele incluir arquitectura de servicios, bloques de confianza, preguntas frecuentes y contacto visible.',
           primaryLink: { label: 'Ver redisenos y mejoras', href: '/rediseno-web-mejoras' },
           secondaryLink: { label: 'Ver servicios', href: '/servicios' },
           visual: {
             eyebrow: 'Business website',
-            headline: 'Servicios visibles, mensajes mas claros y estructura modular',
-            caption: 'Placeholder visual sustituible por mockup final',
+            headline: 'Servicios visibles, mensajes claros y estructura modular',
+            caption: 'Web pensada para explicar mejor una oferta compleja',
             metrics: ['Navegacion ampliada', 'Capas de confianza', 'Base SEO reutilizable'],
             imageSrc: '/images/portfolio/Project2.png',
-            imageAlt: 'Mockup de una web corporativa para empresa de servicios',
+            imageAlt: 'Vista de una web corporativa para empresa de servicios',
           },
         },
         {
-          name: 'Aplicacion web / MVP con Laravel',
+          name: 'MVP o app web con Laravel',
           category: 'Producto digital',
-          summary: 'Base para paneles internos, SaaS sencillos o MVPs que necesitan logica de negocio y evolucion.',
+          summary: 'Base para paneles internos, SaaS sencillos o MVPs que necesitan lógica de negocio y una primera versión útil.',
           stack: ['Laravel', 'React', 'APIs', 'Auth'],
-          outcome: 'Una primera version util con base tecnica mantenible para seguir iterando.',
-          detail: 'Pensada para sumar capturas de producto, modulos clave y un caso de uso real en cuanto esten disponibles.',
+          outcome: 'Lanzar una primera versión funcional sin sobreconstruir desde el inicio.',
+          detail: 'Suele incluir autenticación, panel interno, integraciones y una base clara para iterar por fases.',
           primaryLink: { label: 'Ver desarrollo SaaS y MVP', href: '/desarrollo-aplicacion-web-saas' },
           secondaryLink: { label: 'Ver desarrollo Laravel', href: '/desarrollador-laravel-freelance' },
           visual: {
             eyebrow: 'MVP build',
-            headline: 'Dashboard, autenticacion y operaciones clave',
-            caption: 'Area para screenshot de producto real',
+            headline: 'Dashboard, autenticación y operaciones clave',
+            caption: 'Producto inicial pensado para validar y seguir creciendo',
             metrics: ['Arquitectura escalable', 'Panel interno', 'Integraciones'],
             imageSrc: '/images/portfolio/Project3.png',
-            imageAlt: 'Mockup de dashboard para un producto web o MVP',
+            imageAlt: 'Vista de un dashboard para un producto web o MVP',
           },
         },
       ],
     },
     services: {
       eyebrow: 'Servicios principales',
-      title: 'Servicios pensados para captar, vender mejor o arreglar una base digital que ya no acompana al negocio.',
+      title: 'Servicios pensados para captar mejor, vender con más claridad o arreglar una base digital que ya no acompaña al negocio.',
       description:
-        'La oferta se presenta de forma mas visible y directa para que un visitante entienda rapido si necesita una landing, una web de empresa, un rediseno, soporte continuo o producto a medida.',
+        'La oferta está organizada para que un visitante entienda rápido si necesita una landing, una web de negocio, un rediseño, soporte continuo o desarrollo a medida.',
       items: [
         {
           name: 'Landing pages',
@@ -330,9 +330,9 @@ export const siteContent: Record<Locale, HomeContent> = {
       hubCta: 'Ver todos los servicios',
     },
     cases: {
-      eyebrow: 'Como se traduce en valor',
-      title: 'Problemas recurrentes que suelo resolver en proyectos web y producto.',
-      description: 'Sin inflar cifras: el foco esta en la mejora concreta que el cliente nota en claridad, confianza o capacidad de lanzamiento.',
+      eyebrow: 'Cómo se traduce en valor',
+      title: 'Situaciones habituales en las que una web necesita mejorar de verdad.',
+      description: 'Sin promesas milagro: el foco está en mejorar claridad, confianza, velocidad de salida y calidad del contacto.',
       items: [
         {
           client: 'Empresa de servicios con oferta dispersa',
@@ -356,8 +356,8 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     process: {
       eyebrow: 'Proceso',
-      title: 'Trabajo pensado para reducir incertidumbre y avanzar sin caos.',
-      description: 'No se trata solo de disenar bien. Se trata de alinear negocio, alcance, contenido y ejecucion.',
+      title: 'Una forma de trabajar pensada para reducir incertidumbre y avanzar sin caos.',
+      description: 'No se trata solo de diseñar o programar bien. Se trata de alinear negocio, alcance, contenido y ejecución.',
       steps: [
         {
           title: 'Descubrimiento y enfoque',
@@ -378,8 +378,8 @@ export const siteContent: Record<Locale, HomeContent> = {
       ],
     },
     investment: {
-      eyebrow: 'Inversion',
-      title: 'Rangos orientativos para tomar decisiones sin adivinar.',
+      eyebrow: 'Inversión',
+      title: 'Rangos orientativos para tomar una decisión con más contexto.',
       description:
         'La idea es ordenar expectativas, no encajar todos los proyectos en una tarifa fija. El precio final depende del alcance, el contenido, las integraciones y la complejidad real.',
       cards: [
@@ -410,44 +410,44 @@ export const siteContent: Record<Locale, HomeContent> = {
         },
       ],
       note:
-        'Si el proyecto aun esta verde, primero conviene definir bien el alcance. Es mejor eso que poner un precio sobre una idea todavia difusa.',
+        'Si el proyecto todavía está verde, primero conviene definir alcance y prioridades. Es mejor eso que poner precio sobre una idea todavía difusa.',
     },
     testimonials: {
-      eyebrow: 'Confianza',
-      title: 'Referencias presentadas con mas contexto y menos tono de plantilla.',
+      eyebrow: 'Forma de trabajar',
+      title: 'Lo que debería notar tu equipo al trabajar conmigo.',
       description:
-        'La presentacion esta preparada para incorporar enlaces, perfiles o fuentes verificables sin caer en una capa visual que parezca inventada.',
+        'Si el proyecto encaja, estas son las ventajas prácticas que más suelen importar: claridad, rapidez para decidir y una base fácil de mantener.',
       items: [
         {
           quote:
-            'Entrego el proyecto en tiempo record y la nueva web se noto mucho mas clara y profesional desde el primer dia.',
-          name: 'Maria Garcia',
-          role: 'Directora de Marketing',
-          company: 'TechSolutions Barcelona',
-          context: 'Proyecto de captacion y reposicionamiento visual',
+            'Hablas conmigo desde el principio, definimos alcance y priorizamos lo importante sin pasar por varias capas de gestion.',
+          name: 'Contacto directo',
+          role: 'Menos ruido al empezar',
+          company: '',
+          context: 'Util cuando necesitas contexto técnico y comercial en la misma conversación.',
         },
         {
           quote:
-            'La comunicacion fue directa y muy clara, y el resultado final reflejo exactamente lo que necesitabamos vender.',
-          name: 'Carlos Rodriguez',
-          role: 'CEO',
-          company: 'Consultoria Empresarial',
-          context: 'Web corporativa y ajuste del mensaje comercial',
+            'Antes de construir, dejo claro qué se entrega, qué problema se quiere resolver y qué no compensa complicar todavía.',
+          name: 'Alcance claro',
+          role: 'Menos incertidumbre',
+          company: '',
+          context: 'Especialmente útil en landings, rediseños y primeras fases de producto.',
         },
         {
           quote:
-            'Nos ayudo a convertir una idea dispersa en una web mucho mas creible y util para el negocio.',
-          name: 'Ana Fernandez',
-          role: 'Fundadora',
-          company: 'Startup Tech Poblenou',
-          context: 'Validacion inicial y presencia digital',
+            'La base se plantea para medir, corregir y seguir mejorando sin rehacer todo en la siguiente iteracion.',
+          name: 'Base mantenible',
+          role: 'Pensada para evolucionar',
+          company: '',
+          context: 'Enfocada en SEO técnico, rendimiento, formularios e integraciones útiles.',
         },
       ],
     },
     faq: {
       eyebrow: 'Preguntas frecuentes',
-      title: 'Las dudas que mas frenan el contacto, respondidas sin rodeos.',
-      description: 'La nueva version prioriza objeciones reales: tiempos, precios, mantenimiento, remoto y trabajo internacional.',
+      title: 'Las dudas que más suelen frenar el contacto, respondidas sin rodeos.',
+      description: 'Aquí están las objeciones más habituales: tiempos, precios, rediseños, trabajo remoto y mantenimiento.',
       items: [
         {
           question: 'Cuanto tarda normalmente un proyecto?',
@@ -455,9 +455,9 @@ export const siteContent: Record<Locale, HomeContent> = {
             'Una landing sencilla puede salir en pocos dias. Una web de empresa suele moverse entre 2 y 6 semanas. Un MVP o proyecto Laravel depende del alcance y se plantea por fases.',
         },
         {
-          question: 'Trabajas solo con empresas de Espana?',
+          question: 'Trabajas solo con empresas de España?',
           answer:
-            'No. Trabajo en remoto con clientes de Espana y con equipos internacionales. La version en ingles se ha reescrito precisamente para soportar mejor ese contexto.',
+            'No. Trabajo en remoto con clientes de España y con equipos internacionales. Si el proyecto encaja, puedo colaborar en español o en inglés.',
         },
         {
           question: 'Puedes mejorar una web ya existente?',
@@ -483,26 +483,26 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     contact: {
       eyebrow: 'Contacto',
-      title: 'Si el proyecto encaja, el siguiente paso deberia ser claro.',
+      title: 'Cuéntame el proyecto y te diré cuál es el siguiente paso con más sentido.',
       description:
-        'He reducido la friccion inicial: menos campos visibles, mejor contexto y una forma mas directa de pasar de la idea a una propuesta util.',
+        'Si veo encaje, respondo con una primera orientación, preguntas si hacen falta y una propuesta inicial para avanzar sin perder tiempo.',
       emailLabel: 'Email directo',
       responseLabel: 'Tiempo de respuesta',
-      responseText: 'Normalmente contesto en 24h laborables con una primera orientacion.',
+      responseText: 'Normalmente respondo en 24h laborables con una primera orientación útil.',
       formTitle: 'Cuentame lo esencial',
       optionalFields: 'Campos opcionales',
     },
     footer: {
       summary:
-        'Desarrollo web freelance para webs de negocio, redisenos, Laravel y producto digital con foco en claridad comercial, rendimiento y confianza.',
+        'Desarrollo web freelance para webs de negocio, rediseños, Laravel y producto digital con foco en claridad comercial, rendimiento y contacto cualificado.',
       serviceLinks: [
         { label: 'Servicios', href: '/servicios' },
         { label: 'Landing pages', href: '/crear-landing-page-profesional' },
         { label: 'Laravel freelance', href: '/desarrollador-laravel-freelance' },
-        { label: 'Rediseno web', href: '/rediseno-web-mejoras' },
+        { label: 'Rediseño web', href: '/rediseno-web-mejoras' },
       ],
       resourceLinks: [
-        { label: 'Preguntas frecuentes', href: '/preguntas-frecuentes' },
+        { label: 'Desarrollador web Barcelona', href: '/desarrollador-web-barcelona' },
         { label: 'Guia de precios', href: '/cuanto-cuesta-pagina-web' },
         { label: 'Blog', href: '/blog' },
         { label: 'Contacto', href: '/contact' },
@@ -510,18 +510,18 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     servicesPage: {
       eyebrow: 'Servicios',
-      title: 'Servicios de desarrollo web para empresas que necesitan vender mejor, lanzar antes o corregir una web que ya no responde como deberia.',
+      title: 'Servicios de desarrollo web para empresas que necesitan vender mejor, lanzar antes o corregir una web que ya no está haciendo su trabajo.',
       description:
-        'Este hub reune las lineas principales de trabajo para que la oferta sea visible desde el menu, desde SEO y desde cualquier punto de entrada con intencion comercial.',
+        'Este hub reúne las líneas principales de trabajo para que la oferta sea fácil de entender desde el menú, desde SEO y desde cualquier entrada con intención comercial.',
       ctaPrimary: 'Solicitar propuesta',
-      ctaSecondary: 'Ver trabajos seleccionados',
+      ctaSecondary: 'Ver tipos de proyecto',
     },
   },
   en: {
     meta: {
       title: 'Freelance web developer for business websites, redesigns and MVPs | Ignacio Amat',
       description:
-        'I build landing pages, business websites, Laravel products and redesigns focused on trust, performance and conversion.',
+        'I build landing pages, business websites, Laravel products and redesigns focused on conversion, performance and commercial clarity.',
     },
     nav: {
       servicesHub: 'Services',
@@ -540,99 +540,99 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryCta: 'Request a proposal',
     },
     hero: {
-      eyebrow: 'Web development service · Open to new projects',
-      title: 'Websites and digital products that explain the offer better and make conversion easier.',
+      eyebrow: 'Freelance web development for companies and teams that need to sell more clearly or launch sooner',
+      title: 'I build websites, landing pages and MVPs that make the offer easier to understand and the next step easier to take.',
       subtitle:
-        'I design and build landing pages, business websites, Laravel products, redesigns and MVPs with commercial clarity, strong technical foundations and direct execution from start to launch.',
-      primaryCta: 'Tell me about your project',
-      secondaryCta: 'See selected work',
+        'I work with service companies, startups and product teams that need a business website, a focused landing page or an initial product with commercial clarity, strong technical foundations and direct execution.',
+      primaryCta: 'Request a proposal',
+      secondaryCta: 'See services',
       primaryHref: '#contacto',
-      secondaryHref: '#proyectos',
+      secondaryHref: '/en/services',
       proof: [
-        'Landing pages and business websites',
-        'Delivered in weeks, not months',
+        'Indicative budgets from EUR 800',
+        'Typical reply within 24 business hours',
         'Direct collaboration, no middlemen',
       ],
       portraitLabel: 'Ignacio Amat',
-      portraitMeta: ['Web development for businesses', 'Remote · Spain and international', '5+ years experience'],
-      availability: 'Business websites, landing pages and MVPs',
+      portraitMeta: ['Business websites, landing pages and MVPs', 'Remote from Spain · ES/EN', 'Technical SEO, performance and conversion'],
+      availability: 'Service companies, startups and B2B products',
     },
     trust: {
-      label: 'Why companies and startups choose this service',
+      label: 'What a good-fit client usually wants before hiring',
       items: [
-        'Clear proposal and defined scope before any work begins',
-        'Remote delivery for Spain and international clients',
-        'SEO, performance and conversion built into the baseline',
-        'Direct communication and official invoicing in Spain',
+        'Clear scope and deliverables before build work starts',
+        'Direct contact with the person who designs and builds',
+        'A technical base ready for SEO, performance and iteration',
+        'Remote delivery with official invoicing from Spain',
       ],
     },
     portfolio: {
-      eyebrow: 'Selected work',
-      title: 'Selected work focused on structure, messaging and commercial decision-making.',
+      eyebrow: 'Project types',
+      title: 'Examples of the kind of websites and products I usually build.',
       description:
-        'The section is ready for real screenshots, links and case studies instead of vague labels. For now, it already shows the kind of project, stack and business goal behind each build.',
+        'Beyond the screenshot, the important part is the approach: what problem each project solves, what stack fits and what business goal it supports.',
       items: [
         {
-          name: 'Lead generation landing page for a B2B service',
+          name: 'Landing page for B2B lead generation',
           category: 'Landing page',
-          summary: 'A focused page meant to cut friction, sharpen the offer and move users toward one high-intent action.',
+          summary: 'A focused page built to clarify the offer, filter intent and move visitors toward one strong next step.',
           stack: ['Astro', 'Tailwind CSS', 'Form flow', 'On-page SEO'],
-          outcome: 'Better commercial clarity and less friction before someone asks for a proposal or call.',
-          detail: 'Ready for a final screenshot, live URL and stronger proof once those assets are available.',
+          outcome: 'Turn campaign or search traffic into qualified conversations.',
+          detail: 'Usually includes a clear offer, trust-building sections, a short form and basic conversion tracking.',
           primaryLink: { label: 'See landing page service', href: '/en/professional-landing-page-development' },
           secondaryLink: { label: 'Go to contact', href: '#contacto' },
           visual: {
             eyebrow: 'Lead generation',
-            headline: 'Clear offer + primary CTA + trust layer',
-            caption: 'Drop-in area for a real screenshot',
+            headline: 'Clear offer, trust layer and visible CTA',
+            caption: 'Landing page shaped around one primary action',
             metrics: ['Conversion-led copy', 'Stronger CTA hierarchy', 'Responsive layout'],
             imageSrc: '/images/portfolio/Project1.png',
-            imageAlt: 'Editorial mockup of a lead generation landing page',
+            imageAlt: 'View of a landing page focused on lead generation',
           },
         },
         {
           name: 'Business website for a service company',
           category: 'Business website',
-          summary: 'Information architecture built to explain the offer better, surface services and increase trust fast.',
+          summary: 'Information architecture built to explain services better, build trust faster and improve first evaluation.',
           stack: ['Astro', 'CMS-ready', 'Structured data', 'Performance'],
-          outcome: 'A more credible web presence that helps prospects understand and trust the offer faster.',
-          detail: 'Prepared for a real screenshot, live URL and a short case-study summary.',
+          outcome: 'A stronger first impression and less friction before contact.',
+          detail: 'Usually includes service architecture, trust sections, FAQs and a more visible contact path.',
           primaryLink: { label: 'See redesign service', href: '/en/website-redesign-improvements' },
           secondaryLink: { label: 'See all services', href: '/en/services' },
           visual: {
             eyebrow: 'Business website',
             headline: 'Visible services, clearer messaging and modular sections',
-            caption: 'Replaceable mockup placeholder',
+            caption: 'Business website designed for a more complex offer',
             metrics: ['Expanded navigation', 'Trust sections', 'Reusable SEO base'],
             imageSrc: '/images/portfolio/Project2.png',
-            imageAlt: 'Mockup of a service business website',
+            imageAlt: 'View of a business website for a service company',
           },
         },
         {
-          name: 'Laravel-based MVP or internal product',
+          name: 'Laravel-based MVP or web app',
           category: 'Digital product',
-          summary: 'A practical base for dashboards, internal tools or MVPs that need real business logic.',
+          summary: 'A practical base for dashboards, internal tools or MVPs that need actual business logic and a useful first release.',
           stack: ['Laravel', 'React', 'APIs', 'Auth'],
-          outcome: 'A useful first release with a maintainable base for future product iterations.',
-          detail: 'Ready for dashboard captures, module highlights and a proper case-study link.',
+          outcome: 'Launch a useful first version without overbuilding from day one.',
+          detail: 'Usually includes auth, an internal panel, key integrations and a phased base for future iterations.',
           primaryLink: { label: 'See SaaS and MVP development', href: '/en/web-application-saas-development' },
           secondaryLink: { label: 'See Laravel development', href: '/en/freelance-laravel-developer' },
           visual: {
             eyebrow: 'MVP build',
             headline: 'Dashboard, auth and core operations',
-            caption: 'Area reserved for a product screenshot',
+            caption: 'Initial product built to validate and improve',
             metrics: ['Scalable foundation', 'Internal tooling', 'Integrations'],
             imageSrc: '/images/portfolio/Project3.png',
-            imageAlt: 'Mockup of a product dashboard for an MVP or internal tool',
+            imageAlt: 'View of a dashboard for an MVP or internal tool',
           },
         },
       ],
     },
     services: {
       eyebrow: 'Core services',
-      title: 'Services designed to help companies capture demand, sell more clearly or fix a digital setup that is no longer doing its job.',
+      title: 'Services built to help companies capture demand, sell more clearly or fix a digital setup that is no longer doing its job.',
       description:
-        'The offer is surfaced more directly so visitors can tell quickly whether they need a landing page, a business website, a redesign, ongoing support or product development.',
+        'The offer is organized so visitors can quickly tell whether they need a landing page, a business website, a redesign, ongoing support or product development.',
       items: [
         {
           name: 'Landing pages',
@@ -681,8 +681,8 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     cases: {
       eyebrow: 'How this creates value',
-      title: 'Common problems this type of work is meant to solve.',
-      description: 'No inflated metrics. The emphasis is on the concrete improvement clients feel in clarity, trust or launch speed.',
+      title: 'Typical situations where a website genuinely needs to improve.',
+      description: 'No inflated promises. The focus is on clarity, trust, launch speed and the quality of the leads that come through.',
       items: [
         {
           client: 'Service company with a scattered offer',
@@ -706,7 +706,7 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     process: {
       eyebrow: 'Process',
-      title: 'A way of working built to reduce uncertainty and avoid project chaos.',
+      title: 'A way of working designed to reduce uncertainty and avoid project chaos.',
       description: 'Good design is only part of it. Business goals, scope, content and implementation need to align.',
       steps: [
         {
@@ -729,7 +729,7 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     investment: {
       eyebrow: 'Investment',
-      title: 'Indicative ranges that help frame the work without turning it into a rigid rate card.',
+      title: 'Indicative ranges that help frame the work with more context.',
       description:
         'The goal is to set expectations honestly, not squeeze every project into a fixed box. Final pricing depends on scope, content, integrations and actual complexity.',
       cards: [
@@ -760,44 +760,44 @@ export const siteContent: Record<Locale, HomeContent> = {
         },
       ],
       note:
-        'If the brief is still fuzzy, the right first step is to define scope properly. That is better than pretending certainty where there is none.',
+        'If the brief is still fuzzy, the right first step is to define scope and priorities properly. That is better than pretending certainty where there is none.',
     },
     testimonials: {
-      eyebrow: 'Trust',
-      title: 'References presented with stronger context and less template energy.',
+      eyebrow: 'Working together',
+      title: 'What your team should notice when the project is a good fit.',
       description:
-        'The presentation is ready for profile links, company references or external sources without leaning on fake-looking visual proof.',
+        'If the project is a fit, these are usually the practical benefits that matter most: clarity, faster decisions and a base that is easy to maintain.',
       items: [
         {
           quote:
-            'The project moved quickly and the new website felt sharper and more professional from day one.',
-          name: 'Maria Garcia',
-          role: 'Marketing Director',
-          company: 'TechSolutions Barcelona',
-          context: 'Lead generation website and visual repositioning',
+            'You work directly with me from the start, so scope, priorities and execution stay in the same conversation instead of being split across layers.',
+          name: 'Direct contact',
+          role: 'Less noise at the start',
+          company: '',
+          context: 'Useful when you need commercial and technical context in the same discussion.',
         },
         {
           quote:
-            'Communication was direct, practical and the final result reflected what we actually needed to sell.',
-          name: 'Carlos Rodriguez',
-          role: 'CEO',
-          company: 'Business Consulting',
-          context: 'Business website and messaging refinement',
+            'Before building, I make the deliverables, the objective and the sensible level of complexity clear so the project can move with less uncertainty.',
+          name: 'Clear scope',
+          role: 'Less uncertainty',
+          company: '',
+          context: 'Especially valuable for landing pages, redesigns and early product phases.',
         },
         {
           quote:
-            'He helped us turn a scattered idea into a much more credible and useful digital presence.',
-          name: 'Ana Fernandez',
-          role: 'Founder',
-          company: 'Startup Tech Poblenou',
-          context: 'Early validation and startup web presence',
+            'The base is built to be measured, improved and extended later without having to rebuild everything in the next iteration.',
+          name: 'Maintainable base',
+          role: 'Designed to evolve',
+          company: '',
+          context: 'Focused on technical SEO, performance, forms and useful integrations.',
         },
       ],
     },
     faq: {
       eyebrow: 'Frequently asked questions',
-      title: 'The questions that usually block contact, answered directly.',
-      description: 'The new version prioritizes real objections: timing, pricing, redesigns, remote work and international fit.',
+      title: 'The questions that most often block contact, answered directly.',
+      description: 'These are the usual objections: timing, pricing, redesigns, remote work and maintenance.',
       items: [
         {
           question: 'How long does a project usually take?',
@@ -807,7 +807,7 @@ export const siteContent: Record<Locale, HomeContent> = {
         {
           question: 'Do you only work with companies in Spain?',
           answer:
-            'No. I work remotely with companies in Spain and international teams. The English version has been rewritten specifically to support that better.',
+            'No. I work remotely with companies in Spain and international teams. If the project is a fit, I can work in English or Spanish.',
         },
         {
           question: 'Can you improve an existing website?',
@@ -833,18 +833,18 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     contact: {
       eyebrow: 'Contact',
-      title: 'If the project is a fit, the next step should be straightforward.',
+      title: 'Tell me about the project and I will tell you the most sensible next step.',
       description:
-        'The first contact flow is lighter now: fewer visible fields, better context and a clearer way to move from idea to practical proposal.',
+        'If there is a fit, I reply with an initial direction, clarifying questions when needed and a practical proposal outline so you can decide quickly.',
       emailLabel: 'Direct email',
       responseLabel: 'Response time',
-      responseText: 'I usually reply within 24 business hours with an initial direction.',
+      responseText: 'I usually reply within 24 business hours with a useful first direction.',
       formTitle: 'Share the essentials',
       optionalFields: 'Optional details',
     },
     footer: {
       summary:
-        'Freelance developer for business websites, redesigns, Laravel and product work with a strong focus on trust, clarity and performance.',
+        'Freelance developer for business websites, redesigns, Laravel and product work with a strong focus on commercial clarity, performance and qualified enquiries.',
       serviceLinks: [
         { label: 'Services', href: '/en/services' },
         { label: 'Landing pages', href: '/en/professional-landing-page-development' },
@@ -852,7 +852,7 @@ export const siteContent: Record<Locale, HomeContent> = {
         { label: 'Website redesign', href: '/en/website-redesign-improvements' },
       ],
       resourceLinks: [
-        { label: 'FAQ', href: '/en/frequently-asked-questions' },
+        { label: 'Web developer Barcelona', href: '/en/web-developer-barcelona' },
         { label: 'Pricing guide', href: '/en/how-much-does-website-cost' },
         { label: 'Blog', href: '/en/blog' },
         { label: 'Contact', href: '/en/contact' },
@@ -862,9 +862,9 @@ export const siteContent: Record<Locale, HomeContent> = {
       eyebrow: 'Services',
       title: 'Web development services for companies that need to sell more clearly, launch faster or fix a site that is no longer doing its job.',
       description:
-        'This hub keeps the offer visible from navigation, SEO and service discovery instead of hiding the most valuable pages deep in the site.',
+        'This hub keeps the offer easy to understand from navigation, SEO and service discovery instead of hiding the most valuable pages deep in the site.',
       ctaPrimary: 'Request a proposal',
-      ctaSecondary: 'See selected work',
+      ctaSecondary: 'See project types',
     },
   },
 };

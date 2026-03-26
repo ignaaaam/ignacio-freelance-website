@@ -1,5 +1,32 @@
 {
+  "redirects": [
+    {
+      "source": "/en/web-development-smes",
+      "destination": "https://www.ignacioamatweb.com/en/web-design-businesses",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ignacioamatweb.com"
+        }
+      ],
+      "destination": "https://www.ignacioamatweb.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
+    {
+      "source": "/api/contact",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

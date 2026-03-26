@@ -17,12 +17,12 @@ const content = siteContent[locale].testimonials;
     <div class="testimonial-grid">
       {content.items.map((item) => (
         <article class="testimonial-card surface-card" data-sr>
-          <p class="testimonial-card__quote">"{item.quote}"</p>
+          <p class="testimonial-card__quote">{item.quote}</p>
           <div class="testimonial-card__meta">
             <div class="testimonial-card__avatar">{item.name[0]}</div>
             <div>
               <strong>{item.name}</strong>
-              <p>{item.role} · {item.company}</p>
+              <p>{item.company ? `${item.role} · ${item.company}` : item.role}</p>
               <span>{item.context}</span>
             </div>
           </div>
