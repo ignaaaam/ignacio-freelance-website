@@ -64,14 +64,16 @@ const blogSchema = {
           {posts.map((post) => (
             <article class="blog-card surface-card" data-sr>
               <a href={getBlogPostUrl(locale, post.slug)} class="blog-card__link">
-                <img
-                  src={post.data.heroImage}
-                  alt={post.data.heroImageAlt}
-                  class="blog-card__image"
-                  loading="lazy"
-                  width="1200"
-                  height="900"
-                />
+                <div class="blog-card__media">
+                  <img
+                    src={post.data.heroImage}
+                    alt={post.data.heroImageAlt}
+                    class="blog-card__image"
+                    loading="lazy"
+                    width="1200"
+                    height="750"
+                  />
+                </div>
                 <div class="blog-card__content">
                   <div class="blog-card__meta">
                     <span class="blog-card__badge">{post.data.category}</span>
@@ -151,15 +153,26 @@ const blogSchema = {
     align-items: start;
   }
 
-  .blog-card__image {
+  .blog-card__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 100%;
     min-height: 220px;
     aspect-ratio: 16 / 10;
+    overflow: hidden;
     border-radius: 0.95rem;
-    object-fit: cover;
     border: 1px solid rgba(74, 54, 41, 0.12);
     background: rgba(255, 255, 255, 0.68);
+  }
+
+  .blog-card__image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   .blog-card__content {
@@ -229,9 +242,8 @@ const blogSchema = {
       gap: 0.8rem;
     }
 
-    .blog-card__image {
+    .blog-card__media {
       min-height: 0;
-      aspect-ratio: 16 / 10;
     }
 
     .blog-cta {
