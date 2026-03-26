@@ -15,9 +15,9 @@ keywords:
   - "automatización ia 2026"
   - "openclaw vs autogpt"
   - "mejores agentes ia"
-heroImage: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
-heroImageAlt: "Robot humanoide blanco sobre fondo oscuro representando agentes de inteligencia artificial"
-heroImageCredit: "Photo by Alex Knight on Unsplash"
+heroImage: "https://openclaw.ai/blog/openclaw-logo-text.png"
+heroImageAlt: "Logo oficial de OpenClaw, el agente de IA open source más popular de 2026"
+heroImageCredit: "OpenClaw — openclaw.ai"
 draft: false
 relatedServices:
   - "saas"

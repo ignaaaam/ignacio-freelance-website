@@ -63,7 +63,11 @@ heroImageAlt: "Descriptive alt text for the image"
 heroImageCredit: "Photo by {Photographer name} on Unsplash"
 ```
 
-To find a suitable image: search Unsplash (unsplash.com) for a relevant keyword, pick a high-quality photo, and copy its ID from the URL (e.g. `unsplash.com/photos/abc123` → ID is `abc123`). Always include `heroImageAlt` with a meaningful description (for SEO and accessibility) and `heroImageCredit` with the photographer's name.
+To find a suitable image:
+- **For articles about specific brands/tools/companies** (e.g. a product launch, shutdown, or tool review): search Google or the product's official site/GitHub for their logo or og:image. Use the direct public URL. Credit the brand in `heroImageCredit`.
+- **For general topic articles**: search Unsplash (unsplash.com) for a relevant keyword, pick a high-quality photo, and copy its ID from the URL (e.g. `unsplash.com/photos/abc123` → ID is `abc123`). Use format `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1200&q=80`.
+
+Always include `heroImageAlt` with a meaningful description (for SEO and accessibility) and `heroImageCredit` crediting the source.
 
 ### Styling
 
