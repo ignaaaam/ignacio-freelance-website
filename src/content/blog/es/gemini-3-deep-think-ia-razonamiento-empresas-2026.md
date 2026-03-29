@@ -4,7 +4,7 @@ description: "Google activó Gemini 3 Deep Think para empresas y suscriptores Ul
 slug: "gemini-3-deep-think-ia-razonamiento-empresas-2026"
 locale: "es"
 group: "gemini-3-deep-think-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-26
 category: "Tendencias"
 readTime: "8 min lectura"
 keywords:

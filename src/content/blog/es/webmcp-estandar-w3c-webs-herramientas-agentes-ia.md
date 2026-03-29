@@ -4,7 +4,7 @@ description: "Chrome 146 lanzó WebMCP, el estándar W3C que permite a agentes d
 slug: "webmcp-estandar-w3c-webs-herramientas-agentes-ia"
 locale: "es"
 group: "webmcp-w3c-standard-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-23
 category: "Herramientas"
 readTime: "10 min lectura"
 keywords:

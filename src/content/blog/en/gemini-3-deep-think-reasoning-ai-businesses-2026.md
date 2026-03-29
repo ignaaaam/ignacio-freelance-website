@@ -4,7 +4,7 @@ description: "Google activated Gemini 3 Deep Think for Ultra subscribers and ent
 slug: "gemini-3-deep-think-reasoning-ai-businesses-2026"
 locale: "en"
 group: "gemini-3-deep-think-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-26
 category: "Trends"
 readTime: "8 min read"
 keywords:

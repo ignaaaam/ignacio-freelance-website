@@ -4,7 +4,7 @@ description: "Firefox 149 llegó el 24 de marzo con popover=hint, font-family: m
 slug: "firefox-149-popover-hint-fin-tooltips-javascript"
 locale: "es"
 group: "firefox-149-popover-hint-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-24
 category: "Herramientas"
 readTime: "8 min lectura"
 keywords:

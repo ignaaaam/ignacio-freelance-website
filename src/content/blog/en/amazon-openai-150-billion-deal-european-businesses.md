@@ -4,7 +4,7 @@ description: "Amazon invested $50B in OpenAI and committed $100B in cloud comput
 slug: "amazon-openai-150-billion-deal-european-businesses"
 locale: "en"
 group: "amazon-openai-partnership-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-22
 category: "Trends"
 readTime: "9 min read"
 keywords:

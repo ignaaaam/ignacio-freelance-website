@@ -4,7 +4,7 @@ description: "Firefox 149 shipped March 24 with stable popover=hint, font-family
 slug: "firefox-149-popover-hint-end-javascript-tooltips"
 locale: "en"
 group: "firefox-149-popover-hint-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-24
 category: "Tools"
 readTime: "8 min read"
 keywords:

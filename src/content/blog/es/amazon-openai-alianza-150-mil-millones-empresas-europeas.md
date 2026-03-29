@@ -4,7 +4,7 @@ description: "Amazon invierte 50.000 millones en OpenAI y compromete 100.000 mil
 slug: "amazon-openai-alianza-150-mil-millones-empresas-europeas"
 locale: "es"
 group: "amazon-openai-partnership-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-22
 category: "Tendencias"
 readTime: "9 min lectura"
 keywords:

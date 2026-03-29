@@ -4,7 +4,7 @@ description: "OpenAI publicó que GPT-5.4 iguala o supera a profesionales humano
 slug: "gpt-54-supera-profesionales-que-significa-para-tu-empresa"
 locale: "es"
 group: "gpt-54-professional-parity-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-25
 category: "Tendencias"
 readTime: "9 min lectura"
 keywords:

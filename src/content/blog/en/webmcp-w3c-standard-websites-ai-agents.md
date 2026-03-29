@@ -4,7 +4,7 @@ description: "Chrome 146 shipped WebMCP, the W3C standard allowing AI agents to 
 slug: "webmcp-w3c-standard-websites-ai-agents"
 locale: "en"
 group: "webmcp-w3c-standard-2026"
-publishedDate: 2026-03-29
+publishedDate: 2026-03-23
 category: "Tools"
 readTime: "10 min read"
 keywords:
