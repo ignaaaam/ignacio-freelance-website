@@ -187,6 +187,76 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/contact" />
   </url>
 
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/sora-openai-shutdown-future-ai-video</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/cierre-sora-openai-futuro-video-ia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/sora-openai-shutdown-future-ai-video" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/cierre-sora-openai-futuro-video-ia" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/openclaw-ai-agent-state-alternatives</loc>
+    <lastmod>2026-03-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/openclaw-agente-ia-estado-actual-alternativas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/openclaw-ai-agent-state-alternatives" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/openclaw-agente-ia-estado-actual-alternativas" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/gemini-3-deep-think-reasoning-ai-businesses-2026</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/gemini-3-deep-think-ia-razonamiento-empresas-2026" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/gemini-3-deep-think-reasoning-ai-businesses-2026" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/gemini-3-deep-think-ia-razonamiento-empresas-2026" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/gpt-54-matches-professionals-what-it-means-for-your-business</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/gpt-54-supera-profesionales-que-significa-para-tu-empresa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/gpt-54-matches-professionals-what-it-means-for-your-business" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/gpt-54-supera-profesionales-que-significa-para-tu-empresa" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/amazon-openai-150-billion-deal-european-businesses</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/amazon-openai-alianza-150-mil-millones-empresas-europeas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/amazon-openai-150-billion-deal-european-businesses" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/amazon-openai-alianza-150-mil-millones-empresas-europeas" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/webmcp-w3c-standard-websites-ai-agents</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/webmcp-estandar-w3c-webs-herramientas-agentes-ia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/webmcp-w3c-standard-websites-ai-agents" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/webmcp-estandar-w3c-webs-herramientas-agentes-ia" />
+  </url>
+
+  <url>
+    <loc>https://www.ignacioamatweb.com/en/blog/firefox-149-popover-hint-end-javascript-tooltips</loc>
+    <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.ignacioamatweb.com/blog/firefox-149-popover-hint-fin-tooltips-javascript" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ignacioamatweb.com/en/blog/firefox-149-popover-hint-end-javascript-tooltips" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ignacioamatweb.com/blog/firefox-149-popover-hint-fin-tooltips-javascript" />
+  </url>
+
   <!-- Legal Pages -->
   <url>
     <loc>https://www.ignacioamatweb.com/en/privacy</loc>
