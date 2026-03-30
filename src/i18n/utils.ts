@@ -9,7 +9,7 @@ const translations = {
   es,
 };
 
-const routeMappings: Record<string, { es: string; en: string }> = {
+const routeMappings: Record<string, { es: string; en?: string }> = {
   '/': { es: '/', en: '/en/' },
   '/contact': { es: '/contact', en: '/en/contact' },
   '/privacidad': { es: '/privacidad', en: '/en/privacy' },
@@ -22,7 +22,7 @@ const routeMappings: Record<string, { es: string; en: string }> = {
   '/desarrollador-web-valencia': { es: '/desarrollador-web-valencia', en: '/en/web-developer-valencia' },
   '/desarrollador-web-sevilla': { es: '/desarrollador-web-sevilla', en: '/en/web-developer-sevilla' },
   '/diseno-web-empresas': { es: '/diseno-web-empresas', en: '/en/web-design-businesses' },
-  '/desarrollo-web-pymes': { es: '/desarrollo-web-pymes', en: '/en/web-design-businesses' },
+  '/desarrollo-web-pymes': { es: '/desarrollo-web-pymes' },
   '/contratar-desarrollador-full-stack': { es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' },
   '/servicios': { es: '/servicios', en: '/en/services' },
   // Phase 2 — Service pages
@@ -35,6 +35,13 @@ const routeMappings: Record<string, { es: string; en: string }> = {
   '/preguntas-frecuentes': { es: '/preguntas-frecuentes', en: '/en/frequently-asked-questions' },
   '/cuanto-cuesta-pagina-web': { es: '/cuanto-cuesta-pagina-web', en: '/en/how-much-does-website-cost' },
   '/como-elegir-desarrollador-web': { es: '/como-elegir-desarrollador-web', en: '/en/how-to-choose-web-developer' },
+  // ES-only pages (no EN counterpart)
+  '/desarrollador-web-eixample-barcelona': { es: '/desarrollador-web-eixample-barcelona' },
+  '/pagina-web-restaurantes-barcelona': { es: '/pagina-web-restaurantes-barcelona' },
+  '/pagina-web-clinicas-dentistas-barcelona': { es: '/pagina-web-clinicas-dentistas-barcelona' },
+  '/pagina-web-abogados-despachos-barcelona': { es: '/pagina-web-abogados-despachos-barcelona' },
+  '/pagina-web-startups-barcelona': { es: '/pagina-web-startups-barcelona' },
+  '/pagina-web-tiendas-comercios-barcelona': { es: '/pagina-web-tiendas-comercios-barcelona' },
 };
 
 function normalizePath(path: string): string {
@@ -100,7 +107,7 @@ export function getLanguageSwitchUrls(url: URL): { en: string; es: string } {
   const path = normalizePath(url.pathname);
   const routePair = findRoutePair(path);
   if (routePair) {
-    return routePair;
+    return { es: routePair.es, en: routePair.en ?? '/en/' };
   }
 
   const from = url.searchParams.get('from');

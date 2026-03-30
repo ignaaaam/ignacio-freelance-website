@@ -320,7 +320,7 @@ export const POST: APIRoute = async ({ request }) => {
   const headers = {
     'Content-Type': 'application/json',
     'X-Robots-Tag': 'noindex, nofollow',
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'https://www.ignacioamatweb.com',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   };
@@ -341,12 +341,12 @@ export const POST: APIRoute = async ({ request }) => {
       return new Response(JSON.stringify({ message: t.success }), { status: 200, headers });
     }
 
-    const safeName = String(data.name || '').trim();
-    const safeEmail = String(data.email || '').trim();
-    const safeType = String(data.type || '').trim();
-    const safeMessage = String(data.message || '').trim();
-    const safeCompany = String(data.company || '').trim();
-    const safeBudget = String(data.budget || '').trim();
+    const safeName = String(data.name || '').trim().slice(0, 200);
+    const safeEmail = String(data.email || '').trim().slice(0, 320);
+    const safeType = String(data.type || '').trim().slice(0, 100);
+    const safeMessage = String(data.message || '').trim().slice(0, 10000);
+    const safeCompany = String(data.company || '').trim().slice(0, 200);
+    const safeBudget = String(data.budget || '').trim().slice(0, 100);
 
     if (!safeName || !safeEmail || !safeType || !safeMessage) {
       return new Response(JSON.stringify({ error: t.missingFields }), { status: 400, headers });

@@ -101,8 +101,6 @@ Disallow: /
 
 # Sitemap locations
 Sitemap: https://www.ignacioamatweb.com/sitemap-index.xml
-Sitemap: https://www.ignacioamatweb.com/sitemap-es.xml
-Sitemap: https://www.ignacioamatweb.com/sitemap-en.xml
 
 # Host directive (for Yandex and other engines)
 Host: www.ignacioamatweb.com

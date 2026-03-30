@@ -15,10 +15,9 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const translatedEntry = await getTranslatedBlogEntry(entry);
 const relatedPosts = await getRelatedBlogEntries(entry);
-const alternateUrls = {
-  es: getBlogPostUrl('es', entry.slug),
-  en: translatedEntry ? getBlogPostUrl('en', translatedEntry.slug) : '/en/blog',
-};
+const alternateUrls = translatedEntry
+  ? { es: getBlogPostUrl('es', entry.slug), en: getBlogPostUrl('en', translatedEntry.slug) }
+  : { es: getBlogPostUrl('es', entry.slug) };
 ---
 
 <BlogPostTemplate entry={entry} relatedPosts={relatedPosts} alternateUrls={alternateUrls} />

@@ -50,10 +50,13 @@ const homeLabel = lang === 'en' ? 'Home' : 'Inicio';
 const hasCustomBreadcrumb = additionalSchemas.some((schema) => schema?.['@type'] === 'BreadcrumbList');
 const xDefaultHref = alternateUrls.es ?? alternateUrls.en ?? currentPath;
 
-// Build structured data for different page types
-const structuredData: any = {
+const isHomepage = currentPath === '/' || currentPath === '/en/';
+
+// Build structured data for different page types.
+// Articles are skipped — BlogPostTemplate provides a richer BlogPosting schema via additionalSchemas.
+const structuredData: any = type !== 'article' ? {
 	"@context": "https://schema.org",
-	"@type": type === 'website' ? 'WebSite' : 'Article',
+	"@type": isHomepage ? 'WebSite' : 'WebPage',
 	"url": canonical,
 	"name": title,
 	"description": description,
@@ -64,19 +67,13 @@ const structuredData: any = {
 	},
 	"inLanguage": lang === 'es' ? 'es-ES' : 'en-US',
 	"image": image,
-	"publisher": type === 'website' ? {
+	"publisher": isHomepage ? {
 		"@type": "Organization",
 		"name": "Ignacio Amat",
 		"url": baseUrl,
 		"logo": { "@type": "ImageObject", "url": `${baseUrl}/brand-mark.svg` }
 	} : undefined
-};
-
-// Add publishedDate for articles
-if (type === 'article' && publishedDate) {
-	structuredData.datePublished = publishedDate;
-	structuredData.dateModified = publishedDate;
-}
+} : null;
 
 // Organization structured data
 const organizationSchema = {
@@ -84,7 +81,7 @@ const organizationSchema = {
 	"@type": "Organization",
 	"name": "Ignacio Amat Web Development",
 	"url": baseUrl,
-	"logo": `${baseUrl}/brand-mark.svg`,
+	"logo": { "@type": "ImageObject", "url": `${baseUrl}/brand-mark.svg` },
 	"description": lang === 'es'
 		? "Desarrollo web freelance profesional. Webs corporativas, landing pages, aplicaciones a medida y proyectos Laravel. Disponible en España e internacional."
 		: "Professional freelance web development. Corporate websites, landing pages, custom web apps and Laravel projects. Available in Spain and internationally.",
@@ -132,7 +129,7 @@ const breadcrumbSchema = !hasCustomBreadcrumb && currentPath !== '/' && currentP
 } : null;
 
 // JSON-LD structured data
-const jsonLd = JSON.stringify(structuredData);
+const jsonLd = structuredData ? JSON.stringify(structuredData) : null;
 const orgJsonLd = JSON.stringify(organizationSchema);
 const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : null;
 ---
@@ -147,7 +144,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		
 		<!-- Primary Meta Tags -->
 		<title>{title}</title>
-		<meta name="title" content={title} />
+
 		<meta name="description" content={description} />
 		<meta name="author" content={author} />
 		<meta name="keywords" content={keywords.join(', ')} />
@@ -161,7 +158,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta property="og:image" content={image} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content={title} />
+		<meta property="og:image:alt" content={lang === 'es' ? 'Ignacio Amat — Desarrollador Web Freelance' : 'Ignacio Amat — Freelance Web Developer'} />
 		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
 		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
 		<meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
@@ -175,7 +172,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={image} />
-		<meta name="twitter:image:alt" content={title} />
+		<meta name="twitter:image:alt" content={lang === 'es' ? 'Ignacio Amat — Desarrollador Web Freelance' : 'Ignacio Amat — Freelance Web Developer'} />
 		<meta name="twitter:domain" content="ignacioamatweb.com" />
 		<meta name="twitter:url" content={canonical} />
 
@@ -203,7 +200,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<meta name="theme-color" content="#c06a2a" />
 		
 		<!-- RSS Feed -->
-		<link rel="alternate" type="application/rss+xml" title={lang === 'es' ? 'Blog | Ignacio Amat' : 'Blog | Ignacio Amat'} href={`${baseUrl}/rss.xml`} />
+		<link rel="alternate" type="application/rss+xml" title={lang === 'es' ? 'Blog | Ignacio Amat — Desarrollador Web Freelance' : 'Blog | Ignacio Amat — Freelance Web Developer'} href={lang === 'en' ? `${baseUrl}/en/rss.xml` : `${baseUrl}/rss.xml`} />
 
 		<!-- Preconnect to required origins -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -212,8 +209,8 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
 
 		<!-- Structured Data -->
-		<script is:inline type="application/ld+json" set:html={jsonLd} />
-		<script is:inline type="application/ld+json" set:html={orgJsonLd} />
+		{jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
+		{isHomepage && <script is:inline type="application/ld+json" set:html={orgJsonLd} />}
 		{breadcrumbJsonLd && <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />}
 		{additionalSchemas.map(schema => (
 			<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />

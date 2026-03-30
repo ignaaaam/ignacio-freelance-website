@@ -40,10 +40,10 @@ Props: `title` (required), `description`, `lang`, `canonicalUrl`, `image`, `keyw
 
 ### Contact API
 
-`src/pages/api/contact.ts` — POST endpoint using [Resend](https://resend.com).
-- Requires `RESEND_API_KEY` in `.env.local`
+`src/pages/api/contact.ts` — POST endpoint using Gmail SMTP via nodemailer.
+- Requires `GMAIL_USER`, `GMAIL_APP_PASSWORD`, and `CONTACT_TO_EMAIL` in `.env.local`
 - Honeypot field: `website` (hidden field; if filled, silently succeeds)
-- Sends to `ignasiamat10@gmail.com`
+- Sends to the address in `CONTACT_TO_EMAIL` (falls back to `GMAIL_USER`)
 
 ### Pages structure
 
@@ -77,4 +77,6 @@ TailwindCSS v4 via `@tailwindcss/vite` (no `tailwind.config.js` — configured p
 
 | Variable | Purpose |
 |----------|---------|
-| `RESEND_API_KEY` | Contact form email delivery |
+| `GMAIL_USER` | Gmail address used as SMTP sender |
+| `GMAIL_APP_PASSWORD` | Gmail app password for SMTP authentication |
+| `CONTACT_TO_EMAIL` | Recipient address for lead emails (defaults to `GMAIL_USER`) |
