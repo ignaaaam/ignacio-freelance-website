@@ -4,9 +4,10 @@ import { siteContent } from '../data/siteContent';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].cases;
-const labels = locale === 'en'
-  ? { challenge: 'Challenge', solution: 'Solution', result: 'Result' }
-  : { challenge: 'Problema', solution: 'Enfoque', result: 'Resultado' };
+const labels =
+  locale === 'en'
+    ? { challenge: 'Challenge', solution: 'Solution', result: 'Result', metric: 'Signal' }
+    : { challenge: 'Problema', solution: 'Enfoque', result: 'Resultado', metric: 'Indicador' };
 ---
 
 <section class="section section-alt" id="casos">
@@ -33,6 +34,16 @@ const labels = locale === 'en'
             <span>{labels.result}</span>
             <p>{item.result}</p>
           </div>
+          {item.metricValue && (
+            <div class="case-card__metric">
+              <span>{labels.metric}</span>
+              <p>
+                <strong>{item.metricValue}</strong>
+                {item.metricLabel ? ` — ${item.metricLabel}` : ''}
+                {item.timeframe ? <span class="case-card__time"> ({item.timeframe})</span> : null}
+              </p>
+            </div>
+          )}
         </article>
       ))}
     </div>

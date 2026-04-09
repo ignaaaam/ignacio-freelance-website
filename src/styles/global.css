@@ -518,6 +518,36 @@ summary::-webkit-details-marker {
   line-height: 1.7;
 }
 
+.case-card__metric {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  border: 1px dashed rgba(74, 54, 41, 0.18);
+  background: rgba(255, 250, 244, 0.75);
+  font-size: 0.95rem;
+}
+
+.case-card__metric span:first-child {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--theme-highlight);
+}
+
+.case-card__metric p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.case-card__time {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
 .site-footer {
   padding: 4.35rem 0 6rem;
   border-top: 1px solid var(--color-border);

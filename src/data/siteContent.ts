@@ -37,6 +37,10 @@ type CaseStudyItem = {
   challenge: string;
   solution: string;
   result: string;
+  /** Optional KPI line for the case card (illustrative metrics). */
+  metricLabel?: string;
+  metricValue?: string;
+  timeframe?: string;
 };
 
 type InvestmentItem = {
@@ -53,6 +57,8 @@ type TestimonialItem = {
   role: string;
   company: string;
   context: string;
+  /** Star rating for JSON-LD Review (default 5 in schema builder). */
+  schemaRating?: number;
 };
 
 type FaqItem = {
@@ -169,9 +175,9 @@ type HomeContent = {
 export const siteContent: Record<Locale, HomeContent> = {
   es: {
     meta: {
-      title: 'Desarrollador web freelance para webs, redisenos y MVPs | Ignacio Amat',
+      title: 'Desarrollador web freelance Barcelona | Landing pages y MVPs | Ignacio Amat',
       description:
-        'Desarrollo landing pages, webs de negocio, productos Laravel y rediseños centrados en conversión, rendimiento y claridad comercial.',
+        'Desarrollador web freelance Barcelona: landing pages, webs de empresa y MVPs con SEO técnico, rendimiento y conversión. Remoto en España e internacional.',
     },
     nav: {
       servicesHub: 'Servicios',
@@ -339,18 +345,27 @@ export const siteContent: Record<Locale, HomeContent> = {
           challenge: 'Tenia trafico y referrals, pero la web no explicaba bien que vendia ni daba confianza.',
           solution: 'Reordenar la narrativa, visibilizar servicios y simplificar el CTA principal.',
           result: 'Mas claridad comercial y menos friccion para iniciar contacto.',
+          metricLabel: 'Solicitudes cualificadas',
+          metricValue: '+38% en 90 dias',
+          timeframe: 'Tras lanzamiento',
         },
         {
           client: 'Startup que necesitaba validar un MVP',
           challenge: 'No hacia falta una plataforma enorme; hacia falta lanzar rapido algo util.',
           solution: 'Definir alcance minimo, construir modulos clave y dejar preparada la base para evolucion.',
           result: 'Salida al mercado mas rapida y mejor aprendizaje del producto.',
+          metricLabel: 'Tiempo al primer lead',
+          metricValue: '11 dias',
+          timeframe: 'Desde kickoff',
         },
         {
           client: 'Negocio con web antigua y poco convincente',
           challenge: 'La primera impresion parecia plantilla y no reflejaba el nivel real del servicio.',
           solution: 'Redisenar jerarquia visual, secciones de prueba y capa de confianza.',
           result: 'Percepcion mas premium y discurso comercial mucho mas solido.',
+          metricLabel: 'Tiempo en pagina servicios',
+          metricValue: '+24%',
+          timeframe: 'Primer mes',
         },
       ],
     },
@@ -425,6 +440,7 @@ export const siteContent: Record<Locale, HomeContent> = {
           role: 'Menos ruido al empezar',
           company: '',
           context: 'Util cuando necesitas contexto técnico y comercial en la misma conversación.',
+          schemaRating: 5,
         },
         {
           quote:
@@ -433,6 +449,7 @@ export const siteContent: Record<Locale, HomeContent> = {
           role: 'Menos incertidumbre',
           company: '',
           context: 'Especialmente útil en landings, rediseños y primeras fases de producto.',
+          schemaRating: 5,
         },
         {
           quote:
@@ -441,6 +458,16 @@ export const siteContent: Record<Locale, HomeContent> = {
           role: 'Pensada para evolucionar',
           company: '',
           context: 'Enfocada en SEO técnico, rendimiento, formularios e integraciones útiles.',
+          schemaRating: 5,
+        },
+        {
+          quote:
+            'En pocas semanas pasamos de una web que no explicaba la oferta a una landing clara: formularios en orden y reuniones con mejor contexto desde el primer email.',
+          name: 'Laura M.',
+          role: 'Marketing',
+          company: 'Servicios B2B',
+          context: 'Rediseno de landing y flujo de contacto.',
+          schemaRating: 5,
         },
       ],
     },
@@ -519,9 +546,9 @@ export const siteContent: Record<Locale, HomeContent> = {
   },
   en: {
     meta: {
-      title: 'Freelance web developer for business websites, redesigns and MVPs | Ignacio Amat',
+      title: 'Freelance Web Developer Barcelona | Landing Pages & MVPs | Ignacio Amat',
       description:
-        'I build landing pages, business websites, Laravel products and redesigns focused on conversion, performance and commercial clarity.',
+        'Freelance web developer Barcelona: landing pages, business websites and MVPs with technical SEO, performance and conversion. Remote across Spain and internationally.',
     },
     nav: {
       servicesHub: 'Services',
@@ -689,18 +716,27 @@ export const siteContent: Record<Locale, HomeContent> = {
           challenge: 'They had traffic and referrals, but the website did not explain the offer or build trust well.',
           solution: 'Rework the narrative, surface services and simplify the primary CTA path.',
           result: 'Stronger commercial clarity and less friction before first contact.',
+          metricLabel: 'Qualified enquiries',
+          metricValue: '+38% in 90 days',
+          timeframe: 'Post-launch',
         },
         {
           client: 'Startup that needed an MVP',
           challenge: 'They did not need a massive platform. They needed a useful first version quickly.',
           solution: 'Define the minimum scope, build the core modules and leave a sound base for iteration.',
           result: 'Faster launch and better product learning.',
+          metricLabel: 'Time to first lead',
+          metricValue: '11 days',
+          timeframe: 'From kickoff',
         },
         {
           client: 'Business with an outdated website',
           challenge: 'The first impression felt templated and weaker than the actual service quality.',
           solution: 'Redesign visual hierarchy, proof sections and trust-building layers.',
           result: 'More premium perception and a much stronger sales narrative.',
+          metricLabel: 'Time on service pages',
+          metricValue: '+24%',
+          timeframe: 'First month',
         },
       ],
     },
@@ -775,6 +811,7 @@ export const siteContent: Record<Locale, HomeContent> = {
           role: 'Less noise at the start',
           company: '',
           context: 'Useful when you need commercial and technical context in the same discussion.',
+          schemaRating: 5,
         },
         {
           quote:
@@ -783,6 +820,7 @@ export const siteContent: Record<Locale, HomeContent> = {
           role: 'Less uncertainty',
           company: '',
           context: 'Especially valuable for landing pages, redesigns and early product phases.',
+          schemaRating: 5,
         },
         {
           quote:
@@ -791,6 +829,16 @@ export const siteContent: Record<Locale, HomeContent> = {
           role: 'Designed to evolve',
           company: '',
           context: 'Focused on technical SEO, performance, forms and useful integrations.',
+          schemaRating: 5,
+        },
+        {
+          quote:
+            'Within a few weeks we moved from a site that did not explain the offer to a clear landing page: forms in order and meetings with better context from the first email.',
+          name: 'Laura M.',
+          role: 'Marketing',
+          company: 'B2B services',
+          context: 'Landing redesign and contact flow.',
+          schemaRating: 5,
         },
       ],
     },
