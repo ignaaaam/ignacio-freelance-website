@@ -16,21 +16,27 @@ const checks = {
 
 console.log('🔍 Running SEO Health Check...\n');
 
-// Check 1: Sitemaps exist
+// Check 1: Sitemaps
 console.log('📄 Checking sitemaps...');
-const sitemaps = ['sitemap-index.xml', 'sitemap-es.xml', 'sitemap-en.xml'];
-sitemaps.forEach(sitemap => {
-  const path = join(process.cwd(), 'public', sitemap);
-  if (existsSync(path)) {
-    const content = readFileSync(path, 'utf-8');
-    const currentDate = new Date().toISOString().split('T')[0];
-    if (content.includes(currentDate)) {
-      checks.passed.push(`✅ ${sitemap} exists and is up to date`);
-    } else {
-      checks.warnings.push(`⚠️  ${sitemap} exists but may be outdated`);
-    }
+const sitemapIndexPath = join(process.cwd(), 'public', 'sitemap-index.xml');
+if (existsSync(sitemapIndexPath)) {
+  const idx = readFileSync(sitemapIndexPath, 'utf-8');
+  if (idx.includes('sitemap-es.xml') && idx.includes('sitemap-en.xml')) {
+    checks.passed.push('✅ sitemap-index.xml references locale sitemaps');
   } else {
-    checks.failed.push(`❌ ${sitemap} not found`);
+    checks.warnings.push('⚠️  sitemap-index.xml may be missing sitemap references');
+  }
+} else {
+  checks.failed.push('❌ sitemap-index.xml not found');
+}
+
+const dynamicSitemaps = ['sitemap-es.xml.ts', 'sitemap-en.xml.ts'];
+dynamicSitemaps.forEach((file) => {
+  const path = join(process.cwd(), 'src', 'pages', file);
+  if (existsSync(path)) {
+    checks.passed.push(`✅ Dynamic sitemap route src/pages/${file} exists`);
+  } else {
+    checks.failed.push(`❌ Missing src/pages/${file}`);
   }
 });
 
