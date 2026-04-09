@@ -477,8 +477,11 @@ const budgetOptions =
         }
 
         form.reset();
-        setFeedback('success', result.message || t.success);
         window.dispatchEvent(new CustomEvent('site:lead-submitted', { detail: { locale } }));
+        const thanksPath = locale === 'en' ? '/en/thanks' : '/thanks';
+        window.setTimeout(() => {
+          window.location.href = thanksPath;
+        }, 200);
       } catch (error) {
         setFeedback('error', error instanceof Error ? error.message : t.error);
       } finally {

@@ -6,7 +6,6 @@ User-agent: *
 Allow: /
 
 # Disallow potential duplicate content and utility pages
-Disallow: /thanks
 Disallow: /error
 Disallow: /404
 Disallow: /api/

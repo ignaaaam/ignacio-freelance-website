@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+
+const canonicalUrl = '/thanks';
+const alternateUrls = { es: '/thanks', en: '/en/thanks' };
+---
+
+<Layout
+  title="Mensaje recibido | Ignacio Amat"
+  description="Gracias por contactar. Revisaré tu mensaje y responderé por email en un plazo habitual de 24 horas laborables."
+  lang="es"
+  canonicalUrl={canonicalUrl}
+  alternateUrls={alternateUrls}
+  robots="noindex, follow"
+>
+  <Header languageSwitchUrls={alternateUrls} />
+  <main class="section">
+    <div class="container" style="max-width: 42rem;">
+      <div class="surface-card" style="padding: 2rem;" data-sr>
+        <p class="section-eyebrow">Contacto</p>
+        <h1>Gracias, mensaje recibido</h1>
+        <p class="section-copy" style="margin-top: 1rem;">
+          Ya tengo tu contexto. Revisaré el detalle y te responderé por email lo antes posible, normalmente en 24 horas laborables.
+        </p>
+        <p style="margin-top: 1.25rem;">
+          <a href="/" class="btn-primary">Volver al inicio</a>
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,32 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+
+const canonicalUrl = '/en/thanks';
+const alternateUrls = { es: '/thanks', en: '/en/thanks' };
+---
+
+<Layout
+  title="Message received | Ignacio Amat"
+  description="Thanks for getting in touch. I will review your message and reply by email, usually within 24 business hours."
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  alternateUrls={alternateUrls}
+  robots="noindex, follow"
+>
+  <Header languageSwitchUrls={alternateUrls} />
+  <main class="section">
+    <div class="container" style="max-width: 42rem;">
+      <div class="surface-card" style="padding: 2rem;" data-sr>
+        <p class="section-eyebrow">Contact</p>
+        <h1>Thanks — your message is in</h1>
+        <p class="section-copy" style="margin-top: 1rem;">
+          I have your context. I will review the details and reply by email as soon as possible, typically within 24 business hours.
+        </p>
+        <p style="margin-top: 1.25rem;">
+          <a href="/en/" class="btn-primary">Back to home</a>
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
