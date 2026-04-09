@@ -1,10 +1,12 @@
 ---
 import '../styles/global.css';
-import { getAlternateUrls } from '../i18n/utils';
+import { getAlternateUrls, type Locale } from '../i18n/utils';
 import PlunkToaster from '../components/Toaster.tsx';
 import SiteFooter from '../components/SiteFooter.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import { ClientRouter } from 'astro:transitions';
+import Schema from '../components/SEO/Schema.astro';
+import { getGlobalJsonLdSchemas } from '../data/globalSchema';
 
 interface Props {
 	title: string;
@@ -19,14 +21,16 @@ interface Props {
 	keywords?: string[];
 	additionalSchemas?: any[];
 	alternateUrls?: { es?: string; en?: string };
+	/** Override default robots meta (e.g. noindex for /thanks). */
+	robots?: string;
 }
 
 const { 
 	title,
 	lang = 'es', 
 	description = lang === 'es' 
-		? "Desarrollador web freelance full stack para empresas de todo el mundo. Landing pages, webs corporativas y aplicaciones web enfocadas en SEO y conversión."
-		: "Freelance full-stack web developer for businesses worldwide. Landing pages, business websites, and web apps focused on SEO and conversion.",
+		? 'Desarrollador web freelance Barcelona | Landing pages, webs de empresa y MVPs con SEO técnico y conversión.'
+		: 'Freelance Web Developer Barcelona | Landing pages, business websites and MVPs with technical SEO and conversion.',
 	canonicalUrl,
 	image = "https://www.ignacioamatweb.com/images/og-image.png",
 	author = "Ignacio Amat",
@@ -34,10 +38,11 @@ const {
 	publishedDate,
 	articleSection,
 	keywords = lang === 'es'
-		? ["desarrollador web freelance", "desarrollador full stack", "crear página web profesional", "desarrollo web para empresas", "landing page de alta conversión", "diseño web a medida", "aplicación web a medida", "servicios SEO técnico", "desarrollo ecommerce", "Ignacio Amat"]
-		: ["freelance web developer", "hire full stack web developer", "professional website development", "web development for businesses", "high-converting landing page", "custom web design", "custom web app development", "technical SEO services", "ecommerce development", "Ignacio Amat"],
+		? ['desarrollador web freelance Barcelona', 'landing pages Barcelona', 'MVP web', 'desarrollo web freelance', 'SEO técnico', 'conversión web', 'Ignacio Amat']
+		: ['freelance web developer Barcelona', 'landing pages', 'MVP development', 'technical SEO', 'web conversion', 'Ignacio Amat'],
 	additionalSchemas = [],
-	alternateUrls: customAlternateUrls
+	alternateUrls: customAlternateUrls,
+	robots: robotsOverride,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -51,6 +56,12 @@ const hasCustomBreadcrumb = additionalSchemas.some((schema) => schema?.['@type']
 const xDefaultHref = alternateUrls.es ?? alternateUrls.en ?? currentPath;
 
 const isHomepage = currentPath === '/' || currentPath === '/en/';
+
+const robotsContent =
+	robotsOverride ??
+	'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+const globalSchemas = getGlobalJsonLdSchemas(lang as Locale);
 
 // Build structured data for different page types.
 // Articles are skipped — BlogPostTemplate provides a richer BlogPosting schema via additionalSchemas.
@@ -75,39 +86,6 @@ const structuredData: any = type !== 'article' ? {
 	} : undefined
 } : null;
 
-// Organization structured data
-const organizationSchema = {
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	"name": "Ignacio Amat Web Development",
-	"url": baseUrl,
-	"logo": { "@type": "ImageObject", "url": `${baseUrl}/brand-mark.svg` },
-	"description": lang === 'es'
-		? "Desarrollo web freelance profesional. Webs corporativas, landing pages, aplicaciones a medida y proyectos Laravel. Disponible en España e internacional."
-		: "Professional freelance web development. Corporate websites, landing pages, custom web apps and Laravel projects. Available in Spain and internationally.",
-	"email": "ignasiamat10@gmail.com",
-	"foundingDate": "2023",
-	"sameAs": [
-		"https://www.linkedin.com/in/ignacio-amat-urbina-789244223/",
-		"https://github.com/ignaaaam",
-		"https://x.com/ignathedev"
-	],
-	"contactPoint": {
-		"@type": "ContactPoint",
-		"email": "ignasiamat10@gmail.com",
-		"contactType": "Customer Service",
-		"availableLanguage": ["Spanish", "English"]
-	},
-	"areaServed": [
-		{ "@type": "Country", "name": "Spain" },
-		{ "@type": "City", "name": "Madrid" },
-		{ "@type": "City", "name": "Barcelona" },
-		{ "@type": "City", "name": "Valencia" },
-		{ "@type": "City", "name": "Sevilla" }
-	],
-	"knowsAbout": ["Web Development", "Laravel", "React", "Astro", "Node.js", "SEO", "E-commerce", "Landing Pages", "SaaS", "MVP Development"]
-};
-
 // Breadcrumb schema for non-home pages
 const breadcrumbSchema = !hasCustomBreadcrumb && currentPath !== '/' && currentPath !== '/en/' ? {
 	"@context": "https://schema.org",
@@ -130,7 +108,6 @@ const breadcrumbSchema = !hasCustomBreadcrumb && currentPath !== '/' && currentP
 
 // JSON-LD structured data
 const jsonLd = structuredData ? JSON.stringify(structuredData) : null;
-const orgJsonLd = JSON.stringify(organizationSchema);
 const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : null;
 ---
 
@@ -186,7 +163,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${xDefaultHref}`} />
 		
 		<!-- Robots meta tag -->
-		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="robots" content={robotsContent} />
 
 		<!-- Google Search Console Verification - Add your verification code -->
 		<!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
@@ -206,11 +183,20 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+			media="all"
+		/>
 
 		<!-- Structured Data -->
 		{jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
-		{isHomepage && <script is:inline type="application/ld+json" set:html={orgJsonLd} />}
+		<Schema schemas={globalSchemas} />
 		{breadcrumbJsonLd && <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />}
 		{additionalSchemas.map(schema => (
 			<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -347,6 +333,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 	window.addEventListener('site:lead-submitted', (event) => {
 		if (!(event instanceof CustomEvent)) return;
 		analyticsWindow.gtag?.('event', 'generate_lead', {
+			send_to: GA_ID,
 			event_category: 'conversion',
 			event_label: event.detail?.locale || 'unknown',
 		});

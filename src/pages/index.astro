@@ -19,32 +19,12 @@ const page = siteContent[locale];
 const baseUrl = 'https://www.ignacioamatweb.com';
 const canonicalUrl = '/';
 
-const professionalServiceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  '@id': `${baseUrl}${canonicalUrl}#professional-service`,
-  name: 'Ignacio Amat',
-  url: `${baseUrl}${canonicalUrl}`,
-  description: page.meta.description,
-  areaServed: 'Espana e internacional',
-  availableLanguage: ['es', 'en'],
-  sameAs: [
-    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
-    'https://github.com/ignaaaam',
-    'https://x.com/ignathedev',
-  ],
-};
-
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   serviceType: 'Landing pages, webs de empresa, redisenos, Laravel y MVPs',
-  provider: {
-    '@type': 'Person',
-    name: 'Ignacio Amat',
-    url: baseUrl,
-  },
-  areaServed: 'Espana y clientes internacionales',
+  provider: { '@id': `${baseUrl}#professional-service` },
+  areaServed: 'Barcelona, Espana y clientes internacionales',
 };
 
 const faqSchema = {
@@ -66,7 +46,7 @@ const faqSchema = {
   description={page.meta.description}
   lang="es"
   canonicalUrl={canonicalUrl}
-  additionalSchemas={[professionalServiceSchema, serviceSchema, faqSchema]}
+  additionalSchemas={[serviceSchema, faqSchema]}
 >
   <Header />
   <main>

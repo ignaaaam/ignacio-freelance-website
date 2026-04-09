@@ -39,4 +39,7 @@ export default defineConfig({
   },
   compressHTML: true,
   site: 'https://www.ignacioamatweb.com',
+  image: {
+    domains: ['images.unsplash.com'],
+  },
 });

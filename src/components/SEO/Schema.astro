@@ -1,0 +1,12 @@
+---
+/**
+ * Emits JSON-LD script tags. Pass validated schema.org objects only.
+ */
+interface Props {
+  schemas: Record<string, unknown>[];
+}
+
+const { schemas = [] } = Astro.props;
+---
+
+{schemas.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}
