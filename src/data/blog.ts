@@ -3,6 +3,13 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 export type BlogEntry = CollectionEntry<'blog'>;
 export type BlogLocale = 'es' | 'en';
 
+/** URL segment for routes under /blog/:slug (strips locale folder and file extension from collection id). */
+export function getBlogEntryPathSlug(entry: BlogEntry) {
+  return entry.id
+    .replace(/^(?:es|en)\//, '')
+    .replace(/\.mdx?$/i, '');
+}
+
 type ServiceLink = {
   label: string;
   href: string;
@@ -81,7 +88,10 @@ export async function getRelatedBlogEntries(entry: BlogEntry, limit = 2) {
 }
 
 export function getBlogPostUrl(locale: BlogLocale, slug: string) {
-  return locale === 'en' ? `/en/blog/${slug}` : `/blog/${slug}`;
+  const clean = slug
+    .replace(/^(?:es|en)\//, '')
+    .replace(/\.mdx?$/i, '');
+  return locale === 'en' ? `/en/blog/${clean}` : `/blog/${clean}`;
 }
 
 export function getBlogIndexUrl(locale: BlogLocale) {

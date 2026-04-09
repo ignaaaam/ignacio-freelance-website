@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from './Header.astro';
 import type { BlogEntry, BlogLocale } from '../data/blog';
-import { formatBlogDate, getBlogPostUrl } from '../data/blog';
+import { formatBlogDate, getBlogEntryPathSlug, getBlogPostUrl } from '../data/blog';
 
 interface Props {
   locale: BlogLocale;
@@ -63,13 +63,14 @@ const blogSchema = {
         <div class="blog-grid">
           {posts.map((post) => (
             <article class="blog-card surface-card" data-sr>
-              <a href={getBlogPostUrl(locale, post.slug)} class="blog-card__link">
+              <a href={getBlogPostUrl(locale, getBlogEntryPathSlug(post))} class="blog-card__link">
                 <div class="blog-card__media">
                   <img
                     src={post.data.heroImage}
                     alt={post.data.heroImageAlt}
                     class="blog-card__image"
                     loading="lazy"
+                    decoding="async"
                     width="1200"
                     height="750"
                   />

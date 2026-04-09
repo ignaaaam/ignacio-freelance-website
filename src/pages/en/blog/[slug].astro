@@ -1,13 +1,19 @@
 ---
 import BlogPostTemplate from '../../../components/BlogPostTemplate.astro';
-import { getPublishedBlogEntries, getRelatedBlogEntries, getTranslatedBlogEntry, getBlogPostUrl } from '../../../data/blog';
+import {
+  getBlogEntryPathSlug,
+  getPublishedBlogEntries,
+  getRelatedBlogEntries,
+  getTranslatedBlogEntry,
+  getBlogPostUrl,
+} from '../../../data/blog';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
   const posts = await getPublishedBlogEntries('en');
   return posts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: getBlogEntryPathSlug(entry) },
     props: { entry },
   }));
 }
@@ -15,10 +21,13 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const translatedEntry = await getTranslatedBlogEntry(entry);
 const relatedPosts = await getRelatedBlogEntries(entry);
-const alternateUrls = {
-  es: translatedEntry ? getBlogPostUrl('es', translatedEntry.slug) : '/blog',
-  en: getBlogPostUrl('en', entry.slug),
-};
+const pathSlug = getBlogEntryPathSlug(entry);
+const alternateUrls = translatedEntry
+  ? {
+      es: getBlogPostUrl('es', getBlogEntryPathSlug(translatedEntry)),
+      en: getBlogPostUrl('en', pathSlug),
+    }
+  : { en: getBlogPostUrl('en', pathSlug) };
 ---
 
 <BlogPostTemplate entry={entry} relatedPosts={relatedPosts} alternateUrls={alternateUrls} />

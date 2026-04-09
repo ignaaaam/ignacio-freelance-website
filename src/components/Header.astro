@@ -4,7 +4,7 @@ import { siteContent } from '../data/siteContent';
 import { siteConfig } from '../data/siteConfig';
 
 interface Props {
-  languageSwitchUrls?: { es: string; en: string };
+  languageSwitchUrls?: { es?: string; en?: string };
 }
 
 const currentPath = Astro.url.pathname;
@@ -12,7 +12,13 @@ const locale = getLocaleFromPath(currentPath);
 const isEnglish = locale === 'en';
 const content = siteContent[locale];
 const { languageSwitchUrls: customLanguageSwitchUrls } = Astro.props as Props;
-const languageSwitchUrls = customLanguageSwitchUrls || getLanguageSwitchUrls(Astro.url);
+const fallbackSwitch = getLanguageSwitchUrls(Astro.url);
+const languageSwitchUrls = customLanguageSwitchUrls
+  ? {
+      es: customLanguageSwitchUrls.es ?? fallbackSwitch.es,
+      en: customLanguageSwitchUrls.en ?? fallbackSwitch.en,
+    }
+  : fallbackSwitch;
 const homeUrl = isEnglish ? '/en' : '/';
 const isHomePage = currentPath === '/' || currentPath === '/en' || currentPath === '/en/';
 

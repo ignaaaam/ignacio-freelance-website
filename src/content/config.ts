@@ -1,3 +1,7 @@
+/**
+ * Content collection config (classic `type: 'content'`).
+ * Astro 5+ also supports `src/content.config.ts` + `glob` loaders; this setup remains valid.
+ */
 import { defineCollection, z } from 'astro:content';
 
 const faqItem = z.object({
@@ -12,11 +16,13 @@ const blogCollection = defineCollection({
     description: z.string(),
     locale: z.enum(['es', 'en']),
     group: z.string(),
+    author: z.string().default('Ignacio Amat'),
     publishedDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     category: z.string(),
     readTime: z.string(),
     keywords: z.array(z.string()).default([]),
+    tags: z.array(z.string()).default([]),
     heroImage: z.string(),
     heroImageAlt: z.string(),
     heroImagePrompt: z.string().optional(),

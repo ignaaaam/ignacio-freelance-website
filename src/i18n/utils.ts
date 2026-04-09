@@ -11,6 +11,8 @@ const translations = {
 
 const routeMappings: Record<string, { es: string; en?: string }> = {
   '/': { es: '/', en: '/en/' },
+  '/blog': { es: '/blog', en: '/en/blog' },
+  '/thanks': { es: '/thanks', en: '/en/thanks' },
   '/contact': { es: '/contact', en: '/en/contact' },
   '/privacidad': { es: '/privacidad', en: '/en/privacy' },
   '/aviso-legal': { es: '/aviso-legal', en: '/en/legal-notice' },
@@ -50,7 +52,7 @@ function normalizePath(path: string): string {
   return cleaned || '/';
 }
 
-function findRoutePair(path: string): { es: string; en: string } | null {
+function findRoutePair(path: string): { es: string; en?: string } | null {
   const normalizedPath = normalizePath(path);
   const bySpanishRoute = routeMappings[normalizedPath];
   if (bySpanishRoute) {
@@ -58,10 +60,10 @@ function findRoutePair(path: string): { es: string; en: string } | null {
   }
 
   const fromEnglish = Object.values(routeMappings).find((entry) => {
-    return normalizePath(entry.en) === normalizedPath;
+    return entry.en !== undefined && normalizePath(entry.en) === normalizedPath;
   });
 
-  return fromEnglish || null;
+  return fromEnglish ?? null;
 }
 
 function getNestedValue(obj: any, path: string): string {
@@ -131,4 +133,14 @@ export function getLanguageSwitchUrls(url: URL): { en: string; es: string } {
 export function useTranslations(path: string): (key: TranslationKey) => string {
   const locale = getLocaleFromPath(path);
   return (key: TranslationKey) => getTranslation(locale, key);
-} 
+}
+
+export type SitemapRouteEntry = { es: string; en?: string };
+
+/** Unique marketing URLs for sitemap generation (Spanish canonical paths as keys). */
+export function getSitemapRouteEntries(): SitemapRouteEntry[] {
+  return Object.values(routeMappings).map((pair) => ({
+    es: pair.es,
+    en: pair.en,
+  }));
+}

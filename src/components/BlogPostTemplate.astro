@@ -7,6 +7,7 @@ import StickyCTA from './StickyGTA.astro';
 import type { BlogEntry } from '../data/blog';
 import {
   formatBlogDate,
+  getBlogEntryPathSlug,
   getBlogIndexUrl,
   getBlogPostUrl,
   getLocalizedServiceLinks,
@@ -14,7 +15,7 @@ import {
 
 interface Props {
   entry: BlogEntry;
-  alternateUrls: { es: string; en: string };
+  alternateUrls: { es?: string; en?: string };
   relatedPosts: BlogEntry[];
 }
 
@@ -22,7 +23,8 @@ const { entry, alternateUrls, relatedPosts } = Astro.props;
 const { Content, headings } = await render(entry);
 const locale = entry.data.locale;
 const isEnglish = locale === 'en';
-const canonicalUrl = getBlogPostUrl(locale, entry.slug);
+const pathSlug = getBlogEntryPathSlug(entry);
+const canonicalUrl = getBlogPostUrl(locale, pathSlug);
 const baseUrl = 'https://www.ignacioamatweb.com';
 const serviceLinks = getLocalizedServiceLinks(entry.data.relatedServices, locale);
 const publishedDate = entry.data.publishedDate.toISOString().split('T')[0];
@@ -58,6 +60,9 @@ const breadcrumbSchema = {
   ],
 };
 
+const schemaKeywords = [...entry.data.keywords, ...entry.data.tags].filter(Boolean);
+const keywordString = [...new Set(schemaKeywords)].join(', ');
+
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -66,7 +71,7 @@ const articleSchema = {
   image,
   author: {
     '@type': 'Person',
-    name: 'Ignacio Amat',
+    name: entry.data.author,
     url: baseUrl,
   },
   publisher: {
@@ -84,7 +89,7 @@ const articleSchema = {
     '@id': `${baseUrl}${canonicalUrl}`,
   },
   inLanguage: isEnglish ? 'en-US' : 'es-ES',
-  keywords: entry.data.keywords.join(', '),
+  ...(keywordString ? { keywords: keywordString } : {}),
 };
 
 const faqSchema = entry.data.faq?.length
@@ -117,7 +122,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
   articleSection={entry.data.category}
   alternateUrls={alternateUrls}
   additionalSchemas={additionalSchemas}
-  keywords={entry.data.keywords}
+  keywords={[...new Set([...entry.data.keywords, ...entry.data.tags])]}
 >
   <Header languageSwitchUrls={alternateUrls} />
   <main>
@@ -135,7 +140,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
           <p class="section-eyebrow">{entry.data.category}</p>
           <h1>{entry.data.title}</h1>
           <div class="article-meta">
-            <span>Ignacio Amat</span>
+            <span>{entry.data.author}</span>
             <span>{formatBlogDate(entry.data.publishedDate, locale)}</span>
             <span>{entry.data.readTime}</span>
           </div>
@@ -147,6 +152,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
             width="1200"
             height="900"
             loading="eager"
+            decoding="async"
           />
           {entry.data.heroImageCredit && (
             <p class="image-credit">{entry.data.heroImageCredit}</p>
@@ -194,7 +200,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
               <h2>{isEnglish ? 'Keep reading' : 'Seguir leyendo'}</h2>
               <div class="article-links">
                 {relatedPosts.map((post) => (
-                  <a href={getBlogPostUrl(locale, post.slug)} class="article-links__card">
+                  <a href={getBlogPostUrl(locale, getBlogEntryPathSlug(post))} class="article-links__card">
                     <h3>{post.data.title}</h3>
                     <p>{post.data.description}</p>
                   </a>
