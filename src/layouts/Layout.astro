@@ -194,6 +194,27 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 			media="all"
 		/>
 
+		<!-- Google tag (gtag.js) — present in HTML so GA / Tag Assistant can detect the stream -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3ZDBF6HWZX"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('consent', 'default', {
+				analytics_storage: 'denied',
+				ad_storage: 'denied',
+				wait_for_update: 500,
+			});
+			try {
+				if (localStorage.getItem('cookie-consent') === 'accept') {
+					gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'denied' });
+				}
+			} catch (_) {}
+			gtag('js', new Date());
+			gtag('config', 'G-3ZDBF6HWZX');
+		</script>
+
 		<!-- Structured Data -->
 		{jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
 		<Schema schemas={globalSchemas} />
@@ -237,38 +258,26 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 
 <script is:inline>
 	const GA_ID = 'G-3ZDBF6HWZX';
-	let analyticsLoaded = false;
+	let engagementBound = false;
+	let scrollDepth = 0;
 
 	/** @type {Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }} */
 	const analyticsWindow = window;
 
-	function loadAnalytics() {
-		if (analyticsLoaded || !GA_ID) return;
-		analyticsLoaded = true;
+	function gtagSend() {
+		const g = analyticsWindow.gtag;
+		if (g) g.apply(analyticsWindow, arguments);
+	}
 
-		const tag = document.createElement('script');
-		tag.async = true;
-		tag.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-		document.head.appendChild(tag);
+	function initAnalyticsEngagement() {
+		if (engagementBound || !GA_ID) return;
+		engagementBound = true;
 
-		analyticsWindow.dataLayer = analyticsWindow.dataLayer || [];
-		analyticsWindow.gtag = analyticsWindow.gtag || function gtag() {
-			analyticsWindow.dataLayer?.push(arguments);
-		};
-
-		analyticsWindow.gtag('js', new Date());
-		analyticsWindow.gtag('config', GA_ID, {
-			page_path: window.location.pathname,
-			anonymize_ip: true,
-			send_page_view: true,
-		});
-
-		let scrollDepth = 0;
 		window.addEventListener('scroll', function() {
 			const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
 			if (scrollPercentage > scrollDepth && scrollPercentage % 25 === 0) {
 				scrollDepth = scrollPercentage;
-				analyticsWindow.gtag?.('event', 'scroll_depth', {
+				gtagSend('event', 'scroll_depth', {
 					event_category: 'engagement',
 					event_label: scrollPercentage + '%',
 					value: scrollPercentage,
@@ -280,7 +289,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 			if (!(e.target instanceof Element)) return;
 			const cta = e.target.closest('[data-cta]');
 			if (cta instanceof HTMLElement) {
-				analyticsWindow.gtag?.('event', 'cta_click', {
+				gtagSend('event', 'cta_click', {
 					event_category: 'engagement',
 					event_label: cta.dataset.cta || cta.textContent?.trim() || 'unknown_cta',
 				});
@@ -288,7 +297,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 
 			const link = e.target.closest('a');
 			if (link && link.hostname !== window.location.hostname) {
-				analyticsWindow.gtag?.('event', 'click', {
+				gtagSend('event', 'click', {
 					event_category: 'outbound',
 					event_label: link.href,
 					transport_type: 'beacon',
@@ -297,9 +306,25 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 		});
 	}
 
+	/** After explicit opt-in: grant storage and record page view (head already ran config while denied). */
+	function grantAnalyticsConsent() {
+		if (typeof analyticsWindow.gtag !== 'function') return;
+		analyticsWindow.gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'denied' });
+		initAnalyticsEngagement();
+		gtagSend('config', GA_ID, {
+			page_path: window.location.pathname + window.location.search,
+		});
+	}
+
 	function syncAnalyticsConsent() {
-		if (localStorage.getItem('cookie-consent') === 'accept') {
-			loadAnalytics();
+		if (localStorage.getItem('cookie-consent') !== 'accept') return;
+		scrollDepth = 0;
+		if (!engagementBound) {
+			initAnalyticsEngagement();
+		} else {
+			gtagSend('config', GA_ID, {
+				page_path: window.location.pathname + window.location.search,
+			});
 		}
 	}
 
@@ -327,12 +352,12 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
 	document.addEventListener('astro:after-swap', syncAnalyticsConsent);
 	window.addEventListener('site:consent-changed', (event) => {
 		if (event instanceof CustomEvent && event.detail === 'accept') {
-			loadAnalytics();
+			grantAnalyticsConsent();
 		}
 	});
 	window.addEventListener('site:lead-submitted', (event) => {
 		if (!(event instanceof CustomEvent)) return;
-		analyticsWindow.gtag?.('event', 'generate_lead', {
+		gtagSend('event', 'generate_lead', {
 			send_to: GA_ID,
 			event_category: 'conversion',
 			event_label: event.detail?.locale || 'unknown',
