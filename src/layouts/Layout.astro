@@ -1,366 +1,362 @@
 ---
-import '../styles/global.css';
-import { getAlternateUrls, type Locale } from '../i18n/utils';
-import PlunkToaster from '../components/Toaster.tsx';
-import SiteFooter from '../components/SiteFooter.astro';
-import CookieConsent from '../components/CookieConsent.astro';
-import { ClientRouter } from 'astro:transitions';
-import Schema from '../components/SEO/Schema.astro';
-import { getGlobalJsonLdSchemas } from '../data/globalSchema';
+import "../styles/global.css";
+import { getAlternateUrls, type Locale } from "../i18n/utils";
+import PlunkToaster from "../components/Toaster.tsx";
+import SiteFooter from "../components/SiteFooter.astro";
+import CookieConsent from "../components/CookieConsent.astro";
+import { ClientRouter } from "astro:transitions";
+import Schema from "../components/SEO/Schema.astro";
+import { getGlobalJsonLdSchemas } from "../data/globalSchema";
 
 interface Props {
-	title: string;
-	description?: string;
-	lang?: 'es' | 'en';
-	canonicalUrl?: string;
-	image?: string;
-	author?: string;
-	type?: 'website' | 'article';
-	publishedDate?: string;
-	articleSection?: string;
-	keywords?: string[];
-	additionalSchemas?: any[];
-	alternateUrls?: { es?: string; en?: string };
-	/** Override default robots meta (e.g. noindex for /thanks). */
-	robots?: string;
+  title: string;
+  description?: string;
+  lang?: "es" | "en";
+  canonicalUrl?: string;
+  image?: string;
+  author?: string;
+  type?: "website" | "article";
+  publishedDate?: string;
+  articleSection?: string;
+  keywords?: string[];
+  additionalSchemas?: any[];
+  alternateUrls?: { es?: string; en?: string };
+  /** Override default robots meta (e.g. noindex for /thanks). */
+  robots?: string;
 }
 
-const { 
-	title,
-	lang = 'es', 
-	description = lang === 'es' 
-		? 'Desarrollador web freelance Barcelona | Landing pages, webs de empresa y MVPs con SEO técnico y conversión.'
-		: 'Freelance Web Developer Barcelona | Landing pages, business websites and MVPs with technical SEO and conversion.',
-	canonicalUrl,
-	image = "https://www.ignacioamatweb.com/images/og-image.png",
-	author = "Ignacio Amat",
-	type = "website",
-	publishedDate,
-	articleSection,
-	keywords = lang === 'es'
-		? ['desarrollador web freelance Barcelona', 'landing pages Barcelona', 'MVP web', 'desarrollo web freelance', 'SEO técnico', 'conversión web', 'Ignacio Amat']
-		: ['freelance web developer Barcelona', 'landing pages', 'MVP development', 'technical SEO', 'web conversion', 'Ignacio Amat'],
-	additionalSchemas = [],
-	alternateUrls: customAlternateUrls,
-	robots: robotsOverride,
+const {
+  title,
+  lang = "es",
+  description = lang === "es"
+    ? "Desarrollador web freelance Barcelona | Landing pages, webs de empresa y MVPs con SEO técnico y conversión."
+    : "Freelance Web Developer Barcelona | Landing pages, business websites and MVPs with technical SEO and conversion.",
+  canonicalUrl,
+  image = "https://www.ignacioamatweb.com/images/og-image.png",
+  author = "Ignacio Amat",
+  type = "website",
+  publishedDate,
+  articleSection,
+  keywords = lang === "es"
+    ? ["desarrollador web freelance Barcelona", "landing pages Barcelona", "MVP web", "desarrollo web freelance", "SEO técnico", "conversión web", "Ignacio Amat"]
+    : ["freelance web developer Barcelona", "landing pages", "MVP development", "technical SEO", "web conversion", "Ignacio Amat"],
+  additionalSchemas = [],
+  alternateUrls: customAlternateUrls,
+  robots: robotsOverride,
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const alternateUrls = customAlternateUrls || getAlternateUrls(currentPath);
-const baseUrl = 'https://www.ignacioamatweb.com';
+const baseUrl = "https://www.ignacioamatweb.com";
 const fullUrl = `${baseUrl}${currentPath}`;
 const canonical = canonicalUrl ? `${baseUrl}${canonicalUrl}` : fullUrl;
-const homePath = lang === 'en' ? '/en/' : '/';
-const homeLabel = lang === 'en' ? 'Home' : 'Inicio';
-const hasCustomBreadcrumb = additionalSchemas.some((schema) => schema?.['@type'] === 'BreadcrumbList');
+const homePath = lang === "en" ? "/en/" : "/";
+const homeLabel = lang === "en" ? "Home" : "Inicio";
+const hasCustomBreadcrumb = additionalSchemas.some((schema) => schema?.["@type"] === "BreadcrumbList");
 const xDefaultHref = alternateUrls.es ?? alternateUrls.en ?? currentPath;
 
-const isHomepage = currentPath === '/' || currentPath === '/en/';
+const isHomepage = currentPath === "/" || currentPath === "/en/";
 
-const robotsContent =
-	robotsOverride ??
-	'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+const robotsContent = robotsOverride ?? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
 const globalSchemas = getGlobalJsonLdSchemas(lang as Locale);
 
 // Build structured data for different page types.
 // Articles are skipped — BlogPostTemplate provides a richer BlogPosting schema via additionalSchemas.
-const structuredData: any = type !== 'article' ? {
-	"@context": "https://schema.org",
-	"@type": isHomepage ? 'WebSite' : 'WebPage',
-	"url": canonical,
-	"name": title,
-	"description": description,
-	"author": {
-		"@type": "Person",
-		"name": author,
-		"url": baseUrl
-	},
-	"inLanguage": lang === 'es' ? 'es-ES' : 'en-US',
-	"image": image,
-	"publisher": isHomepage ? {
-		"@type": "Organization",
-		"name": "Ignacio Amat",
-		"url": baseUrl,
-		"logo": { "@type": "ImageObject", "url": `${baseUrl}/brand-mark.svg` }
-	} : undefined
-} : null;
+const structuredData: any =
+  type !== "article"
+    ? {
+        "@context": "https://schema.org",
+        "@type": isHomepage ? "WebSite" : "WebPage",
+        url: canonical,
+        name: title,
+        description: description,
+        author: {
+          "@type": "Person",
+          name: author,
+          url: baseUrl,
+        },
+        inLanguage: lang === "es" ? "es-ES" : "en-US",
+        image: image,
+        publisher: isHomepage
+          ? {
+              "@type": "Organization",
+              name: "Ignacio Amat",
+              url: baseUrl,
+              logo: { "@type": "ImageObject", url: `${baseUrl}/brand-mark.svg` },
+            }
+          : undefined,
+      }
+    : null;
 
 // Breadcrumb schema for non-home pages
-const breadcrumbSchema = !hasCustomBreadcrumb && currentPath !== '/' && currentPath !== '/en/' ? {
-	"@context": "https://schema.org",
-	"@type": "BreadcrumbList",
-	"itemListElement": [
-		{
-			"@type": "ListItem",
-			"position": 1,
-			"name": homeLabel,
-			"item": `${baseUrl}${homePath}`
-		},
-		{
-			"@type": "ListItem",
-			"position": 2,
-			"name": title,
-			"item": fullUrl
-		}
-	]
-} : null;
+const breadcrumbSchema =
+  !hasCustomBreadcrumb && currentPath !== "/" && currentPath !== "/en/"
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: homeLabel,
+            item: `${baseUrl}${homePath}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: title,
+            item: fullUrl,
+          },
+        ],
+      }
+    : null;
 
 // JSON-LD structured data
 const jsonLd = structuredData ? JSON.stringify(structuredData) : null;
 const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : null;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		
-		<!-- Primary Meta Tags -->
-		<title>{title}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
 
-		<meta name="description" content={description} />
-		<meta name="author" content={author} />
-		<meta name="keywords" content={keywords.join(', ')} />
-		<link rel="canonical" href={canonical} />
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content={type} />
-		<meta property="og:url" content={canonical} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={image} />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content={lang === 'es' ? 'Ignacio Amat — Desarrollador Web Freelance' : 'Ignacio Amat — Freelance Web Developer'} />
-		<meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
-		<meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'} />
-		<meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
-		{publishedDate && <meta property="article:published_time" content={publishedDate} />}
-		{type === 'article' && <meta property="article:author" content={author} />}
+    <meta name="description" content={description} />
+    <meta name="author" content={author} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <link rel="canonical" href={canonical} />
 
-		<!-- Twitter Card data -->
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@ignathedev" />
-		<meta name="twitter:creator" content="@ignathedev" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={image} />
-		<meta name="twitter:image:alt" content={lang === 'es' ? 'Ignacio Amat — Desarrollador Web Freelance' : 'Ignacio Amat — Freelance Web Developer'} />
-		<meta name="twitter:domain" content="ignacioamatweb.com" />
-		<meta name="twitter:url" content={canonical} />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={lang === "es" ? "Ignacio Amat — Desarrollador Web Freelance" : "Ignacio Amat — Freelance Web Developer"} />
+    <meta property="og:locale" content={lang === "es" ? "es_ES" : "en_US"} />
+    <meta property="og:locale:alternate" content={lang === "es" ? "en_US" : "es_ES"} />
+    <meta property="og:site_name" content="Ignacio Amat - Freelance Web Developer" />
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+    {type === "article" && <meta property="article:author" content={author} />}
 
-		<!-- Article meta tags -->
-		{type === 'article' && articleSection && <meta property="article:section" content={articleSection} />}
-		{type === 'article' && keywords?.map(kw => <meta property="article:tag" content={kw} />)}
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ignathedev" />
+    <meta name="twitter:creator" content="@ignathedev" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={lang === "es" ? "Ignacio Amat — Desarrollador Web Freelance" : "Ignacio Amat — Freelance Web Developer"} />
+    <meta name="twitter:domain" content="ignacioamatweb.com" />
+    <meta name="twitter:url" content={canonical} />
 
-		<!-- Language and SEO meta tags -->
-		{alternateUrls.es && <link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />}
-		{alternateUrls.en && <link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />}
-		<link rel="alternate" hreflang="x-default" href={`${baseUrl}${xDefaultHref}`} />
-		
-		<!-- Robots meta tag -->
-		<meta name="robots" content={robotsContent} />
+    <!-- Article meta tags -->
+    {type === "article" && articleSection && <meta property="article:section" content={articleSection} />}
+    {type === "article" && keywords?.map((kw) => <meta property="article:tag" content={kw} />)}
 
-		<!-- Google Search Console Verification - Add your verification code -->
-		<!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+    <!-- Language and SEO meta tags -->
+    {alternateUrls.es && <link rel="alternate" hreflang="es" href={`${baseUrl}${alternateUrls.es}`} />}
+    {alternateUrls.en && <link rel="alternate" hreflang="en" href={`${baseUrl}${alternateUrls.en}`} />}
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}${xDefaultHref}`} />
 
-		<!-- Mobile specific -->
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-		<meta name="format-detection" content="telephone=no" />
+    <!-- Robots meta tag -->
+    <meta name="robots" content={robotsContent} />
 
-		<!-- Theme color -->
-		<meta name="theme-color" content="#c06a2a" />
-		
-		<!-- RSS Feed -->
-		<link rel="alternate" type="application/rss+xml" title={lang === 'es' ? 'Blog | Ignacio Amat — Desarrollador Web Freelance' : 'Blog | Ignacio Amat — Freelance Web Developer'} href={lang === 'en' ? `${baseUrl}/en/rss.xml` : `${baseUrl}/rss.xml`} />
+    <!-- Google Search Console Verification - Add your verification code -->
+    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
 
-		<!-- Preconnect to required origins -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Mobile specific -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
 
-		<link
-			rel="preload"
-			as="style"
-			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-			media="all"
-		/>
+    <!-- Theme color -->
+    <meta name="theme-color" content="#c06a2a" />
 
-		<!-- Google tag (gtag.js) — present in HTML so GA / Tag Assistant can detect the stream -->
-		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3ZDBF6HWZX"></script>
-		<script is:inline>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('consent', 'default', {
-				analytics_storage: 'denied',
-				ad_storage: 'denied',
-				wait_for_update: 500,
-			});
-			try {
-				if (localStorage.getItem('cookie-consent') === 'accept') {
-					gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'denied' });
-				}
-			} catch (_) {}
-			gtag('js', new Date());
-			gtag('config', 'G-3ZDBF6HWZX');
-		</script>
+    <!-- RSS Feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={lang === "es" ? "Blog | Ignacio Amat — Desarrollador Web Freelance" : "Blog | Ignacio Amat — Freelance Web Developer"}
+      href={lang === "en" ? `${baseUrl}/en/rss.xml` : `${baseUrl}/rss.xml`}
+    />
 
-		<!-- Structured Data -->
-		{jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
-		<Schema schemas={globalSchemas} />
-		{breadcrumbJsonLd && <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />}
-		{additionalSchemas.map(schema => (
-			<script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
-		))}
+    <!-- Preconnect to required origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-		<ClientRouter />
-	</head>
-	<body>
-		<a class="skip-link" href="#main-content">
-			{lang === 'es' ? 'Saltar al contenido principal' : 'Skip to main content'}
-		</a>
-		<div id="main-content">
-			<slot />
-		</div>
-		<CookieConsent />
-		<SiteFooter />
-		<PlunkToaster client:idle />
-	</body>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" media="all" />
+
+    <!-- Google tag (gtag.js) — present in HTML so GA / Tag Assistant can detect the stream -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZDBF6HWZX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-3ZDBF6HWZX");
+    </script>
+
+    <!-- Structured Data -->
+    {jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
+    <Schema schemas={globalSchemas} />
+    {breadcrumbJsonLd && <script is:inline type="application/ld+json" set:html={breadcrumbJsonLd} />}
+    {additionalSchemas.map((schema) => <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />)}
+
+    <ClientRouter />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">
+      {lang === "es" ? "Saltar al contenido principal" : "Skip to main content"}
+    </a>
+    <div id="main-content">
+      <slot />
+    </div>
+    <CookieConsent />
+    <SiteFooter />
+    <PlunkToaster client:idle />
+  </body>
 </html>
 
 <style>
-	.skip-link {
-		position: absolute;
-		left: 0.75rem;
-		top: 0.75rem;
-		padding: 0.6rem 0.9rem;
-		background: var(--color-text);
-		color: var(--color-primary);
-		border-radius: 999px;
-		transform: translateY(-200%);
-		z-index: 999;
-	}
+  .skip-link {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--color-text);
+    color: var(--color-primary);
+    border-radius: 999px;
+    transform: translateY(-200%);
+    z-index: 999;
+  }
 
-	.skip-link:focus {
-		transform: translateY(0);
-	}
+  .skip-link:focus {
+    transform: translateY(0);
+  }
 </style>
 
 <script is:inline>
-	const GA_ID = 'G-3ZDBF6HWZX';
-	let engagementBound = false;
-	let scrollDepth = 0;
+  const GA_ID = "G-3ZDBF6HWZX";
+  let engagementBound = false;
+  let scrollDepth = 0;
 
-	/** @type {Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }} */
-	const analyticsWindow = window;
+  /** @type {Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void }} */
+  const analyticsWindow = window;
 
-	function gtagSend() {
-		const g = analyticsWindow.gtag;
-		if (g) g.apply(analyticsWindow, arguments);
-	}
+  function gtagSend() {
+    const g = analyticsWindow.gtag;
+    if (g) g.apply(analyticsWindow, arguments);
+  }
 
-	function initAnalyticsEngagement() {
-		if (engagementBound || !GA_ID) return;
-		engagementBound = true;
+  function initAnalyticsEngagement() {
+    if (engagementBound || !GA_ID) return;
+    engagementBound = true;
 
-		window.addEventListener('scroll', function() {
-			const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-			if (scrollPercentage > scrollDepth && scrollPercentage % 25 === 0) {
-				scrollDepth = scrollPercentage;
-				gtagSend('event', 'scroll_depth', {
-					event_category: 'engagement',
-					event_label: scrollPercentage + '%',
-					value: scrollPercentage,
-				});
-			}
-		}, { passive: true });
+    window.addEventListener(
+      "scroll",
+      function () {
+        const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+        if (scrollPercentage > scrollDepth && scrollPercentage % 25 === 0) {
+          scrollDepth = scrollPercentage;
+          gtagSend("event", "scroll_depth", {
+            event_category: "engagement",
+            event_label: scrollPercentage + "%",
+            value: scrollPercentage,
+          });
+        }
+      },
+      { passive: true },
+    );
 
-		document.addEventListener('click', function(e) {
-			if (!(e.target instanceof Element)) return;
-			const cta = e.target.closest('[data-cta]');
-			if (cta instanceof HTMLElement) {
-				gtagSend('event', 'cta_click', {
-					event_category: 'engagement',
-					event_label: cta.dataset.cta || cta.textContent?.trim() || 'unknown_cta',
-				});
-			}
+    document.addEventListener("click", function (e) {
+      if (!(e.target instanceof Element)) return;
+      const cta = e.target.closest("[data-cta]");
+      if (cta instanceof HTMLElement) {
+        gtagSend("event", "cta_click", {
+          event_category: "engagement",
+          event_label: cta.dataset.cta || cta.textContent?.trim() || "unknown_cta",
+        });
+      }
 
-			const link = e.target.closest('a');
-			if (link && link.hostname !== window.location.hostname) {
-				gtagSend('event', 'click', {
-					event_category: 'outbound',
-					event_label: link.href,
-					transport_type: 'beacon',
-				});
-			}
-		});
-	}
+      const link = e.target.closest("a");
+      if (link && link.hostname !== window.location.hostname) {
+        gtagSend("event", "click", {
+          event_category: "outbound",
+          event_label: link.href,
+          transport_type: "beacon",
+        });
+      }
+    });
+  }
 
-	/** After explicit opt-in: grant storage and record page view (head already ran config while denied). */
-	function grantAnalyticsConsent() {
-		if (typeof analyticsWindow.gtag !== 'function') return;
-		analyticsWindow.gtag('consent', 'update', { analytics_storage: 'granted', ad_storage: 'denied' });
-		initAnalyticsEngagement();
-		gtagSend('config', GA_ID, {
-			page_path: window.location.pathname + window.location.search,
-		});
-	}
+  /** After explicit opt-in: grant storage and record page view (head already ran config while denied). */
+  function grantAnalyticsConsent() {
+    if (typeof analyticsWindow.gtag !== "function") return;
+    analyticsWindow.gtag("consent", "update", { analytics_storage: "granted", ad_storage: "denied" });
+    initAnalyticsEngagement();
+    gtagSend("config", GA_ID, {
+      page_path: window.location.pathname + window.location.search,
+    });
+  }
 
-	function syncAnalyticsConsent() {
-		if (localStorage.getItem('cookie-consent') !== 'accept') return;
-		scrollDepth = 0;
-		if (!engagementBound) {
-			initAnalyticsEngagement();
-		} else {
-			gtagSend('config', GA_ID, {
-				page_path: window.location.pathname + window.location.search,
-			});
-		}
-	}
+  function syncAnalyticsConsent() {
+    if (localStorage.getItem("cookie-consent") !== "accept") return;
+    scrollDepth = 0;
+    if (!engagementBound) {
+      initAnalyticsEngagement();
+    } else {
+      gtagSend("config", GA_ID, {
+        page_path: window.location.pathname + window.location.search,
+      });
+    }
+  }
 
-	function bindScrollReveal() {
-		const observerOptions = {
-			threshold: 0.1,
-			rootMargin: '0px 0px -50px 0px'
-		};
+  function bindScrollReveal() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
 
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('visible');
-					observer.unobserve(entry.target); // Animate only once - no CLS
-				}
-			});
-		}, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Animate only once - no CLS
+        }
+      });
+    }, observerOptions);
 
-		document.querySelectorAll('[data-sr]').forEach(el => observer.observe(el));
-	}
+    document.querySelectorAll("[data-sr]").forEach((el) => observer.observe(el));
+  }
 
-	document.addEventListener('DOMContentLoaded', bindScrollReveal);
-	document.addEventListener('DOMContentLoaded', syncAnalyticsConsent);
-	document.addEventListener('astro:after-swap', bindScrollReveal);
-	document.addEventListener('astro:after-swap', syncAnalyticsConsent);
-	window.addEventListener('site:consent-changed', (event) => {
-		if (event instanceof CustomEvent && event.detail === 'accept') {
-			grantAnalyticsConsent();
-		}
-	});
-	window.addEventListener('site:lead-submitted', (event) => {
-		if (!(event instanceof CustomEvent)) return;
-		gtagSend('event', 'generate_lead', {
-			send_to: GA_ID,
-			event_category: 'conversion',
-			event_label: event.detail?.locale || 'unknown',
-		});
-	});
+  document.addEventListener("DOMContentLoaded", bindScrollReveal);
+  document.addEventListener("DOMContentLoaded", syncAnalyticsConsent);
+  document.addEventListener("astro:after-swap", bindScrollReveal);
+  document.addEventListener("astro:after-swap", syncAnalyticsConsent);
+  window.addEventListener("site:consent-changed", (event) => {
+    if (event instanceof CustomEvent && event.detail === "accept") {
+      grantAnalyticsConsent();
+    }
+  });
+  window.addEventListener("site:lead-submitted", (event) => {
+    if (!(event instanceof CustomEvent)) return;
+    gtagSend("event", "generate_lead", {
+      send_to: GA_ID,
+      event_category: "conversion",
+      event_label: event.detail?.locale || "unknown",
+    });
+  });
 </script>
