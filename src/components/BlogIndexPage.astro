@@ -11,6 +11,23 @@ interface Props {
 
 const { locale, posts } = Astro.props;
 const isEnglish = locale === 'en';
+
+function blogCardImageUrl(url: string): string {
+  if (!url || !url.includes('images.unsplash.com')) return url;
+  // Rebuild Unsplash URL with thumbnail params (w=600, WebP) for blog cards
+  const [base] = url.split('?');
+  // Preserve ixid/ixlib from original for attribution compliance
+  const orig = new URL(url);
+  const params = new URLSearchParams();
+  if (orig.searchParams.get('ixid')) params.set('ixid', orig.searchParams.get('ixid')!);
+  if (orig.searchParams.get('ixlib')) params.set('ixlib', orig.searchParams.get('ixlib')!);
+  params.set('auto', 'format');
+  params.set('fit', 'crop');
+  params.set('w', '600');
+  params.set('q', '75');
+  params.set('fm', 'webp');
+  return `${base}?${params.toString()}`;
+}
 const title = isEnglish
   ? 'Web development, product strategy and business website insights | Ignacio Amat'
   : 'Blog de desarrollo web, tecnologia y decisiones de proyecto | Ignacio Amat';
@@ -66,13 +83,13 @@ const blogSchema = {
               <a href={getBlogPostUrl(locale, getBlogEntryPathSlug(post))} class="blog-card__link">
                 <div class="blog-card__media">
                   <img
-                    src={post.data.heroImage}
+                    src={blogCardImageUrl(post.data.heroImage)}
                     alt={post.data.heroImageAlt}
                     class="blog-card__image"
                     loading="lazy"
                     decoding="async"
-                    width="1200"
-                    height="750"
+                    width="600"
+                    height="375"
                   />
                 </div>
                 <div class="blog-card__content">

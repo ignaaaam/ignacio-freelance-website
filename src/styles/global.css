@@ -289,7 +289,8 @@ summary::-webkit-details-marker {
 }
 
 .text-accent {
-  color: var(--color-accent);
+  /* Use accent-strong for WCAG AA compliance (5.3:1 contrast on light bg) */
+  color: var(--theme-accent-strong);
 }
 
 .bg-secondary {

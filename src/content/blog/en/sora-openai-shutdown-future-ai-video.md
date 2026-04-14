@@ -14,9 +14,9 @@ keywords:
   - "openai sora closed"
   - "kling runway sora alternatives"
   - "future of generative ai video"
-heroImage: "https://upload.wikimedia.org/wikipedia/en/2/29/OpenAI_Sora_icon.png"
-heroImageAlt: "Official logo of Sora, OpenAI's AI video generation app"
-heroImageCredit: "OpenAI Sora icon — via Wikipedia"
+heroImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80&fm=webp"
+heroImageAlt: "Neural network visualization with interconnected nodes representing generative artificial intelligence"
+heroImageCredit: "Photo by Google DeepMind on Unsplash"
 draft: false
 relatedServices:
   - "business-websites"
