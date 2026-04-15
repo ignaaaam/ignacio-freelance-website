@@ -5,7 +5,8 @@
     "**/*"
   ],
   "exclude": [
-    "dist"
+    "dist",
+    "unlighthouse-reports"
   ],
   "compilerOptions": {
     "jsx": "react-jsx",

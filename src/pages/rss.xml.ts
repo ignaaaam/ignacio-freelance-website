@@ -16,7 +16,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       pubDate: post.data.publishedDate,
       description: post.data.description,
-      link: new URL(`/blog/${getBlogEntryPathSlug(post)}/`, site).href,
+      link: new URL(`/blog/${getBlogEntryPathSlug(post)}`, site).href,
       categories: [...new Set([post.data.category, ...post.data.tags])],
     })),
     customData: `<language>es-es</language>`,
