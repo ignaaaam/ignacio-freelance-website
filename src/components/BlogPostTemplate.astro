@@ -184,7 +184,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
           {serviceLinks.length > 0 && (
             <section class="article-panel surface-card" data-sr>
               <p class="section-eyebrow">{isEnglish ? 'Relevant services' : 'Servicios relacionados'}</p>
-              <h2>{isEnglish ? 'Where this topic connects with the work I do' : 'Donde este tema conecta con el trabajo que hago'}</h2>
+              <h2>{isEnglish ? 'Where this topic connects with the work I do' : 'Dónde encaja este tema con mi trabajo'}</h2>
               <div class="article-links">
                 {serviceLinks.map((link) => (
                   <a href={link.href} class="article-links__card">
@@ -198,7 +198,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
 
           {relatedPosts.length > 0 && (
             <section class="article-panel surface-card" data-sr>
-              <p class="section-eyebrow">{isEnglish ? 'More articles' : 'Mas articulos'}</p>
+              <p class="section-eyebrow">{isEnglish ? 'More articles' : 'Más artículos'}</p>
               <h2>{isEnglish ? 'Keep reading' : 'Seguir leyendo'}</h2>
               <div class="article-links">
                 {relatedPosts.map((post) => (
@@ -222,14 +222,14 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
 <style>
   .article-layout {
     display: grid;
-    gap: 1rem;
-    max-width: 980px;
+    gap: 1.15rem;
+    max-width: 1080px;
   }
 
   .article-hero,
   .article-shell,
   .article-panel {
-    padding: 1.6rem;
+    padding: 1.75rem;
   }
 
   .article-breadcrumbs,
@@ -245,33 +245,53 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
     margin-bottom: 1rem;
   }
 
+  .article-hero {
+    background:
+      radial-gradient(circle at top left, rgba(31, 107, 255, 0.2), transparent 28%),
+      linear-gradient(180deg, rgba(10, 12, 18, 0.98), rgba(13, 16, 24, 0.98));
+    color: var(--theme-dark-text);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  .article-breadcrumbs,
+  .article-meta,
+  .article-intro,
+  .image-credit {
+    color: var(--theme-dark-muted);
+  }
+
+  .article-hero .section-eyebrow {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(246, 248, 252, 0.82);
+  }
+
   .article-hero h1 {
-    max-width: 16ch;
+    max-width: 14ch;
     margin-bottom: 1rem;
-    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    color: var(--theme-dark-text);
+    font-size: clamp(2.8rem, 6vw, 5rem);
   }
 
   .article-intro {
-    max-width: 66ch;
+    max-width: 64ch;
     margin-top: 1rem;
-    color: var(--color-text-muted);
     font-size: 1.08rem;
-    line-height: 1.85;
+    line-height: 1.78;
   }
 
   .article-hero__image {
     width: 100%;
-    margin-top: 1.3rem;
-    aspect-ratio: 4 / 3;
+    margin-top: 1.4rem;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    border-radius: 1.2rem;
-    border: 1px solid rgba(74, 54, 41, 0.12);
-    background: rgba(255, 255, 255, 0.72);
+    border-radius: 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
   }
 
   .image-credit {
     font-size: 0.72rem;
-    color: var(--color-text-muted, #888);
     text-align: right;
     margin-top: 0.35rem;
     opacity: 0.75;
@@ -279,26 +299,34 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
 
   .article-layout__content {
     display: grid;
-    gap: 1.15rem;
+    gap: 1.25rem;
   }
 
   .toc-card {
     padding: 1rem 1.05rem;
-    border: 1px solid rgba(74, 54, 41, 0.1);
-    border-radius: 1rem;
-    background: rgba(255, 250, 244, 0.88);
+    border: 1px solid rgba(17, 19, 26, 0.08);
+    border-radius: 1.15rem;
+    background: rgba(247, 249, 253, 0.9);
   }
 
   .toc-card h2 {
-    font-size: 1.15rem;
+    font-size: 1rem;
   }
 
   .toc-card ol {
     margin: 0.9rem 0 0;
-    padding-left: 1.2rem;
+    padding-left: 1rem;
     color: var(--color-text-muted);
     display: grid;
-    gap: 0.45rem;
+    gap: 0.55rem;
+  }
+
+  .toc-card a {
+    color: var(--color-text-muted);
+  }
+
+  .toc-card a:hover {
+    color: var(--theme-accent-strong);
   }
 
   .article-footer-grid {
@@ -315,15 +343,27 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
 
   .article-links__card {
     padding: 1rem 1.05rem;
-    border: 1px solid rgba(74, 54, 41, 0.1);
-    border-radius: 1rem;
-    background: rgba(255, 250, 244, 0.88);
+    border: 1px solid rgba(17, 19, 26, 0.08);
+    border-radius: 1.15rem;
+    background: rgba(247, 249, 253, 0.9);
   }
 
   .article-links__card p {
     margin-top: 0.45rem;
     color: var(--color-text-muted);
     line-height: 1.7;
+  }
+
+  @media (min-width: 960px) {
+    .article-layout__content {
+      grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .toc-card {
+      position: sticky;
+      top: 6.4rem;
+    }
   }
 
   @media (max-width: 720px) {

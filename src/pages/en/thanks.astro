@@ -12,20 +12,121 @@ const alternateUrls = { es: '/thanks', en: '/en/thanks' };
   lang="en"
   canonicalUrl={canonicalUrl}
   alternateUrls={alternateUrls}
+  robots="noindex, nofollow"
 >
   <Header languageSwitchUrls={alternateUrls} />
-  <main class="section">
-    <div class="container" style="max-width: 42rem;">
-      <div class="surface-card" style="padding: 2rem;" data-sr>
-        <p class="section-eyebrow">Contact</p>
-        <h1>Thanks — your message is in</h1>
-        <p class="section-copy" style="margin-top: 1rem;">
-          I have your context. I will review the details and reply by email as soon as possible, typically within 24 business hours.
-        </p>
-        <p style="margin-top: 1.25rem;">
-          <a href="/en/" class="btn-primary">Back to home</a>
-        </p>
+  <main class="thanks-page">
+    <section class="thanks-shell">
+      <div class="container thanks-shell__container">
+        <div class="thanks-card" data-sr>
+          <p class="section-eyebrow">Contact</p>
+          <h1>Thanks, I have your message</h1>
+          <p class="thanks-copy">
+            I have your message and the core project context. I will review the details and reply by email as soon as possible, typically within 24 business hours.
+          </p>
+
+          <div class="thanks-meta">
+            <div class="thanks-meta__item">
+              <span>What happens now</span>
+              <p>I review the project, spot any missing context and reply with a useful first recommendation.</p>
+            </div>
+            <div class="thanks-meta__item">
+              <span>Reply channel</span>
+              <p>I will reply by email so the conversation can move forward with useful guidance from the first message.</p>
+            </div>
+          </div>
+
+          <p class="thanks-actions">
+            <a href="/en/" class="btn-primary">Back to home</a>
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .thanks-page {
+    background:
+      radial-gradient(circle at top left, rgba(31, 107, 255, 0.22), transparent 30%),
+      linear-gradient(180deg, rgba(9, 11, 16, 0.98), rgba(12, 15, 22, 0.98));
+  }
+
+  .thanks-shell {
+    padding: clamp(2.5rem, 5vw, 4rem) 0;
+  }
+
+  .thanks-shell__container {
+    max-width: 52rem;
+  }
+
+  .thanks-card {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.7rem;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--theme-dark-text);
+    box-shadow: 0 26px 64px rgba(7, 10, 16, 0.24);
+    backdrop-filter: blur(16px);
+  }
+
+  .thanks-card .section-eyebrow {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(246, 248, 252, 0.82);
+    box-shadow: none;
+  }
+
+  .thanks-card h1 {
+    color: var(--theme-dark-text);
+  }
+
+  .thanks-copy {
+    margin-top: 1rem;
+    color: var(--theme-dark-muted);
+    line-height: 1.75;
+  }
+
+  .thanks-meta {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 1.4rem;
+  }
+
+  .thanks-meta__item {
+    padding: 1rem 1.05rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .thanks-meta__item span {
+    display: block;
+    margin-bottom: 0.45rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(246, 248, 252, 0.68);
+  }
+
+  .thanks-meta__item p {
+    color: var(--theme-dark-text);
+    line-height: 1.7;
+  }
+
+  .thanks-actions {
+    margin-top: 1.4rem;
+  }
+
+  @media (max-width: 720px) {
+    .thanks-shell {
+      padding: 2rem 0 2.6rem;
+    }
+
+    .thanks-card {
+      padding: 1.35rem;
+      border-radius: 1.4rem;
+    }
+  }
+</style>

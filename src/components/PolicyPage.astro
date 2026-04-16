@@ -41,10 +41,10 @@ const formattedUpdatedAt = new Date(updatedAt ?? Date.now()).toLocaleDateString(
               <h1>{pageTitle}</h1>
             </div>
             <div class="policy-card__meta">
-              <div class="policy-card__lang">
-                <a href={languageSwitchUrls.es} class={lang === 'es' ? 'is-active' : undefined}>ES</a>
-                <a href={languageSwitchUrls.en} class={lang === 'en' ? 'is-active' : undefined}>EN</a>
-              </div>
+              <nav class="policy-card__lang" aria-label={lang === 'en' ? 'Language selector' : 'Selector de idioma'}>
+                <a href={languageSwitchUrls.es} class={lang === 'es' ? 'is-active' : undefined} aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
+                <a href={languageSwitchUrls.en} class={lang === 'en' ? 'is-active' : undefined} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+              </nav>
               <p>{updatedLabel}: {formattedUpdatedAt}</p>
             </div>
           </header>
@@ -60,21 +60,21 @@ const formattedUpdatedAt = new Date(updatedAt ?? Date.now()).toLocaleDateString(
 
 <style>
   .policy-card {
-    padding: 1.6rem;
+    padding: 1.85rem;
   }
 
   .policy-card__header {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1rem;
-    padding-bottom: 1.35rem;
-    border-bottom: 1px solid rgba(74, 54, 41, 0.1);
+    gap: 1.2rem;
+    padding-bottom: 1.55rem;
+    border-bottom: 1px solid rgba(17, 19, 26, 0.08);
   }
 
   .policy-card__header h1 {
-    margin-top: 0.35rem;
-    font-size: clamp(2.3rem, 6vw, 4rem);
+    margin-top: 0.45rem;
+    font-size: clamp(2.5rem, 6vw, 4.3rem);
   }
 
   .policy-card__meta {
@@ -89,9 +89,9 @@ const formattedUpdatedAt = new Date(updatedAt ?? Date.now()).toLocaleDateString(
     display: flex;
     gap: 0.3rem;
     padding: 0.28rem;
-    border: 1px solid rgba(74, 54, 41, 0.1);
+    border: 1px solid rgba(17, 19, 26, 0.08);
     border-radius: 999px;
-    background: #fff9f3;
+    background: rgba(247, 249, 253, 0.9);
   }
 
   .policy-card__lang a {
@@ -102,16 +102,16 @@ const formattedUpdatedAt = new Date(updatedAt ?? Date.now()).toLocaleDateString(
 
   .policy-card__lang .is-active {
     background: var(--theme-highlight);
-    color: #fffaf4;
+    color: var(--theme-dark-text);
   }
 
   .policy-card__body {
-    padding-top: 1.55rem;
+    padding-top: 1.75rem;
   }
 
   @media (max-width: 720px) {
     .policy-card {
-      padding: 1.3rem;
+      padding: 1.35rem;
     }
 
     .policy-card__header {

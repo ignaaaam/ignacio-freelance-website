@@ -9,8 +9,8 @@ const nav = siteContent[locale].nav;
 <div id="sticky-cta" class="sticky-cta">
   <div class="sticky-cta__content">
     <div>
-      <strong>{locale === 'en' ? 'Need a website that helps you sell more clearly?' : 'Necesitas una web que te ayude a vender con mas claridad?'}</strong>
-      <p>{locale === 'en' ? 'Tell me the goal, timing and context. I will tell you if it is a fit and what the next step should be.' : 'Cuentame objetivo, plazo y contexto. Te dire si encaja y cual deberia ser el siguiente paso.'}</p>
+      <strong>{locale === 'en' ? 'Need a website that makes your offer easier to understand?' : '¿Necesitas una web que explique mejor tu oferta?'}</strong>
+      <p>{locale === 'en' ? 'Tell me the goal, timing and context. I will tell you if it looks like a fit and what I would suggest next.' : 'Cuéntame objetivo, plazo y contexto. Te diré si encaja y cuál te recomiendo como siguiente paso.'}</p>
     </div>
     <a href={nav.contactHref} class="btn-primary" data-cta="sticky-primary">{nav.primaryCta}</a>
   </div>
@@ -21,7 +21,7 @@ const nav = siteContent[locale].nav;
     position: fixed;
     left: 0;
     right: 0;
-    bottom: max(0.85rem, env(safe-area-inset-bottom));
+    bottom: max(1rem, env(safe-area-inset-bottom));
     z-index: 40;
     display: none;
     justify-content: center;
@@ -36,25 +36,29 @@ const nav = siteContent[locale].nav;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    width: min(920px, calc(100% - 2rem));
-    padding: 1rem 1.05rem;
-    border: 1px solid rgba(74, 54, 41, 0.08);
-    border-radius: 1.35rem;
-    background: rgba(31, 23, 18, 0.95);
-    box-shadow: 0 20px 48px rgba(15, 11, 8, 0.28);
+    gap: 1.2rem;
+    width: min(1040px, calc(100% - 2rem));
+    padding: 1rem 1.15rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.6rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)),
+      rgba(10, 12, 18, 0.92);
+    box-shadow: 0 24px 60px rgba(6, 9, 15, 0.28);
+    backdrop-filter: blur(26px);
     pointer-events: auto;
   }
 
   .sticky-cta__content strong,
   .sticky-cta__content p {
-    color: #fff8f2;
+    color: var(--theme-dark-text);
   }
 
   .sticky-cta__content p {
-    margin-top: 0.25rem;
-    font-size: 0.94rem;
-    opacity: 0.86;
+    margin-top: 0.32rem;
+    max-width: 54ch;
+    font-size: 0.95rem;
+    color: var(--theme-dark-muted);
   }
 
   .sticky-cta .btn-primary {
@@ -65,8 +69,8 @@ const nav = siteContent[locale].nav;
     .sticky-cta__content {
       flex-direction: column;
       align-items: stretch;
-      padding: 0.95rem;
-      border-radius: 1.15rem;
+      padding: 1rem;
+      border-radius: 1.28rem;
     }
 
     .sticky-cta__content p {

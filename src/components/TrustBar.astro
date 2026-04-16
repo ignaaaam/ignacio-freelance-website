@@ -23,3 +23,75 @@ const content = siteContent[locale];
     </div>
   </div>
 </section>
+
+<style>
+  .trust-strip {
+    position: relative;
+    z-index: 2;
+    margin-top: clamp(-2.2rem, -3vw, -1.4rem);
+    padding-bottom: 0.4rem;
+  }
+
+  .trust-strip__shell {
+    display: grid;
+    gap: 1rem;
+    padding: 1.25rem 1.35rem;
+    border: 1px solid rgba(17, 19, 26, 0.08);
+    border-radius: 1.75rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 251, 255, 0.9)),
+      rgba(255, 255, 255, 0.92);
+    box-shadow: 0 24px 60px rgba(16, 23, 36, 0.1);
+    backdrop-filter: blur(18px);
+  }
+
+  .trust-strip__label {
+    max-width: 56ch;
+    font-weight: 800;
+    line-height: 1.5;
+  }
+
+  .trust-strip__items,
+  .trust-strip__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .trust-strip__social {
+    justify-content: space-between;
+  }
+
+  .trust-strip__social a {
+    color: var(--theme-accent-strong);
+    font-weight: 700;
+  }
+
+  .trust-strip__badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.2rem;
+    padding: 0.42rem 0.86rem;
+    border-radius: 999px;
+    background: rgba(31, 107, 255, 0.08);
+    color: var(--theme-accent-strong);
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  @media (max-width: 720px) {
+    .trust-strip {
+      margin-top: -1.4rem;
+    }
+
+    .trust-strip__shell {
+      padding: 1.05rem;
+      border-radius: 1.35rem;
+    }
+
+    .trust-strip__social {
+      justify-content: flex-start;
+    }
+  }
+</style>

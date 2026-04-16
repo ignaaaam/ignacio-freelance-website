@@ -6,11 +6,7 @@ import { siteConfig } from '../data/siteConfig';
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].hero;
 const isEnglish = locale === 'en';
-const panelFocusLabel = isEnglish ? 'Good fit for' : 'Pensado para';
-const panelCapabilitiesLabel = isEnglish ? 'What I build' : 'Que construyo';
-const panelContactLabel = isEnglish ? 'Best next step' : 'Siguiente paso';
-const panelVerifyLabel = isEnglish ? 'Profiles' : 'Perfiles';
-const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.responseTimeEs;
+const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteConfig.locationEs} · ES/EN`;
 ---
 
 <section class="hero section">
@@ -25,93 +21,95 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
         <a href={content.secondaryHref} class="btn-secondary" data-cta="hero-secondary">{content.secondaryCta}</a>
       </div>
 
-      <div class="hero__proof">
-        {content.proof.map((item) => (
-          <span class="pill">{item}</span>
-        ))}
+      <div class="hero__meta">
+        <div class="hero__meta-top">
+          <div class="hero__fit">
+            <span class="hero__meta-label">{content.fitLabel}</span>
+            <p>{content.fitText}</p>
+            <span class="hero__fit-note">{locationLine}</span>
+          </div>
+
+          <div class="hero__contact">
+            <span class="hero__meta-label">{content.contactLinksLabel}</span>
+            <div class="hero__links">
+              <a
+                href={siteConfig.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                translate="no"
+                aria-label={isEnglish ? 'LinkedIn profile, opens in a new tab' : 'Perfil de LinkedIn, se abre en una pestaña nueva'}
+              >
+                LinkedIn
+              </a>
+              <a
+                href={siteConfig.github}
+                target="_blank"
+                rel="noreferrer"
+                translate="no"
+                aria-label={isEnglish ? 'GitHub profile, opens in a new tab' : 'Perfil de GitHub, se abre en una pestaña nueva'}
+              >
+                GitHub
+              </a>
+              <a href={`mailto:${siteConfig.email}`} class="hero__cta-link" aria-label={isEnglish ? 'Send an email' : 'Enviar un email'}>
+                Email
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="hero__proof" aria-label={isEnglish ? 'Key project signals' : 'Señales clave del proyecto'}>
+          {content.proof.map((item) => (
+            <li class="pill">{item}</li>
+          ))}
+        </ul>
       </div>
     </div>
-
-    <aside class="hero__panel surface-card" data-sr>
-      <div class="hero__panel-header">
-        <div class="hero__portrait-visual">
-          <span>IA</span>
-        </div>
-        <div class="hero__panel-intro">
-          <p class="hero__panel-name">{content.portraitLabel}</p>
-          <p class="hero__panel-role">{isEnglish ? 'Freelance web developer' : 'Desarrollador web freelance'}</p>
-
-          <div class="hero__panel-highlight">
-            <span class="hero__panel-label">{panelFocusLabel}</span>
-            <p>{content.availability}</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__panel-body">
-        <section class="hero__panel-section">
-          <span class="hero__panel-label">{panelCapabilitiesLabel}</span>
-          <ul class="hero__panel-list">
-            {content.portraitMeta.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section class="hero__panel-section hero__panel-section--contact">
-          <span class="hero__panel-label">{panelContactLabel}</span>
-          <div class="hero__channel">
-            <a href={content.primaryHref} data-cta="hero-panel-contact">{isEnglish ? 'Use the contact form' : 'Usa el formulario de contacto'}</a>
-            <p>{panelResponse}</p>
-          </div>
-        </section>
-      </div>
-
-      <div class="hero__panel-footer">
-        <span class="hero__panel-label">{panelVerifyLabel}</span>
-        <div class="hero__links">
-          <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={siteConfig.github} target="_blank" rel="noreferrer">GitHub</a>
-          <a href={`mailto:${siteConfig.email}`} class="hero__cta-link">{isEnglish ? 'Email direct' : 'Email directo'}</a>
-        </div>
-      </div>
-    </aside>
   </div>
 </section>
 
 <style>
   .hero {
+    position: relative;
     display: flex;
     align-items: center;
     min-height: calc(100svh - 5.85rem);
-    padding-block: clamp(0.5rem, 1.1vw, 0.95rem) clamp(1.15rem, 2vw, 1.7rem);
+    padding-block: clamp(1.35rem, 2vw, 2rem) clamp(2.2rem, 4vw, 3rem);
+    color: var(--theme-dark-text);
+    background:
+      radial-gradient(circle at top left, rgba(31, 107, 255, 0.24), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.09), transparent 24%),
+      linear-gradient(180deg, rgba(9, 11, 16, 0.98), rgba(12, 15, 22, 0.98));
+    overflow: hidden;
   }
 
   .hero__grid {
     display: grid;
     width: 100%;
-    grid-template-columns: minmax(0, 1.24fr) minmax(300px, 0.76fr);
-    gap: clamp(0.9rem, 1.5vw, 1.35rem);
+    grid-template-columns: minmax(0, 1fr);
     align-items: center;
   }
 
   .hero__content {
     display: grid;
     align-content: center;
+    max-width: min(100%, 70rem);
   }
 
   .hero h1 {
-    max-width: 12.4ch;
-    font-size: clamp(2.2rem, 4vw, 3.95rem);
+    max-width: 12ch;
+    color: var(--theme-dark-text);
+    font-size: clamp(2.95rem, 5.9vw, 5.35rem);
     line-height: 0.92;
+    letter-spacing: -0.055em;
+    text-wrap: balance;
   }
 
   .hero__copy {
-    max-width: 58ch;
-    margin-top: 0.8rem;
-    color: var(--color-text-muted);
-    font-size: clamp(0.94rem, 1.1vw, 1rem);
-    line-height: 1.58;
+    max-width: 62ch;
+    margin-top: 0.9rem;
+    color: var(--theme-dark-muted);
+    font-size: clamp(0.98rem, 1.05vw, 1.08rem);
+    line-height: 1.62;
   }
 
   .hero__actions,
@@ -123,254 +121,179 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
   }
 
   .hero__actions {
-    margin-top: 1.05rem;
+    margin-top: 1.15rem;
+  }
+
+  .hero__actions .btn-secondary {
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--theme-dark-text);
+    box-shadow: none;
+  }
+
+  .hero__actions .btn-secondary:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--theme-dark-text);
+    box-shadow: none;
   }
 
   .hero__proof {
-    margin-top: 0.9rem;
-    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0.7rem;
   }
 
   .hero__actions .btn-primary,
   .hero__actions .btn-secondary {
-    min-height: 2.9rem;
-    padding: 0.72rem 1.1rem;
+    min-height: 3.2rem;
+    padding: 0.82rem 1.2rem;
   }
 
   .hero__proof .pill {
-    min-height: 2.05rem;
-    padding: 0.32rem 0.72rem;
-    font-size: 0.86rem;
-  }
-
-  .hero__panel {
-    display: grid;
-    gap: 0.7rem;
-    padding: 1rem;
-    overflow: hidden;
-    align-self: start;
-    position: relative;
-    background:
-      radial-gradient(circle at top right, rgba(184, 104, 54, 0.18), transparent 34%),
-      radial-gradient(circle at bottom left, rgba(33, 68, 63, 0.12), transparent 28%),
-      var(--color-card-bg);
-  }
-
-  .hero__panel::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(184, 104, 54, 0.3), rgba(33, 68, 63, 0.45));
-  }
-
-  .hero__panel-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.75rem;
-    align-items: start;
-  }
-
-  .hero__panel-intro {
-    display: grid;
-    gap: 0.3rem;
-  }
-
-  .hero__portrait-visual {
-    display: grid;
-    place-items: center;
-    width: 3.95rem;
-    aspect-ratio: 1;
-    border-radius: 1.15rem;
-    background:
-      radial-gradient(circle at 32% 22%, rgba(255, 255, 255, 0.38), transparent 25%),
-      linear-gradient(160deg, rgba(184, 104, 54, 0.94), rgba(33, 68, 63, 0.94));
-    color: #fff8f2;
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    font-weight: 800;
-    box-shadow: 0 18px 36px rgba(33, 68, 63, 0.16);
-  }
-
-  .hero__panel-name {
-    font-family: var(--font-heading);
-    font-size: 1.12rem;
-    font-weight: 800;
-  }
-
-  .hero__panel-role {
-    color: var(--color-text-muted);
-    line-height: 1.35;
-    font-size: 0.9rem;
-  }
-
-  .hero__panel-highlight,
-  .hero__panel-section,
-  .hero__panel-footer {
-    padding: 0.78rem 0.85rem;
-    border: 1px solid rgba(74, 54, 41, 0.1);
-    border-radius: 1rem;
-    background: rgba(255, 250, 244, 0.78);
-  }
-
-  .hero__panel-highlight {
-    display: grid;
-    gap: 0.35rem;
-    margin-top: 0.2rem;
-    background:
-      linear-gradient(135deg, rgba(184, 104, 54, 0.1), rgba(255, 250, 244, 0.82)),
-      rgba(255, 250, 244, 0.82);
-  }
-
-  .hero__panel-highlight p {
-    font-family: var(--font-heading);
-    font-size: clamp(0.94rem, 1.2vw, 1.06rem);
-    line-height: 1.22;
-  }
-
-  .hero__panel-body {
-    display: grid;
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
-    gap: 0.6rem;
-  }
-
-  .hero__panel-section {
-    display: grid;
-    gap: 0.55rem;
-  }
-
-  .hero__panel-section--contact {
-    align-content: start;
-  }
-
-  .hero__panel-label {
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--theme-highlight);
-  }
-
-  .hero__panel-list {
-    display: grid;
-    gap: 0.4rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .hero__panel-list li {
-    position: relative;
-    padding-left: 0.95rem;
-    color: var(--color-text);
-    font-size: 0.9rem;
-    line-height: 1.35;
-  }
-
-  .hero__panel-list li::before {
-    content: '';
-    position: absolute;
-    top: 0.58rem;
-    left: 0;
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 999px;
-    background: linear-gradient(135deg, var(--theme-accent), var(--theme-highlight));
-  }
-
-  .hero__channel {
-    display: grid;
-    gap: 0.25rem;
-  }
-
-  .hero__channel a {
-    font-weight: 700;
-    max-width: 100%;
-    font-size: 0.84rem;
-    white-space: normal;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-  }
-
-  .hero__channel p {
-    color: var(--color-text-muted);
+    min-height: 2.2rem;
+    padding: 0.42rem 0.84rem;
+    border-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--theme-dark-text);
     font-size: 0.88rem;
-    line-height: 1.42;
   }
 
-  .hero__panel-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.7rem;
+  .hero__meta {
+    display: grid;
+    gap: 0.9rem;
+    max-width: min(100%, 60rem);
+    margin-top: 1.3rem;
+  }
+
+  .hero__meta-top {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) auto;
+    gap: 0.85rem;
+    align-items: stretch;
+  }
+
+  .hero__fit,
+  .hero__contact {
+    display: grid;
+    gap: 0.45rem;
+    align-content: start;
+    height: 100%;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.3rem;
+    background: rgba(255, 255, 255, 0.04);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .hero__fit p {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    line-height: 1.25;
+    color: var(--theme-dark-text);
+  }
+
+  .hero__fit-note {
+    color: rgba(246, 248, 252, 0.68);
+    font-size: 0.84rem;
+    line-height: 1.4;
+  }
+
+  .hero__meta-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(246, 248, 252, 0.68);
   }
 
   .hero__links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.4rem;
-    padding: 0.4rem 0.74rem;
-    border: 1px solid rgba(74, 54, 41, 0.12);
+    min-height: 2.5rem;
+    padding: 0.46rem 0.82rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
-    background: rgba(255, 252, 247, 0.82);
-    color: var(--color-text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--theme-dark-text);
     font-size: 0.88rem;
     font-weight: 700;
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .hero__links a:hover {
-    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: var(--theme-dark-text);
+    transform: translateY(-1px);
   }
 
-  .hero__cta-link {
-    background: var(--theme-highlight) !important;
-    color: #fffaf4 !important;
-    border-color: transparent !important;
+  .hero__links a:focus-visible {
+    outline: 2px solid var(--theme-accent);
+    outline-offset: 2px;
+  }
+
+  .hero__links .hero__cta-link {
+    background: rgba(31, 107, 255, 0.18);
+    color: var(--theme-dark-text);
+    border-color: rgba(31, 107, 255, 0.38);
     font-weight: 700;
   }
 
-  .hero__cta-link:hover {
-    background: var(--theme-accent-strong) !important;
-    color: #fffaf4 !important;
+  .hero__links .hero__cta-link:hover {
+    background: rgba(31, 107, 255, 0.28);
+    color: var(--theme-dark-text);
+  }
+
+  .hero .section-eyebrow {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(246, 248, 252, 0.82);
+    box-shadow: none;
   }
 
   @media (max-width: 1040px) {
     .hero {
       display: block;
       min-height: auto;
-      padding-block: 1.15rem 3rem;
+      padding-block: 1.25rem 3rem;
     }
 
     .hero__grid {
-      grid-template-columns: 1fr;
       align-items: start;
     }
 
     .hero h1 {
-      max-width: 13ch;
+      max-width: 12.4ch;
     }
 
-    .hero__panel-body {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .hero__meta-top {
+      grid-template-columns: 1fr;
     }
   }
 
   @media (max-width: 720px) {
     .hero {
-      padding-block: 1.05rem 2.7rem;
+      padding-block: 1.2rem 2.8rem;
     }
 
     .hero h1 {
       max-width: none;
-      font-size: clamp(2.4rem, 11vw, 3.55rem);
-      line-height: 1;
+      font-size: clamp(2.55rem, 10.2vw, 3.95rem);
+      line-height: 0.95;
     }
 
     .hero__copy {
-      margin-top: 1rem;
-      font-size: 0.99rem;
-      line-height: 1.68;
+      margin-top: 0.9rem;
+      font-size: 0.97rem;
+      line-height: 1.62;
     }
 
     .hero__content {
@@ -383,36 +306,13 @@ const panelResponse = isEnglish ? siteConfig.responseTimeEn : siteConfig.respons
       gap: 0.72rem;
     }
 
-    .hero__panel {
-      padding: 1.1rem;
+    .hero__meta {
+      margin-top: 1.15rem;
     }
 
-    .hero__panel-highlight,
-    .hero__panel-section,
-    .hero__panel-footer {
-      padding: 0.95rem;
-    }
-
-    .hero__panel-footer {
-      display: grid;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .hero__panel-body {
-      grid-template-columns: 1fr;
-    }
-
-    .hero__panel-section--contact {
-      grid-column: 1 / -1;
-    }
-
-    .hero__panel-header {
-      gap: 0.8rem;
-    }
-
-    .hero__portrait-visual {
-      width: 3.9rem;
+    .hero__fit,
+    .hero__contact {
+      padding: 0.95rem 1rem;
     }
   }
 </style>

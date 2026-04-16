@@ -4,6 +4,7 @@ import { siteContent } from '../data/siteContent';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const content = siteContent[locale].process;
+const primaryCta = siteContent[locale].nav.primaryCta;
 ---
 
 <section class="section section-alt" id="proceso">
@@ -27,14 +28,14 @@ const content = siteContent[locale].process;
     <div class="process-cta" data-sr>
       <div class="process-cta__inner surface-card">
         <div class="process-cta__text">
-          <p class="process-cta__heading">{locale === 'en' ? 'Ready to get started?' : 'Listo para empezar?'}</p>
+          <p class="process-cta__heading">{locale === 'en' ? 'Ready to talk through the project?' : '¿Listo para hablar del proyecto?'}</p>
           <p class="process-cta__sub">{locale === 'en'
-            ? 'Share the essentials and get a clear proposal — usually within 24 business hours.'
-            : 'Cuentame lo esencial y recibe una propuesta clara, normalmente en 24 horas laborables.'
+            ? 'Share the essentials and get a useful first recommendation, usually within 24 business hours.'
+            : 'Cuéntame lo esencial y recibe una primera recomendación útil, normalmente en 24 horas laborables.'
           }</p>
         </div>
         <a href="#contacto" class="btn-primary process-cta__btn">
-          {locale === 'en' ? 'Start the conversation' : 'Empezar la conversacion'}
+          {primaryCta}
         </a>
       </div>
     </div>
@@ -45,34 +46,36 @@ const content = siteContent[locale].process;
   .process-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.1rem;
   }
 
   .process-card {
-    padding: 1.6rem;
+    position: relative;
+    padding: 1.7rem;
   }
 
   .process-card__number {
     display: inline-grid;
     place-items: center;
-    width: 2.4rem;
+    width: 2.55rem;
     aspect-ratio: 1;
     margin-bottom: 1rem;
     border-radius: 999px;
-    background: var(--color-text);
-    color: var(--color-primary);
+    background: var(--theme-highlight);
+    color: var(--theme-dark-text);
     font-family: var(--font-heading);
     font-weight: 800;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.14);
   }
 
   .process-card p {
-    margin-top: 0.85rem;
+    margin-top: 0.9rem;
     color: var(--color-text-muted);
-    line-height: 1.75;
+    line-height: 1.74;
   }
 
   .process-cta {
-    margin-top: 1.25rem;
+    margin-top: 1.45rem;
   }
 
   .process-cta__inner {
@@ -80,10 +83,10 @@ const content = siteContent[locale].process;
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    padding: 1.55rem 1.8rem;
-    border-color: rgba(33, 68, 63, 0.16);
+    padding: 1.7rem 1.9rem;
+    border-color: rgba(31, 107, 255, 0.16);
     background:
-      linear-gradient(135deg, rgba(33, 68, 63, 0.05), transparent 60%),
+      linear-gradient(135deg, rgba(31, 107, 255, 0.08), transparent 60%),
       var(--color-card-bg);
   }
 
@@ -94,7 +97,7 @@ const content = siteContent[locale].process;
 
   .process-cta__heading {
     font-family: var(--font-heading);
-    font-size: 1.18rem;
+    font-size: 1.24rem;
     font-weight: 800;
     color: var(--color-text);
   }

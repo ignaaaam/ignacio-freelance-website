@@ -4,7 +4,7 @@ import MarketingContentPage from '../components/MarketingContentPage.astro';
 const baseUrl = 'https://www.ignacioamatweb.com';
 const title = '¿Cuánto cuesta una página web en 2026? | Guía de precios';
 const description =
-  'Guia orientativa de precios web en 2026 para landing pages, webs corporativas, ecommerce y aplicaciones web. Rangos reales, factores que mueven el presupuesto y como comparar propuestas.';
+  'Guía orientativa de precios web en 2026 para landing pages, webs corporativas, ecommerce y aplicaciones web. Rangos reales, factores que mueven el presupuesto y cómo comparar propuestas.';
 const canonicalUrl = '/cuanto-cuesta-pagina-web';
 const keywords = [
   'cuanto cuesta pagina web',
@@ -21,34 +21,34 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Cuanto cuesta una pagina web en Espana en 2026?',
+      name: '¿Cuánto cuesta una página web en España en 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Depende del tipo de proyecto. Una landing page sencilla puede partir de 800 EUR, una web de empresa suele moverse desde 1.500 EUR y una aplicacion web o MVP parte normalmente de 3.000 EUR.',
+        text: 'Depende del tipo de proyecto. Una landing page sencilla puede partir de 800 EUR, una web de empresa suele moverse desde 1.800 EUR y una aplicación web o MVP parte normalmente de 3.000 EUR.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Por que dos presupuestos pueden ser tan distintos?',
+      name: '¿Por qué dos presupuestos pueden ser tan distintos?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Porque cambian el alcance, el nivel de personalizacion, el contenido, las integraciones, la tecnologia y lo que realmente se entrega despues del lanzamiento.',
+        text: 'Porque cambian el alcance, el nivel de personalización, el contenido, las integraciones, la tecnología y lo que realmente se entrega después del lanzamiento.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Es mejor empezar por algo pequeno?',
+      name: '¿Es mejor empezar por algo pequeño?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Muchas veces si. Una landing page o una primera fase bien definida suele ser mejor que sobredimensionar el proyecto desde el principio.',
+        text: 'Muchas veces sí. Una landing page o una primera fase bien definida suele ser mejor que sobredimensionar el proyecto desde el principio.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Que conviene revisar antes de aceptar un presupuesto?',
+      name: '¿Qué conviene revisar antes de aceptar un presupuesto?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Conviene revisar que incluye, que no incluye, como se plantean las fases, si hay soporte posterior y si la propuesta responde al problema de negocio real, no solo a una lista tecnica.',
+        text: 'Conviene revisar qué incluye, qué no incluye, cómo se plantean las fases, si hay soporte posterior y si la propuesta responde al problema de negocio real, no solo a una lista técnica.',
       },
     },
   ],
@@ -59,14 +59,14 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Inicio', item: baseUrl },
-    { '@type': 'ListItem', position: 2, name: 'Cuanto cuesta una pagina web', item: `${baseUrl}${canonicalUrl}` },
+    { '@type': 'ListItem', position: 2, name: 'Cuánto cuesta una página web', item: `${baseUrl}${canonicalUrl}` },
   ],
 };
 
 const facts = [
-  { label: 'Sirve para', value: 'Entender rangos, factores de precio y como se traduce el alcance en presupuesto real.' },
+  { label: 'Sirve para', value: 'Entender rangos, factores de precio y cómo se traduce el alcance en presupuesto real.' },
   { label: 'Importante', value: 'Un precio bajo no siempre significa eficiencia. A menudo significa menos trabajo del que parece.' },
-  { label: 'Siguiente paso', value: 'Usar esta guia para orientarte y despues pedir una propuesta basada en tu caso concreto.' },
+  { label: 'Siguiente paso', value: 'Usar esta guía para orientarte y después pedir una propuesta basada en tu caso concreto.' },
 ];
 ---
 
@@ -78,10 +78,10 @@ const facts = [
   additionalSchemas={[faqSchema, breadcrumbSchema]}
   keywords={keywords}
   alternateUrls={{ es: canonicalUrl, en: '/en/how-much-does-website-cost' }}
-  badge="Guia de precios web"
-  pageTitle="Cuanto cuesta una pagina web y que explica de verdad esa inversion"
-  lead="Esta guia no intenta darte una tarifa magica. Sirve para entender que rangos son razonables, que hace subir o bajar un presupuesto y como distinguir una propuesta seria de una que oculta trabajo por detras."
-  primaryCta={{ label: 'Pedir presupuesto', href: '#contacto' }}
+  badge="Guía de precios web"
+  pageTitle="Cuánto cuesta una página web y qué explica de verdad esa inversión"
+  lead="Esta guía no intenta darte una tarifa mágica. Sirve para entender qué rangos son razonables, qué hace subir o bajar un presupuesto y cómo distinguir una propuesta seria de una que recorta trabajo sin decirlo."
+  primaryCta={{ label: 'Cuéntame tu proyecto', href: '#contacto' }}
   secondaryCta={{ label: 'Ver servicios', href: '/servicios' }}
   facts={facts}
 >
@@ -101,37 +101,37 @@ const facts = [
           <tr>
             <td class="py-3 px-4 font-medium">Landing page</td>
             <td class="py-3 px-4">800 EUR - 1.500 EUR</td>
-            <td class="py-3 px-4">Dias a 2 semanas</td>
-            <td class="py-3 px-4">Campanas, servicios concretos, captacion</td>
+            <td class="py-3 px-4">Días a 2 semanas</td>
+            <td class="py-3 px-4">Campañas, servicios concretos, captación</td>
           </tr>
           <tr>
             <td class="py-3 px-4 font-medium">Web de empresa</td>
-            <td class="py-3 px-4">1.500 EUR - 4.000 EUR</td>
+            <td class="py-3 px-4">1.800 EUR - 4.000 EUR</td>
             <td class="py-3 px-4">2 a 6 semanas</td>
             <td class="py-3 px-4">Empresas de servicios, marca, presencia comercial</td>
           </tr>
           <tr>
             <td class="py-3 px-4 font-medium">Ecommerce</td>
-            <td class="py-3 px-4">3.000 EUR - 8.000 EUR o mas</td>
+            <td class="py-3 px-4">3.000 EUR - 8.000 EUR o más</td>
             <td class="py-3 px-4">4 a 12 semanas</td>
-            <td class="py-3 px-4">Catalogo, pagos, pedidos, area cliente</td>
+            <td class="py-3 px-4">Catálogo, pagos, pedidos, área cliente</td>
           </tr>
           <tr>
             <td class="py-3 px-4 font-medium">App web / MVP / SaaS</td>
-            <td class="py-3 px-4">3.000 EUR - 15.000 EUR o mas</td>
-            <td class="py-3 px-4">Segun fases</td>
+            <td class="py-3 px-4">3.000 EUR - 15.000 EUR o más</td>
+            <td class="py-3 px-4">Según fases</td>
             <td class="py-3 px-4">Producto digital, herramientas internas, portales</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Que es lo que mas mueve el precio</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Qué es lo que más mueve el precio</h2>
     <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
       <div class="card p-5">
         <h3 class="text-lg font-semibold mb-2">Alcance real</h3>
         <p class="text-text-muted text-sm sm:text-base">
-          Cuantas paginas, pantallas o modulos hay que resolver y cuanto trabajo implican de verdad.
+          Cuántas páginas, pantallas o módulos hay que resolver y cuánto trabajo implican de verdad.
         </p>
       </div>
       <div class="card p-5">
@@ -143,7 +143,7 @@ const facts = [
       <div class="card p-5">
         <h3 class="text-lg font-semibold mb-2">Integraciones y funcionalidades</h3>
         <p class="text-text-muted text-sm sm:text-base">
-          CRM, pagos, automatizaciones, areas privadas o flujos de datos anaden complejidad y trabajo de QA.
+          CRM, pagos, automatizaciones, áreas privadas o flujos de datos añaden complejidad y trabajo de QA.
         </p>
       </div>
       <div class="card p-5">
@@ -154,19 +154,19 @@ const facts = [
       </div>
     </div>
 
-    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Como leer un presupuesto sin quedarte solo con el numero</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cómo leer un presupuesto sin quedarte solo con el número</h2>
     <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
-      <li><strong>Que problema resuelve:</strong> un buen presupuesto explica el objetivo del proyecto, no solo una lista de tareas.</li>
-      <li><strong>Que incluye y que no incluye:</strong> si esto no esta claro, el precio puede parecer mejor de lo que realmente es.</li>
-      <li><strong>Como se organiza la entrega:</strong> fases, hitos, revisiones y criterio para dar el trabajo por cerrado.</li>
-      <li><strong>Que ocurre despues del lanzamiento:</strong> soporte, mantenimiento, pequenas correcciones o siguiente fase.</li>
-      <li><strong>Si el alcance esta inflado:</strong> a veces un proyecto pequeño necesita menos de lo que se propone. Otras veces el presupuesto es bajo porque falta medio proyecto.</li>
+      <li><strong>Qué problema resuelve:</strong> un buen presupuesto explica el objetivo del proyecto, no solo una lista de tareas.</li>
+      <li><strong>Qué incluye y qué no incluye:</strong> si esto no está claro, el precio puede parecer mejor de lo que realmente es.</li>
+      <li><strong>Cómo se organiza la entrega:</strong> fases, hitos, revisiones y criterio para dar el trabajo por cerrado.</li>
+      <li><strong>Qué ocurre después del lanzamiento:</strong> soporte, mantenimiento, pequeñas correcciones o siguiente fase.</li>
+      <li><strong>Si el alcance está inflado:</strong> a veces un proyecto pequeño necesita menos de lo que se propone. Otras veces el presupuesto es bajo porque falta medio proyecto.</li>
     </ul>
 
-    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cuando conviene empezar mas pequeño</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cuándo conviene empezar más pequeño</h2>
     <p class="text-base sm:text-lg mb-4">
-      Muchas veces una landing page o una primera fase bien acotada da mas aprendizaje y mejor retorno que intentar
-      lanzar una web grande o un producto mas complejo del necesario.
+      Muchas veces una landing page o una primera fase bien acotada da más aprendizaje y mejor retorno que intentar
+      lanzar una web grande o un producto más complejo del necesario.
     </p>
     <p class="text-base sm:text-lg mb-8">
       Empezar pequeño no significa quedarse corto. Significa construir lo que de verdad hace falta ahora y dejar margen
@@ -176,25 +176,25 @@ const facts = [
     <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes sobre precios web</h2>
     <div class="space-y-4 mb-8">
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Cuanto cuesta una web en Espana en 2026?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Cuánto cuesta una web en España en 2026?</h3>
         <p class="text-sm sm:text-base">
-          Depende del proyecto, pero una landing sencilla puede partir de 800 EUR, una web de empresa suele arrancar en 1.500 EUR y una app web normalmente a partir de 3.000 EUR.
+          Depende del proyecto, pero una landing sencilla puede partir de 800 EUR, una web de empresa suele arrancar en 1.800 EUR y una app web normalmente a partir de 3.000 EUR.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Por que dos presupuestos pueden ser tan distintos?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Por qué dos presupuestos pueden ser tan distintos?</h3>
         <p class="text-sm sm:text-base">
-          Porque cambian el alcance, el contenido, la personalizacion, las integraciones, la tecnologia y la implicacion real de quien ejecuta el proyecto.
+          Porque cambian el alcance, el contenido, la personalización, las integraciones, la tecnología y la implicación real de quien ejecuta el proyecto.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Es mejor contratar una web barata para salir rapido?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Es mejor contratar una web barata para salir rápido?</h3>
         <p class="text-sm sm:text-base">
-          A veces conviene salir con algo simple y bien planteado. Lo que suele salir caro es pagar poco por una solucion que no resuelve el problema real y obliga a rehacer despues.
+          A veces conviene salir con algo simple y bien planteado. Lo que suele salir caro es pagar poco por una solución que no resuelve el problema real y obliga a rehacer después.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Que deberia pedir antes de aceptar una propuesta?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Qué debería pedir antes de aceptar una propuesta?</h3>
         <p class="text-sm sm:text-base">
           Alcance, hitos, tiempos, revisiones, entregables y cualquier coste recurrente o dependencia externa que vaya a formar parte del proyecto.
         </p>
@@ -211,9 +211,9 @@ const facts = [
     </div>
 
     <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold mb-3">Quieres una propuesta basada en tu caso y no en una tabla general?</h2>
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">¿Quieres una propuesta basada en tu caso y no en una tabla general?</h2>
       <p class="mb-3 text-sm sm:text-base">
-        Cuentame que quieres lanzar o mejorar y te doy una orientacion mas util sobre alcance, prioridad e inversion probable.
+        Cuéntame qué quieres lanzar o mejorar y te doy una orientación más útil sobre alcance, prioridad e inversión probable.
       </p>
       <p class="font-semibold text-sm sm:text-base">
         Rangos claros antes de decidir<br />

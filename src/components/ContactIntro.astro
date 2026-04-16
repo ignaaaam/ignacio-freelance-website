@@ -5,8 +5,8 @@ const locale = getLocaleFromPath(Astro.url.pathname);
 const isEnglish = locale === 'en';
 
 const trust = isEnglish
-  ? ['Indicative budgets from EUR 800', 'Typical reply within 24 business hours', 'Remote from Spain', 'No commitment required']
-  : ['Presupuestos orientativos desde 800 EUR', 'Respuesta habitual en 24h laborables', 'Remoto desde Espana', 'Sin compromiso'];
+  ? ['Projects from EUR 800', 'Reply within 24 business hours', 'Remote from Spain', 'No commitment required']
+  : ['Proyectos desde 800 EUR', 'Respuesta habitual en 24h laborables', 'Remoto desde España', 'Sin compromiso'];
 ---
 
 <section class="contact-intro">
@@ -17,8 +17,8 @@ const trust = isEnglish
       </h1>
       <p class="contact-intro__sub">
         {isEnglish
-          ? 'Describe what you need, what outcome you are aiming for and what timeline you have in mind. That is usually enough for a useful first reply.'
-          : 'Describe que necesitas, que resultado quieres conseguir y con que plazo te mueves. Con eso suele bastar para una primera respuesta util.'}
+          ? 'Tell me what you need, what result you want and what timeline you are working with. That is usually enough for a useful first reply.'
+          : 'Cuéntame qué necesitas, qué resultado buscas y qué plazo manejas. Con eso suele bastar para una primera respuesta útil.'}
       </p>
     </div>
 
@@ -37,8 +37,12 @@ const trust = isEnglish
 
 <style>
   .contact-intro {
-    padding-block: clamp(2.4rem, 4vw, 3.5rem) clamp(1.8rem, 3vw, 2.6rem);
-    border-bottom: 1px solid var(--color-border);
+    padding-block: clamp(3rem, 5vw, 4rem) clamp(2rem, 3vw, 2.8rem);
+    color: var(--theme-dark-text);
+    background:
+      radial-gradient(circle at top left, rgba(31, 107, 255, 0.18), transparent 28%),
+      linear-gradient(180deg, rgba(9, 11, 16, 0.98), rgba(13, 16, 24, 0.98));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .contact-intro__shell {
@@ -58,9 +62,9 @@ const trust = isEnglish
   }
 
   .contact-intro__sub {
-    color: var(--color-text-muted);
+    color: var(--theme-dark-muted);
     font-size: clamp(0.96rem, 1.1vw, 1.05rem);
-    line-height: 1.65;
+    line-height: 1.72;
   }
 
   .contact-intro__meta {
@@ -80,11 +84,11 @@ const trust = isEnglish
   .contact-intro__pill {
     display: inline-flex;
     align-items: center;
-    padding: 0.38rem 0.82rem;
-    border: 1px solid rgba(74, 54, 41, 0.12);
+    padding: 0.42rem 0.86rem;
+    border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
-    background: rgba(255, 250, 244, 0.9);
-    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--theme-dark-text);
     font-size: 0.88rem;
     font-weight: 600;
     white-space: nowrap;
@@ -93,12 +97,12 @@ const trust = isEnglish
   .contact-intro__back {
     font-size: 0.92rem;
     font-weight: 700;
-    color: var(--color-text-muted);
+    color: rgba(246, 248, 252, 0.76);
     white-space: nowrap;
   }
 
   .contact-intro__back:hover {
-    color: var(--theme-highlight);
+    color: var(--theme-dark-text);
   }
 
   @media (max-width: 720px) {

@@ -49,3 +49,80 @@ const labels =
     </div>
   </div>
 </section>
+
+<style>
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.15rem;
+  }
+
+  .case-card {
+    padding: 1.75rem;
+  }
+
+  .case-card__client {
+    margin-bottom: 1rem;
+    font-size: 1.16rem;
+    font-weight: 800;
+  }
+
+  .case-card__row,
+  .case-card__result {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(17, 19, 26, 0.08);
+  }
+
+  .case-card__row span,
+  .case-card__result span,
+  .case-card__metric span:first-child {
+    display: block;
+    margin-bottom: 0.45rem;
+    color: var(--theme-accent-strong);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .case-card__row p,
+  .case-card__result p {
+    color: var(--color-text-muted);
+    line-height: 1.74;
+  }
+
+  .case-card__metric {
+    margin-top: 1.15rem;
+    padding: 1rem 1.05rem;
+    border: 1px dashed rgba(31, 107, 255, 0.22);
+    border-radius: 1.15rem;
+    background: rgba(31, 107, 255, 0.06);
+  }
+
+  .case-card__metric p {
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .case-card__time {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  @media (max-width: 960px) {
+    .case-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .case-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .case-card {
+      padding: 1.35rem;
+    }
+  }
+</style>

@@ -36,18 +36,21 @@ const content = siteContent[locale].testimonials;
   .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.15rem;
   }
 
   .testimonial-card {
     display: grid;
-    gap: 1.5rem;
-    padding: 1.6rem;
+    gap: 1.6rem;
+    padding: 1.8rem;
+    background:
+      radial-gradient(circle at top right, rgba(31, 107, 255, 0.12), transparent 32%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 251, 255, 0.9));
   }
 
   .testimonial-card__quote {
     font-size: 1.08rem;
-    line-height: 1.75;
+    line-height: 1.78;
   }
 
   .testimonial-card__meta {
@@ -56,17 +59,17 @@ const content = siteContent[locale].testimonials;
     gap: 0.85rem;
     align-items: center;
     padding-top: 1rem;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid rgba(17, 19, 26, 0.08);
   }
 
   .testimonial-card__avatar {
     display: grid;
     place-items: center;
-    width: 3rem;
+    width: 3.15rem;
     aspect-ratio: 1;
     border-radius: 999px;
-    background: var(--color-text);
-    color: var(--color-primary);
+    background: var(--theme-highlight);
+    color: var(--theme-dark-text);
     font-family: var(--font-heading);
     font-weight: 800;
   }
@@ -95,7 +98,7 @@ const content = siteContent[locale].testimonials;
     }
 
     .testimonial-card {
-      padding: 1.28rem;
+      padding: 1.35rem;
       gap: 1.15rem;
     }
 

@@ -7,11 +7,11 @@ const isEnglish = locale === 'en';
 
 <div id="cookie-consent" class="cookie-consent surface-card" hidden>
   <div class="cookie-consent__body">
-    <strong>{isEnglish ? 'Optional site measurement' : 'Medicion opcional del sitio'}</strong>
+    <strong>{isEnglish ? 'Optional analytics' : 'Analítica opcional'}</strong>
     <p>
       {isEnglish
         ? 'If you allow it, I use analytics to understand visits and improve the site. If you decline, everything essential still works as expected.'
-        : 'Si la permites, uso analitica para entender las visitas y mejorar la web. Si la rechazas, todo lo esencial sigue funcionando igual.'}
+        : 'Si la permites, uso analítica para entender las visitas y mejorar la web. Si la rechazas, todo lo esencial sigue funcionando igual.'}
     </p>
   </div>
 
@@ -23,7 +23,7 @@ const isEnglish = locale === 'en';
       {isEnglish ? 'Reject' : 'Rechazar'}
     </button>
     <button type="button" class="btn-primary" data-consent-action="accept">
-      {isEnglish ? 'Allow measurement' : 'Permitir medicion'}
+      {isEnglish ? 'Allow analytics' : 'Permitir analítica'}
     </button>
   </div>
 </div>
@@ -32,12 +32,19 @@ const isEnglish = locale === 'en';
   .cookie-consent {
     position: fixed;
     left: 50%;
-    bottom: max(0.85rem, env(safe-area-inset-bottom));
+    bottom: max(1rem, env(safe-area-inset-bottom));
     z-index: 80;
     display: grid;
     gap: 1rem;
     width: min(760px, calc(100% - 2rem));
     padding: 1rem 1.05rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.55rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+      rgba(10, 12, 18, 0.92);
+    box-shadow: 0 24px 60px rgba(7, 10, 16, 0.28);
+    backdrop-filter: blur(24px);
     transform: translate(-50%, calc(100% + 2rem));
     transition: transform 0.22s ease;
   }
@@ -51,8 +58,12 @@ const isEnglish = locale === 'en';
     gap: 0.35rem;
   }
 
+  .cookie-consent__body strong {
+    color: var(--theme-dark-text);
+  }
+
   .cookie-consent__body p {
-    color: var(--color-text-muted);
+    color: var(--theme-dark-muted);
     line-height: 1.62;
   }
 
@@ -71,7 +82,7 @@ const isEnglish = locale === 'en';
       gap: 0.78rem;
       padding: 0.9rem;
       width: min(760px, calc(100% - 2rem));
-      border-radius: 1.2rem;
+      border-radius: 1.28rem;
     }
 
     .cookie-consent__actions {

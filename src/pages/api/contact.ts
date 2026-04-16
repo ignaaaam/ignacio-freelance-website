@@ -28,11 +28,11 @@ const typeLabels = {
   es: {
     landing: 'Landing page',
     web: 'Web de empresa',
-    redesign: 'Rediseno / mejora',
+    redesign: 'Rediseño / mejora',
     laravel: 'Proyecto Laravel',
     webapp: 'App web / SaaS / MVP',
     maintenance: 'Mantenimiento',
-    bugfix: 'Fix / problema tecnico',
+    bugfix: 'Corrección / incidencia técnica',
     other: 'Otro',
   },
   en: {
@@ -42,7 +42,7 @@ const typeLabels = {
     laravel: 'Laravel project',
     webapp: 'Web app / SaaS / MVP',
     maintenance: 'Maintenance',
-    bugfix: 'Fix / technical issue',
+    bugfix: 'Technical fix / issue',
     other: 'Other',
   },
 } as const;
@@ -53,7 +53,7 @@ const budgetLabels = {
     '1500-3000': '1.500 a 3.000 EUR',
     '3000-6000': '3.000 a 6.000 EUR',
     '6000-10000': '6.000 a 10.000 EUR',
-    'over-10000': 'Mas de 10.000 EUR',
+    'over-10000': 'Más de 10.000 EUR',
   },
   en: {
     'under-1500': 'Under EUR 1,500',
@@ -70,10 +70,10 @@ type BudgetKey = keyof typeof budgetLabels.es;
 const copy = {
   es: {
     missingFields: 'Completa los campos requeridos antes de enviar el formulario.',
-    invalidEmail: 'Introduce un email valido para que pueda responderte.',
-    configError: 'El formulario no esta configurado correctamente ahora mismo.',
-    sendError: 'No se pudo enviar el mensaje. Intentalo de nuevo un poco mas tarde.',
-    success: 'Mensaje enviado correctamente. Revisare el contexto y te respondere por email.',
+    invalidEmail: 'Introduce un email válido para que pueda responderte.',
+    configError: 'El formulario no está configurado correctamente ahora mismo.',
+    sendError: 'No se pudo enviar el mensaje. Inténtalo de nuevo un poco más tarde.',
+    success: 'Mensaje enviado. Revisaré el contexto y te responderé por email.',
     newLead: 'Nuevo contacto desde la web',
     customer: 'Contacto',
     budget: 'Presupuesto',
@@ -85,15 +85,15 @@ const copy = {
     englishSite: 'Version EN',
     spanishSite: 'Version ES',
     receivedAt: 'Recibido',
-    summaryTitle: 'Resumen rapido',
-    directReply: 'Responde a este email para seguir la conversacion.',
+    summaryTitle: 'Resumen rápido',
+    directReply: 'Responde a este email para seguir la conversación.',
   },
   en: {
     missingFields: 'Please complete the required fields before sending the form.',
     invalidEmail: 'Please enter a valid email address so I can reply.',
     configError: 'The contact form is not configured correctly right now.',
     sendError: 'The message could not be sent. Please try again a bit later.',
-    success: 'Message sent successfully. I will review the details and reply by email.',
+    success: 'Message sent. I will review the details and reply by email.',
     newLead: 'New website enquiry',
     customer: 'Contact',
     budget: 'Budget',
@@ -106,7 +106,7 @@ const copy = {
     spanishSite: 'ES version',
     receivedAt: 'Received',
     summaryTitle: 'Quick summary',
-    directReply: 'Reply to this email to continue the conversation.',
+    directReply: 'Reply to this email to keep the conversation moving.',
   },
 } as const;
 
@@ -161,40 +161,40 @@ function buildEmailHtml(params: {
     .map(
       (row) => `
         <tr>
-          <td style="padding: 13px 16px; color: #705f54; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid #e7d8ca;">${escapeHtml(row.label)}</td>
-          <td style="padding: 13px 16px; color: #211a15; font-size: 14px; line-height: 1.6; border-bottom: 1px solid #e7d8ca;">${escapeHtml(row.value)}</td>
+          <td style="padding: 13px 16px; color: #66748a; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid #dbe3f0;">${escapeHtml(row.label)}</td>
+          <td style="padding: 13px 16px; color: #101826; font-size: 14px; line-height: 1.6; border-bottom: 1px solid #dbe3f0;">${escapeHtml(row.value)}</td>
         </tr>
       `,
     )
     .join('');
 
   return `
-    <div style="margin: 0; padding: 24px 0; background: #efe6db; font-family: Arial, Helvetica, sans-serif; color: #211a15;">
+    <div style="margin: 0; padding: 24px 0; background: #0b1018; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: #101826;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%;">
         <tr>
           <td align="center" style="padding: 0 16px;">
-            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; max-width: 720px; overflow: hidden; border: 1px solid #decebf; border-radius: 26px; background: #fffaf4;">
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; max-width: 720px; overflow: hidden; border: 1px solid #2a3446; border-radius: 26px; background: #f7f9fc;">
               <tr>
-                <td style="padding: 30px 32px; background: #21443f;">
-                  <div style="display: inline-block; margin-bottom: 14px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255, 250, 244, 0.18); background: rgba(255, 250, 244, 0.12); color: #fff4eb; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(siteBadge)}</div>
-                  <h1 style="margin: 0 0 10px; font-size: 30px; line-height: 1.15; color: #fffaf4; font-weight: 800;">${escapeHtml(t.newLead)}</h1>
-                  <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #d7e5e1;">${escapeHtml(t.directReply)}</p>
+                <td style="padding: 30px 32px; background: #101722;">
+                  <div style="display: inline-block; margin-bottom: 14px; padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(31, 107, 255, 0.18); color: #f4f8ff; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(siteBadge)}</div>
+                  <h1 style="margin: 0 0 10px; font-size: 30px; line-height: 1.15; color: #f6f8fc; font-weight: 800;">${escapeHtml(t.newLead)}</h1>
+                  <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #bcc7db;">${escapeHtml(t.directReply)}</p>
                 </td>
               </tr>
 
               <tr>
                 <td style="padding: 24px 24px 10px;">
-                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; border: 1px solid #e5d8cc; border-radius: 20px; background: #ffffff;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; border: 1px solid #dbe3f0; border-radius: 20px; background: #ffffff;">
                     <tr>
                       <td style="padding: 20px;">
-                        <div style="margin-bottom: 10px; color: #705f54; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(t.customer)}</div>
-                        <div style="font-size: 24px; line-height: 1.2; color: #211a15; font-weight: 800;">${escapeHtml(name)}</div>
+                        <div style="margin-bottom: 10px; color: #66748a; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(t.customer)}</div>
+                        <div style="font-size: 24px; line-height: 1.2; color: #101826; font-weight: 800;">${escapeHtml(name)}</div>
                         <div style="margin-top: 8px; font-size: 15px; line-height: 1.7;">
-                          <a href="mailto:${escapeHtml(email)}" style="color: #21443f; text-decoration: none; font-weight: 700;">${escapeHtml(email)}</a>
+                          <a href="mailto:${escapeHtml(email)}" style="color: #1f6bff; text-decoration: none; font-weight: 700;">${escapeHtml(email)}</a>
                         </div>
                         ${
                           company
-                            ? `<div style="margin-top: 4px; font-size: 14px; color: #5f5147;">${escapeHtml(company)}</div>`
+                            ? `<div style="margin-top: 4px; font-size: 14px; color: #5c697d;">${escapeHtml(company)}</div>`
                             : ''
                         }
                       </td>
@@ -205,9 +205,9 @@ function buildEmailHtml(params: {
 
               <tr>
                 <td style="padding: 0 24px 10px;">
-                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; border: 1px solid #e5d8cc; border-radius: 20px; background: #f8f1e9;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; border: 1px solid #dbe3f0; border-radius: 20px; background: #f3f7ff;">
                     <tr>
-                      <td style="padding: 16px 16px 0; color: #705f54; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(t.summaryTitle)}</td>
+                      <td style="padding: 16px 16px 0; color: #66748a; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(t.summaryTitle)}</td>
                     </tr>
                     <tr>
                       <td style="padding: 10px 0 0;">
@@ -222,11 +222,11 @@ function buildEmailHtml(params: {
 
               <tr>
                 <td style="padding: 0 24px 10px;">
-                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; border: 1px solid #e5d8cc; border-radius: 20px; background: #fffdf9;">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse: separate; width: 100%; border: 1px solid #dbe3f0; border-radius: 20px; background: #ffffff;">
                     <tr>
                       <td style="padding: 20px;">
-                        <div style="margin-bottom: 10px; color: #705f54; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(t.message)}</div>
-                        <div style="font-size: 15px; line-height: 1.8; color: #211a15;">${safeMessage}</div>
+                        <div style="margin-bottom: 10px; color: #66748a; font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">${escapeHtml(t.message)}</div>
+                        <div style="font-size: 15px; line-height: 1.8; color: #101826;">${safeMessage}</div>
                       </td>
                     </tr>
                   </table>
@@ -237,8 +237,8 @@ function buildEmailHtml(params: {
                 <td style="padding: 14px 24px 28px;">
                   <a href="mailto:${escapeHtml(email)}?subject=${encodeURIComponent(
                     locale === 'en' ? 'About your project' : 'Sobre tu proyecto',
-                  )}" style="display: inline-block; padding: 14px 22px; border-radius: 999px; background: #b86836; color: #fffaf4; text-decoration: none; font-size: 14px; font-weight: 800;">${escapeHtml(t.reply)}</a>
-                  <p style="margin: 14px 0 0; font-size: 12px; line-height: 1.75; color: #8c7b6f;">${escapeHtml(t.receivedAt)}: ${escapeHtml(receivedAt)}</p>
+                  )}" style="display: inline-block; padding: 14px 22px; border-radius: 999px; background: #1f6bff; color: #f6f8fc; text-decoration: none; font-size: 14px; font-weight: 800;">${escapeHtml(t.reply)}</a>
+                  <p style="margin: 14px 0 0; font-size: 12px; line-height: 1.75; color: #66748a;">${escapeHtml(t.receivedAt)}: ${escapeHtml(receivedAt)}</p>
                 </td>
               </tr>
             </table>

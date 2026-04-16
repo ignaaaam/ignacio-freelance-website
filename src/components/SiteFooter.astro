@@ -26,7 +26,7 @@ const isEnglish = locale === 'en';
 
       <div>
         <p class="site-footer__heading">{isEnglish ? 'Services' : 'Servicios'}</p>
-        <nav class="site-footer__links">
+        <nav class="site-footer__links" aria-label={isEnglish ? 'Services' : 'Servicios'}>
           {content.serviceLinks.map((link) => (
             <a href={link.href}>{link.label}</a>
           ))}
@@ -35,7 +35,7 @@ const isEnglish = locale === 'en';
 
       <div>
         <p class="site-footer__heading">{isEnglish ? 'Resources' : 'Recursos'}</p>
-        <nav class="site-footer__links">
+        <nav class="site-footer__links" aria-label={isEnglish ? 'Resources' : 'Recursos'}>
           {content.resourceLinks.map((link) => (
             <a href={link.href}>{link.label}</a>
           ))}
@@ -44,19 +44,126 @@ const isEnglish = locale === 'en';
 
       <div>
         <p class="site-footer__heading">{isEnglish ? 'Language' : 'Idioma'}</p>
-        <nav class="site-footer__links">
-          <a href={languageSwitchUrls.es}>ES</a>
-          <a href={languageSwitchUrls.en}>EN</a>
+        <nav class="site-footer__links" aria-label={isEnglish ? 'Language and legal links' : 'Idioma y enlaces legales'}>
+          <a href={languageSwitchUrls.es} aria-current={!isEnglish ? 'page' : undefined}>ES</a>
+          <a href={languageSwitchUrls.en} aria-current={isEnglish ? 'page' : undefined}>EN</a>
           <a href={isEnglish ? '/en/privacy' : '/privacidad'}>{isEnglish ? 'Privacy' : 'Privacidad'}</a>
           <a href={isEnglish ? '/en/legal-notice' : '/aviso-legal'}>{isEnglish ? 'Legal notice' : 'Aviso legal'}</a>
-          <a href={isEnglish ? '/en/terms' : '/terminos'}>{isEnglish ? 'Terms' : 'Terminos'}</a>
+          <a href={isEnglish ? '/en/terms' : '/terminos'}>{isEnglish ? 'Terms' : 'Términos'}</a>
         </nav>
       </div>
     </div>
 
     <div class="site-footer__bottom">
-      <span>{isEnglish ? 'Independent web development for websites, redesigns and product work.' : 'Desarrollo web independiente para webs, redisenos y producto digital.'}</span>
+      <span>{isEnglish ? 'Independent web development for business websites, redesigns and product work.' : 'Desarrollo web independiente para webs de negocio, rediseños y producto digital.'}</span>
       <span>{new Date().getFullYear()} {siteConfig.name}</span>
     </div>
   </div>
 </footer>
+
+<style>
+  .site-footer {
+    position: relative;
+    padding: clamp(4.5rem, 7vw, 6rem) 0 clamp(3rem, 5vw, 4.4rem);
+    color: var(--theme-dark-text);
+    background:
+      radial-gradient(circle at top left, rgba(31, 107, 255, 0.2), transparent 24%),
+      linear-gradient(180deg, #0b0d12 0%, #0f131c 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) repeat(3, minmax(0, 1fr));
+    gap: 1.75rem;
+    padding: 1.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.8rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+      rgba(255, 255, 255, 0.02);
+    box-shadow: 0 28px 64px rgba(3, 6, 12, 0.28);
+    backdrop-filter: blur(20px);
+  }
+
+  .site-footer__name {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.72rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--theme-dark-text);
+  }
+
+  .site-footer__brand p {
+    max-width: 34ch;
+    color: var(--theme-dark-muted);
+    line-height: 1.78;
+  }
+
+  .site-footer__heading {
+    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(246, 248, 252, 0.6);
+  }
+
+  .site-footer__links,
+  .site-footer__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.84rem;
+  }
+
+  .site-footer__links a,
+  .site-footer__socials a {
+    color: var(--theme-dark-muted);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .site-footer__links a:hover,
+  .site-footer__socials a:hover {
+    color: var(--theme-dark-text);
+    transform: translateX(2px);
+  }
+
+  .site-footer__socials {
+    margin-top: 1.2rem;
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    color: rgba(246, 248, 252, 0.68);
+    font-size: 0.94rem;
+  }
+
+  @media (max-width: 960px) {
+    .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__bottom {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+      padding: 1.25rem;
+      gap: 1.8rem;
+    }
+
+    .site-footer__brand p {
+      max-width: none;
+    }
+  }
+</style>

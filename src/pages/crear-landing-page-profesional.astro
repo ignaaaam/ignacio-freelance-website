@@ -2,9 +2,9 @@
 import MarketingContentPage from '../components/MarketingContentPage.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Crear landing page profesional para captar mejor | Ignacio Amat';
+const title = 'Landing page profesional para captar mejor | Ignacio Amat';
 const description =
-  'Diseno y desarrollo landing pages para captacion, lanzamientos y ofertas con una sola conversion principal. Estructura, copy guiado, formularios, integraciones y rendimiento.';
+  'Diseño y desarrollo landing pages para captación, lanzamientos y ofertas con una sola conversión principal. Mensaje claro, formularios, integraciones y base técnica lista para medir.';
 const canonicalUrl = '/crear-landing-page-profesional';
 const keywords = [
   'crear landing page',
@@ -18,7 +18,7 @@ const keywords = [
 const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Diseno y desarrollo de landing pages',
+  serviceType: 'Diseño y desarrollo de landing pages',
   provider: {
     '@type': 'ProfessionalService',
     name: 'Ignacio Amat - Desarrollador Web',
@@ -26,10 +26,10 @@ const serviceSchema = {
   },
   areaServed: {
     '@type': 'Country',
-    name: 'Espana',
+    name: 'España',
   },
   description:
-    'Landing pages para captacion, campanas y lanzamientos con una sola conversion principal, integraciones y base tecnica orientada a rendimiento.',
+    'Landing pages para captación, campañas y lanzamientos con una sola conversión principal, integraciones y base técnica orientada a rendimiento.',
   offers: {
     '@type': 'Offer',
     priceRange: 'Desde 800 EUR',
@@ -43,42 +43,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Cuanto cuesta crear una landing page profesional?',
+      name: '¿Cuánto cuesta crear una landing page profesional?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Una landing page sencilla suele partir de 800 EUR. El precio sube cuando hay varias versiones, integraciones, automatizaciones o una capa de validacion mas avanzada.',
+        text: 'Una landing page enfocada suele partir de 800 EUR. El precio sube cuando el proyecto necesita varias versiones, integraciones, automatizaciones o más trabajo de definición.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Cuando tiene sentido invertir en una landing page y no en una web completa?',
+      name: '¿Cuándo tiene sentido invertir en una landing page y no en una web completa?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Tiene sentido cuando quieres promocionar un servicio, una campana, un lanzamiento o una propuesta con una sola accion principal y sin distracciones.',
+        text: 'Tiene sentido cuando quieres promocionar un servicio, una campaña, un lanzamiento o una oferta con una sola acción principal y sin ruido extra.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Incluyes formularios, integraciones y seguimiento?',
+      name: '¿Incluyes formularios, integraciones y seguimiento?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Si. Puedo dejar preparada la landing con formularios, seguimiento de conversion, integraciones con CRM o email marketing y una base tecnica lista para lanzar.',
+        text: 'Sí. Puedo dejar preparada la landing con formularios, seguimiento de conversión, integraciones con CRM o email marketing y una base técnica lista para lanzar.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Cuanto tarda una landing page en estar lista?',
+      name: '¿Cuánto tarda una landing page en estar lista?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Una landing page bien definida puede estar lista en pocos dias. Si hay varias iteraciones, integraciones o contenido por ordenar, el plazo habitual se mueve entre una y dos semanas.',
+        text: 'Una landing page bien definida puede estar lista en pocos días. Si hay varias iteraciones, integraciones o contenido por ordenar, el plazo habitual se mueve entre unos días y dos semanas.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Necesito tener el copy completamente cerrado antes de empezar?',
+      name: '¿Necesito tener el copy completamente cerrado antes de empezar?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No necesariamente. Puedo ayudarte a ordenar la propuesta, la jerarquia de mensajes y la estructura para que el contenido quede mas claro antes de maquetar.',
+        text: 'No necesariamente. Puedo ayudarte a ordenar la propuesta, la jerarquía de mensajes y la estructura para que el contenido quede más claro antes de maquetar.',
       },
     },
   ],
@@ -111,9 +111,9 @@ const alternateUrls = {
 };
 
 const facts = [
-  { label: 'Ideal para', value: 'Campanas, servicios, lanzamientos y propuestas con una sola accion principal.' },
-  { label: 'Inversion orientativa', value: 'Desde 800 EUR segun mensaje, integraciones y nivel de validacion.' },
-  { label: 'Plazo habitual', value: 'Entre pocos dias y dos semanas cuando el alcance esta claro.' },
+  { label: 'Ideal para', value: 'Campañas, servicios, lanzamientos y ofertas con una sola acción principal.' },
+  { label: 'Inversión orientativa', value: 'Desde 800 EUR según mensaje, integraciones y nivel de definición.' },
+  { label: 'Plazo habitual', value: 'Desde pocos días hasta unas dos semanas cuando el alcance está claro.' },
 ];
 ---
 <MarketingContentPage
@@ -124,139 +124,139 @@ const facts = [
   keywords={keywords}
   additionalSchemas={allSchemas}
   alternateUrls={alternateUrls}
-  badge="Landing pages para captacion"
-  pageTitle="Landing pages para captar mejor, explicar mejor y convertir sin ruido"
-  lead="Desarrollo landing pages para servicios, campanas y lanzamientos cuando hace falta una propuesta clara, una sola accion principal y una base tecnica fiable para medir el resultado."
-  primaryCta={{ label: 'Solicitar presupuesto', href: '#contacto' }}
+  badge="Landing pages para captación"
+  pageTitle="Landing pages para campañas, servicios y ofertas que necesitan un siguiente paso claro"
+  lead="Diseño y desarrollo landing pages cuando lo importante es explicar mejor la oferta, reducir fricción y medir si el tráfico se convierte en conversaciones útiles."
+  primaryCta={{ label: 'Cuéntame tu proyecto', href: '#contacto' }}
   secondaryCta={{ label: 'Ver todos los servicios', href: '/servicios' }}
   facts={facts}
 >
   <div class="prose prose-lg max-w-none">
-    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Que hace que una landing page funcione</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Qué hace que una landing page funcione</h2>
     <p class="text-base sm:text-lg mb-4">
-      Una landing page no necesita parecer grande. Necesita dejar claro que ofreces, para quien es,
-      por que merece atencion y cual es el siguiente paso. Cuando esa cadena falla, el trafico llega
-      pero no se convierte en conversaciones utiles.
+      Una landing page no necesita parecer grande. Necesita dejar claro qué ofreces, para quién es,
+      por qué merece atención y cuál es el siguiente paso. Cuando esa cadena falla, el tráfico llega,
+      pero no se convierte en conversaciones útiles.
     </p>
     <p class="text-base sm:text-lg mb-6">
-      Mi enfoque no parte de adornar una pagina, sino de ordenar mensaje, jerarquia visual y friccion
-      de contacto para que el visitante entienda rapido si quiere avanzar.
+      Mi enfoque no parte de adornar una página, sino de ordenar mensaje, jerarquía visual y fricción
+      de contacto para que el visitante entienda rápido si quiere avanzar.
     </p>
 
     <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
       <div class="card p-5">
-        <h3 class="text-lg font-semibold mb-2">Oferta facil de entender</h3>
+        <h3 class="text-lg font-semibold mb-2">Oferta fácil de entender</h3>
         <p class="text-text-muted text-sm sm:text-base">
-          El visitante deberia captar en segundos que ofreces, para quien y con que resultado esperado.
+          El visitante debería captar en segundos qué ofreces, para quién y con qué resultado esperado.
         </p>
       </div>
       <div class="card p-5">
-        <h3 class="text-lg font-semibold mb-2">Una sola accion principal</h3>
+        <h3 class="text-lg font-semibold mb-2">Una sola acción principal</h3>
         <p class="text-text-muted text-sm sm:text-base">
-          La pagina guia hacia un unico objetivo: pedir presupuesto, reservar una llamada o dejar datos.
+          La página guía hacia un único objetivo: pedir una propuesta, reservar una llamada o dejar datos.
         </p>
       </div>
       <div class="card p-5">
         <h3 class="text-lg font-semibold mb-2">Prueba y contexto</h3>
         <p class="text-text-muted text-sm sm:text-base">
-          Senales de confianza, FAQs, resultados esperados y una capa visual que apoye el mensaje en lugar de distraer.
+          Señales de confianza, FAQs, resultados esperados y una capa visual que apoye el mensaje en lugar de distraer.
         </p>
       </div>
       <div class="card p-5">
-        <h3 class="text-lg font-semibold mb-2">Rendimiento y seguimiento</h3>
+        <h3 class="text-lg font-semibold mb-2">Rendimiento y medición</h3>
         <p class="text-text-muted text-sm sm:text-base">
-          Carga rapida, formulario bien resuelto y base tecnica lista para medir conversiones e iterar.
+          Carga rápida, formulario bien resuelto y base técnica lista para medir conversiones e iterar.
         </p>
       </div>
     </div>
 
-    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cuando tiene sentido una landing page</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cuándo tiene sentido una landing page</h2>
     <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Captacion de leads</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">Captación de leads</h3>
         <p class="text-sm sm:text-base">
-          Para trafico de pago, campanas organicas o acciones comerciales donde necesitas concentrar la atencion en un solo servicio u oferta.
+          Para tráfico de pago, campañas orgánicas o acciones comerciales donde necesitas concentrar la atención en un solo servicio u oferta.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Lanzamientos y validacion</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">Lanzamientos y validación</h3>
         <p class="text-sm sm:text-base">
-          Para probar interes real antes de ampliar una web o construir un producto mas grande de lo necesario.
+          Para probar interés real antes de ampliar una web o construir un producto más grande de lo necesario.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
         <h3 class="text-base sm:text-lg font-bold mb-2">Servicios con una propuesta concreta</h3>
         <p class="text-sm sm:text-base">
-          Funciona especialmente bien cuando vendes algo concreto y no quieres que la navegacion disperse la decision.
+          Funciona especialmente bien cuando vendes algo concreto y no quieres que la navegación disperse la decisión.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Campanas con seguimiento claro</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">Campañas con seguimiento claro</h3>
         <p class="text-sm sm:text-base">
-          Si vas a medir llamadas, formularios o reservas, una landing bien enfocada da mas control que una web generalista.
+          Si vas a medir llamadas, formularios o reservas, una landing bien enfocada da más control que una web generalista.
         </p>
       </div>
     </div>
 
-    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Que suelo incluir</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Qué suelo incluir</h2>
     <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
-      <li><strong>Estructura de mensaje:</strong> orden de secciones, jerarquia del contenido y guia para que el copy sea mas claro.</li>
-      <li><strong>Diseno responsive:</strong> resolucion pensada para movil, tablet y escritorio desde el principio.</li>
-      <li><strong>Formulario y captacion:</strong> validacion, proteccion antispam y una experiencia de contacto mas simple.</li>
+      <li><strong>Estructura de mensaje:</strong> orden de secciones, jerarquía del contenido y guía para que el copy sea más claro.</li>
+      <li><strong>Diseño responsive:</strong> resolución pensada para móvil, tablet y escritorio desde el principio.</li>
+      <li><strong>Formulario y captación:</strong> validación, protección antispam y una experiencia de contacto más simple.</li>
       <li><strong>Integraciones:</strong> CRM, email marketing, automatizaciones o seguimiento de eventos cuando el proyecto lo necesita.</li>
-      <li><strong>SEO tecnico base:</strong> metadatos, Open Graph, estructura semantica y datos estructurados cuando encajan.</li>
-      <li><strong>Lanzamiento limpio:</strong> revision final, despliegue y una base facil de mantener despues.</li>
+      <li><strong>SEO técnico base:</strong> metadatos, Open Graph, estructura semántica y datos estructurados cuando encajan.</li>
+      <li><strong>Lanzamiento limpio:</strong> revisión final, despliegue y una base fácil de mantener después.</li>
     </ul>
 
-    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Inversion orientativa</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Inversión orientativa</h2>
     <div class="space-y-4 mb-8">
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
         <h3 class="font-bold text-base sm:text-lg mb-1">Landing esencial — desde 800 EUR</h3>
         <p class="text-sm sm:text-base text-text-muted">
-          Una pagina enfocada en una sola conversion principal, con diseno responsive, formulario y base tecnica lista para lanzar.
+          Una página enfocada en una sola conversión principal, con diseño responsive, formulario y base técnica lista para lanzar.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
         <h3 class="font-bold text-base sm:text-lg mb-1">Landing con integraciones — desde 1.100 EUR</h3>
         <p class="text-sm sm:text-base text-text-muted">
-          Para proyectos que necesitan CRM, automatizaciones, formularios mas avanzados o un flujo comercial mejor conectado.
+          Para proyectos que necesitan CRM, automatizaciones, formularios más avanzados o un flujo comercial mejor conectado.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="font-bold text-base sm:text-lg mb-1">Landing + iteracion posterior — presupuesto a medida</h3>
+        <h3 class="font-bold text-base sm:text-lg mb-1">Landing + iteración posterior — presupuesto a medida</h3>
         <p class="text-sm sm:text-base text-text-muted">
-          Cuando ademas de lanzar quieres dejar preparada una segunda fase de mejora con nuevas pruebas, variantes o extensiones.
+          Cuando además de lanzar quieres dejar preparada una segunda fase de mejora con nuevas pruebas, variantes o extensiones.
         </p>
       </div>
     </div>
     <p class="text-sm text-text-muted mb-8">
-      Si todavia estas afinando la oferta, primero conviene ordenar el alcance. Una landing funciona mejor cuando la propuesta ya esta bien enfocada.
+      Si todavía estás afinando la oferta, primero conviene ordenar el alcance. Una landing funciona mejor cuando la propuesta ya está bien enfocada.
     </p>
 
     <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-6">Preguntas frecuentes sobre landing pages</h2>
     <div class="space-y-4 mb-8">
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Cuanto cuesta crear una landing page profesional?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Cuánto cuesta crear una landing page profesional?</h3>
         <p class="text-sm sm:text-base">
-          Una landing page sencilla suele partir de 800 EUR. El coste final depende de la complejidad del mensaje, las integraciones y el trabajo de definicion previo.
+          Una landing page enfocada suele partir de 800 EUR. El coste final depende de la complejidad del mensaje, las integraciones y el trabajo de definición previo.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Que diferencia hay frente a una web corporativa?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Qué diferencia hay frente a una web corporativa?</h3>
         <p class="text-sm sm:text-base">
-          Una web corporativa reparte la atencion entre varias secciones y servicios. Una landing concentra todo en una sola accion y reduce distracciones.
+          Una web corporativa reparte la atención entre varias secciones y servicios. Una landing concentra todo en una sola acción y reduce distracciones.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Se puede conectar con mi CRM o email marketing?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Se puede conectar con mi CRM o email marketing?</h3>
         <p class="text-sm sm:text-base">
-          Si. Puedo integrar formularios, automatizaciones y herramientas de seguimiento para que el contacto no se pierda en procesos manuales.
+          Sí. Puedo integrar formularios, automatizaciones y herramientas de seguimiento para que el contacto no se pierda en procesos manuales.
         </p>
       </div>
       <div class="bg-secondary p-4 sm:p-6 rounded-lg">
-        <h3 class="text-base sm:text-lg font-bold mb-2">Necesito tener todo el contenido listo antes de empezar?</h3>
+        <h3 class="text-base sm:text-lg font-bold mb-2">¿Necesito tener todo el contenido listo antes de empezar?</h3>
         <p class="text-sm sm:text-base">
-          No siempre. Si la oferta esta clara pero el contenido no, puedo ayudarte a ordenar la estructura y la prioridad de mensajes antes de maquetar.
+          No siempre. Si la oferta está clara pero el contenido no, puedo ayudarte a ordenar la estructura y la prioridad de mensajes antes de maquetar.
         </p>
       </div>
     </div>
@@ -264,22 +264,22 @@ const facts = [
     <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Servicios relacionados</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
       <a href="/diseno-web-empresas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Webs de empresa &rarr;</a>
-      <a href="/rediseno-web-mejoras" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Redisenos y mejoras &rarr;</a>
+      <a href="/rediseno-web-mejoras" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Rediseños y mejoras &rarr;</a>
       <a href="/contratar-desarrollador-full-stack" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full stack freelance &rarr;</a>
       <a href="/desarrollo-aplicacion-web-saas" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Apps web y MVPs &rarr;</a>
-      <a href="/cuanto-cuesta-pagina-web" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Guia de precios &rarr;</a>
+      <a href="/cuanto-cuesta-pagina-web" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Guía de precios &rarr;</a>
       <a href="/servicios" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Todos los servicios &rarr;</a>
     </div>
 
     <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-4">
-      <h2 class="text-xl sm:text-2xl font-bold mb-3">Necesitas una landing que convierta mejor lo que ya estas moviendo?</h2>
+      <h2 class="text-xl sm:text-2xl font-bold mb-3">¿Necesitas una landing que aproveche mejor el tráfico que ya estás moviendo?</h2>
       <p class="mb-3 text-sm sm:text-base">
-        Cuentame que ofreces, de donde llega el trafico y cual es la accion que quieres conseguir. Con eso ya puedo decirte si una landing sencilla es suficiente o si hace falta algo mas ambicioso.
+        Cuéntame qué ofreces, de dónde llega el tráfico y cuál es la acción que quieres conseguir. Con eso ya puedo decirte si una landing sencilla es suficiente o si hace falta algo más ambicioso.
       </p>
       <p class="font-semibold text-sm sm:text-base">
-        Presupuesto inicial sin compromiso<br />
+        Primera orientación sin compromiso<br />
         Enfoque claro antes de construir<br />
-        Implementacion directa y sin intermediarios
+        Implementación directa y sin intermediarios
       </p>
     </div>
   </div>
