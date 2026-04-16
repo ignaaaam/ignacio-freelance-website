@@ -5,13 +5,15 @@ import { siteConfig } from '../data/siteConfig';
 
 interface Props {
   languageSwitchUrls?: { es?: string; en?: string };
+  /** Strip behind the rounded nav shell: `dark` matches the homepage hero; `light` matches the top of the page background. */
+  surface?: 'light' | 'dark';
 }
 
 const currentPath = Astro.url.pathname;
 const locale = getLocaleFromPath(currentPath);
 const isEnglish = locale === 'en';
 const content = siteContent[locale];
-const { languageSwitchUrls: customLanguageSwitchUrls } = Astro.props as Props;
+const { languageSwitchUrls: customLanguageSwitchUrls, surface = 'light' } = Astro.props as Props;
 const fallbackSwitch = getLanguageSwitchUrls(Astro.url);
 const languageSwitchUrls = customLanguageSwitchUrls
   ? {
@@ -56,7 +58,7 @@ const servicePages = isEnglish
     ];
 ---
 
-<header class="site-header">
+<header class="site-header" data-header-surface={surface}>
   <div class="container site-header__shell">
     <a href={homeUrl} class="site-header__brand">
       <span class="site-header__brand-row">
@@ -136,6 +138,14 @@ const servicePages = isEnglish
     top: 0;
     z-index: 60;
     padding: 1rem 0 0.6rem;
+  }
+
+  .site-header[data-header-surface='light'] {
+    background: var(--theme-header-strip-light);
+  }
+
+  .site-header[data-header-surface='dark'] {
+    background: var(--theme-header-strip-dark);
   }
 
   .site-header__shell {

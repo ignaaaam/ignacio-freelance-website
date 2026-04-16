@@ -12,6 +12,12 @@
   --theme-surface: rgba(255, 255, 255, 0.8);
   --theme-surface-strong: #ffffff;
   --theme-header-bg: rgba(11, 13, 18, 0.76);
+  /** Full-width strip behind the rounded header shell: avoids a mid-gradient “slice” (~#dee3ec) from `html` showing through. */
+  --theme-header-strip-light: #fafbfd;
+  --theme-header-strip-dark:
+    radial-gradient(circle at top left, rgba(31, 107, 255, 0.24), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.09), transparent 24%),
+    linear-gradient(180deg, rgba(9, 11, 16, 0.98), rgba(12, 15, 22, 0.98));
   --theme-dropdown-bg: rgba(13, 16, 24, 0.96);
   --theme-field-bg: #f7f8fb;
   --theme-field-bg-focus: #ffffff;
