@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --font-heading: "Plus Jakarta Sans", sans-serif;
-  --font-body: "Manrope", sans-serif;
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --container-max: 1280px;
   --container-gutter: clamp(1rem, 3.4vw, 1.75rem);
   --content-max: 72rem;
@@ -528,14 +528,17 @@ summary::-webkit-details-marker {
 [data-sr] {
   opacity: 0;
   transform: translateY(28px);
+  will-change: opacity, transform;
   transition:
     opacity 0.8s cubic-bezier(0.3, 1, 0.36, 1),
     transform 0.8s cubic-bezier(0.3, 1, 0.36, 1);
+  contain: layout style;
 }
 
 [data-sr].visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
 
 .surface-card > *,
