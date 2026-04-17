@@ -65,3 +65,4 @@ Thumbs.db
 # Unlighthouse files
 .unlighthouse/
 unlighthouse-reports/
+gsc-indexing-export/
