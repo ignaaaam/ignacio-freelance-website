@@ -207,7 +207,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       fitLabel: 'Pensado para',
       fitText: 'Empresas de servicios, startups y equipos B2B',
       proof: [
-        'Proyectos desde 800 EUR',
+        'Propuesta personalizada sin compromiso',
         'Respuesta habitual en 24h laborables',
         'Trabajo directo, sin intermediarios',
       ],
@@ -400,13 +400,13 @@ export const siteContent: Record<Locale, HomeContent> = {
       cards: [
         {
           name: 'Landing page',
-          price: 'Desde 800 EUR',
+          price: 'Propuesta en 24 h',
           summary: 'Para lanzar una oferta, un servicio o una campaña con una sola conversión principal.',
           bullets: ['Copy y estructura enfocados en conversión', 'Diseño responsive y formulario', 'Base SEO y rendimiento'],
         },
         {
           name: 'Web de empresa',
-          price: 'Habitual 1.800 a 4.000 EUR',
+          price: 'Presupuesto a medida',
           summary: 'Cuando necesitas presentar mejor la marca, servicios, equipo y prueba de confianza.',
           bullets: ['Arquitectura de contenido', 'Bloques de servicios y captación', 'Preparada para crecer'],
           tone: 'featured',
@@ -578,7 +578,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       fitLabel: 'Good fit for',
       fitText: 'Service companies, startups and B2B teams',
       proof: [
-        'Projects from EUR 800',
+        'Custom proposal, no commitment',
         'Reply within 24 business hours',
         'Direct collaboration, no middlemen',
       ],
@@ -771,13 +771,13 @@ export const siteContent: Record<Locale, HomeContent> = {
       cards: [
         {
           name: 'Landing page',
-          price: 'Starting from EUR 800',
+          price: 'Proposal within 24 h',
           summary: 'For launching an offer, service or campaign around one primary conversion goal.',
           bullets: ['Conversion-focused structure and copy', 'Responsive design and form flow', 'SEO and performance baseline'],
         },
         {
           name: 'Business website',
-          price: 'Typical range EUR 1,800 to 4,000',
+          price: 'Custom scoped quote',
           summary: 'When the company needs to present itself better, explain services and build trust faster.',
           bullets: ['Content architecture', 'Service and lead-gen sections', 'Designed to grow over time'],
           tone: 'featured',

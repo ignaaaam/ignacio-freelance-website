@@ -5,8 +5,8 @@ const locale = getLocaleFromPath(Astro.url.pathname);
 const isEnglish = locale === 'en';
 
 const trust = isEnglish
-  ? ['Projects from EUR 800', 'Reply within 24 business hours', 'Remote from Spain', 'No commitment required']
-  : ['Proyectos desde 800 EUR', 'Respuesta habitual en 24h laborables', 'Remoto desde España', 'Sin compromiso'];
+  ? ['Custom proposal, no commitment', 'Reply within 24 business hours', 'Remote from Spain', 'No commitment required']
+  : ['Propuesta personalizada, sin compromiso', 'Respuesta habitual en 24h laborables', 'Remoto desde España', 'Sin compromiso'];
 ---
 
 <section class="contact-intro">
