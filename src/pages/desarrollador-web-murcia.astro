@@ -1,0 +1,360 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Desarrollador Web Murcia | Freelance Full Stack | Ignacio Amat";
+const description = "Desarrollador web freelance para empresas de la Región de Murcia. Landing pages, webs corporativas y e-commerce desde 800€. Trabajo en remoto con empresas de Murcia, Cartagena y Lorca. Presupuesto gratuito.";
+const canonicalUrl = "/desarrollador-web-murcia";
+const keywords = ["desarrollador web Murcia", "diseño web Murcia", "programador web Murcia", "freelance web Murcia", "página web Región de Murcia", "web Cartagena", "desarrollo web Lorca", "crear página web Murcia"];
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Desarrollador Web Freelance",
+	"url": baseUrl,
+	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development"],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Servicios de desarrollo web para la Región de Murcia",
+		"itemListElement": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages para empresas de Murcia" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas para Murcia y Cartagena" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce para exportadoras y PYMES de Murcia" } }
+		]
+	}
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web",
+	"provider": {
+		"@type": "Person",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Murcia"
+	},
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "800€ - 6.000€+"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": baseUrl },
+		{ "@type": "ListItem", "position": 2, "name": "Desarrollador Web Murcia", "item": `${baseUrl}${canonicalUrl}` }
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web freelance en Murcia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en la Región de Murcia cobra entre 800€ y 6.000€+ por proyecto según complejidad. Landing pages desde 800€, webs corporativas 1.500-3.500€, y tiendas online desde 3.000€. Por hora, las tarifas rondan 40-75€/hora según experiencia y tecnología."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Haces webs para empresas exportadoras de Murcia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. La Región de Murcia es una potencia exportadora (frutas, hortalizas, conservas, vinos) y trabajo a menudo con PYMES que venden a Alemania, Francia, Países Bajos y Reino Unido. Preparo webs multilingües (español, inglés, francés y alemán) optimizadas para SEO internacional y con estructura hreflang correcta."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Atiendes también Cartagena y Lorca?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Trabajo 100% en remoto con toda la Región de Murcia: ciudad de Murcia, Cartagena, Lorca, Molina de Segura, Alcantarilla, Águilas, San Javier, Mar Menor y cualquier municipio de la región. No hay costes de desplazamiento ni recargos."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Necesito estar en Murcia para contratar un desarrollador web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "No. Trabajo 100% en remoto con empresas de la Región de Murcia, lo que te permite acceder a un profesional de calidad sin limitaciones geográficas. Nos comunicamos por videollamada, email y las herramientas que prefieras."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tiempo tarda en estar lista una web para una empresa de Murcia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "El plazo depende del proyecto: una landing page puede estar lista en 2-5 días, una web corporativa en 2-4 semanas, y una tienda online completa en 4-8 semanas. La rapidez también depende de tener el contenido preparado."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Haces factura oficial para empresas de la Región de Murcia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Emito facturas oficiales para empresas y autónomos de Murcia, Cartagena, Lorca y resto de la región. Puedes desgravar el coste del desarrollo web como inversión empresarial."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Murcia",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Murcia" },
+	"areaServed": { "@type": "City", "name": "Murcia" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressRegion": "Región de Murcia", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-developer-murcia"
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance para Empresas de Murcia</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tu empresa de la Región de Murcia necesita una web profesional? Soy Ignacio Amat, desarrollador web freelance full stack.
+						Trabajo en remoto con empresas de Murcia, Cartagena, Lorca y todo el arco mediterráneo para crear páginas web que generan ventas,
+						captación de leads internacionales y presencia online sólida. Presupuesto gratuito y sin compromiso, desde 800€.
+					</p>
+
+					<div class="flex flex-wrap gap-3 mb-8">
+						<a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+						<a href="/desarrollador-web-barcelona" class="btn-secondary">Ver mi perfil completo</a>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Desarrollo web para empresas de la Región de Murcia</h2>
+						<p class="text-base sm:text-lg mb-4">
+							La Región de Murcia es conocida como la "huerta de Europa" y una de las economías exportadoras más dinámicas de España.
+							Las empresas murcianas —desde cooperativas agroalimentarias hasta clínicas dentales, despachos de abogados, hoteles del Mar Menor
+							y PYMES industriales de Cartagena— necesitan webs que funcionen: rápidas, bien posicionadas en Google, preparadas para SEO internacional
+							y diseñadas para convertir visitantes en clientes.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Como desarrollador web freelance, te ayudo a construir exactamente eso: una presencia digital que trabaja para tu negocio las 24 horas,
+							lista para atender tanto al cliente local como a compradores internacionales en Alemania, Francia, Países Bajos o Reino Unido.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Trabajo 100% en remoto, lo que me permite atender a empresas del Centro de Murcia, El Carmen, Vistalegre, La Flota, Santo Ángel,
+							La Alberca, Cabezo de Torres, así como Cartagena, Lorca, Molina de Segura, Alcantarilla, Águilas, San Javier, el entorno del Mar Menor
+							y cualquier municipio de la Región de Murcia —sin costes de desplazamiento ni recargos.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Servicios de desarrollo web que ofrezco a empresas murcianas</h2>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages de Alta Conversión</h3>
+								<p class="text-sm sm:text-base">Páginas diseñadas para captar leads y clientes. Ideales para campañas Google Ads de clínicas dentales, hoteles del Mar Menor, despachos o lanzamientos agroalimentarios. Desde 800€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Corporativa Profesional</h3>
+								<p class="text-sm sm:text-base">Presencia online completa para tu empresa: servicios, catálogo, blog, formularios y SEO integrado. Perfecta para exportadoras, cooperativas y despachos de abogados. Desde 1.500€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tiendas Online (E-commerce)</h3>
+								<p class="text-sm sm:text-base">Vende tus productos 24/7 con pasarelas de pago seguras (Stripe, Redsys, Bizum). Ideal para conservas, vinos de Jumilla, productos gourmet y marcas de moda murcianas. Desde 3.000€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Aplicaciones Web a Medida</h3>
+								<p class="text-sm sm:text-base">CRMs, portales de clientes, intranets para cooperativas agrarias o plataformas logísticas conectadas al puerto de Cartagena. Presupuesto personalizado.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Por qué contratar un desarrollador web freelance para tu empresa de Murcia?</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-6 text-sm sm:text-base">
+							<li><strong>30-50% más económico que una agencia de Murcia o Cartagena:</strong> Sin estructura de empresa, sin costes ocultos.</li>
+							<li><strong>Comunicación directa:</strong> Hablas siempre conmigo, no con un account manager que traslada mensajes.</li>
+							<li><strong>Tecnología moderna:</strong> React, Astro, Next.js, Node.js — tecnologías que garantizan velocidad y SEO.</li>
+							<li><strong>SEO incluido desde el principio:</strong> Cada web que entrego está optimizada para posicionar en Google, también en mercados europeos.</li>
+							<li><strong>Webs multilingües:</strong> Español, inglés, francés y alemán para empresas exportadoras que venden fuera de España.</li>
+							<li><strong>Factura oficial:</strong> Desgrávate el 100% de la inversión.</li>
+							<li><strong>Garantía de satisfacción:</strong> Si no estás contento, seguimos trabajando hasta que lo estés.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Sectores clave de la Región de Murcia con los que trabajo</h2>
+						<p class="mb-4">Conozco bien el tejido empresarial murciano y tengo experiencia creando webs para los sectores más relevantes de la región:</p>
+						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Agroalimentación y huerta</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Conservas y alimentación</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Exportación frutas y hortalizas</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Turismo Mar Menor / Costa Cálida</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Hostelería y restauración</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Clínicas dentales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Despachos de abogados</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">PYMES exportadoras</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Logística y puerto de Cartagena</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">El dinamismo exportador murciano: webs multilingües para clientes internacionales</h2>
+						<p class="text-base sm:text-lg mb-4">
+							La Región de Murcia exporta cada año miles de millones de euros en frutas, hortalizas, conservas y productos elaborados.
+							Grandes cooperativas, PYMES familiares y productores de la huerta trabajan con compradores de Alemania, Francia, Países Bajos,
+							Reino Unido y países nórdicos. En este contexto, una web en español no es suficiente.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Desarrollo webs multilingües (español, inglés, francés y alemán) con implementación técnica correcta de <strong>hreflang</strong>,
+							URLs localizadas, sitemaps internacionales y schema markup adaptado a cada mercado. El objetivo: que tu empresa de Murcia aparezca
+							en Google Alemania cuando un importador busca "spanische Zitronen" o en Google Francia cuando buscan "brocolis Espagne".
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Este enfoque SEO internacional es especialmente útil para clínicas dentales de Murcia que atraen turismo sanitario británico y francés,
+							para hoteles del Mar Menor y la Costa Cálida, y para cualquier negocio que quiera atender al visitante internacional.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Tecnologías que utilizo para webs de empresas murcianas</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Next.js, Tailwind CSS</li>
+							<li><strong>Backend:</strong> Node.js, APIs REST, bases de datos SQL y NoSQL</li>
+							<li><strong>E-commerce:</strong> Pasarelas de pago Stripe, Redsys (Servired), Bizum</li>
+							<li><strong>SEO técnico:</strong> Core Web Vitals, schema markup, sitemap, hreflang multilingüe</li>
+							<li><strong>Rendimiento:</strong> Tiempo de carga &lt;1.5s, puntuación Lighthouse &gt;90</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Cuánto cuesta una página web para una empresa de la Región de Murcia?</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+								<p class="text-sm sm:text-base text-text-muted">Desde <strong>800€ hasta 1.500€</strong>. Perfecta para campañas de captación, servicios concretos, clínicas dentales o lanzamientos de productos agroalimentarios. Lista en 2-5 días.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Web Corporativa</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>1.500€ y 3.500€</strong>. Hasta 8-10 páginas, blog, CMS, SEO avanzado y opcionalmente multilingüe. Lista en 2-4 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Tienda Online</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>3.000€ y 6.000€+</strong>. Catálogo completo, pasarela de pago, gestión de pedidos y envíos internacionales. Lista en 4-8 semanas.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Preguntas frecuentes sobre desarrollo web en la Región de Murcia</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cobra un desarrollador web freelance en Murcia?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre 800€ y 6.000€+ por proyecto según complejidad. Por hora, las tarifas rondan 40-75€/hora.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Haces webs para empresas exportadoras de Murcia?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Desarrollo webs multilingües (ES/EN/FR/DE) con SEO internacional para exportadoras de frutas, hortalizas, conservas y vinos.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Atiendes también Cartagena y Lorca?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Trabajo con toda la Región de Murcia: Cartagena, Lorca, Molina de Segura, Águilas, San Javier y cualquier municipio.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Necesito estar en Murcia para contratarte?</h3>
+								<p class="text-sm sm:text-base text-text-muted">No. Trabajo 100% en remoto. Nos comunicamos por videollamada y email, igual de eficaz que en persona.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tiempo tarda mi web?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Emites factura oficial?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Factura oficial para empresas y autónomos. Desgravable al 100% como inversión empresarial.</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">¿Tu empresa de la Región de Murcia necesita una web profesional?</h2>
+							<p class="mb-3 text-sm sm:text-base">
+								Cuéntame tu proyecto y en 24 horas laborables te envío un presupuesto detallado y sin compromiso.
+								Trabajo con empresas de Murcia, Cartagena, Lorca, Mar Menor y toda España.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Sin compromiso<br/>
+								✅ Facturación oficial<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Otros servicios y ciudades</h2>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-espana" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🇪🇸 Desarrollador Web España →</h3>
+								<p class="text-sm text-text-muted">Servicio nacional para ciudades y pueblos de España.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Barcelona →</h3>
+								<p class="text-sm text-text-muted">Mi perfil y servicios principales.</p>
+							</a>
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏛️ Desarrollador Web Madrid →</h3>
+								<p class="text-sm text-text-muted">Servicio para empresas de Madrid y alrededores.</p>
+							</a>
+							<a href="/contratar-desarrollador-full-stack" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💻 Contratar Desarrollador Full Stack →</h3>
+								<p class="text-sm text-text-muted">Para proyectos complejos y aplicaciones web.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🎨 Diseño Web para Empresas →</h3>
+								<p class="text-sm text-text-muted">Diseños profesionales orientados a conversión.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

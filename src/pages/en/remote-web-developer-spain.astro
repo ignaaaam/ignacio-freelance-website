@@ -1,0 +1,525 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Remote Freelance Web Developer Spain | Full-Stack | Ignacio Amat';
+const description = 'Remote freelance full-stack web developer serving the whole of Spain. Clear methodology, no unnecessary meetings, real results. Working with companies in Barcelona, Madrid, Valencia, Sevilla and every Spanish city. Free quote in 24h.';
+const canonicalUrl = '/en/remote-web-developer-spain';
+const keywords = ['remote web developer Spain', 'freelance web developer Spain', 'remote full-stack developer Spain', 'hire remote web developer', 'web developer remote Spain', 'freelance remote programmer Spain'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Remote Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Remote Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development', 'Remote Collaboration']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Remote Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': [
+    { '@type': 'Country', 'name': 'Spain' },
+    { '@type': 'City', 'name': 'Barcelona' },
+    { '@type': 'City', 'name': 'Madrid' },
+    { '@type': 'City', 'name': 'Valencia' },
+    { '@type': 'City', 'name': 'Sevilla' },
+    { '@type': 'City', 'name': 'Málaga' },
+    { '@type': 'City', 'name': 'Bilbao' },
+    { '@type': 'City', 'name': 'Zaragoza' },
+    { '@type': 'City', 'name': 'Murcia' },
+    { '@type': 'City', 'name': 'Palma de Mallorca' }
+  ],
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Remote Web Developer Spain', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How do meetings work when collaborating remotely?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Meetings happen by video call (Google Meet, Zoom, Microsoft Teams) and only when they add real value. We run a 45-60 min kickoff call, then focused calls at key milestones (design review, final delivery, training). The rest is asynchronous via email or Slack. This avoids the unnecessary meetings that waste time.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Does it really work without meeting in person?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I have delivered 50+ projects 100% remotely for companies across Spain with equal or better results than in-person work. Modern tools (HD video, Figma, Notion, Slack, Git) make remote collaboration extremely efficient — often faster than on-site work.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Which cities and regions do you serve?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Every city and region in Spain: Barcelona, Madrid, Valencia, Sevilla, Málaga, Bilbao, Zaragoza, Murcia, Palma de Mallorca, Alicante, Granada, Córdoba, Vigo, A Coruña, Pamplona, San Sebastián, Santander, Valladolid, and any town or rural area. 100% remote work removes geographical barriers.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'What are your working hours?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Spanish business hours: Monday to Friday, 9:00-18:00 CET/CEST. I reply to messages within 4 hours during that window. I do not work weekends or public holidays, which ensures better focus and service during the week.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you invoice as a Spanish autónomo?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I issue official invoices with Spanish VAT as a registered autónomo in Spain. The full amount is deductible as a business investment. I accept SEPA bank transfers, Bizum and Stripe. Payments usually split 50% upfront and 50% on delivery, or by milestones for larger projects.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How much does it cost to hire a remote web developer in Spain?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Projects range from EUR800 to EUR6000+. Landing pages start at EUR800, business websites EUR1500-EUR3500, ecommerce EUR3000-EUR6000+, and custom web apps depend on scope. Hourly rates: EUR45-EUR85/h. Working remotely does not make the service more expensive — it actually removes the hidden overhead of a local agency.'
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Ignacio Amat — Remote Web Developer Spain',
+  'url': `${baseUrl}${canonicalUrl}`,
+  'image': `${baseUrl}/og-image.png`,
+  'priceRange': 'EUR-EUR',
+  'currenciesAccepted': 'EUR',
+  'serviceArea': { '@type': 'Country', 'name': 'Spain' },
+  'areaServed': [
+    { '@type': 'Country', 'name': 'Spain' },
+    { '@type': 'City', 'name': 'Barcelona' },
+    { '@type': 'City', 'name': 'Madrid' },
+    { '@type': 'City', 'name': 'Valencia' },
+    { '@type': 'City', 'name': 'Sevilla' },
+    { '@type': 'City', 'name': 'Málaga' },
+    { '@type': 'City', 'name': 'Bilbao' },
+    { '@type': 'City', 'name': 'Zaragoza' },
+    { '@type': 'City', 'name': 'Murcia' },
+    { '@type': 'City', 'name': 'Palma de Mallorca' }
+  ],
+  'address': { '@type': 'PostalAddress', 'addressCountry': 'ES' },
+  'availableLanguage': ['English', 'Spanish', 'Catalan'],
+  'sameAs': ['https://www.linkedin.com/in/ignacio-amat-urbina-789244223/', 'https://github.com/ignaaaam']
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-remoto-espana',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Remote Freelance Web Developer in Spain</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            I am Ignacio Amat, a freelance full-stack web developer working 100% remotely with companies all over Spain.
+            Clear methodology, zero unnecessary meetings, and deliverables that produce real business outcomes.
+            Whether you are in Barcelona, Madrid, Valencia, a village in the mountains or a Balearic island: same service, fast and direct.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/services" class="btn-secondary">See all services</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Why hiring a remote developer works better than on-site</h2>
+            <p class="text-base sm:text-lg mb-4">
+              For years, hiring a web developer meant meeting in person, spending hours on travel, and limiting your options to people in your own city.
+              That no longer makes sense. Well-executed remote work is more efficient, more affordable and usually produces better results.
+              Here is why.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              <strong>You save real time.</strong> An in-person meeting means travelling, waiting, small talk, the meeting itself, and then travelling back.
+              Easily 2-3 hours for something we can solve in 30 minutes over a video call with the screen shared.
+              Multiplied by the 10-15 touchpoints a typical web project needs, that is full working days you get back for yourself and your team.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              <strong>Better focus and productivity.</strong> With no commute and no interruptions, the time I spend on your project is 100% productive time.
+              That translates into faster delivery and higher code quality.
+              Many local agencies bill hours lost to traffic and internal meetings. A remote freelancer only bills real work on your website.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              <strong>Access to better talent.</strong> Without geographical limits, you can hire the professional that best fits your project,
+              not the closest one. This is especially relevant for smaller cities or rural areas where the local supply of experienced full-stack developers is limited.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Cities and regions I work with</h2>
+            <p class="mb-4 text-base sm:text-lg">
+              I serve companies across all of Spain. These are the main cities with dedicated landing pages covering local market information,
+              typical use cases and regional specifics. Click your city for more detailed information:
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-8">
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Barcelona</h3>
+                <p class="text-xs text-text-muted">Catalonia and metropolitan area</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Madrid</h3>
+                <p class="text-xs text-text-muted">Madrid autonomous community</p>
+              </a>
+              <a href="/en/web-developer-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Valencia</h3>
+                <p class="text-xs text-text-muted">Valencian Community</p>
+              </a>
+              <a href="/en/web-developer-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Sevilla</h3>
+                <p class="text-xs text-text-muted">Western Andalusia</p>
+              </a>
+              <a href="/en/web-developer-malaga" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Málaga</h3>
+                <p class="text-xs text-text-muted">Costa del Sol</p>
+              </a>
+              <a href="/en/web-developer-bilbao" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Bilbao</h3>
+                <p class="text-xs text-text-muted">Basque Country</p>
+              </a>
+              <a href="/en/web-developer-zaragoza" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Zaragoza</h3>
+                <p class="text-xs text-text-muted">Aragon</p>
+              </a>
+              <a href="/en/web-developer-murcia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Murcia</h3>
+                <p class="text-xs text-text-muted">Region of Murcia</p>
+              </a>
+              <a href="/en/web-developer-palma-mallorca" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all text-center">
+                <h3 class="font-bold text-base mb-1">Palma de Mallorca</h3>
+                <p class="text-xs text-text-muted">Balearic Islands</p>
+              </a>
+            </div>
+            <p class="text-base sm:text-lg mb-4">
+              Is your city not on the list? No problem. I also work with companies in Alicante, Granada, Córdoba, Vigo, A Coruña, Gijón, Oviedo, Santander,
+              Pamplona, San Sebastián, Vitoria, Valladolid, Salamanca, Toledo, Tarragona, Girona, Lleida, Castellón, Almería, Jaén, Huelva, Cádiz, Badajoz,
+              Cáceres, Las Palmas, Santa Cruz de Tenerife and any other city, town or region in the country.
+              Distance is simply not a constraint.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How I work with remote clients</h2>
+            <p class="mb-4 text-base sm:text-lg">
+              My methodology is built to be clear, predictable and efficient. At any point you know exactly where we are, what comes next,
+              and when your website will be live. These are the steps:
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">1. Initial video call (45-60 min)</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Over Google Meet or Zoom. We analyse your business, goals, target audience and competition. I take detailed notes in Notion which we share with you.
+                  By the end of the call you know exactly what you need and what I can deliver.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">2. Written proposal and quote (24-48h)</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  You receive a PDF with scope, deliverables, tech stack, timeline and final price. No hidden clauses, no surprise extras.
+                  We sign online (Docusign or similar) and get started.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">3. Collaborative design in Figma</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  I share the design in Figma and you can leave comments directly on the canvas. No more long emails describing changes:
+                  you point with the cursor and write. We iterate until the design is approved.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">4. Development with weekly progress updates</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Every Friday you receive an email summarising the week and a live preview link. You see your website come to life in real time.
+                  The code lives in a private Git repository to which you have access if you wish.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">5. Delivery, training and support</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Final call to walk you through managing your website (editing content, adding products, etc.). You receive a PDF/video manual
+                  and one month of included support for questions or small adjustments.
+                </p>
+              </div>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-8 mb-3">Tools I use for remote work</h3>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Video calls:</strong> Google Meet, Zoom or Microsoft Teams (whichever you prefer).</li>
+              <li><strong>Design:</strong> Figma for wireframes, mockups and interactive prototypes.</li>
+              <li><strong>Project management:</strong> Notion for shared documentation and progress tracking.</li>
+              <li><strong>Async communication:</strong> Slack, email or WhatsApp Business depending on preference.</li>
+              <li><strong>Code:</strong> Git + GitHub/GitLab for version control and transparent reviews.</li>
+              <li><strong>Live previews:</strong> automatic deploys on Vercel or Netlify on every change.</li>
+              <li><strong>Contract signing:</strong> Docusign or Signaturit for paperless signing.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Advantages of a remote freelancer over a local agency</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">30-50% lower cost</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Local agencies have offices, account managers, sales people and overhead. You pay for all of that.
+                  A remote freelancer avoids those costs: the budget goes directly into building your website.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Direct communication, no middlemen</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  You always talk to me — the person actually writing the code. At an agency, your message usually goes through account manager → project manager → developer.
+                  That adds noise, delays and misunderstandings.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Greater flexibility and speed</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Need an urgent change before a launch? We handle it in hours, not days.
+                  No internal approval chains or multi-layer validations.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Modern tech stack, not legacy</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Many agencies stay on WordPress and templates because that is what their juniors know. I use modern technologies
+                  (Astro, Next.js, React) that guarantee speed, SEO and long-term maintainability.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Real commitment to your project</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  For an agency, your website is one of fifty ongoing projects. For me, it is one of the few I am focused on this month.
+                  That difference shows up in the final result.
+                </p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Remote services I offer across Spain</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">High-converting Landing Pages</h3>
+                <p class="text-sm sm:text-base">Pages optimised for lead generation and closing sales. Ideal for Google Ads, launches and specific services. From EUR800.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Professional Business Websites</h3>
+                <p class="text-sm sm:text-base">Complete online presence: services, blog, contact forms and integrated SEO. From EUR1500.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Online Stores (E-commerce)</h3>
+                <p class="text-sm sm:text-base">24/7 sales with Stripe, Redsys and Bizum. Simple stock and order management. From EUR3000.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Custom Web Applications</h3>
+                <p class="text-sm sm:text-base">CRMs, client portals, SaaS platforms or internal tools. Custom quote based on scope.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Industries I work with across Spain</h2>
+            <p class="mb-4">I have built websites for companies and professionals in a wide range of industries in different regions of the country:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Consultancies</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Tech startups</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Law firms</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Clinics and medical centres</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Restaurants and hospitality</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Real estate agencies</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Ecommerce and retail</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Schools and academies</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Marketing agencies</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Rural tourism and hotels</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Architects and engineers</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Self-employed professionals</div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Technologies I use</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Next.js, Tailwind CSS</li>
+              <li><strong>Backend:</strong> Node.js, PHP/Laravel, REST APIs, SQL and NoSQL databases</li>
+              <li><strong>E-commerce:</strong> Stripe, Redsys (Servired), Bizum, PayPal, Shopify</li>
+              <li><strong>Technical SEO:</strong> Core Web Vitals, schema markup, sitemap, hreflang, mobile-first</li>
+              <li><strong>Performance:</strong> load time &lt;1.5s, Lighthouse score &gt;90</li>
+              <li><strong>Hosting and deployment:</strong> Vercel, Netlify, Cloudflare, AWS depending on needs</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How much does a remote web developer cost in Spain?</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+                <p class="text-sm sm:text-base text-text-muted">From <strong>EUR800 to EUR1500</strong>. Ideal for campaigns, specific services or quick idea validation. Delivered in 2-5 days.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Business Website</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between <strong>EUR1500 and EUR3500</strong>. 8-10 pages, blog, CMS and advanced SEO. Delivered in 2-4 weeks.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Online Store</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between <strong>EUR3000 and EUR6000+</strong>. Full catalogue, payment gateway and order management. Delivered in 4-8 weeks.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Custom Web Application</h3>
+                <p class="text-sm sm:text-base text-text-muted">From <strong>EUR4000</strong> upwards. Price depends on functional scope. Detailed quote after the initial video call.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Frequently asked questions about remote web development in Spain</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">How do meetings work?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Via video call (Google Meet, Zoom or Teams) and only when they add value. A 45-60 min kickoff, focused calls at key milestones
+                  (design, delivery) and the rest async via email or Slack. This avoids the unnecessary meetings that waste time.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Does it really work without meeting in person?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Yes — if anything, better. I have delivered 50+ remote projects for companies across Spain with equal or better results than in-person work.
+                  Modern tools (Figma, HD video, Git, Notion) make collaboration extremely smooth.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Which cities do you serve?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  All of Spain: Barcelona, Madrid, Valencia, Sevilla, Málaga, Bilbao, Zaragoza, Murcia, Palma, plus any other city, town or region.
+                  Location is not a constraint when work is 100% remote.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">What are your working hours?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Spanish business hours: Monday to Friday, 9:00-18:00 CET/CEST. I reply to messages within 4 hours during that window.
+                  I do not work weekends or public holidays, which keeps focus and service quality high during the week.
+                </p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do you invoice as a Spanish autónomo?</h3>
+                <p class="text-sm sm:text-base text-text-muted">
+                  Yes. Official invoices with VAT as a registered Spanish autónomo. Fully deductible as a business investment.
+                  I accept SEPA transfer, Bizum and Stripe. Typical payment split: 50% upfront + 50% on delivery, or milestone-based for larger projects.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Ready to start your remote web project?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                Tell me about your project and within 24 business hours I will send you a detailed, no-commitment quote.
+                I work with companies across Spain: Barcelona, Madrid, Valencia, Sevilla and any other city or town.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                ✅ Free quote in 24h<br/>
+                ✅ 100% remote, no travel required<br/>
+                ✅ Official Spanish invoice<br/>
+                ✅ Direct communication with me<br/>
+                ✅ Satisfaction guarantee
+              </p>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Explore all local pages and services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Main page with profile, services and portfolio.</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Service for companies in Madrid.</p>
+              </a>
+              <a href="/en/web-developer-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Valencia -></h3>
+                <p class="text-sm text-text-muted">Service for companies in the Valencian Community.</p>
+              </a>
+              <a href="/en/web-developer-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Sevilla -></h3>
+                <p class="text-sm text-text-muted">Service for companies in western Andalusia.</p>
+              </a>
+              <a href="/en/web-developer-malaga" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Málaga -></h3>
+                <p class="text-sm text-text-muted">Service for companies on the Costa del Sol.</p>
+              </a>
+              <a href="/en/web-developer-bilbao" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Bilbao -></h3>
+                <p class="text-sm text-text-muted">Service for companies in the Basque Country.</p>
+              </a>
+              <a href="/en/web-developer-zaragoza" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Zaragoza -></h3>
+                <p class="text-sm text-text-muted">Service for companies in Aragon.</p>
+              </a>
+              <a href="/en/web-developer-murcia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Murcia -></h3>
+                <p class="text-sm text-text-muted">Service for companies in the Region of Murcia.</p>
+              </a>
+              <a href="/en/web-developer-palma-mallorca" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Palma de Mallorca -></h3>
+                <p class="text-sm text-text-muted">Service for companies in the Balearic Islands.</p>
+              </a>
+              <a href="/en/services" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">All services -></h3>
+                <p class="text-sm text-text-muted">Complete catalogue: landing pages, sites, ecommerce, apps.</p>
+              </a>
+              <a href="/en/how-much-does-website-cost" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">How much does a website cost? -></h3>
+                <p class="text-sm text-text-muted">Detailed pricing guide by project type.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>
+</content>
+</invoke>

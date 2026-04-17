@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Web Developer Bilbao | Freelance Full-Stack | Ignacio Amat';
+const description = 'Freelance web developer for companies in Bilbao and the Basque Country. Landing pages, business websites, and ecommerce from EUR800. Remote collaboration and bilingual Spanish-Basque websites available.';
+const canonicalUrl = '/en/web-developer-bilbao';
+const keywords = ['web developer bilbao', 'freelance web developer bilbao', 'website development bilbao', 'business website bilbao', 'landing page bilbao', 'web design bilbao', 'web developer basque country', 'bizkaia web developer'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Bilbao'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Bilbao', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How much does a freelance web developer cost in Bilbao?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Most projects range from EUR800 to EUR6000+ depending on scope. Landing pages start around EUR800, business websites between EUR1500 and EUR3500, and ecommerce projects from EUR3000.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you build bilingual Spanish-Basque (Euskera) websites?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I build bilingual websites in Spanish and Basque with proper hreflang tags, separate URLs per language, and independent SEO for each version. A strong option for companies operating across Bizkaia and the Basque Country.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you work with industrial companies and engineering firms in Bizkaia?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I have experience with B2B industrial businesses, engineering firms, and manufacturers from the Basque Country. Technical catalogues, downloadable datasheets, private client portals, and qualified lead forms adapted to industrial buying cycles.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do we need to be based in Bilbao to work together?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No. I work 100% remotely with companies in Bilbao, Bizkaia, and across the Basque Country and Spain through video calls, email, and project tools.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How long does a web project usually take?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages are usually delivered in 2-5 days, business websites in 2-4 weeks, and ecommerce websites in 4-8 weeks. Bilingual Spanish-Basque versions typically add 1 extra week for content coordination.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-bilbao',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Bilbao</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Need a website that helps your Bilbao or Bizkaia business generate leads and sales? I build fast,
+            SEO-ready websites and web applications focused on real business outcomes — with optional bilingual
+            Spanish-Basque delivery for companies that want to connect with local customers.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/hire-full-stack-web-developer" class="btn-secondary">Hire Full-Stack Developer</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Web development services for Bilbao and Bizkaia companies</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Bilbao is one of northern Spain's strongest business hubs: a deep industrial base, major financial players
+              (BBVA, Kutxabank), professional services, author-driven hospitality, and a fast-growing tech startup scene
+              driven by initiatives like BAT (Bilbao Advanced Technologies) and BBK. Your website needs to match that level of ambition.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              I work 100% remotely with companies across the Bilbao metropolitan area — Abando, Indautxu, Deusto, Santutxu,
+              Casco Viejo, Uribitarte, Getxo, Leioa, Barakaldo, Portugalete, Sestao, and Erandio — and across the wider Basque Country.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">High-converting Landing Pages</h3>
+                <p class="text-sm sm:text-base">Designed for paid campaigns and lead generation from EUR800.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Business Websites</h3>
+                <p class="text-sm sm:text-base">Professional multi-page sites with strong SEO foundations and optional Spanish-Basque bilingual setup. From EUR1500.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Ecommerce Development</h3>
+                <p class="text-sm sm:text-base">Online stores with Stripe, Redsys, or Bizum integrations from EUR3000.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Custom Web Applications</h3>
+                <p class="text-sm sm:text-base">Internal tools, B2B client portals, product configurators, and SaaS products tailored for industrial and consulting firms.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why choose a freelance developer for Bilbao?</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Direct communication:</strong> You speak with the person building your project.</li>
+              <li><strong>Lower cost:</strong> Usually 30-50% lower than Basque agencies for similar scope.</li>
+              <li><strong>Modern stack:</strong> Astro, React, Next.js, Node.js, and technical SEO.</li>
+              <li><strong>Bilingual Spanish-Basque:</strong> Properly implemented hreflang and separate URLs per language.</li>
+              <li><strong>Remote delivery:</strong> Efficient process with no geography constraints.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Industries I work with in Bilbao and Bizkaia</h2>
+            <p class="mb-4">I've built websites for companies across the main sectors of the Basque economy:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Industry and engineering</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Financial services</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Professional consulting</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">B2B industrial companies</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Tech startups (BAT, BBK)</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Hospitality and fine dining</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Post-Guggenheim tourism</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Legal practices</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Clinics and healthcare</div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Special focus: industrial and engineering companies in Bizkaia</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Industry is a historical pillar of Bilbao: manufacturing, metallurgy, automotive, energy, mechanical engineering,
+              and technical consulting. These companies have digital needs that a generic website rarely solves:
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Navigable technical catalogues</strong> with filters by product, norm, or application.</li>
+              <li><strong>Downloadable PDF datasheets</strong> integrated with commercial lead-capture forms.</li>
+              <li><strong>Private portals for clients or distributors</strong> with authenticated access.</li>
+              <li><strong>Qualified contact forms</strong> that filter real B2B leads from noise.</li>
+              <li><strong>B2B narrative</strong> designed for long sales cycles and corporate buyers.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Pricing for Bilbao companies</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+                <p class="text-sm sm:text-base text-text-muted">From <strong>EUR800 to EUR1500</strong>. Ideal for campaigns and specific services. Delivered in 2-5 days.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Business Website</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between <strong>EUR1500 and EUR3500</strong>. Up to 8-10 pages, blog, CMS, and advanced SEO. Optional Spanish-Basque bilingual setup. Delivered in 2-4 weeks.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Ecommerce</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between <strong>EUR3000 and EUR6000+</strong>. Full catalogue, payment gateways, and order management. Delivered in 4-8 weeks.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related services in Spain</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Spain -></h3>
+                <p class="text-sm text-text-muted">Nationwide service for any city or town in Spain.</p>
+              </a>
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Service page for Barcelona companies.</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Service page for Madrid companies.</p>
+              </a>
+              <a href="/en/hire-full-stack-web-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Hire Full-Stack Developer -></h3>
+                <p class="text-sm text-text-muted">For complex projects and custom web applications.</p>
+              </a>
+              <a href="/en/web-design-businesses" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Design for Businesses -></h3>
+                <p class="text-sm text-text-muted">Conversion-focused design and UX for business sites.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

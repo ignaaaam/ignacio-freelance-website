@@ -1,0 +1,305 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Web Developer Malaga | Freelance Full-Stack | Ignacio Amat';
+const description = 'Freelance web developer for companies in Malaga and the Costa del Sol. Landing pages, business websites, and ecommerce from EUR800. Remote collaboration, bilingual ES/EN, free quote.';
+const canonicalUrl = '/en/web-developer-malaga';
+const keywords = ['web developer malaga', 'freelance web developer malaga', 'website development malaga', 'costa del sol web developer', 'business website malaga', 'web design malaga'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Malaga'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Malaga', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How much does a freelance web developer cost in Malaga?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Most projects range from EUR800 to EUR6000+ depending on scope. Landing pages start around EUR800, business websites between EUR1500 and EUR3500, and ecommerce projects from EUR3000.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you work with companies across the Costa del Sol?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I work with businesses in Malaga city and throughout the Costa del Sol: Torremolinos, Benalmadena, Fuengirola, Marbella, Estepona, and the rest of the province. Remote delivery means no extra cost regardless of location.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can you work in English for international clients in Malaga?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I work in both English and Spanish, which is ideal on the Costa del Sol given the large expat community and international-facing businesses. I can also deliver fully bilingual websites with proper hreflang and SEO in both languages.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'How long does a web project usually take?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Landing pages are usually delivered in 2-5 days, business websites in 2-4 weeks, and ecommerce websites in 4-8 weeks.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you issue official invoices?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I issue official invoices for companies and self-employed professionals in Malaga, Andalusia, and across Spain. The cost is fully deductible as a business investment.'
+      }
+    }
+  ]
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  'name': 'Ignacio Amat — Web Developer Malaga',
+  'url': `${baseUrl}${canonicalUrl}`,
+  'image': `${baseUrl}/og-image.png`,
+  'priceRange': 'EUR800-EUR6000+',
+  'currenciesAccepted': 'EUR',
+  'serviceArea': { '@type': 'City', 'name': 'Malaga' },
+  'areaServed': { '@type': 'City', 'name': 'Malaga' },
+  'address': { '@type': 'PostalAddress', 'addressLocality': 'Malaga', 'addressRegion': 'Andalucia', 'addressCountry': 'ES' },
+  'availableLanguage': ['English', 'Spanish'],
+  'sameAs': ['https://www.linkedin.com/in/ignacio-amat-urbina-789244223/', 'https://github.com/ignaaaam']
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-malaga',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Malaga</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Need a website that helps your Malaga or Costa del Sol business generate bookings, leads, and international sales?
+            I build fast, SEO-ready, bilingual websites and web applications focused on real business outcomes. Free quote, no commitment.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/hire-full-stack-web-developer" class="btn-secondary">Hire Full-Stack Developer</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Web development services for Malaga and Costa del Sol companies</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Malaga has become one of the most dynamic business markets in southern Europe. Between the Malaga TechPark, the National Digital Content Hub (Polo Digital),
+              the steady flow of international residents, and an economy driven by tourism and real estate, your website must do more than look good:
+              it has to load fast, rank well in Google, and convert both local and international visitors.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              I work 100% remotely with companies across Malaga city and the wider Costa del Sol — Centro Historico, Soho, El Palo, Pedregalejo, Teatinos,
+              Huelin, La Malagueta, Churriana, as well as Torremolinos, Benalmadena, Fuengirola, Marbella, and Estepona. Same quality, no travel fees.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">High-converting Landing Pages</h3>
+                <p class="text-sm sm:text-base">Focused on bookings, lead capture, and paid ad campaigns. Ideal for hospitality, aesthetic clinics, and Costa del Sol real estate from EUR800.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Business Websites</h3>
+                <p class="text-sm sm:text-base">Professional bilingual (ES/EN) multi-page websites with strong SEO foundations. Perfect for law firms, TechPark startups, and B2B services from EUR1500.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Ecommerce Development</h3>
+                <p class="text-sm sm:text-base">Online stores with Stripe, Redsys, or Bizum integrations, multi-currency and international shipping from EUR3000.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Custom Web Applications</h3>
+                <p class="text-sm sm:text-base">Booking portals for holiday rentals, real estate CRMs, clinic management dashboards, and SaaS tools tailored to your workflow.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why choose a freelance developer for your Malaga business?</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Direct communication:</strong> You talk to the person designing and building your site. No account managers.</li>
+              <li><strong>Lower cost:</strong> Usually 30-50% lower than Malaga-based agencies for similar scope.</li>
+              <li><strong>Modern stack:</strong> Astro, React, Next.js, Node.js, and technical SEO done right.</li>
+              <li><strong>Bilingual delivery:</strong> Native Spanish and fluent English — critical for the expat and international market.</li>
+              <li><strong>Remote delivery:</strong> Efficient process without geography constraints.</li>
+              <li><strong>Official invoicing:</strong> 100% deductible as a business investment.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Industries I work with in Malaga and the Costa del Sol</h2>
+            <p class="mb-4">The Costa del Sol economy is driven by tourism, international real estate, and a fast-growing tech scene. I have experience building websites for the sectors that rely most heavily on digital presence in the province:</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Tourism and holiday rentals</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Hospitality and restaurants</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Costa del Sol real estate</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Aesthetic and dental clinics</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">International law firms</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Malaga TechPark startups</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Ecommerce and retail</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Language schools</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Expat services</div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Malaga TechPark, Polo Digital, and the startup ecosystem</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Malaga is no longer just beach and sunshine. The Andalusia Technology Park (Malaga TechPark) and the National Digital Content Hub have attracted global players
+              such as Google, Vodafone, and TDK. That ecosystem generates constant demand for modern corporate websites, SaaS dashboards, and high-converting B2B landing pages.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              If your startup is raising a round, shipping an MVP, or pushing for traction, your website has to match that level: fast, properly instrumented with analytics,
+              optimized for Core Web Vitals, and ready to scale internationally. That is exactly what I deliver.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Pricing for Malaga companies</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+                <p class="text-sm sm:text-base text-text-muted">From <strong>EUR800 to EUR1500</strong>. Ideal for booking campaigns, aesthetic treatments, Marbella property listings, or specific services. Delivered in 2-5 days.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Business Website</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between <strong>EUR1500 and EUR3500</strong>. Up to 8-10 pages, blog, CMS, bilingual ES/EN version, and advanced SEO. Delivered in 2-4 weeks.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Online Store</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between <strong>EUR3000 and EUR6000+</strong>. Full catalog, payment gateway, order management, and international shipping. Delivered in 4-8 weeks.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Frequently asked questions</h2>
+            <div class="space-y-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">How much does a freelance web developer cost in Malaga?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Between EUR800 and EUR6000+ per project depending on complexity. Hourly rates are usually EUR45-EUR85.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do you work with companies across the Costa del Sol?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. Malaga city, Torremolinos, Benalmadena, Fuengirola, Marbella, Estepona, and the full province. Remote means no extra cost.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Can you work in English?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. English and Spanish. I can deliver fully bilingual websites with proper hreflang and SEO in both languages.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">How long does a project take?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Landing page: 2-5 days. Business website: 2-4 weeks. Online store: 4-8 weeks.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold text-base sm:text-lg mb-2">Do you issue official invoices?</h3>
+                <p class="text-sm sm:text-base text-text-muted">Yes. Fully deductible official invoicing for Spanish companies and self-employed professionals.</p>
+              </div>
+            </div>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a professional website for your Malaga or Costa del Sol business?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                Tell me about your project and within 24 business hours I will send you a detailed quote with no strings attached.
+                I work with companies in Malaga, the Costa del Sol, Andalusia, and across Spain.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                - Free quote within 24h<br/>
+                - No commitment<br/>
+                - Official invoicing<br/>
+                - Bilingual ES/EN support
+              </p>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related services and cities</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Spain -></h3>
+                <p class="text-sm text-text-muted">Nationwide service for any city or town in Spain.</p>
+              </a>
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Service page for Barcelona companies.</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Service page for Madrid companies.</p>
+              </a>
+              <a href="/en/hire-full-stack-web-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Hire Full-Stack Developer -></h3>
+                <p class="text-sm text-text-muted">For complex projects and custom web applications.</p>
+              </a>
+              <a href="/en/web-design-businesses" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Design for Businesses -></h3>
+                <p class="text-sm text-text-muted">Conversion-focused design and UX for business sites.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>
+</content>
+</invoke>

@@ -1,0 +1,345 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Desarrollador Web Zaragoza | Freelance Full Stack | Ignacio Amat";
+const description = "Desarrollador web freelance en Zaragoza y Aragón. Landing pages, webs corporativas y aplicaciones a medida desde 800€. Trabajo en remoto con empresas de Zaragoza, Huesca y Teruel. Presupuesto gratuito.";
+const canonicalUrl = "/desarrollador-web-zaragoza";
+const keywords = ["desarrollador web Zaragoza", "diseño web Zaragoza", "programador web Zaragoza", "freelance web Zaragoza", "desarrollo web Aragón", "página web pyme Zaragoza"];
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Desarrollador Web Freelance",
+	"url": baseUrl,
+	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development"],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Servicios de desarrollo web para Zaragoza",
+		"itemListElement": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages para empresas de Zaragoza" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas para Zaragoza" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce para tiendas de Zaragoza" } }
+		]
+	}
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web",
+	"provider": {
+		"@type": "Person",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Zaragoza"
+	},
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "800€ - 6.000€+"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": baseUrl },
+		{ "@type": "ListItem", "position": 2, "name": "Desarrollador Web Zaragoza", "item": `${baseUrl}${canonicalUrl}` }
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web freelance en Zaragoza?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en Zaragoza cobra entre 800€ y 6.000€+ por proyecto según complejidad. Landing pages desde 800€, webs corporativas 1.500-3.500€, y tiendas online desde 3.000€. Por hora, las tarifas rondan 40-75€/hora, algo por debajo de Madrid o Barcelona, manteniendo calidad profesional."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas de PLAZA y el sector logístico?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Zaragoza alberga PLAZA, la mayor plataforma logística de Europa, y muchas empresas del sector necesitan webs corporativas, portales de clientes, sistemas de tracking o integraciones con ERPs. Adapto cada proyecto al flujo operativo logístico: catálogos B2B, formularios de cotización, áreas privadas para transportistas y dashboards internos."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Atiendes también Huesca y Teruel?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Por supuesto. Al trabajar 100% en remoto atiendo a toda la comunidad aragonesa: Zaragoza, Huesca, Teruel, Jaca, Monzón, Barbastro, Alcañiz, Calatayud, Ejea de los Caballeros y cualquier municipio de Aragón. El mismo servicio y las mismas tarifas, sin costes de desplazamiento."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Necesito estar en Zaragoza para contratar un desarrollador web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "No. Trabajo 100% en remoto con empresas de Zaragoza y Aragón, lo que te permite acceder a un profesional de calidad sin limitaciones geográficas. Nos comunicamos por videollamada, email y las herramientas que prefieras (Slack, Trello, Notion)."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Haces factura oficial para empresas de Zaragoza?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Emito facturas oficiales para empresas y autónomos aragoneses. Puedes desgravar el coste del desarrollo web como inversión empresarial y aprovecharlo dentro del Kit Digital u otras ayudas del Gobierno de Aragón si tu empresa lo tiene activo."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Zaragoza",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Zaragoza" },
+	"areaServed": { "@type": "City", "name": "Zaragoza" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Zaragoza", "addressRegion": "Aragón", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-developer-zaragoza"
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance para Empresas de Zaragoza</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tu empresa de Zaragoza o de Aragón necesita una web profesional? Soy Ignacio Amat, desarrollador web freelance full stack.
+						Trabajo en remoto con PYMES, industrias y despachos de Zaragoza para crear páginas web que generan ventas, captan leads y transmiten solidez.
+						Presupuesto gratuito en 24 horas y sin compromiso.
+					</p>
+
+					<div class="flex flex-wrap gap-3 mb-8">
+						<a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+						<a href="/desarrollador-web-barcelona" class="btn-secondary">Ver mi perfil completo</a>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Desarrollo web para empresas de Zaragoza y Aragón</h2>
+						<p class="text-base sm:text-lg mb-4">
+							Zaragoza es una de las ciudades más estratégicas de España. Equidistante de Madrid, Barcelona, Valencia y Bilbao (todas a menos de 3 horas),
+							es el corazón logístico e industrial del nordeste peninsular. Esa posición privilegiada exige webs que estén a la altura: rápidas, bien posicionadas en Google
+							y pensadas para convertir visitas en clientes, ya sea una PYME del Centro, una industria de la margen derecha del Ebro o un despacho profesional en Universidad.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Como desarrollador web freelance trabajo 100% en remoto, lo que me permite atender a empresas del Centro, Delicias, Las Fuentes, San José, El Rabal,
+							Actur, Universidad, Romareda, Casetas y todo el área metropolitana (Cuarte de Huerva, Utebo, La Puebla de Alfindén, Villanueva de Gállego).
+							También colaboro habitualmente con compañías de Huesca y Teruel, que encuentran en Zaragoza su polo económico natural.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Servicios de desarrollo web que ofrezco a empresas zaragozanas</h2>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages de Alta Conversión</h3>
+								<p class="text-sm sm:text-base">Páginas diseñadas para captar leads industriales y comerciales. Ideales para campañas Google Ads, ferias y lanzamientos de producto. Desde 800€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Corporativa Profesional</h3>
+								<p class="text-sm sm:text-base">Presencia online completa para tu empresa aragonesa: catálogo de servicios, casos de éxito, blog, contacto y SEO local integrado. Desde 1.500€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tiendas Online (E-commerce)</h3>
+								<p class="text-sm sm:text-base">Vende productos agroalimentarios, industriales o de comercio local 24/7 con pasarelas seguras (Stripe, Redsys, Bizum). Desde 3.000€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Aplicaciones Web a Medida</h3>
+								<p class="text-sm sm:text-base">CRMs, portales B2B para PLAZA, sistemas de tracking logístico, plataformas de reservas turísticas o herramientas SaaS. Presupuesto personalizado.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Por qué contratar un desarrollador web freelance en Zaragoza?</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-6 text-sm sm:text-base">
+							<li><strong>30-50% más económico que una agencia aragonesa:</strong> Sin estructura de empresa, sin intermediarios ni costes ocultos.</li>
+							<li><strong>Comunicación directa en castellano:</strong> Hablas siempre conmigo, no con un comercial ni con un account manager.</li>
+							<li><strong>Tecnología moderna:</strong> React, Astro, Next.js, Node.js — el mismo stack que usan las grandes tecnológicas del Tecnoparque Walqa o Etopia.</li>
+							<li><strong>SEO local desde el primer día:</strong> Optimizo para búsquedas como "abogado Zaragoza", "taller Delicias" o "restaurante Casco Histórico".</li>
+							<li><strong>Factura oficial:</strong> Desgrávate el 100% de la inversión como gasto empresarial.</li>
+							<li><strong>Compatible con Kit Digital:</strong> Te ayudo a aprovechar ayudas europeas si tu empresa las tiene activas.</li>
+							<li><strong>Garantía de satisfacción:</strong> Si no estás contento con el resultado, seguimos trabajando hasta que lo estés.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Sectores con los que trabajo en Zaragoza y Aragón</h2>
+						<p class="mb-4">Zaragoza es una ciudad con un tejido productivo muy diverso. Tengo experiencia desarrollando webs para los principales sectores que mueven la economía aragonesa:</p>
+						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Logística y transporte (PLAZA)</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Automoción (auxiliares Opel/Stellantis)</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Agroalimentación</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">PYMES industriales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Comercio local</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Despachos profesionales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Turismo (Pilar, Expo 2008)</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Hostelería y restauración</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Clínicas y centros médicos</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">La ventaja estratégica de Zaragoza (y por qué tu web debe aprovecharla)</h2>
+						<p class="text-base sm:text-lg mb-4">
+							Pocas ciudades del mundo tienen la posición logística de Zaragoza. Está a menos de 300 km de Madrid, Barcelona, Valencia y Bilbao, conectada por AVE,
+							autovías y una plataforma logística intermodal (PLAZA) que mueve millones de toneladas de mercancía al año.
+							Esto significa que una empresa zaragozana puede (y debe) venderse como proveedor nacional, no solo regional.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							En la práctica esto afecta al diseño de tu web: no basta con un mensaje local. Tu sitio debe comunicar alcance geográfico, tiempos de servicio,
+							capacidad de distribución y confianza B2B. Diseño cada proyecto pensando en ese posicionamiento: una empresa de Utebo puede parecer (y ser) tan profesional como una de Madrid,
+							si su presencia digital está bien construida.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Tecnologías que utilizo para webs aragonesas</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Next.js, Tailwind CSS</li>
+							<li><strong>Backend:</strong> Node.js, APIs REST, bases de datos SQL y NoSQL</li>
+							<li><strong>E-commerce:</strong> Pasarelas de pago Stripe, Redsys (Servired), Bizum</li>
+							<li><strong>Integraciones:</strong> ERPs, CRMs (HubSpot, Pipedrive), WhatsApp Business, Google Workspace</li>
+							<li><strong>SEO técnico:</strong> Core Web Vitals, schema markup, sitemap, hreflang, geo-targeting</li>
+							<li><strong>Rendimiento:</strong> Tiempo de carga &lt;1.5s, puntuación Lighthouse &gt;90</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Cuánto cuesta una página web para una empresa de Zaragoza?</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+								<p class="text-sm sm:text-base text-text-muted">Desde <strong>800€ hasta 1.500€</strong>. Perfecta para campañas de captación, ferias sectoriales (como FIMA o SMOPYC) o lanzamientos de producto. Lista en 2-5 días.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Web Corporativa</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>1.500€ y 3.500€</strong>. Hasta 8-10 páginas, blog, CMS y SEO local para Zaragoza/Aragón. Lista en 2-4 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Tienda Online</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>3.000€ y 6.000€+</strong>. Catálogo completo, pasarela de pago y gestión de pedidos y logística. Lista en 4-8 semanas.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Preguntas frecuentes sobre desarrollo web en Zaragoza</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cobra un desarrollador web freelance en Zaragoza?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre 800€ y 6.000€+ por proyecto según complejidad. Por hora, las tarifas rondan 40-75€/hora, algo más asequibles que en Madrid o Barcelona.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Trabajas con empresas de PLAZA y el sector logístico?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Desarrollo webs corporativas, portales B2B y áreas privadas para operadores logísticos, transportistas y empresas instaladas en PLAZA.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Atiendes también Huesca y Teruel?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Al trabajar en remoto doy servicio a toda la comunidad aragonesa, incluidas Huesca, Teruel y sus respectivas provincias.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Necesito estar en Zaragoza para contratarte?</h3>
+								<p class="text-sm sm:text-base text-text-muted">No. Trabajo 100% en remoto. Nos comunicamos por videollamada y email, con la misma eficacia que en una reunión presencial.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tiempo tarda mi web?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Emites factura oficial?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Factura oficial para empresas y autónomos. Desgravable al 100% como inversión empresarial y compatible con Kit Digital.</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">¿Tu empresa de Zaragoza necesita una web profesional?</h2>
+							<p class="mb-3 text-sm sm:text-base">
+								Cuéntame tu proyecto y en 24 horas laborables te envío un presupuesto detallado y sin compromiso.
+								Trabajo con empresas de Zaragoza, Huesca, Teruel y toda España.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Sin compromiso<br/>
+								✅ Facturación oficial<br/>
+								✅ Compatible con Kit Digital<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Otros servicios y ciudades</h2>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-espana" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🇪🇸 Desarrollador Web España →</h3>
+								<p class="text-sm text-text-muted">Servicio nacional para ciudades y pueblos de España.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Barcelona →</h3>
+								<p class="text-sm text-text-muted">Mi perfil y servicios principales.</p>
+							</a>
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏛️ Desarrollador Web Madrid →</h3>
+								<p class="text-sm text-text-muted">Servicios para empresas de la Comunidad de Madrid.</p>
+							</a>
+							<a href="/contratar-desarrollador-full-stack" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💻 Contratar Desarrollador Full Stack →</h3>
+								<p class="text-sm text-text-muted">Para proyectos complejos y aplicaciones web.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🎨 Diseño Web para Empresas →</h3>
+								<p class="text-sm text-text-muted">Diseños profesionales orientados a conversión.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

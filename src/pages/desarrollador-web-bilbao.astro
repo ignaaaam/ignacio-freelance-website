@@ -1,0 +1,359 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Desarrollador Web Bilbao | Freelance Full Stack | Ignacio Amat";
+const description = "Desarrollador web freelance en Bilbao y Bizkaia. Landing pages, webs corporativas y tiendas online desde 800€. Trabajo en remoto con empresas del País Vasco. Webs bilingües castellano-euskera disponibles.";
+const canonicalUrl = "/desarrollador-web-bilbao";
+const keywords = ["desarrollador web Bilbao", "diseño web Bilbao", "programador web Bilbao", "freelance web Bilbao", "página web Bizkaia", "web empresa País Vasco", "desarrollador web Bizkaia", "crear web Bilbao"];
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Desarrollador Web Freelance",
+	"url": baseUrl,
+	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development"],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Servicios de desarrollo web para Bilbao",
+		"itemListElement": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages para empresas de Bilbao" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas para Bilbao" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce para tiendas de Bizkaia" } }
+		]
+	}
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web",
+	"provider": {
+		"@type": "Person",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Bilbao"
+	},
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "800€ - 6.000€+"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": baseUrl },
+		{ "@type": "ListItem", "position": 2, "name": "Desarrollador Web Bilbao", "item": `${baseUrl}${canonicalUrl}` }
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web freelance en Bilbao?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en Bilbao cobra entre 800€ y 6.000€+ por proyecto según complejidad. Landing pages desde 800€, webs corporativas 1.500-3.500€, y tiendas online desde 3.000€. Por hora, las tarifas rondan 45-85€/hora según experiencia y tecnología."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Haces webs en euskera y castellano (bilingües)?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Desarrollo webs bilingües castellano-euskera con estructura técnica correcta: hreflang, URLs separadas por idioma y SEO independiente para cada versión. Es una opción muy recomendable para empresas que operan en Bizkaia y el resto del País Vasco, ya que mejora la cercanía con el cliente local y amplía el alcance en búsquedas."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas industriales e ingenierías de Bizkaia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Tengo experiencia con empresas industriales, ingenierías, fabricantes y consultoras B2B del País Vasco. Estos sectores suelen necesitar webs técnicas, catálogos de producto, fichas descargables, portales privados para clientes y una narrativa clara que transmita solvencia. Adapto cada proyecto al lenguaje y procesos de compra industrial."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Necesito estar en Bilbao para contratar un desarrollador web?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "No. Trabajo 100% en remoto con empresas de Bilbao, Bizkaia y todo el País Vasco. Nos coordinamos por videollamada, email y las herramientas que prefiera tu equipo. Si necesitas una reunión puntual presencial en la zona metropolitana, se puede valorar."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tiempo tarda en estar lista una web para una empresa de Bilbao?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Depende del proyecto: una landing page 2-5 días, una web corporativa 2-4 semanas, y una tienda online 4-8 semanas. Las versiones bilingües castellano-euskera suelen añadir 1 semana adicional por la gestión de contenidos."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Emites factura oficial para empresas del País Vasco?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Emito factura oficial compatible con el régimen fiscal del País Vasco (Hacienda Foral de Bizkaia). Puedes desgravar el desarrollo web como inversión empresarial."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Bilbao",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Bilbao" },
+	"areaServed": [
+		{ "@type": "City", "name": "Bilbao" },
+		{ "@type": "AdministrativeArea", "name": "Bizkaia" },
+		{ "@type": "AdministrativeArea", "name": "País Vasco" }
+	],
+	"address": { "@type": "PostalAddress", "addressLocality": "Bilbao", "addressRegion": "País Vasco / Bizkaia", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "Basque", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-developer-bilbao"
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance para Empresas de Bilbao</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tu empresa de Bilbao o Bizkaia necesita una web profesional? Soy Ignacio Amat, desarrollador web freelance full stack.
+						Trabajo en remoto con empresas del País Vasco para crear páginas web que generan ventas, captación de leads y presencia online —con opción
+						a web bilingüe castellano-euskera si lo prefieres. Presupuesto gratuito y sin compromiso.
+					</p>
+
+					<div class="flex flex-wrap gap-3 mb-8">
+						<a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+						<a href="/desarrollador-web-barcelona" class="btn-secondary">Ver mi perfil completo</a>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Desarrollo web para empresas de Bilbao y Bizkaia</h2>
+						<p class="text-base sm:text-lg mb-4">
+							Bilbao se ha consolidado como un polo económico clave del norte peninsular: un tejido industrial potente, servicios financieros
+							de referencia (BBVA, Kutxabank), consultoría, hostelería de autor y un ecosistema startup en plena expansión gracias a iniciativas
+							como BAT (Bilbao Advanced Technologies) y BBK. En este contexto, una web moderna no es un extra: es la puerta de entrada a tus clientes.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Como desarrollador web freelance, construyo webs rápidas, bien posicionadas en Google y diseñadas para convertir visitantes en clientes.
+							Trabajo 100% en remoto, atendiendo a empresas de Abando, Indautxu, Deusto, Santutxu, Casco Viejo, Uribitarte, Getxo, Leioa,
+							Barakaldo, Portugalete, Sestao, Erandio y el resto del área metropolitana de Bilbao —sin costes de desplazamiento ni recargos.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Si tu empresa quiere reforzar su vínculo con el cliente local, puedo entregar la web en versión bilingüe castellano-euskera,
+							con SEO independiente para cada idioma. Una decisión que, más allá de lo cultural, suele traducirse en mayor tasa de contacto
+							por parte de clientes vascoparlantes.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Servicios de desarrollo web que ofrezco a empresas de Bilbao</h2>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages de Alta Conversión</h3>
+								<p class="text-sm sm:text-base">Páginas diseñadas para captar leads y clientes. Ideales para campañas Google Ads, lanzamientos de servicios industriales o sectoriales en Bizkaia. Desde 800€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Corporativa Profesional</h3>
+								<p class="text-sm sm:text-base">Presencia online completa para tu empresa: servicios, catálogo, blog, formularios y SEO integrado. Opción bilingüe castellano-euskera. Desde 1.500€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tiendas Online (E-commerce)</h3>
+								<p class="text-sm sm:text-base">Vende tus productos 24/7 con pasarelas de pago seguras (Stripe, Redsys, Bizum). Ideal para productos locales, gastronomía vasca y retail. Desde 3.000€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Aplicaciones Web a Medida</h3>
+								<p class="text-sm sm:text-base">CRMs, portales B2B, configuradores de producto industrial, plataformas SaaS para ingenierías y consultoras. Presupuesto personalizado.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Por qué contratar un desarrollador web freelance para tu empresa de Bilbao?</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-6 text-sm sm:text-base">
+							<li><strong>30-50% más económico que una agencia vasca:</strong> Sin estructura de empresa, sin costes ocultos, sin intermediarios.</li>
+							<li><strong>Comunicación directa:</strong> Hablas siempre conmigo, no con un comercial o un account manager.</li>
+							<li><strong>Tecnología moderna:</strong> React, Astro, Next.js, Node.js — tecnologías que garantizan velocidad de carga y buen SEO técnico.</li>
+							<li><strong>SEO local incluido:</strong> Cada web se entrega optimizada para posicionar en Bilbao, Bizkaia y el País Vasco.</li>
+							<li><strong>Webs bilingües castellano-euskera:</strong> Estructura técnica correcta con hreflang y URLs separadas por idioma.</li>
+							<li><strong>Factura oficial:</strong> Compatible con el régimen foral de Bizkaia. Desgrávate el 100% de la inversión.</li>
+							<li><strong>Garantía de satisfacción:</strong> Si no estás contento, seguimos iterando hasta que lo estés.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Sectores con los que trabajo en Bilbao y Bizkaia</h2>
+						<p class="mb-4">Tengo experiencia creando webs para empresas de los principales sectores del ecosistema vasco:</p>
+						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Industria e ingeniería</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Sector financiero</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Consultorías profesionales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Empresas B2B industriales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Startups tecnológicas (BAT, BBK)</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Hostelería y restaurantes de autor</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Turismo (post-Guggenheim)</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Despachos y abogados</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Clínicas y salud</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Enfoque especial: empresas industriales e ingenierías de Bizkaia</h2>
+						<p class="text-base sm:text-lg mb-4">
+							El tejido industrial es uno de los motores históricos de Bilbao: fabricantes, metalurgia, automoción, energía, ingeniería mecánica
+							y consultoría técnica. Estas empresas suelen tener necesidades digitales muy concretas que no siempre resuelve una web genérica:
+						</p>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+							<li><strong>Catálogos técnicos navegables</strong> con filtros por producto, norma o aplicación.</li>
+							<li><strong>Fichas descargables en PDF</strong> integradas con formularios de solicitud de datos comerciales.</li>
+							<li><strong>Portales privados para clientes o distribuidores</strong> con acceso autenticado.</li>
+							<li><strong>Formularios de contacto cualificado</strong> que filtren leads B2B reales del ruido.</li>
+							<li><strong>Narrativa B2B</strong> orientada a ciclos de venta largos y compra corporativa.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Tecnologías que utilizo para webs de empresas vascas</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Next.js, Tailwind CSS</li>
+							<li><strong>Backend:</strong> Node.js, APIs REST, bases de datos SQL y NoSQL</li>
+							<li><strong>E-commerce:</strong> Pasarelas de pago Stripe, Redsys (Servired), Bizum</li>
+							<li><strong>Internacionalización:</strong> hreflang castellano-euskera, URLs multilenguaje, SEO independiente por idioma</li>
+							<li><strong>SEO técnico:</strong> Core Web Vitals, schema markup, sitemap, SEO local para Bilbao y Bizkaia</li>
+							<li><strong>Rendimiento:</strong> Tiempo de carga &lt;1.5s, puntuación Lighthouse &gt;90</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Cuánto cuesta una página web para una empresa de Bilbao?</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+								<p class="text-sm sm:text-base text-text-muted">Desde <strong>800€ hasta 1.500€</strong>. Perfecta para campañas de captación, servicios concretos o lanzamientos. Lista en 2-5 días.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Web Corporativa</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>1.500€ y 3.500€</strong>. Hasta 8-10 páginas, blog, CMS y SEO avanzado. Opción bilingüe castellano-euskera. Lista en 2-4 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Tienda Online</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>3.000€ y 6.000€+</strong>. Catálogo completo, pasarela de pago y gestión de pedidos. Lista en 4-8 semanas.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Preguntas frecuentes sobre desarrollo web en Bilbao</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Haces webs en euskera y castellano?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Desarrollo webs bilingües castellano-euskera con hreflang correcto y SEO independiente por idioma.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Trabajas con empresas industriales de Bizkaia?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Catálogos técnicos, fichas descargables, portales B2B y formularios de lead cualificado adaptados al ciclo de venta industrial.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Necesito estar en Bilbao para contratarte?</h3>
+								<p class="text-sm sm:text-base text-text-muted">No. Trabajo 100% en remoto con Bilbao, Bizkaia y todo el País Vasco. Videollamada y email funcionan igual que en persona.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tiempo tarda mi web?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas. Versión bilingüe: +1 semana.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Emites factura oficial compatible con la Hacienda Foral de Bizkaia?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Factura oficial, desgravable al 100% como inversión empresarial.</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">¿Tu empresa de Bilbao necesita una web profesional?</h2>
+							<p class="mb-3 text-sm sm:text-base">
+								Cuéntame tu proyecto y en 24 horas laborables te envío un presupuesto detallado y sin compromiso.
+								Trabajo con empresas de Bilbao, Bizkaia, el País Vasco y toda España —en castellano, euskera o inglés.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Sin compromiso<br/>
+								✅ Facturación oficial<br/>
+								✅ Opción web bilingüe castellano-euskera<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Otros servicios y ciudades</h2>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-espana" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🇪🇸 Desarrollador Web España →</h3>
+								<p class="text-sm text-text-muted">Servicio nacional para ciudades y pueblos de España.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Barcelona →</h3>
+								<p class="text-sm text-text-muted">Mi perfil y servicios principales.</p>
+							</a>
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏢 Desarrollador Web Madrid →</h3>
+								<p class="text-sm text-text-muted">Servicios para empresas de Madrid.</p>
+							</a>
+							<a href="/contratar-desarrollador-full-stack" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💻 Contratar Desarrollador Full Stack →</h3>
+								<p class="text-sm text-text-muted">Para proyectos complejos y aplicaciones web.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🎨 Diseño Web para Empresas →</h3>
+								<p class="text-sm text-text-muted">Diseños profesionales orientados a conversión.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

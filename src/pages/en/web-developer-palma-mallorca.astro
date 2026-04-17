@@ -1,0 +1,268 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Web Developer Palma Mallorca | Freelance Full-Stack | Ignacio Amat';
+const description = 'Freelance web developer for companies in Palma de Mallorca and the Balearic Islands. Multilingual websites (ES/CAT/EN/DE) for boutique hotels, luxury villas, yacht charters and restaurants from EUR800. Remote collaboration and free quote.';
+const canonicalUrl = '/en/web-developer-palma-mallorca';
+const keywords = ['web developer Palma Mallorca', 'freelance web developer Balearic Islands', 'website development Mallorca', 'hotel website Mallorca', 'yacht charter website Balearics', 'web design Ibiza Menorca', 'multilingual website Mallorca'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development', 'Multilingual Websites', 'Tourism Tech']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Palma de Mallorca'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Palma Mallorca', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How much does a freelance web developer cost in Palma de Mallorca?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Most projects range from EUR800 to EUR6000+ depending on scope. Landing pages start around EUR800, business websites and boutique hotel sites between EUR1500 and EUR3500, and charter/rental platforms from EUR3000. Multilingual setups (ES/CAT/EN/DE) typically add 15-25% on top of the base project.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you build multilingual websites for hotels and villas in the Balearics?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. Multilingual development is my specialty for the Balearic tourism market. I deliver sites in Spanish, Catalan, English and German with correct hreflang tags, localised URLs and independent SEO per language so each market (Germany, UK, Scandinavia, France) finds you on their local Google.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you cover Ibiza, Menorca and Formentera as well?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I work 100% remotely with clients across the archipelago: Palma, Calvia, Andratx, Soller, Pollensa, Alcudia, Inca, Manacor, Ibiza (Eivissa), Menorca and Formentera. No travel fees, no island surcharges.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Can you integrate booking engines and OTA channel managers?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. I integrate booking engines such as Avantio, Octorate, SiteMinder, Smoobu and Lodgify, along with OTA connectors for Booking.com, Airbnb and Vrbo, and payment gateways (Stripe, Redsys, Bizum) for boutique hotels, luxury villas and holiday rentals.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-palma-mallorca',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Palma de Mallorca and the Balearic Islands</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Does your Mallorca, Ibiza, Menorca or Formentera business need a fast, multilingual website that converts international visitors into bookings and customers?
+            I build SEO-ready sites in Spanish, Catalan, English and German for boutique hotels, luxury villas, yacht charters, restaurants and tourism businesses across the Balearics.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/hire-full-stack-web-developer" class="btn-secondary">Hire Full-Stack Developer</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Web development for Palma de Mallorca and the Balearic Islands</h2>
+            <p class="text-base sm:text-lg mb-4">
+              The Balearic economy revolves around international tourism, yachting and a strong expat community —German, British, Scandinavian and French buyers
+              account for a large share of hotel stays, villa rentals and property purchases. A Spanish-only website simply leaves most of your potential customers behind.
+              Every project I deliver for the islands is built multilingual-first, with fast performance, solid technical SEO and booking integrations that match how the local market actually operates.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              I work 100% remotely with businesses in Palma —Old Town, Santa Catalina, Son Espanyolet, El Terreno, Portixol, Son Vida— and across Mallorca:
+              Marratxi, Calvia, Andratx, Soller, Inca, Manacor, Alcudia, Pollensa and Magaluf. I also serve clients in Ibiza (Eivissa), Menorca and Formentera.
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Services for Balearic companies</h2>
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Multilingual Boutique Hotel Websites</h3>
+                <p class="text-sm sm:text-base">Fast, elegant, direct-booking sites in ES, CAT, EN and DE with booking engine and high-quality gallery. From EUR1500.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Luxury Villas and Holiday Rentals</h3>
+                <p class="text-sm sm:text-base">Detailed property pages, availability calendars and online booking. Connected to Airbnb, Vrbo and Booking.com. From EUR1800.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Yacht Charter and Nautical Websites</h3>
+                <p class="text-sm sm:text-base">Boat cards, routes, availability calendar and online booking for sailing yachts, catamarans and motorboats. From EUR1800.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Restaurants and Beach Clubs</h3>
+                <p class="text-sm sm:text-base">Multilingual digital menus, online reservations and integrations with The Fork and Google Reserve. From EUR1200.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Luxury Real Estate Portals</h3>
+                <p class="text-sm sm:text-base">Advanced property search, interactive maps, virtual tours and qualified lead capture from international buyers. From EUR2500.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Wineries and Gourmet E-commerce</h3>
+                <p class="text-sm sm:text-base">Online stores for Mallorcan wineries, gourmet products, DOP olive oils and local crafts. Domestic and international shipping. From EUR3000.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Multilingual websites: non-negotiable in the Balearics</h2>
+            <p class="text-base sm:text-lg mb-4">
+              The islands welcome millions of international visitors each year. Your website needs to speak their language — literally. I build every tourism project
+              around four core languages by default:
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Spanish (ES):</strong> mainland Spain and Latin America.</li>
+              <li><strong>Catalan (CA):</strong> local audience and cultural presence.</li>
+              <li><strong>English (EN):</strong> British, Irish, Scandinavian and global market.</li>
+              <li><strong>German (DE):</strong> the largest foreign market in Mallorca, essential for hotels, villas and rentals.</li>
+              <li><strong>French and Italian:</strong> available on demand, particularly for Ibiza and Menorca.</li>
+            </ul>
+            <p class="text-base sm:text-lg mb-4">
+              I implement hreflang tags correctly, localised URLs (/de/, /en/, /ca/) and independent SEO per language, so your villa or hotel
+              ranks on Google.de for "Ferienhaus Mallorca" and on Google.co.uk for "luxury villa Menorca".
+            </p>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why choose a freelance developer in the Balearics?</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Direct communication:</strong> You speak with the person actually building your project.</li>
+              <li><strong>Lower cost:</strong> Typically 30-50% cheaper than a Palma agency for similar scope.</li>
+              <li><strong>Tourism & nautical experience:</strong> I understand boutique hotels, villas and yacht charters.</li>
+              <li><strong>Multilingual by default:</strong> ES, CAT, EN and DE set up properly from day one.</li>
+              <li><strong>Modern stack:</strong> Astro, React, Next.js, Node.js and technical SEO.</li>
+              <li><strong>Full archipelago coverage:</strong> Mallorca, Ibiza, Menorca and Formentera, no surcharges.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Areas I cover across the Balearic Islands</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Palma Centre</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Santa Catalina</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Son Espanyolet</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">El Terreno</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Portixol</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Son Vida</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Marratxi</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Calvia</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Andratx</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Soller</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Inca</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Manacor</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Alcudia</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Pollensa</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Magaluf</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Ibiza (Eivissa)</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Menorca</div>
+              <div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Formentera</div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Tech stack for Balearic businesses</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Next.js, Tailwind CSS.</li>
+              <li><strong>Backend:</strong> Node.js, REST APIs, SQL and NoSQL databases.</li>
+              <li><strong>Booking engines & OTAs:</strong> Avantio, Octorate, SiteMinder, Smoobu, Lodgify, Booking.com, Airbnb, Vrbo.</li>
+              <li><strong>Payments:</strong> Stripe, Redsys, Bizum, PayPal.</li>
+              <li><strong>Internationalisation:</strong> hreflang, i18n, localised URLs, multilingual SEO.</li>
+              <li><strong>Performance:</strong> load times under 1.5s and Lighthouse scores above 90.</li>
+            </ul>
+
+            <div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+              <h2 class="text-xl sm:text-2xl font-bold mb-3">Need a multilingual website for your Balearic business?</h2>
+              <p class="mb-3 text-sm sm:text-base">
+                Tell me about your project and I will send you a detailed quote within 24 business hours.
+                I work with hotels, villas, yacht charters, restaurants and real estate agencies across Mallorca, Ibiza, Menorca and Formentera.
+              </p>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related services in Spain</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Spain -></h3>
+                <p class="text-sm text-text-muted">Nationwide service for any city or town in Spain.</p>
+              </a>
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Service page for Barcelona companies.</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Service page for Madrid companies.</p>
+              </a>
+              <a href="/en/web-developer-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Valencia -></h3>
+                <p class="text-sm text-text-muted">Service page for Valencia companies.</p>
+              </a>
+              <a href="/en/web-design-businesses" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Design for Businesses -></h3>
+                <p class="text-sm text-text-muted">Conversion-focused design and UX for business sites.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

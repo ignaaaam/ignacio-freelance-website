@@ -1,0 +1,355 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Desarrollador Web Málaga | Freelance Full Stack | Ignacio Amat";
+const description = "Desarrollador web freelance en Málaga y Costa del Sol. Landing pages, webs corporativas y e-commerce desde 800€. Trabajo en remoto con empresas malagueñas y clientes internacionales. Webs bilingües ES/EN.";
+const canonicalUrl = "/desarrollador-web-malaga";
+const keywords = ["desarrollador web Málaga", "diseño web Málaga", "programador web Málaga", "freelance web Málaga", "página web Costa del Sol", "desarrollador web Marbella", "web empresa Málaga", "crear web Málaga"];
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Ignacio Amat",
+	"jobTitle": "Desarrollador Web Freelance",
+	"url": baseUrl,
+	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development"],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Servicios de desarrollo web para Málaga",
+		"itemListElement": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages para empresas de Málaga" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas para Málaga y Costa del Sol" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce multilingüe para Málaga" } }
+		]
+	}
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Desarrollo Web",
+	"provider": {
+		"@type": "Person",
+		"name": "Ignacio Amat",
+		"url": baseUrl
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Málaga"
+	},
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "800€ - 6.000€+"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{ "@type": "ListItem", "position": 1, "name": "Inicio", "item": baseUrl },
+		{ "@type": "ListItem", "position": 2, "name": "Desarrollador Web Málaga", "item": `${baseUrl}${canonicalUrl}` }
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cobra un desarrollador web freelance en Málaga?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Un desarrollador web freelance en Málaga cobra entre 800€ y 6.000€+ por proyecto según complejidad. Landing pages desde 800€, webs corporativas 1.500-3.500€, y tiendas online desde 3.000€. Por hora, las tarifas rondan 45-85€/hora según experiencia y tecnología."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas de la Costa del Sol?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Trabajo con negocios de Málaga capital y de toda la Costa del Sol: Torremolinos, Benalmádena, Fuengirola, Marbella, Estepona, Nerja y el resto de la provincia. Al trabajar en remoto no hay coste extra por ubicación."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Haces webs bilingües en español e inglés para clientes internacionales de Málaga?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Entrego webs bilingües (y multilingües) con estructura técnica correcta: hreflang, URLs separadas por idioma y SEO independiente para cada versión. Es una opción casi imprescindible en la Costa del Sol por la presencia de clientes y residentes internacionales."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas del Málaga TechPark y startups del Polo Digital?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Tengo experiencia con startups y empresas tecnológicas del PTA (Parque Tecnológico de Andalucía) y del Polo de Contenidos Digitales. Tanto si estás lanzando un MVP como si necesitas una web corporativa para captar inversión o talento, adapto el proyecto al ritmo del equipo."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Cuánto tiempo tarda en estar lista una web para una empresa de Málaga?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "El plazo depende del proyecto: una landing page en 2-5 días, una web corporativa en 2-4 semanas, y una tienda online en 4-8 semanas. Las versiones bilingües ES/EN suelen añadir 1 semana adicional por gestión de contenido."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Emites factura oficial para empresas de Andalucía?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí. Emito factura oficial para empresas y autónomos de Málaga, Andalucía y toda España. Puedes desgravar el desarrollo web como inversión empresarial."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Desarrollador Web Málaga",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/og-image.png`,
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Málaga" },
+	"areaServed": [
+		{ "@type": "City", "name": "Málaga" },
+		{ "@type": "City", "name": "Marbella" },
+		{ "@type": "AdministrativeArea", "name": "Costa del Sol" },
+		{ "@type": "AdministrativeArea", "name": "Andalucía" }
+	],
+	"address": { "@type": "PostalAddress", "addressLocality": "Málaga", "addressRegion": "Andalucía", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/web-developer-malaga"
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador Web Freelance para Empresas de Málaga</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Tu empresa de Málaga o de la Costa del Sol necesita una web profesional? Soy Ignacio Amat, desarrollador web freelance full stack.
+						Trabajo en remoto con empresas malagueñas para crear páginas web rápidas, bien posicionadas en Google y preparadas para atender
+						tanto al mercado local como a clientes internacionales. Presupuesto gratuito y sin compromiso.
+					</p>
+
+					<div class="flex flex-wrap gap-3 mb-8">
+						<a href="#contacto" class="btn-primary">Solicitar Presupuesto Gratuito</a>
+						<a href="/desarrollador-web-barcelona" class="btn-secondary">Ver mi perfil completo</a>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Desarrollo web para empresas de Málaga y la Costa del Sol</h2>
+						<p class="text-base sm:text-lg mb-4">
+							Málaga se ha convertido en uno de los mercados empresariales más dinámicos del sur de Europa. Entre el Málaga TechPark (PTA),
+							el Polo de Contenidos Digitales, un flujo constante de residentes internacionales y una economía impulsada por turismo, inmobiliaria
+							y servicios profesionales, tu web ya no puede limitarse a estar bonita: tiene que cargar rápido, posicionar bien en Google y convertir
+							tanto a visitantes locales como internacionales.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Trabajo 100% en remoto con empresas de Málaga capital y de toda la Costa del Sol —Centro Histórico, Soho, El Palo, Pedregalejo,
+							Teatinos, Huelin, La Malagueta, Churriana, así como Torremolinos, Benalmádena, Fuengirola, Marbella y Estepona—. Misma calidad, sin
+							costes de desplazamiento ni recargos.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Servicios de desarrollo web que ofrezco a empresas de Málaga</h2>
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Landing Pages de Alta Conversión</h3>
+								<p class="text-sm sm:text-base">Páginas enfocadas a captar reservas, leads o clientes. Ideales para hostelería, clínicas estéticas e inmobiliaria de Costa del Sol. Desde 800€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Web Corporativa Profesional</h3>
+								<p class="text-sm sm:text-base">Web multipágina bilingüe (ES/EN) con SEO integrado. Perfecta para despachos, startups del TechPark y servicios B2B. Desde 1.500€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Tiendas Online (E-commerce)</h3>
+								<p class="text-sm sm:text-base">Vende tus productos 24/7 con Stripe, Redsys y Bizum. Opción multidivisa y envío internacional para exportar desde Andalucía. Desde 3.000€.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Aplicaciones Web a Medida</h3>
+								<p class="text-sm sm:text-base">Portales de reservas para alquileres vacacionales, CRMs inmobiliarios, paneles de gestión de clínica y SaaS adaptados a tu flujo de trabajo.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Por qué contratar un desarrollador web freelance para tu empresa de Málaga?</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-6 text-sm sm:text-base">
+							<li><strong>30-50% más económico que una agencia malagueña:</strong> Sin estructura de empresa, sin costes ocultos.</li>
+							<li><strong>Comunicación directa:</strong> Hablas siempre conmigo, no con un comercial que traslada mensajes.</li>
+							<li><strong>Tecnología moderna:</strong> React, Astro, Next.js, Node.js — velocidad y SEO técnico sin excusas.</li>
+							<li><strong>Entrega bilingüe ES/EN:</strong> Crítico en la Costa del Sol para atender residentes internacionales y turismo.</li>
+							<li><strong>SEO local incluido:</strong> Cada web se entrega optimizada para posicionar en Málaga y Costa del Sol.</li>
+							<li><strong>Factura oficial:</strong> Desgrávate el 100% de la inversión.</li>
+							<li><strong>Garantía de satisfacción:</strong> Si no estás contento, seguimos iterando.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Sectores con los que trabajo en Málaga y Costa del Sol</h2>
+						<p class="mb-4">La economía de la provincia se apoya en turismo, inmobiliaria internacional y una escena tecnológica en crecimiento. Estos son los sectores en los que más aporto valor con una buena web:</p>
+						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Turismo y alquileres vacacionales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Hostelería y restaurantes</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Inmobiliaria Costa del Sol</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Clínicas estéticas y dentales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Despachos internacionales</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Startups del Málaga TechPark</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">E-commerce y retail</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Academias e idiomas</div>
+							<div class="bg-secondary p-3 rounded-lg text-sm font-medium text-center">Servicios para expats</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Málaga TechPark, Polo Digital y el ecosistema startup</h2>
+						<p class="text-base sm:text-lg mb-4">
+							Málaga ya no es solo playa y sol. El Parque Tecnológico de Andalucía (Málaga TechPark) y el Polo de Contenidos Digitales han atraído
+							a actores globales como Google, Vodafone o TDK. Ese ecosistema genera una demanda constante de webs corporativas modernas, paneles SaaS
+							y landing pages B2B de alta conversión.
+						</p>
+						<p class="text-base sm:text-lg mb-4">
+							Si tu startup está levantando ronda, lanzando un MVP o empujando para ganar tracción, tu web tiene que estar a la altura: rápida,
+							instrumentada con analítica adecuada, optimizada en Core Web Vitals y preparada para escalar internacionalmente. Eso es exactamente
+							lo que entrego.
+						</p>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Tecnologías que utilizo para webs de empresas malagueñas</h2>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+							<li><strong>Frontend:</strong> HTML5, CSS3, JavaScript, React, Astro, Next.js, Tailwind CSS</li>
+							<li><strong>Backend:</strong> Node.js, APIs REST, bases de datos SQL y NoSQL</li>
+							<li><strong>E-commerce:</strong> Pasarelas de pago Stripe, Redsys (Servired), Bizum</li>
+							<li><strong>Internacionalización:</strong> hreflang ES/EN, URLs multilenguaje, SEO independiente por idioma</li>
+							<li><strong>SEO técnico:</strong> Core Web Vitals, schema markup, sitemap, SEO local para Málaga y Costa del Sol</li>
+							<li><strong>Rendimiento:</strong> Tiempo de carga &lt;1.5s, puntuación Lighthouse &gt;90</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">¿Cuánto cuesta una página web para una empresa de Málaga?</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Landing Page</h3>
+								<p class="text-sm sm:text-base text-text-muted">Desde <strong>800€ hasta 1.500€</strong>. Perfecta para campañas de reservas, tratamientos estéticos, listados de propiedades en Marbella o servicios concretos. Lista en 2-5 días.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Web Corporativa</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>1.500€ y 3.500€</strong>. Hasta 8-10 páginas, blog, CMS, versión bilingüe ES/EN y SEO avanzado. Lista en 2-4 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Tienda Online</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre <strong>3.000€ y 6.000€+</strong>. Catálogo completo, pasarela de pago, gestión de pedidos y envío internacional. Lista en 4-8 semanas.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Preguntas frecuentes sobre desarrollo web en Málaga</h2>
+						<div class="space-y-4 mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto cobra un desarrollador web freelance en Málaga?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Entre 800€ y 6.000€+ por proyecto según complejidad. Por hora, las tarifas rondan 45-85€/hora.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Trabajas con empresas de la Costa del Sol?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Málaga capital, Torremolinos, Benalmádena, Fuengirola, Marbella, Estepona y toda la provincia. Remoto significa sin coste extra.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Puedes trabajar en inglés?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Trabajo en castellano e inglés y entrego webs bilingües con hreflang y SEO independiente por idioma.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Cuánto tiempo tarda mi web?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Landing page: 2-5 días. Web corporativa: 2-4 semanas. Tienda online: 4-8 semanas.</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">¿Emites factura oficial?</h3>
+								<p class="text-sm sm:text-base text-text-muted">Sí. Factura oficial para empresas y autónomos. Desgravable al 100% como inversión empresarial.</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-8 mb-8">
+							<h2 class="text-xl sm:text-2xl font-bold mb-3">¿Tu empresa de Málaga necesita una web profesional?</h2>
+							<p class="mb-3 text-sm sm:text-base">
+								Cuéntame tu proyecto y en 24 horas laborables te envío un presupuesto detallado y sin compromiso.
+								Trabajo con empresas de Málaga, Costa del Sol, Andalucía y toda España —en castellano y en inglés.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto gratuito en 24h<br/>
+								✅ Sin compromiso<br/>
+								✅ Facturación oficial<br/>
+								✅ Entrega bilingüe ES/EN<br/>
+								✅ Garantía de satisfacción
+							</p>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Otros servicios y ciudades</h2>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-espana" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🇪🇸 Desarrollador Web España →</h3>
+								<p class="text-sm text-text-muted">Servicio nacional para ciudades y pueblos de España.</p>
+							</a>
+							<a href="/desarrollador-web-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏙️ Desarrollador Web Barcelona →</h3>
+								<p class="text-sm text-text-muted">Mi perfil y servicios principales.</p>
+							</a>
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🏢 Desarrollador Web Madrid →</h3>
+								<p class="text-sm text-text-muted">Servicios para empresas de Madrid.</p>
+							</a>
+							<a href="/contratar-desarrollador-full-stack" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">💻 Contratar Desarrollador Full Stack →</h3>
+								<p class="text-sm text-text-muted">Para proyectos complejos y aplicaciones web.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h3 class="font-bold mb-1">🎨 Diseño Web para Empresas →</h3>
+								<p class="text-sm text-text-muted">Diseños profesionales orientados a conversión.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.prose h2, .prose h3, .prose h4 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

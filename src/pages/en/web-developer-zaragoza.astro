@@ -1,0 +1,213 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Web Developer Zaragoza | Freelance Full-Stack | Ignacio Amat';
+const description = 'Freelance web developer for companies in Zaragoza and Aragon. Landing pages, business websites, and web applications from EUR800. Remote collaboration and free quote.';
+const canonicalUrl = '/en/web-developer-zaragoza';
+const keywords = ['web developer zaragoza', 'freelance web developer zaragoza', 'website development zaragoza', 'business website zaragoza', 'landing page zaragoza', 'web design aragon'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Freelance Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': {
+    '@type': 'City',
+    'name': 'Zaragoza'
+  },
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR800-EUR6000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Zaragoza', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How much does a freelance web developer cost in Zaragoza?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Most projects range from EUR800 to EUR6000+ depending on scope. Landing pages start around EUR800, business websites between EUR1500 and EUR3500, and ecommerce projects from EUR3000.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you work with PLAZA logistics companies?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. Zaragoza is home to PLAZA, the largest logistics platform in Europe. I build corporate websites, B2B portals, tracking systems, and ERP integrations for logistics and transport companies based in the area.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you also serve Huesca and Teruel?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Absolutely. I work 100% remotely with companies across Aragon: Zaragoza, Huesca, Teruel, Jaca, Monzon, Barbastro, Alcaniz, Calatayud, and any municipality in the region.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do we need to be based in Zaragoza to work together?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'No. I work 100% remotely with companies in Zaragoza and across Spain through video calls, email, and project tools.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-zaragoza',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Zaragoza</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Need a website that helps your Zaragoza or Aragon business generate leads and sales? I build fast,
+            SEO-ready websites and web applications focused on real business outcomes, from PLAZA logistics operators
+            to industrial SMEs, food producers, and professional practices.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/hire-full-stack-web-developer" class="btn-secondary">Hire Full-Stack Developer</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Web development services for Zaragoza and Aragon</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Zaragoza sits at the strategic centre of Spain, roughly equidistant from Madrid, Barcelona, Valencia, and Bilbao.
+              That logistics advantage makes it a unique hub for industrial SMEs, automotive suppliers (Opel/Stellantis),
+              food producers, professional practices, and the logistics giants operating out of PLAZA, the largest logistics
+              platform in Europe. Your website needs to reflect that national ambition: fast, trustworthy, and built to convert.
+            </p>
+            <p class="text-base sm:text-lg mb-4">
+              I work remotely with companies across the city and its metropolitan area - Centro, Delicias, Las Fuentes, San Jose,
+              El Rabal, Actur, Universidad, Romareda, Casetas, Cuarte de Huerva, Utebo - and across Aragon, including Huesca and Teruel.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">High-converting Landing Pages</h3>
+                <p class="text-sm sm:text-base">Designed for paid campaigns, trade shows (FIMA, SMOPYC), and lead generation from EUR800.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Business Websites</h3>
+                <p class="text-sm sm:text-base">Professional multi-page websites with strong local SEO for Zaragoza and Aragon, from EUR1500.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Ecommerce Development</h3>
+                <p class="text-sm sm:text-base">Online stores for agri-food producers, industrial distributors, and retailers with Stripe, Redsys, or Bizum, from EUR3000.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Custom Web Applications</h3>
+                <p class="text-sm sm:text-base">B2B portals for PLAZA operators, tracking dashboards, booking platforms, or SaaS products.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Key sectors in Zaragoza and Aragon</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Logistics and transport:</strong> PLAZA operators, freight forwarders, last-mile providers.</li>
+              <li><strong>Automotive:</strong> Opel/Stellantis suppliers and Tier 2 component manufacturers.</li>
+              <li><strong>Agri-food:</strong> producers, cooperatives, and regional food brands.</li>
+              <li><strong>Industrial SMEs:</strong> machinery, metalwork, and manufacturing.</li>
+              <li><strong>Tourism:</strong> Pilar, Expo 2008 legacy sites, and regional travel operators.</li>
+              <li><strong>Professional practices:</strong> law firms, tax advisors, architects, and clinics.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why choose a freelance developer for Zaragoza?</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Direct communication:</strong> You speak with the person building your project.</li>
+              <li><strong>Lower cost:</strong> Usually 30-50% lower than local agencies for similar scope.</li>
+              <li><strong>Modern stack:</strong> Astro, React, Next.js, Node.js, and technical SEO.</li>
+              <li><strong>Remote delivery:</strong> Efficient process without geography constraints - same service in Huesca or Teruel.</li>
+              <li><strong>Kit Digital compatible:</strong> I can help you leverage EU digital funding if your company qualifies.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related services in Spain</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Spain -></h3>
+                <p class="text-sm text-text-muted">Nationwide service for any city or town in Spain.</p>
+              </a>
+              <a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Barcelona -></h3>
+                <p class="text-sm text-text-muted">Service page for Barcelona companies.</p>
+              </a>
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Madrid -></h3>
+                <p class="text-sm text-text-muted">Service page for Madrid companies.</p>
+              </a>
+              <a href="/en/hire-full-stack-web-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Hire Full-Stack Developer -></h3>
+                <p class="text-sm text-text-muted">For complex projects and custom web applications.</p>
+              </a>
+              <a href="/en/web-design-businesses" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Design for Businesses -></h3>
+                <p class="text-sm text-text-muted">Conversion-focused design and UX for business sites.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>
