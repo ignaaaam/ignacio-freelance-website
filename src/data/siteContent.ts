@@ -175,9 +175,9 @@ type HomeContent = {
 export const siteContent: Record<Locale, HomeContent> = {
   es: {
     meta: {
-      title: 'Desarrollador web freelance en Barcelona | Webs, landing pages y MVPs | Ignacio Amat',
+      title: 'Desarrollador Web Freelance en Barcelona y España | Webs, Landings y MVPs',
       description:
-        'Diseño y desarrollo webs de negocio, landing pages y MVPs para empresas de servicios, startups y equipos B2B. Trabajo remoto desde España.',
+        'Desarrollador web freelance con base en Barcelona. Trabajo en remoto para toda España: webs corporativas, landing pages que convierten y MVPs en Laravel. Propuesta sin compromiso en 24h.',
     },
     nav: {
       servicesHub: 'Servicios',
@@ -196,7 +196,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryCta: 'Cuéntame tu proyecto',
     },
     hero: {
-      eyebrow: 'Desarrollo web freelance para empresas de servicios, startups y equipos B2B',
+      eyebrow: 'Desarrollador web freelance en Barcelona — remoto para toda España',
       title: 'Creo webs, landings y MVPs que explican mejor tu oferta y facilitan el siguiente paso.',
       subtitle:
         'Si necesitas una web de negocio, una landing o un producto inicial con criterio comercial y una base técnica sólida, puedo ayudarte a definirlo y construirlo sin capas innecesarias.',
@@ -546,9 +546,9 @@ export const siteContent: Record<Locale, HomeContent> = {
   },
   en: {
     meta: {
-      title: 'Freelance Web Developer in Barcelona | Websites, Landing Pages & MVPs | Ignacio Amat',
+      title: 'Freelance Web Developer in Barcelona & Spain | Websites, Landings & MVPs',
       description:
-        'I design and build business websites, landing pages and MVPs for service companies, startups and B2B teams. Remote from Spain.',
+        'Freelance web developer based in Barcelona. Working remotely across Spain and internationally: business websites, high-converting landing pages and Laravel MVPs. Custom proposal within 24h.',
     },
     nav: {
       servicesHub: 'Services',
@@ -567,7 +567,7 @@ export const siteContent: Record<Locale, HomeContent> = {
       primaryCta: 'Tell me about your project',
     },
     hero: {
-      eyebrow: 'Freelance web development for service companies, startups and B2B teams',
+      eyebrow: 'Freelance web developer based in Barcelona — remote across Spain and worldwide',
       title: 'I build websites, landing pages and MVPs that make your offer clearer and the next step easier.',
       subtitle:
         'If you need a business website, a landing page or an initial product with strong commercial thinking and solid technical foundations, I can help you define it and build it without unnecessary layers.',
