@@ -1,0 +1,238 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Web Developer in Eixample Barcelona | Local Business Websites from €800";
+const description = "Looking for a web developer in the Eixample district of Barcelona? I build professional websites for businesses, shops and practitioners in the Eixample. Modern design, local SEO and a free quote.";
+const canonicalUrl = "/en/web-developer-eixample-barcelona";
+
+// Structured Data
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	"name": "Ignacio Amat - Web Developer Eixample",
+	"url": baseUrl,
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Barcelona",
+		"addressRegion": "Catalonia",
+		"addressCountry": "ES",
+		"streetAddress": "Eixample"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": "41.3926",
+		"longitude": "2.1631"
+	},
+	"areaServed": {
+		"@type": "Place",
+		"name": "Eixample, Barcelona"
+	},
+	"priceRange": "€€",
+	"description": "Professional web development services for companies and businesses in the Eixample district of Barcelona."
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does it cost to build a website for my business in the Eixample?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Prices for a website in the Eixample district of Barcelona vary with your needs: landing pages from €800, corporate websites from €1,500 to €3,500, and online shops from €3,000. I offer a personalised quote with no commitment."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Why choose a local web developer based in the Eixample?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A local developer understands the market and the competition in the area. I can meet you in person, get a better feel for your business and optimise your website for local SEO in the Eixample, helping you appear when people search for services in your neighbourhood."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en/`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Web Developer Barcelona",
+			"item": `${baseUrl}/en/web-developer-barcelona`
+		},
+		{
+			"@type": "ListItem",
+			"position": 3,
+			"name": "Eixample",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [localBusinessSchema, faqSchema, breadcrumbSchema];
+
+const alternateUrls = {
+	es: '/desarrollador-web-eixample-barcelona',
+	en: canonicalUrl
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+	keywords={["web developer eixample", "create website eixample barcelona", "web design eixample", "website for businesses eixample", "web programmer eixample barcelona", "business website eixample"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							📍 Area: Eixample, Barcelona
+						</span>
+					</div>
+
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Web Developer in the Eixample District of Barcelona
+					</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Do you run a business, shop or professional practice in the Eixample district of Barcelona?
+						I build professional websites optimised to show up when your customers search for services in
+						your area. <strong>Personal service and in-person meetings in the neighbourhood.</strong>
+					</p>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Why choose a local web developer in the Eixample?
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							The Eixample is one of Barcelona's most commercial districts, with a high concentration of
+							businesses, consultancies, clinics and shops. Online competition is fierce, and you need a
+							website that stands out and appears in Google when people search for services in your area.
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>I know the local market:</strong> I understand the competition and the customer profile in the Eixample</li>
+							<li><strong>In-person meetings:</strong> We can meet face to face to understand your business better</li>
+							<li><strong>Local SEO optimised:</strong> Your website will show up when people search for services in the Eixample</li>
+							<li><strong>Direct communication:</strong> No middlemen — I work with you directly</li>
+							<li><strong>Close support:</strong> Any question or change, I'm nearby</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Eixample businesses I work with
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">👔 Consultancies & Law Firms</h3>
+								<p class="text-sm sm:text-base">Lawyers, tax advisors, consultants. Websites that convey professionalism.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🦷 Clinics & Practices</h3>
+								<p class="text-sm sm:text-base">Dentists, psychologists, physiotherapists. Websites with online booking.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🛍️ Retail Shops</h3>
+								<p class="text-sm sm:text-base">Fashion, decor and gourmet shops. Online stores and corporate websites.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🍽️ Hospitality</h3>
+								<p class="text-sm sm:text-base">Restaurants, bars, cafés. Digital menu and online bookings.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Local SEO for the Eixample district of Barcelona
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							I optimise your website so you show up when someone searches for services in the Eixample.
+							This includes:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li>Google Business Profile setup</li>
+							<li>LocalBusiness schema markup for the Eixample</li>
+							<li>Optimisation for searches like "dentist Eixample" or "lawyer Eixample Barcelona"</li>
+							<li>Localised content mentioning streets and neighbourhood references</li>
+							<li>Google Maps integration showing your exact location</li>
+						</ul>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								Do you run a business in the Eixample?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Tell me about your business and I'll prepare a personalised quote. We can meet for a
+								coffee in the neighbourhood and talk about your project with no commitment.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Free quote in 24h<br/>
+								✅ In-person meeting if you prefer<br/>
+								✅ Local SEO included<br/>
+								✅ Official invoice
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related services:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Web Developer Barcelona →</h4>
+								<p class="text-sm text-text-muted">Web development services across Barcelona.</p>
+							</a>
+							<a href="/en/create-website-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Create Website Barcelona →</h4>
+								<p class="text-sm text-text-muted">Professional websites for businesses.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

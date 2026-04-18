@@ -10,7 +10,8 @@
       "Bash(node check-seo.js:*)",
       "Bash(git add:*)",
       "WebFetch(domain:ignathedev.com)",
-      "Bash(pnpm astro check)"
+      "Bash(pnpm astro check)",
+      "Bash(gh issue:*)"
     ],
     "deny": [],
     "ask": []

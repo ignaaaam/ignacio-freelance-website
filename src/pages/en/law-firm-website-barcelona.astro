@@ -1,0 +1,352 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Law Firm Website Design in Barcelona | Professional & GDPR-Compliant from €1,500";
+const description = "Do you run a law firm in Barcelona and need to attract more clients? I build professional websites for law firms with local SEO, consultation forms and a legal blog. Convey trust and authority. Free quote.";
+const canonicalUrl = "/en/law-firm-website-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Web Design for Law Firms and Legal Practices",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Web Developer",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Catalonia",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Professional website development for lawyers, law firms and legal practices in Barcelona with local SEO and digital marketing tailored to the legal sector.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€1,500 - €5,000",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does a website for my law firm in Barcelona cost?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A professional law firm website in Barcelona starts from €1,500 for a basic site with practice areas and contact, and goes up to €3,500 for a complete website with a legal blog, advanced SEO and online consultation system. The price depends on the size of the firm and features."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Does the website comply with the Spanish Bar Association's code of conduct?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, every law firm website I build complies with the ICAB (Barcelona Bar Association) code of conduct and the advertising regulations for legal services. I do not include elements that could be considered improper client solicitation."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Does a legal blog help with Google rankings?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, a blog with articles on legal topics is one of the best strategies to rank a law firm on Google. Articles on topics like 'how to make a will', 'employee rights after dismissal' or 'what to do if you are arrested' attract clients searching for that information."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Can I offer online consultations through the website?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, I can integrate an online consultation system where clients describe their case and you respond by email or schedule a video call. I can also add a payment system for paid consultations."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en/`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Law Firm Website Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const alternateUrls = {
+	es: '/pagina-web-abogados-despachos-barcelona',
+	en: canonicalUrl
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+	keywords={["law firm website barcelona", "lawyer website barcelona", "legal web design barcelona", "digital marketing lawyers", "law firm SEO barcelona", "attorney website barcelona", "legal consultancy website", "client acquisition lawyers"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							⚖️ Legal Sector Specialist
+						</span>
+					</div>
+
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Professional Websites for Lawyers and Law Firms in Barcelona
+					</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Do you run a law firm in Barcelona and want to attract more clients? I build websites that
+						convey professionalism, trust and expertise. <strong>96% of people search for a lawyer on Google
+						before calling.</strong> Will your firm be there when they search?
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Included in every law firm website:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>⚖️ Detailed practice areas</span>
+							<span>👨‍⚖️ Legal team profiles</span>
+							<span>📝 Consultation form</span>
+							<span>📰 SEO-optimised legal blog</span>
+							<span>📋 ICAB code compliance</span>
+							<span>🔍 Local SEO Barcelona</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Why your law firm needs a professional website
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							In the legal sector, the image of <strong>professionalism and trust</strong> is everything.
+							When someone has a legal problem, they search on Google. If your firm does not appear or has
+							an outdated website, you are losing clients to the competition.
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Project authority:</strong> A professional website builds immediate trust with potential clients</li>
+							<li><strong>Acquire clients 24/7:</strong> Your website works for you even when the office is closed</li>
+							<li><strong>Filter cases:</strong> Consultation forms let you assess cases before the first call</li>
+							<li><strong>Position yourself as an expert:</strong> A legal blog positions you as a leader in your specialty</li>
+							<li><strong>Appear on Google:</strong> When people search for "divorce lawyer Barcelona", your firm will be there</li>
+							<li><strong>Stand out:</strong> Showcase your experience, success stories and what makes you unique</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Legal specialties I work with
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">👨‍👩‍👧 Family Law</h3>
+								<p class="text-sm sm:text-base">Divorce, custody, alimony. Websites focused on empathy and resolution.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💼 Employment Law</h3>
+								<p class="text-sm sm:text-base">Dismissals, claims, workplace harassment. Websites targeting employees and employers.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏢 Commercial Law</h3>
+								<p class="text-sm sm:text-base">Company formation, contracts, insolvency. Professional websites for entrepreneurs.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">⚖️ Criminal Law</h3>
+								<p class="text-sm sm:text-base">Criminal defence, white-collar crime, violence. Websites conveying confidentiality.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏠 Real Estate Law</h3>
+								<p class="text-sm sm:text-base">Property transactions, leases, community management. Websites for individuals and developers.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🌍 Immigration Law</h3>
+								<p class="text-sm sm:text-base">Visas, residency, citizenship. Multi-language websites for international clients.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Law firm website pricing in Barcelona
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Basic Website for Solo Lawyer</h3>
+								<p class="text-2xl font-bold text-accent mb-2">From €1,500</p>
+								<p class="text-sm text-text-muted mb-3">Presentation, practice areas, professional profile and contact form.</p>
+								<p class="text-sm">✅ Ideal for: Solo lawyers, small firms</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Full Website for Law Firm</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">€2,500 - €3,500</p>
+								<p class="text-sm text-text-muted mb-3">Everything above plus legal blog, team profiles, success stories, advanced SEO and consultation system.</p>
+								<p class="text-sm">✅ Ideal for: Medium-sized firms, multi-practice firms</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Premium Website for Large Firm</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">€3,500 - €5,000+</p>
+								<p class="text-sm text-text-muted mb-3">Complete system with client portal, secure documents, multi-language support and intranets.</p>
+								<p class="text-sm">✅ Ideal for: Large firms, international practices</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							The power of a legal blog to attract clients
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							A blog with articles on legal topics is <strong>the best marketing tool for a lawyer</strong>.
+							When someone searches for "what to do if I am dismissed" or "how to make a will", your article appears on Google
+							and that visitor becomes a potential client.
+						</p>
+
+						<p class="text-base sm:text-lg mb-4">
+							Examples of articles that rank well:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li>"What to do if you are dismissed: complete guide to employment rights"</li>
+							<li>"Divorce in Barcelona: process, costs and timeline"</li>
+							<li>"How to claim an inheritance: steps and legal deadlines"</li>
+							<li>"Tenant rights in Barcelona: everything you need to know"</li>
+							<li>"How to set up a company in Spain: step-by-step guide"</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Law firms across Barcelona districts
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							I have built websites for lawyers and firms across different neighbourhoods of Barcelona:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Firms in the Eixample:</strong> Corporate sites for commercial and tax law practices</li>
+							<li><strong>Lawyers in El Born:</strong> Boutique firms specialising in family and criminal law</li>
+							<li><strong>Immigration lawyers in El Raval:</strong> Multi-language websites for international clients</li>
+							<li><strong>Employment lawyers in Gracia:</strong> Approachable sites focused on worker rights</li>
+							<li><strong>Corporate firms in Poblenou:</strong> Modern websites aimed at tech companies in the 22@ district</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Frequently asked questions about law firm websites
+						</h2>
+
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Does the website comply with bar association regulations?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, every website complies with the ICAB code of conduct and advertising regulations for legal services.
+									I do not include elements that could be considered improper client solicitation.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Does a blog actually help attract clients?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, it is one of the best strategies. Articles on legal topics attract people with real legal problems
+									looking for solutions. Many convert into clients.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Can I offer online consultations?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, I can integrate an online consultation system where clients describe their case and you respond by email
+									or video call. I can also add upfront payment for paid consultations.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">How long does it take to rank on Google?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									With proper local SEO, you can start seeing results within 2-4 months for specific searches like
+									"divorce lawyer Gracia". For more competitive terms it can take 6-12 months.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								Ready for your firm to stand out in Barcelona?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Tell me about your firm and specialties. I will prepare a personalised quote and a content strategy
+								to rank in your practice area.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Free quote within 24h<br/>
+								✅ Legal sector experience<br/>
+								✅ ICAB code compliance<br/>
+								✅ Content strategy included
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related services:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/en/create-website-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Create a Website in Barcelona →</h4>
+								<p class="text-sm text-text-muted">General web development services for businesses in Barcelona.</p>
+							</a>
+							<a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Web Developer Barcelona →</h4>
+								<p class="text-sm text-text-muted">Freelance web development with modern technologies.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

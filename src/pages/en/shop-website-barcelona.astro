@@ -1,0 +1,329 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Shop & Retail Website Design in Barcelona | E-commerce from €1,500";
+const description = "Do you run a shop or retail business in Barcelona and want to sell online? I build professional online stores with catalogue, cart and secure payments. Sell 24/7. Free quote.";
+const canonicalUrl = "/en/shop-website-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "E-commerce Development for Retail Shops",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Web Developer",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Catalonia",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Development of online stores and websites for retail shops and physical stores in Barcelona that want to sell online.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€1,500 - €6,000+",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does it cost to build an online shop for my retail business in Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A professional online shop for retail businesses in Barcelona starts from €1,500 for a basic catalogue, and goes up to €4,500+ for a complete e-commerce with inventory management, multiple payment methods and automated shipping."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Can I manage the products and orders myself?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes. All shops include an easy-to-use admin panel where you can add products, update prices, manage orders and see sales statistics. Training is included."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What payment methods can I offer my customers?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "You can offer credit/debit card (Stripe, Redsys), PayPal, Bizum, bank transfer and cash on delivery. We configure the options that best fit your business and your customers."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Does the shop include shipping management?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes. I can integrate an automatic shipping calculator with the main carriers (Correos, SEUR, MRW, GLS). You can also configure free shipping above a certain amount or in-store pickup."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en/`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Shop Website Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const alternateUrls = {
+	es: '/pagina-web-tiendas-comercios-barcelona',
+	en: canonicalUrl
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+	keywords={["online shop barcelona", "ecommerce barcelona", "retail website barcelona", "build online store barcelona", "sell online barcelona", "shop website design", "cheap online store", "website for local shop"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							🛒 Specialised in E-commerce
+						</span>
+					</div>
+
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Online Shops for Retail Businesses in Barcelona
+					</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Do you run a physical shop in Barcelona and want to sell online as well? I build professional
+						online stores that let you reach customers across Spain and beyond.
+						<strong>Sell 24 hours a day, 7 days a week, even when your shop is closed.</strong>
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Every online shop includes:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>🛍️ Unlimited product catalogue</span>
+							<span>💳 Secure card and PayPal payments</span>
+							<span>📦 Automated shipping management</span>
+							<span>📊 Easy-to-use admin panel</span>
+							<span>📱 Mobile-first responsive design</span>
+							<span>🔍 SEO so customers find you on Google</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Why your shop needs an online store
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							<strong>76% of Spaniards shop online.</strong> If your shop only sells in person, you are
+							missing out on a huge business opportunity. An online store lets you:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Sell 24/7:</strong> Your online shop is open while you sleep, on bank holidays, always</li>
+							<li><strong>Reach all of Spain:</strong> Don't limit yourself to the customers who walk past your door</li>
+							<li><strong>Lower running costs:</strong> Less rent, less staff, better margin</li>
+							<li><strong>Complement your physical shop:</strong> Customers can browse online and pick up in store</li>
+							<li><strong>Compete with the big players:</strong> A good online shop levels the playing field</li>
+							<li><strong>Customer data:</strong> Know which products interest them, where they come from, what they buy</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Types of retail businesses I work with
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">👗 Fashion & Accessories</h3>
+								<p class="text-sm sm:text-base">Clothing, footwear, bags, jewellery shops. Sizes, colours, advanced filters.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏠 Home & Decor</h3>
+								<p class="text-sm sm:text-base">Furniture, decor, home textiles. Lifestyle photography, related products.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🍷 Gourmet Food & Drink</h3>
+								<p class="text-sm sm:text-base">Wines, delicatessen, specialty food. Pairings, gift packs.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🎨 Art & Crafts</h3>
+								<p class="text-sm sm:text-base">Artworks, crafts, handmade products. Unique pieces, customisation.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💄 Beauty & Cosmetics</h3>
+								<p class="text-sm sm:text-base">Perfumery, cosmetics, beauty products. Free samples, offers.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏃 Sports & Fitness</h3>
+                <p class="text-sm sm:text-base">Sports gear, supplements, technical clothing. Size guides, advice.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Online shop pricing for retail businesses
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Basic Online Shop</h3>
+								<p class="text-2xl font-bold text-accent mb-2">From €1,500</p>
+								<p class="text-sm text-text-muted mb-3">Catalogue of up to 50 products, cart, card payments, basic order management.</p>
+								<p class="text-sm">✅ Ideal for: small shops, few products</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Complete Online Shop</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">€2,500 - €4,500</p>
+								<p class="text-sm text-text-muted mb-3">Unlimited products, multiple payment methods, inventory management, shipping calculation, coupons.</p>
+								<p class="text-sm">✅ Ideal for: shops with broad catalogues, selling across Spain</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Premium Online Shop</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">€4,500 - €8,000+</p>
+								<p class="text-sm text-text-muted mb-3">Multi-store, B2B, ERP/POS integration, advanced customisation, marketplace.</p>
+								<p class="text-sm">✅ Ideal for: large retailers, wholesalers, franchises</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Features I can include
+						</h2>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Multiple payment methods:</strong> Card, PayPal, Bizum, bank transfer, cash on delivery</li>
+							<li><strong>Shipping management:</strong> Integration with Correos, SEUR, MRW, GLS, automatic calculation</li>
+							<li><strong>Coupons and discounts:</strong> Promo codes, limited-time offers</li>
+							<li><strong>Customer reviews:</strong> Verified review system to build trust</li>
+							<li><strong>Click & Collect:</strong> Buy online, pick up in store</li>
+							<li><strong>Wishlist:</strong> So customers can save their favourites</li>
+							<li><strong>Related products:</strong> "Customers who bought this also bought..."</li>
+							<li><strong>Newsletter:</strong> Email capture for marketing</li>
+							<li><strong>Multi-language:</strong> Sell in Spanish, Catalan, English and more</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Frequently asked questions about online shops
+						</h2>
+
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Can I manage the products and orders myself?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes. All shops include an easy-to-use admin panel where you can add products, update prices,
+									manage orders and see statistics. Training is included.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">What payment methods can I offer?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Credit/debit card (Stripe, Redsys), PayPal, Bizum, bank transfer and cash on delivery. We
+									configure the ones that best fit your customers.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Does the shop include shipping management?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes. I integrate an automatic shipping calculator with Correos, SEUR, MRW, GLS. You can
+									also configure free shipping above a certain amount or in-store pickup.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">How long does it take to launch the shop?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									A basic shop can be ready in 2-3 weeks. A complete shop with many products and integrations
+									can take 4-6 weeks.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								Ready to sell online?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Tell me about your shop and the products you sell. I'll prepare a personalised quote and
+								advise you on the best solution for your business.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Free quote in 24h<br/>
+								✅ Training included<br/>
+								✅ Post-launch support<br/>
+								✅ Official invoice
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Other related services:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/en/create-website-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Create Website Barcelona →</h4>
+								<p class="text-sm text-text-muted">General web development services for companies in Barcelona.</p>
+							</a>
+							<a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Web Developer Barcelona →</h4>
+								<p class="text-sm text-text-muted">Professional web development across Barcelona.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

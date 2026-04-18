@@ -1,0 +1,356 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Startup Website Design in Barcelona | Fast MVPs & Landing Pages from €1,200";
+const description = "Startup web development in Barcelona: landing pages, product websites and phased MVPs focused on clarity, validation and reasonable speed. Free quote in 24h.";
+const canonicalUrl = "/en/startup-website-barcelona";
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Web Development for Startups",
+	"provider": {
+		"@type": "ProfessionalService",
+		"name": "Ignacio Amat - Web Developer",
+		"url": baseUrl
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": description,
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does a landing page or a startup website cost in Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A focused landing page usually starts from €800. A more complete website to present the product, team and value proposition typically starts at €1,800. If there is an MVP or product logic involved, it is best to budget it in phases."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Can you help me define an MVP without overbuilding?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes. The approach is usually to first define the minimum useful version, build only the key modules and leave the foundation ready to iterate later with real data."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What type of startups fit best with this service?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "It tends to fit small teams that need to validate a value proposition, present the product better, capture leads or prepare a first useful base for sales or learning."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Do you also work with startups outside Barcelona?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes. I work remotely with startups in Barcelona and with teams in other cities or countries. Barcelona is simply one of the locations where this type of project appears frequently."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en/`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Startup Website Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const alternateUrls = {
+	es: '/pagina-web-startups-barcelona',
+	en: canonicalUrl
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+	keywords={["startup website barcelona", "mvp web development barcelona", "landing page startup barcelona", "startup web developer barcelona", "22@ web development", "saas website barcelona", "tech startup website", "freelance developer startups"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							Landing pages, product websites and phased MVPs
+						</span>
+					</div>
+
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Startup Websites in Barcelona
+					</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						If you are validating an idea, preparing a demo for sales or investors, or you need a
+						more credible website to present the product, I can help you launch a clear foundation
+						without over-engineering the project from day one.
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">This kind of work usually fits when you need:</p>
+						<div class="grid sm:grid-cols-3 gap-2 text-sm">
+							<span>A landing page to validate real interest</span>
+							<span>A more credible product website</span>
+							<span>A first base for sales or demos</span>
+							<span>An MVP with a reasonable scope</span>
+							<span>Integrations and lead capture without overcomplication</span>
+							<span>A structure ready to iterate</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							What a startup usually needs at this stage
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Landing page to capture or validate</h3>
+								<p class="text-2xl font-bold text-accent mb-2">From €800</p>
+								<p class="text-sm text-text-muted mb-3">
+									A focused page that explains the value proposition better, reduces noise and guides the user to a clear action.
+								</p>
+								<ul class="text-sm space-y-1 mb-3">
+									<li>✅ Clear proposition and visible CTA</li>
+									<li>✅ Well-crafted form or waitlist</li>
+									<li>✅ Useful integrations when needed</li>
+									<li>✅ Basic conversion tracking</li>
+									<li>✅ Ideal for validating interest or booking meetings</li>
+								</ul>
+								<p class="text-sm">Ideal for: validation, demos, paid campaigns or first commercial conversations</p>
+							</div>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Product or company website</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">€1,500 - €3,000</p>
+								<p class="text-sm text-text-muted mb-3">
+									A more complete foundation to present the product, reinforce trust and explain the business with more clarity.
+								</p>
+								<ul class="text-sm space-y-1 mb-3">
+									<li>✅ Home, product, FAQ and contact</li>
+									<li>✅ Clearer message for sales or investors</li>
+									<li>✅ Trust-building and context sections</li>
+									<li>✅ Solid technical foundation from the start</li>
+									<li>✅ Ready to grow without having to rebuild everything</li>
+								</ul>
+								<p class="text-sm">Ideal for: B2B products, sales presentations, first growth phases</p>
+							</div>
+
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Phased web MVP</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">€2,500 - €6,000+</p>
+								<p class="text-sm text-text-muted mb-3">
+									A first useful version to validate the flow, the value proposition or the main logic without building more than needed.
+								</p>
+								<ul class="text-sm space-y-1 mb-3">
+									<li>✅ Definition of the minimum useful scope</li>
+									<li>✅ Auth, dashboard and key modules</li>
+									<li>✅ Necessary integrations</li>
+									<li>✅ Maintainable base for iteration</li>
+									<li>✅ Phased work to make better decisions</li>
+								</ul>
+								<p class="text-sm">Ideal for: validating with users, demos, internal processes or first traction</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Why this approach tends to work well with startups
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Phased scope</h3>
+								<p class="text-sm sm:text-base">Instead of building everything at once, we prioritise the minimum useful set and leave room to learn.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Sharper message</h3>
+								<p class="text-sm sm:text-base">If the product or the pitch is still raw, tidying up the message usually adds more than adding more screens.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Sensible technical base</h3>
+								<p class="text-sm sm:text-base">The goal is to launch well, measure and maintain — not to impress with unnecessary complexity.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">Direct collaboration</h3>
+								<p class="text-sm sm:text-base">You talk to the same person who thinks the structure, defines the scope and builds the solution.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							When this type of project usually makes sense
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							It usually fits well when the startup needs to improve one of these points:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Validate a value proposition:</strong> you need to know whether an offer generates meetings or real interest.</li>
+							<li><strong>Present the product better:</strong> the current site does not help you sell, explain or give enough context.</li>
+							<li><strong>Prepare demos and sales:</strong> you need a credible base for commercial or partner conversations.</li>
+							<li><strong>Launch a first version:</strong> you need a useful MVP, not a huge platform from day one.</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Integrations and building blocks that usually appear
+						</h2>
+
+						<div class="grid sm:grid-cols-3 gap-4 mb-6 sm:mb-8 text-sm">
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Marketing</strong><br/>
+								Mailchimp, HubSpot, ActiveCampaign, Intercom
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Analytics</strong><br/>
+								GA4, Mixpanel, Amplitude, Hotjar
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Payments</strong><br/>
+								Stripe, PayPal, Bizum
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Auth</strong><br/>
+								Auth0, Firebase, OAuth
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>CRM</strong><br/>
+								Salesforce, Pipedrive, Notion
+							</div>
+							<div class="bg-secondary p-3 rounded-lg text-center">
+								<strong>Communication</strong><br/>
+								Slack, Discord, email and webhooks
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Frequently asked questions
+						</h2>
+
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">How much does a landing page or a startup website cost?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									A focused landing page usually starts from €800. A more complete website typically starts at
+									€1,800. If there is an MVP or product logic, it is best to budget it in phases.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Can you help me define an MVP without overbuilding?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes. The idea is to first define the minimum useful version, build only what matters and
+									leave the foundation ready for the next iteration.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">What type of startups tend to fit better?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Small teams that need to validate a proposition, present the product better, capture leads
+									or prepare a first useful base to sell and learn.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Do you also work with startups outside Barcelona?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes. I work remotely with startups in Barcelona and with teams in other cities or countries.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-gradient-to-r from-accent/10 to-purple-500/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								If you need a website to validate, sell or launch better, the next step should be simple
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Tell me what you want to achieve, what stage you are in and whether something is already built.
+								With that I can guide you on whether a landing page, a product website or a first MVP phase makes more sense.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ First useful reply within 24 working hours<br/>
+								✅ Initial scope with no commitment<br/>
+								✅ Phased work when needed<br/>
+								✅ Clear foundation to keep iterating
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Other related services:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/en/create-website-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Create Website Barcelona →</h4>
+								<p class="text-sm text-text-muted">General web development services for companies in Barcelona.</p>
+							</a>
+							<a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Web Developer Barcelona →</h4>
+								<p class="text-sm text-text-muted">Professional web development with modern technologies.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+	<StickyCTA />
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>

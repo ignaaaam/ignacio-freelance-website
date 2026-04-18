@@ -37,13 +37,20 @@ const routeMappings: Record<string, { es: string; en?: string }> = {
   '/preguntas-frecuentes': { es: '/preguntas-frecuentes', en: '/en/frequently-asked-questions' },
   '/cuanto-cuesta-pagina-web': { es: '/cuanto-cuesta-pagina-web', en: '/en/how-much-does-website-cost' },
   '/como-elegir-desarrollador-web': { es: '/como-elegir-desarrollador-web', en: '/en/how-to-choose-web-developer' },
-  // ES-only pages (no EN counterpart)
-  '/desarrollador-web-eixample-barcelona': { es: '/desarrollador-web-eixample-barcelona' },
-  '/pagina-web-restaurantes-barcelona': { es: '/pagina-web-restaurantes-barcelona' },
-  '/pagina-web-clinicas-dentistas-barcelona': { es: '/pagina-web-clinicas-dentistas-barcelona' },
-  '/pagina-web-abogados-despachos-barcelona': { es: '/pagina-web-abogados-despachos-barcelona' },
-  '/pagina-web-startups-barcelona': { es: '/pagina-web-startups-barcelona' },
-  '/pagina-web-tiendas-comercios-barcelona': { es: '/pagina-web-tiendas-comercios-barcelona' },
+  // Phase 4 — New city landings (SEO expansion)
+  '/desarrollador-web-malaga': { es: '/desarrollador-web-malaga', en: '/en/web-developer-malaga' },
+  '/desarrollador-web-bilbao': { es: '/desarrollador-web-bilbao', en: '/en/web-developer-bilbao' },
+  '/desarrollador-web-zaragoza': { es: '/desarrollador-web-zaragoza', en: '/en/web-developer-zaragoza' },
+  '/desarrollador-web-murcia': { es: '/desarrollador-web-murcia', en: '/en/web-developer-murcia' },
+  '/desarrollador-web-palma-mallorca': { es: '/desarrollador-web-palma-mallorca', en: '/en/web-developer-palma-mallorca' },
+  '/desarrollador-web-remoto-espana': { es: '/desarrollador-web-remoto-espana', en: '/en/remote-web-developer-spain' },
+  // Barcelona sectoral landings (ES + EN counterparts)
+  '/desarrollador-web-eixample-barcelona': { es: '/desarrollador-web-eixample-barcelona', en: '/en/web-developer-eixample-barcelona' },
+  '/pagina-web-restaurantes-barcelona': { es: '/pagina-web-restaurantes-barcelona', en: '/en/restaurant-website-barcelona' },
+  '/pagina-web-clinicas-dentistas-barcelona': { es: '/pagina-web-clinicas-dentistas-barcelona', en: '/en/dental-clinic-website-barcelona' },
+  '/pagina-web-abogados-despachos-barcelona': { es: '/pagina-web-abogados-despachos-barcelona', en: '/en/law-firm-website-barcelona' },
+  '/pagina-web-startups-barcelona': { es: '/pagina-web-startups-barcelona', en: '/en/startup-website-barcelona' },
+  '/pagina-web-tiendas-comercios-barcelona': { es: '/pagina-web-tiendas-comercios-barcelona', en: '/en/shop-website-barcelona' },
 };
 
 function normalizePath(path: string): string {

@@ -1,0 +1,337 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Dental Clinic Website Design in Barcelona | Online Appointments from €1,200";
+const description = "Do you run a dental, medical or aesthetic clinic in Barcelona? I build professional websites with online appointments, treatments and pricing pages. Build patient trust and attract more bookings. Free quote.";
+const canonicalUrl = "/en/dental-clinic-website-barcelona";
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Web Design for Clinics and Medical Practices",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat - Web Developer",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Barcelona",
+			"addressRegion": "Catalonia",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Barcelona"
+	},
+	"description": "Professional website development for dental, medical, aesthetic clinics and health centres in Barcelona with online appointment booking and local SEO.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€1,200 - €4,000",
+		"priceCurrency": "EUR"
+	}
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How much does a website for my dental clinic in Barcelona cost?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "A professional dental clinic website in Barcelona starts from €1,200 for a basic site with treatment information, and up to €3,500 for a complete website with online appointments, blog and advanced SEO. The price depends on the features you need."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Does the website comply with healthcare regulations and GDPR?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, every clinic website I build complies with Spanish healthcare regulations and GDPR. This includes privacy policy, legal notice, cookie management and compliant forms. I can also adapt the website to the requirements of the College of Physicians or Dentists."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Can I integrate an online appointment system?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, I can integrate appointment systems like Doctoralia, DOCTOLIB, or build a custom system that notifies you by email. Patients can choose the day, time and type of consultation directly from your website."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Will the website help me attract more patients through Google?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, I optimise every website for local SEO in Barcelona. This includes Google Business Profile setup, medical schema markup, and optimisation for searches like 'dentist in Barcelona' or 'aesthetic clinic Eixample'. First results typically appear within 2-4 months."
+			}
+		}
+	]
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Home",
+			"item": `${baseUrl}/en/`
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Dental Clinic Website Barcelona",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const allSchemas = [serviceSchema, faqSchema, breadcrumbSchema];
+
+const alternateUrls = {
+	es: '/pagina-web-clinicas-dentistas-barcelona',
+	en: canonicalUrl
+};
+---
+<Layout
+	title={title}
+	description={description}
+	lang="en"
+	canonicalUrl={canonicalUrl}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+	keywords={["dental clinic website barcelona", "dentist website barcelona", "medical clinic web design", "aesthetic clinic website barcelona", "medical practice website barcelona", "online appointments clinic", "digital marketing dentists", "clinic SEO barcelona"]}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<div class="mb-6">
+						<span class="inline-block px-3 py-1 text-sm font-medium bg-accent/10 text-accent rounded-full mb-4">
+							🏥 Healthcare Sector Specialist
+						</span>
+					</div>
+
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+						Professional Websites for Clinics and Dentists in Barcelona
+					</h1>
+
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Do you run a dental, medical or aesthetic clinic in Barcelona? I build websites that project
+						professionalism and trust, with online appointment booking that makes life easier for your patients.
+						<strong>92% of patients research their doctor online before making an appointment.</strong>
+					</p>
+
+					<div class="bg-accent/5 border border-accent/20 rounded-lg p-4 sm:p-6 mb-8">
+						<p class="text-sm sm:text-base font-medium mb-2">✅ Included in every clinic website:</p>
+						<div class="grid sm:grid-cols-2 gap-2 text-sm">
+							<span>📅 Online appointment booking</span>
+							<span>🩺 Treatments and services page</span>
+							<span>👨‍⚕️ Medical team profiles</span>
+							<span>📍 Location and contact</span>
+							<span>📋 GDPR healthcare compliance</span>
+							<span>🔍 Local SEO Barcelona</span>
+						</div>
+					</div>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Why your clinic needs a professional website
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							In healthcare, <strong>trust is everything</strong>. A professional website is your
+							digital business card and can be the difference between a patient choosing you
+							or your competition.
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Projects professionalism:</strong> A well-designed website builds immediate trust with potential patients</li>
+							<li><strong>Receive appointments 24/7:</strong> Your patients can book anytime, even when the clinic is closed</li>
+							<li><strong>Reduce phone calls:</strong> The website answers common questions about treatments, prices and opening hours</li>
+							<li><strong>Appear on Google:</strong> When people search for "dentist in [your area]", your clinic will be there</li>
+							<li><strong>Showcase your experience:</strong> Present your team, qualifications, technology and success stories</li>
+							<li><strong>Stay compliant:</strong> A website adapted to healthcare sector legal requirements</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Types of clinics I work with in Barcelona
+						</h2>
+
+						<div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🦷 Dental Clinics</h3>
+								<p class="text-sm sm:text-base">Websites featuring dentistry, orthodontics, implants and cosmetic dentistry. Appointment booking by specialty.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">💆 Aesthetic Centres</h3>
+								<p class="text-sm sm:text-base">Facial and body treatments, aesthetic medicine. Before/after galleries and special offers.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🏥 Medical Clinics</h3>
+								<p class="text-sm sm:text-base">Specialist consultations, diagnostic centres, polyclinics. Support for multiple specialties.</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg">
+								<h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3">🧘 Wellness Centres</h3>
+								<p class="text-sm sm:text-base">Physiotherapy, psychology, nutrition, yoga. Booking for classes and individual sessions.</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Clinic website pricing in Barcelona
+						</h2>
+
+						<div class="grid gap-4 sm:gap-6 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-accent">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Basic Clinic Website</h3>
+								<p class="text-2xl font-bold text-accent mb-2">From €1,200</p>
+								<p class="text-sm text-text-muted mb-3">Clinic presentation, treatments, medical team, location and basic appointment form.</p>
+								<p class="text-sm">✅ Ideal for: Solo practitioners, small clinics</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-green-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Full Clinic Website</h3>
+								<p class="text-2xl font-bold text-green-500 mb-2">€2,000 - €3,500</p>
+								<p class="text-sm text-text-muted mb-3">Everything above plus advanced appointment system, health blog, patient testimonials and advanced SEO.</p>
+								<p class="text-sm">✅ Ideal for: Dental clinics, aesthetic centres, polyclinics</p>
+							</div>
+							<div class="bg-secondary p-4 sm:p-6 rounded-lg border-l-4 border-purple-500">
+								<h3 class="text-lg sm:text-xl font-bold mb-2">Premium Website with Patient Portal</h3>
+								<p class="text-2xl font-bold text-purple-500 mb-2">€3,500 - €5,000+</p>
+								<p class="text-sm text-text-muted mb-3">Complete system with private patient area, appointment history and automatic reminders.</p>
+								<p class="text-sm">✅ Ideal for: Large clinics, franchises, medical groups</p>
+							</div>
+						</div>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Special features for the healthcare sector
+						</h2>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Online appointment system:</strong> Integration with Doctoralia, DOCTOLIB or a custom system</li>
+							<li><strong>Regulatory compliance:</strong> Healthcare GDPR, medical privacy policy, legal notice</li>
+							<li><strong>Treatments page:</strong> Detailed descriptions, indicative pricing, duration</li>
+							<li><strong>Team profiles:</strong> CV, training and professional registration number for each practitioner</li>
+							<li><strong>Health blog:</strong> Articles that rank on Google and educate patients</li>
+							<li><strong>Verified testimonials:</strong> Real patient reviews that build trust</li>
+							<li><strong>Before/after gallery:</strong> For aesthetic treatments (with consent)</li>
+							<li><strong>Priority contact:</strong> Call-to-action button or direct form for urgent queries</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Clinics across Barcelona districts
+						</h2>
+
+						<p class="text-base sm:text-lg mb-4">
+							I have built websites for clinics in different neighbourhoods of Barcelona:
+						</p>
+
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Dental clinics in the Eixample:</strong> Elegant sites targeting private patients and expats</li>
+							<li><strong>Aesthetic centres in Gracia:</strong> Modern websites focused on treatments and offers</li>
+							<li><strong>Physiotherapy practices in Poblenou:</strong> Booking for individual sessions and group classes</li>
+							<li><strong>Medical consultations in El Born:</strong> Discreet, premium sites for specialists</li>
+							<li><strong>Wellness centres in El Raval:</strong> Websites in multiple languages for diverse communities</li>
+						</ul>
+
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">
+							Frequently asked questions about clinic websites
+						</h2>
+
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Does the website comply with healthcare regulations and GDPR?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, every website complies with Spanish healthcare regulations and GDPR. This includes privacy policy,
+									legal notice, cookie management and compliant forms. I can also adapt the website to College of Physicians or Dentists requirements.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Can I integrate an online appointment system?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, I can integrate systems like Doctoralia, DOCTOLIB, or build a custom system that notifies you by email.
+									Patients can choose the day, time and type of consultation directly from your website.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Will the website help me get more patients?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, I optimise your website for local SEO in Barcelona. When someone searches for "dentist in Gracia" or
+									"aesthetic clinic Barcelona", your website will show up. First results typically appear in 2-4 months.
+								</p>
+							</div>
+							<div class="bg-secondary p-4 rounded-lg">
+								<h3 class="font-bold text-base sm:text-lg mb-2">Can I display treatment prices?</h3>
+								<p class="text-sm sm:text-base text-text-muted">
+									Yes, you can display indicative prices or price ranges for each treatment. This helps filter patients and
+									builds trust through transparency. You decide what information to show.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-accent/10 p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+								Ready for your clinic to stand out online?
+							</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Tell me about your clinic and I will prepare a personalised quote. Includes a 15-minute call
+								to understand your needs and your patient profile.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Free quote within 24h<br/>
+								✅ Healthcare sector experience<br/>
+								✅ Guaranteed regulatory compliance<br/>
+								✅ Post-launch support included
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related services:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/en/create-website-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Create a Website in Barcelona →</h4>
+								<p class="text-sm text-text-muted">General web development services for businesses in Barcelona.</p>
+							</a>
+							<a href="/en/web-developer-barcelona" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Web Developer Barcelona →</h4>
+								<p class="text-sm text-text-muted">Freelance web development with modern technologies.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted {
+		color: var(--color-text-muted);
+	}
+
+	.bg-secondary {
+		background-color: var(--color-secondary);
+	}
+
+	.text-accent {
+		color: var(--color-accent);
+	}
+
+	.prose h2, .prose h3 {
+		color: var(--color-text);
+	}
+
+	.prose p, .prose li {
+		color: var(--color-text);
+		line-height: 1.8;
+	}
+</style>
