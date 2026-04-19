@@ -53,19 +53,37 @@ Props: `title` (required), `description`, `lang`, `canonicalUrl`, `image`, `keyw
 - `src/pages/en/[slug].astro` — English counterparts
 - `src/pages/blog/` — Blog index + articles
 
-### Blog articles — required fields
+### Blog articles — required frontmatter fields
 
-Every new blog article (`.md` in `src/content/blog/es/` or `src/content/blog/en/`) **must** include a `heroImage` from Unsplash in its frontmatter. Use the following format:
+Every new blog article (`.md` in `src/content/blog/es/` or `src/content/blog/en/`) **must** include ALL of the following frontmatter fields. Missing any of them causes a build failure on Vercel.
 
 ```yaml
+title: "..."
+description: "..."
+locale: "es" # or "en"
+group: "slug-shared-between-es-and-en-pair"
+author: "Ignacio Amat"
+publishedDate: YYYY-MM-DD        # NOT pubDate — must be publishedDate
+category: "AI"                   # or "Tools", "Web", etc.
+readTime: "7 min read"
+keywords:                        # NOT tags — must be keywords
+  - "keyword one"
+  - "keyword two"
 heroImage: "https://images.unsplash.com/photo-{PHOTO_ID}?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "Descriptive alt text for the image"
 heroImageCredit: "Photo by {Photographer name} on Unsplash"
 ```
 
-To find a suitable image:
-- **For articles about specific brands/tools/companies** (e.g. a product launch, shutdown, or tool review): search Google or the product's official site/GitHub for their logo or og:image. Use the direct public URL. Credit the brand in `heroImageCredit`.
-- **For general topic articles**: search Unsplash (unsplash.com) for a relevant keyword, pick a high-quality photo, and copy its ID from the URL (e.g. `unsplash.com/photos/abc123` → ID is `abc123`). Use format `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1200&q=80`.
+**Common mistakes that break the build:**
+- Using `pubDate` instead of `publishedDate`
+- Using `tags` instead of `keywords`
+- Omitting `locale`, `group`, `category`, or `readTime`
+
+**Content images** (images inside the article body) are optional but recommended for engagement.
+
+**heroImage rules:**
+- **For articles about specific brands/tools/companies**: search Google or the product's official site/GitHub for their logo or og:image. Use the direct public URL. Credit the brand in `heroImageCredit`.
+- **For general topic articles**: search Unsplash (unsplash.com) for a relevant keyword, pick a high-quality photo, copy its ID from the URL (e.g. `unsplash.com/photos/abc123` → ID is `abc123`). Use format `https://images.unsplash.com/photo-{ID}?auto=format&fit=crop&w=1200&q=80`.
 
 Always include `heroImageAlt` with a meaningful description (for SEO and accessibility) and `heroImageCredit` crediting the source.
 
