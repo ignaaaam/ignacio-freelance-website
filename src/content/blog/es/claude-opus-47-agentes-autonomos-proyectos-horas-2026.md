@@ -1,9 +1,13 @@
 ---
 title: "Claude Opus 4.7: el modelo que trabaja solo durante horas sin perderse"
 description: "Anthropic lanza Claude Opus 4.7 con soporte de 1M de tokens, resolución de imagen 4x mayor y presupuestos de tareas para agentes autónomos. Qué significa para desarrolladores y empresas."
-pubDate: 2026-04-18
+locale: "es"
+group: "claude-opus-47-autonomous-agents-2026"
 author: "Ignacio Amat"
-tags: ["Claude", "Anthropic", "IA", "agentes IA", "LLM", "productividad"]
+publishedDate: 2026-04-18
+category: "AI"
+readTime: "7 min read"
+keywords: ["Claude", "Anthropic", "IA", "agentes IA", "LLM", "productividad"]
 heroImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "Pantalla de ordenador con código de inteligencia artificial y flujo de trabajo autónomo"
 heroImageCredit: "Photo by Igor Omilaev on Unsplash"

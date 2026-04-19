@@ -1,9 +1,13 @@
 ---
 title: "El informe de IA más importante de 2026: qué dicen los datos de Stanford sobre el estado real de la IA"
 description: "El Stanford AI Index 2026 analiza 600 páginas de datos sobre IA. Los números que toda empresa debe conocer: inversión récord, adopción del 88% y modelos que superan a humanos en ciencia."
-pubDate: 2026-04-18
+locale: "es"
+group: "stanford-ai-index-2026-data-businesses-investment"
 author: "Ignacio Amat"
-tags: ["IA", "Stanford AI Index", "inversión IA", "adopción IA", "tendencias 2026", "empresas"]
+publishedDate: 2026-04-18
+category: "AI"
+readTime: "8 min read"
+keywords: ["IA", "Stanford AI Index", "inversión IA", "adopción IA", "tendencias 2026", "empresas"]
 heroImage: "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "Gráficos de datos y estadísticas de inteligencia artificial en pantalla de análisis"
 heroImageCredit: "Photo by Markus Winkler on Unsplash"

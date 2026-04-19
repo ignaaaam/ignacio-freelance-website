@@ -1,9 +1,13 @@
 ---
 title: "OpenAI Codex on Mac: the agent that codes while you work in another window"
 description: "OpenAI updates Codex with desktop control, its own browser, image generation, and parallel agents. The Codex vs Claude Code battle intensifies in April 2026."
-pubDate: 2026-04-18
+locale: "en"
+group: "openai-codex-mac-desktop-agent-2026"
 author: "Ignacio Amat"
-tags: ["OpenAI", "Codex", "AI agents", "programming", "productivity", "AI tools"]
+publishedDate: 2026-04-18
+category: "Tools"
+readTime: "6 min read"
+keywords: ["OpenAI", "Codex", "AI agents", "programming", "productivity", "AI tools"]
 heroImage: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "MacBook with multiple code windows and AI agent working in the background"
 heroImageCredit: "Photo by Christopher Gower on Unsplash"

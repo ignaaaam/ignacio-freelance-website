@@ -1,9 +1,13 @@
 ---
 title: "GPT-5.4-Cyber: OpenAI enters enterprise cybersecurity with a specialized model"
 description: "OpenAI launches GPT-5.4-Cyber, a model trained for cyber defense with verified access. Bank of America, Goldman Sachs, Cisco, and CrowdStrike are already in. What it means for your business."
-pubDate: 2026-04-18
+locale: "en"
+group: "gpt-54-cyber-openai-cybersecurity-2026"
 author: "Ignacio Amat"
-tags: ["OpenAI", "cybersecurity", "GPT-5.4", "web security", "business", "AI", "ethical hacking"]
+publishedDate: 2026-04-18
+category: "AI"
+readTime: "6 min read"
+keywords: ["OpenAI", "cybersecurity", "GPT-5.4", "web security", "business", "AI", "ethical hacking"]
 heroImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "Screen showing cybersecurity code and digital protection shield"
 heroImageCredit: "Photo by Franck on Unsplash"

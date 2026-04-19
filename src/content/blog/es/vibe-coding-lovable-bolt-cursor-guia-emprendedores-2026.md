@@ -1,9 +1,13 @@
 ---
 title: "Vibe coding en 2026: Lovable, Bolt y Cursor para emprendedores sin conocimientos técnicos"
 description: "El 82% de los desarrolladores ya usan IA para programar. Qué es el vibe coding, qué herramientas funcionan de verdad y cómo puede beneficiar a tu startup o negocio digital."
-pubDate: 2026-04-18
+locale: "es"
+group: "vibe-coding-lovable-bolt-cursor-entrepreneurs-2026"
 author: "Ignacio Amat"
-tags: ["vibe coding", "Lovable", "Bolt", "Cursor", "herramientas IA", "emprendimiento", "no-code", "startups"]
+publishedDate: 2026-04-18
+category: "Tools"
+readTime: "7 min read"
+keywords: ["vibe coding", "Lovable", "Bolt", "Cursor", "herramientas IA", "emprendimiento", "no-code", "startups"]
 heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "Emprendedor trabajando con herramientas de IA para crear una aplicación web sin código"
 heroImageCredit: "Photo by Luke Chesser on Unsplash"

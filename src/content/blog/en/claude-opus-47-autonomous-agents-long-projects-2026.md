@@ -1,9 +1,13 @@
 ---
 title: "Claude Opus 4.7: the AI model that works solo for hours without losing focus"
 description: "Anthropic releases Claude Opus 4.7 with 1M token context, 4x higher image resolution, and task budgets for truly autonomous agents. What it means for developers and businesses."
-pubDate: 2026-04-18
+locale: "en"
+group: "claude-opus-47-autonomous-agents-2026"
 author: "Ignacio Amat"
-tags: ["Claude", "Anthropic", "AI", "AI agents", "LLM", "productivity"]
+publishedDate: 2026-04-18
+category: "AI"
+readTime: "7 min read"
+keywords: ["Claude", "Anthropic", "AI", "AI agents", "LLM", "productivity"]
 heroImage: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80"
 heroImageAlt: "Computer screen showing artificial intelligence code and autonomous workflow"
 heroImageCredit: "Photo by Igor Omilaev on Unsplash"
