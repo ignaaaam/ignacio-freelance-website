@@ -229,7 +229,7 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
     <a class="skip-link" href="#main-content">
       {lang === "es" ? "Saltar al contenido principal" : "Skip to main content"}
     </a>
-    <div id="main-content">
+    <div id="main-content" class:list={[{ 'has-home-hero': isHomepage }]}>
       <slot />
     </div>
     <CookieConsent />

@@ -69,22 +69,21 @@ const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteCo
 
 <style>
   .hero {
+    --hero-header-overlap: 6.25rem;
     position: relative;
     display: flex;
     align-items: center;
-    min-height: calc(100svh - 5.85rem);
-    padding-block: clamp(1.35rem, 2vw, 2rem) clamp(2.2rem, 4vw, 3rem);
+    min-height: 100svh;
+    margin-top: calc(-1 * var(--hero-header-overlap));
+    padding-block: calc(clamp(1.35rem, 2vw, 2rem) + var(--hero-header-overlap)) clamp(2.2rem, 4vw, 3rem);
     color: var(--theme-dark-text);
-    background:
-      radial-gradient(circle at top left, rgba(31, 107, 255, 0.24), transparent 30%),
-      radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.09), transparent 24%),
-      linear-gradient(180deg, rgba(9, 11, 16, 0.98), rgba(12, 15, 22, 0.98));
+    /* Same backdrop as `#main-content.has-home-hero` — avoids a second gradient “start”. */
+    background: transparent;
     overflow: hidden;
   }
 
   .hero__grid {
     display: grid;
-    width: 100%;
     grid-template-columns: minmax(0, 1fr);
     align-items: center;
   }
@@ -196,7 +195,7 @@ const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteCo
   }
 
   .hero__fit-note {
-    color: rgba(246, 248, 252, 0.68);
+    color: rgba(246, 248, 252, 0.86);
     font-size: 0.84rem;
     line-height: 1.4;
   }
@@ -206,7 +205,7 @@ const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteCo
     font-weight: 800;
     letter-spacing: 0.13em;
     text-transform: uppercase;
-    color: rgba(246, 248, 252, 0.68);
+    color: rgba(246, 248, 252, 0.86);
   }
 
   .hero__links a {
@@ -261,9 +260,10 @@ const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteCo
 
   @media (max-width: 1040px) {
     .hero {
+      --hero-header-overlap: 5.65rem;
       display: block;
       min-height: auto;
-      padding-block: 1.25rem 3rem;
+      padding-block: calc(1.25rem + var(--hero-header-overlap)) 3rem;
     }
 
     .hero__grid {
@@ -281,7 +281,8 @@ const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteCo
 
   @media (max-width: 720px) {
     .hero {
-      padding-block: 1.2rem 2.8rem;
+      --hero-header-overlap: 5.3rem;
+      padding-block: calc(1.2rem + var(--hero-header-overlap)) 2.8rem;
     }
 
     .hero h1 {
@@ -297,7 +298,7 @@ const locationLine = isEnglish ? `${siteConfig.locationEn} · ES/EN` : `${siteCo
     }
 
     .hero__content {
-      padding-inline: 0.2rem;
+      padding-inline: 0;
     }
 
     .hero__actions {

@@ -4,7 +4,7 @@
   --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-body: "Manrope", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --container-max: 1280px;
-  --container-gutter: clamp(1rem, 3.4vw, 1.75rem);
+  --container-gutter: clamp(1.75rem, 6vw, 2rem);
   --content-max: 72rem;
 
   --theme-primary: #f4f5f7;
@@ -14,10 +14,12 @@
   --theme-header-bg: rgba(11, 13, 18, 0.76);
   /** Full-width strip behind the rounded header shell: avoids a mid-gradient “slice” (~#dee3ec) from `html` showing through. */
   --theme-header-strip-light: #fafbfd;
-  --theme-header-strip-dark:
-    radial-gradient(circle at top left, rgba(31, 107, 255, 0.24), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.09), transparent 24%),
-    linear-gradient(180deg, rgba(9, 11, 16, 0.98), rgba(12, 15, 22, 0.98));
+  /** Home hero + header strip: one stack so nothing “restarts” at section boundaries. */
+  --theme-home-hero-backdrop:
+    radial-gradient(circle at top left, rgba(31, 107, 255, 0.16), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.055), transparent 26%),
+    linear-gradient(180deg, rgb(9, 11, 16), rgb(12, 15, 22));
+  --theme-header-strip-dark: var(--theme-home-hero-backdrop);
   --theme-dropdown-bg: rgba(13, 16, 24, 0.96);
   --theme-field-bg: #f7f8fb;
   --theme-field-bg-focus: #ffffff;
@@ -36,7 +38,7 @@
   --theme-dark-surface: #131722;
   --theme-dark-border: rgba(255, 255, 255, 0.12);
   --theme-dark-text: #f6f8fc;
-  --theme-dark-muted: rgba(246, 248, 252, 0.72);
+  --theme-dark-muted: rgba(246, 248, 252, 0.86);
   --theme-dark-overlay: rgba(7, 10, 16, 0.72);
   --color-button-text: #f6f8fc;
   --color-button-text-secondary: #11131a;
@@ -86,6 +88,23 @@ body {
   color: var(--color-text);
   overflow-x: clip;
   background: transparent;
+}
+
+/* Home: single canvas behind header + hero (no color jump between siblings). */
+#main-content.has-home-hero {
+  background-color: rgb(9, 11, 16);
+  background-image: var(--theme-home-hero-backdrop);
+}
+
+/* On the dark home canvas, section headings (outside cards) need light text for contrast. */
+#main-content.has-home-hero > .section > .container > .section-heading h2,
+#main-content.has-home-hero .section > .container > .section-heading h2 {
+  color: var(--theme-dark-text);
+}
+
+#main-content.has-home-hero > .section > .container > .section-heading .section-copy,
+#main-content.has-home-hero .section > .container > .section-heading .section-copy {
+  color: rgba(246, 248, 252, 0.82);
 }
 
 *,
@@ -627,10 +646,6 @@ summary::-webkit-details-marker {
   .content-page__prose h3 {
     margin-top: 2rem;
     font-size: clamp(1.18rem, 5.8vw, 1.42rem);
-  }
-
-  .content-page__container {
-    padding-inline: 0.1rem;
   }
 
   .content-page__prose {
