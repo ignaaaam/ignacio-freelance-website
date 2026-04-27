@@ -49,8 +49,6 @@ The promise is simple and powerful: you describe what you want and get **real in
 
 As a freelancer focused on **Laravel + Livewire + AI** in Barcelona, I have been using it since day one. Here is how it works, what I build with it, and how it can help you.
 
-![Claude Design interactive prototype](https://images.unsplash.com/photo-1558655146-9f40138ed1cb?auto=format&fit=crop&w=1200&q=80)
-
 ### What you can build today with Claude Design
 
 - Full dashboards with states and filters

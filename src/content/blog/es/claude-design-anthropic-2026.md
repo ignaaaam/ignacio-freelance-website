@@ -49,8 +49,6 @@ La promesa es simple y brutal: describes lo que quieres y obtienes **prototipos 
 
 Como freelance especializado en **Laravel + Livewire + IA** en Barcelona, llevo usándolo desde el día uno. Te cuento cómo funciona, qué puedo hacer con él y cómo te ayuda a ti.
 
-![Claude Design prototipo interactivo](https://images.unsplash.com/photo-1558655146-9f40138ed1cb?auto=format&fit=crop&w=1200&q=80)
-
 ### Qué puedes crear hoy mismo con Claude Design
 
 - Dashboards completos con estados y filtros
