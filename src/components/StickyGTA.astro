@@ -9,8 +9,8 @@ const nav = siteContent[locale].nav;
 <div id="sticky-cta" class="sticky-cta">
   <div class="sticky-cta__content">
     <div>
-      <strong>{locale === 'en' ? 'Need a website that makes your offer easier to understand?' : '¿Necesitas una web que explique mejor tu oferta?'}</strong>
-      <p>{locale === 'en' ? 'Tell me the goal, timing and context. I will tell you if it looks like a fit and what I would suggest next.' : 'Cuéntame objetivo, plazo y contexto. Te diré si encaja y cuál te recomiendo como siguiente paso.'}</p>
+      <strong>{locale === 'en' ? 'Ready to improve your online presence?' : '¿Pensando en darle un impulso a tu web?'}</strong>
+      <p class="sticky-cta__desc">{locale === 'en' ? "Tell me a bit about your project and goals. We can chat and see if we're a good fit, no strings attached." : 'Cuéntame un poco sobre tu proyecto y objetivos. Lo miramos juntos sin ningún compromiso.'}</p>
     </div>
     <a href={nav.contactHref} class="btn-primary" data-cta="sticky-primary">{nav.primaryCta}</a>
   </div>
@@ -69,12 +69,24 @@ const nav = siteContent[locale].nav;
     .sticky-cta__content {
       flex-direction: column;
       align-items: stretch;
-      padding: 1rem;
-      border-radius: 1.28rem;
+      padding: 0.85rem 1rem;
+      border-radius: 1.2rem;
+      gap: 0.75rem;
     }
 
-    .sticky-cta__content p {
-      font-size: 0.92rem;
+    .sticky-cta__content strong {
+      font-size: 0.95rem;
+      display: block;
+      text-align: center;
+    }
+
+    .sticky-cta__desc {
+      display: none;
+    }
+
+    .sticky-cta .btn-primary {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
     }
   }
 </style>

@@ -7,23 +7,23 @@ const isEnglish = locale === 'en';
 
 <div id="cookie-consent" class="cookie-consent surface-card" hidden>
   <div class="cookie-consent__body">
-    <strong>{isEnglish ? 'Optional analytics' : 'Analítica opcional'}</strong>
-    <p>
+    <strong>{isEnglish ? 'Cookies & Analytics' : 'Cookies y Analítica'}</strong>
+    <p class="cookie-consent__desc">
       {isEnglish
-        ? 'If you allow it, I use analytics to understand visits and improve the site. If you decline, everything essential still works as expected.'
-        : 'Si la permites, uso analítica para entender las visitas y mejorar la web. Si la rechazas, todo lo esencial sigue funcionando igual.'}
+        ? "I use minimal analytics to see how the site performs. You can accept this or continue without tracking. No pressure!"
+        : "Utilizo analítica básica para ver qué tal funciona la web. Puedes aceptarlo o continuar sin ellas. ¡Sin problema!"}
     </p>
   </div>
 
   <div class="cookie-consent__actions">
     <a href={isEnglish ? '/en/privacy' : '/privacidad'} class="btn-secondary cookie-consent__link">
-      {isEnglish ? 'Privacy details' : 'Detalles de privacidad'}
+      {isEnglish ? 'Privacy Policy' : 'Política de privacidad'}
     </a>
-    <button type="button" class="btn-secondary" data-consent-action="reject">
-      {isEnglish ? 'Reject' : 'Rechazar'}
+    <button type="button" class="btn-secondary cookie-consent__btn" data-consent-action="reject">
+      {isEnglish ? 'No, thanks' : 'No, gracias'}
     </button>
-    <button type="button" class="btn-primary" data-consent-action="accept">
-      {isEnglish ? 'Allow analytics' : 'Permitir analítica'}
+    <button type="button" class="btn-primary cookie-consent__btn" data-consent-action="accept">
+      {isEnglish ? 'Sounds good' : 'Me parece bien'}
     </button>
   </div>
 </div>
@@ -79,29 +79,41 @@ const isEnglish = locale === 'en';
 
   @media (max-width: 720px) {
     .cookie-consent {
-      gap: 0.78rem;
-      padding: 0.9rem;
-      width: min(760px, calc(100% - 2rem));
-      border-radius: 1.28rem;
+      gap: 0.6rem;
+      padding: 0.85rem;
+      width: calc(100% - 1.5rem);
+      border-radius: 1.1rem;
     }
 
     .cookie-consent__actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
     .cookie-consent__link {
-      grid-column: 1 / -1;
+      width: 100%;
+      text-align: center;
       margin-right: 0;
+      margin-bottom: 0.25rem;
+      font-size: 0.85rem;
+      padding: 0.5rem;
+    }
+
+    .cookie-consent__btn {
+      flex: 1;
+      font-size: 0.85rem;
+      padding: 0.6rem;
     }
 
     .cookie-consent__body strong {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
     }
 
-    .cookie-consent__body p {
-      font-size: 0.93rem;
+    .cookie-consent__desc {
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-top: 0.2rem;
     }
   }
 </style>
