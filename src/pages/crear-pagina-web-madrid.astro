@@ -1,0 +1,214 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Crear Página Web Madrid 2026 | Ignacio Amat";
+const description = "Diseño y creación de páginas web para empresas en Madrid. Landing pages, webs corporativas y e-commerce desde 800€. SEO local y resultados garantizados.";
+const canonicalUrl = "/crear-pagina-web-madrid";
+const keywords = ["crear página web Madrid", "diseño web Madrid", "desarrollo web Madrid", "empresa diseño web Madrid", "presupuesto web Madrid", "crear landing page Madrid", "tienda online Madrid"];
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Crear Página Web para Empresas en Madrid",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Madrid",
+			"addressRegion": "Madrid",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Madrid"
+	},
+	"description": "Servicio profesional de diseño y desarrollo web para empresas en Madrid. Webs rápidas, modernas y optimizadas para captar clientes.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Precios competitivos desde 800€ para proyectos profesionales en Madrid"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Crear Página Web Madrid",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta crear una página web en Madrid?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "El coste depende de la complejidad: Landing pages desde 800€, webs corporativas entre 1.500€ y 3.500€, y tiendas online desde 3.000€. Ofrezco presupuestos cerrados y transparentes para empresas de Madrid."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas de toda la Comunidad de Madrid?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, trabajo de forma remota con empresas de Madrid capital y de toda la comunidad: Alcobendas, Las Rozas, Pozuelo, Getafe, Alcalá de Henares, etc. La comunicación es fluida mediante videollamadas y herramientas colaborativas."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Mi web estará optimizada para SEO en Madrid?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Absolutamente. Todas las webs que creo incluyen SEO técnico de serie para que tu negocio aparezca en las búsquedas locales de Madrid cuando tus clientes potenciales busquen tus servicios."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Crear Página Web Madrid",
+	"url": `https://www.ignacioamatweb.com${canonicalUrl}`,
+	"image": "https://www.ignacioamatweb.com/og-image.png",
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Madrid" },
+	"areaServed": { "@type": "City", "name": "Madrid" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Madrid", "addressRegion": "Madrid", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/create-website-madrid"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Crear Página Web para tu Empresa en Madrid</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Necesitas una página web profesional que realmente atraiga clientes en Madrid? 
+						Soy desarrollador web freelance especializado en crear soluciones digitales para empresas madrileñas que buscan resultados reales.
+					</p>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Servicios de diseño y desarrollo web en Madrid</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Madrid es un mercado altamente competitivo. Para destacar, tu empresa necesita una página web rápida, segura y optimizada 
+							para la conversión. Como freelance, ofrezco un trato directo y personalizado que las grandes agencias de Madrid no pueden igualar.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Lo que ofrezco para tu negocio en Madrid:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Webs Corporativas:</strong> Diseño profesional para despachos, consultoras y empresas de servicios.</li>
+							<li><strong>Landing Pages:</strong> Optimizadas para campañas de Google Ads y redes sociales en Madrid.</li>
+							<li><strong>E-commerce:</strong> Tiendas online robustas y fáciles de gestionar para vender en toda España.</li>
+							<li><strong>SEO Local Madrid:</strong> Posicionamiento estratégico para que te encuentren en tu zona.</li>
+							<li><strong>Optimización de Velocidad:</strong> Webs que cargan en menos de 2 segundos.</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">¿Por qué crear tu web conmigo?</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							Trabajo con las tecnologías más punteras (Astro, React, Tailwind) para garantizar que tu web sea una inversión a largo plazo. 
+							A diferencia de WordPress, mis webs son más rápidas, más seguras y requieren mucho menos mantenimiento, lo que te ahorra costes 
+							en el futuro.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Preguntas frecuentes en Madrid:</h3>
+						<div class="space-y-4 mb-6 sm:mb-8">
+							<div>
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Cuánto se tarda en crear una web profesional?</h4>
+								<p class="text-sm sm:text-base text-text-muted">
+									Una landing page suele estar lista en 1 semana. Una web corporativa completa toma entre 3 y 5 semanas, dependiendo de la disponibilidad del contenido.
+								</p>
+							</div>
+							<div>
+								<h4 class="font-bold text-base sm:text-lg mb-2">¿Das soporte después del lanzamiento?</h4>
+								<p class="text-sm sm:text-base text-text-muted">
+									Sí, incluyo 30 días de soporte gratuito tras el lanzamiento para asegurar que todo funciona perfectamente y resolver cualquier duda que tengas.
+								</p>
+							</div>
+						</div>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Solicita tu presupuesto para Madrid</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si buscas un profesional responsable para crear la página web de tu empresa en Madrid, hablemos. 
+								Analizaré tu caso y te daré una propuesta clara y detallada en menos de 24 horas.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto personalizado gratis<br/>
+								✅ Factura oficial y contrato<br/>
+								✅ Comunicación directa por videollamada<br/>
+								✅ SEO incluido en todos los proyectos
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Otros servicios que pueden interesarte:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web Madrid →</h4>
+								<p class="text-sm text-text-muted">Servicios especializados de programación y desarrollo a medida.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Diseño Web Empresas →</h4>
+								<p class="text-sm text-text-muted">Enfoque en UX/UI y branding para negocios digitales.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted { color: var(--color-text-muted); }
+	.bg-secondary { background-color: var(--color-secondary); }
+	.prose h2, .prose h3 { color: var(--color-text); }
+	.prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

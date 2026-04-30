@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Crear Página Web Valencia 2026 | Ignacio Amat";
+const description = "Diseño de páginas web en Valencia. Landing pages, webs corporativas y e-commerce con SEO integrado. Presupuesto gratuito. ¡Impulsa tu negocio hoy!";
+const canonicalUrl = "/crear-pagina-web-valencia";
+const keywords = ["crear página web Valencia", "diseño web Valencia", "desarrollo web Valencia", "presupuesto web Valencia", "crear web Valencia", "freelance web Valencia"];
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Crear Página Web para Empresas en Valencia",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Valencia",
+			"addressRegion": "Valencia",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Valencia"
+	},
+	"description": "Desarrollo de páginas web profesionales en Valencia. Soluciones digitales a medida para captar clientes y mejorar la presencia online.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Servicios web de alta calidad en Valencia"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Crear Página Web Valencia",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuál es el precio de crear una web en Valencia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Mis tarifas empiezan en 800€ para landing pages. Una web corporativa estándar suele rondar los 1.500€ - 2.500€. Escríbeme y te daré un presupuesto ajustado a tu negocio en Valencia."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Mi web aparecerá en los primeros resultados de Valencia?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Trabajo el SEO local para que cuando alguien busque tus servicios en Valencia o alrededores, tu web sea una de las opciones principales. La optimización técnica está incluida en todos mis proyectos."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Crear Página Web Valencia",
+	"url": `https://www.ignacioamatweb.com${canonicalUrl}`,
+	"image": "https://www.ignacioamatweb.com/og-image.png",
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Valencia" },
+	"areaServed": { "@type": "City", "name": "Valencia" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Valencia", "addressRegion": "Valencia", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/create-website-valencia"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Crear Página Web para tu Empresa en Valencia</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						¿Buscas un diseño web en Valencia que de verdad funcione? 
+						Ayudo a empresas valencianas a crear sitios web profesionales, rápidos y preparados para Google.
+					</p>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Especialista en desarrollo web en Valencia</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Desde el centro de Valencia hasta las zonas industriales de Paterna o Torrent, las empresas necesitan una identidad digital 
+							sólida. Mi enfoque se centra en crear webs que no solo sean bonitas, sino que carguen rápido y posicionen bien en SEO.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">¿Qué incluye mi servicio de creación web?</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Diseño Personalizado:</strong> Nada de plantillas genéricas; tu web reflejará tu marca valenciana.</li>
+							<li><strong>SEO Técnico:</strong> Estructura optimizada para que Google te encuentre fácilmente.</li>
+							<li><strong>Adaptado a Móviles:</strong> Tu web se verá perfecta en cualquier smartphone o tablet.</li>
+							<li><strong>Soporte Directo:</strong> Sin tickets ni esperas; hablas directamente con el desarrollador.</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Ventajas de elegir un freelance en Valencia:</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							Como freelance, mis costes operativos son menores que los de una agencia de diseño web en Valencia, 
+							lo que me permite ofrecerte una calidad superior a un precio más justo. Además, la comunicación es 100% directa.
+						</p>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Potencia tu negocio en Valencia</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si tienes una empresa en Valencia y necesitas crear una página web que sea una verdadera herramienta de ventas, 
+								pídeme presupuesto hoy mismo.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto en menos de 24h<br/>
+								✅ Desarrollo ágil y sin complicaciones<br/>
+								✅ Optimización SEO incluida<br/>
+								✅ Factura oficial y contrato
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Servicios relacionados:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web Valencia →</h4>
+								<p class="text-sm text-text-muted">Servicios de programación y mantenimiento web en Valencia.</p>
+							</a>
+							<a href="/desarrollador-web-espana" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web España →</h4>
+								<p class="text-sm text-text-muted">Desarrollo remoto para empresas de todo el país.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted { color: var(--color-text-muted); }
+	.bg-secondary { background-color: var(--color-secondary); }
+	.prose h2, .prose h3 { color: var(--color-text); }
+	.prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

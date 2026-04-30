@@ -1,0 +1,192 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Create Website Valencia 2026 | Ignacio Amat';
+const description =
+  'Web design and development for companies in Valencia. Landing pages, corporate sites and custom apps from €800. Free quote in 24h.';
+const canonicalUrl = '/en/create-website-valencia';
+const keywords = [
+  'create website Valencia',
+  'web design Valencia',
+  'Valencia web developer',
+  'landing page Valencia',
+  'freelance web Valencia',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Create Website for Businesses in Valencia',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Valencia',
+      addressRegion: 'Valencian Community',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 39.4699,
+      longitude: -0.3763,
+    },
+  },
+  areaServed: { '@type': 'City', name: 'Valencia' },
+  description: 'Professional websites for Valencia-based SMEs and service businesses.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '€800 - €6,000+',
+    description: 'Landing pages, corporate sites and ecommerce for Valencia companies',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Create Website Valencia', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a business website cost in Valencia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Landing pages from €800, corporate websites typically €1,500–€3,500, and ecommerce from €3,000. I send a written quote after a short discovery call.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work remotely with Valencia companies?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. Most projects are remote-first with video calls and shared tools (Notion, Slack, GitHub).',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you help with bilingual ES/EN sites?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes—hreflang, routing and performance-focused bilingual setups are common for Valencia exporters and tourism.',
+      },
+    },
+  ],
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Ignacio Amat — Create Website Valencia',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  serviceArea: { '@type': 'City', name: 'Valencia' },
+  areaServed: { '@type': 'City', name: 'Valencia' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Valencia',
+    addressRegion: 'Valencian Community',
+    addressCountry: 'ES',
+  },
+  availableLanguage: ['English', 'Spanish'],
+  sameAs: [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam',
+  ],
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/crear-pagina-web-valencia',
+  en: canonicalUrl,
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create a Website for Your Business in Valencia</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Fast, conversion-focused sites for Valencia companies—whether you need a landing page, a corporate site or a
+            custom web app.
+          </p>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Why work with a freelance developer in Valencia?</h2>
+            <p class="text-base sm:text-lg mb-4">
+              You get senior-level execution without agency overhead: clear scope, modern stack (Astro, React, Laravel) and
+              measurable performance.
+            </p>
+
+            <div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+              <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Get a quote</h3>
+              <p class="mb-3 sm:mb-4 text-sm sm:text-base">
+                Share your sector, pages needed and deadline—I respond with a structured proposal.
+              </p>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related pages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Developer Valencia →</h4>
+                <p class="text-sm text-text-muted">Development and technical improvements.</p>
+              </a>
+              <a href="/en/create-website-alicante" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Create Website Alicante →</h4>
+                <p class="text-sm text-text-muted">Costa Blanca and bilingual projects.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .prose h2,
+  .prose h3 {
+    color: var(--color-text);
+  }
+  .prose p,
+  .prose li {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+</style>

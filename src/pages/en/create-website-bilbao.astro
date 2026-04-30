@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Create Website Bilbao 2026 | Ignacio Amat';
+const description =
+  'Web design and development in Bilbao and Bizkaia. Corporate sites, landings and online stores from €800. Spanish/Basque-friendly workflows. Free quote.';
+const canonicalUrl = '/en/create-website-bilbao';
+const keywords = [
+  'create website Bilbao',
+  'web design Bilbao',
+  'Bizkaia web developer',
+  'Basque Country website',
+  'freelance web Bilbao',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Create Website for Businesses in Bilbao',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Bilbao',
+      addressRegion: 'Basque Country',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 43.263,
+      longitude: -2.935,
+    },
+  },
+  areaServed: { '@type': 'City', name: 'Bilbao' },
+  description: 'Websites for industrial, services and retail companies in Bilbao and the Basque Country.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '€800 - €6,000+',
+    description: 'Landing pages through ecommerce for Bilbao-based businesses',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Create Website Bilbao', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a corporate website cost in Bilbao?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most corporate sites fall between €1,500 and €3,500 depending on content volume, integrations and languages. Landing pages start at €800.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can you support Spanish and Basque content structures?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes—URL strategy, navigation and SEO-friendly patterns for bilingual sites are part of my workflow when you provide professional translations.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you invoice as a freelance professional in Spain?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes—official invoice and clear contract terms for companies in Bizkaia and the rest of Spain.',
+      },
+    },
+  ],
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Ignacio Amat — Create Website Bilbao',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  serviceArea: { '@type': 'City', name: 'Bilbao' },
+  areaServed: { '@type': 'City', name: 'Bilbao' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Bilbao',
+    addressRegion: 'Basque Country',
+    addressCountry: 'ES',
+  },
+  availableLanguage: ['English', 'Spanish'],
+  sameAs: [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam',
+  ],
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/crear-pagina-web-bilbao',
+  en: canonicalUrl,
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create a Website for Your Company in Bilbao</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Clear, fast sites for industrial and professional services firms in Bilbao and Bizkaia—with the technical rigour
+            your brand deserves.
+          </p>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">What you get</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li>Performance-first builds (Astro/React)</li>
+              <li>SEO technical setup and measurement</li>
+              <li>Secure hosting guidance and launch checklist</li>
+            </ul>
+
+            <div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+              <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Request a Bilbao quote</h3>
+              <p class="text-sm sm:text-base mb-0">Share your sector and must-have pages—I’ll reply with next steps.</p>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related pages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-bilbao" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Developer Bilbao →</h4>
+                <p class="text-sm text-text-muted">Development and technical improvements.</p>
+              </a>
+              <a href="/en/website-redesign-improvements" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Website Redesign →</h4>
+                <p class="text-sm text-text-muted">Modernise an existing site.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .prose h2,
+  .prose h3 {
+    color: var(--color-text);
+  }
+  .prose p,
+  .prose li {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+</style>

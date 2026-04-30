@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Crear Página Web Málaga 2026 | Ignacio Amat";
+const description = "Diseño y desarrollo de páginas web en Málaga. Especialista en startups y pymes. Landing pages, e-commerce y SEO local. Presupuesto gratuito en 24h.";
+const canonicalUrl = "/crear-pagina-web-malaga";
+const keywords = ["crear página web Málaga", "diseño web Málaga", "desarrollo web Málaga", "presupuesto web Málaga", "crear web Málaga", "freelance web Málaga", "diseño web startups Málaga"];
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Crear Página Web para Empresas en Málaga",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Málaga",
+			"addressRegion": "Andalucía",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Málaga"
+	},
+	"description": "Servicio profesional de creación de páginas web en Málaga. Soluciones modernas para el hub tecnológico del sur de España.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Calidad premium para empresas de Málaga"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Crear Página Web Málaga",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuánto cuesta una página web para mi negocio en Málaga?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Los precios en Málaga varían según el proyecto: Landing pages desde 800€, webs corporativas entre 1.500€ y 3.500€, y tiendas online desde 3.000€. Presupuesto cerrado y sin sorpresas."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas del Parque Tecnológico de Málaga (PTA)?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, colaboro con startups y empresas tecnológicas del PTA de forma remota, aportando agilidad y un stack tecnológico moderno (React, Astro, Laravel) para sus productos digitales."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Crear Página Web Málaga",
+	"url": `https://www.ignacioamatweb.com${canonicalUrl}`,
+	"image": "https://www.ignacioamatweb.com/og-image.png",
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Málaga" },
+	"areaServed": { "@type": "City", "name": "Málaga" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Málaga", "addressRegion": "Andalucía", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/create-website-malaga"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Crear Página Web para tu Empresa en Málaga</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Málaga se ha convertido en el gran hub tecnológico de España. ¿Tu web está a la altura? 
+						Ayudo a empresas malagueñas a crear páginas web rápidas, modernas y optimizadas para captar clientes nacionales e internacionales.
+					</p>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Diseño web en Málaga con enfoque en resultados</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Desde startups en el PTA hasta negocios tradicionales en el centro de Málaga o la Costa del Sol, 
+							todas las empresas necesitan una herramienta de venta digital que cargue al instante y convierta. 
+							Utilizo tecnologías como Astro y React para garantizar el mejor rendimiento del mercado.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Servicios para el mercado de Málaga:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Webs para Startups:</strong> MVPs rápidos y escalables para validar tu modelo de negocio.</li>
+							<li><strong>SEO Local Málaga:</strong> Posicionamiento para que te encuentren en toda la provincia.</li>
+							<li><strong>E-commerce Avanzado:</strong> Vende online con las mejores pasarelas de pago y UX.</li>
+							<li><strong>Landing Pages:</strong> Optimizadas para convertir tu inversión en publicidad en leads reales.</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">¿Por qué trabajar conmigo en Málaga?</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							Como desarrollador freelance, ofrezco la agilidad que tu empresa necesita. Sin las capas de gestión de una agencia, 
+							hablas directamente con quien pica el código, asegurando que tu visión se traslade perfectamente a la web.
+						</p>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Impulsa tu presencia digital en Málaga</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si buscas un profesional para crear la página web de tu negocio en Málaga con garantías de SEO y velocidad, 
+								hablemos hoy mismo.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto personalizado en 24h<br/>
+								✅ Respuesta rápida y directa<br/>
+								✅ Enfoque en conversión y SEO<br/>
+								✅ Factura oficial y contrato
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Enlaces de interés:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-malaga" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web Málaga →</h4>
+								<p class="text-sm text-text-muted">Servicios especializados de programación freelance en Málaga.</p>
+							</a>
+							<a href="/en/create-website-malaga" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Web Design Málaga (EN) →</h4>
+								<p class="text-sm text-text-muted">Services for international companies based in Málaga.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted { color: var(--color-text-muted); }
+	.bg-secondary { background-color: var(--color-secondary); }
+	.prose h2, .prose h3 { color: var(--color-text); }
+	.prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

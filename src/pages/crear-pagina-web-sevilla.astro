@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import StickyCTA from '../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = "Crear Página Web Sevilla 2026 | Ignacio Amat";
+const description = "Diseño y creación de páginas web en Sevilla. Especialista en pymes y negocios locales. Landing pages, webs corporativas y SEO en Andalucía. Presupuesto en 24h.";
+const canonicalUrl = "/crear-pagina-web-sevilla";
+const keywords = ["crear página web Sevilla", "diseño web Sevilla", "desarrollo web Sevilla", "empresa diseño web Sevilla", "presupuesto web Sevilla", "web pymes Sevilla", "freelance web Andalucía"];
+
+// Structured Data
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	"serviceType": "Crear Página Web para Empresas en Sevilla",
+	"provider": {
+		"@type": "LocalBusiness",
+		"name": "Ignacio Amat",
+		"url": baseUrl,
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Sevilla",
+			"addressRegion": "Andalucía",
+			"addressCountry": "ES"
+		}
+	},
+	"areaServed": {
+		"@type": "City",
+		"name": "Sevilla"
+	},
+	"description": "Servicio profesional de creación de páginas web en Sevilla. Soluciones digitales para potenciar el negocio local en el sur.",
+	"offers": {
+		"@type": "Offer",
+		"priceRange": "€800 - €6,000+",
+		"description": "Diseño web de calidad para el mercado de Sevilla"
+	}
+};
+
+const breadcrumbSchema = {
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement": [
+		{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Inicio",
+			"item": baseUrl
+		},
+		{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "Crear Página Web Sevilla",
+			"item": `${baseUrl}${canonicalUrl}`
+		}
+	]
+};
+
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cuál es el precio de crear una página web en Sevilla?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Los precios para empresas en Sevilla suelen ir desde los 800€ para landing pages hasta los 3.500€ para webs corporativas completas. Solicita un presupuesto personalizado para tu negocio."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Trabajas con empresas de toda la provincia de Sevilla?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Sí, ofrezco mis servicios de desarrollo web remoto a empresas de Sevilla capital, Dos Hermanas, Alcalá de Guadaíra y toda Andalucía, garantizando cercanía y profesionalidad."
+			}
+		}
+	]
+};
+
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "ProfessionalService",
+	"name": "Ignacio Amat — Crear Página Web Sevilla",
+	"url": `https://www.ignacioamatweb.com${canonicalUrl}`,
+	"image": "https://www.ignacioamatweb.com/og-image.png",
+	"priceRange": "€€",
+	"currenciesAccepted": "EUR",
+	"serviceArea": { "@type": "City", "name": "Sevilla" },
+	"areaServed": { "@type": "City", "name": "Sevilla" },
+	"address": { "@type": "PostalAddress", "addressLocality": "Sevilla", "addressRegion": "Andalucía", "addressCountry": "ES" },
+	"availableLanguage": ["Spanish", "English"],
+	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+	es: canonicalUrl,
+	en: "/en/create-website-sevilla"
+};
+---
+<Layout 
+	title={title} 
+	description={description} 
+	lang="es"
+	canonicalUrl={canonicalUrl}
+	keywords={keywords}
+	additionalSchemas={allSchemas}
+	alternateUrls={alternateUrls}
+>
+	<Header />
+	<main>
+		<section class="py-12 sm:py-16 md:py-20 content-page">
+			<div class="container px-4 sm:px-6 content-page__container">
+				<div class="max-w-4xl mx-auto content-page__inner">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Crear Página Web para tu Empresa en Sevilla</h1>
+					
+					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+						Sevilla tiene una esencia única y tu web debe saber transmitirla para conectar con tus clientes. 
+						Diseño y desarrollo páginas web para empresas sevillanas que buscan una presencia digital profesional y efectiva.
+					</p>
+
+					<div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+						<h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Diseño web en Sevilla orientado a pymes y autónomos</h2>
+						
+						<p class="text-base sm:text-lg mb-4">
+							Tanto si tienes un despacho en Los Remedios, un negocio de hostelería en el Centro o una pyme en los polígonos de Sevilla, 
+							necesitas una web que no sea solo un escaparate, sino una herramienta activa de captación. 
+							Mis webs combinan un diseño impecable con una base técnica optimizada para el SEO local.
+						</p>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Lo que tu negocio en Sevilla necesita:</h3>
+						<ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+							<li><strong>Webs Corporativas Claras:</strong> Explica tus servicios y genera confianza desde el primer clic.</li>
+							<li><strong>Landing Pages Directas:</strong> Perfectas para captar leads en campañas publicitarias locales.</li>
+							<li><strong>Tiendas Online (E-commerce):</strong> Vende tus productos de Sevilla a todo el mundo.</li>
+							<li><strong>Optimización SEO Andalucía:</strong> Mejora tu visibilidad en las búsquedas regionales.</li>
+						</ul>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Trato directo y resultados sin vueltas</h3>
+						<p class="mb-4 text-sm sm:text-base">
+							Al trabajar con un desarrollador freelance, evitas la burocracia de las agencias. 
+							Hablamos de tú a tú, definimos objetivos claros y construimos una web que carga rápido y funciona bien 
+							en todos los dispositivos.
+						</p>
+
+						<div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+							<h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Mejora tu impacto digital en Sevilla</h3>
+							<p class="mb-3 sm:mb-4 text-sm sm:text-base">
+								Si quieres crear la página web de tu empresa en Sevilla con un profesional que entienda tus necesidades, 
+								contáctame y recibirás una propuesta en menos de 24 horas.
+							</p>
+							<p class="font-semibold text-sm sm:text-base">
+								✅ Presupuesto personalizado gratis<br/>
+								✅ Desarrollo enfocado a resultados<br/>
+								✅ SEO local incluido<br/>
+								✅ Factura oficial
+							</p>
+						</div>
+
+						<h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Enlaces recomendados:</h3>
+						<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+							<a href="/desarrollador-web-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Desarrollador Web Sevilla →</h4>
+								<p class="text-sm text-text-muted">Especialista en programación freelance para el mercado sevillano.</p>
+							</a>
+							<a href="/diseno-web-empresas" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+								<h4 class="font-bold mb-2">Diseño Web Empresas →</h4>
+								<p class="text-sm text-text-muted">Diseños que convierten visitantes en clientes fieles.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<Contact />
+		<StickyCTA />
+	</main>
+</Layout>
+
+<style>
+	.text-text-muted { color: var(--color-text-muted); }
+	.bg-secondary { background-color: var(--color-secondary); }
+	.prose h2, .prose h3 { color: var(--color-text); }
+	.prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

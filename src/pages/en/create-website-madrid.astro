@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Create Website Madrid 2026 | Ignacio Amat';
+const description =
+  'Web design and development for companies in Madrid. Landing pages, corporate sites and ecommerce from €800. Technical SEO and free quote in 24h.';
+const canonicalUrl = '/en/create-website-madrid';
+const keywords = [
+  'create website Madrid',
+  'web design Madrid',
+  'Madrid web developer',
+  'landing page Madrid',
+  'corporate website Madrid',
+  'freelance web Madrid',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Create Website for Businesses in Madrid',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Madrid',
+      addressRegion: 'Madrid',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 40.4168,
+      longitude: -3.7038,
+    },
+  },
+  areaServed: { '@type': 'City', name: 'Madrid' },
+  description:
+    'Professional web design and development for businesses in Madrid and the wider Community of Madrid.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '€800 - €6,000+',
+    description: 'Transparent pricing for landing pages, corporate websites and ecommerce in Madrid',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Create Website Madrid', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does it cost to create a website for my business in Madrid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Landing pages from €800, corporate websites typically €1,500–€3,500, and ecommerce from €3,000. I provide a fixed-scope quote for Madrid-based companies within 24 hours.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work with companies across the Community of Madrid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. I work remotely with businesses in Madrid city and the wider region (Alcobendas, Las Rozas, Pozuelo, Getafe, Alcalá de Henares, etc.) with clear async communication and video calls.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will my site be optimised for local SEO in Madrid?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Every build includes technical SEO, metadata, performance tuning and guidance so your business can rank for relevant local searches in Madrid.',
+      },
+    },
+  ],
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Ignacio Amat — Create Website Madrid',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  serviceArea: { '@type': 'City', name: 'Madrid' },
+  areaServed: { '@type': 'City', name: 'Madrid' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Madrid',
+    addressRegion: 'Madrid',
+    addressCountry: 'ES',
+  },
+  availableLanguage: ['English', 'Spanish'],
+  sameAs: [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam',
+  ],
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/crear-pagina-web-madrid',
+  en: canonicalUrl,
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create a Website for Your Company in Madrid</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Need a professional site that converts in a competitive market? I help Madrid companies ship fast,
+            clear websites—landing pages, corporate sites and ecommerce—with technical SEO baked in.
+          </p>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Web design and development in Madrid</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Madrid is a demanding market: speed, trust and clarity matter. As a freelance developer you work directly
+              with me—no account managers—on Astro, React and Laravel stacks tuned for performance.
+            </p>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">What I build for Madrid businesses</h3>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 sm:space-y-3 mb-4 sm:mb-6 text-sm sm:text-base">
+              <li><strong>Corporate websites</strong> for consultancies, agencies and B2B services.</li>
+              <li><strong>Landing pages</strong> for Google Ads and LinkedIn campaigns.</li>
+              <li><strong>Ecommerce</strong> with solid UX and maintainable code.</li>
+              <li><strong>Technical SEO</strong> and Core Web Vitals as standard.</li>
+            </ul>
+
+            <div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+              <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Request a quote for Madrid</h3>
+              <p class="mb-3 sm:mb-4 text-sm sm:text-base">
+                Tell me your goals and timeline—I reply with a clear proposal, usually within one business day.
+              </p>
+              <p class="font-semibold text-sm sm:text-base">
+                Free detailed quote<br />
+                Official invoice & contract<br />
+                Direct communication by video call
+              </p>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related pages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-madrid" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Developer Madrid →</h4>
+                <p class="text-sm text-text-muted">Freelance development and integrations.</p>
+              </a>
+              <a href="/en/web-design-businesses" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Design for Businesses →</h4>
+                <p class="text-sm text-text-muted">UX-focused sites for companies.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .prose h2,
+  .prose h3 {
+    color: var(--color-text);
+  }
+  .prose p,
+  .prose li {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+</style>

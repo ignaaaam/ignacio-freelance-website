@@ -1,0 +1,188 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Create Website Seville 2026 | Ignacio Amat';
+const description =
+  'Web design and development in Seville and Andalusia. Landing pages, SME sites and ecommerce from €800. Free quote in 24h.';
+const canonicalUrl = '/en/create-website-sevilla';
+const keywords = [
+  'create website Seville',
+  'web design Seville',
+  'Seville web developer',
+  'Andalusia website',
+  'freelance web Seville',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Create Website for Businesses in Seville',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Seville',
+      addressRegion: 'Andalusia',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 37.3891,
+      longitude: -5.9845,
+    },
+  },
+  areaServed: { '@type': 'City', name: 'Seville' },
+  description: 'Professional websites for Seville-based SMEs, services and tourism businesses.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '€800 - €6,000+',
+    description: 'Landing pages, corporate websites and ecommerce',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Create Website Seville', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a website cost in Seville?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Landing pages from €800, corporate sites typically €1,500–€3,500, ecommerce from €3,000. I provide a written quote after understanding your goals.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work with companies across Andalusia?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes—remote delivery with scheduled calls works well for teams in Seville, Cordoba, Granada and other Andalusian cities.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Will my website be fast on mobile?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes—performance, accessibility and Core Web Vitals are part of the default delivery checklist.',
+      },
+    },
+  ],
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Ignacio Amat — Create Website Seville',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  serviceArea: { '@type': 'City', name: 'Seville' },
+  areaServed: { '@type': 'City', name: 'Seville' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Seville',
+    addressRegion: 'Andalusia',
+    addressCountry: 'ES',
+  },
+  availableLanguage: ['English', 'Spanish'],
+  sameAs: [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam',
+  ],
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/crear-pagina-web-sevilla',
+  en: canonicalUrl,
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create a Website for Your Business in Seville</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Practical, fast-loading sites for local services, hospitality and SMEs—built to convert and easy to maintain.
+          </p>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Seville-focused delivery</h2>
+            <p class="text-base sm:text-lg mb-4">
+              I combine modern frontend engineering with SEO fundamentals so your business is discoverable and credible online.
+            </p>
+
+            <div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+              <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Get a quote</h3>
+              <p class="text-sm sm:text-base mb-0">Tell me your pages, languages and deadline.</p>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related pages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-sevilla" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Developer Seville →</h4>
+                <p class="text-sm text-text-muted">Freelance development in Andalusia.</p>
+              </a>
+              <a href="/en/create-website-malaga" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Create Website Malaga →</h4>
+                <p class="text-sm text-text-muted">Costa del Sol projects.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .prose h2,
+  .prose h3 {
+    color: var(--color-text);
+  }
+  .prose p,
+  .prose li {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+</style>

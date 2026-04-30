@@ -1,0 +1,191 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Create Website Malaga 2026 | Ignacio Amat';
+const description =
+  'Web design and development in Malaga and the Costa del Sol. Landings, corporate sites and ecommerce from €800. Bilingual ES/EN. Free quote.';
+const canonicalUrl = '/en/create-website-malaga';
+const keywords = [
+  'create website Malaga',
+  'web design Costa del Sol',
+  'Malaga web developer',
+  'bilingual website Malaga',
+  'freelance web Malaga',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Create Website for Businesses in Malaga',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Malaga',
+      addressRegion: 'Andalusia',
+      addressCountry: 'ES',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 36.7213,
+      longitude: -4.4214,
+    },
+  },
+  areaServed: { '@type': 'City', name: 'Malaga' },
+  description: 'High-performance websites for Malaga, Marbella and international-facing businesses on the Costa del Sol.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '€800 - €6,000+',
+    description: 'Projects from landing pages to full ecommerce',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Create Website Malaga', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a website cost in Malaga?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Typical ranges: landing pages from €800, corporate sites €1,500–€3,500, ecommerce from €3,000. Final price depends on integrations and languages.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you build bilingual Spanish/English websites?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes—common for Costa del Sol hospitality, real estate and services targeting UK and EU buyers.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is work done remotely?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, with scheduled calls and transparent milestones. I collaborate with teams across Spain and abroad.',
+      },
+    },
+  ],
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Ignacio Amat — Create Website Malaga',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  serviceArea: { '@type': 'City', name: 'Malaga' },
+  areaServed: { '@type': 'City', name: 'Malaga' },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Malaga',
+    addressRegion: 'Andalusia',
+    addressCountry: 'ES',
+  },
+  availableLanguage: ['English', 'Spanish'],
+  sameAs: [
+    'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+    'https://github.com/ignaaaam',
+  ],
+};
+
+const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+
+const alternateUrls = {
+  es: '/crear-pagina-web-malaga',
+  en: canonicalUrl,
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create a Website for Your Business in Malaga</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            International audiences expect speed and trust signals. I ship modern sites with SEO, analytics and clean
+            handover—ideal for Costa del Sol companies.
+          </p>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 sm:mt-12 mb-4 sm:mb-6">Web projects that fit Malaga’s market</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li>Corporate and brochure sites with strong mobile UX</li>
+              <li>Lead-gen landing pages for paid campaigns</li>
+              <li>Ecommerce with clear checkout flows</li>
+            </ul>
+
+            <div class="bg-secondary p-4 sm:p-6 rounded-lg mt-6 sm:mt-8 mb-6 sm:mb-8">
+              <h3 class="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Free quote in 24h</h3>
+              <p class="text-sm sm:text-base mb-0">Tell me your goals and I’ll propose scope, timeline and price.</p>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4">Related pages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-malaga" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Developer Malaga →</h4>
+                <p class="text-sm text-text-muted">Full-stack delivery on the Costa del Sol.</p>
+              </a>
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-2">Web Developer Spain →</h4>
+                <p class="text-sm text-text-muted">Nationwide remote collaboration.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted {
+    color: var(--color-text-muted);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .prose h2,
+  .prose h3 {
+    color: var(--color-text);
+  }
+  .prose p,
+  .prose li {
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+</style>
