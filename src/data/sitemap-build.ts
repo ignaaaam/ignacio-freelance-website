@@ -82,6 +82,7 @@ export async function buildSitemapEsXml(): Promise<string> {
   const parts: string[] = [];
 
   for (const route of getSitemapRouteEntries()) {
+    if (!route.es) continue;
     const locPath = route.es;
     const { priority, changefreq } = priorityForPath(locPath);
     parts.push(

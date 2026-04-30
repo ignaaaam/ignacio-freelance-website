@@ -1,0 +1,164 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Web Development for Small Businesses | Ignacio Amat';
+const description =
+  'Web development for small businesses that need clearer messaging, stronger trust, and more qualified leads without overbuilt projects.';
+const canonicalUrl = '/en/web-development-small-businesses';
+const keywords = [
+  'small business web development',
+  'website for small business',
+  'freelance web developer for SMEs',
+  'SME website development Spain',
+  'business website for local companies',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Web development for small businesses',
+  provider: {
+    '@type': 'ProfessionalService',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+  },
+  description:
+    'Websites for small and medium businesses with clear messaging, practical structure, and a solid technical base for SEO and growth.',
+  offers: {
+    '@type': 'Offer',
+    priceRange: '1,200 EUR - 4,000 EUR',
+    priceCurrency: 'EUR',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How much does a small business website usually cost?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Most projects fit between EUR1,200 and EUR3,500 when scope is clearly defined. Larger projects can be split into phases.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does a small business need the same website as a large company?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. Most small businesses need a clear offer, trust signals, and a simple contact path first. Extra sections can come later.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can we launch in phases?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. A phased launch is common: core pages first, then expanded FAQs, case studies, or content once traction grows.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you work with small businesses outside Barcelona?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. I work remotely with businesses across Spain and international teams when the project fit is strong.',
+      },
+    },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'Web development for small businesses', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  {
+    label: 'Built for',
+    value: 'Small businesses, local teams, and service companies that need practical results without unnecessary complexity.',
+  },
+  {
+    label: 'Focus',
+    value: 'Clarity, fast loading, practical SEO, and a structure that is easy to maintain.',
+  },
+  {
+    label: 'Typical range',
+    value: 'From EUR1,200 for tightly scoped websites to EUR4,000+ when more pages and integrations are needed.',
+  },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={[serviceSchema, faqSchema, breadcrumbSchema]}
+  alternateUrls={{ es: '/desarrollo-web-pymes', en: canonicalUrl }}
+  badge="SMEs"
+  pageTitle="Web development for small businesses that need practical results"
+  lead="Small businesses do not need oversized websites. They need clear positioning, credibility, and a straightforward path to contact. I work with realistic scope and a technical base that supports growth."
+  primaryCta={{ label: 'Request proposal', href: '#contacto' }}
+  secondaryCta={{ label: 'View services', href: '/en/services' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">What usually fails on SME websites</h2>
+    <p class="text-base sm:text-lg mb-6">
+      Many websites look decent but fail commercially: unclear value proposition, weak trust signals, and poor conversion paths. The goal is not more pages; it is better decisions on what each page must achieve.
+    </p>
+
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Unclear message</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Visitors should understand what you do, who you help, and why they should trust you within seconds.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Too much scope upfront</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Launching a focused first version often performs better than trying to ship everything at once.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Heavy technical setup</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Your team should be able to maintain content and request updates without unnecessary friction.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Weak conversion flow</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          If calls to action are unclear or contact forms are buried, traffic does not become business opportunities.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">How I approach SME web projects</h2>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>Priorities first:</strong> identify which pages are essential for trust and lead generation.</li>
+      <li><strong>Commercial structure:</strong> align page hierarchy, messaging, FAQs, and CTA flow to real buyer questions.</li>
+      <li><strong>Lean technology:</strong> build a fast, maintainable base with strong technical SEO fundamentals.</li>
+      <li><strong>Phase-ready:</strong> expand progressively as the business and content needs evolve.</li>
+    </ul>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
+      <a href="/en/services" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">All services &rarr;</a>
+      <a href="/en/web-design-businesses" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Business web design &rarr;</a>
+      <a href="/en/professional-landing-page-development" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Landing pages &rarr;</a>
+      <a href="/en/how-much-does-website-cost" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Pricing guide &rarr;</a>
+      <a href="/en/hire-full-stack-web-developer" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Full-stack freelance &rarr;</a>
+      <a href="/en/contact" class="block p-3 bg-secondary rounded-lg text-sm font-medium text-center hover:shadow-md transition-all">Contact &rarr;</a>
+    </div>
+  </div>
+</MarketingContentPage>

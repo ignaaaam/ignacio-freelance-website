@@ -17,6 +17,10 @@ export function getGlobalJsonLdSchemas(lang: Locale): Record<string, unknown>[] 
     name: 'Ignacio Amat',
     url: BASE,
     jobTitle: lang === 'es' ? 'Desarrollador web freelance' : 'Freelance web developer',
+    description:
+      lang === 'es'
+        ? 'Desarrollador web freelance con base en Barcelona, especializado en landing pages, webs de empresa y MVPs con React, Astro y Laravel.'
+        : 'Freelance web developer based in Barcelona, specialising in landing pages, business websites and MVPs with React, Astro and Laravel.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Barcelona',
@@ -62,6 +66,12 @@ export function getGlobalJsonLdSchemas(lang: Locale): Record<string, unknown>[] 
       { '@type': 'Country', name: 'Spain' },
       { '@type': 'Organization', name: 'European Union' }
     ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      availableLanguage: ['Spanish', 'English'],
+      url: `${BASE}/contact`,
+    },
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: Math.round(avgRating * 10) / 10,

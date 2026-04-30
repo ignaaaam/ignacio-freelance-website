@@ -9,7 +9,7 @@ const translations = {
   es,
 };
 
-const routeMappings: Record<string, { es: string; en?: string }> = {
+const routeMappings: Record<string, { es?: string; en?: string }> = {
   '/': { es: '/', en: '/en/' },
   '/blog': { es: '/blog', en: '/en/blog' },
   '/thanks': { es: '/thanks', en: '/en/thanks' },
@@ -30,7 +30,7 @@ const routeMappings: Record<string, { es: string; en?: string }> = {
   '/desarrollador-web-valencia': { es: '/desarrollador-web-valencia', en: '/en/web-developer-valencia' },
   '/desarrollador-web-sevilla': { es: '/desarrollador-web-sevilla', en: '/en/web-developer-sevilla' },
   '/diseno-web-empresas': { es: '/diseno-web-empresas', en: '/en/web-design-businesses' },
-  '/desarrollo-web-pymes': { es: '/desarrollo-web-pymes' },
+  '/desarrollo-web-pymes': { es: '/desarrollo-web-pymes', en: '/en/web-development-small-businesses' },
   '/contratar-desarrollador-full-stack': { es: '/contratar-desarrollador-full-stack', en: '/en/hire-full-stack-web-developer' },
   '/servicios': { es: '/servicios', en: '/en/services' },
   // Phase 2 — Service pages
@@ -60,6 +60,7 @@ const routeMappings: Record<string, { es: string; en?: string }> = {
   '/pagina-web-abogados-despachos-barcelona': { es: '/pagina-web-abogados-despachos-barcelona', en: '/en/law-firm-website-barcelona' },
   '/pagina-web-startups-barcelona': { es: '/pagina-web-startups-barcelona', en: '/en/startup-website-barcelona' },
   '/pagina-web-tiendas-comercios-barcelona': { es: '/pagina-web-tiendas-comercios-barcelona', en: '/en/shop-website-barcelona' },
+  '/web-developer-alicante': { en: '/en/web-developer-alicante' },
 };
 
 function normalizePath(path: string): string {
@@ -68,7 +69,7 @@ function normalizePath(path: string): string {
   return cleaned || '/';
 }
 
-function findRoutePair(path: string): { es: string; en?: string } | null {
+function findRoutePair(path: string): { es?: string; en?: string } | null {
   const normalizedPath = normalizePath(path);
   const bySpanishRoute = routeMappings[normalizedPath];
   if (bySpanishRoute) {
@@ -125,7 +126,7 @@ export function getLanguageSwitchUrls(url: URL): { en: string; es: string } {
   const path = normalizePath(url.pathname);
   const routePair = findRoutePair(path);
   if (routePair) {
-    return { es: routePair.es, en: routePair.en ?? '/en/' };
+    return { es: routePair.es ?? '/', en: routePair.en ?? '/en/' };
   }
 
   const from = url.searchParams.get('from');
@@ -151,7 +152,7 @@ export function useTranslations(path: string): (key: TranslationKey) => string {
   return (key: TranslationKey) => getTranslation(locale, key);
 }
 
-export type SitemapRouteEntry = { es: string; en?: string };
+export type SitemapRouteEntry = { es?: string; en?: string };
 
 /** Unique marketing URLs for sitemap generation (Spanish canonical paths as keys). */
 export function getSitemapRouteEntries(): SitemapRouteEntry[] {
