@@ -43,8 +43,8 @@ export function getGlobalJsonLdSchemas(lang: Locale): Record<string, unknown>[] 
     priceRange: lang === 'es' ? '800 EUR - 6000+ EUR' : 'EUR 800 - 6000+',
     description:
       lang === 'es'
-        ? 'Desarrollo web freelance en Barcelona y en remoto: landing pages, webs corporativas, MVPs y Laravel con foco en conversión y rendimiento.'
-        : 'Freelance web development in Barcelona and remotely: landing pages, business websites, MVPs and Laravel with a focus on conversion and performance.',
+        ? 'Desarrollo web freelance: landing pages, webs corporativas, MVPs y aplicaciones a medida con foco en conversión y SEO técnico en toda España y Europa.'
+        : 'Freelance web development: landing pages, business websites, MVPs and custom web applications with a focus on conversion and technical SEO across Spain and Europe.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Barcelona',
@@ -56,7 +56,12 @@ export function getGlobalJsonLdSchemas(lang: Locale): Record<string, unknown>[] 
       latitude: 41.3874,
       longitude: 2.1686,
     },
-    areaServed: [{ '@type': 'City', name: 'Barcelona' }, { '@type': 'Country', name: 'Spain' }],
+    areaServed: [
+      { '@type': 'City', name: 'Barcelona' },
+      { '@type': 'City', name: 'Madrid' },
+      { '@type': 'Country', name: 'Spain' },
+      { '@type': 'Organization', name: 'European Union' }
+    ],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: Math.round(avgRating * 10) / 10,

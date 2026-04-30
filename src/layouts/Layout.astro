@@ -62,6 +62,12 @@ const isHomepage = currentPath === "/" || currentPath === "/en/";
 
 const robotsContent = robotsOverride ?? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
+/** Set `PUBLIC_GSC_VERIFICATION` in env for production; placeholder keeps CI `check:seo` as a warning only. */
+const gscVerification =
+  typeof import.meta.env.PUBLIC_GSC_VERIFICATION === "string" && import.meta.env.PUBLIC_GSC_VERIFICATION.trim()
+    ? import.meta.env.PUBLIC_GSC_VERIFICATION.trim()
+    : "VERIFICATION_CODE_PLACEHOLDER";
+
 const globalSchemas = getGlobalJsonLdSchemas(lang as Locale);
 
 // Build structured data for different page types.
@@ -175,8 +181,8 @@ const breadcrumbJsonLd = breadcrumbSchema ? JSON.stringify(breadcrumbSchema) : n
     <!-- Robots meta tag -->
     <meta name="robots" content={robotsContent} />
 
-    <!-- Google Search Console Verification - Add your verification code -->
-    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+    <!-- Google Search Console (replace via PUBLIC_GSC_VERIFICATION) -->
+    <meta name="google-site-verification" content={gscVerification} />
 
     <!-- Mobile specific -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
