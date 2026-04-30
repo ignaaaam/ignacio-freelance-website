@@ -1,0 +1,107 @@
+---
+/**
+ * Hub internal links for city developer landings (ES + EN).
+ * Excludes the current path and shows a small fixed set of related URLs + blog + services.
+ */
+type Lang = 'es' | 'en';
+
+interface Props {
+  lang: Lang;
+  /** e.g. '/desarrollador-web-madrid' or '/en/web-developer-madrid' */
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+const normalize = (p: string) => (p.endsWith('/') && p.length > 1 ? p.slice(0, -1) : p);
+const cur = normalize(currentPath);
+
+const esEntries = [
+  { href: '/desarrollador-web-barcelona', label: 'Barcelona' },
+  { href: '/desarrollador-web-madrid', label: 'Madrid' },
+  { href: '/desarrollador-web-valencia', label: 'Valencia' },
+  { href: '/desarrollador-web-sevilla', label: 'Sevilla' },
+  { href: '/desarrollador-web-malaga', label: 'Málaga' },
+  { href: '/desarrollador-web-bilbao', label: 'Bilbao' },
+  { href: '/desarrollador-web-zaragoza', label: 'Zaragoza' },
+  { href: '/desarrollador-web-murcia', label: 'Murcia' },
+  { href: '/desarrollador-web-palma-mallorca', label: 'Palma de Mallorca' },
+  { href: '/desarrollador-web-remoto-espana', label: 'Remoto (España)' },
+  { href: '/desarrollador-web-espana', label: 'Toda España' },
+];
+
+const enEntries = [
+  { href: '/en/web-developer-barcelona', label: 'Barcelona' },
+  { href: '/en/web-developer-madrid', label: 'Madrid' },
+  { href: '/en/web-developer-valencia', label: 'Valencia' },
+  { href: '/en/web-developer-sevilla', label: 'Seville' },
+  { href: '/en/web-developer-malaga', label: 'Malaga' },
+  { href: '/en/web-developer-bilbao', label: 'Bilbao' },
+  { href: '/en/web-developer-zaragoza', label: 'Zaragoza' },
+  { href: '/en/web-developer-murcia', label: 'Murcia' },
+  { href: '/en/web-developer-palma-mallorca', label: 'Palma de Mallorca' },
+  { href: '/en/remote-web-developer-spain', label: 'Remote (Spain)' },
+  { href: '/en/web-developer-spain', label: 'Spain' },
+  { href: '/en/web-developer-alicante', label: 'Alicante' },
+];
+
+const cityLinks = lang === 'es' ? esEntries : enEntries;
+const otherCities = cityLinks.filter((x) => normalize(x.href) !== cur).slice(0, 5);
+
+const blogHref = lang === 'es' ? '/blog/guia-precios-pagina-web-espana-2026' : '/en/blog';
+const blogLabel =
+  lang === 'es' ? 'Guía de precios web España 2026 (blog)' : 'Web development blog';
+
+const servicesHref = lang === 'es' ? '/servicios' : '/en/services';
+const servicesLabel = lang === 'es' ? 'Servicios' : 'Services';
+
+const pricingHref = lang === 'es' ? '/cuanto-cuesta-pagina-web' : '/en/how-much-does-website-cost';
+const pricingLabel = lang === 'es' ? 'Cuánto cuesta una página web' : 'How much does a website cost';
+---
+
+<section class="mt-12 sm:mt-16 border border-[var(--color-border)] rounded-xl p-5 sm:p-6 bg-[var(--color-secondary)]/40" aria-labelledby="city-internal-links-heading">
+  <h2 id="city-internal-links-heading" class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
+    {lang === 'es' ? 'Enlaces útiles' : 'Useful links'}
+  </h2>
+  <p class="text-sm text-[var(--color-text-muted)] mb-4">
+    {
+      lang === 'es'
+        ? 'Otras ciudades, servicios y una guía del blog para profundizar.'
+        : 'Other cities, services and a blog guide to go deeper.'
+    }
+  </p>
+  <div class="grid sm:grid-cols-2 gap-3 text-sm">
+    <div>
+      <h3 class="font-semibold mb-2">{lang === 'es' ? 'Más ciudades' : 'More cities'}</h3>
+      <ul class="space-y-1.5 list-none p-0 m-0">
+        {otherCities.map((item) => (
+          <li>
+            <a href={item.href} class="text-accent hover:underline">
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-2">{lang === 'es' ? 'Servicios y guías' : 'Services & guides'}</h3>
+      <ul class="space-y-1.5 list-none p-0 m-0">
+        <li>
+          <a href={servicesHref} class="text-accent hover:underline">
+            {servicesLabel}
+          </a>
+        </li>
+        <li>
+          <a href={pricingHref} class="text-accent hover:underline">
+            {pricingLabel}
+          </a>
+        </li>
+        <li>
+          <a href={blogHref} class="text-accent hover:underline">
+            {blogLabel}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

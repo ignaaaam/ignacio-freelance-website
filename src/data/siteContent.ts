@@ -197,7 +197,8 @@ export const siteContent: Record<Locale, HomeContent> = {
     },
     hero: {
       eyebrow: 'Desarrollador web freelance en Barcelona — remoto para toda España',
-      title: 'Creo webs, landings y MVPs que explican mejor tu oferta y facilitan el siguiente paso.',
+      title:
+        'Desarrollador web en Barcelona: creo webs, landings y MVPs que explican mejor tu oferta y facilitan el siguiente paso.',
       subtitle:
         'Si necesitas una web de negocio, una landing o un producto inicial con criterio comercial y una base técnica sólida, puedo ayudarte a definirlo y construirlo sin capas innecesarias.',
       primaryCta: 'Cuéntame tu proyecto',
