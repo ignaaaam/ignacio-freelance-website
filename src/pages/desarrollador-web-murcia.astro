@@ -3,47 +3,55 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
 import StickyCTA from '../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = "Desarrollador Web Murcia | Freelance Full Stack | Ignacio Amat";
-const description = "Desarrollador web freelance para empresas de la Región de Murcia. Landing pages, webs corporativas y e-commerce desde 800€. Trabajo en remoto con empresas de Murcia, Cartagena y Lorca. Presupuesto gratuito.";
+const title = "Desarrollador Web Murcia 2026 | Freelance | Ignacio Amat";
+const description = "Desarrollador web freelance en la Región de Murcia. Webs, landings y ecommerce desde 800€. Murcia, Cartagena y Lorca. Presupuesto gratis en 24h.";
 const canonicalUrl = "/desarrollador-web-murcia";
 const keywords = ["desarrollador web Murcia", "diseño web Murcia", "programador web Murcia", "freelance web Murcia", "página web Región de Murcia", "web Cartagena", "desarrollo web Lorca", "crear página web Murcia"];
 
-const personSchema = {
+const localBusinessSchema = {
 	"@context": "https://schema.org",
-	"@type": "Person",
-	"name": "Ignacio Amat",
-	"jobTitle": "Desarrollador Web Freelance",
-	"url": baseUrl,
-	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development"],
+	"@type": "LocalBusiness",
+	"@id": `${baseUrl}${canonicalUrl}#localbusiness`,
+	"name": "Ignacio Amat — Desarrollador Web Freelance Murcia",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/images/og-image.png`,
+	"description": description,
+	"priceRange": "€€",
+	"telephone": "+34-000-000-000",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Murcia",
+		"addressRegion": "Región de Murcia",
+		"addressCountry": "ES"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": 37.9922,
+		"longitude": -1.1307
+	},
+	"areaServed": [
+		{ "@type": "City", "name": "Murcia" },
+		{ "@type": "AdministrativeArea", "name": "Región de Murcia" },
+		{ "@type": "Country", "name": "España" }
+	],
+	"availableLanguage": ["Spanish", "English"],
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
-		"name": "Servicios de desarrollo web para la Región de Murcia",
+		"name": "Servicios de desarrollo web en la Región de Murcia",
 		"itemListElement": [
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages para empresas de Murcia" } },
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas para Murcia y Cartagena" } },
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce para exportadoras y PYMES de Murcia" } }
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages" }, "price": "800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas" }, "price": "1800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones Laravel y MVPs" }, "price": "3000", "priceCurrency": "EUR" }
 		]
-	}
-};
-
-const serviceSchema = {
-	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Desarrollo Web",
-	"provider": {
-		"@type": "Person",
-		"name": "Ignacio Amat",
-		"url": baseUrl
 	},
-	"areaServed": {
-		"@type": "City",
-		"name": "Murcia"
-	},
-	"offers": {
-		"@type": "Offer",
-		"priceRange": "800€ - 6.000€+"
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "5",
+		"bestRating": "5"
 	}
 };
 
@@ -111,22 +119,7 @@ const faqSchema = {
 	]
 };
 
-const localBusinessSchema = {
-	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
-	"name": "Ignacio Amat — Desarrollador Web Murcia",
-	"url": `${baseUrl}${canonicalUrl}`,
-	"image": `${baseUrl}/og-image.png`,
-	"priceRange": "€€",
-	"currenciesAccepted": "EUR",
-	"serviceArea": { "@type": "City", "name": "Murcia" },
-	"areaServed": { "@type": "City", "name": "Murcia" },
-	"address": { "@type": "PostalAddress", "addressLocality": "Murcia", "addressRegion": "Región de Murcia", "addressCountry": "ES" },
-	"availableLanguage": ["Spanish", "English"],
-	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
-};
-
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
 	es: canonicalUrl,
@@ -334,6 +327,10 @@ const alternateUrls = {
 				</div>
 			</div>
 		</section>
+
+		<div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+			<SeoCityInternalLinks lang="es" currentPath={canonicalUrl} />
+		</div>
 
 		<Contact />
 		<StickyCTA />

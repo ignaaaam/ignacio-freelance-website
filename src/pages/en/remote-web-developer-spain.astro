@@ -3,47 +3,63 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Remote Freelance Web Developer Spain | Full-Stack | Ignacio Amat';
-const description = 'Remote freelance full-stack web developer serving the whole of Spain. Clear methodology, no unnecessary meetings, real results. Working with companies in Barcelona, Madrid, Valencia, Sevilla and every Spanish city. Free quote in 24h.';
+const title = 'Remote Freelance Web Developer Spain 2026 | Ignacio Amat';
+const description = 'Remote freelance web developer for the whole of Spain. Business websites, landings and apps with clear scope and measurable results. Free quote in 24h.';
 const canonicalUrl = '/en/remote-web-developer-spain';
 const keywords = ['remote web developer Spain', 'freelance web developer Spain', 'remote full-stack developer Spain', 'hire remote web developer', 'web developer remote Spain', 'freelance remote programmer Spain'];
 
-const personSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Remote Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'knowsAbout': ['Remote Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development', 'Remote Collaboration']
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Remote Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Remote Freelance Web Developer (Spain)',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Barcelona',
+    addressRegion: 'Catalonia',
+    addressCountry: 'ES',
   },
-  'areaServed': [
-    { '@type': 'Country', 'name': 'Spain' },
-    { '@type': 'City', 'name': 'Barcelona' },
-    { '@type': 'City', 'name': 'Madrid' },
-    { '@type': 'City', 'name': 'Valencia' },
-    { '@type': 'City', 'name': 'Sevilla' },
-    { '@type': 'City', 'name': 'Málaga' },
-    { '@type': 'City', 'name': 'Bilbao' },
-    { '@type': 'City', 'name': 'Zaragoza' },
-    { '@type': 'City', 'name': 'Murcia' },
-    { '@type': 'City', 'name': 'Palma de Mallorca' }
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 41.3874,
+    longitude: 2.1686,
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'Spain' },
+    { '@type': 'City', name: 'Barcelona' },
+    { '@type': 'City', name: 'Madrid' },
+    { '@type': 'City', name: 'Valencia' },
+    { '@type': 'City', name: 'Seville' },
+    { '@type': 'City', name: 'Malaga' },
+    { '@type': 'City', name: 'Bilbao' },
+    { '@type': 'City', name: 'Zaragoza' },
+    { '@type': 'City', name: 'Murcia' },
+    { '@type': 'City', name: 'Palma de Mallorca' },
   ],
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  availableLanguage: ['English', 'Spanish', 'Catalan'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Remote web development for companies in Spain',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -110,33 +126,7 @@ const faqSchema = {
   ]
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  'name': 'Ignacio Amat — Remote Web Developer Spain',
-  'url': `${baseUrl}${canonicalUrl}`,
-  'image': `${baseUrl}/og-image.png`,
-  'priceRange': 'EUR-EUR',
-  'currenciesAccepted': 'EUR',
-  'serviceArea': { '@type': 'Country', 'name': 'Spain' },
-  'areaServed': [
-    { '@type': 'Country', 'name': 'Spain' },
-    { '@type': 'City', 'name': 'Barcelona' },
-    { '@type': 'City', 'name': 'Madrid' },
-    { '@type': 'City', 'name': 'Valencia' },
-    { '@type': 'City', 'name': 'Sevilla' },
-    { '@type': 'City', 'name': 'Málaga' },
-    { '@type': 'City', 'name': 'Bilbao' },
-    { '@type': 'City', 'name': 'Zaragoza' },
-    { '@type': 'City', 'name': 'Murcia' },
-    { '@type': 'City', 'name': 'Palma de Mallorca' }
-  ],
-  'address': { '@type': 'PostalAddress', 'addressCountry': 'ES' },
-  'availableLanguage': ['English', 'Spanish', 'Catalan'],
-  'sameAs': ['https://www.linkedin.com/in/ignacio-amat-urbina-789244223/', 'https://github.com/ignaaaam']
-};
-
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-remoto-espana',
@@ -509,6 +499,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />

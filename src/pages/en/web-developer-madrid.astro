@@ -3,39 +3,56 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Web Developer Madrid | Freelance Full-Stack | Ignacio Amat';
-const description = 'Freelance web developer for companies in Madrid. Landing pages, business websites, and web applications from EUR800. Remote collaboration and free quote.';
+const title = 'Freelance Web Developer Madrid 2026 | Ignacio Amat';
+const description = 'Professional web design and development for companies in Madrid. Landing pages, business websites and custom apps from €800. Free quote in 24h.';
 const canonicalUrl = '/en/web-developer-madrid';
 const keywords = ['web developer madrid', 'freelance web developer madrid', 'website development madrid', 'business website madrid', 'landing page madrid', 'web design madrid'];
 
-const personSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Madrid',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Madrid',
+    addressRegion: 'Community of Madrid',
+    addressCountry: 'ES',
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Madrid'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 40.4168,
+    longitude: -3.7038,
   },
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  areaServed: [
+    { '@type': 'City', name: 'Madrid' },
+    { '@type': 'AdministrativeArea', name: 'Community of Madrid' },
+    { '@type': 'Country', name: 'Spain' },
+  ],
+  availableLanguage: ['English', 'Spanish'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Madrid',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -78,7 +95,7 @@ const faqSchema = {
   ]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-madrid',
@@ -100,10 +117,10 @@ const alternateUrls = {
     <section class="py-12 sm:py-16 md:py-20 content-page">
       <div class="container px-4 sm:px-6 content-page__container">
         <div class="max-w-4xl mx-auto content-page__inner">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Madrid</h1>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create Website in Madrid for your Business</h1>
 
           <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-            Need a website that helps your Madrid business generate leads and sales? I build fast,
+            Need a professional website for your Madrid business that actually generates leads and sales? I build fast,
             SEO-ready websites and web applications focused on real business outcomes.
           </p>
 
@@ -173,6 +190,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />

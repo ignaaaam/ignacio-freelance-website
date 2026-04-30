@@ -3,39 +3,56 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Web Developer Palma Mallorca | Freelance Full-Stack | Ignacio Amat';
-const description = 'Freelance web developer for companies in Palma de Mallorca and the Balearic Islands. Multilingual websites (ES/CAT/EN/DE) for boutique hotels, luxury villas, yacht charters and restaurants from EUR800. Remote collaboration and free quote.';
+const title = 'Web Developer Palma de Mallorca 2026 | Ignacio Amat';
+const description = 'Freelance web developer in Palma de Mallorca and Balearic Islands. Multilingual sites (ES/CAT/EN/DE) for hotels, villas and yacht charters from €800.';
 const canonicalUrl = '/en/web-developer-palma-mallorca';
 const keywords = ['web developer Palma Mallorca', 'freelance web developer Balearic Islands', 'website development Mallorca', 'hotel website Mallorca', 'yacht charter website Balearics', 'web design Ibiza Menorca', 'multilingual website Mallorca'];
 
-const personSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development', 'Multilingual Websites', 'Tourism Tech']
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Palma de Mallorca',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Palma',
+    addressRegion: 'Balearic Islands',
+    addressCountry: 'ES',
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Palma de Mallorca'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 39.5696,
+    longitude: 2.6502,
   },
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  areaServed: [
+    { '@type': 'City', name: 'Palma de Mallorca' },
+    { '@type': 'AdministrativeArea', name: 'Balearic Islands' },
+    { '@type': 'Country', name: 'Spain' },
+  ],
+  availableLanguage: ['English', 'Spanish', 'Catalan', 'German'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Palma and Balearic Islands',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -86,7 +103,7 @@ const faqSchema = {
   ]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-palma-mallorca',
@@ -254,6 +271,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />

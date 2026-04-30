@@ -3,10 +3,11 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Web Developer Spain | Freelance Full-Stack for Businesses | Ignacio Amat';
-const description = 'Freelance web developer for companies in any city or town in Spain. Landing pages, business websites, ecommerce, and custom web apps from EUR800.';
+const title = 'Freelance Web Developer Spain 2026 | Ignacio Amat';
+const description = 'Freelance web developer for companies anywhere in Spain. Landing pages, business websites, ecommerce and apps from €800. Remote. Free quote in 24h.';
 const canonicalUrl = '/en/web-developer-spain';
 const keywords = [
   'web developer spain',
@@ -16,23 +17,49 @@ const keywords = [
   'hire web developer spain'
 ];
 
-const serviceSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Freelance Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Spain',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Barcelona',
+    addressRegion: 'Catalonia',
+    addressCountry: 'ES',
   },
-  'areaServed': {
-    '@type': 'Country',
-    'name': 'Spain'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 41.3874,
+    longitude: 2.1686,
   },
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  areaServed: [
+    { '@type': 'Country', name: 'Spain' },
+    { '@type': 'City', name: 'Barcelona' },
+    { '@type': 'City', name: 'Madrid' },
+    { '@type': 'City', name: 'Valencia' },
+  ],
+  availableLanguage: ['English', 'Spanish'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Spain',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -75,7 +102,7 @@ const faqSchema = {
   ]
 };
 
-const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-espana',
@@ -173,6 +200,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />

@@ -3,39 +3,56 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Web Developer Sevilla | Freelance Full-Stack | Ignacio Amat';
-const description = 'Freelance web developer for companies in Sevilla and Andalusia. Landing pages, business websites, and web applications from EUR800. Remote collaboration and free quote.';
+const title = 'Freelance Web Developer Seville 2026 | Ignacio Amat';
+const description = 'Professional web design and development for companies in Sevilla and Andalusia. Landing pages, business websites and e-commerce from €800. Free quote.';
 const canonicalUrl = '/en/web-developer-sevilla';
 const keywords = ['web developer sevilla', 'freelance web developer sevilla', 'website development sevilla', 'business website sevilla', 'landing page sevilla'];
 
-const personSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Seville',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Seville',
+    addressRegion: 'Andalusia',
+    addressCountry: 'ES',
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Sevilla'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 37.3891,
+    longitude: -5.9845,
   },
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  areaServed: [
+    { '@type': 'City', name: 'Seville' },
+    { '@type': 'AdministrativeArea', name: 'Andalusia' },
+    { '@type': 'Country', name: 'Spain' },
+  ],
+  availableLanguage: ['English', 'Spanish'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Seville',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -78,7 +95,7 @@ const faqSchema = {
   ]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-sevilla',
@@ -100,11 +117,11 @@ const alternateUrls = {
     <section class="py-12 sm:py-16 md:py-20 content-page">
       <div class="container px-4 sm:px-6 content-page__container">
         <div class="max-w-4xl mx-auto content-page__inner">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Sevilla</h1>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create Website in Sevilla for your Business</h1>
 
           <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-            I build business websites for companies in Sevilla that are fast, clear,
-            and focused on generating more qualified inquiries.
+            Need a professional website for your Sevilla or Andalusia business that actually generates leads and sales? 
+            I build fast, SEO-ready websites and web applications focused on real business outcomes. Free quote in 24h.
           </p>
 
           <div class="flex flex-wrap gap-3 mb-8">
@@ -173,6 +190,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />

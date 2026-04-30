@@ -3,39 +3,56 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Web Developer Murcia | Freelance Full-Stack | Ignacio Amat';
-const description = 'Freelance web developer for companies in the Region of Murcia. Landing pages, business websites, and multilingual ecommerce from EUR800. Remote collaboration with Murcia, Cartagena, and Lorca. Free quote.';
+const title = 'Freelance Web Developer Murcia 2026 | Ignacio Amat';
+const description = 'Freelance web developer in the Region of Murcia. Business websites, landings and multilingual ecommerce from €800. Murcia, Cartagena, Lorca. Free quote.';
 const canonicalUrl = '/en/web-developer-murcia';
 const keywords = ['web developer murcia', 'freelance web developer murcia', 'website development murcia', 'business website murcia', 'landing page murcia', 'web design murcia', 'web developer cartagena', 'web developer lorca'];
 
-const personSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Murcia',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Murcia',
+    addressRegion: 'Region of Murcia',
+    addressCountry: 'ES',
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Murcia'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 37.9922,
+    longitude: -1.1307,
   },
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  areaServed: [
+    { '@type': 'City', name: 'Murcia' },
+    { '@type': 'AdministrativeArea', name: 'Region of Murcia' },
+    { '@type': 'Country', name: 'Spain' },
+  ],
+  availableLanguage: ['English', 'Spanish'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Murcia',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -94,7 +111,7 @@ const faqSchema = {
   ]
 };
 
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-murcia',
@@ -240,6 +257,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />

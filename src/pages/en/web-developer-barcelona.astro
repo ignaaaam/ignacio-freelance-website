@@ -3,29 +3,55 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = "Freelance web developer in Barcelona for business websites and landing pages | Ignacio Amat";
-const description = "Freelance web developer for Barcelona-based companies. Landing pages, business websites, redesigns, Laravel and technical improvements focused on clarity, conversion and performance.";
+const title = "Freelance Web Developer Barcelona 2026 | Ignacio Amat";
+const description = "Freelance web developer in Barcelona. Landing pages, business websites and Laravel MVPs from €800. Free quote in 24h, no commitment.";
 const canonicalUrl = "/en/web-developer-barcelona";
-const keywords = ["web developer Barcelona", "freelance web Barcelona", "landing page Barcelona", "business website Barcelona", "website redesign Barcelona", "create website Barcelona"];
+const keywords = ["web developer Barcelona", "freelance web Barcelona", "Barcelona web design", "landing page Barcelona", "business website Barcelona", "Laravel developer Barcelona"];
 
 const serviceSchema = {
 	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
-	"name": "Ignacio Amat - Web development for companies in Barcelona",
+	"@type": "LocalBusiness",
+	"@id": `${baseUrl}${canonicalUrl}#localbusiness`,
+	"name": "Ignacio Amat — Freelance Web Developer Barcelona",
 	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/images/og-image.png`,
 	"description": description,
-	"provider": {
-		"@type": "Person",
-		"name": "Ignacio Amat",
-		"url": baseUrl
+	"priceRange": "€€",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Barcelona",
+		"addressRegion": "Catalonia",
+		"addressCountry": "ES"
 	},
-	"areaServed": {
-		"@type": "City",
-		"name": "Barcelona"
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": 41.3874,
+		"longitude": 2.1686
 	},
-	"availableLanguage": ["English", "Spanish"]
+	"areaServed": [
+		{ "@type": "City", "name": "Barcelona" },
+		{ "@type": "AdministrativeArea", "name": "Catalonia" },
+		{ "@type": "Country", "name": "Spain" }
+	],
+	"availableLanguage": ["English", "Spanish", "Catalan"],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Web development services in Barcelona",
+		"itemListElement": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages" }, "price": "800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business websites" }, "price": "1800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laravel applications and MVPs" }, "price": "3000", "priceCurrency": "EUR" }
+		]
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "5",
+		"bestRating": "5"
+	}
 };
 
 const breadcrumbSchema = {
@@ -230,6 +256,10 @@ const alternateUrls = {
 				</div>
 			</div>
 		</section>
+
+		<div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+			<SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+		</div>
 
 		<Contact />
 		<StickyCTA />

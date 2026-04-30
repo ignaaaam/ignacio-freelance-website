@@ -3,29 +3,56 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
 import StickyCTA from '../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = "Desarrollador web freelance en Barcelona para webs de negocio y landings | Ignacio Amat";
-const description = "Desarrollador web freelance para empresas de Barcelona. Landing pages, webs de negocio, rediseños, Laravel y mejoras técnicas con foco en claridad, conversión y rendimiento.";
+const title = "Desarrollador Web Freelance Barcelona 2026 | Ignacio Amat";
+const description = "Diseño y desarrollo de páginas web en Barcelona. Landing pages, webs corporativas y MVPs Laravel desde 800€. Presupuesto en 24h, sin compromiso.";
 const canonicalUrl = "/desarrollador-web-barcelona";
-const keywords = ["desarrollador web Barcelona", "freelance web Barcelona", "landing page Barcelona", "web empresa Barcelona", "rediseño web Barcelona", "crear pagina web Barcelona"];
+const keywords = ["desarrollador web Barcelona", "freelance web Barcelona", "programador web Barcelona", "diseñador web Barcelona", "landing page Barcelona", "web empresa Barcelona", "crear pagina web Barcelona"];
 
-const serviceSchema = {
+const localBusinessSchema = {
 	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
-	"name": "Ignacio Amat - Desarrollo web para empresas en Barcelona",
+	"@type": "LocalBusiness",
+	"@id": `${baseUrl}${canonicalUrl}#localbusiness`,
+	"name": "Ignacio Amat — Desarrollador Web Freelance Barcelona",
 	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/images/og-image.png`,
 	"description": description,
-	"provider": {
-		"@type": "Person",
-		"name": "Ignacio Amat",
-		"url": baseUrl
+	"priceRange": "€€",
+	"telephone": "+34-000-000-000",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Barcelona",
+		"addressRegion": "Catalonia",
+		"addressCountry": "ES"
 	},
-	"areaServed": {
-		"@type": "City",
-		"name": "Barcelona"
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": 41.3874,
+		"longitude": 2.1686
 	},
-	"availableLanguage": ["Spanish", "English"]
+	"areaServed": [
+		{ "@type": "City", "name": "Barcelona" },
+		{ "@type": "AdministrativeArea", "name": "Cataluña" },
+		{ "@type": "Country", "name": "España" }
+	],
+	"availableLanguage": ["Spanish", "English", "Catalan"],
+	"hasOfferCatalog": {
+		"@type": "OfferCatalog",
+		"name": "Servicios de desarrollo web en Barcelona",
+		"itemListElement": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages" }, "price": "800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas" }, "price": "1800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones Laravel y MVPs" }, "price": "3000", "priceCurrency": "EUR" }
+		]
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "5",
+		"bestRating": "5"
+	}
 };
 
 const breadcrumbSchema = {
@@ -85,7 +112,7 @@ const faqSchema = {
 		}
 	]
 };
-const allSchemas = [serviceSchema, breadcrumbSchema, faqSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 // Manual alternate URLs for service pages
 const alternateUrls = {
@@ -107,10 +134,10 @@ const alternateUrls = {
 		<section class="py-12 sm:py-16 md:py-20 content-page">
 			<div class="container px-4 sm:px-6 content-page__container">
 				<div class="max-w-4xl mx-auto content-page__inner">
-					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Desarrollador web freelance en Barcelona</h1>
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Diseño y creación de páginas web en Barcelona</h1>
 					
 					<p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-						Trabajo con empresas de Barcelona que necesitan una web más clara para vender servicios,
+						Trabajo con empresas de Barcelona que necesitan <a href="/crear-pagina-web-barcelona" class="text-theme-accent-strong font-bold hover:underline">crear una página web</a> clara para vender servicios,
 						una landing page para captar demanda o mejoras en una web que hoy no transmite bien
 						lo que ofrece.
 					</p>
@@ -245,6 +272,10 @@ const alternateUrls = {
 				</div>
 			</div>
 		</section>
+
+		<div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+			<SeoCityInternalLinks lang="es" currentPath={canonicalUrl} />
+		</div>
 
 		<Contact />
 		<StickyCTA />

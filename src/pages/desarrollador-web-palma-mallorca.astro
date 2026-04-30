@@ -3,48 +3,55 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Contact from '../components/Contact.astro';
 import StickyCTA from '../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = "Desarrollador Web Palma Mallorca | Freelance Full Stack | Ignacio Amat";
-const description = "Desarrollador web freelance en Palma de Mallorca y Baleares. Webs multilingües (ES/CAT/EN/DE) para hoteles, villas, charters náuticos y restaurantes desde 800€. Presupuesto gratuito.";
+const title = "Desarrollador Web Palma de Mallorca 2026 | Ignacio Amat";
+const description = "Desarrollador web freelance en Palma y Baleares. Webs multilingües (ES/CAT/EN/DE) para hoteles, villas y charters desde 800€. Presupuesto gratis.";
 const canonicalUrl = "/desarrollador-web-palma-mallorca";
 const keywords = ["desarrollador web Palma de Mallorca", "diseño web Mallorca", "programador web Palma", "freelance web Baleares", "página web hoteles Mallorca", "web charter náutica Baleares", "desarrollador web Ibiza", "desarrollador web Menorca"];
 
-const personSchema = {
+const localBusinessSchema = {
 	"@context": "https://schema.org",
-	"@type": "Person",
-	"name": "Ignacio Amat",
-	"jobTitle": "Desarrollador Web Freelance",
-	"url": baseUrl,
-	"knowsAbout": ["Desarrollo Web", "Diseño Web", "SEO", "E-commerce", "Frontend Development", "Webs Multilingües", "Turismo Digital"],
+	"@type": "LocalBusiness",
+	"@id": `${baseUrl}${canonicalUrl}#localbusiness`,
+	"name": "Ignacio Amat — Desarrollador Web Freelance Palma de Mallorca",
+	"url": `${baseUrl}${canonicalUrl}`,
+	"image": `${baseUrl}/images/og-image.png`,
+	"description": description,
+	"priceRange": "€€",
+	"telephone": "+34-000-000-000",
+	"address": {
+		"@type": "PostalAddress",
+		"addressLocality": "Palma",
+		"addressRegion": "Islas Baleares",
+		"addressCountry": "ES"
+	},
+	"geo": {
+		"@type": "GeoCoordinates",
+		"latitude": 39.5696,
+		"longitude": 2.6502
+	},
+	"areaServed": [
+		{ "@type": "City", "name": "Palma de Mallorca" },
+		{ "@type": "AdministrativeArea", "name": "Islas Baleares" },
+		{ "@type": "Country", "name": "España" }
+	],
+	"availableLanguage": ["Spanish", "English", "Catalan", "German"],
 	"hasOfferCatalog": {
 		"@type": "OfferCatalog",
-		"name": "Servicios de desarrollo web para Palma de Mallorca y Baleares",
+		"name": "Servicios de desarrollo web en Palma y Baleares",
 		"itemListElement": [
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs multilingües para hoteles boutique de Mallorca" } },
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs para villas de lujo y rentals vacacionales" } },
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs para charters náuticos y alquiler de yates en Baleares" } },
-			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-commerce para restaurantes gourmet y bodegas mallorquinas" } }
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing pages" }, "price": "800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webs corporativas" }, "price": "1800", "priceCurrency": "EUR" },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aplicaciones Laravel y MVPs" }, "price": "3000", "priceCurrency": "EUR" }
 		]
-	}
-};
-
-const serviceSchema = {
-	"@context": "https://schema.org",
-	"@type": "Service",
-	"serviceType": "Desarrollo Web",
-	"provider": {
-		"@type": "Person",
-		"name": "Ignacio Amat",
-		"url": baseUrl
 	},
-	"areaServed": {
-		"@type": "City",
-		"name": "Palma de Mallorca"
-	},
-	"offers": {
-		"@type": "Offer",
-		"priceRange": "800€ - 6.000€+"
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "5",
+		"reviewCount": "5",
+		"bestRating": "5"
 	}
 };
 
@@ -112,22 +119,7 @@ const faqSchema = {
 	]
 };
 
-const localBusinessSchema = {
-	"@context": "https://schema.org",
-	"@type": "ProfessionalService",
-	"name": "Ignacio Amat — Desarrollador Web Palma de Mallorca",
-	"url": `${baseUrl}${canonicalUrl}`,
-	"image": `${baseUrl}/og-image.png`,
-	"priceRange": "€€",
-	"currenciesAccepted": "EUR",
-	"serviceArea": { "@type": "City", "name": "Palma de Mallorca" },
-	"areaServed": { "@type": "City", "name": "Palma de Mallorca" },
-	"address": { "@type": "PostalAddress", "addressLocality": "Palma", "addressRegion": "Islas Baleares", "addressCountry": "ES" },
-	"availableLanguage": ["Spanish", "Catalan", "English", "German"],
-	"sameAs": ["https://www.linkedin.com/in/ignacio-amat-urbina-789244223/", "https://github.com/ignaaaam"]
-};
-
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
 	es: canonicalUrl,
@@ -370,6 +362,10 @@ const alternateUrls = {
 				</div>
 			</div>
 		</section>
+
+		<div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+			<SeoCityInternalLinks lang="es" currentPath={canonicalUrl} />
+		</div>
 
 		<Contact />
 		<StickyCTA />

@@ -3,39 +3,56 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Contact from '../../components/Contact.astro';
 import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
 
 const baseUrl = 'https://www.ignacioamatweb.com';
-const title = 'Web Developer Malaga | Freelance Full-Stack | Ignacio Amat';
-const description = 'Freelance web developer for companies in Malaga and the Costa del Sol. Landing pages, business websites, and ecommerce from EUR800. Remote collaboration, bilingual ES/EN, free quote.';
+const title = 'Freelance Web Developer Malaga 2026 | Ignacio Amat';
+const description = 'Professional web design and development for companies in Malaga and Costa del Sol. Landing pages, business websites and ecommerce from €800. Free quote.';
 const canonicalUrl = '/en/web-developer-malaga';
 const keywords = ['web developer malaga', 'freelance web developer malaga', 'website development malaga', 'costa del sol web developer', 'business website malaga', 'web design malaga'];
 
-const personSchema = {
+const localBusinessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  'name': 'Ignacio Amat',
-  'jobTitle': 'Freelance Full-Stack Web Developer',
-  'url': baseUrl,
-  'knowsAbout': ['Web Development', 'SEO', 'E-commerce', 'Frontend Development', 'Backend Development']
-};
-
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  'serviceType': 'Web Development',
-  'provider': {
-    '@type': 'Person',
-    'name': 'Ignacio Amat',
-    'url': baseUrl
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Malaga',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Malaga',
+    addressRegion: 'Andalusia',
+    addressCountry: 'ES',
   },
-  'areaServed': {
-    '@type': 'City',
-    'name': 'Malaga'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 36.7213,
+    longitude: -4.4214,
   },
-  'offers': {
-    '@type': 'Offer',
-    'priceRange': 'EUR800-EUR6000+'
-  }
+  areaServed: [
+    { '@type': 'City', name: 'Malaga' },
+    { '@type': 'AdministrativeArea', name: 'Costa del Sol' },
+    { '@type': 'Country', name: 'Spain' },
+  ],
+  availableLanguage: ['English', 'Spanish'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Malaga',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
 };
 
 const breadcrumbSchema = {
@@ -94,22 +111,7 @@ const faqSchema = {
   ]
 };
 
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  'name': 'Ignacio Amat — Web Developer Malaga',
-  'url': `${baseUrl}${canonicalUrl}`,
-  'image': `${baseUrl}/og-image.png`,
-  'priceRange': 'EUR800-EUR6000+',
-  'currenciesAccepted': 'EUR',
-  'serviceArea': { '@type': 'City', 'name': 'Malaga' },
-  'areaServed': { '@type': 'City', 'name': 'Malaga' },
-  'address': { '@type': 'PostalAddress', 'addressLocality': 'Malaga', 'addressRegion': 'Andalucia', 'addressCountry': 'ES' },
-  'availableLanguage': ['English', 'Spanish'],
-  'sameAs': ['https://www.linkedin.com/in/ignacio-amat-urbina-789244223/', 'https://github.com/ignaaaam']
-};
-
-const allSchemas = [personSchema, serviceSchema, breadcrumbSchema, faqSchema, localBusinessSchema];
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
 
 const alternateUrls = {
   es: '/desarrollador-web-malaga',
@@ -131,10 +133,10 @@ const alternateUrls = {
     <section class="py-12 sm:py-16 md:py-20 content-page">
       <div class="container px-4 sm:px-6 content-page__container">
         <div class="max-w-4xl mx-auto content-page__inner">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer for Companies in Malaga</h1>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Freelance Web Developer in Malaga for Your Business</h1>
 
           <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
-            Need a website that helps your Malaga or Costa del Sol business generate bookings, leads, and international sales?
+            Need a professional website for your Malaga or Costa del Sol business that actually generates leads and sales?
             I build fast, SEO-ready, bilingual websites and web applications focused on real business outcomes. Free quote, no commitment.
           </p>
 
@@ -289,6 +291,10 @@ const alternateUrls = {
         </div>
       </div>
     </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
 
     <Contact />
     <StickyCTA />
