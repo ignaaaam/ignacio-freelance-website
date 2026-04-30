@@ -1,0 +1,145 @@
+---
+import MarketingContentPage from '../../components/MarketingContentPage.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'React & Next.js Expert Spain 2026 | Ignacio Amat';
+const description =
+  'Hire a React and Next.js expert in Spain. High-performance frontends, server-side rendering, and scalable web applications for startups in USA, UK and Europe.';
+const canonicalUrl = '/en/react-nextjs-expert-spain';
+const keywords = [
+  'react expert spain',
+  'nextjs developer spain',
+  'remote react developer europe',
+  'hire nextjs expert',
+  'frontend engineer spain',
+  'react freelance developer',
+];
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'React & Next.js Development',
+  provider: {
+    '@type': 'Person',
+    name: 'Ignacio Amat',
+    url: baseUrl,
+    sameAs: [
+      'https://www.linkedin.com/in/ignacio-amat-urbina-789244223/',
+      'https://github.com/ignaaaam',
+    ],
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'USA' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Organization', name: 'European Union' }
+  ],
+  offers: {
+    '@type': 'Offer',
+    priceRange: 'EUR 3,000 - EUR 15,000+',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseUrl}/en/` },
+    { '@type': 'ListItem', position: 2, name: 'React & Next.js Expert', item: `${baseUrl}${canonicalUrl}` },
+  ],
+};
+
+const facts = [
+  { label: 'Core Tech', value: 'React 19, Next.js 15 (App Router), TypeScript, Tailwind CSS v4.' },
+  { label: 'Performance', value: '100/100 Lighthouse scores, Core Web Vitals optimization, zero-jank UI.' },
+  { label: 'Markets', value: 'USA, UK, Germany, Netherlands and Global Startups.' },
+];
+---
+
+<MarketingContentPage
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  alternateUrls={{ es: '/contratar-desarrollador-full-stack', en: canonicalUrl }}
+  additionalSchemas={[serviceSchema, breadcrumbSchema]}
+  badge="React & Next.js Specialist"
+  pageTitle="High-performance React and Next.js development for global startups"
+  lead="I build production-ready frontends that are fast, accessible, and easy to maintain. Based in Spain, working for the world."
+  primaryCta={{ label: 'Discuss your project', href: '#contacto' }}
+  secondaryCta={{ label: 'View GitHub', href: 'https://github.com/ignaaaam' }}
+  facts={facts}
+>
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why hire a React/Next.js specialist in Spain?</h2>
+    <p class="text-base sm:text-lg mb-4">
+      Startups in the US and UK are increasingly looking to Spain for top-tier engineering talent. 
+      You get the same level of technical excellence and communication quality as local hires, but with 
+      significant cost efficiency and a fresh perspective.
+    </p>
+    
+    <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Next.js 15 & App Router</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Leveraging Server Components, Streaming, and advanced Caching for maximum speed.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">TypeScript Architecture</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Type-safe codebases that reduce bugs and allow your team to scale with confidence.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Tailwind CSS v4</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Modern, maintainable styling that keeps your bundle size small and your design consistent.
+        </p>
+      </div>
+      <div class="card p-5">
+        <h3 class="text-lg font-semibold mb-2">Core Web Vitals</h3>
+        <p class="text-text-muted text-sm sm:text-base">
+          Deep focus on LCP, FID, and CLS to ensure your product ranks better and feels smoother.
+        </p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">What I bring to your team</h2>
+    <p class="text-base sm:text-lg mb-4">
+      I don't just "write code." I help you build a product. My experience with international teams 
+      allows me to integrate seamlessly into your workflow (Slack, Jira, GitHub) and provide 
+      valuable input on UX, performance, and scalability.
+    </p>
+
+    <h3 class="text-xl sm:text-2xl font-bold mt-8 mb-4">Tech Stack & Tools</h3>
+    <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-8 text-sm sm:text-base">
+      <li><strong>Frontend:</strong> React 19, Next.js (App & Pages Router), Astro, Remix.</li>
+      <li><strong>State & Data:</strong> TanStack Query, Redux Toolkit, Zustand, Zod.</li>
+      <li><strong>Styling:</strong> Tailwind CSS, Framer Motion, Radix UI, Shadcn/ui.</li>
+      <li><strong>Backend/API:</strong> Node.js, Next Auth, Prisma, Supabase, TRPC.</li>
+      <li><strong>Infrastructure:</strong> Vercel, AWS, Docker, CI/CD pipelines.</li>
+    </ul>
+
+    <div class="bg-secondary p-6 rounded-lg mt-10 mb-10">
+      <h3 class="text-xl font-bold mb-3">Ready to upgrade your frontend?</h3>
+      <p class="mb-4 text-sm sm:text-base">
+        Whether you need a full rewrite, a new feature set, or an MVP built from scratch, 
+        I can help you get there faster with high-quality React/Next.js code.
+      </p>
+      <p class="font-bold">Contact me for a technical consultation. Response within 24 business hours.</p>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Global Reach, Local Talent</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="/en/hire-full-stack-web-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+        <h4 class="font-bold mb-1">Full-Stack Development →</h4>
+        <p class="text-xs text-text-muted">Comprehensive solutions from UI to Database.</p>
+      </a>
+      <a href="/en/remote-web-developer-europe-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+        <h4 class="font-bold mb-1">Remote in Europe →</h4>
+        <p class="text-xs text-text-muted">Why hiring in Spain is the smart choice for UK/US companies.</p>
+      </a>
+    </div>
+  </div>
+</MarketingContentPage>

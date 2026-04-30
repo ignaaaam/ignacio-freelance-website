@@ -1,0 +1,171 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Hire Web Developer Europe 2026 | Ignacio Amat';
+const description = 'Hire a top-tier remote web developer in Europe. Expertise in React, Next.js and Laravel. CET timezone overlap, English-fluent, and high-quality code. Get a quote.';
+const canonicalUrl = '/en/hire-web-developer-europe';
+const keywords = ['hire web developer europe', 'remote developer europe', 'freelance software engineer europe', 'european web development services', 'hire remote team europe', 'best remote developers europe'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Remote Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'React', 'Next.js', 'Laravel', 'European Tech Market']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'European Remote Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': [
+    { '@type': 'Country', 'name': 'Germany' },
+    { '@type': 'Country', 'name': 'Netherlands' },
+    { '@type': 'Country', 'name': 'Sweden' },
+    { '@type': 'Country', 'name': 'Switzerland' },
+    { '@type': 'Country', 'name': 'Denmark' },
+    { '@type': 'Organization', 'name': 'European Union' }
+  ],
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR 2,500 - EUR 20,000+'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Hire Developer Europe', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-remoto-espana',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Reliable Remote Web Development Services in Europe</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Are you looking for a technical partner in Europe to build your next web product? 
+            I provide high-end freelance web development services with a focus on speed, reliability, and clear communication.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request a Consultation</a>
+            <a href="/en/services" class="btn-secondary">View My Work</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why companies in Germany, NL, and Northern Europe hire in Spain</h2>
+            <p class="text-base sm:text-lg mb-4">
+              The European tech landscape is highly integrated. Many companies in Central and Northern Europe 
+              choose to work with senior freelancers in Spain because:
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+              <li><strong>Cultural & Timezone Match:</strong> We share the same European business hours (CET/CEST) and professional work ethics.</li>
+              <li><strong>Cost-Performance Ratio:</strong> You get top-tier engineering expertise at rates that are significantly more sustainable than in Berlin, Amsterdam, or Stockholm.</li>
+              <li><strong>English Proficiency:</strong> I work daily in English-speaking environments, ensuring no communication gaps.</li>
+              <li><strong>EU Legal Framework:</strong> Simple B2B invoicing within the EU (VAT reverse charge) and strict adherence to GDPR.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">End-to-End Product Development</h2>
+            <p class="mb-4">
+              I don't just build websites; I build digital products. My workflow is designed to support 
+              European businesses from the initial concept to a production-ready launch.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-6 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Corporate & B2B</h3>
+                <p class="text-sm">High-performance business sites for consultancies, law firms, and service providers.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Startups & MVPs</h3>
+                <p class="text-sm">Rapid development of functional prototypes using React, Next.js, and Supabase.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Internal Dashboards</h3>
+                <p class="text-sm">Custom admin panels and CRMs built with Laravel to streamline your operations.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">SEO & Growth</h3>
+                <p class="text-sm">Technical SEO strategies to help your product gain visibility across European markets.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Seamless Remote Collaboration</h2>
+            <p class="mb-4">
+              My remote process is refined to be as effective as having an in-house developer:
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+              <li><strong>Deep Integration:</strong> I use your tools—Slack, GitHub, Notion, Trello.</li>
+              <li><strong>Regular Syncs:</strong> Weekly video updates and continuous async communication.</li>
+              <li><strong>Transparent Pricing:</strong> No hidden fees. Flat project fees or transparent hourly rates.</li>
+              <li><strong>Code Ownership:</strong> You own 100% of the code from day one.</li>
+            </ul>
+
+            <div class="bg-accent/10 p-6 rounded-lg mt-10 mb-10">
+              <h3 class="text-xl font-bold mb-3">Get your project started within 48 hours</h3>
+              <p class="mb-4 text-sm">
+                I am currently accepting new projects for the upcoming quarter. Contact me today to check 
+                availability and get a detailed proposal for your needs.
+              </p>
+              <p class="font-bold">Typical first response time: 4-6 business hours.</p>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related Tech Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a href="/en/react-nextjs-expert-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-1">React & Next.js Specialist →</h4>
+                <p class="text-xs">Advanced frontend development.</p>
+              </a>
+              <a href="/en/freelance-laravel-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-1">Laravel Development →</h4>
+                <p class="text-xs">Robust backend and business logic.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

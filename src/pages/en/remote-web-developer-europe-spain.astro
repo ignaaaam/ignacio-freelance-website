@@ -1,0 +1,170 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Remote Web Developer Europe 2026 | Ignacio Amat';
+const description = 'Hire a remote full-stack web developer in Europe (Spain). Specialized in React, Astro, Next.js and Laravel. European quality, competitive rates. Global availability.';
+const canonicalUrl = '/en/remote-web-developer-europe-spain';
+const keywords = ['remote web developer Europe', 'hire web developer Spain', 'freelance developer Europe', 'remote software engineer Europe', 'offshore developer Europe', 'hire Laravel developer Spain', 'React expert Spain'];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': 'Ignacio Amat',
+  'jobTitle': 'Remote Full-Stack Web Developer',
+  'url': baseUrl,
+  'knowsAbout': ['Web Development', 'React', 'Astro', 'Laravel', 'Next.js', 'Technical SEO', 'Remote Collaboration']
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  'serviceType': 'Remote Web Development',
+  'provider': {
+    '@type': 'Person',
+    'name': 'Ignacio Amat',
+    'url': baseUrl
+  },
+  'areaServed': [
+    { '@type': 'Country', 'name': 'USA' },
+    { '@type': 'Country', 'name': 'United Kingdom' },
+    { '@type': 'Country', 'name': 'Germany' },
+    { '@type': 'Country', 'name': 'France' },
+    { '@type': 'Organization', 'name': 'European Union' }
+  ],
+  'offers': {
+    '@type': 'Offer',
+    'priceRange': 'EUR 2500 - EUR 15000+',
+    'description': 'Project-based or retainer pricing for international clients'
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Remote Developer Europe', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const allSchemas = [personSchema, serviceSchema, breadcrumbSchema];
+
+const alternateUrls = {
+  es: '/desarrollador-web-remoto-espana',
+  en: canonicalUrl
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+  alternateUrls={alternateUrls}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Hire a Remote Web Developer in Europe (Spain)</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Looking for top-tier European talent without the London or San Francisco price tag? 
+            I am a full-stack web developer based in Spain, providing remote services to startups and businesses worldwide. 
+            European quality, CET time zone, and English-fluent collaboration.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Get in Touch</a>
+            <a href="https://www.linkedin.com/in/ignacio-amat-urbina-789244223/" target="_blank" rel="noopener" class="btn-secondary">View LinkedIn Profile</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Why hire a developer in Spain?</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Spain has become a leading hub for tech talent in Europe. By hiring a developer in Spain, you benefit from:
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+              <li><strong>Cost Efficiency:</strong> Competitive rates compared to US/UK/Northern Europe while maintaining high code standards.</li>
+              <li><strong>Cultural Alignment:</strong> Deep understanding of Western business processes and design aesthetics.</li>
+              <li><strong>Time Zone Advantage:</strong> Perfect overlap with European markets (CET) and a convenient 6-9 hour window for the USA.</li>
+              <li><strong>Legal Certainty:</strong> Working with a registered EU professional ensures GDPR compliance and easy invoicing.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Modern Stack for Scalable Products</h2>
+            <p class="mb-4">
+              I specialize in the technologies that drive modern, fast-loading web applications:
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-8">
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Frontend</h3>
+                <p class="text-sm">React, Next.js, Astro, TypeScript, Tailwind CSS. Focus on Core Web Vitals and accessibility.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Backend & Logic</h3>
+                <p class="text-sm">Node.js, Laravel (PHP), RESTful APIs, PostgreSQL, Supabase.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">E-commerce</h3>
+                <p class="text-sm">Custom Stripe integrations, headless commerce, and high-performance Shopify custom themes.</p>
+              </div>
+              <div class="bg-secondary p-4 rounded-lg">
+                <h3 class="font-bold mb-2">Performance & SEO</h3>
+                <p class="text-sm">Technical SEO, schema markup, and speed optimization to ensure your product ranks and converts.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Remote Collaboration Model</h2>
+            <p class="mb-4">
+              I have been working with international teams for years. My workflow is designed for transparency and results:
+            </p>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6">
+              <li><strong>Fluent Communication:</strong> Daily updates via Slack/Discord and weekly syncs via Zoom/Google Meet.</li>
+              <li><strong>Agile Process:</strong> Milestone-based delivery with continuous feedback loops.</li>
+              <li><strong>Transparency:</strong> Access to the Git repository and private staging environments from day one.</li>
+              <li><strong>Documentation:</strong> Clear handover with code documentation and Loom videos for non-technical team members.</li>
+            </ul>
+
+            <div class="bg-secondary p-6 rounded-lg mt-10 mb-10">
+              <h3 class="text-xl font-bold mb-3">Ready to scale your tech team?</h3>
+              <p class="mb-4 text-sm">
+                Whether you need a dedicated developer for a specific project or ongoing support for your product, 
+                I can help you build faster and better.
+              </p>
+              <p class="font-bold">Let's talk about your project goals. Response within 24 hours.</p>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a href="/en/hire-full-stack-web-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-1">Full-Stack Development →</h4>
+                <p class="text-xs">End-to-end web applications and MVPs.</p>
+              </a>
+              <a href="/en/freelance-laravel-developer" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h4 class="font-bold mb-1">Laravel Expert →</h4>
+                <p class="text-xs">Custom backend and API development with PHP/Laravel.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>

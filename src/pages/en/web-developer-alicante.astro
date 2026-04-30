@@ -1,0 +1,182 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Contact from '../../components/Contact.astro';
+import StickyCTA from '../../components/StickyGTA.astro';
+import SeoCityInternalLinks from '../../components/SeoCityInternalLinks.astro';
+
+const baseUrl = 'https://www.ignacioamatweb.com';
+const title = 'Web Developer Alicante 2026 | Ignacio Amat';
+const description = 'Professional web design and development for companies in Alicante and Costa Blanca. Bilingual ES/EN sites for international business. Free quote.';
+const canonicalUrl = '/en/web-developer-alicante';
+const keywords = ['web developer alicante', 'freelance web developer alicante', 'website development alicante', 'costa blanca web developer', 'web design alicante', 'bilingual website alicante'];
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${baseUrl}${canonicalUrl}#localbusiness`,
+  name: 'Ignacio Amat — Freelance Web Developer Alicante',
+  url: `${baseUrl}${canonicalUrl}`,
+  image: `${baseUrl}/images/og-image.png`,
+  description: description,
+  priceRange: '€€',
+  telephone: '+34-000-000-000',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Alicante',
+    addressRegion: 'Valencian Community',
+    addressCountry: 'ES',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 38.3452,
+    longitude: -0.481,
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Alicante' },
+    { '@type': 'AdministrativeArea', name: 'Valencian Community' },
+    { '@type': 'Country', name: 'Spain' },
+  ],
+  availableLanguage: ['English', 'Spanish'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Web development services in Alicante',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Landing pages' }, price: '800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business websites' }, price: '1800', priceCurrency: 'EUR' },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Laravel applications and MVPs' }, price: '3000', priceCurrency: 'EUR' },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '5',
+    bestRating: '5',
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': `${baseUrl}/en/` },
+    { '@type': 'ListItem', 'position': 2, 'name': 'Web Developer Alicante', 'item': `${baseUrl}${canonicalUrl}` }
+  ]
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': [
+    {
+      '@type': 'Question',
+      'name': 'How much does a freelance web developer cost in Alicante?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Prices typically start at EUR800 for landing pages, with business websites ranging from EUR1500 to EUR3500. I provide detailed, custom quotes for every project.'
+      }
+    },
+    {
+      '@type': 'Question',
+      'name': 'Do you specialize in bilingual websites for the international market?',
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': 'Yes. Alicante and Costa Blanca have a huge international community. I build high-performance bilingual websites (Spanish/English) that help you capture both local and foreign customers.'
+      }
+    }
+  ]
+};
+
+const allSchemas = [localBusinessSchema, breadcrumbSchema, faqSchema];
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang="en"
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  additionalSchemas={allSchemas}
+>
+  <Header />
+  <main>
+    <section class="py-12 sm:py-16 md:py-20 content-page">
+      <div class="container px-4 sm:px-6 content-page__container">
+        <div class="max-w-4xl mx-auto content-page__inner">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Create Website in Alicante for your Business</h1>
+
+          <p class="text-lg sm:text-xl text-text-muted mb-6 sm:mb-8">
+            Need a professional website that attracts international clients to your Alicante or Costa Blanca business? 
+            I build fast, bilingual, SEO-ready websites focused on results.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-8">
+            <a href="#contacto" class="btn-primary">Request Free Quote</a>
+            <a href="/en/services" class="btn-secondary">View Services</a>
+          </div>
+
+          <div class="prose prose-lg max-w-none content-page__prose mb-8 sm:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold mt-8 mb-4">Web design and development in Alicante</h2>
+            <p class="text-base sm:text-lg mb-4">
+              Alicante is a vibrant international hub. To succeed here, your business needs a digital presence that 
+              speaks multiple languages and ranks well in Google for both local and foreign searches.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-8">
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Bilingual Websites</h3>
+                <p class="text-sm sm:text-base">Perfectly translated and SEO-optimized sites for Spanish and English markets.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Real Estate Web Design</h3>
+                <p class="text-sm sm:text-base">High-performance catalogues for property developers and agencies in Costa Blanca.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Lead Generation Landings</h3>
+                <p class="text-sm sm:text-base">Optimized for conversion and paid advertising campaigns.</p>
+              </div>
+              <div class="bg-secondary p-4 sm:p-6 rounded-lg">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">E-commerce Stores</h3>
+                <p class="text-sm sm:text-base">Secure online shopping with international payment and shipping integrations.</p>
+              </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Why choose a freelance expert for Alicante?</h2>
+            <ul class="list-disc pl-5 sm:pl-6 space-y-2 mb-6 text-sm sm:text-base">
+              <li><strong>Direct collaboration:</strong> No agency layers, just direct communication with the developer.</li>
+              <li><strong>International focus:</strong> Expertise in multi-language SEO and global web standards.</li>
+              <li><strong>Competitive pricing:</strong> High-end quality at freelance rates.</li>
+              <li><strong>Modern stack:</strong> Using Astro, React, and Tailwind for unmatched speed.</li>
+            </ul>
+
+            <h2 class="text-2xl sm:text-3xl font-bold mt-10 mb-4">Related services and cities</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              <a href="/en/web-developer-valencia" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Valencia -></h3>
+                <p class="text-sm text-text-muted">Serving the Valencian Community region.</p>
+              </a>
+              <a href="/en/web-developer-spain" class="block p-4 bg-secondary rounded-lg hover:shadow-lg transition-all">
+                <h3 class="font-bold mb-1">Web Developer Spain -></h3>
+                <p class="text-sm text-text-muted">Nationwide remote services across all Spain.</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container px-4 sm:px-6 pb-8 max-w-4xl mx-auto">
+      <SeoCityInternalLinks lang="en" currentPath={canonicalUrl} />
+    </div>
+
+    <Contact />
+    <StickyCTA />
+  </main>
+</Layout>
+
+<style>
+  .text-text-muted { color: var(--color-text-muted); }
+  .bg-secondary { background-color: var(--color-secondary); }
+  .prose h2, .prose h3, .prose h4 { color: var(--color-text); }
+  .prose p, .prose li { color: var(--color-text); line-height: 1.8; }
+</style>
