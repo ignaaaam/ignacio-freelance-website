@@ -87,6 +87,19 @@ heroImageCredit: "Photo by {Photographer name} on Unsplash"
 
 Always include `heroImageAlt` with a meaningful description (for SEO and accessibility) and `heroImageCredit` crediting the source.
 
+### Blog / news (editorial workflow)
+
+When adding **news-style** or topical articles:
+
+1. **Anti-duplicados:** Before writing, scan existing posts under `src/content/blog/es/` and `src/content/blog/en/` (titles, topics, and shared `group` values). Do not publish the same story twice under a different slug.
+2. **Research (internal only):** Use recent reporting from major tech news aggregators and trade press (e.g. general tech news wires, cloud and developer outlets, programming-focused coverage, community tech discussion). **Do not mention or link to any fixed internal source list** inside public article copy; articles should stand alone with neutral framing.
+3. **Originalidad:** Do not copy-paste third-party wording. State verifiable facts briefly and add original analysis (impact on SMEs, digital products, web stacks, cost, compliance, or risk).
+4. **`publishedDate`:** Set to the date the **main news event** became public (announcement, filing, regulatory milestone), not necessarily the day the file is committed. Two posts may share a date if two distinct events occurred the same day.
+5. **Commercial mix:** Balance news/trend pieces with **high-intent** articles (pricing, mistakes that cost leads, redesign decisions, local/service pages). Link them to `/servicios`, `/cuanto-cuesta-pagina-web`, city landings, etc. Use `relatedServices` in frontmatter and contextual internal links in the body.
+6. **Distribution (off-page):** Shipping content is not distribution. After publishing strong URLs: short LinkedIn/post summary + link, optional newsletter, pursue **quality backlinks** where relevant, and use Search Console to fix low-CTR titles/descriptions. Technical SEO on-site does not replace outreach.
+
+**Blog conversion UI (repo):** Copy and URLs for the mid-article CTA (injected after the 3rd paragraph via `src/plugins/rehype-blog-mid-cta.mjs`), the commercial strip on posts and `/blog`, and blog-specific sticky CTA copy live in **`src/data/blog-commercial-nav.json`** (keys `es` / `en`). Update that file when changing links or wording.
+
 ### Styling
 
 TailwindCSS v4 via `@tailwindcss/vite` (no `tailwind.config.js` — configured purely through CSS). Global styles in `src/styles/global.css`. Theme variables use `data-theme="light"` / `data-theme="dark"` on the `<html>` element.
