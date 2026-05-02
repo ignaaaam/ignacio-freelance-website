@@ -1,16 +1,40 @@
 ---
 import { getLocaleFromPath } from '../i18n/utils';
 import { siteContent } from '../data/siteContent';
+import commercialNav from '../data/blog-commercial-nav.json';
 
 const locale = getLocaleFromPath(Astro.url.pathname);
 const nav = siteContent[locale].nav;
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isBlogRoute =
+  pathname === '/blog' ||
+  pathname.startsWith('/blog/') ||
+  pathname === '/en/blog' ||
+  pathname.startsWith('/en/blog/');
+const blogSticky = isBlogRoute ? commercialNav[locale]?.stickyBlog : null;
 ---
 
 <div id="sticky-cta" class="sticky-cta">
   <div class="sticky-cta__content">
     <div>
-      <strong>{locale === 'en' ? 'Ready to improve your online presence?' : '¿Pensando en darle un impulso a tu web?'}</strong>
-      <p class="sticky-cta__desc">{locale === 'en' ? "Tell me a bit about your project and goals. We can chat and see if we're a good fit, no strings attached." : 'Cuéntame un poco sobre tu proyecto y objetivos. Lo miramos juntos sin ningún compromiso.'}</p>
+      <strong>
+        {
+          blogSticky
+            ? blogSticky.strong
+            : locale === 'en'
+              ? 'Ready to improve your online presence?'
+              : '¿Pensando en darle un impulso a tu web?'
+        }
+      </strong>
+      <p class="sticky-cta__desc">
+        {
+          blogSticky
+            ? blogSticky.desc
+            : locale === 'en'
+              ? "Tell me a bit about your project and goals. We can chat and see if we're a good fit, no strings attached."
+              : 'Cuéntame un poco sobre tu proyecto y objetivos. Lo miramos juntos sin ningún compromiso.'
+        }
+      </p>
     </div>
     <a href={nav.contactHref} class="btn-primary" data-cta="sticky-primary">{nav.primaryCta}</a>
   </div>

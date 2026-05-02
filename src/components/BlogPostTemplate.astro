@@ -12,6 +12,7 @@ import {
   getBlogPostUrl,
   getLocalizedServiceLinks,
 } from '../data/blog';
+import commercialNav from '../data/blog-commercial-nav.json';
 
 interface Props {
   entry: BlogEntry;
@@ -109,6 +110,8 @@ const faqSchema = entry.data.faq?.length
 
 const additionalSchemas = faqSchema ? [breadcrumbSchema, articleSchema, faqSchema] : [breadcrumbSchema, articleSchema];
 const tocHeadings = headings.filter((heading) => heading.depth <= 2);
+const stripLocale = commercialNav[locale];
+const commercialStrip = stripLocale.commercialStrip;
 ---
 
 <Layout
@@ -179,6 +182,20 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
             </div>
           </div>
         </div>
+
+        <section class="commercial-strip surface-card" data-sr aria-label={isEnglish ? 'High-intent guides' : 'Guías de alta intención'}>
+          <p class="section-eyebrow">{stripLocale.commercialStripEyebrow}</p>
+          <h2 class="commercial-strip__title">{stripLocale.commercialStripTitle}</h2>
+          <p class="commercial-strip__intro">{stripLocale.commercialStripIntro}</p>
+          <div class="commercial-strip__grid">
+            {commercialStrip.map((item) => (
+              <a href={item.href} class="commercial-strip__card" data-cta="blog-commercial-strip">
+                <span class="commercial-strip__card-label">{item.label}</span>
+                <span class="commercial-strip__card-hint">{item.hint}</span>
+              </a>
+            ))}
+          </div>
+        </section>
 
         <div class="article-footer-grid">
           {serviceLinks.length > 0 && (
@@ -267,7 +284,7 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
   }
 
   .article-hero h1 {
-    max-width: 14ch;
+    max-width: min(22ch, 100%);
     margin-bottom: 1rem;
     color: var(--theme-dark-text);
     font-size: clamp(2.8rem, 6vw, 5rem);
@@ -352,6 +369,65 @@ const tocHeadings = headings.filter((heading) => heading.depth <= 2);
     margin-top: 0.45rem;
     color: var(--color-text-muted);
     line-height: 1.7;
+  }
+
+  /* Injected by rehype-blog-mid-cta (Markdown body) */
+  .article-content :global(.blog-mid-cta) {
+    margin: 1.55rem 0;
+    padding: 1.25rem 1.35rem;
+    border-radius: 1.15rem;
+    border: 1px solid rgba(31, 107, 255, 0.22);
+    background: linear-gradient(135deg, rgba(31, 107, 255, 0.06), rgba(247, 249, 253, 0.96));
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .article-content :global(.blog-mid-cta__title) {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+  }
+
+  .article-content :global(.blog-mid-cta__body) {
+    margin: 0;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    font-size: 0.96rem;
+    max-width: 62ch;
+  }
+
+  .article-content :global(.blog-mid-cta__primary) {
+    justify-self: start;
+    margin-top: 0.15rem;
+  }
+
+  .article-content :global(.blog-mid-cta__secondary-heading) {
+    margin: 0.5rem 0 0;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  .article-content :global(.blog-mid-cta__links) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    align-items: center;
+  }
+
+  .article-content :global(.blog-mid-cta__secondary-link) {
+    font-size: 0.9rem;
+    font-weight: 650;
+    color: var(--theme-accent-strong);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .article-content :global(.blog-mid-cta__secondary-link:hover) {
+    color: var(--theme-accent);
   }
 
   @media (min-width: 960px) {

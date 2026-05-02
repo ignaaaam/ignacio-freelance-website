@@ -5,9 +5,15 @@ import vercel from '@astrojs/vercel';
 
 import react from '@astrojs/react';
 
+import commercialNav from './src/data/blog-commercial-nav.json' with { type: 'json' };
+import rehypeBlogMidCta from './src/plugins/rehype-blog-mid-cta.mjs';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+  markdown: {
+    rehypePlugins: [[rehypeBlogMidCta, commercialNav]],
+  },
   vite: {
     plugins: [tailwindcss()],
     build: {

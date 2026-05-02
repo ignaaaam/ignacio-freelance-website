@@ -1,0 +1,108 @@
+{
+  "es": {
+    "midCta": {
+      "title": "¿Te afecta esto a la web o al producto digital?",
+      "body": "Si estás valorando web nueva, rediseño o una aplicación a medida, puedes revisar rangos de presupuesto y servicios y escribirme con tu caso concreto.",
+      "contactLabel": "Cuéntame tu proyecto",
+      "contactHref": "/contact",
+      "secondaryHeading": "Enlaces útiles",
+      "links": [
+        { "label": "Cuánto cuesta una web", "href": "/cuanto-cuesta-pagina-web" },
+        { "label": "Servicios", "href": "/servicios" },
+        { "label": "Web en Barcelona", "href": "/crear-pagina-web-barcelona" }
+      ]
+    },
+    "stickyBlog": {
+      "strong": "¿Necesitas una web que convierta mejor?",
+      "desc": "Este artículo es contexto; si lo que buscas es presupuesto, alcance o timing para tu negocio, escríbeme y lo vemos."
+    },
+    "commercialStripEyebrow": "Decisiones de proyecto",
+    "commercialStripTitle": "Guías y servicios con intención clara",
+    "commercialStripIntro": "Combina lecturas de actualidad con páginas donde ya resuelvo precios, alcance y tipo de web que encaja.",
+    "commercialStrip": [
+      {
+        "label": "Cuánto cuesta una página web",
+        "href": "/cuanto-cuesta-pagina-web",
+        "hint": "Rangos y qué mueve el precio"
+      },
+      {
+        "label": "Servicios de desarrollo web",
+        "href": "/servicios",
+        "hint": "Qué ofrezco y cómo encaja"
+      },
+      {
+        "label": "Web para empresa",
+        "href": "/diseno-web-empresas",
+        "hint": "Presencia corporativa que vende"
+      },
+      {
+        "label": "Crear web en Barcelona",
+        "href": "/crear-pagina-web-barcelona",
+        "hint": "Ejemplo ciudad; también otras ciudades"
+      },
+      {
+        "label": "Desarrollo web a medida / SaaS",
+        "href": "/desarrollo-aplicacion-web-saas",
+        "hint": "Producto digital más allá de la web estática"
+      },
+      {
+        "label": "Contacto",
+        "href": "/contact",
+        "hint": "Briefing sin compromiso"
+      }
+    ]
+  },
+  "en": {
+    "midCta": {
+      "title": "Does this affect your website or digital product?",
+      "body": "If you are weighing a new site, a redesign, or a custom build, check pricing ranges and services—then write me with your specific situation.",
+      "contactLabel": "Tell me about your project",
+      "contactHref": "/en/contact",
+      "secondaryHeading": "Useful links",
+      "links": [
+        { "label": "Website pricing guide", "href": "/en/how-much-does-website-cost" },
+        { "label": "Services", "href": "/en/services" },
+        { "label": "Website in Barcelona", "href": "/en/create-website-barcelona" }
+      ]
+    },
+    "stickyBlog": {
+      "strong": "Need a website that converts better?",
+      "desc": "This piece is context—if you want scope, budget, or timeline for your business, message me and we can align."
+    },
+    "commercialStripEyebrow": "Project decisions",
+    "commercialStripTitle": "High-intent guides and services",
+    "commercialStripIntro": "Pair news-style reads with pages that already answer pricing, scope, and what kind of site fits.",
+    "commercialStrip": [
+      {
+        "label": "How much does a website cost",
+        "href": "/en/how-much-does-website-cost",
+        "hint": "Ranges and cost drivers"
+      },
+      {
+        "label": "Web development services",
+        "href": "/en/services",
+        "hint": "What I offer and fit"
+      },
+      {
+        "label": "Business websites",
+        "href": "/en/web-design-businesses",
+        "hint": "Corporate sites that sell"
+      },
+      {
+        "label": "Create a website in Barcelona",
+        "href": "/en/create-website-barcelona",
+        "hint": "City example; other cities too"
+      },
+      {
+        "label": "Custom web apps & SaaS",
+        "href": "/en/web-application-saas-development",
+        "hint": "Beyond a marketing site"
+      },
+      {
+        "label": "Contact",
+        "href": "/en/contact",
+        "hint": "No-obligation briefing"
+      }
+    ]
+  }
+}

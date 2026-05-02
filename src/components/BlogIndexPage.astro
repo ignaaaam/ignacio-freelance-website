@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from './Header.astro';
 import type { BlogEntry, BlogLocale } from '../data/blog';
 import { formatBlogDate, getBlogEntryPathSlug, getBlogPostUrl } from '../data/blog';
+import commercialNav from '../data/blog-commercial-nav.json';
 
 interface Props {
   locale: BlogLocale;
@@ -11,6 +12,8 @@ interface Props {
 
 const { locale, posts } = Astro.props;
 const isEnglish = locale === 'en';
+const stripLocale = commercialNav[locale];
+const commercialStrip = stripLocale.commercialStrip;
 
 function blogCardImageUrl(url: string): string {
   if (!url || !url.includes('images.unsplash.com')) return url;
@@ -107,6 +110,20 @@ const blogSchema = {
           ))}
         </div>
 
+        <section class="commercial-strip surface-card blog-index-commercial" data-sr aria-label={isEnglish ? 'Guides and services' : 'Guías y servicios'}>
+          <p class="section-eyebrow">{stripLocale.commercialStripEyebrow}</p>
+          <h2 class="commercial-strip__title">{stripLocale.commercialStripTitle}</h2>
+          <p class="commercial-strip__intro">{stripLocale.commercialStripIntro}</p>
+          <div class="commercial-strip__grid">
+            {commercialStrip.map((item) => (
+              <a href={item.href} class="commercial-strip__card" data-cta="blog-index-commercial-strip">
+                <span class="commercial-strip__card-label">{item.label}</span>
+                <span class="commercial-strip__card-hint">{item.hint}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <div class="blog-cta surface-card" data-sr>
           <div>
             <p class="section-eyebrow">{isEnglish ? 'Need a clearer website?' : '¿Necesitas una web más clara?'}</p>
@@ -175,6 +192,10 @@ const blogSchema = {
     display: grid;
     gap: 1.1rem;
     margin-top: 1.3rem;
+  }
+
+  .blog-index-commercial {
+    margin-top: 1.35rem;
   }
 
   .blog-card__link {
